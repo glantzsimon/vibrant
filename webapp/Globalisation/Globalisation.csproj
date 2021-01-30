@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>K9.Globalisation</RootNamespace>
     <AssemblyName>K9.Globalisation</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -23,6 +23,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>latest</LangVersion>
+    <CodeAnalysisRuleSet>Globalisation.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,22 +34,58 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>Globalisation.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Integration|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Integration\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Globalisation.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Globalisation.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <OutputPath>bin\Staging\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Globalisation.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <OutputPath>bin\Production\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Globalisation.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production2|AnyCPU'">
+    <OutputPath>bin\Production2\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Globalisation.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dictionary.fr.Designer.cs">
-      <DependentUpon>Dictionary.fr.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Dictionary.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -57,60 +95,42 @@
     <Compile Include="Strings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Dictionary.fr.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Dictionary.fr.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dictionary.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Dictionary.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Articles\en-gb\blessings-of-the-forest.htm" />
-    <Content Include="Articles\en-gb\blessings-of-the-forest-intro.htm" />
-    <Content Include="Articles\en-gb\simon-text.htm" />
-    <Content Include="Articles\en-gb\laurent-text.htm" />
-    <Content Include="Articles\en-gb\david-text.htm" />
-    <Content Include="Articles\en-gb\yann-text.htm" />
-    <Content Include="Articles\en-gb\simon-title.htm" />
-    <Content Include="Articles\en-gb\laurent-title.htm" />
-    <Content Include="Articles\en-gb\david-title.htm" />
-    <Content Include="Articles\en-gb\yann-title.htm" />
-    <Content Include="Articles\en-gb\iboga-title2.htm" />
-    <Content Include="Articles\en-gb\iboga-text2.htm" />
-    <Content Include="Articles\en-gb\iboga-text1.htm" />
-    <Content Include="Articles\en-gb\iboga-title1.htm" />
-    <Content Include="Articles\en-gb\mission-statement-and-aims-title1.htm" />
-    <Content Include="Articles\en-gb\mission-statement-and-aims-title2.htm" />
-    <Content Include="Articles\en-gb\mission-statement-and-aims1.htm" />
-    <Content Include="Articles\en-gb\mission-statement-and-aims2.htm" />
-    <Content Include="Articles\fr\david-text.htm" />
-    <Content Include="Articles\fr\david-title.htm" />
-    <Content Include="Articles\fr\iboga-text1.htm" />
-    <Content Include="Articles\fr\iboga-text2.htm" />
-    <Content Include="Articles\fr\iboga-title1.htm" />
-    <Content Include="Articles\fr\iboga-title2.htm" />
-    <Content Include="Articles\fr\laurent-text.htm" />
-    <Content Include="Articles\fr\laurent-title.htm" />
-    <Content Include="Articles\fr\mission-statement-and-aims1.htm" />
-    <Content Include="Articles\fr\mission-statement-and-aims-title2.htm" />
-    <Content Include="Articles\fr\mission-statement-and-aims-title1.htm" />
-    <Content Include="Articles\fr\mission-statement-and-aims2.htm" />
-    <Content Include="Articles\fr\blessings-of-the-forest.htm" />
-    <Content Include="Articles\fr\blessings-of-the-forest-intro.htm" />
-    <Content Include="Articles\fr\simon-text.htm" />
-    <Content Include="Articles\fr\simon-title.htm" />
-    <Content Include="Articles\fr\yann-text.htm" />
-    <Content Include="Articles\fr\yann-title.htm" />
+    <Content Include="General\en-gb\AgreeToTerms.htm" />
+    <Content Include="General\en-gb\platinum-annual-membership-description.htm" />
+    <Content Include="General\en-gb\platinum-monthly-membership-description.htm" />
+    <Content Include="General\en-gb\PrivacyPolicy.htm" />
+    <Content Include="General\en-gb\standard-annual-membership-description.htm" />
+    <Content Include="General\en-gb\standard-monthly-membership-description.htm" />
+    <Content Include="General\en-gb\book-consultation-blurb.htm" />
+    <Content Include="General\en-gb\support-blurb.htm" />
+    <Content Include="General\en-gb\consultation-email.htm" />
+    <Content Include="General\en-gb\welcome.htm" />
+    <Content Include="Templates\en-gb\ConsultationBookedEmail.htm" />
+    <Content Include="Templates\en-gb\ConsultationBookedThankYouEmail.htm" />
+    <Content Include="Templates\en-gb\PromoCodeEmail.htm" />
+    <Content Include="Templates\en-gb\PaymentError.htm" />
+    <Content Include="Templates\en-gb\CreditPackPurchased.htm" />
+    <Content Include="Templates\en-gb\NewCreditPackThankYouEmail.htm" />
+    <Content Include="Templates\en-gb\NewMembershipThankYouEmail.htm" />
+    <Content Include="Templates\en-gb\MembershipCreatedEmail.htm" />
+    <Content Include="Templates\en-gb\DonationThankYouEmail.htm" />
+    <Content Include="Templates\en-gb\DonationReceivedEmail.htm" />
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
     <Content Include="Templates\en-gb\SupportQuery.htm" />
     <Content Include="Templates\en-gb\WelcomeEmail.htm" />
-    <Content Include="Templates\fr\PasswordResetEmail.htm" />
-    <Content Include="Templates\fr\SupportQuery.htm" />
-    <Content Include="Templates\fr\WelcomeEmail.htm" />
+    <Content Include="Text\en-gb\cookies-blurb.txt" />
     <Content Include="Text\en-gb\Keywords.txt" />
-    <Content Include="Text\fr\Keywords.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Globalisation.ruleset" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

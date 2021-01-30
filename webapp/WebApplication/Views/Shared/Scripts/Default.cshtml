@@ -1,5 +1,7 @@
 ﻿@using System.Globalization
+@using K9.SharedLibrary.Extensions
 @using K9.SharedLibrary.Helpers
+
 <script type="text/javascript">
 
 	$(function () {
@@ -45,23 +47,109 @@
 
 		$.fn.isImage = function(filename) {
 			return @(MvcHtmlString.Create(Json.Encode(HelperMethods.GetImageFileExtensions().ToArray()))).indexOf($.fn.getFileExtension(filename)) >= 0;
-		};
+        };
+
+	    $.fn.isVideo = function(filename) {
+	        return @(MvcHtmlString.Create(Json.Encode(HelperMethods.GetVideoFileExtensions().ToArray()))).indexOf($.fn.getFileExtension(filename)) >= 0;
+        };
+
+	    $.fn.isAudio = function(filename) {
+	        return @(MvcHtmlString.Create(Json.Encode(HelperMethods.GetAudioFileExtensions().ToArray()))).indexOf($.fn.getFileExtension(filename)) >= 0;
+        };
+
+	    $.fn.getFileNameWithoutExtension = function(fileName) {
+	        return fileName.substring(0, fileName.lastIndexOf("."));
+	    };
+
+        $.fn.getShortFileName = function(fileName) {
+            var nameWithoutExt = $.fn.getFileNameWithoutExtension(fileName);
+            var nameLength = nameWithoutExt.length;
+            var maxLength = 15;
+            return nameWithoutExt.substring(0, nameLength < maxLength ? nameLength : maxLength) + '....' + $.fn.getFileExtension(fileName);
+        }
+
+	    $.fn.setAcceptedFileExtensions = function(fileInput, type) {
+	        var accepted;
+	        switch (type) {
+            case "@MvcHtmlString.Create(K9.Base.Globalisation.Dictionary.Videos)":
+	            accepted = "@HelperMethods.GetVideoFileExtensions().ToDelimitedString()";
+                break;
+
+            case "@MvcHtmlString.Create(K9.Base.Globalisation.Dictionary.Audio)":
+	            accepted = "@HelperMethods.GetAudioFileExtensions().ToDelimitedString()";
+                break;
+
+            case "@MvcHtmlString.Create(K9.Base.Globalisation.Dictionary.Photos)":
+	            accepted = "@HelperMethods.GetImageFileExtensions().ToDelimitedString()";
+	            break;
+
+	        default:
+	            accepted = "*";
+	            break;
+	        }
+	        fileInput.attr("accept", accepted);
+        };
+
+	    $.fn.scrollToTopOf = function(el, adjustment) {
+	        var offset = $(el).offset();
+	        $("html, body").animate({
+	            scrollTop: offset.top + (adjustment || 0)
+	        }, 40);
+        };
+
+	    $.fn.displayValidationWarningFor = function(field, validationMessage) {
+	        var validationSpan = $("span[data-valmsg-for='" + field + "']");
+	        validationSpan.html("<span for='" + field + "' generated='true'>" + validationMessage + ".</span>");
+	        validationSpan.removeClass("field-validation-valid");
+	        validationSpan.addClass("field-validation-error warning");
+        };
+
+	    $.fn.hideValidationWarningFor = function(field) {
+	        var validationSpan = $("span[data-valmsg-for='" + field + "']");
+            validationSpan.removeClass("warning");
+        };
+
+        $.fn.preloadImages =  function (imageArray) {
+            for (var i = 0; i < imageArray.length; i++) {
+                var img = new Image();
+                img.src = imageArray[i];
+            }
+        }
 
 		bootstrapControls({
 			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
-			dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()"
+            dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()"
 		}).init();
 
 		buttonBehaviours().init();
 
-		fadePageIn().init();
+		fadePageIn({
+		    isFirstLoad: @SessionHelper.GetBoolValue("SessionConstants.IsFirstLoad").ToString().ToLower()
+		}).init();
 
 		scroller().init();
 
 		fileUploader({
-			deleteText: "@Dictionary.Delete",
-			filesSelectedText: "@Dictionary.FilesSelected"
-		}).init();
+			deleteText: "@MvcHtmlString.Create(K9.Base.Globalisation.Dictionary.Delete)",
+			filesSelectedText: "@MvcHtmlString.Create(K9.Base.Globalisation.Dictionary.FilesSelected)"
+        }).init();
+
+        navbar().init();
+
+	    revealText({
+            moreText: "@K9.Base.Globalisation.Dictionary.More",
+            lessText: "@K9.Base.Globalisation.Dictionary.Less"
+        }).init();
+
+        imagePreloader({
+            imageArray: [
+                "@Url.Content("~/Images/shared/spinner.gif")",
+                "@Url.Content("~/Images/company/logo-small.png")",
+                "@Url.Content("~/Images/background/bg6.jpg")"
+
+                
+            ]
+	    }).init();
 	});
 
 </script>

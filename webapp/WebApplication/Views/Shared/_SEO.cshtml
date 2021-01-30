@@ -1,0 +1,22 @@
+﻿@model string
+
+@{
+    var description = ViewBag.MetaDescription ?? Dictionary.VibrantHealthMetaDescriptionMain;
+    var keywords = ViewBag.Keywords ?? Dictionary.Keywords;
+    var title = Html.Raw($"{Dictionary.VibrantHealth} &raquo; {ViewBag.Title}");
+}
+
+<!--@keywords-->
+
+<div class="seo @Model">
+    <h1>
+        @title
+    </h1>
+    <h2>
+        @ViewBag.SubTitle
+    </h2>
+    <div>
+        @description
+        @keywords
+    </div>
+</div>

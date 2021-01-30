@@ -1,4 +1,5 @@
-﻿@using K9.SharedLibrary.Models
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Models
 @using EButtonType = K9.SharedLibrary.Models.EButtonType
 @model User
 @{
@@ -19,7 +20,7 @@
 		new Button
 		{
 			Action = "EditRolesForUser",
-			Text = Dictionary.Edit,
+			Text = K9.Base.Globalisation.Dictionary.Edit,
 			ButtonType = EButtonType.Primary,
 			IconCssClass = "fa fa-pencil"
 		}

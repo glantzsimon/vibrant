@@ -1,87 +1,41 @@
-﻿
+﻿using K9.DataAccessLayer.Models;
+using K9.WebApplication.Controllers;
 using System;
-using System.Reflection;
-using K9.DataAccess.Attributes;
-using K9.Globalisation;
-using K9.SharedLibrary.Extensions;
+using System.Text.RegularExpressions;
+using System.Web.Mvc;
 
 namespace K9.WebApplication.Extensions
 {
-	public static class Extensions
-	{
+    public static partial class Extensions
+    {
+        public static string ToSeoFriendlyString(this string value)
+        {
+            var regex = new Regex("[^a-zA-Z0-9 -]");
+            var alphaNumericString = regex.Replace(value, "");
 
-		public static string GetTableName(this Type type)
-		{
-			return $"{type.Name}Table";
-		}
+            return string.Join("-", alphaNumericString.ToLower().Split(' '));
+        }
 
-		public static string GetDataTableType(this PropertyInfo property)
-		{
-			if (property.PropertyType == typeof(int))
-			{
-				return "num";
-			}
-			if (property.PropertyType == typeof(DateTime))
-			{
-				return "date";
-			}
+        public static string ToPreviewText(this string value, int length = 100)
+        {
+            var valueLength = value.Length;
+            var canBeAbbreviated = valueLength > length;
+            var substring = value.Substring(0, canBeAbbreviated ? length : valueLength);
+            var abbrevationSuffix = canBeAbbreviated ? "..." : string.Empty;
+            return $"{substring}{abbrevationSuffix}";
+        }
 
-			return "string";
-		}
-
-		public static string GetDefiniteArticle(this Type type)
-		{
-			var attribute = type.GetAttribute<GrammarAttribute>();
-			return attribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.MasculineDefiniteArticle) : attribute.GetDefiniteArticle();
-		}
-
-		public static string GetIndefiniteArticle(this Type type)
-		{
-			var attribute = type.GetAttribute<GrammarAttribute>();
-			return attribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.MasculineDefiniteArticle) : attribute.GetIndefiniteArticle();
-		}
-
-		public static string GetDefiniteArticle(this PropertyInfo info)
-		{
-			var attribute = info.GetAttribute<GrammarAttribute>();
-			return attribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.MasculineDefiniteArticle) : attribute.GetDefiniteArticle();
-		}
-
-		public static string GetIndefiniteArticle(this PropertyInfo info)
-		{
-			var attribute = info.GetAttribute<GrammarAttribute>();
-			return attribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.MasculineDefiniteArticle) : attribute.GetIndefiniteArticle();
-		}
-
-		public static string GetOfPreposition(this PropertyInfo info)
-		{
-			var attribute = info.GetAttribute<GrammarAttribute>();
-			return attribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.OfPreposition) : attribute.GetOfPreposition();
-		}
-
-		public static string GetOfPreposition(this Type type)
-		{
-			var attribute = type.GetAttribute<GrammarAttribute>();
-			return attribute == null ? typeof(Dictionary).GetValueFromResource(Strings.Grammar.OfPreposition) : attribute.GetOfPreposition();
-		}
-
-		public static string GetName(this Type type)
-		{
-			var namettribute = type.GetAttribute<NameAttribute>();
-			return namettribute == null ? type.Name : namettribute.GetName();
-		}
-
-		public static string GetPluralName(this Type type)
-		{
-			var namettribute = type.GetAttribute<NameAttribute>();
-			return namettribute == null ? $"{type.Name}s" : namettribute.GetPluralName();
-		}
-
-		public static string GetListName(this Type type)
-		{
-			var namettribute = type.GetAttribute<NameAttribute>();
-			return namettribute == null ? $"{type.Name}s" : namettribute.GetListName();
-		}
-
-	}
+        public static UserMembership GetActiveUserMembership(this WebViewPage view)
+        {
+            try
+            {
+                var baseController = view.ViewContext.Controller as BaseVibrantController;
+                return baseController?.GetActiveUserMembership();
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+    }
 }

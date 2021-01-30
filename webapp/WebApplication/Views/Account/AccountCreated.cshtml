@@ -1,6 +1,17 @@
-﻿@{
-	ViewBag.Title = Dictionary.Registration;
-	Layout = "../Shared/_LayoutForm.cshtml";
+﻿@using K9.Base.WebApplication.Helpers
+@{
+    ViewBag.Title = K9.Base.Globalisation.Dictionary.Registration;
+    Layout = "../Shared/_LayoutForm.cshtml";
+
+    string additionalError = ViewBag.AdditionalError?.ToString();
 }
 
-@Html.Success(Dictionary.AccountCreatedSuccessfully, Dictionary.CheckAccountActivationEmail)
+<div class="margin-bottom-10">
+    @Html.Success(K9.Base.Globalisation.Dictionary.AccountCreatedSuccessfully, K9.Base.Globalisation.Dictionary.CheckAccountActivationEmail)
+
+    @if (string.IsNullOrEmpty(additionalError))
+    {
+        <hr />
+        @Html.Alert(EAlertType.Warning, additionalError)
+    }
+</div>

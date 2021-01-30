@@ -1,38 +1,30 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Web.Mvc;
+﻿using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
-using Microsoft.Ajax.Utilities;
+using K9.WebApplication.Services;
 using NLog;
+using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeController : BaseVibrantController
     {
-
-        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles)
-            : base(logger, dataSetsHelper, roles)
+        private readonly IAuthentication _authentication;
+        
+        public HomeController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
+            _authentication = authentication;
         }
 
         public ActionResult Index()
         {
-            return Content("This website is currently under development.");
+            return View();
         }
-
-        [Route("calendar")]
-        public ActionResult GetCalendar(string url, string key)
+        
+        [Route("privacy-policy")]
+        public ActionResult PrivacyPolicy()
         {
-            return Redirect($"{url}&key={key}&ms={DateTime.Now.Millisecond}");
-        }
-
-        public ActionResult SetLanguage(string languageCode)
-        {
-            Session["languageCode"] = languageCode;
-            return RedirectToAction("Index");
+            return View();
         }
 
         public override string GetObjectName()

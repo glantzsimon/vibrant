@@ -1,0 +1,23 @@
+﻿@using K9.WebApplication.Helpers
+@{
+    ViewBag.Title = Dictionary.Nootropics;
+    ViewBag.SubTitle = Dictionary.Nootropics;
+    ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+@Html.Partial("_BetaPopup")
+
+<div class="container main-content">
+    <div class="well margin-bottom-0">
+        @Html.ImagePanel("Welcome", "~/Images/home/home-bg.jpg")
+
+        <article>
+            @MvcHtmlString.Create(Dictionary.ComingSoon)
+        </article>
+
+        <br />
+
+        @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultations", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
+    </div>
+</div>

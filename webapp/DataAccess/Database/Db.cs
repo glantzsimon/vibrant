@@ -1,47 +1,18 @@
-﻿using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
-using K9.DataAccess.Models;
+﻿using K9.DataAccessLayer.Models;
+using System.Data.Entity;
 
-namespace K9.DataAccess.Database
+namespace K9.DataAccessLayer.Database
 {
-	public class Db : DbContext
+    public class LocalDb : Base.DataAccessLayer.Database.Db
 	{
-
-		public Db()
-			: base("name=DefaultConnection")
-		{
-			Configuration.LazyLoadingEnabled = false;
-			Configuration.ProxyCreationEnabled = false;
-			Configuration.AutoDetectChangesEnabled = false;
-		}
-
-
-		#region Tables
-
-		public DbSet<User> Users { get; set; }
-		public DbSet<Country> Countries { get; set; }
-		public DbSet<Course> Courses { get; set; }
-		public DbSet<Enrollment> Enrollments { get; set; }
-		public DbSet<Student> Students { get; set; }
-		public DbSet<Role> Roles { get; set; }
-		public DbSet<UserRole> UserRoles { get; set; }
-		public DbSet<Permission> Permissions { get; set; }
-		public DbSet<RolePermission> RolePermissions { get; set; }
-		public DbSet<Message> Messages { get; set; }
-		public DbSet<NewsItem> NewsItems { get; set; }
-		
-		#endregion
-
-
-		#region Event Handlers
-
-		protected override void OnModelCreating(DbModelBuilder modelBuilder)
-		{
-			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-			modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-		}
-
-		#endregion
-
+	    public DbSet<Consultation> Consultations { get; set; }
+	    public DbSet<Contact> Contacts { get; set; }
+	    public DbSet<Donation> Donations { get; set; }
+	    public DbSet<MembershipOption> MembershipOptions { get; set; }
+	    public DbSet<PromoCode> PromoCodes { get; set; }
+	    public DbSet<UserConsultation> UserConsultations { get; set; }
+	    public DbSet<UserCreditPack> UserCreditPack { get; set; }
+	    public DbSet<UserMembership> UserMemberships { get; set; }
+	    public DbSet<UserPromoCode> UserPromoCodes { get; set; }
 	}
 }
