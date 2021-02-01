@@ -70,6 +70,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Acid Alkaline.
+        /// </summary>
+        public static string AcidAlkaline {
+            get {
+                return ResourceManager.GetString("AcidAlkaline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Additional Comments.
         /// </summary>
         public static string AdditionalComments {
@@ -160,6 +169,60 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Article.
+        /// </summary>
+        public static string Article {
+            get {
+                return ResourceManager.GetString("Article", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article Categories.
+        /// </summary>
+        public static string ArticleCategories {
+            get {
+                return ResourceManager.GetString("ArticleCategories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article Category.
+        /// </summary>
+        public static string ArticleCategory {
+            get {
+                return ResourceManager.GetString("ArticleCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Articles.
+        /// </summary>
+        public static string Articles {
+            get {
+                return ResourceManager.GetString("Articles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article Section.
+        /// </summary>
+        public static string ArticleSection {
+            get {
+                return ResourceManager.GetString("ArticleSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article Sections.
+        /// </summary>
+        public static string ArticleSections {
+            get {
+                return ResourceManager.GetString("ArticleSections", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto Renewal.
         /// </summary>
         public static string AutoRenewLabel {
@@ -183,6 +246,15 @@ namespace K9.Globalisation {
         public static string BetaWarning {
             get {
                 return ResourceManager.GetString("BetaWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Binaural Beats.
+        /// </summary>
+        public static string BinauralBeats {
+            get {
+                return ResourceManager.GetString("BinauralBeats", resourceCulture);
             }
         }
         
@@ -235,6 +307,15 @@ namespace K9.Globalisation {
         public static string BookAConsultationSuccessMessage {
             get {
                 return ResourceManager.GetString("BookAConsultationSuccessMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Breath.
+        /// </summary>
+        public static string Breath {
+            get {
+                return ResourceManager.GetString("Breath", resourceCulture);
             }
         }
         
@@ -298,6 +379,15 @@ namespace K9.Globalisation {
         public static string Code {
             get {
                 return ResourceManager.GetString("Code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cold Exposure.
+        /// </summary>
+        public static string ColdExposure {
+            get {
+                return ResourceManager.GetString("ColdExposure", resourceCulture);
             }
         }
         
@@ -427,7 +517,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;body&gt;
         ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;We have received a n [rest of string was truncated]&quot;;.
+        ///    &lt;p class=&quot;text&quot;&gt;We have received a new consultation bookin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ConsultationBookedEmail {
             get {
@@ -450,7 +540,7 @@ namespace K9.Globalisation {
         ///    &lt;![endif]--&gt;
         ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
         ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ConsultationBookedThankYouEmail {
             get {
@@ -580,7 +670,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;body&gt;
         ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;We have a new user c [rest of string was truncated]&quot;;.
+        ///    &lt;p class=&quot;text&quot;&gt;We have a new user credit pack purchase fr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CreditPackPurchased {
             get {
@@ -809,7 +899,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;body&gt;
         ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;We have received a d [rest of string was truncated]&quot;;.
+        ///    &lt;p class=&quot;text&quot;&gt;We have received a donation from {Customer [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DonationReceivedEmail {
             get {
@@ -859,7 +949,7 @@ namespace K9.Globalisation {
         ///    &lt;![endif]--&gt;
         ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
         ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DonationThankYouEmail {
             get {
@@ -882,6 +972,15 @@ namespace K9.Globalisation {
         public static string DonationToVibrantHealth {
             get {
                 return ResourceManager.GetString("DonationToVibrantHealth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Doshas.
+        /// </summary>
+        public static string Doshas {
+            get {
+                return ResourceManager.GetString("Doshas", resourceCulture);
             }
         }
         
@@ -918,6 +1017,15 @@ namespace K9.Globalisation {
         public static string EarthElement {
             get {
                 return ResourceManager.GetString("EarthElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Electromedicine.
+        /// </summary>
+        public static string Electromedicine {
+            get {
+                return ResourceManager.GetString("Electromedicine", resourceCulture);
             }
         }
         
@@ -1003,6 +1111,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enemas.
+        /// </summary>
+        public static string Enemas {
+            get {
+                return ResourceManager.GetString("Enemas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Energy.
         /// </summary>
         public static string Energy {
@@ -1048,11 +1165,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fats.
+        /// </summary>
+        public static string Fats {
+            get {
+                return ResourceManager.GetString("Fats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Female.
         /// </summary>
         public static string Female {
             get {
                 return ResourceManager.GetString("Female", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fermented Foods.
+        /// </summary>
+        public static string FermentedFoods {
+            get {
+                return ResourceManager.GetString("FermentedFoods", resourceCulture);
             }
         }
         
@@ -1102,6 +1237,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gadgets.
+        /// </summary>
+        public static string Gadgets {
+            get {
+                return ResourceManager.GetString("Gadgets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gay.
         /// </summary>
         public static string Gay {
@@ -1129,6 +1273,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Grounding.
+        /// </summary>
+        public static string Grounding {
+            get {
+                return ResourceManager.GetString("Grounding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Health.
         /// </summary>
         public static string HealthLabel {
@@ -1152,6 +1305,33 @@ namespace K9.Globalisation {
         public static string Here {
             get {
                 return ResourceManager.GetString("Here", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Immune System Support.
+        /// </summary>
+        public static string ImmuneSupport {
+            get {
+                return ResourceManager.GetString("ImmuneSupport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infections.
+        /// </summary>
+        public static string Infections {
+            get {
+                return ResourceManager.GetString("Infections", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infrared.
+        /// </summary>
+        public static string Infrared {
+            get {
+                return ResourceManager.GetString("Infrared", resourceCulture);
             }
         }
         
@@ -1268,7 +1448,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;body&gt;
         ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;We have a new user s [rest of string was truncated]&quot;;.
+        ///    &lt;p class=&quot;text&quot;&gt;We have a new user subscription from {Cust [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MembershipCreatedEmail {
             get {
@@ -1313,6 +1493,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Metabolic Types.
+        /// </summary>
+        public static string MetabolicTypes {
+            get {
+                return ResourceManager.GetString("MetabolicTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Metal.
         /// </summary>
         public static string Metal {
@@ -1327,6 +1516,15 @@ namespace K9.Globalisation {
         public static string MetalElement {
             get {
                 return ResourceManager.GetString("MetalElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minerals.
+        /// </summary>
+        public static string Minerals {
+            get {
+                return ResourceManager.GetString("Minerals", resourceCulture);
             }
         }
         
@@ -1390,7 +1588,7 @@ namespace K9.Globalisation {
         ///    &lt;![endif]--&gt;
         ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
         ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NewCreditPackThankYouEmail {
             get {
@@ -1413,7 +1611,7 @@ namespace K9.Globalisation {
         ///    &lt;![endif]--&gt;
         ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
         ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NewMembershipThankYouEmail {
             get {
@@ -1530,6 +1728,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Oral Care.
+        /// </summary>
+        public static string OralCare {
+            get {
+                return ResourceManager.GetString("OralCare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order.
+        /// </summary>
+        public static string OrderLabel {
+            get {
+                return ResourceManager.GetString("OrderLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Or enter your payment details below.
         /// </summary>
         public static string OrEnterYourCardDetails {
@@ -1544,6 +1760,15 @@ namespace K9.Globalisation {
         public static string Other {
             get {
                 return ResourceManager.GetString("Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other Healing Techniques.
+        /// </summary>
+        public static string OtherHealingTechniques {
+            get {
+                return ResourceManager.GetString("OtherHealingTechniques", resourceCulture);
             }
         }
         
@@ -1571,7 +1796,7 @@ namespace K9.Globalisation {
         ///    &lt;![endif]--&gt;
         ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
         ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PasswordResetEmail {
             get {
@@ -1611,7 +1836,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;body&gt;
         ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;A successful payment w [rest of string was truncated]&quot;;.
+        ///    &lt;p class=&quot;text&quot;&gt;A successful payment went through for {Custo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PaymentError {
             get {
@@ -1702,7 +1927,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h4&gt;Introduction&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    This privacy notice aims to inform you about how we collect and pr [rest of string was truncated]&quot;;.
+        ///    This privacy notice aims to inform you about how we collect and process any infor [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PrivacyPolicy {
             get {
@@ -1743,7 +1968,7 @@ namespace K9.Globalisation {
         ///    &lt;![endif]--&gt;
         ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
         ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PromoCodeEmail {
             get {
@@ -1842,6 +2067,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Raw or Cooked.
+        /// </summary>
+        public static string RawOrCooked {
+            get {
+                return ResourceManager.GetString("RawOrCooked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rebounding.
+        /// </summary>
+        public static string Rebounding {
+            get {
+                return ResourceManager.GetString("Rebounding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register Promo Code.
         /// </summary>
         public static string RegisterPromoCode {
@@ -1896,6 +2139,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shaking.
+        /// </summary>
+        public static string Shaking {
+            get {
+                return ResourceManager.GetString("Shaking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shop.
         /// </summary>
         public static string Shop {
@@ -1937,6 +2189,15 @@ namespace K9.Globalisation {
         public static string Skip {
             get {
                 return ResourceManager.GetString("Skip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sleep.
+        /// </summary>
+        public static string Sleep {
+            get {
+                return ResourceManager.GetString("Sleep", resourceCulture);
             }
         }
         
@@ -2104,6 +2365,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sungazing.
+        /// </summary>
+        public static string Sungazing {
+            get {
+                return ResourceManager.GetString("Sungazing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Super Foods.
         /// </summary>
         public static string SuperFoods {
@@ -2182,7 +2452,7 @@ namespace K9.Globalisation {
         ///    &lt;![endif]--&gt;
         ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
         ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SupportQuery {
             get {
@@ -2232,6 +2502,15 @@ namespace K9.Globalisation {
         public static string SwitchSuccessfulTitle {
             get {
                 return ResourceManager.GetString("SwitchSuccessfulTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tapping.
+        /// </summary>
+        public static string Tapping {
+            get {
+                return ResourceManager.GetString("Tapping", resourceCulture);
             }
         }
         
@@ -2286,6 +2565,15 @@ namespace K9.Globalisation {
         public static string TotalPriceLabel {
             get {
                 return ResourceManager.GetString("TotalPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toxicity Reduction.
+        /// </summary>
+        public static string ToxicityReduction {
+            get {
+                return ResourceManager.GetString("ToxicityReduction", resourceCulture);
             }
         }
         
@@ -2461,6 +2749,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vegan or Omnivore.
+        /// </summary>
+        public static string VeganOrOmni {
+            get {
+                return ResourceManager.GetString("VeganOrOmni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vibrant Health.
         /// </summary>
         public static string VibrantHealth {
@@ -2515,6 +2812,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Water Magic.
+        /// </summary>
+        public static string WaterMagic {
+            get {
+                return ResourceManager.GetString("WaterMagic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
         ///    Vibrant Health - the best online resource to help you optimise your health and achieve unimaginable wellbeing
         ///&lt;/h4&gt;
@@ -2525,7 +2831,7 @@ namespace K9.Globalisation {
         ///    Everyone is unique
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    There are many [rest of string was truncated]&quot;;.
+        ///    There are many people wh [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {
@@ -2548,7 +2854,7 @@ namespace K9.Globalisation {
         ///    &lt;![endif]--&gt;
         ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
         ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string WelcomeEmail {
             get {
@@ -2562,6 +2868,15 @@ namespace K9.Globalisation {
         public static string WelcomeSubTitle {
             get {
                 return ResourceManager.GetString("WelcomeSubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WoundCare.
+        /// </summary>
+        public static string WoundCare {
+            get {
+                return ResourceManager.GetString("WoundCare", resourceCulture);
             }
         }
         

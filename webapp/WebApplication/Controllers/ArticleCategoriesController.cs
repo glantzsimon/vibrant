@@ -9,13 +9,10 @@ namespace K9.WebApplication.Controllers
 {
     [Authorize]
     [RequirePermissions(Role = RoleNames.Administrators)]
-    public class DonationsController : BaseController<Donation>
-    {
-
-        public DonationsController(IControllerPackage<Donation> controllerPackage)
-            : base(controllerPackage)
-        {
-        }
-
-    }
+	public class ArticleCategoriesController : BaseController<ArticleCategory>
+	{
+		public ArticleCategoriesController(IControllerPackage<ArticleCategory> controllerPackage) : base(controllerPackage)
+		{
+		}
+	}
 }

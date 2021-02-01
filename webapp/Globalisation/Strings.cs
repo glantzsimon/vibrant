@@ -10,6 +10,7 @@
             public const string ContactLabel = "ContactLabel";
             public const string AmountDonatedLabel = "AmountDonatedLabel";
             public const string AmountLabel = "AmountLabel";
+            public const string OrderLabel = "OrderLabel";
             public const string NumberOfCreditsLabel = "NumberOfCreditsLabel";
             public const string CreditsPurchaseAmountLabel = "CreditsPurchaseAmountLabel";
             public const string TotalPriceLabel = "TotalPriceLabel";
@@ -53,10 +54,20 @@
             public const string UserDataLabel = "UserData";
             public const string PromoCodeLabel = "PromoCode";
             public const string CodeLabel = "Code";
+            public const string ArticleSections = "ArticleSections";
+            public const string ArticleSection = "ArticleSection";
+            public const string ArticleCategories = "ArticleCategories";
+            public const string ArticleCategory = "ArticleCategory";
         }
 
         public static class Names
         {
+            public const string Articles = "Articles";
+            public const string Article = "Article";
+            public const string ArticleSections = "ArticleSections";
+            public const string ArticleSection = "ArticleSection";
+            public const string ArticleCategories = "ArticleCategories";
+            public const string ArticleCategory = "ArticleCategory";
             public const string UserData = "UserData";
             public const string UserDatas = "UserDatas";
             public const string Contacts = "Contacts";

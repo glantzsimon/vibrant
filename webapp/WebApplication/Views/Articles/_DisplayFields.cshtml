@@ -1,0 +1,38 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model Article
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.PublishedOn)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.PublishedBy)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.ImageFileSource)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.VideoFileSource)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.ImageUrl)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.AdditionalCssClasses)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.SeoFriendlyId)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.ArticleCategoryName)
+    </div>
+</div>
+<hr />
+
+@Html.BootstrapDisplayFor(model => model.Subject)
+@Html.BootstrapDisplayFor(model => model.Body)

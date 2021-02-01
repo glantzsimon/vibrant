@@ -13,5 +13,6 @@
         public const string LastSomethingName = "LastSomethingName";
         public const string IsRetrieveSomething = "IsRetrieveSomething";
         public const string SomethingStoredOn = "SomethingStoredOn";
+        public const string ArticleId = "ArticleId";
     }
 }

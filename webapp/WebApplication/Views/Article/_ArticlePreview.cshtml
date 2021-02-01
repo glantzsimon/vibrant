@@ -1,0 +1,31 @@
+﻿@using System.Web.Mvc.Html
+@using K9.Base.DataAccessLayer.Enums
+@using K9.Base.WebApplication.ViewModels
+@using K9.WebApplication.Extensions
+@model Article
+<div class="list-item-container container scrollFadeUp">
+    <div class="col-md-5 padding-top-5">
+        @if (Model.ImageFileSource != null)
+        {
+            @Html.Partial("_ImageFilesDisplay", new FileSourceViewModel(Model.ImageFileSource))
+        }
+        else if (Model.VideoFileSource != null)
+        {
+            @Html.Partial("_VideoFilesDisplay", new FileSourceViewModel(Model.VideoFileSource))
+        }
+        else if (!string.IsNullOrEmpty(Model.VideoUrl))
+        {
+            @Html.Partial("_EmbeddedVideo", Model.ImageUrl)
+        }
+    </div>
+    <div class="col-md-7" id="@Model.Id">
+        <div class="news-item-title">
+            <p><strong>@K9.Base.Globalisation.Dictionary.PublishedOnLabel</strong>: @Model.PublishedOn.ToLongDateString()</p>
+            <p><strong>@K9.Base.Globalisation.Dictionary.PublishedByLabel</strong>: @Model.PublishedBy</p>
+        </div>
+        <h5>
+            <a href="@Url.Action("Details", "Article", new {subject = Model.SeoFriendlyId ?? Model.Subject.ToSeoFriendlyString()})">@MvcHtmlString.Create(Model.Subject)</a>
+        </h5>
+    </div>
+    <div class="clearfix"> </div>
+</div>

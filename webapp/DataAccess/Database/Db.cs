@@ -5,6 +5,9 @@ namespace K9.DataAccessLayer.Database
 {
     public class LocalDb : Base.DataAccessLayer.Database.Db
 	{
+	    public DbSet<Article> Articles { get; set; }
+	    public DbSet<ArticleCategory> ArticleCategories { get; set; }
+	    public DbSet<ArticleSection> ArticleSections { get; set; }
 	    public DbSet<Consultation> Consultations { get; set; }
 	    public DbSet<Contact> Contacts { get; set; }
 	    public DbSet<Donation> Donations { get; set; }

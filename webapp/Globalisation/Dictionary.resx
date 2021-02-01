@@ -877,4 +877,109 @@
   <data name="Supplementation" xml:space="preserve">
     <value>Supplementation</value>
   </data>
+  <data name="BinauralBeats" xml:space="preserve">
+    <value>Binaural Beats</value>
+  </data>
+  <data name="Breath" xml:space="preserve">
+    <value>Breath</value>
+  </data>
+  <data name="ColdExposure" xml:space="preserve">
+    <value>Cold Exposure</value>
+  </data>
+  <data name="Electromedicine" xml:space="preserve">
+    <value>Electromedicine</value>
+  </data>
+  <data name="Enemas" xml:space="preserve">
+    <value>Enemas</value>
+  </data>
+  <data name="FermentedFoods" xml:space="preserve">
+    <value>Fermented Foods</value>
+  </data>
+  <data name="Gadgets" xml:space="preserve">
+    <value>Gadgets</value>
+  </data>
+  <data name="Article" xml:space="preserve">
+    <value>Article</value>
+  </data>
+  <data name="Articles" xml:space="preserve">
+    <value>Articles</value>
+  </data>
+  <data name="AcidAlkaline" xml:space="preserve">
+    <value>Acid Alkaline</value>
+  </data>
+  <data name="ArticleCategories" xml:space="preserve">
+    <value>Article Categories</value>
+  </data>
+  <data name="ArticleCategory" xml:space="preserve">
+    <value>Article Category</value>
+  </data>
+  <data name="ArticleSection" xml:space="preserve">
+    <value>Article Section</value>
+  </data>
+  <data name="ArticleSections" xml:space="preserve">
+    <value>Article Sections</value>
+  </data>
+  <data name="Doshas" xml:space="preserve">
+    <value>Doshas</value>
+  </data>
+  <data name="Fats" xml:space="preserve">
+    <value>Fats</value>
+  </data>
+  <data name="Grounding" xml:space="preserve">
+    <value>Grounding</value>
+  </data>
+  <data name="ImmuneSupport" xml:space="preserve">
+    <value>Immune System Support</value>
+  </data>
+  <data name="Infections" xml:space="preserve">
+    <value>Infections</value>
+  </data>
+  <data name="Infrared" xml:space="preserve">
+    <value>Infrared</value>
+  </data>
+  <data name="MetabolicTypes" xml:space="preserve">
+    <value>Metabolic Types</value>
+  </data>
+  <data name="Minerals" xml:space="preserve">
+    <value>Minerals</value>
+  </data>
+  <data name="OralCare" xml:space="preserve">
+    <value>Oral Care</value>
+  </data>
+  <data name="OrderLabel" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="OtherHealingTechniques" xml:space="preserve">
+    <value>Other Healing Techniques</value>
+  </data>
+  <data name="RawOrCooked" xml:space="preserve">
+    <value>Raw or Cooked</value>
+  </data>
+  <data name="Rebounding" xml:space="preserve">
+    <value>Rebounding</value>
+  </data>
+  <data name="Shaking" xml:space="preserve">
+    <value>Shaking</value>
+  </data>
+  <data name="Sleep" xml:space="preserve">
+    <value>Sleep</value>
+  </data>
+  <data name="Sungazing" xml:space="preserve">
+    <value>Sungazing</value>
+  </data>
+  <data name="Tapping" xml:space="preserve">
+    <value>Tapping</value>
+  </data>
+  <data name="ToxicityReduction" xml:space="preserve">
+    <value>Toxicity Reduction</value>
+  </data>
+  <data name="VeganOrOmni" xml:space="preserve">
+    <value>Vegan or Omnivore</value>
+  </data>
+  <data name="WaterMagic" xml:space="preserve">
+    <value>Water Magic</value>
+  </data>
+  <data name="WoundCare" xml:space="preserve">
+    <value>WoundCare</value>
+  </data>
 </root>

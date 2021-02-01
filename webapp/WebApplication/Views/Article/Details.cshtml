@@ -1,5 +1,5 @@
 ﻿@using System.Web.Mvc.Html
-@model NewsItem
+@model Article
 
 @{
     ViewBag.Title = Dictionary.News;
@@ -12,7 +12,7 @@
             <h4 class="text-black" style="font-size: 1.5em; margin-top: 20px;">@Model.Subject</h4>
         </div>
     </div>
-    @Html.Partial("_NewsItem", Model)
+    @Html.Partial("_Article", Model)
 
     <div class="text-center">
         @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.BackToList, "Index", "News", null, "fa-chevron-left", EButtonClass.Large)

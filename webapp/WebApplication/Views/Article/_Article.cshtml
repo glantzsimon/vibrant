@@ -1,0 +1,11 @@
+﻿@using System.Web.Mvc.Html
+@model Article
+
+<article>
+    @Html.Partial("_ArticlePreview")
+    <div class="row">
+        <div class="col-sm-12">
+            @MvcHtmlString.Create(Model.Body)
+        </div>
+    </div>
+</article>

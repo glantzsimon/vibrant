@@ -1,18 +1,19 @@
 ﻿@using System.Web.Mvc.Html
-@model List<NewsItem>
+@model List<Article>
 @{
-    ViewBag.Title = Dictionary.News;
+    ViewBag.Title = Dictionary.Articles;
+    ViewBag.SubTitle = Dictionary.Articles;
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
 
 <div class="main-section">
     <div class="container">
         <div class="main-heading">
-            <h3>@Dictionary.News</h3>
+            <h3>@Dictionary.Articles</h3>
             <div id="action-signup-button-container" class="text-center">
                 @Html.BootstrapActionLinkButton(Dictionary.SignUpToNewsLetter, "SignUpToNewsLetter", "Contacts", null, "fa-envelope", EButtonClass.Large)
             </div>
         </div>
     </div>
-    @Html.Partial("_News")
+    @Html.Partial("_Articles")
 </div>

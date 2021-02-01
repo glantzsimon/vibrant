@@ -255,7 +255,14 @@
     <Compile Include="Migrations\202101282203594_BringUpToDate.Designer.cs">
       <DependentUpon>202101282203594_BringUpToDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102012133408_AddArticles.cs" />
+    <Compile Include="Migrations\202102012133408_AddArticles.Designer.cs">
+      <DependentUpon>202102012133408_AddArticles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ArticleCategory.cs" />
+    <Compile Include="Models\ArticleSection.cs" />
     <Compile Include="Models\Consultation.cs" />
+    <Compile Include="Models\Article.cs" />
     <Compile Include="Models\PromoCode.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\MembershipOption.cs" />
@@ -283,6 +290,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202101282203594_BringUpToDate.resx">
       <DependentUpon>202101282203594_BringUpToDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102012133408_AddArticles.resx">
+      <DependentUpon>202102012133408_AddArticles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
