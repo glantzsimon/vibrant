@@ -985,6 +985,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download our Free Health Kickstart Guide.
+        /// </summary>
+        public static string DownloadFreeHealthKickstartGuide {
+            get {
+                return ResourceManager.GetString("DownloadFreeHealthKickstartGuide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, a contact with that email address already exists..
         /// </summary>
         public static string DuplicateContactError {

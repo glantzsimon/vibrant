@@ -1217,6 +1217,7 @@
     <Content Include="Views\Article\_ArticlesSummary.cshtml" />
     <Content Include="Views\Article\Details.cshtml" />
     <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Home\DownloadKickStartGuide.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

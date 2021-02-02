@@ -922,6 +922,9 @@
   <data name="Doshas" xml:space="preserve">
     <value>Doshas</value>
   </data>
+  <data name="DownloadFreeHealthKickstartGuide" xml:space="preserve">
+    <value>Download our Free Health Kickstart Guide</value>
+  </data>
   <data name="Fats" xml:space="preserve">
     <value>Fats</value>
   </data>

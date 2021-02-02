@@ -20,6 +20,11 @@ namespace K9.WebApplication.Controllers
         {
             return View();
         }
+
+        public ActionResult DownloadKickStartGuide()
+        {
+            return View();
+        }
         
         [Route("privacy-policy")]
         public ActionResult PrivacyPolicy()
