@@ -1,22 +1,11 @@
 ﻿@using System.Web.Mvc.Html
 @using K9.WebApplication.Helpers
-@model List<NewsItem>
+@model List<Article>
 
 <div class="container">
     @foreach (var newsItem in Model)
     {
-        @Html.Partial("_NewsPreview", newsItem)
+        @Html.Partial("_ArticlePreview", newsItem)
         @Html.Separator()
     }
 </div>
-
-@section scripts {
-    <script language="javascript">
-        $(function () {
-            var article = $("div#@ViewData[K9.WebApplication.Constants.ViewDataConstants.SelectedId]");
-            $("html, body").animate({
-                scrollTop: article.offset().top - 300
-            }, 1000);
-        })
-    </script>
-}

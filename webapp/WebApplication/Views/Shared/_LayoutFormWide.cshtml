@@ -1,12 +1,12 @@
 ﻿@using K9.WebApplication.Helpers
 @{
     Layout = "~/Views/Shared/_LayoutMaster.cshtml";
-    var background = ViewBag.Background == ViewBagHelper.EViewBackground.Jarallax ? "background-stars jarallax" : "";
+    var background = ViewBag.Background == ViewBagHelper.EViewBackground.Jarallax ? "background-image jarallax" : "";
 }
 
 @if (ViewBag.Background != ViewBagHelper.EViewBackground.Jarallax)
 {
-    <div class="background-stars background-fixed">
+    <div class="background-image background-fixed">
         &nbsp;
     </div>
 }

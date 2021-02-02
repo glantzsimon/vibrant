@@ -21,6 +21,12 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        [Route("acid-alkaline")]
+        public ActionResult AcidAlkaline()
+        {
+            return View();
+        }
+
         public override string GetObjectName()
         {
             return string.Empty;

@@ -482,6 +482,9 @@
     <Content Include="Global.asax" />
     <Content Include="Images\background\bg.jpg" />
     <Content Include="Images\background\bg6.jpg" />
+    <Content Include="Images\background\bg7.jpg" />
+    <Content Include="Images\background\bg8.jpg" />
+    <Content Include="Images\background\bg9.jpg" />
     <Content Include="Images\company\logo-med.png" />
     <Content Include="Images\company\logo-small.png" />
     <Content Include="Images\company\logo.png" />
@@ -762,6 +765,7 @@
     <Content Include="Images\membership\free-membership.png" />
     <Content Include="Images\membership\platinum-membership.png" />
     <Content Include="Images\membership\standard-membership.png" />
+    <Content Include="Images\nutrition\acid-alkaline-bg.jpg" />
     <Content Include="Images\shared\powered-by-stripe-cards.png" />
     <Content Include="Images\shared\powered-by-stripe.png" />
     <Content Include="Images\shared\spinner.gif" />

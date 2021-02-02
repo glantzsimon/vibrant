@@ -1,19 +1,21 @@
 ﻿@using K9.WebApplication.Helpers
 @{
-    ViewBag.Title = Dictionary.PersonalisedNutrition;
-    ViewBag.SubTitle = Dictionary.PersonalisedNutrition;
+    ViewBag.Title = Dictionary.AcidAlkaline;
+    ViewBag.SubTitle = Dictionary.AcidAlkaline;
     ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
-    Layout = "../Shared/_LayoutForm.cshtml";
+    Layout = "../Shared/_LayoutFormMedium.cshtml";
 }
 
 @Html.Partial("_BetaPopup")
 
 <div class="container main-content">
     <div class="well margin-bottom-0">
-        @Html.ImagePanel("Welcome", "~/Images/home/home-bg.jpg")
+        @Html.ImagePanel("Acid Alkaline", "~/Images/nutrition/acid-alkaline-bg.jpg")
 
         <article>
-            @MvcHtmlString.Create(Dictionary.ComingSoon)
+            <h4>
+                What is the alkaline / acid balance?
+            </h4>
         </article>
 
         <br />
