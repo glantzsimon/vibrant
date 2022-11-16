@@ -14,7 +14,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class SupportController : BaseVibrantController
+    public class SupportController : BasePureController
     {
         private readonly ILogger _logger;
         private readonly IMailer _mailer;
@@ -91,7 +91,7 @@ namespace K9.WebApplication.Controllers
             return View(new Donation
             {
                 DonationAmount = 10,
-                DonationDescription = Dictionary.DonationToVibrantHealth
+                DonationDescription = Dictionary.DonationToPureAlchemy
             });
         }   
 

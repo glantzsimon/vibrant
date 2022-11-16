@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class ArticleController : BaseVibrantController
+    public class ArticleController : BasePureController
     {
         private readonly IRepository<Article> _articlesRepository;
 

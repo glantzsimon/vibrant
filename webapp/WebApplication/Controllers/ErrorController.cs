@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class ErrorController : BaseVibrantController
+    public class ErrorController : BasePureController
 	{
 	    private readonly ILogger _logger;
 

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class SelfCareController : BaseVibrantController
+    public class SelfCareController : BasePureController
     {
         private readonly IAuthentication _authentication;
         

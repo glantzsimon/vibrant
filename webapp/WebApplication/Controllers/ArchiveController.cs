@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class ArchiveController : BaseVibrantController
+    public class ArchiveController : BasePureController
     {
         private readonly IRepository<ArchiveItemCategory> _archiveCategoryRepo;
         private readonly IRepository<ArchiveItem> _archiveItemRepo;

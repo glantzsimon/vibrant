@@ -12,7 +12,7 @@ using K9.WebApplication.Helpers;
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
-    public class MembershipController : BaseVibrantController
+    public class MembershipController : BasePureController
     {
         private readonly ILogger _logger;
         private readonly IMembershipService _membershipService;

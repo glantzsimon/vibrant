@@ -239,13 +239,13 @@ namespace K9.WebApplication.Services
 
                 var contact = _contactService.Find(purchaseModel.ContactId);
 
-                SendEmailToVibrantHealth(userMembership, promoCode);
+                SendEmailToPureAlchemy(userMembership, promoCode);
                 SendEmailToCustomer(userMembership, contact, promoCode);
             }
             catch (Exception ex)
             {
                 _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.GetFullErrorMessage()}");
-                SendEmailToVibrantHealthAboutFailure(purchaseModel, ex.GetFullErrorMessage());
+                SendEmailToPureAlchemyAboutFailure(purchaseModel, ex.GetFullErrorMessage());
                 throw ex;
             }
         }
@@ -272,13 +272,13 @@ namespace K9.WebApplication.Services
 
                 var contact = _contactService.Find(purchaseModel.ContactId);
 
-                SendEmailToVibrantHealth(userCreditPack, promoCode);
+                SendEmailToPureAlchemy(userCreditPack, promoCode);
                 SendEmailToCustomer(userCreditPack, contact, promoCode);
             }
             catch (Exception ex)
             {
                 _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.GetFullErrorMessage()}");
-                SendEmailToVibrantHealthAboutFailure(purchaseModel, ex.GetFullErrorMessage());
+                SendEmailToPureAlchemyAboutFailure(purchaseModel, ex.GetFullErrorMessage());
                 throw ex;
             }
         }
@@ -357,7 +357,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void SendEmailToVibrantHealth(UserMembership userMembership, PromoCode promoCode)
+        private void SendEmailToPureAlchemy(UserMembership userMembership, PromoCode promoCode)
         {
             var template = Dictionary.MembershipCreatedEmail;
             var title = "We have received a new subscription!";
@@ -400,7 +400,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void SendEmailToVibrantHealth(UserCreditPack userCreditPack, PromoCode promoCode)
+        private void SendEmailToPureAlchemy(UserCreditPack userCreditPack, PromoCode promoCode)
         {
             var template = Dictionary.CreditPackPurchased;
             var title = "We have received a new credit pack purchase!";
@@ -438,7 +438,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void SendEmailToVibrantHealthAboutFailure(PurchaseModel purchaseModel, string errorMessage)
+        private void SendEmailToPureAlchemyAboutFailure(PurchaseModel purchaseModel, string errorMessage)
         {
             var template = Dictionary.PaymentError;
             var title = "A customer made a successful payment, but an error occurred.";

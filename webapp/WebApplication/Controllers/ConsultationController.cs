@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class ConsultationController : BaseVibrantController
+    public class ConsultationController : BasePureController
     {
         private readonly ILogger _logger;
         private readonly IConsultationService _consultationService;

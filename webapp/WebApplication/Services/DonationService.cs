@@ -35,7 +35,7 @@ namespace K9.WebApplication.Services
             try
             {
                 _donationRepository.Create(donation);
-                SendEmailToVibrantHealth(donation);
+                SendEmailToPureAlchemy(donation);
                 if (contact != null && !contact.IsUnsubscribed)
                 {
                     SendEmailToCustomer(donation, contact);
@@ -57,7 +57,7 @@ namespace K9.WebApplication.Services
             return _donationRepository.Find(d => d.Status == "succeeded").ToList();
         }
 
-        private void SendEmailToVibrantHealth(Donation donation)
+        private void SendEmailToPureAlchemy(Donation donation)
         {
             var template = Dictionary.DonationReceivedEmail;
             var title = "We have received a donation!";

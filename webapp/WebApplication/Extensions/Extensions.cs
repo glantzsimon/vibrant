@@ -29,7 +29,7 @@ namespace K9.WebApplication.Extensions
         {
             try
             {
-                var baseController = view.ViewContext.Controller as BaseVibrantController;
+                var baseController = view.ViewContext.Controller as BasePureController;
                 return baseController?.GetActiveUserMembership();
             }
             catch (Exception e)

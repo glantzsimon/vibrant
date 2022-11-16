@@ -5,10 +5,10 @@
     var metaLocaleName = CultureInfo.CurrentUICulture.GetMetaLocaleName();
     var languageName = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
     var keywords = ViewBag.Keywords ?? Dictionary.Keywords;
-    var mainTitle = (ViewBag.Title ?? string.Empty).Replace(Dictionary.VibrantHealth, string.Empty).Trim();
-    var pageTitle = string.IsNullOrEmpty(mainTitle) ? Dictionary.VibrantHealth : $"{mainTitle} &raquo; {Dictionary.VibrantHealth}";
+    var mainTitle = (ViewBag.Title ?? string.Empty).Replace(Dictionary.PureAlchemy, string.Empty).Trim();
+    var pageTitle = string.IsNullOrEmpty(mainTitle) ? Dictionary.PureAlchemy : $"{mainTitle} &raquo; {Dictionary.PureAlchemy}";
     var title = Html.Raw($"{pageTitle} &raquo; {Dictionary.SuperFoodsHerbsNutritionBiohacking}");
-    var description = Html.Raw(ViewBag.MetaDescription ?? Dictionary.VibrantHealthMetaDescriptionMain);
+    var description = Html.Raw(ViewBag.MetaDescription ?? Dictionary.PureAlchemyMetaDescriptionMain);
 }
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@
     <meta property="og:title" content="@title" />
     <meta property="og:description" content="@description" />
     <meta property="og:url" content="/" />
-    <meta property="og:site_name" content="@Dictionary.VibrantHealth" />
+    <meta property="og:site_name" content="@Dictionary.PureAlchemy" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:description" content="@description" />
     <meta name="twitter:title" content="@title" />

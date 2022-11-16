@@ -25,7 +25,7 @@ using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
-    public partial class AccountController : BaseVibrantController
+    public partial class AccountController : BasePureController
     {
         private readonly IRepository<User> _userRepository;
         private readonly ILogger _logger;

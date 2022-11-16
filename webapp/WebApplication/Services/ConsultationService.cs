@@ -47,7 +47,7 @@ namespace K9.WebApplication.Services
                     });
                 }
 
-                SendEmailToVibrantHealth(consultation, contact);
+                SendEmailToPureAlchemy(consultation, contact);
                 SendEmailToCustomer(consultation, contact);
             }
             catch (Exception ex)    
@@ -56,7 +56,7 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void SendEmailToVibrantHealth(Consultation consultation, Contact contact)
+        private void SendEmailToPureAlchemy(Consultation consultation, Contact contact)
         {
             var template = Dictionary.ConsultationBookedEmail;
             var title = "We have received a consultation booking!";

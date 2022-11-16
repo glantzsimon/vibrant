@@ -11,7 +11,7 @@ using StripeConfiguration = K9.WebApplication.Config.StripeConfiguration;
 
 namespace K9.WebApplication.Controllers
 {
-    public class PaymentsController : BaseVibrantController
+    public class PaymentsController : BasePureController
     {
         private readonly ILogger _logger;
         private readonly IStripeService _stripeService;

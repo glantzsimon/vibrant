@@ -332,7 +332,7 @@
     <Compile Include="Controllers\ArticleSectionsController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\ArticleCategoriesController.cs" />
-    <Compile Include="Controllers\BaseVibrantController.cs" />
+    <Compile Include="Controllers\BasePureController.cs" />
     <Compile Include="Controllers\ConsultationsController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\ConsultationController.cs" />
@@ -760,6 +760,7 @@
     <Content Include="Images\icons\instagram.png" />
     <Content Include="Images\icons\logo-small.png" />
     <Content Include="Images\icons\logo.png" />
+    <Content Include="Images\icons\pure alchemy icon.png" />
     <Content Include="Images\icons\safari-pinned-tab.svg" />
     <Content Include="Images\icons\web.png" />
     <Content Include="Images\membership\free-membership.png" />
@@ -1302,7 +1303,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>2626</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost/vibrant</IISUrl>
+          <IISUrl>https://localhost/purealchemystore</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
           <IISAppRootUrl>https://localhost/ninestar</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

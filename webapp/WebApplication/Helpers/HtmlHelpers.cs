@@ -79,7 +79,7 @@ namespace K9.WebApplication.Helpers
         
         public static IDisposable PaidContent(this HtmlHelper html, MembershipOption.ESubscriptionType subscriptionType = MembershipOption.ESubscriptionType.MonthlyStandard,  bool silent = false)
         {
-            var baseController = html.ViewContext.Controller as BaseVibrantController;
+            var baseController = html.ViewContext.Controller as BasePureController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
             return html.PaidContent<MembershipModel>(null,
                 () => activeUserMembership?.MembershipOption?.SubscriptionType >= subscriptionType, silent);
@@ -87,7 +87,7 @@ namespace K9.WebApplication.Helpers
 
         public static IDisposable PaidContent<T>(this HtmlHelper html, T model, Func<bool> condition = null, bool silent = false)
         {
-            var baseController = html.ViewContext.Controller as BaseVibrantController;
+            var baseController = html.ViewContext.Controller as BasePureController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
             var showContent = activeUserMembership != null && (condition?.Invoke() ?? true);
             var isMembership = typeof(T) == typeof(MembershipModel);

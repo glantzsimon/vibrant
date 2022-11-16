@@ -61,11 +61,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Vibrant Health.
+        ///   Looks up a localized string similar to About Pure Alchemy.
         /// </summary>
-        public static string AboutVibrantHealth {
+        public static string AboutPureAlchemy {
             get {
-                return ResourceManager.GetString("AboutVibrantHealth", resourceCulture);
+                return ResourceManager.GetString("AboutPureAlchemy", resourceCulture);
             }
         }
         
@@ -270,7 +270,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;article&gt;
         ///    &lt;h5 class=&quot;margin-top-0&quot;&gt;
-        ///        Book a one-to-one Vibrant Health consultation to discuss your health in greater detail
+        ///        Book a one-to-one Pure Alchemy consultation to discuss your health in greater detail
         ///    &lt;/h5&gt;
         ///    &lt;p&gt;
         ///        A consultation with one of our certified health coaches can help you to find the ideal diet for your individual biology and circumstances, as well as targeted nutritional supplements and super foods and herbs to help you to feel amazing.
@@ -410,7 +410,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vibrant Health has been created to share the latest life and health enhancing information available in order to help you optimise your health and create unimaginable well-being in your life..
+        ///   Looks up a localized string similar to Pure Alchemy has been created to share the latest life and health enhancing information available in order to help you optimise your health and create unimaginable well-being in your life..
         /// </summary>
         public static string CompanyBlurbFooter {
             get {
@@ -477,7 +477,7 @@ namespace K9.Globalisation {
         ///
         ///{LineFeed}
         ///{LineFeed}
-        ///You recently booked a Vibrant Health consultation for {Duration}. Please let me know what time would be convenient to arrange a call.
+        ///You recently booked a Pure Alchemy consultation for {Duration}. Please let me know what time would be convenient to arrange a call.
         ///{LineFeed}
         ///{LineFeed}
         ///I look forward to speaking with you very soon.
@@ -715,7 +715,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vibrant Health Credit Package.
+        ///   Looks up a localized string similar to Pure Alchemy Credit Package.
         /// </summary>
         public static string CreditsPurchaseDescription {
             get {
@@ -850,7 +850,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Making a donation to Vibrant Health will make a big impact on our ability to continue to provide and develop this resource. We are tremendously grateful for your support..
+        ///   Looks up a localized string similar to Making a donation to Pure Alchemy will make a big impact on our ability to continue to provide and develop this resource. We are tremendously grateful for your support..
         /// </summary>
         public static string DonationBlurb {
             get {
@@ -967,11 +967,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Donation To Vibrant Health.
+        ///   Looks up a localized string similar to Donation To Pure Alchemy.
         /// </summary>
-        public static string DonationToVibrantHealth {
+        public static string DonationToPureAlchemy {
             get {
-                return ResourceManager.GetString("DonationToVibrantHealth", resourceCulture);
+                return ResourceManager.GetString("DonationToPureAlchemy", resourceCulture);
             }
         }
         
@@ -1354,7 +1354,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vibrant Health nutrition health coach herbalism naturopathy detoxification superfoods superherbs biohacking lifestyle wellbeing electromedicine balance thrive.
+        ///   Looks up a localized string similar to Pure Alchemy nutrition health coach herbalism naturopathy detoxification superfoods superherbs biohacking lifestyle wellbeing electromedicine balance thrive
+        ///.
         /// </summary>
         public static string Keywords {
             get {
@@ -1986,7 +1987,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have received a promo code from Vibrant Health.
+        ///   Looks up a localized string similar to You have received a promo code from Pure Alchemy.
         /// </summary>
         public static string PromoCodeEmailTitle {
             get {
@@ -2072,6 +2073,33 @@ namespace K9.Globalisation {
         public static string PurchaseMembershipErrorAlreadySubscribedToAnother {
             get {
                 return ResourceManager.GetString("PurchaseMembershipErrorAlreadySubscribedToAnother", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pure Alchemy.
+        /// </summary>
+        public static string PureAlchemy {
+            get {
+                return ResourceManager.GetString("PureAlchemy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pure Alchemy Consultation.
+        /// </summary>
+        public static string PureAlchemyConsultation {
+            get {
+                return ResourceManager.GetString("PureAlchemyConsultation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pure Alchemy is the best online resource to learn about the latest breakthroughs in nutrition, naturopathy, super foods and herbs, supplements, detoxification, biohacking and other amazing life-enhancing technologies and techniques to help you optimise your health and achieve unimaginable wellbeing in your life..
+        /// </summary>
+        public static string PureAlchemyMetaDescriptionMain {
+            get {
+                return ResourceManager.GetString("PureAlchemyMetaDescriptionMain", resourceCulture);
             }
         }
         
@@ -2524,7 +2552,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thank you for booking a Vibrant Health consultation.
+        ///   Looks up a localized string similar to Thank you for booking a Pure Alchemy consultation.
         /// </summary>
         public static string ThankyouForBookingConsultationEmailTitle {
             get {
@@ -2767,33 +2795,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vibrant Health.
-        /// </summary>
-        public static string VibrantHealth {
-            get {
-                return ResourceManager.GetString("VibrantHealth", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vibrant Health Consultation.
-        /// </summary>
-        public static string VibrantHealthConsultation {
-            get {
-                return ResourceManager.GetString("VibrantHealthConsultation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vibrant Health is the best online resource to learn about the latest breakthroughs in nutrition, naturopathy, super foods and herbs, supplements, detoxification, biohacking and other amazing life-enhancing technologies and techniques to help you optimise your health and achieve unimaginable wellbeing in your life..
-        /// </summary>
-        public static string VibrantHealthMetaDescriptionMain {
-            get {
-                return ResourceManager.GetString("VibrantHealthMetaDescriptionMain", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to View.
         /// </summary>
         public static string View {
@@ -2831,16 +2832,16 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Vibrant Health - the best online resource to help you optimise your health and achieve unimaginable wellbeing
+        ///    Pure Alchemy - the best online resource to help you optimise your health and achieve unimaginable wellbeing
         ///&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Greetings and thank you for visiting Vibrant Health. Whether you are new to nutritional balancing, detoxification and &quot;biohacking&quot; or simply want to extend and refine your knowledge in this field, you&apos;ve come to a great resource to find detailed and quality information on a range of health-related topics. 
+        ///    Greetings and thank you for visiting Pure Alchemy. Whether you are new to nutritional balancing, detoxification and &quot;biohacking&quot; or simply want to extend and refine your knowledge in this field, you&apos;ve come to a great resource to find detailed and quality information on a range of health-related topics. 
         ///&lt;/p&gt;
         ///&lt;h5&gt;
         ///    Everyone is unique
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    There are many people wh [rest of string was truncated]&quot;;.
+        ///    There are many people who pr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {
@@ -2872,7 +2873,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome to Vibrant Health.
+        ///   Looks up a localized string similar to Welcome to Pure Alchemy.
         /// </summary>
         public static string WelcomeSubTitle {
             get {

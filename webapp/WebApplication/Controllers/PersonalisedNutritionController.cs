@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class PersonalisedNutritionController : BaseVibrantController
+    public class PersonalisedNutritionController : BasePureController
     {
         private readonly IAuthentication _authentication;
         
