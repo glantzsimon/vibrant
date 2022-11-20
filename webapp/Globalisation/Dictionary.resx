@@ -985,4 +985,64 @@
   <data name="WoundCare" xml:space="preserve">
     <value>WoundCare</value>
   </data>
+  <data name="BenefitsLabel" xml:space="preserve">
+    <value>Benefits</value>
+  </data>
+  <data name="HealthCoaching" xml:space="preserve">
+    <value>Health Coaching</value>
+  </data>
+  <data name="IsLiveOnLabel" xml:space="preserve">
+    <value>Go-Live Date</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="AmountPerProductLabel" xml:space="preserve">
+    <value>Amount Per Product</value>
+  </data>
+  <data name="Capsules" xml:space="preserve">
+    <value>Capsules</value>
+  </data>
+  <data name="IngredientInventory" xml:space="preserve">
+    <value>Ingredient Inventory</value>
+  </data>
+  <data name="IngredientInventoryItem" xml:space="preserve">
+    <value>Ingredient</value>
+  </data>
+  <data name="Ingredients" xml:space="preserve">
+    <value>Ingredients</value>
+  </data>
+  <data name="IngredientTypeLabel" xml:space="preserve">
+    <value>Ingredient Type</value>
+  </data>
+  <data name="InStockLabel" xml:space="preserve">
+    <value>In Stock</value>
+  </data>
+  <data name="Liquid" xml:space="preserve">
+    <value>Liquid</value>
+  </data>
+  <data name="NotesLabel" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="Powder" xml:space="preserve">
+    <value>Powder</value>
+  </data>
+  <data name="ProductInventory" xml:space="preserve">
+    <value>Product Inventory</value>
+  </data>
+  <data name="ProductInventoryItem" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="ProductTypeLabel" xml:space="preserve">
+    <value>Product Type</value>
+  </data>
+  <data name="QuantityInStockLabel" xml:space="preserve">
+    <value>Quantity In Stock</value>
+  </data>
+  <data name="ShortDescriptionLabel" xml:space="preserve">
+    <value>Short Description</value>
+  </data>
 </root>

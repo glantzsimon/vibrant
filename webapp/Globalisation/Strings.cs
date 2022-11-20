@@ -4,6 +4,7 @@
     {
         public static class Labels
         {
+            public const string NotesLabel = "NotesLabel";
             public const string NumberToCreateLabel = "NumberToCreateLabel";
             public const string DonationAmountLabel = "DonationAmountLabel";
             public const string CompanyLabel = "CompanyLabel";
@@ -44,6 +45,7 @@
             public const string SubscriptionDetailsLabel = "SubscriptionDetailsLabel";
             public const string StartsOnLabel = "StartsOnLabel";
             public const string EndsOnLabel = "EndsOnLabel";
+            public const string IsLiveOnLabel = "IsLiveOnLabel";
             public const string TotalLabel = "TotalLabel";
             public const string AutoRenewLabel = "AutoRenewLabel";
             public const string DeactivatedLabel = "DeactivatedLabel";
@@ -54,10 +56,17 @@
             public const string UserDataLabel = "UserData";
             public const string PromoCodeLabel = "PromoCode";
             public const string CodeLabel = "Code";
+            public const string BenefitsLabel = "BenefitsLabel";
+            public const string ShortDescriptionLabel = "ShortDescriptionLabel";
+            public const string QuantityInStockLabel = "QuantityInStockLabel";
+            public const string AmountPerProductLabel = "AmountPerProductLabel";
+            public const string InStockLabel = "InStockLabel";
             public const string ArticleSections = "ArticleSections";
             public const string ArticleSection = "ArticleSection";
             public const string ArticleCategories = "ArticleCategories";
             public const string ArticleCategory = "ArticleCategory";
+            public const string ProductTypeLabel = "ProductTypeLabel";
+            public const string IngredientTypeLabel = "IngredientTypeLabel";
         }
 
         public static class Names
@@ -82,6 +91,13 @@
             public const string Consultations = "Consultations";
             public const string MembershipOptions = "MembershipOptions";
             public const string ProfileReadings = "ProfileReadings";
+            public const string Product = "Product";
+            public const string Products = "Products";
+            public const string ProductInventory = "ProductInventory";
+            public const string ProductInventoryItem = "ProductInventoryItem";
+            public const string IngredientInventory = "IngredientInventory";
+            public const string IngredientInventoryItem = "Ingredient";
+            
             public const string MembershipOption = "MembershipOption";
             public const string ProfileReading = "ProfileReading";
             public const string CompatibilityReading = "CompatibilityReading";
@@ -97,6 +113,10 @@
             public const string AnnualPlatinumMembership = "AnnualPlatinumMembership";
             public const string OneHour = "OneHour";
             public const string TwoHours = "TwoHours";
+
+            public const string Capsules = "Capsules";
+            public const string Powder = "Powder";
+            public const string Liquid = "Liquid";
 
             public const string Female = "Female";
             public const string Male = "Male";

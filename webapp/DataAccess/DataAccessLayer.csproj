@@ -249,6 +249,8 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\EIngredientType.cs" />
+    <Compile Include="Enums\EProductType.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
     <Compile Include="Helpers\Methods.cs" />
     <Compile Include="Migrations\202101282203594_BringUpToDate.cs" />
@@ -263,6 +265,11 @@
     <Compile Include="Migrations\202102012353256_AddVideoUrl.Designer.cs">
       <DependentUpon>202102012353256_AddVideoUrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Ingredient.cs" />
+    <Compile Include="Models\IngredientInventory.cs" />
+    <Compile Include="Models\ProductInventory.cs" />
+    <Compile Include="Models\ProductIngredient.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ArticleCategory.cs" />
     <Compile Include="Models\ArticleSection.cs" />
     <Compile Include="Models\Consultation.cs" />

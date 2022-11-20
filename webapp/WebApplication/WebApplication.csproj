@@ -329,6 +329,8 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\IngredientsController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ArticleSectionsController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\ArticleCategoriesController.cs" />
@@ -1219,6 +1221,8 @@
     <Content Include="Views\Article\Details.cshtml" />
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Home\DownloadKickStartGuide.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ProductType.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\IngredientType.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
