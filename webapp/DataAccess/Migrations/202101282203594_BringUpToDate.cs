@@ -121,52 +121,6 @@ namespace K9.DataAccessLayer.Database
                 .Index(t => t.Name, unique: true);
             
             CreateTable(
-                "dbo.User",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        FullName = c.String(maxLength: 128),
-                        Username = c.String(nullable: false, maxLength: 56),
-                        FirstName = c.String(nullable: false),
-                        LastName = c.String(nullable: false),
-                        EmailAddress = c.String(nullable: false, maxLength: 255),
-                        PhoneNumber = c.String(maxLength: 255),
-                        BirthDate = c.DateTime(nullable: false),
-                        IsUnsubscribed = c.Boolean(nullable: false),
-                        IsOAuth = c.Boolean(nullable: false),
-                        Gender = c.Int(nullable: false),
-                        Name = c.String(maxLength: 128),
-                        IsSystemStandard = c.Boolean(nullable: false),
-                        IsDeleted = c.Boolean(nullable: false),
-                        CreatedBy = c.String(maxLength: 255),
-                        CreatedOn = c.DateTime(),
-                        LastUpdatedBy = c.String(maxLength: 255),
-                        LastUpdatedOn = c.DateTime(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .Index(t => t.Name, unique: true);
-            
-            CreateTable(
-                "dbo.Country",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        TwoLetterCountryCode = c.String(maxLength: 2),
-                        ThreeLetterCountryCode = c.String(maxLength: 3),
-                        Name = c.String(maxLength: 128),
-                        IsSystemStandard = c.Boolean(nullable: false),
-                        IsDeleted = c.Boolean(nullable: false),
-                        CreatedBy = c.String(maxLength: 255),
-                        CreatedOn = c.DateTime(),
-                        LastUpdatedBy = c.String(maxLength: 255),
-                        LastUpdatedOn = c.DateTime(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .Index(t => t.TwoLetterCountryCode, unique: true)
-                .Index(t => t.ThreeLetterCountryCode, unique: true)
-                .Index(t => t.Name, unique: true);
-            
-            CreateTable(
                 "dbo.Donation",
                 c => new
                     {
@@ -211,78 +165,6 @@ namespace K9.DataAccessLayer.Database
                 .Index(t => t.Name, unique: true);
             
             CreateTable(
-                "dbo.Message",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        UserId = c.Int(nullable: false),
-                        SentByUserId = c.Int(nullable: false),
-                        SentToUserId = c.Int(nullable: false),
-                        SentOn = c.DateTime(nullable: false),
-                        MessageDirection = c.Int(nullable: false),
-                        Subject = c.String(nullable: false, maxLength: 256),
-                        Body = c.String(nullable: false),
-                        Name = c.String(maxLength: 128),
-                        IsSystemStandard = c.Boolean(nullable: false),
-                        IsDeleted = c.Boolean(nullable: false),
-                        CreatedBy = c.String(maxLength: 255),
-                        CreatedOn = c.DateTime(),
-                        LastUpdatedBy = c.String(maxLength: 255),
-                        LastUpdatedOn = c.DateTime(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.User", t => t.SentByUserId)
-                .ForeignKey("dbo.User", t => t.SentToUserId)
-                .ForeignKey("dbo.User", t => t.UserId)
-                .Index(t => t.UserId)
-                .Index(t => t.SentByUserId)
-                .Index(t => t.SentToUserId)
-                .Index(t => t.Name, unique: true);
-            
-            CreateTable(
-                "dbo.NewsItem",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        PublishedOn = c.DateTime(nullable: false),
-                        PublishedBy = c.String(),
-                        Language = c.Int(nullable: false),
-                        Subject = c.String(nullable: false, maxLength: 256),
-                        Body = c.String(nullable: false),
-                        Type = c.Int(nullable: false),
-                        Url = c.String(maxLength: 512),
-                        ImageUrl = c.String(maxLength: 512),
-                        IsShowLocalOnly = c.Boolean(nullable: false),
-                        AdditionalCssClasses = c.String(),
-                        SeoFriendlyId = c.String(),
-                        Name = c.String(maxLength: 128),
-                        IsSystemStandard = c.Boolean(nullable: false),
-                        IsDeleted = c.Boolean(nullable: false),
-                        CreatedBy = c.String(maxLength: 255),
-                        CreatedOn = c.DateTime(),
-                        LastUpdatedBy = c.String(maxLength: 255),
-                        LastUpdatedOn = c.DateTime(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .Index(t => t.Name, unique: true);
-            
-            CreateTable(
-                "dbo.Permission",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(maxLength: 128),
-                        IsSystemStandard = c.Boolean(nullable: false),
-                        IsDeleted = c.Boolean(nullable: false),
-                        CreatedBy = c.String(maxLength: 255),
-                        CreatedOn = c.DateTime(),
-                        LastUpdatedBy = c.String(maxLength: 255),
-                        LastUpdatedOn = c.DateTime(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .Index(t => t.Name, unique: true);
-            
-            CreateTable(
                 "dbo.PromoCode",
                 c => new
                     {
@@ -303,44 +185,6 @@ namespace K9.DataAccessLayer.Database
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.Code, unique: true)
-                .Index(t => t.Name, unique: true);
-            
-            CreateTable(
-                "dbo.RolePermission",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        RoleId = c.Int(nullable: false),
-                        PermissionId = c.Int(nullable: false),
-                        Name = c.String(maxLength: 128),
-                        IsSystemStandard = c.Boolean(nullable: false),
-                        IsDeleted = c.Boolean(nullable: false),
-                        CreatedBy = c.String(maxLength: 255),
-                        CreatedOn = c.DateTime(),
-                        LastUpdatedBy = c.String(maxLength: 255),
-                        LastUpdatedOn = c.DateTime(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Permission", t => t.PermissionId)
-                .ForeignKey("dbo.Role", t => t.RoleId)
-                .Index(t => t.RoleId)
-                .Index(t => t.PermissionId)
-                .Index(t => t.Name, unique: true);
-            
-            CreateTable(
-                "dbo.Role",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(maxLength: 128),
-                        IsSystemStandard = c.Boolean(nullable: false),
-                        IsDeleted = c.Boolean(nullable: false),
-                        CreatedBy = c.String(maxLength: 255),
-                        CreatedOn = c.DateTime(),
-                        LastUpdatedBy = c.String(maxLength: 255),
-                        LastUpdatedOn = c.DateTime(),
-                    })
-                .PrimaryKey(t => t.Id)
                 .Index(t => t.Name, unique: true);
             
             CreateTable(
@@ -437,28 +281,6 @@ namespace K9.DataAccessLayer.Database
                 .Index(t => t.UserId)
                 .Index(t => t.Name, unique: true);
             
-            CreateTable(
-                "dbo.UserRole",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        UserId = c.Int(nullable: false),
-                        RoleId = c.Int(nullable: false),
-                        Name = c.String(maxLength: 128),
-                        IsSystemStandard = c.Boolean(nullable: false),
-                        IsDeleted = c.Boolean(nullable: false),
-                        CreatedBy = c.String(maxLength: 255),
-                        CreatedOn = c.DateTime(),
-                        LastUpdatedBy = c.String(maxLength: 255),
-                        LastUpdatedOn = c.DateTime(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Role", t => t.RoleId)
-                .ForeignKey("dbo.User", t => t.UserId)
-                .Index(t => t.UserId)
-                .Index(t => t.RoleId)
-                .Index(t => t.Name, unique: true);
-            
         }
         
         public override void Down()
@@ -525,21 +347,13 @@ namespace K9.DataAccessLayer.Database
             DropIndex("dbo.ArchiveItem", new[] { "TypeId" });
             DropIndex("dbo.ArchiveItem", new[] { "CategoryId" });
             DropIndex("dbo.ArchiveItemCategory", new[] { "Name" });
-            DropTable("dbo.UserRole");
             DropTable("dbo.UserPromoCode");
             DropTable("dbo.UserCreditPack");
             DropTable("dbo.UserMembership");
             DropTable("dbo.UserConsultation");
-            DropTable("dbo.Role");
-            DropTable("dbo.RolePermission");
             DropTable("dbo.PromoCode");
-            DropTable("dbo.Permission");
-            DropTable("dbo.NewsItem");
-            DropTable("dbo.Message");
             DropTable("dbo.MembershipOption");
             DropTable("dbo.Donation");
-            DropTable("dbo.Country");
-            DropTable("dbo.User");
             DropTable("dbo.Contact");
             DropTable("dbo.Consultation");
             DropTable("dbo.ArchiveItemType");

@@ -1223,6 +1223,14 @@
     <Content Include="Views\Home\DownloadKickStartGuide.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ProductType.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\IngredientType.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Product.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Product.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Ingredient.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Ingredient.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\IngredientInventory.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ProductInventory.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\IngredientInventory.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ProductInventory.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

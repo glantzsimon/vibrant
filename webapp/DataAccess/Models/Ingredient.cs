@@ -20,7 +20,11 @@ namespace K9.DataAccessLayer.Models
 	        Name = Globalisation.Strings.Labels.IngredientTypeLabel)]
 	    public EIngredientType IngredientType { get; set; }
 
-		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TitleLabel)]
+	    public string MeasuredIn => GetMeasuredInText();
+	    
+	    public string MeasuredInForLargeQuantity => GetMeasuredInForLargeQuantityText();
+        
+	    [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TitleLabel)]
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		[StringLength(256)]
 		public string Title { get; set; }
@@ -51,7 +55,21 @@ namespace K9.DataAccessLayer.Models
 	    [StringLength(int.MaxValue)]
 	    [DataType(DataType.Html)]
 	    [AllowHtml]
-	    public string Dosage { get; set; }
+	    public string Research { get; set; }
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostLabel)]
+	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+	    [DataType(DataType.Currency)]
+	    public double Cost { get; set; }
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantityInStockLabel)]
+	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+	    [DataType(DataType.Currency)]
+	    public int Quantity { get; set; }
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostPer100GramsLabel)]
+	    [DataType(DataType.Currency)]
+	    public double CostPer100Grams => (100f / Quantity) * Cost;
 
 	    [FileSourceInfo("upload/products", Filter = EFilesSourceFilter.Images)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]
@@ -74,6 +92,41 @@ namespace K9.DataAccessLayer.Models
 	    [StringLength(512)]
 	    [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.VideoUrlLabel)]
 	    public string VideoUrl { get; set; }
-        
+
+	    [StringLength(512)]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PurchaseUrlsLabel)]
+	    public string PurchaseUrls { get; set; }
+
+	    private string GetMeasuredInText()
+	    {
+	        switch (IngredientType)
+	        {
+	            case EIngredientType.Liquid:
+	                return Globalisation.Strings.Constants.Measures.Millilitres;
+
+	            case EIngredientType.Powder:
+	                return Globalisation.Strings.Constants.Measures.Milligrams;
+                    
+	            default:
+	                return string.Empty;
+
+	        }
+	    }
+
+	    private string GetMeasuredInForLargeQuantityText()
+	    {
+	        switch (IngredientType)
+	        {
+	            case EIngredientType.Liquid:
+	                return Globalisation.Strings.Constants.Measures.Litres;
+
+	            case EIngredientType.Powder:
+	                return Globalisation.Strings.Constants.Measures.Grams;
+                    
+	            default:
+	                return string.Empty;
+
+	        }
+	    }
 	}
 }

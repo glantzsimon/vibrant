@@ -23,12 +23,16 @@ namespace K9.DataAccessLayer.Models
         
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantityInStockLabel)]
 	    public int QuantityInStock { get; set; }
-
+        
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
 	    public bool IsInStock => QuantityInStock > 0;
 
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerIngredientLabel)]
-		public int AmountPerIngredient { get; set; }
+	    [Display(ResourceType = typeof(Globalisation.Dictionary),
+	        Name = Globalisation.Strings.Labels.StockLowWarningLevelLabel)]
+	    public int StockLowWarningLevel { get; set; } = 200;
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
+	    public bool IsStockLowWarning => QuantityInStock > StockLowWarningLevel;
         
 		[Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NotesLabel)]
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]

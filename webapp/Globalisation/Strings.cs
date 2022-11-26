@@ -4,6 +4,7 @@
     {
         public static class Labels
         {
+            public const string PurchaseUrlsLabel = "PurchaseUrlsLabel";
             public const string NotesLabel = "NotesLabel";
             public const string NumberToCreateLabel = "NumberToCreateLabel";
             public const string DonationAmountLabel = "DonationAmountLabel";
@@ -15,6 +16,8 @@
             public const string NumberOfCreditsLabel = "NumberOfCreditsLabel";
             public const string CreditsPurchaseAmountLabel = "CreditsPurchaseAmountLabel";
             public const string TotalPriceLabel = "TotalPriceLabel";
+            public const string PriceLabel = "PriceLabel";
+            public const string CostPer100GramsLabel = "CostPer100GramsLabel";
             public const string CreditsTotalAmountLabel = "CreditsTotalAmountLabel";
             public const string StatusLabel = "StatusLabel";
             public const string AmountToDonateLabel = "AmountToDonateLabel";
@@ -37,6 +40,7 @@
             public const string ExamplesLabel = "ExamplesLabel";
             public const string StripeCustomerIdLabel = "StripeCustomerIdLabel";
             public const string MembershipLabel = "MembershipLabel";
+            public const string CostLabel = "CostLabel";
             public const string SubscriptionCostLabel = "SubscriptionCostLabel";
             public const string SubscriptionTypeLabel = "SubscriptionTypeLabel";
             public const string UsedOnLabel = "UsedOnLabel";
@@ -59,6 +63,10 @@
             public const string BenefitsLabel = "BenefitsLabel";
             public const string ShortDescriptionLabel = "ShortDescriptionLabel";
             public const string QuantityInStockLabel = "QuantityInStockLabel";
+            public const string QuantityLabel = "QuantityLabel";
+            public const string QuantityPurchasedLabel = "QuantityPurchasedLabel";
+            public const string StockLowWarningLevelLabel = "StockLowWarningLevelLabel";
+            public const string StockLowWarningLabel = "StockLowWarningLabel";
             public const string AmountPerProductLabel = "AmountPerProductLabel";
             public const string InStockLabel = "InStockLabel";
             public const string ArticleSections = "ArticleSections";
@@ -67,6 +75,7 @@
             public const string ArticleCategory = "ArticleCategory";
             public const string ProductTypeLabel = "ProductTypeLabel";
             public const string IngredientTypeLabel = "IngredientTypeLabel";
+            public const string AmountPerIngredientLabel = "AmountPerIngredientLabel";
         }
 
         public static class Names
@@ -81,6 +90,8 @@
             public const string UserDatas = "UserDatas";
             public const string Contacts = "Contacts";
             public const string Contact = "Contact";
+            public const string Client = "Client";
+            public const string Clients = "Clients";
             public const string PromoCodes = "PromoCodes";
             public const string Donation = "Donation";
             public const string PromoCode = "PromoCode";
@@ -93,10 +104,16 @@
             public const string ProfileReadings = "ProfileReadings";
             public const string Product = "Product";
             public const string Products = "Products";
+            public const string ProductIngredient = "ProductIngredient";
+            public const string ProductIngredients = "ProductIngredients";
+            public const string ContactProduct = "ContactProduct";
+            public const string ContactProducts = "ContactProducts";
             public const string ProductInventory = "ProductInventory";
             public const string ProductInventoryItem = "ProductInventoryItem";
             public const string IngredientInventory = "IngredientInventory";
-            public const string IngredientInventoryItem = "Ingredient";
+            public const string IngredientInventoryItem = "IngredientInventoryItem";
+            public const string Sale = "Sale";
+            public const string Sales = "Sales";
             
             public const string MembershipOption = "MembershipOption";
             public const string ProfileReading = "ProfileReading";
@@ -227,6 +244,20 @@
             public const string LakeMonth = "lake_month";
             public const string MountainMonth = "mountain_month";
             public const string FireMonth = "fire_month";
+        }
+
+        public static class Constants
+        {
+
+            public static class Measures
+            {
+                public const string Millilitres = "ml";
+                public const string Milligrams = "mg";
+                public const string Grams = "g";
+                public const string Capsules = "capsules";
+                public const string Litres = "litres";
+            }
+
         }
     }
 }

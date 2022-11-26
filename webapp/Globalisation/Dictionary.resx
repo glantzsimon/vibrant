@@ -1000,6 +1000,9 @@
   <data name="Products" xml:space="preserve">
     <value>Products</value>
   </data>
+  <data name="AmountPerIngredientLabel" xml:space="preserve">
+    <value>Amount per Ingredient</value>
+  </data>
   <data name="AmountPerProductLabel" xml:space="preserve">
     <value>Amount Per Product</value>
   </data>
@@ -1008,9 +1011,6 @@
   </data>
   <data name="IngredientInventory" xml:space="preserve">
     <value>Ingredient Inventory</value>
-  </data>
-  <data name="IngredientInventoryItem" xml:space="preserve">
-    <value>Ingredient</value>
   </data>
   <data name="Ingredients" xml:space="preserve">
     <value>Ingredients</value>
@@ -1033,16 +1033,67 @@
   <data name="ProductInventory" xml:space="preserve">
     <value>Product Inventory</value>
   </data>
-  <data name="ProductInventoryItem" xml:space="preserve">
-    <value>Product</value>
-  </data>
   <data name="ProductTypeLabel" xml:space="preserve">
     <value>Product Type</value>
   </data>
   <data name="QuantityInStockLabel" xml:space="preserve">
     <value>Quantity In Stock</value>
   </data>
+  <data name="QuantityPurchasedLabel" xml:space="preserve">
+    <value>Quantity Purchased</value>
+  </data>
   <data name="ShortDescriptionLabel" xml:space="preserve">
     <value>Short Description</value>
+  </data>
+  <data name="StockLowWarningLabel" xml:space="preserve">
+    <value>Low Stock Warning</value>
+  </data>
+  <data name="StockLowWarningLevelLabel" xml:space="preserve">
+    <value>Low Stock Warning Level</value>
+  </data>
+  <data name="PurchaseUrlsLabel" xml:space="preserve">
+    <value>Purchased From</value>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="Clients" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="ContactProduct" xml:space="preserve">
+    <value>Customer Product</value>
+  </data>
+  <data name="ContactProducts" xml:space="preserve">
+    <value>Customer Products</value>
+  </data>
+  <data name="CostLabel" xml:space="preserve">
+    <value>Cost</value>
+  </data>
+  <data name="CostPer100GramsLabel" xml:space="preserve">
+    <value>Cost Per 100 Grams</value>
+  </data>
+  <data name="IngredientInventoryItem" xml:space="preserve">
+    <value>Ingredient Inventory Listing</value>
+  </data>
+  <data name="PriceLabel" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="ProductIngredient" xml:space="preserve">
+    <value>Product Ingredient</value>
+  </data>
+  <data name="ProductIngredients" xml:space="preserve">
+    <value>Product Ingredients</value>
+  </data>
+  <data name="ProductInventoryItem" xml:space="preserve">
+    <value>Product Inventory Listing</value>
+  </data>
+  <data name="QuantityLabel" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Sale" xml:space="preserve">
+    <value>Sale</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>Sales</value>
   </data>
 </root>
