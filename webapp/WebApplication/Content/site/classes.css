@@ -258,3 +258,7 @@ a#toTop {
     position: relative;
     top: -180px;
 }
+
+.buttons-container {
+    text-align: center;
+}
