@@ -6,8 +6,11 @@ namespace K9.DataAccessLayer.Database
     public class DatabaseInitialiserLocal : DatabaseInitialiser<LocalDb>
 	{
 	    public bool EnableSeeed { get; set; }
-        
-	    public DatabaseInitialiserLocal(bool enableSeed = true)
+       
+	    public DatabaseInitialiserLocal()
+	    {}
+
+	    public DatabaseInitialiserLocal(bool enableSeed)
 	    {
 	        EnableSeeed = enableSeed;
 	    }

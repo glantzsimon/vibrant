@@ -64,8 +64,11 @@ namespace K9.DataAccessLayer.Models
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantityInStockLabel)]
 	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-	    [DataType(DataType.Currency)]
 	    public int Quantity { get; set; }
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary),
+	        Name = Globalisation.Strings.Labels.QuantityInStockLabel)]
+	    public string FormattedQuantity => $"{Quantity} {MeasuredIn}";
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostPer100GramsLabel)]
 	    [DataType(DataType.Currency)]

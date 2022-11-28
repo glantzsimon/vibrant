@@ -151,6 +151,10 @@
         padding-left: 5%;
         padding-right: 5%;
     }
+
+    h2 {
+        font-size: 30px;
+    }
 }
 
 @media (min-width:991px) {

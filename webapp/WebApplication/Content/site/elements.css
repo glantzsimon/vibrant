@@ -1,11 +1,15 @@
-﻿h1, 2
+﻿h2 {
+    font-size: 40px;
+    color: #392c24;
+}
+
 
 h3, h4 {
     color: #0a4070 !important;
 }
 
 h5 {
-    color: #337ab7 !important;
+    color: goldenrod !important;
 }
 
     h5.dark {
@@ -34,11 +38,11 @@ article h4 {
 
 article h5 {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.4em;
     line-height: 1.5em;
-    color: #444;
+    /*text-shadow: 1px 1px #666;*/
 }
 
 form div.well h3 {

@@ -702,6 +702,7 @@ img.img-responsive {
 article, p {
     line-height: 1.6em !important;
     margin-bottom: 20px;
+    text-align: center;
 }
 
     article, p:last-child {
