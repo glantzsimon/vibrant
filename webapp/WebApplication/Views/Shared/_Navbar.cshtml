@@ -1,10 +1,9 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.SharedLibrary.Authentication
+@using K9.SharedLibrary.Models
 @using K9.WebApplication.Helpers
 @{
     var roles = this.GetRoles();
-    var ingredients = this.GetDropdownData().GetDataSet<Ingredient>();
-    var products = this.GetDropdownData().GetDataSet<Product>();
 }
 <div id="account-header">
     <div id="account-controls">
@@ -69,7 +68,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Products</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
-                                @foreach (var product in products)
+                                @foreach (var product in this.GetDropdownData().GetDataSet<Product>() ?? new List<ListItem>())
                                 {
                                     <li>
                                         <a href="@Url.Action("Info", "Products")#@product.Id"> @product.Name</a>
@@ -77,21 +76,17 @@
                                 }
                             </ul>
                         </li>
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Ingredients</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
-                                @foreach (var ingredient in ingredients)
+                                @foreach (var ingredient in this.GetDropdownData().GetDataSet<Ingredient>() ?? new List<ListItem>())
                                 {
                                     <li>
                                         <a href="@Url.Action("Info", "Ingredients")#@ingredient.Id"> @ingredient.Name</a>
                                     </li>
                                 }
                             </ul>
-                        </li>
-
-                        <li class="dropdown">
-                        <li class="@ViewContext.GetActiveClass("Index", "Article")">
-                            <a href="@Url.Action("Index", "Article")"> @Dictionary.Articles</a>
                         </li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "Home")"><a class="device-only" href="@Url.Action("Index", "Home")"> <span class="device-only">@K9.Base.Globalisation.Dictionary.Home</span></a></li>
@@ -126,7 +121,17 @@
                             </ul>
                         </li>
 
-                        <li class="@ViewContext.GetActiveClass("Index", "Article")"><a href="@Url.Action("Index", "Article")"> @Dictionary.Articles</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Articles</span> <span class="caret"></span></a>
+                            <ul class="dropdown-menu nav navbar-nav">
+                                @foreach (var article in this.GetDropdownData().GetDataSet<Article>() ?? new List<ListItem>())
+                                {
+                                    <li>
+                                        <a href="@Url.Action("Info", "Ingredients")#@article.Id"> @article.Name</a>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
                     </ul>
                     <div class="clearfix"> </div>
                 </div>

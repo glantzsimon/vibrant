@@ -60,8 +60,9 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
 }
 
     .top-nav ul li a {
-        color: #ffffff;
-        font-size: 1.1em;
+        color: gold !important;
+        font-size: 2.2em;
+        font-family: Holipop;
         font-weight: 300 !important;
         margin: 0;
         text-decoration: none;

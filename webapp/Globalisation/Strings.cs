@@ -18,6 +18,7 @@
             public const string TotalPriceLabel = "TotalPriceLabel";
             public const string PriceLabel = "PriceLabel";
             public const string CostPer100GramsLabel = "CostPer100GramsLabel";
+            public const string CostPerMilligramLabel = "CostPerMilligramLabel";
             public const string CreditsTotalAmountLabel = "CreditsTotalAmountLabel";
             public const string StatusLabel = "StatusLabel";
             public const string AmountToDonateLabel = "AmountToDonateLabel";
@@ -114,6 +115,8 @@
             public const string IngredientInventoryItem = "IngredientInventoryItem";
             public const string Sale = "Sale";
             public const string Sales = "Sales";
+            public const string Trial = "Trial";
+            public const string PersonalUse = "PersonalUse";
             
             public const string MembershipOption = "MembershipOption";
             public const string ProfileReading = "ProfileReading";

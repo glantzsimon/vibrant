@@ -3,15 +3,16 @@ using K9.Base.DataAccessLayer.Database;
 using K9.DataAccessLayer.Database;
 using K9.DataAccessLayer.Database.Seeds;
 using System.Data.Entity.Migrations;
+using K9.WebApplication.Config;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication
 {
     public class DataConfig
     {
-        public static void InitialiseDatabase()
+        public static void InitialiseDatabase(SeedConfiguration config)
         {
-            var migrator = new DbMigrator(new DatabaseInitialiserLocal());
+            var migrator = new DbMigrator(new DatabaseInitialiserLocal(config.EnableSeed));
             migrator.Update();
         }
 
@@ -23,10 +24,13 @@ namespace K9.WebApplication
             }
         }
 
-        public static void InitialiseUsersAndRoles()
+        public static void InitialiseUsersAndRoles(SeedConfiguration config)
         {
-            UsersAndRolesInitialiser.Seed();
-            PermissionsSeeder.Seed(new LocalDb());
+            if (config.EnableSeed)
+            {
+                UsersAndRolesInitialiser.Seed();
+                PermissionsSeeder.Seed(new LocalDb());
+            }
         }
     }
 }

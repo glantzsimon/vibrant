@@ -253,28 +253,18 @@
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
     <Compile Include="Enums\EIngredientType.cs" />
+    <Compile Include="Enums\ESaleType.cs" />
     <Compile Include="Enums\EProductType.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
     <Compile Include="Helpers\Methods.cs" />
-    <Compile Include="Migrations\202101282203594_BringUpToDate.cs" />
-    <Compile Include="Migrations\202101282203594_BringUpToDate.Designer.cs">
-      <DependentUpon>202101282203594_BringUpToDate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102012133408_AddArticles.cs" />
-    <Compile Include="Migrations\202102012133408_AddArticles.Designer.cs">
-      <DependentUpon>202102012133408_AddArticles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102012353256_AddVideoUrl.cs" />
-    <Compile Include="Migrations\202102012353256_AddVideoUrl.Designer.cs">
-      <DependentUpon>202102012353256_AddVideoUrl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202211251219109_Products.cs" />
-    <Compile Include="Migrations\202211251219109_Products.designer.cs">
-      <DependentUpon>202211251219109_Products.cs</DependentUpon>
+    <Compile Include="Migrations\202211280432073_InitialCreate.cs" />
+    <Compile Include="Migrations\202211280432073_InitialCreate.designer.cs">
+      <DependentUpon>202211280432073_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\IngredientInventory.cs" />
     <Compile Include="Models\ContactProduct.cs" />
+    <Compile Include="Models\SaleItem.cs" />
     <Compile Include="Models\Sale.cs" />
     <Compile Include="Models\ProductInventory.cs" />
     <Compile Include="Models\ProductIngredient.cs" />
@@ -308,17 +298,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101282203594_BringUpToDate.resx">
-      <DependentUpon>202101282203594_BringUpToDate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102012133408_AddArticles.resx">
-      <DependentUpon>202102012133408_AddArticles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102012353256_AddVideoUrl.resx">
-      <DependentUpon>202102012353256_AddVideoUrl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202211251219109_Products.resx">
-      <DependentUpon>202211251219109_Products.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202211280432073_InitialCreate.resx">
+      <DependentUpon>202211280432073_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,6 +4,8 @@ using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Config;
 
 namespace K9.WebApplication
 {
@@ -20,9 +22,10 @@ namespace K9.WebApplication
 			Startup.RegisterTypes();
 			Startup.RegisterStaticTypes();
 
-			DataConfig.InitialiseDatabase();
+		    var seedConfig = ConfigHelper.GetConfiguration<SeedConfiguration>(ConfigurationManager.AppSettings).Value;
+			DataConfig.InitialiseDatabase(seedConfig);
 			AuthConfig.InitialiseWebSecurity();
-			DataConfig.InitialiseUsersAndRoles();
+			DataConfig.InitialiseUsersAndRoles(seedConfig);
 
 		    AntiForgeryConfig.SuppressIdentityHeuristicChecks = true;
 

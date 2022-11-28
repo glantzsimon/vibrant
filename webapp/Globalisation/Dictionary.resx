@@ -932,7 +932,7 @@
     <value>Grounding</value>
   </data>
   <data name="ImmuneSupport" xml:space="preserve">
-    <value>Immune System Support</value>
+    <value>Immune System</value>
   </data>
   <data name="Infections" xml:space="preserve">
     <value>Infections</value>
@@ -953,7 +953,7 @@
     <value>Order</value>
   </data>
   <data name="OtherHealingTechniques" xml:space="preserve">
-    <value>Other Healing Techniques</value>
+    <value>Other Modalities</value>
   </data>
   <data name="RawOrCooked" xml:space="preserve">
     <value>Raw or Cooked</value>
@@ -1072,8 +1072,14 @@
   <data name="CostPer100GramsLabel" xml:space="preserve">
     <value>Cost Per 100 Grams</value>
   </data>
+  <data name="CostPerMilligramLabel" xml:space="preserve">
+    <value>Cost Per Milligram</value>
+  </data>
   <data name="IngredientInventoryItem" xml:space="preserve">
     <value>Ingredient Inventory Listing</value>
+  </data>
+  <data name="PersonalUse" xml:space="preserve">
+    <value>Personal Use</value>
   </data>
   <data name="PriceLabel" xml:space="preserve">
     <value>Price</value>
@@ -1095,5 +1101,11 @@
   </data>
   <data name="Sales" xml:space="preserve">
     <value>Sales</value>
+  </data>
+  <data name="Trial" xml:space="preserve">
+    <value>Trial</value>
+  </data>
+  <data name="ViewProducts" xml:space="preserve">
+    <value>View Our Products</value>
   </data>
 </root>

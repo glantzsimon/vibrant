@@ -1,6 +1,8 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
-using K9.Base.Globalisation;
+using K9.DataAccessLayer.Enums;
+using K9.SharedLibrary.Attributes;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -9,30 +11,29 @@ namespace K9.DataAccessLayer.Models
     [AutoGenerateName]
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Sales, PluralName = Globalisation.Strings.Names.Sales, Name = Globalisation.Strings.Names.Sale)]
     public class Sale : ObjectBase
-	{
-	    [UIHint("IngredientType")]
-	    [Required]
-	    [Display(ResourceType = typeof(Globalisation.Dictionary),
-	        Name = Globalisation.Strings.Labels.IngredientTypeLabel)]
-	    public ESaleType SaleType { get; set; }
+    {
+        [UIHint("User")]
+        [Required]
+        [ForeignKey("User")]
+        public int UserId { get; set; }
 
+        public virtual User User { get; set; }
 
-	    [UIHint("Contact")]
-	    [ForeignKey("Contact")]
-	    public int ContactId { get; set; }
+        [LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Username")]
+        public string UserName { get; set; }
 
-	    public virtual Contact Contact { get; set; }
-	    
-	    [UIHint("Product")]
-        [ForeignKey("Product")]
-        public int ProductId { get; set; }
+        [UIHint("SaleType")]
+        [Required]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.IngredientTypeLabel)]
+        public ESaleType SaleType { get; set; }
 
-        public virtual Product Product { get; set; }
+        [UIHint("Contact")]
+        [ForeignKey("Contact")]
+        public int ContactId { get; set; }
 
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
-	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-	    [DataType(DataType.Currency)]
-	    public double TotalPrice { get; set; }
-        
-	}
+        public virtual Contact Contact { get; set; }
+    
+        public virtual IEnumerable<SaleItem> SaleItems { get; set; }
+    }
 }

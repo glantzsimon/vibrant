@@ -322,6 +322,7 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Config\SeedConfiguration.cs" />
     <Compile Include="Config\GoogleConfiguration.cs" />
     <Compile Include="Config\MailChimpConfiguration.cs" />
     <Compile Include="Config\ColumnsConfig.cs" />
@@ -482,11 +483,9 @@
     <Content Include="Content\k9\pageSpinner.css" />
     <Content Include="Content\_colors.txt" />
     <Content Include="Global.asax" />
-    <Content Include="Images\background\bg.jpg" />
-    <Content Include="Images\background\bg6.jpg" />
-    <Content Include="Images\background\bg7.jpg" />
-    <Content Include="Images\background\bg8.jpg" />
-    <Content Include="Images\background\bg9.jpg" />
+    <Content Include="Images\background\bg.gif" />
+    <Content Include="Images\background\form-background.png" />
+    <Content Include="Images\background\bg1.jpg" />
     <Content Include="Images\company\logo-med.png" />
     <Content Include="Images\company\logo-small.png" />
     <Content Include="Images\company\logo.png" />
@@ -769,6 +768,7 @@
     <Content Include="Images\membership\platinum-membership.png" />
     <Content Include="Images\membership\standard-membership.png" />
     <Content Include="Images\nutrition\acid-alkaline-bg.jpg" />
+    <Content Include="Images\shared\loading5.gif" />
     <Content Include="Images\shared\powered-by-stripe-cards.png" />
     <Content Include="Images\shared\powered-by-stripe.png" />
     <Content Include="Images\shared\spinner.gif" />
@@ -832,6 +832,8 @@
     <Content Include="Scripts\library\vticker-min.js" />
     <Content Include="Scripts\template\scroller.js" />
     <Content Include="sitemap.xml" />
+    <Content Include="Videos\welcome2.mp4" />
+    <Content Include="Videos\welcome1.mp4" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1004,6 +1006,15 @@
     <Content Include="Content\fonts\fa-solid-900.ttf" />
     <Content Include="Content\fonts\fa-solid-900.woff" />
     <Content Include="Content\fonts\fa-solid-900.woff2" />
+    <Content Include="Content\fonts\VALENT.TTF" />
+    <Content Include="Content\fonts\CANDARA.TTF" />
+    <Content Include="Content\fonts\CANDARAB.TTF" />
+    <Content Include="Content\fonts\CANDARAI.TTF" />
+    <Content Include="Content\fonts\CANDARAL.TTF" />
+    <Content Include="Content\fonts\CANDARALI.TTF" />
+    <Content Include="Content\fonts\CANDARAZ.TTF" />
+    <Content Include="Content\fonts\HOLIPOP.OTF" />
+    <Content Include="Images\shared\loading.webp" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\Integration.pubxml" />
     <None Include="Properties\PublishProfiles\IntegrationLocal.pubxml" />
@@ -1231,6 +1242,17 @@
     <Content Include="Views\Shared\EditorTemplates\ProductInventory.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\IngredientInventory.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ProductInventory.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SaleType.cshtml" />
+    <Content Include="Views\Products\_DisplayFields.cshtml" />
+    <Content Include="Views\Products\_EditFields.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\MailChimpImportSuccess.cshtml" />
+    <Content Include="Views\Products\SignUpSuccess.cshtml" />
+    <Content Include="Views\Products\SignUpToNewsletter.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

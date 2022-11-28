@@ -5,19 +5,18 @@
     ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
     Layout = "../Shared/_LayoutFormMedium.cshtml";
 }
-
 @Html.Partial("_BetaPopup")
-
 <div class="container main-content">
     <div class="well margin-bottom-0">
-        @Html.ImagePanel("Welcome", "~/Images/home/home-bg.jpg")
+        <video autoplay loop muted>
+            <source src="~/Videos/welcome2.mp4" type="video/mp4">
+        </video>
 
         <article>
             @MvcHtmlString.Create(Dictionary.welcome)
         </article>
-
         <br />
-
+        @Html.BootstrapActionLinkButton(Globalisation.Dictionary.ViewOurProducts, "Main", "Products", null, "", EButtonClass.Info, EButtonClass.Large)
         @Html.BootstrapActionLinkButton(Dictionary.BookAConsultation, "BookConsultationStart", "Consultations", null, "fa-phone-alt", EButtonClass.Success, EButtonClass.Large)
     </div>
 </div>

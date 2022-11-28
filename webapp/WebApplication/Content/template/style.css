@@ -19,8 +19,8 @@ body a, h4 {
 }
 
 html, body {
-    font-size: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 105%;
+    font-family: 'Candara', 'Montserrat', sans-serif;
 }
 
 body {
@@ -40,7 +40,7 @@ body {
 }
 
 .background-image {
-    background: url(../../Images/background/bg9.jpg) no-repeat;
+    background: url(../../Images/background/bg1.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }

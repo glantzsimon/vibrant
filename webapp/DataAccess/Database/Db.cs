@@ -18,6 +18,9 @@ namespace K9.DataAccessLayer.Database
 	    public DbSet<ProductIngredient> ProductIngredients { get; set; }
 	    public DbSet<ProductInventory> ProductInventories { get; set; }
 	    public DbSet<IngredientInventory> IngredientInventories { get; set; }
+	    public DbSet<Sale> Sales { get; set; }
+	    public DbSet<SaleItem> SaleItems { get; set; }
+	    public DbSet<ContactProduct> ContactProducts { get; set; }
 
 	    public DbSet<UserConsultation> UserConsultations { get; set; }
 	    public DbSet<UserCreditPack> UserCreditPack { get; set; }

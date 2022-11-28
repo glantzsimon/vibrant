@@ -3,7 +3,7 @@
     padding: 30px 30px 10px 30px;
     width: auto;
     max-width: 1180px;
-    border: none;
+    border: 1px solid white;
     background: #ffffff;
 }
 
@@ -27,8 +27,10 @@
 }
 
 .alphaBackground {
-    background: rgb(255, 255, 255);
-    background: rgba(255, 255, 255, 0.9);
+    /*background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.9);*/
+    background: url(../../Images/background/form-background.png) no-repeat 0 0;
+    background-size: cover;
     filter: alpha(opacity=90);
 }
 
@@ -83,7 +85,9 @@
     .page-header h2,
     .page-header h1,
     .small-form h3 {
+        font-family: valent;
         margin-top: 0;
+        text-transform: uppercase;
     }
 
     .page-header img {

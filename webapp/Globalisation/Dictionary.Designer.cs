@@ -720,6 +720,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cost Per Milligram.
+        /// </summary>
+        public static string CostPerMilligramLabel {
+            get {
+                return ResourceManager.GetString("CostPerMilligramLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create Multiple.
         /// </summary>
         public static string CreateMultiple {
@@ -1417,7 +1426,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Immune System Support.
+        ///   Looks up a localized string similar to Immune System.
         /// </summary>
         public static string ImmuneSupport {
             get {
@@ -1945,7 +1954,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Other Healing Techniques.
+        ///   Looks up a localized string similar to Other Modalities.
         /// </summary>
         public static string OtherHealingTechniques {
             get {
@@ -2044,6 +2053,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Personal Use.
+        /// </summary>
+        public static string PersonalUse {
+            get {
+                return ResourceManager.GetString("PersonalUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
         ///    &lt;h4&gt;&lt;strong&gt;Annual Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
@@ -2113,20 +2131,13 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    &lt;strong&gt;
-        ///        This is the privacy notice of Glantz Software Consulting Limited. In this document, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot; refer to Glantz Software Consulting Limited.
-        ///        We are company number 9762805 registered in The United Kingdom.
-        ///    &lt;/strong&gt;
-        ///&lt;/p&gt;
-        ///
-        ///&lt;p&gt;
-        ///    &lt;strong&gt;
-        ///        Our registered office is at: SG House, 6 St Cross Road, Winchester, Hampshire, SO23 9HX.
+        ///        This is the privacy notice of Pure Alchemy Limited. In this document, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot; refer to Pure Alchemy Limited.
         ///    &lt;/strong&gt;
         ///&lt;/p&gt;
         ///
         ///&lt;h4&gt;Introduction&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    This privacy notice aims to inform you about how we collect and process any infor [rest of string was truncated]&quot;;.
+        ///    This privacy notice aims to inform you about how we collect and process any information that we collect from you, or that you provide to us. It covers information that could identify you (“personal information”) and information that could not. In the context of the law and this notice, “process” means collect, s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PrivacyPolicy {
             get {
@@ -2948,6 +2959,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Trial.
+        /// </summary>
+        public static string Trial {
+            get {
+                return ResourceManager.GetString("Trial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Two Hours.
         /// </summary>
         public static string TwoHours {
@@ -3137,6 +3157,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View Our Products.
+        /// </summary>
+        public static string ViewProducts {
+            get {
+                return ResourceManager.GetString("ViewProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Water.
         /// </summary>
         public static string Water {
@@ -3164,17 +3193,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;
-        ///    Pure Alchemy - the best online resource to help you optimise your health and achieve unimaginable wellbeing
-        ///&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Greetings and thank you for visiting Pure Alchemy. Whether you are new to nutritional balancing, detoxification and &quot;biohacking&quot; or simply want to extend and refine your knowledge in this field, you&apos;ve come to a great resource to find detailed and quality information on a range of health-related topics. 
-        ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    Everyone is unique
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Some of the most advanced nutritional supplements on the market.
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    There are many people who pr [rest of string was truncated]&quot;;.
+        ///    After decades of research and trial and error, we have identified which compounds are the safest, most effective and provide the greatest benefits. We have also figured out how to carefully combine different ingredients in the correct dosages in powerful formulations to provide you with optimum benefits.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    Only 100% pure, active ingredients
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    All of our products contain 100% natural, clean ingredi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {

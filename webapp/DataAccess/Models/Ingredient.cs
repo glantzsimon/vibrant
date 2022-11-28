@@ -71,6 +71,10 @@ namespace K9.DataAccessLayer.Models
 	    [DataType(DataType.Currency)]
 	    public double CostPer100Grams => (100f / Quantity) * Cost;
 
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostPerMilligramLabel)]
+	    [DataType(DataType.Currency)]
+	    public double CostPerMilligram => CostPer100Grams / 100000;
+
 	    [FileSourceInfo("upload/products", Filter = EFilesSourceFilter.Images)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]
 		public FileSource ImageFileSource { get; set; }
