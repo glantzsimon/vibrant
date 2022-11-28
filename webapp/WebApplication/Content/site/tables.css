@@ -1,4 +1,9 @@
-﻿.datatable-container
+﻿thead {
+    background: white;
+    color: #392c24;
+}
+
+.datatable-container
 {
 	width: 100%;
 	overflow: auto;

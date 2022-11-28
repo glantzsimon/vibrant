@@ -103,6 +103,8 @@
             public const string Consultations = "Consultations";
             public const string MembershipOptions = "MembershipOptions";
             public const string ProfileReadings = "ProfileReadings";
+            public const string Ingredient = "Ingredient";
+            public const string Ingredients = "Ingredients";
             public const string Product = "Product";
             public const string Products = "Products";
             public const string ProductIngredient = "ProductIngredient";

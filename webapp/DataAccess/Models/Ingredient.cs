@@ -11,7 +11,7 @@ using System.Web.Mvc;
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
-    [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Products, PluralName = Globalisation.Strings.Names.Products, Name = Globalisation.Strings.Names.Product)]
+    [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Ingredients, PluralName = Globalisation.Strings.Names.Ingredients, Name = Globalisation.Strings.Names.Ingredient)]
     public class Ingredient : ObjectBase
 	{
 	    [UIHint("IngredientType")]

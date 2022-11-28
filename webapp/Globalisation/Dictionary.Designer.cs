@@ -1453,6 +1453,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ingredient.
+        /// </summary>
+        public static string Ingredient {
+            get {
+                return ResourceManager.GetString("Ingredient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingredient Inventory.
         /// </summary>
         public static string IngredientInventory {

@@ -1108,4 +1108,7 @@
   <data name="ViewProducts" xml:space="preserve">
     <value>View Our Products</value>
   </data>
+  <data name="Ingredient" xml:space="preserve">
+    <value>Ingredient</value>
+  </data>
 </root>

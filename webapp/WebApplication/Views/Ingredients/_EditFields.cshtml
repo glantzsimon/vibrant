@@ -1,7 +1,34 @@
 ﻿@using K9.Base.WebApplication.Helpers
-@model Contact
-@Html.BootstrapEditorFor(model => model.FullName)
-@Html.BootstrapEditorFor(model => model.EmailAddress)
-@Html.BootstrapEditorFor(model => model.PhoneNumber)
-@Html.BootstrapEditorFor(model => model.CompanyName)
-@Html.BootstrapEditorFor(model => model.IsUnsubscribed)
+@using K9.WebApplication.Helpers
+@model Ingredient
+
+<div class="col-sm-6">
+    @Html.BootstrapDisplayFor(model => model.Name)
+</div>
+<div class="col-sm-6">
+    @Html.BootstrapDisplayFor(model => model.IngredientType)
+</div>
+    @Html.BootstrapDisplayFor(model => model.ShortDescription)
+    @Html.BootstrapDisplayFor(model => model.Body)
+
+    @Html.Separator()
+<div class="col-sm-6">
+    @Html.BootstrapDisplayFor(model => model.Cost)
+</div>
+<div class="col-sm-6">
+    @Html.BootstrapDisplayFor(model => model.Quantity)
+</div>
+    
+    @Html.Separator()
+<div class="col-sm-6">
+    @Html.BootstrapDisplayFor(model => model.Benefits)
+</div>
+<div class="col-sm-6">
+    @Html.BootstrapDisplayFor(model => model.Research)
+</div>
+    
+    @Html.Separator()
+
+    @Html.BootstrapDisplayFor(model => model.ImageFileSource)
+    @Html.BootstrapDisplayFor(model => model.VideoUrl)
+    @Html.BootstrapDisplayFor(model => model.PurchaseUrls)
