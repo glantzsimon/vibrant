@@ -6,16 +6,16 @@
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
 
-@Html.BootstrapTable(new DataTableOptions<Contact>
+@Html.BootstrapTable(new DataTableOptions<Ingredient>
 {
     AllowCreate = true,
     AllowEdit = true,
-    AllowDelete = ((BaseController<Contact>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    AllowDelete = ((BaseController<Ingredient>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     VisibleColumns = new List<string>
     {
         "Name",
         "ShortDescription",
         "IngredientType",
-        "Quantity   ",
+        "Quantity",
     }
 })
