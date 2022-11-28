@@ -843,6 +843,6 @@ button .fa, a .fa {
     margin-right: 2px;
 }
 
-.btn {
+.btn:not([data-toggle='dropdown']) {
     margin-top: 5px;
 }

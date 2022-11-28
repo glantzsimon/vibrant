@@ -27,9 +27,7 @@
 }
 
 .alphaBackground {
-    /*background: rgb(255, 255, 255);
-    background: rgba(255, 255, 255, 0.9);*/
-    background: url(../../Images/background/form-background.png) no-repeat 0 0;
+    background: url(../../Images/background/form-background.jpg) no-repeat 0 0;
     background-size: cover;
     filter: alpha(opacity=90);
 }
