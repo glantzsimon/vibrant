@@ -260,3 +260,10 @@ a#toTop {
 .buttons-container {
     text-align: center;
 }
+
+li.divider {
+    height: 1px !important;
+    margin: 9px 0 !important;
+    overflow: hidden !important;
+    background-color: #a5a5a5 !important;
+}
