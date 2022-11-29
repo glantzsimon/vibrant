@@ -1,6 +1,11 @@
 ﻿@using System.Globalization
 @using K9.SharedLibrary.Extensions
 @using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Extensions
+
+@{
+    var glossaryJson = Json.Encode(typeof(Glossary).ToGlossaryItems());
+}
 
 <script type="text/javascript">
 
@@ -118,7 +123,8 @@
 
 		bootstrapControls({
 			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
-            dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()"
+            dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()",
+            glossaryItems: @(Html.Raw(glossaryJson))
 		}).init();
 
 		buttonBehaviours().init();

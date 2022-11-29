@@ -702,6 +702,9 @@ img.img-responsive {
 article, p {
     line-height: 1.6em !important;
     margin-bottom: 20px;
+}
+
+article {
     text-align: center;
 }
 
@@ -849,4 +852,10 @@ button .fa, a .fa {
 
 .green {
     color: green;
+}
+
+.glossary {
+    color: green;
+    text-decoration: underline;
+    cursor: help;
 }

@@ -1,4 +1,4 @@
-﻿thead {
+﻿.bootstraptable thead {
     background: white;
     color: #392c24;
 }
@@ -29,9 +29,15 @@ form .pull-right .btn {
 	color: #ffffff !important;
 }
 
+.bootstraptable th,td
+{
+    max-width: 140px;
+}
+
 .bootstraptable td
 {
 	vertical-align: middle !important;
+    font-size: 0.9em !important;
 }
 
 .datatable-container .col-lg-1, 

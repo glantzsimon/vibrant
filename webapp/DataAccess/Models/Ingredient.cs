@@ -10,7 +10,6 @@ using System.Web.Mvc;
 
 namespace K9.DataAccessLayer.Models
 {
-    [AutoGenerateName]
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Ingredients, PluralName = Globalisation.Strings.Names.Ingredients, Name = Globalisation.Strings.Names.Ingredient)]
     public class Ingredient : ObjectBase
 	{
@@ -24,14 +23,14 @@ namespace K9.DataAccessLayer.Models
 	    
 	    public string MeasuredInForLargeQuantity => GetMeasuredInForLargeQuantityText();
 		
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SummaryLabel)]
 	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 	    [StringLength(int.MaxValue)]
 	    [DataType(DataType.Html)]
 	    [AllowHtml]
 	    public string ShortDescription { get; set; }
 
-		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BodyLabel)]
+		[Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DescriptionLabel)]
 		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 		[StringLength(int.MaxValue)]
 		[DataType(DataType.Html)]
@@ -113,6 +112,7 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.VideoUrlLabel)]
 	    public string VideoUrl { get; set; }
 
+        [UIHint("Url")]
 	    [StringLength(512)]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PurchaseUrlsLabel)]
 	    public string PurchaseUrls { get; set; }

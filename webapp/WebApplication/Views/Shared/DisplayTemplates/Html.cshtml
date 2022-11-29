@@ -1,2 +1,2 @@
 ﻿@model Object
-<div>@Model</div>
+<div>@MvcHtmlString.Create(Model?.ToString() ?? string.Empty)</div>

@@ -91,6 +91,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dictionary.resx</DependentUpon>
     </Compile>
+    <Compile Include="Glossary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Glossary.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Strings.cs" />
   </ItemGroup>
@@ -99,6 +104,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Dictionary.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Glossary.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Glossary.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

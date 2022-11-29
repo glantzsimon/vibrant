@@ -14,7 +14,6 @@ using System.Web.Mvc;
 
 namespace K9.DataAccessLayer.Models
 {
-    [AutoGenerateName]
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Products, PluralName = Globalisation.Strings.Names.Products, Name = Globalisation.Strings.Names.Product)]
     public class Product : ObjectBase
     {

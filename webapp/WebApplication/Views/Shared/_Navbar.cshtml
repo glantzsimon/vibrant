@@ -71,7 +71,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Products</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
-                                @foreach (var product in this.GetDropdownData().GetDataSet<Product>() ?? new List<ListItem>())
+                                @foreach (var product in this.GetDropdownData().GetDataSet<Product>(true) ?? new List<ListItem>())
                                 {
                                     <li>
                                         <a href="@Url.Action("Info", "Products")#@product.Id"> @product.Name</a>
@@ -83,7 +83,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Ingredients</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
-                                @foreach (var ingredient in this.GetDropdownData().GetDataSet<Ingredient>() ?? new List<ListItem>())
+                                @foreach (var ingredient in this.GetDropdownData().GetDataSet<Ingredient>(true) ?? new List<ListItem>())
                                 {
                                     <li>
                                         <a href="@Url.Action("Info", "Ingredients")#@ingredient.Id"> @ingredient.Name</a>
@@ -127,7 +127,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Articles</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
-                                @foreach (var article in this.GetDropdownData().GetDataSet<Article>() ?? new List<ListItem>())
+                                @foreach (var article in this.GetDropdownData().GetDataSet<Article>(true) ?? new List<ListItem>())
                                 {
                                     <li>
                                         <a href="@Url.Action("Info", "Ingredients")#@article.Id"> @article.Name</a>

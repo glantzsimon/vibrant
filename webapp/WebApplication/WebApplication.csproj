@@ -392,6 +392,7 @@
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
+    <Compile Include="Models\GlossaryItem.cs" />
     <Compile Include="Models\RegisterPromoCodeModel.cs" />
     <Compile Include="Models\Recaptcha.cs" />
     <Compile Include="Models\PurchaseModel.cs" />
@@ -771,6 +772,7 @@
     <Content Include="Images\icons\favicon-32x32.png" />
     <Content Include="Images\icons\favicon-96x96.png" />
     <Content Include="Images\icons\favicon.ico" />
+    <Content Include="Images\icons\icon.png" />
     <Content Include="Images\icons\instagram-16.png" />
     <Content Include="Images\icons\instagram-24.png" />
     <Content Include="Images\icons\instagram.png" />
@@ -1274,10 +1276,8 @@
     <Content Include="Views\Ingredients\Details.cshtml" />
     <Content Include="Views\Ingredients\Edit.cshtml" />
     <Content Include="Views\Ingredients\Index.cshtml" />
-    <Content Include="Views\Ingredients\MailChimpImportSuccess.cshtml" />
-    <Content Include="Views\Ingredients\SignUpSuccess.cshtml" />
-    <Content Include="Views\Ingredients\SignUpToNewsletter.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Quantity.cshtml" />
+    <Content Include="Views\Ingredients\_DisplaySummary.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

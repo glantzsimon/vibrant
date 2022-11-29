@@ -1,5 +1,4 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
-using K9.Base.DataAccessLayer.Enums;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.SharedLibrary.Attributes;
@@ -13,7 +12,6 @@ using System.Web.Mvc;
 
 namespace K9.DataAccessLayer.Models
 {
-    [AutoGenerateName]
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Articles, PluralName = Globalisation.Strings.Names.Articles, Name = Globalisation.Strings.Names.Article)]
     public class Article : ObjectBase
 	{

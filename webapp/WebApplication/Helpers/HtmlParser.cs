@@ -14,10 +14,10 @@ namespace K9.WebApplication.Helpers
             {
                 if (propertyInfo.GetAttribute<AllowHtmlAttribute>() != null)
                 {
-                    var value = model.GetProperty(propertyInfo).ToString();
-                    if (value != "")
+                    var value = model.GetProperty(propertyInfo);
+                    if (value != null)
                     {
-                        model.SetProperty(propertyInfo, ParseHtml(value));
+                        model.SetProperty(propertyInfo, ParseHtml(value.ToString()));
                     }
                 }
             }
@@ -31,16 +31,16 @@ namespace K9.WebApplication.Helpers
                 var line = "";
 
                 while ((line = sr.ReadLine()) != null) {
-                    if (line.Contains("["))
+                    if (line.Contains("{"))
                     {
-                        var html = line.Replace("[", "<");
-                        html = html.Replace("]", ">");
+                        var html = line.Replace("{", "<");
+                        html = html.Replace("}", ">");
                         sb.AppendLine(html);
                     }
-                    if (line.Contains("<"))
+                    else if (line.Contains("<"))
                     {
-                        var html = line.Replace("<", "[");
-                        html = html.Replace(">", "]");
+                        var html = line.Replace("<", "{");
+                        html = html.Replace(">", "}");
                         sb.AppendLine(html);
                     }
                     else

@@ -80,10 +80,24 @@ function bootstrapControls(config) {
     }
 
     function initQuantityInputs() {
-        $("form").find("select[data-input-id='ingredient-type']").change(function() {
+        $("form").find("select[data-input-id='ingredient-type']").change(function () {
             var ingredientType = this.getSelectedText();
-            var measure = ingredientType === "Liquid" ? "ml" : "mg"; 
+            var measure = ingredientType === "Liquid" ? "ml" : "mg";
             $(this).closest("form").find("span[data-input-id='quantity']").text(measure);
+        });
+    }
+
+    function initGlossary() {
+        $("span.glossary").each(function () {
+            var $el = $(this);
+            var word = $el.html().toLowerCase();
+            var glossaryItem = config.glossaryItems.find(e => e.Name.toLowerCase() === word);
+
+            if (glossaryItem) {
+                $el.tooltip({
+                    title: glossaryItem.Definition
+                });
+            }
         });
     }
 
@@ -130,7 +144,7 @@ function bootstrapControls(config) {
     function initDataTables() {
         $(".k9-datatable").DataTable({
             "columnDefs": customColumnDefs || [],
-            "order" : customOrder || []
+            "order": customOrder || []
         });
     }
 
@@ -142,6 +156,7 @@ function bootstrapControls(config) {
         initTextScroller();
         initCollapsiblePanels();
         initQuantityInputs();
+        initGlossary();
         initGauges();
         initDataTables();
     };

@@ -1,6 +1,10 @@
 ﻿using K9.DataAccessLayer.Models;
 using K9.WebApplication.Controllers;
+using K9.WebApplication.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 
@@ -36,6 +40,18 @@ namespace K9.WebApplication.Extensions
             {
                 return null;
             }
+        }
+
+        public static GlossaryItem[] ToGlossaryItems(this Type type)
+        {
+            return type.GetProperties()
+                .Where(e => Type.GetTypeCode(e.PropertyType) == TypeCode.String)
+                .Select(e =>
+                    new GlossaryItem
+                    {
+                        Name = e.Name,
+                        Definition = e.GetValue(null, null).ToString()
+                    }).ToArray();
         }
     }
 }

@@ -11,25 +11,25 @@
     </div>
 </div>
 <div class="row">
-    @Html.BootstrapDisplayFor(model => model.ShortDescription)
-</div>
-<div class="row">
-    @Html.BootstrapDisplayFor(model => model.Body)
-</div>
-
-<hr />
-
-<div class="row">
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.Cost)
     </div>
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.FormattedQuantity)
     </div>
-
 </div>
 
+<div class="row">
+    @Html.BootstrapDisplayFor(model => model.PurchaseUrls)
+</div>
 <hr />
+
+<div class="row">
+    @Html.BootstrapDisplayFor(model => model.ShortDescription)
+</div>
+<div class="row">
+    @Html.BootstrapDisplayFor(model => model.Body)
+</div>
 
 <div class="row">
     @Html.BootstrapDisplayFor(model => model.Benefits)
@@ -56,5 +56,4 @@
 <div class="row">
     @Html.BootstrapDisplayFor(model => model.ImageFileSource)
     @Html.BootstrapDisplayFor(model => model.VideoFileSource)
-    @Html.BootstrapDisplayFor(model => model.PurchaseUrls)
 </div>
