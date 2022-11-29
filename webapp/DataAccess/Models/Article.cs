@@ -15,6 +15,7 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Articles, PluralName = Globalisation.Strings.Names.Articles, Name = Globalisation.Strings.Names.Article)]
     public class Article : ObjectBase
 	{
+	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [ForeignKey("User")]
 	    public int UserId { get; set; }
 
@@ -22,6 +23,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("ArticleCategory")]
 	    [ForeignKey("ArticleCategory")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CategoryLabel)]
 	    public int ArticleCategoryId { get; set; }
 
 	    public virtual ArticleCategory ArticleCategory { get; set; }

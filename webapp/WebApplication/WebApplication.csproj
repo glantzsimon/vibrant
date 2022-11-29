@@ -344,6 +344,7 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\HtmlControllerBase.cs" />
     <Compile Include="Controllers\IngredientsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ArticleSectionsController.cs" />

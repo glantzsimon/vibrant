@@ -1,5 +1,4 @@
-﻿using K9.Base.WebApplication.Controllers;
-using K9.Base.WebApplication.EventArgs;
+﻿using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
@@ -13,12 +12,12 @@ namespace K9.WebApplication.Controllers
 {
     [Authorize]
     [RequirePermissions(Role = RoleNames.Administrators)]
-	public class ArticlesController : BaseController<Article>
+	public class ArticlesController : HtmlControllerBase<Article>
 	{
 		public ArticlesController(IControllerPackage<Article> controllerPackage) : base(controllerPackage)
 		{
 		    RecordBeforeCreate += ArticlesController_RecordBeforeCreate;
-            RecordBeforeCreated += ArticlesController_RecordBeforeUpdated;
+            RecordBeforeCreated += ArticlesController_RecordBeforeCreated;
             RecordBeforeUpdated += ArticlesController_RecordBeforeUpdated;
 		}
 
@@ -30,6 +29,7 @@ namespace K9.WebApplication.Controllers
             if (string.IsNullOrEmpty(article.SeoFriendlyId) || subjectHasChanged && original.SeoFriendlyId == original.Subject.ToSeoFriendlyString())
             {
                 article.SeoFriendlyId = article.Subject.ToSeoFriendlyString();
+                article.Name = article.Subject;
             }
         }
 
@@ -40,12 +40,15 @@ namespace K9.WebApplication.Controllers
             {
                 article.SeoFriendlyId = article.Subject.ToSeoFriendlyString();
             }
+            article.Name = article.Subject;
         }
 
         void ArticlesController_RecordBeforeCreate(object sender, CrudEventArgs e)
 	    {
 	        var article = e.Item as Article;
-	        article.PublishedBy = WebSecurity.IsAuthenticated ? WebSecurity.CurrentUserName : string.Empty;
+	        article.UserId = WebSecurity.CurrentUserId;
+	        article.Name = Guid.NewGuid().ToString();
+	        article.PublishedBy = WebSecurity.CurrentUserName;
 	        article.PublishedOn = DateTime.Now;
 	    }
 	}

@@ -19,13 +19,13 @@ namespace K9.WebApplication.Controllers
             _articlesRepository = articlesRepository;
         }
 
-        [Route("articles")]
+        [Route("article/overview")]
         public ActionResult Index()
         {
             return View(_articlesRepository.GetQuery($"SELECT TOP 10 * FROM [{nameof(Article)}] ORDER BY [{nameof(Article.CreatedOn)}] DESC").ToList());
         }
 
-        [Route("articles/{seoFriendlyId}")]
+        [Route("article/{seoFriendlyId}")]
         public ActionResult Details(string seoFriendlyId)
         {
             var article = _articlesRepository.Find(e => e.SeoFriendlyId == seoFriendlyId).FirstOrDefault();
