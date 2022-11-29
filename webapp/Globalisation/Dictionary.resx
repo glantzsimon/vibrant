@@ -1111,4 +1111,13 @@
   <data name="Ingredient" xml:space="preserve">
     <value>Ingredient</value>
   </data>
+  <data name="ResearchLabel" xml:space="preserve">
+    <value>Research</value>
+  </data>
+  <data name="SideEffectsLabel" xml:space="preserve">
+    <value>Side Effects</value>
+  </data>
+  <data name="SubjectiveEffectsLabel" xml:space="preserve">
+    <value>Subjective Effects</value>
+  </data>
 </root>

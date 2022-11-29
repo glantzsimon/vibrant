@@ -50,8 +50,19 @@ namespace K9.DataAccessLayer.Models
 	    [AllowHtml]
 	    public string Benefits { get; set; }
 
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BenefitsLabel)]
-	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ResearchLabel)]
+	    [StringLength(int.MaxValue)]
+	    [DataType(DataType.Html)]
+	    [AllowHtml]
+	    public string SubjectiveEffects { get; set; }
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SideEffectsLabel)]
+	    [StringLength(int.MaxValue)]
+	    [DataType(DataType.Html)]
+	    [AllowHtml]
+	    public string SideEffects { get; set; }
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ResearchLabel)]
 	    [StringLength(int.MaxValue)]
 	    [DataType(DataType.Html)]
 	    [AllowHtml]

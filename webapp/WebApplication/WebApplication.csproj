@@ -484,8 +484,8 @@
     <Content Include="Content\_colors.txt" />
     <Content Include="Global.asax" />
     <Content Include="Images\background\bg.gif" />
-    <Content Include="Images\background\form-background.png" />
     <Content Include="Images\background\bg1.jpg" />
+    <Content Include="Images\background\form-background.jpg" />
     <Content Include="Images\company\logo-med.png" />
     <Content Include="Images\company\logo-small.png" />
     <Content Include="Images\company\logo.png" />

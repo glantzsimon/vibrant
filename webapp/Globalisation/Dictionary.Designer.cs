@@ -2439,6 +2439,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Research.
+        /// </summary>
+        public static string ResearchLabel {
+            get {
+                return ResourceManager.GetString("ResearchLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Results.
         /// </summary>
         public static string Results {
@@ -2525,6 +2534,15 @@ namespace K9.Globalisation {
         public static string ShortDescriptionLabel {
             get {
                 return ResourceManager.GetString("ShortDescriptionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Side Effects.
+        /// </summary>
+        public static string SideEffectsLabel {
+            get {
+                return ResourceManager.GetString("SideEffectsLabel", resourceCulture);
             }
         }
         
@@ -2661,6 +2679,15 @@ namespace K9.Globalisation {
         public static string StripeCustomerIdLabel {
             get {
                 return ResourceManager.GetString("StripeCustomerIdLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subjective Effects.
+        /// </summary>
+        public static string SubjectiveEffectsLabel {
+            get {
+                return ResourceManager.GetString("SubjectiveEffectsLabel", resourceCulture);
             }
         }
         
