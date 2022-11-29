@@ -62,6 +62,12 @@ namespace K9.DataAccessLayer.Models
 	    [AllowHtml]
 	    public string SideEffects { get; set; }
 
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DeficiencySymptomsLabel)]
+	    [StringLength(int.MaxValue)]
+	    [DataType(DataType.Html)]
+	    [AllowHtml]
+	    public string DeficiencySymptoms { get; set; }
+
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ResearchLabel)]
 	    [StringLength(int.MaxValue)]
 	    [DataType(DataType.Html)]

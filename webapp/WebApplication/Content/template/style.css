@@ -846,3 +846,7 @@ button .fa, a .fa {
 .btn:not([data-toggle='dropdown']) {
     margin-top: 5px;
 }
+
+.green {
+    color: green;
+}

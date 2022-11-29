@@ -877,6 +877,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Symptoms of Deficiency.
+        /// </summary>
+        public static string DeficiencySymptomsLabel {
+            get {
+                return ResourceManager.GetString("DeficiencySymptomsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Descriptive Name.
         /// </summary>
         public static string DescriptiveNameLabel {
