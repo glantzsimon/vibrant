@@ -30,10 +30,10 @@ namespace K9.WebApplication.Controllers
         {
             var ingredient = e.Item as Ingredient;
             var original = Repository.Find(ingredient.Id);
-            var titleHasChanged = original.Title != ingredient.Title;
-            if (string.IsNullOrEmpty(ingredient.SeoFriendlyId) || titleHasChanged && original.SeoFriendlyId == original.Title.ToSeoFriendlyString())
+            var titleHasChanged = original.Name != ingredient.Name;
+            if (string.IsNullOrEmpty(ingredient.SeoFriendlyId) || titleHasChanged && original.SeoFriendlyId == original.Name.ToSeoFriendlyString())
             {
-                ingredient.SeoFriendlyId = ingredient.Title.ToSeoFriendlyString();
+                ingredient.SeoFriendlyId = ingredient.Name.ToSeoFriendlyString();
             }
             HtmlParser.ParseHtml(ref ingredient);
         }
@@ -43,7 +43,7 @@ namespace K9.WebApplication.Controllers
             var ingredient = e.Item as Ingredient;
             if (string.IsNullOrEmpty(ingredient.SeoFriendlyId))
             {
-                ingredient.SeoFriendlyId = ingredient.Title.ToSeoFriendlyString();
+                ingredient.SeoFriendlyId = ingredient.Name.ToSeoFriendlyString();
             }
             HtmlParser.ParseHtml(ref ingredient);
         }
