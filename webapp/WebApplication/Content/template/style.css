@@ -859,3 +859,7 @@ button .fa, a .fa {
     text-decoration: underline;
     cursor: help;
 }
+
+div.row + hr {
+    margin-top: 5px !important;
+}
