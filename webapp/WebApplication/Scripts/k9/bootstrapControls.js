@@ -79,6 +79,14 @@ function bootstrapControls(config) {
         });
     }
 
+    function initQuantityInputs() {
+        $("form").find("select[data-input-id='ingredient-type']").change(function() {
+            var ingredientType = this.getSelectedText();
+            var measure = ingredientType === "Liquid" ? "ml" : "mg"; 
+            $(this).closest("form").find("span[data-input-id='quantity']").text(measure);
+        });
+    }
+
     function initGauges(maxValue) {
         var opts = {
             angle: 0.15, // The span of the gauge arc
@@ -133,6 +141,7 @@ function bootstrapControls(config) {
         initToolTips();
         initTextScroller();
         initCollapsiblePanels();
+        initQuantityInputs();
         initGauges();
         initDataTables();
     };

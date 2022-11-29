@@ -6,20 +6,22 @@ using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Extensions;
 using System.Web.Mvc;
+using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
     [RequirePermissions(Role = RoleNames.Administrators)]
-	public class IngredientsController : BaseController<Ingredient>
+    public class IngredientsController : BaseController<Ingredient>
 	{
 		public IngredientsController(IControllerPackage<Ingredient> controllerPackage) : base(controllerPackage)
 		{
             RecordBeforeCreated += IngredientsController_RecordBeforeCreated;
             RecordBeforeUpdated += IngredientsController_RecordBeforeUpdated;
+            RecordBeforeUpdate += IngredientsController_RecordBeforeUpdate;
 		}
-
-	    public ActionResult Info()
+        
+        public ActionResult Main()
 	    {
 	        return View();
 	    }
@@ -33,6 +35,7 @@ namespace K9.WebApplication.Controllers
             {
                 ingredient.SeoFriendlyId = ingredient.Title.ToSeoFriendlyString();
             }
+            HtmlParser.ParseHtml(ref ingredient);
         }
 
         private void IngredientsController_RecordBeforeCreated(object sender, CrudEventArgs e)
@@ -42,6 +45,13 @@ namespace K9.WebApplication.Controllers
             {
                 ingredient.SeoFriendlyId = ingredient.Title.ToSeoFriendlyString();
             }
+            HtmlParser.ParseHtml(ref ingredient);
         }
+
+	    private void IngredientsController_RecordBeforeUpdate(object sender, CrudEventArgs e)
+	    {
+	        var ingredient = e.Item as Ingredient;
+            HtmlParser.ParseHtml(ref ingredient);
+	    }
 	}
 }

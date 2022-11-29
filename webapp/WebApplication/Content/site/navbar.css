@@ -252,11 +252,11 @@ ul.admin-menu ul.dropdown-menu {
 }
 
     #bs-navbar-collapse-1.menu-main {
-        top: 100px;
+        top: 85px;
     }
 
     #bs-navbar-collapse-1.menu-small {
-        top: 63px;
+        top: 48px;
     }
 
 ul.main-navbar li.open a {

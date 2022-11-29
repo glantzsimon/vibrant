@@ -2,6 +2,8 @@
 @using K9.WebApplication.Helpers
 @model Ingredient
 
+@Html.ValidationSummary(false)
+
 <div class="row">
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.Name)
@@ -11,39 +13,50 @@
     </div>
 </div>
 <div class="row">
-    @Html.BootstrapEditorFor(model => model.ShortDescription)
-</div>
-<div class="row">
-    @Html.BootstrapEditorFor(model => model.Body)
-</div>
-
-<hr />
-
-<div class="row">
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.Cost)
     </div>
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.Quantity)
     </div>
+</div>
 
+<div class="row">
+    @Html.BootstrapEditorFor(model => model.PurchaseUrls)
 </div>
 
 <hr />
 
 <div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.Benefits)
-    </div>
-    <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.Research)
-    </div>
+    @Html.BootstrapEditorFor(model => model.ShortDescription)
+</div>
+<div class="row">
+    @Html.BootstrapEditorFor(model => model.Body)
+</div>
+
+<div class="row">
+    @Html.BootstrapEditorFor(model => model.Benefits)
+</div>
+
+<div class="row">
+    @Html.BootstrapEditorFor(model => model.SubjectiveEffects)
+</div>
+
+<div class="row">
+    @Html.BootstrapEditorFor(model => model.DeficiencySymptoms)
+</div>
+
+<div class="row">
+    @Html.BootstrapEditorFor(model => model.SideEffects)
+</div>
+
+<div class="row">
+    @Html.BootstrapEditorFor(model => model.Research)
 </div>
 
 <hr />
 
 <div class="row">
     @Html.BootstrapEditorFor(model => model.ImageFileSource)
-    @Html.BootstrapEditorFor(model => model.VideoUrl)
-    @Html.BootstrapEditorFor(model => model.PurchaseUrls)
+    @Html.BootstrapEditorFor(model => model.VideoFileSource)
 </div>

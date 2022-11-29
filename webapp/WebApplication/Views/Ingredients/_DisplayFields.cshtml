@@ -1,13 +1,60 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
 @model Ingredient
-@Html.BootstrapDisplayFor(model => model.Name)
-@Html.BootstrapDisplayFor(model => model.ShortDescription)
-@Html.BootstrapDisplayFor(model => model.Cost)
-@Html.BootstrapDisplayFor(model => model.Quantity)
-@Html.BootstrapDisplayFor(model => model.IngredientType)
-@Html.BootstrapDisplayFor(model => model.Body)
-@Html.BootstrapDisplayFor(model => model.Benefits)
-@Html.BootstrapDisplayFor(model => model.Research)
-@Html.BootstrapDisplayFor(model => model.ImageFileSource)
-@Html.BootstrapDisplayFor(model => model.VideoUrl)
-@Html.BootstrapDisplayFor(model => model.PurchaseUrls)
+
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.Name)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.IngredientType)
+    </div>
+</div>
+<div class="row">
+    @Html.BootstrapDisplayFor(model => model.ShortDescription)
+</div>
+<div class="row">
+    @Html.BootstrapDisplayFor(model => model.Body)
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.Cost)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.FormattedQuantity)
+    </div>
+
+</div>
+
+<hr />
+
+<div class="row">
+    @Html.BootstrapDisplayFor(model => model.Benefits)
+</div>
+
+<div class="row">
+    @Html.BootstrapDisplayFor(model => model.SubjectiveEffects)
+</div>
+
+<div class="row">
+    @Html.BootstrapDisplayFor(model => model.DeficiencySymptoms)
+</div>
+
+<div class="row">
+    @Html.BootstrapDisplayFor(model => model.SideEffects)
+</div>
+
+<div class="row">
+    @Html.BootstrapDisplayFor(model => model.Research)
+</div>
+
+<hr />
+
+<div class="row">
+    @Html.BootstrapDisplayFor(model => model.ImageFileSource)
+    @Html.BootstrapDisplayFor(model => model.VideoFileSource)
+    @Html.BootstrapDisplayFor(model => model.PurchaseUrls)
+</div>

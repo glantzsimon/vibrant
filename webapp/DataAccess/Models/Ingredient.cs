@@ -23,11 +23,6 @@ namespace K9.DataAccessLayer.Models
 	    public string MeasuredIn => GetMeasuredInText();
 	    
 	    public string MeasuredInForLargeQuantity => GetMeasuredInForLargeQuantityText();
-        
-	    [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TitleLabel)]
-		[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-		[StringLength(256)]
-		public string Title { get; set; }
 		
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
 	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
@@ -50,7 +45,7 @@ namespace K9.DataAccessLayer.Models
 	    [AllowHtml]
 	    public string Benefits { get; set; }
 
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ResearchLabel)]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubjectiveEffectsLabel)]
 	    [StringLength(int.MaxValue)]
 	    [DataType(DataType.Html)]
 	    [AllowHtml]
@@ -79,7 +74,8 @@ namespace K9.DataAccessLayer.Models
 	    [DataType(DataType.Currency)]
 	    public double Cost { get; set; }
 
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantityInStockLabel)]
+        [UIHint("Quantity")]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantityLabel)]
 	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 	    public int Quantity { get; set; }
 

@@ -4,16 +4,15 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: white;
+    background-color: #141312;
     z-index: 9999;
 }
 
 img.cropped {
-    position: absolute;
+    position: fixed;
     margin: auto;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
 }
