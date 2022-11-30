@@ -1233,9 +1233,6 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
-    <Content Include="Views\Products\MailChimpImportSuccess.cshtml" />
-    <Content Include="Views\Products\SignUpSuccess.cshtml" />
-    <Content Include="Views\Products\SignUpToNewsletter.cshtml" />
     <Content Include="Views\Ingredients\_DisplayFields.cshtml" />
     <Content Include="Views\Ingredients\_EditFields.cshtml" />
     <Content Include="Views\Ingredients\Create.cshtml" />
@@ -1250,6 +1247,12 @@
     <Content Include="Views\Ingredients\FullList.cshtml" />
     <Content Include="Views\Ingredients\_IngredientList.cshtml" />
     <Content Include="Views\Article\_ArticleHeader.cshtml" />
+    <Content Include="Views\Products\Info.cshtml" />
+    <Content Include="Views\Products\_DisplaySummary.cshtml" />
+    <Content Include="Views\Products\_Product.cshtml" />
+    <Content Include="Views\Products\_ProductList.cshtml" />
+    <Content Include="Views\Products\FullList.cshtml" />
+    <Content Include="Views\Products\_Ingredients.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

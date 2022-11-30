@@ -66,7 +66,7 @@ namespace K9.DataAccessLayer.Models
         [AllowHtml]
         public string Benefits { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BenefitsLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DosageLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [StringLength(int.MaxValue)]
         [DataType(DataType.Html)]

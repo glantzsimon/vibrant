@@ -62,6 +62,7 @@
             public const string PromoCodeLabel = "PromoCode";
             public const string CodeLabel = "Code";
             public const string BenefitsLabel = "BenefitsLabel";
+            public const string DosageLabel = "DosageLabel";
             public const string DeficiencySymptomsLabel = "DeficiencySymptomsLabel";
             public const string ResearchLabel = "ResearchLabel";
             public const string SubjectiveEffectsLabel = "SubjectiveEffectsLabel";

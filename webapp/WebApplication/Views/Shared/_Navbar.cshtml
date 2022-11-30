@@ -76,6 +76,10 @@
                             <ul class="dropdown-menu nav navbar-nav">
                                 @if (products != null)
                                 {
+                                    <li class="@ViewContext.GetActiveClass("FullList", "Products")"><a href="@Url.Action("FullList", "Products")"> @Dictionary.SeeAll</a></li>
+                           
+                                    <li class="divider"></li>
+
                                     foreach (var product in products)
                                     {
                                         <li>

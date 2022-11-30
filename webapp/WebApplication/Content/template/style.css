@@ -42,7 +42,7 @@ body {
 .background-image {
     background: url(../../Images/background/bg1.jpg) no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: top right;
 }
 
 .background-fixed {

@@ -1,0 +1,41 @@
+﻿@using System.Web.Mvc.Html
+@using K9.Base.WebApplication.ViewModels
+@model Product
+
+@if (Model.ImageFileSource != null)
+{
+    @Html.Partial("_ImageFilesDisplay", new FileSourceViewModel(Model.ImageFileSource))
+}
+
+<div class="row text-center">
+    <div class="col-md-12">
+        <h1 class="margin-top-5 goldenrod">
+            @Model.Name
+        </h1>
+        <h3 class="padding-horizontal-40 margin-top-0">
+            @MvcHtmlString.Create(Model.ShortDescription)
+        </h3>
+    </div>
+</div>
+
+<hr />
+
+<article>
+    <h5>@Dictionary.OverviewLabel</h5>
+    @MvcHtmlString.Create(Model.Body)
+
+    <h5>@Dictionary.BenefitsLabel</h5>
+    @MvcHtmlString.Create(Model.Benefits)
+
+    <h5>@Dictionary.DosageLabel</h5>
+    @MvcHtmlString.Create(Model.Dosage)
+
+    <h5>@Dictionary.PriceLabel</h5>
+    @MvcHtmlString.Create(Model.Dosage)
+
+    @Html.Partial("_Ingredients", Model)
+
+    <div class="buttons-container">
+        @Html.BootstrapActionLinkButton(Dictionary.SeeAll, "fullList", "Ingredients", null, "", EButtonClass.Info, EButtonClass.Large)
+    </div>
+</article>

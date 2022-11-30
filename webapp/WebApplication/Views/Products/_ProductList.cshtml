@@ -1,0 +1,23 @@
+﻿@using System.Web.Mvc.Html
+@using K9.Base.WebApplication.ViewModels
+@model List<Product>
+
+
+<div class="row text-center">
+    <div class="col-md-12">
+        <h1 class="margin-top-5 goldenrod">
+            @Dictionary.Products
+        </h1>
+    </div>
+</div>
+
+<hr />
+
+<article>
+    @foreach (var product in Model)
+    {
+        <h5>@product.Name</h5>
+        <p>@MvcHtmlString.Create(product.ShortDescription)</p>
+        @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Info", "Products", new { seoFriendlyId = product.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Small)
+    }
+</article>

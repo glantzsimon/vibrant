@@ -1126,6 +1126,9 @@
   <data name="FAQ" xml:space="preserve">
     <value>FAQ</value>
   </data>
+  <data name="DosageLabel" xml:space="preserve">
+    <value>Dosage</value>
+  </data>
   <data name="FindOutMore" xml:space="preserve">
     <value>Find Out More</value>
   </data>

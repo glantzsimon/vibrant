@@ -1084,6 +1084,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dosage.
+        /// </summary>
+        public static string DosageLabel {
+            get {
+                return ResourceManager.GetString("DosageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Doshas.
         /// </summary>
         public static string Doshas {
