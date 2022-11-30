@@ -1208,7 +1208,7 @@
     <Content Include="Views\Articles\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ArticleCategory.cshtml" />
     <Content Include="Views\SelfCare\Shaking.cshtml" />
-    <Content Include="Views\Article\_Articles.cshtml" />
+    <Content Include="Views\Article\_ArticleList.cshtml" />
     <Content Include="Views\Article\_Article.cshtml" />
     <Content Include="Views\Article\_ArticlePreview.cshtml" />
     <Content Include="Views\Article\_ArticlesSummary.cshtml" />
@@ -1249,6 +1249,7 @@
     <Content Include="Views\Ingredients\_Ingredient.cshtml" />
     <Content Include="Views\Ingredients\FullList.cshtml" />
     <Content Include="Views\Ingredients\_IngredientList.cshtml" />
+    <Content Include="Views\Article\_ArticleHeader.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

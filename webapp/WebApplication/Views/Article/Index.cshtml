@@ -6,12 +6,8 @@
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
 
-<div class="main-section">
-    <div class="container">
-        <div class="main-heading">
-            <h3>@Dictionary.Articles</h3>
-            
-        </div>
+<div class="container main-content">
+    <div class="well margin-bottom-0">
+        @Html.Partial("_ArticleList", Model)
     </div>
-    @Html.Partial("_Articles")
 </div>

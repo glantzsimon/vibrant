@@ -19,14 +19,11 @@ else if (!string.IsNullOrEmpty(Model.VideoUrl))
 
 <div class="row text-center">
     <div class="col-md-12" id="@Model.Id">
-        <h5 class="margin-top-0 goldenrod">
+        <h1 class="margin-top-0 goldenrod">
             @Model.Subject
-        </h5>
+        </h1>
         <div class="news-item-title">
             <p><strong>@K9.Base.Globalisation.Dictionary.PublishedOnLabel</strong>: @Model.PublishedOn.ToLongDateString()</p>
-            <div class="margin-top-5">
-                @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Details", "Article", new { seoFriendlyId = Model.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Small)
-            </div>
         </div>
     </div>
 </div>

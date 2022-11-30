@@ -22,7 +22,7 @@ namespace K9.WebApplication.Controllers
         [Route("article/overview")]
         public ActionResult Index()
         {
-            return View(_articlesRepository.GetQuery($"SELECT TOP 10 * FROM [{nameof(Article)}] ORDER BY [{nameof(Article.CreatedOn)}] DESC").ToList());
+            return View(_articlesRepository.GetQuery($"SELECT * FROM [{nameof(Article)}] ORDER BY [{nameof(Article.CreatedOn)}] DESC").ToList());
         }
 
         [Route("article/{seoFriendlyId}")]

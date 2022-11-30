@@ -1,9 +1,11 @@
 ﻿@using System.Web.Mvc.Html
+@using K9.WebApplication.Helpers
 @model Ingredient
 
 @{
     ViewBag.Title = Model.Name;
     Layout = "../Shared/_LayoutForm.cshtml";
+    ViewBag.Background = ViewBagHelper.EViewBackground.Jarallax;
 }
 
 <div class="container main-content">
