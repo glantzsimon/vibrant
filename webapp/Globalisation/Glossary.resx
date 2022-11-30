@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Mitochondrial" xml:space="preserve">
-    <value>Relating to the 'mitochondria':the organelles of cells responsible for producing all of our ATP (cellular energy).</value>
+    <value>Relating to the 'mitochondria':the organelles of cells responsible for producing all of our ATP (cellular energy)</value>
+  </data>
+  <data name="Neurogenesis" xml:space="preserve">
+    <value>The generation of new neurons</value>
   </data>
   <data name="Nootropic" xml:space="preserve">
     <value>Nootropics can help to improve memory, boost learning ability, enhance mood and assist overall brain function and health.</value>

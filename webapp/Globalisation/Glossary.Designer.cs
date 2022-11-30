@@ -61,11 +61,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Relating to the &apos;mitochondria&apos;:the organelles of cells responsible for producing all of our ATP (cellular energy)..
+        ///   Looks up a localized string similar to Relating to the &apos;mitochondria&apos;:the organelles of cells responsible for producing all of our ATP (cellular energy).
         /// </summary>
         public static string Mitochondrial {
             get {
                 return ResourceManager.GetString("Mitochondrial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The generation of new neurons.
+        /// </summary>
+        public static string Neurogenesis {
+            get {
+                return ResourceManager.GetString("Neurogenesis", resourceCulture);
             }
         }
         
