@@ -123,6 +123,9 @@
   <data name="Antioxidant" xml:space="preserve">
     <value>A substance that is able to protect the body from oxidaitve stress (from free radicals) either by neutralising the radical or by protecting tissues, or both.</value>
   </data>
+  <data name="Anxiolytic" xml:space="preserve">
+    <value>Reduces anxiety</value>
+  </data>
   <data name="BloodBrainBarrier" xml:space="preserve">
     <value>The blood–brain barrier protects against circulating toxins or pathogens that could cause brain infections, while at the same time allowing vital nutrients to reach the brain.</value>
   </data>

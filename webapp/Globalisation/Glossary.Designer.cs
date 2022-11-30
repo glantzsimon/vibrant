@@ -79,6 +79,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reduces anxiety.
+        /// </summary>
+        public static string Anxiolytic {
+            get {
+                return ResourceManager.GetString("Anxiolytic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The blood–brain barrier protects against circulating toxins or pathogens that could cause brain infections, while at the same time allowing vital nutrients to reach the brain..
         /// </summary>
         public static string BloodBrainBarrier {
