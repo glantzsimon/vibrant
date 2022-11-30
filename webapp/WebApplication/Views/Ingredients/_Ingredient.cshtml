@@ -26,15 +26,18 @@
 
     <h5>@Dictionary.BenefitsLabel</h5>
     @MvcHtmlString.Create(Model.Benefits)
-    
+
     @if (!string.IsNullOrWhiteSpace(Model.SubjectiveEffects))
     {
         <h5>@Dictionary.SubjectiveEffectsLabel</h5>
         @MvcHtmlString.Create(Model.SubjectiveEffects)
     }
 
-    <h5>@Dictionary.DeficiencySymptomsLabel</h5>
-    @MvcHtmlString.Create(Model.DeficiencySymptoms)
+    @if (!string.IsNullOrWhiteSpace(Model.DeficiencySymptoms))
+    {
+        <h5>@Dictionary.DeficiencySymptomsLabel</h5>
+        @MvcHtmlString.Create(Model.DeficiencySymptoms)
+    }
 
     <h5>@Dictionary.ResearchLabel</h5>
     @MvcHtmlString.Create(Model.Research)

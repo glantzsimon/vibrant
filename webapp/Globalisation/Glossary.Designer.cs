@@ -70,6 +70,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A substance that is able to protect the body from oxidaitve stress (from free radicals) either by neutralising the radical or by protecting tissues, or both..
+        /// </summary>
+        public static string Antioxidant {
+            get {
+                return ResourceManager.GetString("Antioxidant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The blood–brain barrier protects against circulating toxins or pathogens that could cause brain infections, while at the same time allowing vital nutrients to reach the brain..
         /// </summary>
         public static string BloodBrainBarrier {
@@ -97,6 +106,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Peptide hormone that stimulates growth, cell reproduction, and cell regeneration in humans and other animals. It is thus important in human development. GH also stimulates production of IGF-1 and increases the concentration of glucose and free fatty acids..
+        /// </summary>
+        public static string HumanGrowthHormone {
+            get {
+                return ResourceManager.GetString("HumanGrowthHormone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The organelles of cells responsible for producing all of our ATP (cellular energy).
+        /// </summary>
+        public static string Mitochondria {
+            get {
+                return ResourceManager.GetString("Mitochondria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Relating to the &apos;mitochondria&apos;:the organelles of cells responsible for producing all of our ATP (cellular energy).
         /// </summary>
         public static string Mitochondrial {
@@ -106,11 +133,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stimulates the growth of new mitochondria and the repair of existing ones..
+        /// </summary>
+        public static string Mitochondriogenesis {
+            get {
+                return ResourceManager.GetString("Mitochondriogenesis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NAD+ mediates the production of the energy our cells need to function and survive, fueling enzymes key in repairing DNA damage. As we age, this indispensable molecule progressively declines..
+        /// </summary>
+        public static string NAD {
+            get {
+                return ResourceManager.GetString("NAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The generation of new neurons.
         /// </summary>
         public static string Neurogenesis {
             get {
                 return ResourceManager.GetString("Neurogenesis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pigments that form in the brain that are similar to the melanin pigment in the skin..
+        /// </summary>
+        public static string Neuromelanins {
+            get {
+                return ResourceManager.GetString("Neuromelanins", resourceCulture);
             }
         }
         

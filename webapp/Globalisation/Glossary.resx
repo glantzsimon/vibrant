@@ -120,6 +120,9 @@
   <data name="AMPK" xml:space="preserve">
     <value>The AMPK enzyme is the master metabolic switch in each of your cells. When AMPK levels increase you get an energy boost, blood glucose is regulated, insulin sensitivity improves, reduced triglycerides, and increased fat-burning in mitochondria. The metabolism of the whole organism becomes considerably more efficient</value>
   </data>
+  <data name="Antioxidant" xml:space="preserve">
+    <value>A substance that is able to protect the body from oxidaitve stress (from free radicals) either by neutralising the radical or by protecting tissues, or both.</value>
+  </data>
   <data name="BloodBrainBarrier" xml:space="preserve">
     <value>The blood–brain barrier protects against circulating toxins or pathogens that could cause brain infections, while at the same time allowing vital nutrients to reach the brain.</value>
   </data>
@@ -129,11 +132,26 @@
   <data name="FreeRadicals" xml:space="preserve">
     <value>Free radicals result from oxidation in cells and damage tissues in the body. They are implicated in many types of age-related diseases.</value>
   </data>
+  <data name="HumanGrowthHormone" xml:space="preserve">
+    <value>Peptide hormone that stimulates growth, cell reproduction, and cell regeneration in humans and other animals. It is thus important in human development. GH also stimulates production of IGF-1 and increases the concentration of glucose and free fatty acids.</value>
+  </data>
+  <data name="Mitochondria" xml:space="preserve">
+    <value>The organelles of cells responsible for producing all of our ATP (cellular energy)</value>
+  </data>
   <data name="Mitochondrial" xml:space="preserve">
     <value>Relating to the 'mitochondria':the organelles of cells responsible for producing all of our ATP (cellular energy)</value>
   </data>
+  <data name="Mitochondriogenesis" xml:space="preserve">
+    <value>Stimulates the growth of new mitochondria and the repair of existing ones.</value>
+  </data>
+  <data name="NAD" xml:space="preserve">
+    <value>NAD+ mediates the production of the energy our cells need to function and survive, fueling enzymes key in repairing DNA damage. As we age, this indispensable molecule progressively declines.</value>
+  </data>
   <data name="Neurogenesis" xml:space="preserve">
     <value>The generation of new neurons</value>
+  </data>
+  <data name="Neuromelanins" xml:space="preserve">
+    <value>Pigments that form in the brain that are similar to the melanin pigment in the skin.</value>
   </data>
   <data name="Nootropic" xml:space="preserve">
     <value>Nootropics can help to improve memory, boost learning ability, enhance mood and assist overall brain function and health.</value>
