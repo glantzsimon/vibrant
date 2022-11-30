@@ -4,6 +4,7 @@ using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Extensions;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Web.Mvc;
 using WebMatrix.WebData;
@@ -44,11 +45,12 @@ namespace K9.WebApplication.Controllers
 	    private static void UpdateNameAndSeo(CrudEventArgs e)
 	    {
 	        var article = e.Item as Article;
-	        if (string.IsNullOrEmpty(article.SeoFriendlyId))
+	        article.SeoFriendlyId = article.Subject.ToSeoFriendlyString();
+	        
+	        if (article.Name.IsNullOrWhiteSpace())
 	        {
-	            article.SeoFriendlyId = article.Subject.ToSeoFriendlyString();
+	            article.Name = article.Subject;
 	        }
-	        article.Name = article.Subject;
 	    }
 	}
 }

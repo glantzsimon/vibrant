@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AMPK" xml:space="preserve">
+    <value>The AMPK enzyme is the master metabolic switch in each of your cells. When AMPK levels increase you get an energy boost, blood glucose is regulated, insulin sensitivity improves, reduced triglycerides, and increased fat-burning in mitochondria. The metabolism of the whole organism becomes considerably more efficient</value>
+  </data>
+  <data name="BloodBrainBarrier" xml:space="preserve">
+    <value>The blood–brain barrier protects against circulating toxins or pathogens that could cause brain infections, while at the same time allowing vital nutrients to reach the brain.</value>
+  </data>
+  <data name="Cortisol" xml:space="preserve">
+    <value>The major stress hormone of the body. In excess, cortisol can result int he breakdown of tissues, resulting in degenerative disease.</value>
+  </data>
+  <data name="FreeRadicals" xml:space="preserve">
+    <value>Free radicals result from oxidation in cells and damage tissues in the body. They are implicated in many types of age-related diseases.</value>
+  </data>
   <data name="Mitochondrial" xml:space="preserve">
     <value>Relating to the 'mitochondria':the organelles of cells responsible for producing all of our ATP (cellular energy)</value>
   </data>

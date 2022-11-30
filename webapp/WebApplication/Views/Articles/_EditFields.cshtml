@@ -2,7 +2,6 @@
 @model Article
 
 @Html.HiddenFor(model => model.UserId)
-@Html.HiddenFor(model => model.Name)
 @Html.HiddenFor(model => model.PublishedBy)
 
 <div class="row">
@@ -13,6 +12,27 @@
         @Html.BootstrapDisplayFor(model => model.PublishedBy)
     </div>
 </div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.SeoFriendlyId)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.ArticleCategoryId)
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.Name)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.Subject)
+    </div>
+</div>
+<div class="row">
+    @Html.BootstrapEditorFor(model => model.Body)
+</div>
+<hr />
 <div class="row">
     @Html.BootstrapEditorFor(model => model.ImageFileSource)
 </div>
@@ -27,14 +47,3 @@
         @Html.BootstrapEditorFor(model => model.AdditionalCssClasses)
     </div>
 </div>
-<div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.SeoFriendlyId)
-    </div>
-    <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.ArticleCategoryId)
-    </div>
-</div>
-<hr />
-@Html.BootstrapEditorFor(model => model.Subject)
-@Html.BootstrapEditorFor(model => model.Body)

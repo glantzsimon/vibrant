@@ -61,6 +61,42 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The AMPK enzyme is the master metabolic switch in each of your cells. When AMPK levels increase you get an energy boost, blood glucose is regulated, insulin sensitivity improves, reduced triglycerides, and increased fat-burning in mitochondria. The metabolism of the whole organism becomes considerably more efficient.
+        /// </summary>
+        public static string AMPK {
+            get {
+                return ResourceManager.GetString("AMPK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The blood–brain barrier protects against circulating toxins or pathogens that could cause brain infections, while at the same time allowing vital nutrients to reach the brain..
+        /// </summary>
+        public static string BloodBrainBarrier {
+            get {
+                return ResourceManager.GetString("BloodBrainBarrier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The major stress hormone of the body. In excess, cortisol can result int he breakdown of tissues, resulting in degenerative disease..
+        /// </summary>
+        public static string Cortisol {
+            get {
+                return ResourceManager.GetString("Cortisol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Free radicals result from oxidation in cells and damage tissues in the body. They are implicated in many types of age-related diseases..
+        /// </summary>
+        public static string FreeRadicals {
+            get {
+                return ResourceManager.GetString("FreeRadicals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Relating to the &apos;mitochondria&apos;:the organelles of cells responsible for producing all of our ATP (cellular energy).
         /// </summary>
         public static string Mitochondrial {
