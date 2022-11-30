@@ -1126,4 +1126,10 @@
   <data name="FAQ" xml:space="preserve">
     <value>FAQ</value>
   </data>
+  <data name="FindOutMore" xml:space="preserve">
+    <value>Find Out More</value>
+  </data>
+  <data name="SeeAll" xml:space="preserve">
+    <value>See Full List</value>
+  </data>
 </root>

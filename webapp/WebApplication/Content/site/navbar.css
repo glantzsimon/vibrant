@@ -66,7 +66,7 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
         font-weight: 300 !important;
         margin: 0;
         text-decoration: none;
-        padding: 1em;
+        padding: 0.6em;
         letter-spacing: 1px;
         text-transform: uppercase;
     }

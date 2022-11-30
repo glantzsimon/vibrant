@@ -1245,8 +1245,10 @@
     <Content Include="Views\Ingredients\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Quantity.cshtml" />
     <Content Include="Views\Ingredients\_DisplaySummary.cshtml" />
-    <Content Include="Views\Ingredients\Main.cshtml" />
+    <Content Include="Views\Ingredients\Info.cshtml" />
     <Content Include="Views\Ingredients\_Ingredient.cshtml" />
+    <Content Include="Views\Ingredients\FullList.cshtml" />
+    <Content Include="Views\Ingredients\_IngredientList.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -20,7 +20,7 @@ namespace K9.WebApplication.Controllers
 		}
         
 	    [Route("ingredient/{seoFriendlyId}")]
-        public ActionResult Main(string seoFriendlyId)
+        public ActionResult Info(string seoFriendlyId)
 	    {
 	        var ingredient = Repository.Find(e => e.SeoFriendlyId == seoFriendlyId).FirstOrDefault();
 	        if (ingredient == null)
@@ -28,6 +28,12 @@ namespace K9.WebApplication.Controllers
 	            return HttpNotFound();
 	        }
 	        return View(ingredient);;
+	    }
+
+	    [Route("ingredient/full-list")]
+	    public ActionResult FullList(string seoFriendlyId)
+	    {
+	        return View(Repository.List());;
 	    }
 
         private void IngredientsController_RecordBeforeUpdated(object sender, CrudEventArgs e)
