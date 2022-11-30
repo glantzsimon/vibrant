@@ -14,10 +14,17 @@
 <hr />
 
 <article>
-    @foreach (var product in Model)
+    @if (Model.Any())
     {
-        <h5>@product.Name</h5>
-        <p>@MvcHtmlString.Create(product.ShortDescription)</p>
-        @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Info", "Products", new { seoFriendlyId = product.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Small)
+        foreach (var product in Model)
+        {
+            <h5>@product.Name</h5>
+            <p>@MvcHtmlString.Create(product.ShortDescription)</p>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Info", "Products", new { seoFriendlyId = product.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Small)
+        }
+    }
+    else
+    {
+        @MvcHtmlString.Create(Dictionary.ComingSoon)
     }
 </article>
