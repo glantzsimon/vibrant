@@ -4,6 +4,7 @@ using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Extensions;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
@@ -18,9 +19,15 @@ namespace K9.WebApplication.Controllers
             RecordBeforeUpdated += IngredientsController_RecordBeforeUpdated;
 		}
         
-        public ActionResult Main()
+	    [Route("ingredient/{seoFriendlyId}")]
+        public ActionResult Main(string seoFriendlyId)
 	    {
-	        return View();
+	        var ingredient = Repository.Find(e => e.SeoFriendlyId == seoFriendlyId).FirstOrDefault();
+	        if (ingredient == null)
+	        {
+	            return HttpNotFound();
+	        }
+	        return View(ingredient);;
 	    }
 
         private void IngredientsController_RecordBeforeUpdated(object sender, CrudEventArgs e)

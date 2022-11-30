@@ -4,6 +4,9 @@
 @using K9.WebApplication.Helpers
 @{
     var roles = this.GetRoles();
+    var products = this.GetDropdownData().GetDataSet<Product>(true, "Name", "SeoFriendlyId");
+    var ingredients = this.GetDropdownData().GetDataSet<Ingredient>(true, "Name", "SeoFriendlyId");
+    var articles = this.GetDropdownData().GetDataSet<Article>(true, "Name", "SeoFriendlyId");
 }
 <div id="account-header">
     <div id="account-controls">
@@ -71,11 +74,14 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Products</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
-                                @foreach (var product in this.GetDropdownData().GetDataSet<Product>(true) ?? new List<ListItem>())
+                                @if (products != null)
                                 {
-                                    <li>
-                                        <a href="@Url.Action("Info", "Products")#@product.Id"> @product.Name</a>
-                                    </li>
+                                    foreach (var product in products)
+                                    {
+                                        <li>
+                                            <a href="@Url.Action("Info", "Products")#@product.Id"> @product.Name</a>
+                                        </li>
+                                    }
                                 }
                             </ul>
                         </li>
@@ -83,11 +89,14 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Ingredients</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
-                                @foreach (var ingredient in this.GetDropdownData().GetDataSet<Ingredient>(true) ?? new List<ListItem>())
+                                @if (ingredients != null)
                                 {
-                                    <li>
-                                        <a href="@Url.Action("Info", "Ingredients")#@ingredient.Id"> @ingredient.Name</a>
-                                    </li>
+                                    foreach (var ingredient in ingredients)
+                                    {
+                                        <li>
+                                            <a href="@Url.Action("Main", "Ingredients", new {seoFriendlyId = ingredient.Value})"> @ingredient.Name</a>
+                                        </li>
+                                    }
                                 }
                             </ul>
                         </li>
@@ -127,11 +136,14 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Articles</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
-                                @foreach (var article in this.GetDropdownData().GetDataSet<Article>(true) ?? new List<ListItem>())
+                                @if (articles != null)
                                 {
-                                    <li>
-                                        <a href="@Url.Action("Info", "Ingredients")#@article.Id"> @article.Name</a>
-                                    </li>
+                                    foreach (var article in articles)
+                                    {
+                                        <li>
+                                            <a href="@Url.Action("Details", "Article", new {seoFriendlyId = article.Value})"> @article.Name</a>
+                                        </li>
+                                    }
                                 }
                             </ul>
                         </li>

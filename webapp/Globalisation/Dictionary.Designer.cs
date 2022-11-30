@@ -1282,6 +1282,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FAQ.
+        /// </summary>
+        public static string FAQ {
+            get {
+                return ResourceManager.GetString("FAQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fats.
         /// </summary>
         public static string Fats {
@@ -3239,16 +3248,14 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Some of the most advanced nutritional supplements on the market.
+        ///    Some of the most advanced nutritional supplements on the market
         ///&lt;/h5&gt;
         ///&lt;p&gt;
         ///    After decades of research and trial and error, we have identified which compounds are the safest, most effective and provide the greatest benefits. We have also figured out how to carefully combine different ingredients in the correct dosages in powerful formulations to provide you with optimum benefits.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    Only 100% pure, active ingredients
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    All of our products contain 100% natural, clean ingredi [rest of string was truncated]&quot;;.
+        ///    &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/i&gt; Only 100% pure, active ingredients &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/i&gt;
+        ///&lt;/h [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {

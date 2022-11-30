@@ -681,9 +681,10 @@ img.img-responsive {
 }
 
 .news-item-title {
-    margin-bottom: 8px;
+    padding-top: 0;
+    margin-bottom: 16px;
     border-bottom: 1px solid #d9d9d9;
-    padding-bottom: 4px;
+    padding-bottom: 18px;
 }
 
     .news-item-title p {
@@ -708,9 +709,9 @@ article {
     text-align: center;
 }
 
-    article, p:last-child {
-        margin-bottom: 0;
-    }
+article, p:last-child {
+    margin-bottom: 0;
+}
 
 .our-partners {
     background-color: burlywood;
@@ -862,4 +863,16 @@ button .fa, a .fa {
 
 div.row + hr {
     margin-top: 5px !important;
+}
+
+.goldenrod {
+    color: goldenrod;
+}
+
+.gold {
+    color: gold;
+}
+
+.darkbrown {
+    color: #392c24;
 }

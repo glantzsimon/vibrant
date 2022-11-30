@@ -1,29 +1,51 @@
-﻿@using K9.SharedLibrary.Extensions
+﻿@using K9.SharedLibrary.Enums
+@using K9.SharedLibrary.Extensions
+@using K9.SharedLibrary.Models
 @model K9.SharedLibrary.Models.FileSource
 @{
     var displayStyle = Model.UploadedFiles.Any() ? "display: block;" : "display: none;";
+    var files = new List<UploadedFile>();
+
+    switch (Model.Filter)
+    {
+        case EFilesSourceFilter.Audio:
+            files = Model.UploadedFiles.Where(e => e.AssetInfo.IsAudio()).ToList();
+            break;
+
+        case EFilesSourceFilter.Videos:
+            files = Model.UploadedFiles.Where(e => e.AssetInfo.IsVideo()).ToList();
+            break;
+
+        case EFilesSourceFilter.Images:
+            files = Model.UploadedFiles.Where(e => e.AssetInfo.IsImage()).ToList();
+            break;
+
+        case EFilesSourceFilter.Unspecified:
+            files = Model.UploadedFiles;
+            break;
+    }
 }
 
 @Html.HiddenFor(model => model.Filter)
 
 <div class="upload-file-preview container" style="@displayStyle">
-    @if (Model.UploadedFiles != null)
+    @if (files != null)
     {
-        for (int i = 0; i < Model.UploadedFiles.Count; i++)
+        for (int i = 0; i < files.Count; i++)
         {
             var fileId = Guid.NewGuid();
-            var assetInfo = Model.UploadedFiles[i].AssetInfo;
+            var assetInfo = files[i].AssetInfo;
             var imgClass = assetInfo.IsImage() && assetInfo.ImageInfo.IsPortrait() ? "portrait" : string.Empty;
 
-            @Html.HiddenFor(model => Model.UploadedFiles[i].FileName, new { @class = "uploaded-file", data_file_id = fileId })
-            @Html.HiddenFor(model => Model.UploadedFiles[i].IsDeleted, new { @class = "uploaded-file-deleted", data_file_id = fileId, data_file_name = Model.UploadedFiles[i].FileName })
+            @Html.HiddenFor(model => files[i].FileName, new { @class = "uploaded-file", data_file_id = fileId })
+            @Html.HiddenFor(model => files[i].IsDeleted, new { @class = "uploaded-file-deleted", data_file_id = fileId, data_file_name = files[i].FileName })
 
             <div class="file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12" data-file-id="@fileId">
                 <div class="file-thumbnail-container">
                     <div class="preview-thumbnail">
                         @if (assetInfo.IsImage())
                         {
-                            <img src="@assetInfo.Src" class="@imgClass">
+                            <img src="~/@assetInfo.Src" class="@imgClass">
                         }
                         else if (assetInfo.IsVideo())
                         {

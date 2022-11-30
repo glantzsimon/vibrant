@@ -14,12 +14,10 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.ImageFileSource)
-    </div>
-    <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.VideoFileSource)
-    </div>
+    @Html.BootstrapEditorFor(model => model.ImageFileSource)
+</div>
+<div class="row">
+    @Html.BootstrapEditorFor(model => model.VideoFileSource)
 </div>
 <div class="row">
     <div class="col-sm-6">

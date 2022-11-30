@@ -35,7 +35,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	height: 200px;
-	width: 200px;
+	width: 100%;
 	overflow: hidden;
 }
 .upload-file-preview div.preview-thumbnail img, .upload-file-preview div.preview-thumbnail .preview-document {

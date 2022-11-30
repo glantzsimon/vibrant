@@ -1,7 +1,7 @@
 ﻿.image-panel {
     height: 200px;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,7 +16,7 @@
 }
 
 .panel-image-container {
-    padding: 15px;
+    padding: 0;
 }
 
     .panel-image-container .image-panel {

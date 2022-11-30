@@ -49,11 +49,11 @@ namespace K9.DataAccessLayer.Models
 		[AllowHtml]
 		public string Body { get; set; }
 
-	    [FileSourceInfo("upload/newsitems", Filter = EFilesSourceFilter.Images)]
+	    [FileSourceInfo("upload/articles", Filter = EFilesSourceFilter.Images)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]
 		public FileSource ImageFileSource { get; set; }
 
-	    [FileSourceInfo("upload/newsitems", Filter = EFilesSourceFilter.Videos)]
+	    [FileSourceInfo("upload/articles", Filter = EFilesSourceFilter.Videos)]
 	    [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadVideo)]
 	    public FileSource VideoFileSource { get; set; }
         

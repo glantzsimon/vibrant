@@ -23,33 +23,32 @@ namespace K9.WebApplication.Controllers
 
         private void ArticlesController_RecordBeforeUpdated(object sender, CrudEventArgs e)
         {
-            var article = e.Item as Article;
-            var original = Repository.Find(article.Id);
-            var subjectHasChanged = original.Subject != article.Subject;
-            if (string.IsNullOrEmpty(article.SeoFriendlyId) || subjectHasChanged && original.SeoFriendlyId == original.Subject.ToSeoFriendlyString())
-            {
-                article.SeoFriendlyId = article.Subject.ToSeoFriendlyString();
-                article.Name = article.Subject;
-            }
+            UpdateNameAndSeo(e);
+            
         }
 
         private void ArticlesController_RecordBeforeCreated(object sender, CrudEventArgs e)
         {
-            var article = e.Item as Article;
-            if (string.IsNullOrEmpty(article.SeoFriendlyId))
-            {
-                article.SeoFriendlyId = article.Subject.ToSeoFriendlyString();
-            }
-            article.Name = article.Subject;
+            UpdateNameAndSeo(e);
         }
 
-        void ArticlesController_RecordBeforeCreate(object sender, CrudEventArgs e)
+	    void ArticlesController_RecordBeforeCreate(object sender, CrudEventArgs e)
 	    {
 	        var article = e.Item as Article;
 	        article.UserId = WebSecurity.CurrentUserId;
 	        article.Name = Guid.NewGuid().ToString();
 	        article.PublishedBy = WebSecurity.CurrentUserName;
 	        article.PublishedOn = DateTime.Now;
+	    }
+
+	    private static void UpdateNameAndSeo(CrudEventArgs e)
+	    {
+	        var article = e.Item as Article;
+	        if (string.IsNullOrEmpty(article.SeoFriendlyId))
+	        {
+	            article.SeoFriendlyId = article.Subject.ToSeoFriendlyString();
+	        }
+	        article.Name = article.Subject;
 	    }
 	}
 }

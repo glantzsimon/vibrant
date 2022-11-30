@@ -1,6 +1,10 @@
 function fileUploader(config) {
     function getFilesContainer(el) {
-        return $(el).closest("form").find(".upload-file-preview");
+        var $container = $(el).parent().parent().parent().parent().find(".upload-file-preview");
+        if ($container.length === 0) {
+            $container = $(el).parent().parent().parent().parent().closest(".upload-file-preview");
+        }
+        return $container;
     }
 
     function deleteFilePreview(el, id) {
@@ -45,25 +49,25 @@ function fileUploader(config) {
     function displayFile(input, file, type, data) {
         var filesContainer = getFilesContainer(input);
 
-        var fileContainerDiv = $(document.createElement("DIV"));
+        var fileContainerDiv = $(document.createElement("div"));
         fileContainerDiv.attr("class", "file-preview-container col-lg-3 col-md-4 col-sm-6 col-xs-12 file-preview-new");
 
         var fileId = $.fn.createGuid();
         fileContainerDiv.attr("data-file-id", fileId);
 
-        var fileThumbnailContainerDiv = $(document.createElement("DIV"));
+        var fileThumbnailContainerDiv = $(document.createElement("div"));
         fileThumbnailContainerDiv.attr("class", "file-thumbnail-container");
 
-        var fileContainer = $(document.createElement("DIV"));
+        var fileContainer = $(document.createElement("div"));
         fileContainer.attr("class", "preview-thumbnail");
 
-        var docInfo = $(document.createElement("DIV"));
+        var docInfo = $(document.createElement("div"));
         docInfo.attr("class", "doc-info");
         docInfo.html("<p>" + $.fn.getShortFileName(file.name) + "</p>" +
             "<samp>(" + $.fn.formatBytes(file.size) + ")</samp>" +
             '<i class="glyphicon glyphicon-upload file-preview-upload"></i>');
 
-        var img = $(document.createElement("IMG"));
+        var img = $(document.createElement("img"));
         if (type === "image") {
             if (data.height > data.width) {
                 img.attr("class", "portrait");

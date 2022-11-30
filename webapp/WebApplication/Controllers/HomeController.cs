@@ -21,6 +21,11 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        public ActionResult FrequentlyAskedQuestions()
+        {
+            return View();
+        }
+
         public ActionResult DownloadKickStartGuide()
         {
             return View();

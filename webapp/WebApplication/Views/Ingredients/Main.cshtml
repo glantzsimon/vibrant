@@ -1,13 +1,13 @@
 ﻿@using System.Web.Mvc.Html
-@model Article
+@model Ingredient
 
 @{
-    ViewBag.Title = Model.Subject;
+    ViewBag.Title = Model.Name;
     Layout = "../Shared/_LayoutForm.cshtml";
 }
 
 <div class="container main-content">
     <div class="well margin-bottom-0">
-        @Html.Partial("_Article", Model)
+        @Html.Partial("_Ingredient", Model)
     </div>
 </div>

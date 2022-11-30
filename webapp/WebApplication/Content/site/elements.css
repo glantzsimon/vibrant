@@ -6,6 +6,7 @@
 
 h3, h4 {
     color: #0a4070 !important;
+    line-height: 1.4em;
 }
 
 h5 {
@@ -22,6 +23,10 @@ h4 {
 
 h5 {
     line-height: 1.2em;
+}
+
+article {
+    padding: 10px;
 }
 
 article h4 {

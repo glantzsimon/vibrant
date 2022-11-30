@@ -1123,4 +1123,7 @@
   <data name="SubjectiveEffectsLabel" xml:space="preserve">
     <value>Subjective Effects</value>
   </data>
+  <data name="FAQ" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
 </root>

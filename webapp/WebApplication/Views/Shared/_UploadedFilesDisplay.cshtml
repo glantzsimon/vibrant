@@ -11,7 +11,7 @@
             <audio controls>
                 @foreach (var item in group.Assets)
                 {
-                    <source src="@item.Src" type="audio/@item.ExtensionNoDot.ToLower()">
+                    <source src="~/@item.Src" type="audio/@item.ExtensionNoDot.ToLower()">
                 }
                 <span>@K9.Base.Globalisation.Dictionary.AudioUnsupported</span>
             </audio>
@@ -29,7 +29,7 @@
             <video controls>
                 @foreach (var item in group.Assets)
                 {
-                    <source src="@item.Src" type="video/@item.ExtensionNoDot.ToLower()">
+                    <source src="~/@item.Src" type="video/@item.ExtensionNoDot.ToLower()">
                 }
                 <span>@K9.Base.Globalisation.Dictionary.VideoUnsupported</span>
             </video>
@@ -57,7 +57,7 @@
         @foreach (var document in Model.Documents)
         {
             <div class="document-container">
-                <a target="_blank" href="@document.AssetInfo.Src"><i class="@document.AssetInfo.FontAweSomeFileTypeClass"></i> @document.FileName</a>
+                <a target="_blank" href="~/@document.AssetInfo.Src"><i class="@document.AssetInfo.FontAweSomeFileTypeClass"></i> @document.FileName</a>
             </div>
         }
     </div>

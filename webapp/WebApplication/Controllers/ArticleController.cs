@@ -33,6 +33,7 @@ namespace K9.WebApplication.Controllers
             {
                 return HttpNotFound();
             }
+            LoadUploadedFiles(article);
             return View(article);
         }
 

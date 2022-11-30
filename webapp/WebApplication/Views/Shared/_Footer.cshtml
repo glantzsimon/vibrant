@@ -23,7 +23,12 @@
 			<div class="col-md-4 agile-footer-grid">
 				<h4>Navigation</h4>
 			    <ul>
+			        <li class="text"><a href="@Url.Action("FrequentlyAskedQuestions", "Home")"> @Dictionary.FAQ</a></li>
 			        <li class="text"><a href="@Url.Action("Index", "Home")"> @K9.Base.Globalisation.Dictionary.Home</a></li>
+			        <li class="text"><a href="@Url.Action("Index", "Products")"> @Dictionary.Products</a></li>
+			        <li class="text"><a href="@Url.Action("Index", "Ingredients")"> @Dictionary.Ingredient</a></li>
+			        <li class="text"><a href="@Url.Action("Index", "Articles")"> @Dictionary.Articles</a></li>
+			        <li class="text"><a href="@Url.Action("Index", "SelfCare")"> @Dictionary.SelfCare</a></li>
 			    </ul>
 			</div>
 			<div class="clearfix"> </div>
@@ -33,7 +38,6 @@
 <div class="footer-copyright">
 	<div class="container">
 	    <p>@Html.Raw(termsText) </p>
-	    <p>&copy; Glantz Software Consulting Limited @DateTime.Now.Year - @K9.Base.Globalisation.Dictionary.AllRightsReserved.</p>
-
+	    <p>&copy; Pure Alchemy Limited @DateTime.Now.Year - @K9.Base.Globalisation.Dictionary.AllRightsReserved.</p>
 	</div>
 </div>
