@@ -132,6 +132,9 @@
   <data name="Cortisol" xml:space="preserve">
     <value>The major stress hormone of the body. In excess, cortisol can result int he breakdown of tissues, resulting in degenerative disease.</value>
   </data>
+  <data name="CReactiveProtein" xml:space="preserve">
+    <value>CRP is a protein secreted mostly by cells in the liver in response to a variety of inflammatory cytokines. CRP plays important roles in inflammatory processes including by altering pathways involved in apoptosis, phagocytosis, nitric oxide release and production of cytokines. Elevated CRP is a reliable marker of chronic inflammation.</value>
+  </data>
   <data name="FreeRadicals" xml:space="preserve">
     <value>Free radicals result from oxidation in cells and damage tissues in the body. They are implicated in many types of age-related diseases.</value>
   </data>
@@ -158,5 +161,14 @@
   </data>
   <data name="Nootropic" xml:space="preserve">
     <value>Nootropics can help to improve memory, boost learning ability, enhance mood and assist overall brain function and health.</value>
+  </data>
+  <data name="OxidativeStress" xml:space="preserve">
+    <value>Damage to tissues and cells caused by free radicals, which is implicated in many chronic, degenerative diseases.</value>
+  </data>
+  <data name="BDNF" xml:space="preserve">
+    <value>A potent neurotrophin that stimulates the genesis of new neurons in the brain is referred to as neurogenesis. BDNF is implicated in neuroplasticity, learning, memory and higher thinking.</value>
+  </data>
+  <data name="Neuroplasticity" xml:space="preserve">
+    <value>Neuroplasticity or brain plasticity is the inherent ability of the brain to adapt and change in reaction to internal and external stimuli. Your brain can change its functions and even its physical structure to react to inputs coming in from events, experiences, thoughts, and even human emotions.</value>
   </data>
 </root>

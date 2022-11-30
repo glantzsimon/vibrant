@@ -88,6 +88,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A potent neurotrophin that stimulates the genesis of new neurons in the brain is referred to as neurogenesis. BDNF is implicated in neuroplasticity, learning, memory and higher thinking..
+        /// </summary>
+        public static string BDNF {
+            get {
+                return ResourceManager.GetString("BDNF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The blood–brain barrier protects against circulating toxins or pathogens that could cause brain infections, while at the same time allowing vital nutrients to reach the brain..
         /// </summary>
         public static string BloodBrainBarrier {
@@ -102,6 +111,15 @@ namespace K9.Globalisation {
         public static string Cortisol {
             get {
                 return ResourceManager.GetString("Cortisol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CRP is a protein secreted mostly by cells in the liver in response to a variety of inflammatory cytokines. CRP plays important roles in inflammatory processes including by altering pathways involved in apoptosis, phagocytosis, nitric oxide release and production of cytokines. Elevated CRP is a reliable marker of chronic inflammation..
+        /// </summary>
+        public static string CReactiveProtein {
+            get {
+                return ResourceManager.GetString("CReactiveProtein", resourceCulture);
             }
         }
         
@@ -178,11 +196,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Neuroplasticity or brain plasticity is the inherent ability of the brain to adapt and change in reaction to internal and external stimuli. Your brain can change its functions and even its physical structure to react to inputs coming in from events, experiences, thoughts, and even human emotions..
+        /// </summary>
+        public static string Neuroplasticity {
+            get {
+                return ResourceManager.GetString("Neuroplasticity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nootropics can help to improve memory, boost learning ability, enhance mood and assist overall brain function and health..
         /// </summary>
         public static string Nootropic {
             get {
                 return ResourceManager.GetString("Nootropic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damage to tissues and cells caused by free radicals, which is implicated in many chronic, degenerative diseases..
+        /// </summary>
+        public static string OxidativeStress {
+            get {
+                return ResourceManager.GetString("OxidativeStress", resourceCulture);
             }
         }
     }

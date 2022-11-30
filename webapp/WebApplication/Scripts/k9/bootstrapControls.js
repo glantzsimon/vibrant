@@ -90,7 +90,7 @@ function bootstrapControls(config) {
     function initGlossary() {
         $("span.glossary").each(function () {
             var $el = $(this);
-            var word = ($el).attr("key") || $el.html();
+            var word = ($el).attr("key") || $el.html().replace(/\s+/g, "");
             var glossaryItem = config.glossaryItems.find(e => e.Name.toLowerCase() === word.toLowerCase());
 
             if (glossaryItem) {
