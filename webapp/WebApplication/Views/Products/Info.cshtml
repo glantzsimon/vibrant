@@ -1,6 +1,6 @@
 ﻿@using System.Web.Mvc.Html
 @using K9.WebApplication.Helpers
-@model Ingredient
+@model Product
 
 @{
     ViewBag.Title = Model.Name;
@@ -10,6 +10,6 @@
 
 <div class="container main-content">
     <div class="well margin-bottom-0">
-        @Html.Partial("_Ingredient", Model)
+        @Html.Partial("_Product", Model)
     </div>
 </div>

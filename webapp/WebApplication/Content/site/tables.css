@@ -40,6 +40,10 @@ form .pull-right .btn {
     font-size: 0.9em !important;
 }
 
+.bootstraptable .even {
+    background: #fefefe;
+}
+
 .datatable-container .col-lg-1, 
 .datatable-container .col-lg-10, 
 .datatable-container .col-lg-11, 
@@ -91,3 +95,4 @@ form .pull-right .btn {
 	padding-left: 0;
 	padding-right: 0;
 }
+
