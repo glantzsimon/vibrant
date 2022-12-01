@@ -374,6 +374,23 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Some of the most advanced nutritional supplements on the market
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    After decades of research and trial and error, we have identified which compounds are the safest, most effective and provide the greatest benefits. We have also figured out how to carefully combine different ingredients in the correct dosages in powerful formulations to provide you with optimum benefits.
+        ///&lt;/p&gt;
+        ///&lt;h5&gt;
+        ///    &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/i&gt; Only 100% pure, active ingredients &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/i&gt;
+        ///&lt;/h [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string cbsmutation {
+            get {
+                return ResourceManager.GetString("cbsmutation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Amount.
         /// </summary>
         public static string ChangeAmount {
@@ -406,6 +423,15 @@ namespace K9.Globalisation {
         public static string Checkout {
             get {
                 return ResourceManager.GetString("Checkout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check out our products!.
+        /// </summary>
+        public static string CheckOutOurProducts {
+            get {
+                return ResourceManager.GetString("CheckOutOurProducts", resourceCulture);
             }
         }
         

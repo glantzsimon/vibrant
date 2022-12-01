@@ -1126,6 +1126,12 @@
   <data name="FAQ" xml:space="preserve">
     <value>FAQ</value>
   </data>
+  <data name="cbsmutation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>general\en-gb\cbsmutation.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CheckOutOurProducts" xml:space="preserve">
+    <value>Check out our products!</value>
+  </data>
   <data name="DosageLabel" xml:space="preserve">
     <value>Dosage</value>
   </data>

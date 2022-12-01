@@ -169,6 +169,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Homocysteine is a specific type of amino acid that’s created in the body during metabolic processes, as opposed to consumed in food. It’s produced in the body as a byproduct of methylation. Excessive homocysteine is often observed in chronic inflammatory diseases..
+        /// </summary>
+        public static string Homocysteine {
+            get {
+                return ResourceManager.GetString("Homocysteine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Peptide hormone that stimulates growth, cell reproduction, and cell regeneration in humans and other animals. It is thus important in human development. GH also stimulates production of IGF-1 and increases the concentration of glucose and free fatty acids..
         /// </summary>
         public static string HumanGrowthHormone {
@@ -246,6 +255,26 @@ namespace K9.Globalisation {
         public static string Neurotransmitter {
             get {
                 return ResourceManager.GetString("Neurotransmitter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nitric oxide is a key molecule in the cardiovascular system that helps keep blood vessels healthy and regulates blood pressure..
+        /// </summary>
+        public static string NitricOxide {
+            get {
+                return ResourceManager.GetString("NitricOxide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NMDA receptor is a type of G protein-coupled ionotropic glutamate receptor that plays a crucial role in regulating a wide variety of neurological functions, including breathing, locomotion, learning, memory formation, and neuroplasticity.
+        ///
+        ///Accordingly, structural and functional impairment of the NMDA receptor can lead to neurodegenerative and cognitive disorders, including Alzheimer’s disease, Parkinson’s disease, Huntington disease, neuropathic pain, epilepsy, and psychiatric disorders..
+        /// </summary>
+        public static string NMDA {
+            get {
+                return ResourceManager.GetString("NMDA", resourceCulture);
             }
         }
         

@@ -21,11 +21,17 @@
 <hr />
 
 <article>
-    <h5>@Dictionary.OverviewLabel</h5>
-    @MvcHtmlString.Create(Model.Body)
+    @if (Model.Body != "...")
+    {
+        <h5>@Dictionary.OverviewLabel</h5>
+        @MvcHtmlString.Create(Model.Body)
+    }
 
-    <h5>@Dictionary.BenefitsLabel</h5>
-    @MvcHtmlString.Create(Model.Benefits)
+    @if (Model.Benefits != "...")
+    {
+        <h5>@Dictionary.BenefitsLabel</h5>
+        @MvcHtmlString.Create(Model.Benefits)
+    }
 
     @if (!string.IsNullOrWhiteSpace(Model.SubjectiveEffects))
     {

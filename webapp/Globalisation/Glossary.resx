@@ -180,11 +180,22 @@
   <data name="Glutamate" xml:space="preserve">
     <value>GABA is the main excitatory neurotransmitter produced in the body. It excites neurons and is implicated in memory, concentration, mood, cellular energy production, neuroplasticity and the growth and development of the brain.</value>
   </data>
+  <data name="Homocysteine" xml:space="preserve">
+    <value>Homocysteine is a specific type of amino acid that’s created in the body during metabolic processes, as opposed to consumed in food. It’s produced in the body as a byproduct of methylation. Excessive homocysteine is often observed in chronic inflammatory diseases.</value>
+  </data>
   <data name="Neuroplasticity" xml:space="preserve">
     <value>Neuroplasticity or brain plasticity is the inherent ability of the brain to adapt and change in reaction to internal and external stimuli. Your brain can change its functions and even its physical structure to react to inputs coming in from events, experiences, thoughts, and even human emotions.</value>
   </data>
   <data name="Neurotransmitter" xml:space="preserve">
     <value>A chemical messenger used by the nervous system to send messages between nerve cells. </value>
+  </data>
+  <data name="NitricOxide" xml:space="preserve">
+    <value>Nitric oxide is a key molecule in the cardiovascular system that helps keep blood vessels healthy and regulates blood pressure.</value>
+  </data>
+  <data name="NMDA" xml:space="preserve">
+    <value>NMDA receptor is a type of G protein-coupled ionotropic glutamate receptor that plays a crucial role in regulating a wide variety of neurological functions, including breathing, locomotion, learning, memory formation, and neuroplasticity.
+
+Accordingly, structural and functional impairment of the NMDA receptor can lead to neurodegenerative and cognitive disorders, including Alzheimer’s disease, Parkinson’s disease, Huntington disease, neuropathic pain, epilepsy, and psychiatric disorders.</value>
   </data>
   <data name="Norepinephrine" xml:space="preserve">
     <value>A major neurotransmitter of the catecholamine family, implicated in focus, blood pressure, mood, sleep healthy stress response and more.</value>

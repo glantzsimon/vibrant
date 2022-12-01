@@ -14,10 +14,13 @@
 
         <article>
             @MvcHtmlString.Create(Dictionary.welcome)
+            
+            @MvcHtmlString.Create(Dictionary.cbsmutation)
         </article>
         <br />
         <div class="buttons-container">
-            @Html.BootstrapActionLinkButton(Dictionary.ViewProducts, "Main", "Products", null, "", EButtonClass.Info, EButtonClass.Large)
+
+            @Html.BootstrapActionLinkButton(Dictionary.CheckOutOurProducts, "Main", "Products", null, "", EButtonClass.Info, EButtonClass.Large)
         </div>
     </div>
 </div>
