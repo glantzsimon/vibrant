@@ -165,10 +165,31 @@
   <data name="OxidativeStress" xml:space="preserve">
     <value>Damage to tissues and cells caused by free radicals, which is implicated in many chronic, degenerative diseases.</value>
   </data>
+  <data name="ATP" xml:space="preserve">
+    <value>Adenosine triphosphate, also known as ATP, is a molecule that carries energy within cells. It is the main energy currency of the cell.</value>
+  </data>
   <data name="BDNF" xml:space="preserve">
     <value>A potent neurotrophin that stimulates the genesis of new neurons in the brain is referred to as neurogenesis. BDNF is implicated in neuroplasticity, learning, memory and higher thinking.</value>
   </data>
+  <data name="Dopamine" xml:space="preserve">
+    <value>A major neurotransmitter of the catecholamine family, implicated in pleasure, focus, motivation, memory, movement, mood, blood vessel function, planning and more.</value>
+  </data>
+  <data name="GABA" xml:space="preserve">
+    <value>GABA is the main inhibitory neurotransmitter produced in the body. It helps to countr excessive neural excitement. GABA is implicated in mood, sleep, stress, anxiety, speech, cognition, memory, focus, blood pressure and more.</value>
+  </data>
+  <data name="Glutamate" xml:space="preserve">
+    <value>GABA is the main excitatory neurotransmitter produced in the body. It excites neurons and is implicated in memory, concentration, mood, cellular energy production, neuroplasticity and the growth and development of the brain.</value>
+  </data>
   <data name="Neuroplasticity" xml:space="preserve">
     <value>Neuroplasticity or brain plasticity is the inherent ability of the brain to adapt and change in reaction to internal and external stimuli. Your brain can change its functions and even its physical structure to react to inputs coming in from events, experiences, thoughts, and even human emotions.</value>
+  </data>
+  <data name="Neurotransmitter" xml:space="preserve">
+    <value>A chemical messenger used by the nervous system to send messages between nerve cells. </value>
+  </data>
+  <data name="Norepinephrine" xml:space="preserve">
+    <value>A major neurotransmitter of the catecholamine family, implicated in focus, blood pressure, mood, sleep healthy stress response and more.</value>
+  </data>
+  <data name="Serotonin" xml:space="preserve">
+    <value>A neurotransmitter that plays a role in sleep, appetite, learning, memory, mood, sexual function and more.</value>
   </data>
 </root>

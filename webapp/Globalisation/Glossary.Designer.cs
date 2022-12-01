@@ -88,6 +88,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adenosine triphosphate, also known as ATP, is a molecule that carries energy within cells. It is the main energy currency of the cell..
+        /// </summary>
+        public static string ATP {
+            get {
+                return ResourceManager.GetString("ATP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A potent neurotrophin that stimulates the genesis of new neurons in the brain is referred to as neurogenesis. BDNF is implicated in neuroplasticity, learning, memory and higher thinking..
         /// </summary>
         public static string BDNF {
@@ -124,11 +133,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A major neurotransmitter of the catecholamine family, implicated in pleasure, focus, motivation, memory, movement, mood, blood vessel function, planning and more..
+        /// </summary>
+        public static string Dopamine {
+            get {
+                return ResourceManager.GetString("Dopamine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Free radicals result from oxidation in cells and damage tissues in the body. They are implicated in many types of age-related diseases..
         /// </summary>
         public static string FreeRadicals {
             get {
                 return ResourceManager.GetString("FreeRadicals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GABA is the main inhibitory neurotransmitter produced in the body. It helps to countr excessive neural excitement. GABA is implicated in mood, sleep, stress, anxiety, speech, cognition, memory, focus, blood pressure and more..
+        /// </summary>
+        public static string GABA {
+            get {
+                return ResourceManager.GetString("GABA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GABA is the main excitatory neurotransmitter produced in the body. It excites neurons and is implicated in memory, concentration, mood, cellular energy production, neuroplasticity and the growth and development of the brain..
+        /// </summary>
+        public static string Glutamate {
+            get {
+                return ResourceManager.GetString("Glutamate", resourceCulture);
             }
         }
         
@@ -205,6 +241,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A chemical messenger used by the nervous system to send messages between nerve cells. .
+        /// </summary>
+        public static string Neurotransmitter {
+            get {
+                return ResourceManager.GetString("Neurotransmitter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nootropics can help to improve memory, boost learning ability, enhance mood and assist overall brain function and health..
         /// </summary>
         public static string Nootropic {
@@ -214,11 +259,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A major neurotransmitter of the catecholamine family, implicated in focus, blood pressure, mood, sleep healthy stress response and more..
+        /// </summary>
+        public static string Norepinephrine {
+            get {
+                return ResourceManager.GetString("Norepinephrine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Damage to tissues and cells caused by free radicals, which is implicated in many chronic, degenerative diseases..
         /// </summary>
         public static string OxidativeStress {
             get {
                 return ResourceManager.GetString("OxidativeStress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A neurotransmitter that plays a role in sleep, appetite, learning, memory, mood, sexual function and more..
+        /// </summary>
+        public static string Serotonin {
+            get {
+                return ResourceManager.GetString("Serotonin", resourceCulture);
             }
         }
     }
