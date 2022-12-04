@@ -19,7 +19,7 @@ namespace K9.WebApplication.Controllers
             _articlesRepository = articlesRepository;
         }
 
-        [Route("article/overview")]
+        [Route("article/all")]
         public ActionResult Index()
         {
             return View(_articlesRepository.GetQuery($"SELECT * FROM [{nameof(Article)}] ORDER BY [{nameof(Article.CreatedOn)}] DESC").ToList());

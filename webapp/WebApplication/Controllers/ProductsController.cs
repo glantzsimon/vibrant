@@ -6,7 +6,6 @@ using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Extensions;
 using System;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
@@ -21,24 +20,7 @@ namespace K9.WebApplication.Controllers
             RecordBeforeCreated += ProductsController_RecordBeforeCreated;
             RecordBeforeUpdated += ProductsController_RecordBeforeUpdated;
 		}
-
-	    [Route("product/{seoFriendlyId}")]
-	    public ActionResult Info(string seoFriendlyId)
-	    {
-	        var product = Repository.Find(e => e.SeoFriendlyId == seoFriendlyId).FirstOrDefault();
-	        if (product == null)
-	        {
-	            return HttpNotFound();
-	        }
-	        return View(product);;
-	    }
-
-	    [Route("product/full-list")]
-	    public ActionResult FullList(string seoFriendlyId)
-	    {
-	        return View(Repository.List());;
-	    }
-
+        
         private void ProductsController_RecordBeforeUpdated(object sender, CrudEventArgs e)
         {
             var product = e.Item as Product;

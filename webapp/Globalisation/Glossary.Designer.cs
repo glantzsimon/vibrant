@@ -115,6 +115,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A genetic SNP or polymorphism (i.e. variant), which predisposes certain individual&apos;s to difficulties processing and detoxifying certain environmental chemicals as well as making them more susceptible to stress..
+        /// </summary>
+        public static string CBSMutation {
+            get {
+                return ResourceManager.GetString("CBSMutation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The major stress hormone of the body. In excess, cortisol can result int he breakdown of tissues, resulting in degenerative disease..
         /// </summary>
         public static string Cortisol {

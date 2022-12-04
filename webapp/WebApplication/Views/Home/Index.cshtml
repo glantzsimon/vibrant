@@ -8,19 +8,21 @@
 
 <div class="container main-content">
     <div class="well margin-bottom-0">
-        <video autoplay loop muted>
+        <video autoplay loop muted playsinline>
             <source src="~/Videos/welcome9.mp4" type="video/mp4">
         </video>
 
         <article>
             @MvcHtmlString.Create(Dictionary.welcome)
-            
-            @MvcHtmlString.Create(Dictionary.cbsmutation)
         </article>
         <br />
         <div class="buttons-container">
 
             @Html.BootstrapActionLinkButton(Dictionary.CheckOutOurProducts, "Main", "Products", null, "", EButtonClass.Info, EButtonClass.Large)
         </div>
+        <hr/>
+        <article>
+            @MvcHtmlString.Create(Dictionary.cbsmutation)
+        </article>
     </div>
 </div>

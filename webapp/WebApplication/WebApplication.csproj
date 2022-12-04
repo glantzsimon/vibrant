@@ -309,6 +309,8 @@
     <Compile Include="Config\RecaptchaConfiguration.cs" />
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\IngredientController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\HtmlControllerBase.cs" />
     <Compile Include="Controllers\IngredientsController.cs" />
@@ -1242,17 +1244,16 @@
     <Content Include="Views\Ingredients\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Quantity.cshtml" />
     <Content Include="Views\Ingredients\_DisplaySummary.cshtml" />
-    <Content Include="Views\Ingredients\Info.cshtml" />
-    <Content Include="Views\Ingredients\_Ingredient.cshtml" />
-    <Content Include="Views\Ingredients\FullList.cshtml" />
-    <Content Include="Views\Ingredients\_IngredientList.cshtml" />
+    <Content Include="Views\Ingredient\Details.cshtml" />
+    <Content Include="Views\Ingredient\_Ingredient.cshtml" />
+    <Content Include="Views\Ingredient\Index.cshtml" />
+    <Content Include="Views\Ingredient\_IngredientList.cshtml" />
     <Content Include="Views\Article\_ArticleHeader.cshtml" />
-    <Content Include="Views\Products\Info.cshtml" />
-    <Content Include="Views\Products\_DisplaySummary.cshtml" />
-    <Content Include="Views\Products\_Product.cshtml" />
-    <Content Include="Views\Products\_ProductList.cshtml" />
-    <Content Include="Views\Products\FullList.cshtml" />
-    <Content Include="Views\Products\_Ingredients.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Product\_Product.cshtml" />
+    <Content Include="Views\Product\_ProductList.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\_Ingredients.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

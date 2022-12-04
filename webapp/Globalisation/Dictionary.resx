@@ -1141,4 +1141,13 @@
   <data name="SeeAll" xml:space="preserve">
     <value>See Full List</value>
   </data>
+  <data name="SeeAllArticles" xml:space="preserve">
+    <value>See Full List of Articles</value>
+  </data>
+  <data name="SeeAllIngredients" xml:space="preserve">
+    <value>See Full List of Ingredients</value>
+  </data>
+  <data name="SeeAllProducts" xml:space="preserve">
+    <value>See Full List of Products</value>
+  </data>
 </root>

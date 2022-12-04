@@ -10,6 +10,24 @@
     url('../fonts/alex-brush-v8-latin-regular.svg#AlexBrush') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+    font-family: 'candara';
+    font-style: normal;
+    src: url('../fonts/candara.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'holipop';
+    font-style: normal;
+    src: url('../fonts/holipop.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'valent';
+    font-style: normal;
+    src: url('../fonts/valent.ttf') format('truetype');
+}
+
 body a, h4 {
     transition: 0.5s all;
     -webkit-transition: 0.5s all;

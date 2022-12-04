@@ -381,8 +381,7 @@ namespace K9.Globalisation {
         ///    After decades of research and trial and error, we have identified which compounds are the safest, most effective and provide the greatest benefits. We have also figured out how to carefully combine different ingredients in the correct dosages in powerful formulations to provide you with optimum benefits.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/i&gt; Only 100% pure, active ingredients &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/i&gt;
-        ///&lt;/h [rest of string was truncated]&quot;;.
+        ///    &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/i&gt; Only 100% pure, active ingredients &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cbsmutation {
             get {
@@ -2542,6 +2541,33 @@ namespace K9.Globalisation {
         public static string SeeAll {
             get {
                 return ResourceManager.GetString("SeeAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to See Full List of Articles.
+        /// </summary>
+        public static string SeeAllArticles {
+            get {
+                return ResourceManager.GetString("SeeAllArticles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to See Full List of Ingredients.
+        /// </summary>
+        public static string SeeAllIngredients {
+            get {
+                return ResourceManager.GetString("SeeAllIngredients", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to See Full List of Products.
+        /// </summary>
+        public static string SeeAllProducts {
+            get {
+                return ResourceManager.GetString("SeeAllProducts", resourceCulture);
             }
         }
         

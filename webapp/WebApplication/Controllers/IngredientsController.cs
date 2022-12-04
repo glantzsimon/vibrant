@@ -18,23 +18,6 @@ namespace K9.WebApplication.Controllers
             RecordBeforeCreated += IngredientsController_RecordBeforeCreated;
             RecordBeforeUpdated += IngredientsController_RecordBeforeUpdated;
 		}
-        
-	    [Route("ingredient/{seoFriendlyId}")]
-        public ActionResult Info(string seoFriendlyId)
-	    {
-	        var ingredient = Repository.Find(e => e.SeoFriendlyId == seoFriendlyId).FirstOrDefault();
-	        if (ingredient == null)
-	        {
-	            return HttpNotFound();
-	        }
-	        return View(ingredient);;
-	    }
-
-	    [Route("ingredient/full-list")]
-	    public ActionResult FullList(string seoFriendlyId)
-	    {
-	        return View(Repository.List());;
-	    }
 
         private void IngredientsController_RecordBeforeUpdated(object sender, CrudEventArgs e)
         {

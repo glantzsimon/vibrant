@@ -171,6 +171,9 @@
   <data name="BDNF" xml:space="preserve">
     <value>A potent neurotrophin that stimulates the genesis of new neurons in the brain is referred to as neurogenesis. BDNF is implicated in neuroplasticity, learning, memory and higher thinking.</value>
   </data>
+  <data name="CBSMutation" xml:space="preserve">
+    <value>A genetic SNP or polymorphism (i.e. variant), which predisposes certain individual's to difficulties processing and detoxifying certain environmental chemicals as well as making them more susceptible to stress.</value>
+  </data>
   <data name="Dopamine" xml:space="preserve">
     <value>A major neurotransmitter of the catecholamine family, implicated in pleasure, focus, motivation, memory, movement, mood, blood vessel function, planning and more.</value>
   </data>
