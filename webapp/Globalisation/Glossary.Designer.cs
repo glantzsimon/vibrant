@@ -196,6 +196,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The act of giving a methyl group to another compound altering its chemical structure thereby changing it to something else. This is a carefully orchestrated transfer from one compound to another which requires an enzymatic process. Methylation is an essential and major part of our metabolism and any imbalances in methylation produce varying degrees of pathology..
+        /// </summary>
+        public static string Methylation {
+            get {
+                return ResourceManager.GetString("Methylation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A substance that is capable of donating a methyl group to another compound. .
+        /// </summary>
+        public static string MethylGroup {
+            get {
+                return ResourceManager.GetString("MethylGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The organelles of cells responsible for producing all of our ATP (cellular energy).
         /// </summary>
         public static string Mitochondria {

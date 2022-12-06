@@ -186,6 +186,12 @@
   <data name="Homocysteine" xml:space="preserve">
     <value>Homocysteine is a specific type of amino acid that’s created in the body during metabolic processes, as opposed to consumed in food. It’s produced in the body as a byproduct of methylation. Excessive homocysteine is often observed in chronic inflammatory diseases.</value>
   </data>
+  <data name="Methylation" xml:space="preserve">
+    <value>The act of giving a methyl group to another compound altering its chemical structure thereby changing it to something else. This is a carefully orchestrated transfer from one compound to another which requires an enzymatic process. Methylation is an essential and major part of our metabolism and any imbalances in methylation produce varying degrees of pathology.</value>
+  </data>
+  <data name="MethylGroup" xml:space="preserve">
+    <value>A substance that is capable of donating a methyl group to another compound. </value>
+  </data>
   <data name="Neuroplasticity" xml:space="preserve">
     <value>Neuroplasticity or brain plasticity is the inherent ability of the brain to adapt and change in reaction to internal and external stimuli. Your brain can change its functions and even its physical structure to react to inputs coming in from events, experiences, thoughts, and even human emotions.</value>
   </data>
