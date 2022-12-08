@@ -1,21 +1,21 @@
 ﻿@using K9.Base.WebApplication.Controllers
 @using K9.Base.WebApplication.Helpers
 @using K9.SharedLibrary.Authentication
-@model Ingredient
+@model Product
 @{
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
 
-@Html.BootstrapTable(new DataTableOptions<Ingredient>
+@Html.BootstrapTable(new DataTableOptions<Product>
 {
     AllowCreate = true,
     AllowEdit = true,
-    AllowDelete = ((BaseController<Ingredient>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    AllowDelete = ((BaseController<Product>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     VisibleColumns = new List<string>
     {
         "Name",
         "ShortDescription",
-        "Cost",
-        "Quantity",
+        "Price",
+        "ProductType",
     }
 })
