@@ -1,11 +1,16 @@
 ﻿@using K9.WebApplication.Helpers
 @using K9.WebApplication.Options
 @model K9.Base.WebApplication.ViewModels.FileSourceViewModel
+@{
+    var imageSrc = $"{Model.Images[0].AssetInfo.Src}";
+}
 @if (Model.Images.Count == 1)
 {
-    @Html.ImagePanel("", $"~/{Model.Images[0].AssetInfo.Src}", EPanelImageSize.Medium)
+    <a href="~/@imageSrc" target="_blank">
+        @Html.ImagePanel("", $"~/{imageSrc}", EPanelImageSize.Medium)
+    </a>
 }
-else if(Model.Images.Any())
+else if (Model.Images.Any())
 {
     <div class="picture-frame picture-frame-400">
         <div>
@@ -16,3 +21,4 @@ else if(Model.Images.Any())
         </div>
     </div>
 }
+
