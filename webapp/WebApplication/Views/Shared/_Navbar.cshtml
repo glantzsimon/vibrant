@@ -77,7 +77,7 @@
                             <ul class="dropdown-menu nav navbar-nav">
                                 @if (products != null)
                                 {
-                                    <li class="@ViewContext.GetActiveClass("FullList", "Products")"><a href="@Url.Action("Index", "Product")"> @Dictionary.SeeAllProducts</a></li>
+                                    <li class="@ViewContext.GetActiveClass("Index", "Products")"><a href="@Url.Action("Index", "Product")"> @Dictionary.SeeAllProducts</a></li>
                            
                                     <li class="divider"></li>
 
@@ -94,7 +94,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Ingredients</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
-                                <li class="@ViewContext.GetActiveClass("FullList", "Ingredients")"><a href="@Url.Action("Index", "Ingredient")"> @Dictionary.SeeAllIngredients</a></li>
+                                <li class="@ViewContext.GetActiveClass("Index", "Ingredients")"><a href="@Url.Action("Index", "Ingredient")"> @Dictionary.SeeAllIngredients</a></li>
                            
                                 <li class="divider"></li>
 
