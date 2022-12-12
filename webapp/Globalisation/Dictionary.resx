@@ -1135,6 +1135,9 @@
   <data name="DosageLabel" xml:space="preserve">
     <value>Dosage</value>
   </data>
+  <data name="EditIngredients" xml:space="preserve">
+    <value>Edit Ingredients</value>
+  </data>
   <data name="FindOutMore" xml:space="preserve">
     <value>Find Out More</value>
   </data>
@@ -1149,5 +1152,11 @@
   </data>
   <data name="SeeAllProducts" xml:space="preserve">
     <value>See Full List of Products</value>
+  </data>
+  <data name="AmountPerServingLabel" xml:space="preserve">
+    <value>Amount per Serving</value>
+  </data>
+  <data name="EditIngredientQuantities" xml:space="preserve">
+    <value>Edit Ingredient Quantities</value>
   </data>
 </root>

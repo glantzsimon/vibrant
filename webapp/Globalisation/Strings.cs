@@ -80,8 +80,13 @@
             public const string ArticleCategories = "ArticleCategories";
             public const string ArticleCategory = "ArticleCategory";
             public const string ProductTypeLabel = "ProductTypeLabel";
+            public const string ProductLabel = "Product";
             public const string IngredientTypeLabel = "IngredientTypeLabel";
+            public const string IngredientLabel = "Ingredient";
+            public const string IngredientsLabel = "Ingredients";
+            public const string ProductIngredientsLabel = "EditIngredients";
             public const string AmountPerIngredientLabel = "AmountPerIngredientLabel";
+            public const string AmountPerServingLabel = "AmountPerServingLabel";
         }
 
         public static class Names

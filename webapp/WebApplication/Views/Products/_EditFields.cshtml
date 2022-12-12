@@ -1,26 +1,53 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Helpers
-@model Ingredient
+@model Product
+
+@Html.HiddenFor(e => e.Name)
 
 <div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.Name)
+        @Html.BootstrapEditorFor(model => model.Title)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.IngredientType)
+        @Html.BootstrapEditorFor(model => model.SeoFriendlyId)
     </div>
 </div>
 <div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.Cost)
+        @Html.BootstrapEditorFor(model => model.ProductType)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.Quantity)
+        @Html.BootstrapEditorFor(model => model.ContactId)
     </div>
 </div>
-
 <div class="row">
-    @Html.BootstrapEditorFor(model => model.PurchaseUrls)
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.Price)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.Amount)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.AmountPerServing)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.QuantityInStock)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.StockLowWarningLevel)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.IsLiveOn)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.ProductIngredientsId)
+    </div>
 </div>
 
 <hr />
@@ -35,21 +62,8 @@
 <div class="row">
     @Html.BootstrapEditorFor(model => model.Benefits)
 </div>
-
 <div class="row">
-    @Html.BootstrapEditorFor(model => model.SubjectiveEffects)
-</div>
-
-<div class="row">
-    @Html.BootstrapEditorFor(model => model.DeficiencySymptoms)
-</div>
-
-<div class="row">
-    @Html.BootstrapEditorFor(model => model.SideEffects)
-</div>
-
-<div class="row">
-    @Html.BootstrapEditorFor(model => model.Research)
+    @Html.BootstrapEditorFor(model => model.Dosage)
 </div>
 
 <hr />

@@ -1,59 +1,82 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Helpers
-@model Ingredient
+@model Product
 
 <div class="row">
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.Name)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.IngredientType)
+        @Html.BootstrapDisplayFor(model => model.SeoFriendlyId)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.ProductType)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.ContactId)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.Price)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.SuggestedRetailPrice)
     </div>
 </div>
 <div class="row">
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.Cost)
     </div>
+</div>
+<div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.FormattedQuantity)
+        @Html.BootstrapDisplayFor(model => model.Amount)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.AmountPerServing)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.QuantityInStock)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.StockLowWarningLevel)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.IsInStock)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.IsStockLowWarning)
     </div>
 </div>
 
-<div class="row">
-    @Html.BootstrapDisplayFor(model => model.PurchaseUrls)
-</div>
 <hr />
+
 <div class="row">
     @Html.BootstrapDisplayFor(model => model.ShortDescription)
 </div>
-<hr />
 <div class="row">
     @Html.BootstrapDisplayFor(model => model.Body)
 </div>
-<hr />
+
 <div class="row">
     @Html.BootstrapDisplayFor(model => model.Benefits)
 </div>
-<hr />
 <div class="row">
-    @Html.BootstrapDisplayFor(model => model.SubjectiveEffects)
-</div>
-<hr />
-<div class="row">
-    @Html.BootstrapDisplayFor(model => model.DeficiencySymptoms)
-</div>
-<hr />
-<div class="row">
-    @Html.BootstrapDisplayFor(model => model.SideEffects)
-</div>
-<hr />
-<div class="row">
-    @Html.BootstrapDisplayFor(model => model.Research)
+    @Html.BootstrapDisplayFor(model => model.Dosage)
 </div>
 
 <hr />
 
 <div class="row">
     @Html.BootstrapDisplayFor(model => model.ImageFileSource)
+</div>
+<div class="row">
     @Html.BootstrapDisplayFor(model => model.VideoFileSource)
 </div>

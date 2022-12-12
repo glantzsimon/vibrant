@@ -80,11 +80,26 @@ function bootstrapControls(config) {
     }
 
     function initQuantityInputs() {
-        $("form").find("select[data-input-id='ingredient-type']").change(function () {
-            var ingredientType = this.getSelectedText();
-            var measure = ingredientType === "Liquid" ? "ml" : "mg";
-            $(this).closest("form").find("span[data-input-id='quantity']").text(measure);
+        let $typeInput = $("form").find("select[data-input-id='ingredient-type'], select[data-input-id='product-type']");
+        let quantityFn = function ($el) {
+            if ($el.length > 0) {
+                var type = $el[0].getSelectedText();
+                var measure = type === "Liquid" ? "ml" : type === "Capsules" ? "capsules" : "mg";
+                let $labels = $el.closest("form").find("span[data-input-id='quantity']");
+                $labels.each(function() {
+                    var $label = $(this);
+                    if ($label.parent().find("input").attr("id") === "AmountPerServing" && measure === "capsules") {
+                        $label.text("mg");
+                    } else {
+                        $label.text(measure);
+                    }
+                });
+            }
+        };
+        $typeInput.change(function() {
+            quantityFn($typeInput);
         });
+        quantityFn($typeInput);
     }
 
     function initGlossary() {

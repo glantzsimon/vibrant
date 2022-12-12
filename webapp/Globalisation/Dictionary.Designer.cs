@@ -142,6 +142,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount per Serving.
+        /// </summary>
+        public static string AmountPerServingLabel {
+            get {
+                return ResourceManager.GetString("AmountPerServingLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You would like to donate:.
         /// </summary>
         public static string AmountToDonateLabel {
@@ -374,14 +383,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;
-        ///    Some of the most advanced nutritional supplements on the market
-        ///&lt;/h5&gt;
-        ///&lt;p&gt;
-        ///    After decades of research and trial and error, we have identified which compounds are the safest, most effective and provide the greatest benefits. We have also figured out how to carefully combine different ingredients in the correct dosages in powerful formulations to provide you with optimum benefits.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    &lt;strong&gt;Could a &lt;span class=&quot;glossary&quot; key=&quot;CBSMutation&quot;&gt;CBS mutation&lt;/span&gt; could be causing your chronic health problems?&lt;/strong&gt;
         ///&lt;/p&gt;
-        ///&lt;h5&gt;
-        ///    &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/i&gt; Only 100% pure, active ingredients &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/ [rest of string was truncated]&quot;;.
+        ///&lt;div&gt;
+        ///    &lt;a target=&quot;_blank&quot; class=&quot;btn btn-info btn-lg&quot; href=&quot;article/a-cbs-mutation-could-be-causing-your-chronic-health-problems&quot;&gt;Find out more
+        ///    &lt;/a&gt;
+        ///&lt;/div&gt;.
         /// </summary>
         public static string cbsmutation {
             get {
@@ -1168,6 +1176,24 @@ namespace K9.Globalisation {
         public static string EarthElement {
             get {
                 return ResourceManager.GetString("EarthElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Ingredient Quantities.
+        /// </summary>
+        public static string EditIngredientQuantities {
+            get {
+                return ResourceManager.GetString("EditIngredientQuantities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Ingredients.
+        /// </summary>
+        public static string EditIngredients {
+            get {
+                return ResourceManager.GetString("EditIngredients", resourceCulture);
             }
         }
         
@@ -3333,8 +3359,7 @@ namespace K9.Globalisation {
         ///    After decades of research and trial and error, we have identified which compounds are the safest, most effective and provide the greatest benefits. We have also figured out how to carefully combine different ingredients in the correct dosages in powerful formulations to provide you with optimum benefits.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/i&gt; Only 100% pure, active ingredients &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/i&gt;
-        ///&lt;/h [rest of string was truncated]&quot;;.
+        ///    &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/i&gt; Only 100% pure, active ingredients &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {

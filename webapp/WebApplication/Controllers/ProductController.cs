@@ -12,11 +12,15 @@ namespace K9.WebApplication.Controllers
     public class ProductController : BasePureController
     {
         private readonly IRepository<Product> _productsRepository;
+        private readonly IRepository<ProductIngredient> _productIngredientsRepository;
+        private readonly IRepository<Ingredient> _ingredientsRepository;
 
-        public ProductController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Product> productsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
+        public ProductController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Product> productsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _productsRepository = productsRepository;
+            _productIngredientsRepository = productIngredientsRepository;
+            _ingredientsRepository = ingredientsRepository;
         }
 
         [Route("product/all")]
@@ -33,6 +37,15 @@ namespace K9.WebApplication.Controllers
             {
                 return HttpNotFound();
             }
+
+            product.ProductIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id);
+
+            foreach (var productIngredient in product.ProductIngredients)
+            {
+                productIngredient.Ingredient =
+                    _ingredientsRepository.Find(e => e.Id == productIngredient.IngredientId).FirstOrDefault();
+            }
+
             LoadUploadedFiles(product);
             return View(product);
         }

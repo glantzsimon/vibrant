@@ -269,12 +269,22 @@
     <Compile Include="Migrations\202211290536570_RemoveIngredientTitle.designer.cs">
       <DependentUpon>202211290536570_RemoveIngredientTitle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212091538301_AddAmountToProduct.cs" />
+    <Compile Include="Migrations\202212091538301_AddAmountToProduct.designer.cs">
+      <DependentUpon>202212091538301_AddAmountToProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212121033086_AmountPerServing.cs" />
+    <Compile Include="Migrations\202212121033086_AmountPerServing.designer.cs">
+      <DependentUpon>202212121033086_AmountPerServing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212121043463_RemoveInventory.cs" />
+    <Compile Include="Migrations\202212121043463_RemoveInventory.designer.cs">
+      <DependentUpon>202212121043463_RemoveInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
-    <Compile Include="Models\IngredientInventory.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\SaleItem.cs" />
     <Compile Include="Models\Sale.cs" />
-    <Compile Include="Models\ProductInventory.cs" />
     <Compile Include="Models\ProductIngredient.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ArticleCategory.cs" />
@@ -314,6 +324,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202211290536570_RemoveIngredientTitle.resx">
       <DependentUpon>202211290536570_RemoveIngredientTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212091538301_AddAmountToProduct.resx">
+      <DependentUpon>202212091538301_AddAmountToProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212121033086_AmountPerServing.resx">
+      <DependentUpon>202212121033086_AmountPerServing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212121043463_RemoveInventory.resx">
+      <DependentUpon>202212121043463_RemoveInventory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

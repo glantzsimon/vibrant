@@ -79,7 +79,7 @@ namespace K9.DataAccessLayer.Models
 	    public int Quantity { get; set; }
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary),
-	        Name = Globalisation.Strings.Labels.QuantityInStockLabel)]
+	        Name = Globalisation.Strings.Labels.QuantityLabel)]
 	    public string FormattedQuantity => $"{Quantity} {MeasuredIn}";
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostPer100GramsLabel)]
@@ -89,6 +89,23 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostPerMilligramLabel)]
 	    [DataType(DataType.Currency)]
 	    public double CostPerMilligram => CostPer100Grams / 100000;
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantityInStockLabel)]
+	    public int QuantityInStock { get; set; }
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary),
+	        Name = Globalisation.Strings.Labels.QuantityInStockLabel)]
+	    public string FormattedQuantityInStock => $"{QuantityInStock} {MeasuredIn}";
+        
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
+	    public bool IsInStock => QuantityInStock > 0;
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary),
+	        Name = Globalisation.Strings.Labels.StockLowWarningLevelLabel)]
+	    public int StockLowWarningLevel { get; set; } = 200;
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
+	    public bool IsStockLowWarning => QuantityInStock > StockLowWarningLevel;
 
 	    [FileSourceInfo("upload/ingredients", Filter = EFilesSourceFilter.Images)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]

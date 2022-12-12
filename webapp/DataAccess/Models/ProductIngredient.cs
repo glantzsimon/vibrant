@@ -3,6 +3,7 @@ using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using K9.SharedLibrary.Attributes;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -16,12 +17,21 @@ namespace K9.DataAccessLayer.Models
 
         public virtual Product Product { get; set; }
 
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductLabel)]
+	    [LinkedColumn(LinkedTableName = "Product", LinkedColumnName = "Title")]
+	    public string ProductName { get; set; }
+
 	    [UIHint("Ingredient")]
 	    [ForeignKey("Ingredient")]
 	    public int IngredientId { get; set; }
 
 	    public virtual Ingredient Ingredient { get; set; }
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IngredientLabel)]
+	    [LinkedColumn(LinkedTableName = "Ingredient", LinkedColumnName = "Name")]
+	    public string IngredientName { get; set; }
         
+	    [UIHint("Quantity")]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
 	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 	    public float Amount { get; set; }

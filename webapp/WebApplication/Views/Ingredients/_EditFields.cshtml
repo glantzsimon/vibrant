@@ -18,6 +18,14 @@
         @Html.BootstrapEditorFor(model => model.Quantity)
     </div>
 </div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.QuantityInStock)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.StockLowWarningLevel)
+    </div>
+</div>
 
 <div class="row">
     @Html.BootstrapEditorFor(model => model.PurchaseUrls)

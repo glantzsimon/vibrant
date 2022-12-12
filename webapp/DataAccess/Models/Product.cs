@@ -24,10 +24,13 @@ namespace K9.DataAccessLayer.Models
         public EProductType ProductType { get; set; }
 
         public string MeasuredIn => GetMeasuredInText();
-        
+
         public string MeasuredInForLargeQuantity => GetMeasuredInForLargeQuantityText();
 
+        [UIHint("Contact")]
         [ForeignKey("Contact")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.CustomerLabel)]
         public int? ContactId { get; set; }
 
         public virtual Contact Contact { get; set; }
@@ -35,7 +38,14 @@ namespace K9.DataAccessLayer.Models
         [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
         public string ContactName { get; set; }
 
+        [UIHint("ProductIngredients")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.IngredientsLabel)]
+        public int ProductIngredientsId => Id;
+
         public virtual IEnumerable<ProductIngredient> ProductIngredients { get; set; }
+
+        public List<ProductIngredient> Ingredients { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLiveOnLabel)]
         public DateTime IsLiveOn { get; set; }
@@ -44,6 +54,16 @@ namespace K9.DataAccessLayer.Models
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [StringLength(256)]
         public string Title { get; set; }
+
+        [UIHint("Quantity")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        public float Amount { get; set; }
+
+        [UIHint("Quantity")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerServingLabel)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        public float AmountPerServing { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
@@ -85,6 +105,19 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
         public double SuggestedRetailPrice => Cost * 10;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantityInStockLabel)]
+        public int QuantityInStock { get; set; }
+        
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
+        public bool IsInStock => QuantityInStock > 0;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.StockLowWarningLevelLabel)]
+        public int StockLowWarningLevel { get; set; } = 10;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
+        public bool IsStockLowWarning => QuantityInStock > StockLowWarningLevel;
 
         [FileSourceInfo("upload/products", Filter = EFilesSourceFilter.Images)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]

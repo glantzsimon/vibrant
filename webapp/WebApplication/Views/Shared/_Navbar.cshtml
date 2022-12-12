@@ -25,6 +25,7 @@
                         <li class="@ViewContext.GetActiveClass("Index", "Contacts") sub-item"><a href="@Url.Action("Index", "Contacts")">@Dictionary.Contacts</a></li>
                         <li class="@ViewContext.GetActiveClass("Index", "Ingredients") sub-item"><a href="@Url.Action("Index", "Ingredients")">@Dictionary.Ingredients</a></li>
                         <li class="@ViewContext.GetActiveClass("Index", "Products") sub-item"><a href="@Url.Action("Index", "Products")">@Dictionary.Products</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "ProductIngredients") sub-item"><a href="@Url.Action("Index", "ProductIngredients")">@Dictionary.ProductIngredients</a></li>
                         <li class="@ViewContext.GetActiveClass("Index", "PromoCodes") sub-item"><a href="@Url.Action("Index", "PromoCodes")">@Dictionary.PromoCodes</a></li>
 
                         <li class="divider"></li>
@@ -82,9 +83,9 @@
 
                                     foreach (var product in products)
                                     {
-                                        <li>
-                                            <a href="@Url.Action("Details", "Product")#@product.Id"> @product.Name</a>
-                                        </li>
+                                    <li>
+                                        <a href="@Url.Action("Details", "Product", new {seoFriendlyId = product.Value})"> @product.Name</a>
+                                    </li>
                                     }
                                 }
                             </ul>

@@ -18,7 +18,22 @@
         @Html.BootstrapDisplayFor(model => model.FormattedQuantity)
     </div>
 </div>
-
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.FormattedQuantityInStock)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.IsInStock)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.StockLowWarningLevel)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.IsStockLowWarning)
+    </div>
+</div>
 <div class="row">
     @Html.BootstrapDisplayFor(model => model.PurchaseUrls)
 </div>

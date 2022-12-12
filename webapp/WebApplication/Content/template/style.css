@@ -865,6 +865,10 @@ button .fa, a .fa {
     margin-right: 2px;
 }
 
+.input-group .btn:not([data-toggle='dropdown']) {
+    margin-top: 0;
+}
+
 .btn:not([data-toggle='dropdown']) {
     margin-top: 5px;
 }
