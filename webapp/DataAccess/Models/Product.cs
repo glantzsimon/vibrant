@@ -50,12 +50,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLiveOnLabel)]
         public DateTime IsLiveOn { get; set; }
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TitleLabel)]
-        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-        [StringLength(256)]
-        public string Title { get; set; }
-
+        
         [UIHint("Quantity")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
@@ -94,7 +89,7 @@ namespace K9.DataAccessLayer.Models
         [AllowHtml]
         public string Dosage { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [DataType(DataType.Currency)]
         public double Price { get; set; }

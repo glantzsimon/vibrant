@@ -83,10 +83,10 @@ namespace K9.WebApplication.Controllers
         {
             var product = e.Item as Product;
             var original = Repository.Find(product.Id);
-            var titleHasChanged = original.Title != product.Title;
-            if (string.IsNullOrEmpty(product.SeoFriendlyId) || titleHasChanged && original.SeoFriendlyId == original.Title.ToSeoFriendlyString())
+            var titleHasChanged = original.Name != product.Name;
+            if (string.IsNullOrEmpty(product.SeoFriendlyId) || titleHasChanged && original.SeoFriendlyId == original.Name.ToSeoFriendlyString())
             {
-                product.SeoFriendlyId = product.Title.ToSeoFriendlyString();
+                product.SeoFriendlyId = product.Name.ToSeoFriendlyString();
             }
         }
 
@@ -95,7 +95,7 @@ namespace K9.WebApplication.Controllers
             var product = e.Item as Product;
             if (string.IsNullOrEmpty(product.SeoFriendlyId))
             {
-                product.SeoFriendlyId = product.Title.ToSeoFriendlyString();
+                product.SeoFriendlyId = product.Name.ToSeoFriendlyString();
             }
         }
 

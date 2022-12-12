@@ -340,5 +340,18 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Serotonin", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telomerase is an enzyme found inside our cells, which may be related to the aging process. It adds short, repetitive “caps” to our DNA strands. These caps are called “telomeres.”
+        ///
+        ///Each time our cells divide, they must replicate their DNA so that each daughter cell gets a full set of operating instructions. However, with each cell division, a small part of the DNA strand’s protective telomeres are lost.
+        ///
+        ///Scientists believe that the loss of telomeres leads to eventual loss of important, coding regions of  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Teolmerase {
+            get {
+                return ResourceManager.GetString("Teolmerase", resourceCulture);
+            }
+        }
     }
 }
