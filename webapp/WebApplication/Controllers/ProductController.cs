@@ -38,7 +38,7 @@ namespace K9.WebApplication.Controllers
                 return HttpNotFound();
             }
 
-            product.ProductIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id);
+            product.ProductIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id).ToList();
 
             foreach (var productIngredient in product.ProductIngredients)
             {
