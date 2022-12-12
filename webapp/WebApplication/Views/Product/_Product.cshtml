@@ -31,7 +31,7 @@
     @MvcHtmlString.Create(Model.Dosage)
 
     <h5>@Dictionary.PriceLabel</h5>
-    @MvcHtmlString.Create(Model.Dosage)
+    @Model.FormattedPrice
 
     @Html.Partial("_Ingredients", Model)
 

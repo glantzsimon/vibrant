@@ -38,13 +38,15 @@ namespace K9.WebApplication.Controllers
                 return HttpNotFound();
             }
 
-            product.ProductIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id).ToList();
+            var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id).OrderByDescending(e => e.Amount).ToList();
 
-            foreach (var productIngredient in product.ProductIngredients)
+            foreach (var productIngredient in productIngredients)
             {
                 productIngredient.Ingredient =
                     _ingredientsRepository.Find(e => e.Id == productIngredient.IngredientId).FirstOrDefault();
             }
+
+            product.ProductIngredients = productIngredients.OrderByDescending(e => e.Amount).ThenBy(e => e.Ingredient.Name);
 
             LoadUploadedFiles(product);
             return View(product);

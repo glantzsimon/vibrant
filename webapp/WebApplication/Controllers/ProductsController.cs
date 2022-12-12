@@ -33,13 +33,13 @@ namespace K9.WebApplication.Controllers
         public ActionResult EditIngredientQuantities(int id)
         {
             var product = Repository.Find(id);
-            product.ProductIngredients = _productIngredientsRepository.Find(e => e.ProductId == id).OrderByDescending(e => e.Amount).ThenBy(e => e.Name).ToList();
+            product.ProductIngredients = _productIngredientsRepository.Find(e => e.ProductId == id).ToList();
             foreach (var productIngredient in product.ProductIngredients)
             {
                 productIngredient.Ingredient =
                     _ingredientsRepository.Find(e => e.Id == productIngredient.IngredientId).FirstOrDefault();
             }
-            product.Ingredients = product.ProductIngredients.ToList();
+            product.Ingredients = product.ProductIngredients.OrderByDescending(e => e.Amount).ThenBy(e => e.Ingredient.Name).ToList();
             
             return View(product);
         }
