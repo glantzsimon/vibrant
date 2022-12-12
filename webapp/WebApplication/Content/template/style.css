@@ -897,3 +897,18 @@ div.row + hr {
 .darkbrown {
     color: #392c24;
 }
+
+.small-text {
+    font-size: 0.8em;
+}
+
+.benefits p {
+    display: inline-block;
+    font-size: 0.8em;
+    border: 1px solid goldenrod;
+    background: gold;
+    border-radius: 8px;
+    margin-right: 4px;
+    padding: 3px;
+}
+

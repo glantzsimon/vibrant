@@ -7,8 +7,15 @@
 
 @foreach (var productIngredient in Model.ProductIngredients)
 {
-    <h5>@productIngredient.Ingredient.Name</h5>
-    <p>@MvcHtmlString.Create(productIngredient.FormattedAmount)</p>
-    <p>@MvcHtmlString.Create(productIngredient.Ingredient.ShortDescription)</p>
-    @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Info", "Ingredients", new { seoFriendlyId = productIngredient.Ingredient.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Small)
+    <div clas="row">
+        <div class="col-sm-3"><strong>@productIngredient.Ingredient.Name</strong></div>
+        <div class="col-sm-2">
+            <p>@MvcHtmlString.Create(productIngredient.FormattedAmount)</p>
+        </div>
+        <div class="col-sm-5"><p class="small-text text-align-left">@MvcHtmlString.Create(productIngredient.Ingredient.ShortDescription)</p></div>
+        <div class="col-sm-2">@Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Info", "Ingredients", new { seoFriendlyId = productIngredient.Ingredient.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Small)</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">&nbsp;</div>
+    </div>
 }

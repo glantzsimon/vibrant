@@ -24,16 +24,28 @@
     <h5>@Dictionary.OverviewLabel</h5>
     @MvcHtmlString.Create(Model.Body)
 
-    <h5>@Dictionary.BenefitsLabel</h5>
-    @MvcHtmlString.Create(Model.Benefits)
-
-    <h5>@Dictionary.DosageLabel</h5>
-    @MvcHtmlString.Create(Model.Dosage)
+    <br />
 
     <h5>@Dictionary.PriceLabel</h5>
     @Model.FormattedPrice
 
+    <br />
+
+    <h5>@Dictionary.DosageLabel</h5>
+    @MvcHtmlString.Create(Model.Dosage)
+
+    <br />
+
+    <h5>@Dictionary.BenefitsLabel</h5>
+    <div class="">
+        @MvcHtmlString.Create(Model.Benefits)
+    </div>
+
+    <br />
+
     @Html.Partial("_Ingredients", Model)
+
+    <hr />
 
     <div class="buttons-container">
         @Html.BootstrapActionLinkButton(Dictionary.SeeAllProducts, "fullList", "Ingredients", null, "", EButtonClass.Info, EButtonClass.Large)

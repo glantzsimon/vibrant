@@ -50,6 +50,14 @@ article h5 {
     /*text-shadow: 1px 1px #666;*/
 }
 
+    article h6 {
+        margin-top: 20px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 1.2em;
+        line-height: 1.5em;
+    }
+
 form div.well h3 {
     margin-bottom: 16px;
     padding-bottom: 16px;
