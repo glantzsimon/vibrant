@@ -102,7 +102,7 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double Price { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         public string FormattedPrice => double.Parse(Price.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostOfMaterialsLabel)]
@@ -112,11 +112,11 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalCostLabel)]
         [DataType(DataType.Currency)]
-        public double TotalCost => ((ProductIngredients?.Sum(e => e.Cost) ?? 0) * AmountPerServing) + CostOfMaterials;
+        public double TotalCost => ((ProductIngredients?.Sum(e => e.Cost) ?? 0) * Amount) + CostOfMaterials;
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
         [DataType(DataType.Currency)]
-        public double SuggestedRetailPrice => Price * 10;
+        public double SuggestedRetailPrice => TotalCost * 10;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantityInStockLabel)]
         public int QuantityInStock { get; set; }
