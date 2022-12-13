@@ -1156,7 +1156,16 @@
   <data name="AmountPerServingLabel" xml:space="preserve">
     <value>Amount per Serving</value>
   </data>
+  <data name="CostOfMaterialsLabel" xml:space="preserve">
+    <value>Cost of Materials</value>
+  </data>
   <data name="EditIngredientQuantities" xml:space="preserve">
     <value>Edit Ingredient Quantities</value>
+  </data>
+  <data name="SuggestedRetailPriceLabel" xml:space="preserve">
+    <value>Suggested Retail Price</value>
+  </data>
+  <data name="TotalCostLabel" xml:space="preserve">
+    <value>Total Cost</value>
   </data>
 </root>

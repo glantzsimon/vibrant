@@ -25,6 +25,8 @@ namespace K9.DataAccessLayer.Models
         public EProductType ProductType { get; set; }
 
         public string MeasuredIn => GetMeasuredInText();
+        
+        public string ServingMeasuredIn => GetServingMeasuredInText();
 
         public string MeasuredInForLargeQuantity => GetMeasuredInForLargeQuantityText();
 
@@ -56,10 +58,16 @@ namespace K9.DataAccessLayer.Models
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public float Amount { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
+        public string FormattedAmount => $"{Amount} {MeasuredIn}";
+
         [UIHint("Quantity")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerServingLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public float AmountPerServing { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerServingLabel)]
+        public string FormattedAmountPerServing => $"{Amount} {ServingMeasuredIn}";
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
@@ -97,13 +105,18 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         public string FormattedPrice => double.Parse(Price.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostOfMaterialsLabel)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [DataType(DataType.Currency)]
-        public double Cost => ProductIngredients?.Sum(e => e.Cost) ?? 0;
+        public double CostOfMaterials { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalCostLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalCost => ((ProductIngredients?.Sum(e => e.Cost) ?? 0) * AmountPerServing) + CostOfMaterials;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
-        public double SuggestedRetailPrice => Cost * 10;
+        public double SuggestedRetailPrice => Price * 10;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantityInStockLabel)]
         public int QuantityInStock { get; set; }
@@ -115,7 +128,7 @@ namespace K9.DataAccessLayer.Models
             Name = Globalisation.Strings.Labels.StockLowWarningLevelLabel)]
         public int StockLowWarningLevel { get; set; } = 10;
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.StockLowWarningLabel)]
         public bool IsStockLowWarning => QuantityInStock > StockLowWarningLevel;
 
         [FileSourceInfo("upload/products", Filter = EFilesSourceFilter.Images)]
@@ -147,6 +160,22 @@ namespace K9.DataAccessLayer.Models
                 case EProductType.Capsules:
                     return Globalisation.Strings.Constants.Measures.Capsules;
 
+                case EProductType.Powder:
+                    return Globalisation.Strings.Constants.Measures.Milligrams;
+
+                case EProductType.Liquid:
+                    return Globalisation.Strings.Constants.Measures.Millilitres;
+
+                default:
+                    return string.Empty;
+            }
+        }
+
+        private string GetServingMeasuredInText()
+        {
+            switch (ProductType)
+            {
+                case EProductType.Capsules:
                 case EProductType.Powder:
                     return Globalisation.Strings.Constants.Measures.Milligrams;
 

@@ -744,6 +744,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cost of Materials.
+        /// </summary>
+        public static string CostOfMaterialsLabel {
+            get {
+                return ResourceManager.GetString("CostOfMaterialsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cost Per 100 Grams.
         /// </summary>
         public static string CostPer100GramsLabel {
@@ -2887,6 +2896,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Suggested Retail Price.
+        /// </summary>
+        public static string SuggestedRetailPriceLabel {
+            get {
+                return ResourceManager.GetString("SuggestedRetailPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Summary.
         /// </summary>
         public static string SummaryLabel {
@@ -3087,6 +3105,15 @@ namespace K9.Globalisation {
         public static string ThankyouForSubscriptionEmailTitle {
             get {
                 return ResourceManager.GetString("ThankyouForSubscriptionEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Cost.
+        /// </summary>
+        public static string TotalCostLabel {
+            get {
+                return ResourceManager.GetString("TotalCostLabel", resourceCulture);
             }
         }
         

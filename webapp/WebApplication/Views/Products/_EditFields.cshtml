@@ -20,7 +20,13 @@
         @Html.BootstrapEditorFor(model => model.ContactId)
     </div>
 </div>
+
+<hr />
+
 <div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.CostOfMaterials)
+    </div>
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.Price)
     </div>
@@ -33,6 +39,9 @@
         @Html.BootstrapEditorFor(model => model.AmountPerServing)
     </div>
 </div>
+
+<hr />
+
 <div class="row">
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.QuantityInStock)
@@ -41,6 +50,9 @@
         @Html.BootstrapEditorFor(model => model.StockLowWarningLevel)
     </div>
 </div>
+
+<hr />
+
 <div class="row">
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.IsLiveOn)

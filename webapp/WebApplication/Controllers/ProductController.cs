@@ -12,15 +12,13 @@ namespace K9.WebApplication.Controllers
     public class ProductController : BasePureController
     {
         private readonly IRepository<Product> _productsRepository;
-        private readonly IRepository<ProductIngredient> _productIngredientsRepository;
-        private readonly IRepository<Ingredient> _ingredientsRepository;
+        private readonly IProductService _productService;
 
-        public ProductController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Product> productsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository)
+        public ProductController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Product> productsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProductService productService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _productsRepository = productsRepository;
-            _productIngredientsRepository = productIngredientsRepository;
-            _ingredientsRepository = ingredientsRepository;
+            _productService = productService;
         }
 
         [Route("product/all")]
@@ -32,22 +30,12 @@ namespace K9.WebApplication.Controllers
         [Route("product/{seoFriendlyId}")]
         public ActionResult Details(string seoFriendlyId)
         {
-            var product = _productsRepository.Find(e => e.SeoFriendlyId == seoFriendlyId).FirstOrDefault();
+            var product = _productService.Find(seoFriendlyId);
             if (product == null)
             {
                 return HttpNotFound();
             }
-
-            var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id).OrderByDescending(e => e.Amount).ToList();
-
-            foreach (var productIngredient in productIngredients)
-            {
-                productIngredient.Ingredient =
-                    _ingredientsRepository.Find(e => e.Id == productIngredient.IngredientId).FirstOrDefault();
-            }
-
-            product.ProductIngredients = productIngredients.OrderByDescending(e => e.Amount).ThenBy(e => e.Ingredient.Name);
-
+            
             LoadUploadedFiles(product);
             return View(product);
         }

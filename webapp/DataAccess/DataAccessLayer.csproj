@@ -285,6 +285,10 @@
     <Compile Include="Migrations\202212121349578_RemoveProductTitle.designer.cs">
       <DependentUpon>202212121349578_RemoveProductTitle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212131222396_CostOfMaterials.cs" />
+    <Compile Include="Migrations\202212131222396_CostOfMaterials.designer.cs">
+      <DependentUpon>202212131222396_CostOfMaterials.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\SaleItem.cs" />
@@ -340,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212121349578_RemoveProductTitle.resx">
       <DependentUpon>202212121349578_RemoveProductTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212131222396_CostOfMaterials.resx">
+      <DependentUpon>202212131222396_CostOfMaterials.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

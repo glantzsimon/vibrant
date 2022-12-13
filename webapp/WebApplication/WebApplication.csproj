@@ -369,7 +369,9 @@
     <Compile Include="Models\LogItem.cs" />
     <Compile Include="Options\GaugeOptions.cs" />
     <Compile Include="Options\PaymentsOptions.cs" />
+    <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\ConsultationService.cs" />
+    <Compile Include="Services\IProductService.cs" />
     <Compile Include="Services\IConsultationService.cs" />
     <Compile Include="Services\ILogService.cs" />
     <Compile Include="Services\IRecaptchaService.cs" />

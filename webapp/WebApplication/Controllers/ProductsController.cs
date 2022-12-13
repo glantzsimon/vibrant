@@ -1,14 +1,14 @@
-﻿using K9.Base.WebApplication.Controllers;
-using K9.Base.WebApplication.EventArgs;
+﻿using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
+using K9.Base.WebApplication.ViewModels;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Extensions;
+using K9.WebApplication.Services;
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using K9.Base.WebApplication.ViewModels;
 using K9.SharedLibrary.Models;
 using WebGrease.Css.Extensions;
 
@@ -18,29 +18,22 @@ namespace K9.WebApplication.Controllers
     [RequirePermissions(Role = RoleNames.Administrators)]
     public class ProductsController : HtmlControllerBase<Product>
     {
+        private readonly IProductService _productService;
         private readonly IRepository<ProductIngredient> _productIngredientsRepository;
-        private readonly IRepository<Ingredient> _ingredientsRepository;
 
-        public ProductsController(IControllerPackage<Product> controllerPackage, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository) : base(controllerPackage)
+        public ProductsController(IControllerPackage<Product> controllerPackage, IProductService productService, IRepository<ProductIngredient> productIngredientsRepository) : base(controllerPackage)
         {
+            _productService = productService;
             _productIngredientsRepository = productIngredientsRepository;
-            _ingredientsRepository = ingredientsRepository;
             RecordBeforeCreate += ProductsController_RecordBeforeCreate;
             RecordBeforeCreated += ProductsController_RecordBeforeCreated;
             RecordBeforeUpdated += ProductsController_RecordBeforeUpdated;
+            RecordBeforeDetails += ProductsController_RecordBeforeDetails;
         }
-
+        
         public ActionResult EditIngredientQuantities(int id)
         {
-            var product = Repository.Find(id);
-            product.ProductIngredients = _productIngredientsRepository.Find(e => e.ProductId == id).ToList();
-            foreach (var productIngredient in product.ProductIngredients)
-            {
-                productIngredient.Ingredient =
-                    _ingredientsRepository.Find(e => e.Id == productIngredient.IngredientId).FirstOrDefault();
-            }
-            product.Ingredients = product.ProductIngredients.OrderByDescending(e => e.Amount).ThenBy(e => e.Ingredient.Name).ToList();
-            
+            var product = _productService.Find(id);
             return View(product);
         }
 
@@ -99,10 +92,16 @@ namespace K9.WebApplication.Controllers
             }
         }
 
-        void ProductsController_RecordBeforeCreate(object sender, CrudEventArgs e)
+        private void ProductsController_RecordBeforeCreate(object sender, CrudEventArgs e)
         {
             var product = e.Item as Product;
             product.IsLiveOn = DateTime.Now;
+        }
+
+        private void ProductsController_RecordBeforeDetails(object sender, CrudEventArgs e)
+        {
+            var product = e.Item as Product;
+            product = _productService.GetFullProduct(product);
         }
     }
 }

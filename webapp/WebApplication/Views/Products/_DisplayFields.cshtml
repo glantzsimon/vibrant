@@ -18,6 +18,9 @@
         @Html.BootstrapDisplayFor(model => model.ContactId)
     </div>
 </div>
+
+<hr />
+
 <div class="row">
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.Price)
@@ -28,17 +31,23 @@
 </div>
 <div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.Cost)
+        @Html.BootstrapDisplayFor(model => model.CostOfMaterials)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.TotalCost)
     </div>
 </div>
 <div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.Amount)
+        @Html.BootstrapDisplayFor(model => model.FormattedAmount)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.AmountPerServing)
+        @Html.BootstrapDisplayFor(model => model.FormattedAmountPerServing)
     </div>
 </div>
+
+<hr />
+
 <div class="row">
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.QuantityInStock)

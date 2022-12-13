@@ -16,7 +16,10 @@
             public const string NumberOfCreditsLabel = "NumberOfCreditsLabel";
             public const string CreditsPurchaseAmountLabel = "CreditsPurchaseAmountLabel";
             public const string TotalPriceLabel = "TotalPriceLabel";
+            public const string TotalCostLabel = "TotalCostLabel";
+            public const string SuggestedRetailPriceLabel = "SuggestedRetailPriceLabel";
             public const string PriceLabel = "PriceLabel";
+            public const string CostOfMaterialsLabel = "CostOfMaterialsLabel";
             public const string CostPer100GramsLabel = "CostPer100GramsLabel";
             public const string CostPerMilligramLabel = "CostPerMilligramLabel";
             public const string CreditsTotalAmountLabel = "CreditsTotalAmountLabel";
