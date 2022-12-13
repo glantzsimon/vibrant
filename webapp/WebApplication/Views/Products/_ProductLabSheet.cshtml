@@ -5,8 +5,11 @@
 @Html.HiddenFor(e => e.AmountPerServing)
 
 <div class="row">
-    <div class="col-sm-12">
-        <h5>@Model.Name</h5>
+    <div class="col-sm-6">
+        @Html.LabelFor(e => Model.Ingredients[0].Name)
+    </div>
+    <div class="col-sm-6">
+        @Html.LabelFor(e => Model.Ingredients[0].AmountPer100Capsules)
     </div>
 </div>
 
@@ -14,11 +17,12 @@
 {
     <div class="row">
         <div class="col-sm-6">
-            @Html.BootstrapDisplayFor(e => Model.Ingredients[i].Ingredient.Name)
+            @Html.DisplayFor(e => Model.Ingredients[i].Ingredient.Name)
         </div>
         <div class="col-sm-6">
-            @Html.BootstrapDisplayFor(e => Model.Ingredients[i].FormattedAmountPer100Capsules)
+            @Html.DisplayFor(e => Model.Ingredients[i].FormattedAmountPer100Capsules)
         </div>
     </div>
+    <hr />
 }
 

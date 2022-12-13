@@ -2,6 +2,7 @@
 @model Product
 @{
 	Layout = "../Shared/_LayoutFormSmall.cshtml";
+    ViewBag.SubTitle = Model.Name;
 }
 @using (Html.BeginForm())
 {

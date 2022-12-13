@@ -44,7 +44,7 @@ namespace K9.DataAccessLayer.Models
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
 	    public string FormattedAmountPer100Capsules =>
-	        $"{AmountPer100Capsules} {Ingredient?.MeasuredInForLargeQuantity}";
+	        $"{AmountPer100Capsules} {Ingredient?.MeasuredIn}";
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostLabel)]
 	    [DataType(DataType.Currency)]
