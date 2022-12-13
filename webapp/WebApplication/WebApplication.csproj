@@ -1268,6 +1268,8 @@
     <Content Include="Views\Shared\EditorTemplates\ProductIngredients.cshtml" />
     <Content Include="Views\Products\EditIngredientQuantities.cshtml" />
     <Content Include="Views\Products\_EditIngredientsFields.cshtml" />
+    <Content Include="Views\Products\_ProductLabSheet.cshtml" />
+    <Content Include="Views\Products\LabSheet.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

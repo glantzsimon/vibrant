@@ -56,6 +56,8 @@ namespace K9.WebApplication.Services
             product.ProductIngredients = productIngredients.OrderByDescending(e => e.Amount)
                 .ThenBy(e => e.Ingredient.Name);
 
+            product.Ingredients = product.ProductIngredients.ToList();
+
             return product;
         }
     }

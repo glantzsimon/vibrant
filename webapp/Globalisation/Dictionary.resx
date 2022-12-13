@@ -1153,6 +1153,9 @@
   <data name="SeeAllProducts" xml:space="preserve">
     <value>See Full List of Products</value>
   </data>
+  <data name="AmountPerBatchLabel" xml:space="preserve">
+    <value>Amount per Batch</value>
+  </data>
   <data name="AmountPerServingLabel" xml:space="preserve">
     <value>Amount per Serving</value>
   </data>
@@ -1167,5 +1170,8 @@
   </data>
   <data name="TotalCostLabel" xml:space="preserve">
     <value>Total Cost</value>
+  </data>
+  <data name="ViewLabSheet" xml:space="preserve">
+    <value>View Lab Sheet</value>
   </data>
 </root>

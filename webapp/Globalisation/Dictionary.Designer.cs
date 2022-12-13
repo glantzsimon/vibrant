@@ -124,6 +124,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount per Batch.
+        /// </summary>
+        public static string AmountPerBatchLabel {
+            get {
+                return ResourceManager.GetString("AmountPerBatchLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount per Ingredient.
         /// </summary>
         public static string AmountPerIngredientLabel {
@@ -3339,6 +3348,15 @@ namespace K9.Globalisation {
         public static string View {
             get {
                 return ResourceManager.GetString("View", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Lab Sheet.
+        /// </summary>
+        public static string ViewLabSheet {
+            get {
+                return ResourceManager.GetString("ViewLabSheet", resourceCulture);
             }
         }
         

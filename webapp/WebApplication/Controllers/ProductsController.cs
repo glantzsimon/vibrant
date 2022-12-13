@@ -37,6 +37,12 @@ namespace K9.WebApplication.Controllers
             return View(product);
         }
 
+        public ActionResult LabSheet(int id)
+        {
+            var product = _productService.Find(id);
+            return View(product);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         [RequirePermissions(Permission = Permissions.Edit)]
