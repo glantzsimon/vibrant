@@ -105,7 +105,7 @@ namespace K9.DataAccessLayer.Models
 	    public int StockLowWarningLevel { get; set; } = 200;
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
-	    public bool IsStockLowWarning => QuantityInStock > StockLowWarningLevel;
+	    public bool IsStockLowWarning => QuantityInStock < StockLowWarningLevel;
 
 	    [FileSourceInfo("upload/ingredients", Filter = EFilesSourceFilter.Images)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]

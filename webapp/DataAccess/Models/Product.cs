@@ -67,7 +67,7 @@ namespace K9.DataAccessLayer.Models
         public float AmountPerServing { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerServingLabel)]
-        public string FormattedAmountPerServing => $"{Amount} {ServingMeasuredIn}";
+        public string FormattedAmountPerServing => $"{AmountPerServing} {ServingMeasuredIn}";
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
@@ -129,7 +129,7 @@ namespace K9.DataAccessLayer.Models
         public int StockLowWarningLevel { get; set; } = 10;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.StockLowWarningLabel)]
-        public bool IsStockLowWarning => QuantityInStock > StockLowWarningLevel;
+        public bool IsStockLowWarning => QuantityInStock < StockLowWarningLevel;
 
         [FileSourceInfo("upload/products", Filter = EFilesSourceFilter.Images)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]
