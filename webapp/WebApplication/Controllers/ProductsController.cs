@@ -37,9 +37,9 @@ namespace K9.WebApplication.Controllers
             return View(product);
         }
 
-        public ActionResult LabSheet(int id)
+        public ActionResult LabSheet(int id, int index = 0)
         {
-            var product = _productService.Find(id);
+            var product = index == 1 ? _productService.FindNext(id) : index == -1 ? _productService.FindPrevious(id) : _productService.Find(id);
             return View(product);
         }
 

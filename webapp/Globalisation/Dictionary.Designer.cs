@@ -1640,6 +1640,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lab Sheet.
+        /// </summary>
+        public static string LabSheet {
+            get {
+                return ResourceManager.GetString("LabSheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Learn.
         /// </summary>
         public static string Learn {

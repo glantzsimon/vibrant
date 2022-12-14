@@ -1165,6 +1165,9 @@
   <data name="EditIngredientQuantities" xml:space="preserve">
     <value>Edit Ingredient Quantities</value>
   </data>
+  <data name="LabSheet" xml:space="preserve">
+    <value>Lab Sheet</value>
+  </data>
   <data name="SuggestedRetailPriceLabel" xml:space="preserve">
     <value>Suggested Retail Price</value>
   </data>

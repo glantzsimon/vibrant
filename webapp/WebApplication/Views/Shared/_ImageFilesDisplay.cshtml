@@ -2,7 +2,7 @@
 @using K9.WebApplication.Options
 @model K9.Base.WebApplication.ViewModels.FileSourceViewModel
 @{
-    var imageSrc = $"{Model.Images[0].AssetInfo.Src}";
+    var imageSrc = Model.Images.Any() ? $"{Model.Images[0].AssetInfo.Src}" : "";
 }
 @if (Model.Images.Count == 1)
 {

@@ -31,6 +31,28 @@ namespace K9.WebApplication.Services
             return product;
         }
 
+        public Product FindNext(int id)
+        {
+            var product = _productsRepository.Find(e => e.Id > id).OrderBy(e => e.Id).FirstOrDefault() ?? _productsRepository.GetQuery("SELECT TOP 1 * FROM [Product] ORDER BY [Id]").FirstOrDefault();
+            if (product != null)
+            {
+                product = GetFullProduct(product);
+            }
+
+            return product;
+        }
+
+        public Product FindPrevious(int id)
+        {
+            var product = _productsRepository.Find(e => e.Id < id).OrderByDescending(e => e.Id).FirstOrDefault() ?? _productsRepository.GetQuery("SELECT TOP 1 * FROM [Product] ORDER BY [Id] DESC").FirstOrDefault();
+            if (product != null)
+            {
+                product = GetFullProduct(product);
+            }
+
+            return product;
+        }
+
         public Product Find(string seoFriendlyId)
         {
             var product = _productsRepository.Find(e => e.SeoFriendlyId == seoFriendlyId).FirstOrDefault();

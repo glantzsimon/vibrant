@@ -1,15 +1,18 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @model Product
 @{
-	Layout = "../Shared/_LayoutFormSmall.cshtml";
-    ViewBag.SubTitle = Model.Name;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+    ViewBag.SubTitle = $"{Model.Name} {Dictionary.LabSheet}";
 }
 @using (Html.BeginForm())
 {
-	using (Html.BeginBootstrapForm())
-	{
-		@Html.Partial("_ProductLabSheet")
-		<hr/>
-		@Html.BootstrapBackToListButton()
-	}
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.HiddenFor(model => model.Id)
+        @Html.Partial("_ProductLabSheet")
+        <hr />
+        @Html.BootstrapBackToListButton()
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Previous, "LabSheet", null, new { id = Model.Id, index = -1 }, "fa-arrow-left")
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Next, "LabSheet", null, new { id = Model.Id, index = 1 }, "fa-arrow-right")
+    }
 }
