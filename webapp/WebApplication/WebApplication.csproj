@@ -827,6 +827,9 @@
     <Content Include="Upload\products\Product\2\life-force.png" />
     <Content Include="Upload\products\Product\3\ammonia-detox.png" />
     <Content Include="Upload\products\Product\4\metal-detox.png" />
+    <Content Include="Upload\products\Product\5\sulfur-detox.png" />
+    <Content Include="Upload\products\Product\6\deep-sleep.png" />
+    <Content Include="Upload\products\Product\7\serenity.png" />
     <Content Include="Videos\welcomemobile.mp4" />
     <Content Include="Videos\welcome9.mp4" />
     <Content Include="Web.config">

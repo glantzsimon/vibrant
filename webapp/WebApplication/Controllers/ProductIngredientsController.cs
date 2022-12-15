@@ -21,6 +21,11 @@ namespace K9.WebApplication.Controllers
 			_productsRepository = productsRepository;
 		}
 
+	    public override ActionResult Index()
+	    {
+	        return RedirectToAction("Index", "Products");
+	    }
+
 		[RequirePermissions(Permission = Permissions.Edit)]
 		public ActionResult EditIngredientsForProduct(int id = 0)
 		{
