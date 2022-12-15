@@ -790,6 +790,7 @@
     <Content Include="Images\ui\locked.png" />
     <Content Include="Images\ui\question-mark.jpg" />
     <Content Include="Images\ui\selected.png" />
+    <Content Include="Images\ui\small-tick.png" />
     <Content Include="Images\ui\success.png" />
     <Content Include="Images\ui\facebook_sm.png" />
     <Content Include="Images\ui\google_sm.png" />
@@ -831,6 +832,8 @@
     <Content Include="Upload\products\Product\6\deep-sleep.png" />
     <Content Include="Upload\products\Product\7\serenity.png" />
     <Content Include="Upload\products\Product\8\serenity-plus.png" />
+    <Content Include="Upload\products\Product\9\nmn-2.png" />
+    <Content Include="Upload\products\Product\9\nmn-1.png" />
     <Content Include="Videos\welcomemobile.mp4" />
     <Content Include="Videos\welcome9.mp4" />
     <Content Include="Web.config">

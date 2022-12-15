@@ -1180,6 +1180,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Each serving contains:.
+        /// </summary>
+        public static string EachServingContains {
+            get {
+                return ResourceManager.GetString("EachServingContains", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Earth.
         /// </summary>
         public static string Earth {

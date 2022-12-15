@@ -1162,6 +1162,9 @@
   <data name="CostOfMaterialsLabel" xml:space="preserve">
     <value>Cost of Materials</value>
   </data>
+  <data name="EachServingContains" xml:space="preserve">
+    <value>Each serving contains:</value>
+  </data>
   <data name="EditIngredientQuantities" xml:space="preserve">
     <value>Edit Ingredient Quantities</value>
   </data>

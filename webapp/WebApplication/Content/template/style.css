@@ -903,12 +903,11 @@ div.row + hr {
 }
 
 .benefits p {
-    display: inline-block;
-    font-size: 0.8em;
-    border: 1px solid goldenrod;
-    background: gold;
-    border-radius: 8px;
-    margin-right: 4px;
-    padding: 3px;
+    
 }
 
+.benefits p:before {
+    content: url(../../Images/ui/small-tick.png);
+    padding-right: 5px;
+    vertical-align: middle;
+}
