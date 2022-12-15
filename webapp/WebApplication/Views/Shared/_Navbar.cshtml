@@ -112,32 +112,36 @@
                         <li class="@ViewContext.GetActiveClass("Index", "Home")"><a class="device-only" href="@Url.Action("Index", "Home")"> <span class="device-only">@K9.Base.Globalisation.Dictionary.Home</span></a></li>
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.SelfCare</span> <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.SelfCareAndNutrition</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
+                                <li class="@ViewContext.GetActiveClass("Index", "SelfCare")"><a href="@Url.Action("Index", "SelfCare")"> @Dictionary.SeeAll</a></li>
+                                <li class="@ViewContext.GetActiveClass("Protocols", "SelfCare")"><a href="@Url.Action("Protocols", "SelfCare")"> @Dictionary.Protocols</a></li>
+                                
+                                <li class="divider"></li>
+
                                 <li class="@ViewContext.GetActiveClass("ColdExposure", "SelfCare")"><a href="@Url.Action("ColdExposure", "SelfCare")"> @Dictionary.ColdExposure</a></li>
-                                <li class="@ViewContext.GetActiveClass("Breath", "SelfCare")"><a href="@Url.Action("Breath", "SelfCare")"> @Dictionary.Breath</a></li>
+                                <li class="@ViewContext.GetActiveClass("Breathwork", "SelfCare")"><a href="@Url.Action("Breathwork", "SelfCare")"> @Dictionary.Breathwork</a></li>
                                 <li class="@ViewContext.GetActiveClass("Detoxification", "SelfCare")"><a href="@Url.Action("Detoxification", "SelfCare")"> @Dictionary.Detoxification</a></li>
                                 <li class="@ViewContext.GetActiveClass("Electromedicine", "SelfCare")"><a href="@Url.Action("Electromedicine", "SelfCare")"> @Dictionary.Electromedicine</a></li>
                                 <li class="@ViewContext.GetActiveClass("EMFs", "SelfCare")"><a href="@Url.Action("EMFs", "SelfCare")"> @Dictionary.EMFs</a></li>
                                 <li class="@ViewContext.GetActiveClass("Grounding", "SelfCare")"><a href="@Url.Action("Grounding", "SelfCare")"> @Dictionary.Grounding</a></li>
                                 <li class="@ViewContext.GetActiveClass("ImmuneSupport", "SelfCare")"><a href="@Url.Action("ImmuneSupport", "SelfCare")"> @Dictionary.ImmuneSupport</a></li>
                                 <li class="@ViewContext.GetActiveClass("Infections", "SelfCare")"><a href="@Url.Action("Infections", "SelfCare")"> @Dictionary.Infections</a></li>
-                                <li class="@ViewContext.GetActiveClass("Infrared", "SelfCare")"><a href="@Url.Action("Infrared", "SelfCare")"> @Dictionary.Infrared</a></li>
+                                <li class="@ViewContext.GetActiveClass("SaunaTherapy", "SelfCare")"><a href="@Url.Action("SaunaTherapy", "SelfCare")"> @Dictionary.SaunaTherapy</a></li>
                                 <li class="@ViewContext.GetActiveClass("OralCare", "SelfCare")"><a href="@Url.Action("OralCare", "SelfCare")"> @Dictionary.OralCare</a></li>
                                 <li class="@ViewContext.GetActiveClass("Rebounding", "SelfCare")"><a href="@Url.Action("Rebounding", "SelfCare")"> @Dictionary.Rebounding</a></li>
                                 <li class="@ViewContext.GetActiveClass("Sleep", "SelfCare")"><a href="@Url.Action("Sleep", "SelfCare")"> @Dictionary.Sleep</a></li>
                                 <li class="@ViewContext.GetActiveClass("Sungazing", "SelfCare")"><a href="@Url.Action("Sungazing", "SelfCare")"> @Dictionary.Sungazing</a></li>
-                                <li class="@ViewContext.GetActiveClass("Techniques", "SelfCare")"><a href="@Url.Action("Techniques", "SelfCare")"> @Dictionary.OtherHealingTechniques</a></li>
                                 <li class="@ViewContext.GetActiveClass("WaterMagic", "SelfCare")"><a href="@Url.Action("WaterMagic", "SelfCare")"> @Dictionary.WaterMagic</a></li>
-                                <li class="@ViewContext.GetActiveClass("AcidAlkaline", "PersonalisedNutrition")"><a href="@Url.Action("AcidAlkaline", "PersonalisedNutrition")"> @Dictionary.AcidAlkaline</a></li>
-                                <li class="@ViewContext.GetActiveClass("Doshas", "PersonalisedNutrition")"><a href="@Url.Action("Doshas", "PersonalisedNutrition")"> @Dictionary.Doshas</a></li>
-                                <li class="@ViewContext.GetActiveClass("Fats", "PersonalisedNutrition")"><a href="@Url.Action("Fats", "PersonalisedNutrition")"> @Dictionary.Fats</a></li>
+                                <li class="@ViewContext.GetActiveClass("AcidAlkaline", "SelfCare")"><a href="@Url.Action("AcidAlkaline", "SelfCare")"> @Dictionary.AcidAlkaline</a></li>
+                                <li class="@ViewContext.GetActiveClass("Doshas", "SelfCare")"><a href="@Url.Action("Doshas", "SelfCare")"> @Dictionary.Doshas</a></li>
+                                <li class="@ViewContext.GetActiveClass("Fats", "SelfCare")"><a href="@Url.Action("Fats", "SelfCare")"> @Dictionary.Fats</a></li>
                                 <li class="@ViewContext.GetActiveClass("FermentedFoods", "SelfCare")"><a href="@Url.Action("FermentedFoods", "SelfCare")"> @Dictionary.FermentedFoods</a></li>
-                                <li class="@ViewContext.GetActiveClass("MetabolicTypes", "PersonalisedNutrition")"><a href="@Url.Action("MetabolicTypes", "PersonalisedNutrition")"> @Dictionary.MetabolicTypes</a></li>
-                                <li class="@ViewContext.GetActiveClass("Minerals", "PersonalisedNutrition")"><a href="@Url.Action("Minerals", "PersonalisedNutrition")"> @Dictionary.Minerals</a></li>
-                                <li class="@ViewContext.GetActiveClass("RawOrCooked", "PersonalisedNutrition")"><a href="@Url.Action("RawOrCooked", "PersonalisedNutrition")"> @Dictionary.RawOrCooked</a></li>
-                                <li class="@ViewContext.GetActiveClass("VeganOrOmni", "PersonalisedNutrition")"><a href="@Url.Action("VeganOrOmni", "PersonalisedNutrition")"> @Dictionary.VeganOrOmni</a></li>
-                                <li class="@ViewContext.GetActiveClass("BinauralBeats", "SelfCare")"><a href="@Url.Action("BinauralBeats", "SelfCare")"> @Dictionary.BinauralBeats</a></li>
+                                <li class="@ViewContext.GetActiveClass("MetabolicTypes", "SelfCare")"><a href="@Url.Action("MetabolicTypes", "SelfCare")"> @Dictionary.MetabolicTypes</a></li>
+                                <li class="@ViewContext.GetActiveClass("Minerals", "SelfCare")"><a href="@Url.Action("Minerals", "SelfCare")"> @Dictionary.Minerals</a></li>
+                                <li class="@ViewContext.GetActiveClass("RawOrCooked", "SelfCare")"><a href="@Url.Action("RawOrCooked", "SelfCare")"> @Dictionary.RawOrCooked</a></li>
+                                <li class="@ViewContext.GetActiveClass("VeganOrOmni", "SelfCare")"><a href="@Url.Action("VeganOrOmni", "SelfCare")"> @Dictionary.VeganOrOmni</a></li>
+                                <li class="@ViewContext.GetActiveClass("MeditationTechniques", "SelfCare")"><a href="@Url.Action("MeditationTechniques", "SelfCare")"> @Dictionary.MeditationTechniques</a></li>
 
                             </ul>
                         </li>

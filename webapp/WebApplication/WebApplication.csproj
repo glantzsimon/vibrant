@@ -324,7 +324,6 @@
     <Compile Include="Controllers\ConsultationController.cs" />
     <Compile Include="Controllers\SelfCareController.cs" />
     <Compile Include="Controllers\SupplementationController.cs" />
-    <Compile Include="Controllers\PersonalisedNutritionController.cs" />
     <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\PromoCodesController.cs" />
     <Compile Include="Controllers\MembershipController.cs" />
@@ -1236,7 +1235,6 @@
     <Content Include="Views\Shared\_GlobalJs.cshtml" />
     <Content Include="Views\Log\Index.cshtml" />
     <Content Include="Views\Account\RegisterPromoCode.cshtml" />
-    <Content Include="Views\PersonalisedNutrition\Index.cshtml" />
     <Content Include="Views\Supplementation\Index.cshtml" />
     <Content Include="Views\Supplementation\SuperFoods.cshtml" />
     <Content Include="Views\Supplementation\SuperHerbs.cshtml" />
@@ -1248,30 +1246,21 @@
     <Content Include="Views\SelfCare\EMFs.cshtml" />
     <Content Include="Views\SelfCare\ToxicityReduction.cshtml" />
     <Content Include="Views\SelfCare\OralCare.cshtml" />
-    <Content Include="Views\SelfCare\Techniques.cshtml" />
     <Content Include="Views\SelfCare\Gadgets.cshtml" />
     <Content Include="Views\SelfCare\Electromedicine.cshtml" />
     <Content Include="Views\SelfCare\WaterMagic.cshtml" />
-    <Content Include="Views\SelfCare\Breath.cshtml" />
+    <Content Include="Views\SelfCare\Breathwork.cshtml" />
     <Content Include="Views\SelfCare\Tapping.cshtml" />
     <Content Include="Views\SelfCare\ColdExposure.cshtml" />
     <Content Include="Views\SelfCare\Sungazing.cshtml" />
     <Content Include="Views\SelfCare\Grounding.cshtml" />
-    <Content Include="Views\SelfCare\BinauralBeats.cshtml" />
-    <Content Include="Views\SelfCare\Infrared.cshtml" />
+    <Content Include="Views\SelfCare\MeditationTechniques.cshtml" />
+    <Content Include="Views\SelfCare\SaunaTherapy.cshtml" />
     <Content Include="Views\SelfCare\Enemas.cshtml" />
-    <Content Include="Views\PersonalisedNutrition\FermenteFoods.cshtml" />
     <Content Include="Views\SelfCare\Rebounding.cshtml" />
     <Content Include="Views\SelfCare\WoundCare.cshtml" />
     <Content Include="Views\SelfCare\ImmuneSupport.cshtml" />
     <Content Include="Views\SelfCare\Sleep.cshtml" />
-    <Content Include="Views\PersonalisedNutrition\MetabolicTypes.cshtml" />
-    <Content Include="Views\PersonalisedNutrition\Doshas.cshtml" />
-    <Content Include="Views\PersonalisedNutrition\RawOrCooked.cshtml" />
-    <Content Include="Views\PersonalisedNutrition\VeganOrOmni.cshtml" />
-    <Content Include="Views\PersonalisedNutrition\AcidAlkaline.cshtml" />
-    <Content Include="Views\PersonalisedNutrition\Minerals.cshtml" />
-    <Content Include="Views\PersonalisedNutrition\Fats.cshtml" />
     <Content Include="Views\ArticleCategories\_DisplayFields.cshtml" />
     <Content Include="Views\ArticleCategories\_EditFields.cshtml" />
     <Content Include="Views\ArticleCategories\Create.cshtml" />
@@ -1338,6 +1327,16 @@
     <Content Include="Views\Products\_EditIngredientsFields.cshtml" />
     <Content Include="Views\Products\_ProductLabSheet.cshtml" />
     <Content Include="Views\Products\LabSheet.cshtml" />
+    <Content Include="Views\SelfCare\Protocols.cshtml" />
+    <Content Include="Views\SelfCare\Infections.cshtml" />
+    <Content Include="Views\SelfCare\AcidAlkaline.cshtml" />
+    <Content Include="Views\SelfCare\Doshas.cshtml" />
+    <Content Include="Views\SelfCare\Fats.cshtml" />
+    <Content Include="Views\SelfCare\FermentedFoods.cshtml" />
+    <Content Include="Views\SelfCare\MetabolicTypes.cshtml" />
+    <Content Include="Views\SelfCare\Minerals.cshtml" />
+    <Content Include="Views\SelfCare\RawOrCooked.cshtml" />
+    <Content Include="Views\SelfCare\VeganOrOmni.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

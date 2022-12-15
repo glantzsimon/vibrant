@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
+    [Route("nutrition-and-self-care")]
     public class SelfCareController : BasePureController
     {
         private readonly IAuthentication _authentication;
@@ -21,12 +22,71 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
-        public ActionResult BinauralBeats()
+        [Route("protocols")]
+        public ActionResult Protocols()
         {
             return View();
         }
 
-        public ActionResult Breath()
+        [Route("acid-alkaline")]
+        public ActionResult AcidAlkaline()
+        {
+            return View();
+        }
+
+        public ActionResult Doshas()
+        {
+            return View();
+        }
+
+        public ActionResult Fats()
+        {
+            return View();
+        }
+
+        [Route("fermented-foods")]
+        public ActionResult FermentedFoods()
+        {
+            return View();
+        }
+
+        [Route("metabolic-types")]
+        public ActionResult MetabolicTypes()
+        {
+            return View();
+        }
+
+        [Route("meditation-techniques")]
+        public ActionResult MeditationTechniques()
+        {
+            return View();
+        }
+
+        public ActionResult Minerals()
+        {
+            return View();
+        }
+
+        [Route("raw-or-cooked")]
+        public ActionResult RawOrCooked()
+        {
+            return View();
+        }
+
+        [Route("vegan-or-omni")]
+        public ActionResult VeganOrOmni()
+        {
+            return View();
+        }
+
+        [Route("breathwork")]
+        public ActionResult Breathwork()
+        {
+            return View();
+        }
+
+        [Route("cold-exposure")]
+        public ActionResult ColdExposure()
         {
             return View();
         }
@@ -36,7 +96,61 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        public ActionResult ElectroMedicine()
+        {
+            return View();
+        }
+
         public ActionResult EMFs()
+        {
+            return View();
+        }
+
+        public ActionResult Grounding()
+        {
+            return View();
+        }
+
+        [Route("immune-support")]
+        public ActionResult ImmuneSupport()
+        {
+            return View();
+        }
+
+        public ActionResult Infections()
+        {
+            return View();
+        }
+
+        public ActionResult SaunaTherapy()
+        {
+            return View();
+        }
+
+        [Route("oral-care")]
+        public ActionResult OralCare()
+        {
+            return View();
+        }
+
+        public ActionResult Rebounding()
+        {
+            return View();
+        }
+
+        public ActionResult Sleep()
+        {
+            return View();
+        }
+
+        [Route("water-magic")]
+        public ActionResult WaterMagic()
+        {
+            return View();
+        }
+        
+        [Route("sun-gazing")]
+        public ActionResult Sungazing()
         {
             return View();
         }

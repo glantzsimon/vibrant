@@ -865,8 +865,8 @@
   <data name="PersonalisedNutrition" xml:space="preserve">
     <value>Personalised Nutrition</value>
   </data>
-  <data name="SelfCare" xml:space="preserve">
-    <value>Self Care</value>
+  <data name="SelfCareAndNutrition" xml:space="preserve">
+    <value>Wellness</value>
   </data>
   <data name="SuperFoods" xml:space="preserve">
     <value>Super Foods</value>
@@ -1159,6 +1159,9 @@
   <data name="AmountPerServingLabel" xml:space="preserve">
     <value>Amount per Serving</value>
   </data>
+  <data name="Breathwork" xml:space="preserve">
+    <value>Breathwork</value>
+  </data>
   <data name="CostOfMaterialsLabel" xml:space="preserve">
     <value>Cost of Materials</value>
   </data>
@@ -1170,6 +1173,15 @@
   </data>
   <data name="LabSheet" xml:space="preserve">
     <value>Lab Sheet</value>
+  </data>
+  <data name="MeditationTechniques" xml:space="preserve">
+    <value>Meditation Techniques</value>
+  </data>
+  <data name="Protocols" xml:space="preserve">
+    <value>Protocols</value>
+  </data>
+  <data name="SaunaTherapy" xml:space="preserve">
+    <value>Sauna Therapy</value>
   </data>
   <data name="SuggestedRetailPriceLabel" xml:space="preserve">
     <value>Suggested Retail Price</value>

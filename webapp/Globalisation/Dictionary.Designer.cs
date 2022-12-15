@@ -365,6 +365,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Breathwork.
+        /// </summary>
+        public static string Breathwork {
+            get {
+                return ResourceManager.GetString("Breathwork", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, you cannot switch to the selected membership.
         /// </summary>
         public static string CannotSwitchMembershipError {
@@ -1739,6 +1748,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Meditation Techniques.
+        /// </summary>
+        public static string MeditationTechniques {
+            get {
+                return ResourceManager.GetString("MeditationTechniques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
         ///
@@ -2418,6 +2436,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Protocols.
+        /// </summary>
+        public static string Protocols {
+            get {
+                return ResourceManager.GetString("Protocols", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purchased Cancelled.
         /// </summary>
         public static string PurchaseCancelled {
@@ -2598,6 +2625,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sauna Therapy.
+        /// </summary>
+        public static string SaunaTherapy {
+            get {
+                return ResourceManager.GetString("SaunaTherapy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to See Full List.
         /// </summary>
         public static string SeeAll {
@@ -2652,11 +2688,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Self Care.
+        ///   Looks up a localized string similar to Wellness.
         /// </summary>
-        public static string SelfCare {
+        public static string SelfCareAndNutrition {
             get {
-                return ResourceManager.GetString("SelfCare", resourceCulture);
+                return ResourceManager.GetString("SelfCareAndNutrition", resourceCulture);
             }
         }
         
