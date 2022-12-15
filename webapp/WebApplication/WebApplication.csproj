@@ -830,6 +830,7 @@
     <Content Include="Upload\products\Product\5\sulfur-detox.png" />
     <Content Include="Upload\products\Product\6\deep-sleep.png" />
     <Content Include="Upload\products\Product\7\serenity.png" />
+    <Content Include="Upload\products\Product\8\serenity-plus.png" />
     <Content Include="Videos\welcomemobile.mp4" />
     <Content Include="Videos\welcome9.mp4" />
     <Content Include="Web.config">
@@ -1329,13 +1330,6 @@
     <Content Include="Views\Product\_Ingredients.cshtml" />
     <Content Include="Views\Products\_DisplaySummary.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
-    <Content Include="Views\ProductIngredients\Index.cshtml" />
-    <Content Include="Views\ProductIngredients\Edit.cshtml" />
-    <Content Include="Views\ProductIngredients\Create.cshtml" />
-    <Content Include="Views\ProductIngredients\Delete.cshtml" />
-    <Content Include="Views\ProductIngredients\Details.cshtml" />
-    <Content Include="Views\ProductIngredients\_EditFields.cshtml" />
-    <Content Include="Views\ProductIngredients\_DisplayFields.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ProductIngredients.cshtml" />
     <Content Include="Views\Products\EditIngredientQuantities.cshtml" />
     <Content Include="Views\Products\_EditIngredientsFields.cshtml" />
