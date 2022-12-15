@@ -18,6 +18,6 @@
     {
         <h5>@ingredient.Name</h5>
         <p>@MvcHtmlString.Create(ingredient.ShortDescription)</p>
-        @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Info", "Ingredients", new { seoFriendlyId = ingredient.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Small)
+        @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Info", "Ingredient", new { seoFriendlyId = ingredient.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Small)
     }
 </article>
