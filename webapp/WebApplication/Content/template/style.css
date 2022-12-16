@@ -233,8 +233,9 @@ button.btn1:hover {
 }
 
 .picture-frame {
-    background: #EAF7FD;
-    padding: .5em;
+    background: white;
+    padding: 1 px;
+    margin-bottom: 5px;
 }
 
     .picture-frame img {
