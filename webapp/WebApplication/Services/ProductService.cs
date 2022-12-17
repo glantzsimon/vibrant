@@ -1,6 +1,9 @@
 ﻿using K9.DataAccessLayer.Models;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using NLog;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace K9.WebApplication.Services
@@ -79,6 +82,33 @@ namespace K9.WebApplication.Services
                 .ThenBy(e => e.Ingredient.Name);
 
             product.Ingredients = product.ProductIngredients.ToList();
+
+            return product;
+        }
+
+        public Product DuplicateProduct(int id)
+        {
+            var product = Find(id);
+            if (product == null)
+            {
+                return null;
+            }
+
+            var newProduct = new Product();
+            product.MapTo(newProduct);
+            newProduct.Id = 0;
+            var newProductName = $"{product.Name} Copy";
+            newProduct.Name = newProductName;
+            
+            _productsRepository.Create(newProduct);
+            newProduct = _productsRepository.Find(newProductName).FirstOrDefault();
+
+            if (newProduct == null)
+            {
+                throw new Exception("Error duplicating product");
+            }
+            
+            _productIngredientsRepository.CreateBatch(newProduct.ProductIngredients.ToList());
 
             return product;
         }

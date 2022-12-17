@@ -3,6 +3,7 @@
 @{
     Layout = "~/Views/Shared/_LayoutForm.cshtml";
     var attributes = Model.IsSystemStandard ? new { disabled = "disabled" } : null;
+    Model.Items = Model.Items.OrderByDescending(e => e.IsSelected).ThenBy(e => e.Description).ToList();
 }
 
 @using (Html.BeginForm())

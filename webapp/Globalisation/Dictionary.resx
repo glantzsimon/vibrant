@@ -1165,6 +1165,15 @@
   <data name="CostOfMaterialsLabel" xml:space="preserve">
     <value>Cost of Materials</value>
   </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="DuplicateConfirm" xml:space="preserve">
+    <value>Are you sure you wish to duplicate the selected product?</value>
+  </data>
+  <data name="DuplicateProduct" xml:space="preserve">
+    <value>Duplicate Product</value>
+  </data>
   <data name="EachServingContains" xml:space="preserve">
     <value>Each serving contains:</value>
   </data>

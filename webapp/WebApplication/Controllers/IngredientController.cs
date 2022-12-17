@@ -22,7 +22,7 @@ namespace K9.WebApplication.Controllers
         [Route("ingredient/all")]
         public ActionResult Index()
         {
-            return View(_ingredientsRepository.List());;
+            return View(_ingredientsRepository.List().OrderBy(e => e.Name).ToList());
         }
 
         [Route("ingredient/{seoFriendlyId}")]

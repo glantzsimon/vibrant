@@ -825,6 +825,7 @@
     <Content Include="Upload\articles\Article\9\chronic illness.jpg" />
     <Content Include="Upload\products\Product\10\toxin-flush.png" />
     <Content Include="Upload\products\Product\11\dna-guard.png" />
+    <Content Include="Upload\products\Product\12\shiva-power.png" />
     <Content Include="Upload\products\Product\1\crystal-mind.png" />
     <Content Include="Upload\products\Product\2\life-force.png" />
     <Content Include="Upload\products\Product\3\ammonia-detox.png" />
@@ -915,6 +916,13 @@
     <Folder Include="Upload\ingredients\Ingredient\5\" />
     <Folder Include="Upload\ingredients\Ingredient\60\" />
     <Folder Include="Upload\ingredients\Ingredient\61\" />
+    <Folder Include="Upload\ingredients\Ingredient\62\" />
+    <Folder Include="Upload\ingredients\Ingredient\63\" />
+    <Folder Include="Upload\ingredients\Ingredient\64\" />
+    <Folder Include="Upload\ingredients\Ingredient\65\" />
+    <Folder Include="Upload\ingredients\Ingredient\66\" />
+    <Folder Include="Upload\ingredients\Ingredient\67\" />
+    <Folder Include="Upload\ingredients\Ingredient\68\" />
     <Folder Include="Upload\ingredients\Ingredient\6\" />
     <Folder Include="Upload\ingredients\Ingredient\7\" />
     <Folder Include="Upload\ingredients\Ingredient\8\" />
@@ -1339,6 +1347,7 @@
     <Content Include="Views\SelfCare\Minerals.cshtml" />
     <Content Include="Views\SelfCare\RawOrCooked.cshtml" />
     <Content Include="Views\SelfCare\VeganOrOmni.cshtml" />
+    <Content Include="Views\Products\DuplicateProduct.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

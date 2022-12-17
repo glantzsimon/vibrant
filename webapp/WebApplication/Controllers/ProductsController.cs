@@ -7,9 +7,11 @@ using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Services;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using K9.SharedLibrary.Models;
+using K9.SharedLibrary.Extensions;
 using WebGrease.Css.Extensions;
 
 namespace K9.WebApplication.Controllers
@@ -37,6 +39,21 @@ namespace K9.WebApplication.Controllers
             return View(product);
         }
 
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult DuplicateProduct(int id)
+        {
+            return View(Repository.Find(id));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [RequirePermissions(Permission = Permissions.Create)]
+        public ActionResult DuplicateProduct(Product product)
+        {
+            _productService.DuplicateProduct(product.Id);
+            return RedirectToAction("Index");
+        }
+        
         public ActionResult LabSheet(int id, int index = 0)
         {
             var product = index == 1 ? _productService.FindNext(id) : index == -1 ? _productService.FindPrevious(id) : _productService.Find(id);

@@ -1171,11 +1171,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Duplicate.
+        /// </summary>
+        public static string Duplicate {
+            get {
+                return ResourceManager.GetString("Duplicate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you wish to duplicate the selected product?.
+        /// </summary>
+        public static string DuplicateConfirm {
+            get {
+                return ResourceManager.GetString("DuplicateConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, a contact with that email address already exists..
         /// </summary>
         public static string DuplicateContactError {
             get {
                 return ResourceManager.GetString("DuplicateContactError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duplicate Product.
+        /// </summary>
+        public static string DuplicateProduct {
+            get {
+                return ResourceManager.GetString("DuplicateProduct", resourceCulture);
             }
         }
         

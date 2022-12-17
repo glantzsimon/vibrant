@@ -9,5 +9,6 @@ namespace K9.WebApplication.Services
         Product FindNext(int id);
         Product Find(string seoFriendlyId);
         Product GetFullProduct(Product product);
+        Product DuplicateProduct(int id);
     }
 }
