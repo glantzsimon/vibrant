@@ -6,7 +6,8 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    [Route("nutrition-and-self-care")]
+    [Route("self-care")]
+    [Route("wellness")]
     public class SelfCareController : BasePureController
     {
         private readonly IAuthentication _authentication;
