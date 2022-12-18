@@ -1201,4 +1201,7 @@
   <data name="ViewLabSheet" xml:space="preserve">
     <value>View Lab Sheet</value>
   </data>
+  <data name="IdHydroscopicLabel" xml:space="preserve">
+    <value>Is Hydroscopic</value>
+  </data>
 </root>

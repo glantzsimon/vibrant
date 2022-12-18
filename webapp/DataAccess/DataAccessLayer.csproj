@@ -289,6 +289,14 @@
     <Compile Include="Migrations\202212131222396_CostOfMaterials.designer.cs">
       <DependentUpon>202212131222396_CostOfMaterials.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212180354299_IsHydroscopic.cs" />
+    <Compile Include="Migrations\202212180354299_IsHydroscopic.designer.cs">
+      <DependentUpon>202212180354299_IsHydroscopic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212180402538_IngredientIsHygroscopic.cs" />
+    <Compile Include="Migrations\202212180402538_IngredientIsHygroscopic.designer.cs">
+      <DependentUpon>202212180402538_IngredientIsHygroscopic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\SaleItem.cs" />
@@ -347,6 +355,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212131222396_CostOfMaterials.resx">
       <DependentUpon>202212131222396_CostOfMaterials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212180354299_IsHydroscopic.resx">
+      <DependentUpon>202212180354299_IsHydroscopic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212180402538_IngredientIsHygroscopic.resx">
+      <DependentUpon>202212180402538_IngredientIsHygroscopic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,15 +4,12 @@ using K9.Base.WebApplication.UnitsOfWork;
 using K9.Base.WebApplication.ViewModels;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Models;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Services;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using K9.SharedLibrary.Models;
-using K9.SharedLibrary.Extensions;
-using WebGrease.Css.Extensions;
 
 namespace K9.WebApplication.Controllers
 {
@@ -32,12 +29,6 @@ namespace K9.WebApplication.Controllers
             RecordBeforeUpdated += ProductsController_RecordBeforeUpdated;
             RecordBeforeDetails += ProductsController_RecordBeforeDetails;
         }
-        
-        public ActionResult EditIngredientQuantities(int id)
-        {
-            var product = _productService.Find(id);
-            return View(product);
-        }
 
         [RequirePermissions(Permission = Permissions.Edit)]
         public ActionResult DuplicateProduct(int id)
@@ -53,10 +44,16 @@ namespace K9.WebApplication.Controllers
             _productService.DuplicateProduct(product.Id);
             return RedirectToAction("Index");
         }
-        
+
         public ActionResult LabSheet(int id, int index = 0)
         {
             var product = index == 1 ? _productService.FindNext(id) : index == -1 ? _productService.FindPrevious(id) : _productService.Find(id);
+            return View(product);
+        }
+
+        public ActionResult EditIngredientQuantities(int id)
+        {
+            var product = _productService.Find(id);
             return View(product);
         }
 

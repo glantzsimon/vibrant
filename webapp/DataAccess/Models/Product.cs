@@ -25,7 +25,7 @@ namespace K9.DataAccessLayer.Models
         public EProductType ProductType { get; set; }
 
         public string MeasuredIn => GetMeasuredInText();
-        
+
         public string ServingMeasuredIn => GetServingMeasuredInText();
 
         public string MeasuredInForLargeQuantity => GetMeasuredInForLargeQuantityText();
@@ -52,7 +52,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLiveOnLabel)]
         public DateTime IsLiveOn { get; set; }
-        
+
         [UIHint("Quantity")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
@@ -118,9 +118,12 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double SuggestedRetailPrice => TotalCost * 10;
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
+        public bool IsHydroscopic() => Ingredients?.Any(e => e.Ingredient.IsHydroscopic) ?? false;
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantityInStockLabel)]
         public int QuantityInStock { get; set; }
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
         public bool IsInStock => QuantityInStock > 0;
 

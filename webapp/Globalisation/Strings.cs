@@ -79,6 +79,7 @@
             public const string StockLowWarningLabel = "StockLowWarningLabel";
             public const string AmountPerProductLabel = "AmountPerProductLabel";
             public const string InStockLabel = "InStockLabel";
+            public const string IsHydroscopicLabel = "IdHydroscopicLabel";
             public const string ArticleSections = "ArticleSections";
             public const string ArticleSection = "ArticleSection";
             public const string ArticleCategories = "ArticleCategories";

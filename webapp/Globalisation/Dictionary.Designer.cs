@@ -1576,6 +1576,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is Hydroscopic.
+        /// </summary>
+        public static string IdHydroscopicLabel {
+            get {
+                return ResourceManager.GetString("IdHydroscopicLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Immune System.
         /// </summary>
         public static string ImmuneSupport {
