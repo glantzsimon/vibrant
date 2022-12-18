@@ -1,4 +1,5 @@
-﻿using K9.DataAccessLayer.Models;
+﻿using System.Collections.Generic;
+using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Services
 {
@@ -10,5 +11,6 @@ namespace K9.WebApplication.Services
         Product Find(string seoFriendlyId);
         Product GetFullProduct(Product product);
         Product DuplicateProduct(int id);
+        List<Product> List(bool retrieveFullProduct = false);
     }
 }

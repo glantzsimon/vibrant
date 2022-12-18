@@ -1,4 +1,5 @@
-﻿@using K9.Base.WebApplication.Helpers
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.Base.WebApplication.Helpers
 @model Product
 @{
     Layout = "../Shared/_LayoutFormSmall.cshtml";
@@ -8,7 +9,9 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.HiddenFor(model => model.Id)
+        @Html.Hidden("index", 0)
+        @Html.BootstrapDropdownFor(model => Model.Id, this.GetDropdownData().GetSelectList<Product>(Model.Id, true))
+        <hr />
         @Html.Partial("_ProductLabSheet")
         <hr />
         @Html.BootstrapBackToListButton()
@@ -16,3 +19,12 @@
         @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Next, "LabSheet", null, new { id = Model.Id, index = 1 }, "fa-arrow-right")
     }
 }
+
+<script type="text/javascript">
+    $(function () {
+        $("#Id").change(function() {
+            //alert("Product id = " + $("#Id").val());
+            $("#Id").closest("form").submit();
+        });
+    })
+</script>

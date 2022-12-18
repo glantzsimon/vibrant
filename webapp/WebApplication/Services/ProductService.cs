@@ -112,5 +112,22 @@ namespace K9.WebApplication.Services
 
             return product;
         }
+
+        public List<Product> List(bool retrieveFullProduct = false)
+        {
+            var products = _productsRepository.List().OrderBy(e => e.Name).ToList();
+            if (retrieveFullProduct)
+            {
+                var fullProducts = new List<Product>();
+                foreach (var product in products)
+                {
+                    fullProducts.Add(GetFullProduct(product));
+                }
+
+                return fullProducts;
+            }
+
+            return products;
+        }
     }
 }

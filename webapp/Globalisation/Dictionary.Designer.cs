@@ -2715,6 +2715,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Selected Product.
+        /// </summary>
+        public static string SelectedProductLabel {
+            get {
+                return ResourceManager.GetString("SelectedProductLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have selected the following subscription.
         /// </summary>
         public static string SelectedPurchaseText {

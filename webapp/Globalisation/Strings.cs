@@ -13,6 +13,7 @@
             public const string AmountDonatedLabel = "AmountDonatedLabel";
             public const string AmountLabel = "AmountLabel";
             public const string AmountPerBatchLabel = "AmountPerBatchLabel";
+            public const string SelectedProductLabel = "SelectedProductLabel";
             public const string OrderLabel = "OrderLabel";
             public const string NumberOfCreditsLabel = "NumberOfCreditsLabel";
             public const string CreditsPurchaseAmountLabel = "CreditsPurchaseAmountLabel";
