@@ -173,7 +173,7 @@ namespace K9.DataAccessLayer.Models
 
         public string GetIngredientAmountIncorrectError()
         {
-            return $"Total ingredients must equal {AmountPerServing}. The current value is {GetFormattedTotalIngredientsAmount()}";
+            return $"Total ingredients must equal {AmountPerServing} {ServingMeasuredIn}. The current value is {GetFormattedTotalIngredientsAmount()}";
         }
 
         private string GetMeasuredInText()
