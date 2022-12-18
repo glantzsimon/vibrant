@@ -89,7 +89,7 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostPerMilligramLabel)]
 	    [DataType(DataType.Currency)]
 	    public double CostPerMilligram => CostPer100Grams / 100000;
-
+        
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHydroscopicLabel)]
 	    public bool IsHydroscopic { get; set; } = false;
 
