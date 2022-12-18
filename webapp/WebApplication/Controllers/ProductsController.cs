@@ -65,7 +65,7 @@ namespace K9.WebApplication.Controllers
             var totalIngredients = model.Ingredients.Sum(e => e.Amount);
             if (totalIngredients != model.AmountPerServing)
             {
-                ModelState.AddModelError("", $"Total ingredients must equal {model.AmountPerServing}. The current value is {totalIngredients}");
+                ModelState.AddModelError("", model.GetIngredientAmountIncorrectError());
                 return View(model);
             }
 

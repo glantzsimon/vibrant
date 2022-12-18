@@ -1,8 +1,8 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @model Product
 @{
-    ViewBag.SubTitle = Dictionary.EditIngredients;
-	Layout = "../Shared/_LayoutFormSmall.cshtml";
+    ViewBag.SubTitle = $"{Dictionary.EditIngredients} for {Model.Name}";
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 @using (Html.BeginForm())
 {

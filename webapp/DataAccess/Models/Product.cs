@@ -47,9 +47,9 @@ namespace K9.DataAccessLayer.Models
         public int ProductIngredientsId => Id;
 
         public virtual IEnumerable<ProductIngredient> ProductIngredients { get; set; }
-
+        
         public List<ProductIngredient> Ingredients { get; set; }
-
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLiveOnLabel)]
         public DateTime IsLiveOn { get; set; }
 
@@ -155,6 +155,26 @@ namespace K9.DataAccessLayer.Models
         [StringLength(512)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.VideoUrlLabel)]
         public string VideoUrl { get; set; }
+
+        public float GetTotalIngredientsAmount()
+        {
+            return Ingredients?.Sum(e => e.Amount) ?? 0;
+        }
+
+        public string GetFormattedTotalIngredientsAmount()
+        {
+            return $"{GetTotalIngredientsAmount()} {ServingMeasuredIn}";
+        }
+
+        public bool IngredientAmountsAreCorrect()
+        {
+            return GetTotalIngredientsAmount() == AmountPerServing;
+        }
+
+        public string GetIngredientAmountIncorrectError()
+        {
+            return $"Total ingredients must equal {AmountPerServing}. The current value is {GetFormattedTotalIngredientsAmount()}";
+        }
 
         private string GetMeasuredInText()
         {
