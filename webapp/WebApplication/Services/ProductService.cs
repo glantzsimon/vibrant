@@ -101,13 +101,18 @@ namespace K9.WebApplication.Services
             newProduct.Name = newProductName;
             
             _productsRepository.Create(newProduct);
-            newProduct = _productsRepository.Find(newProductName).FirstOrDefault();
-
+            newProduct = Find(newProductName);
             if (newProduct == null)
             {
                 throw new Exception("Error duplicating product");
             }
-            
+
+            newProduct.ProductIngredients = product.ProductIngredients.ToList();
+            foreach (var pi in newProduct.ProductIngredients)
+            {
+                pi.Id = 0;
+                pi.ProductId = newProduct.Id;
+            }
             _productIngredientsRepository.CreateBatch(newProduct.ProductIngredients.ToList());
 
             return product;
