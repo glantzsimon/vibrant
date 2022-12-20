@@ -22,13 +22,13 @@ namespace K9.WebApplication.Controllers
         [Route("ingredient/all")]
         public ActionResult Index()
         {
-            return View(_ingredientsRepository.List().OrderBy(e => e.Name).ToList());
+            return View(_ingredientsRepository.List().Where(e => !e.IsHidden).OrderBy(e => e.Name).ToList());
         }
 
         [Route("ingredient/{seoFriendlyId}")]
         public ActionResult Details(string seoFriendlyId)
         {
-            var ingredient = _ingredientsRepository.Find(e => e.SeoFriendlyId == seoFriendlyId).FirstOrDefault();
+            var ingredient = _ingredientsRepository.Find(e => e.SeoFriendlyId == seoFriendlyId && !e.IsHidden).FirstOrDefault();
             if (ingredient == null)
             {
                 return HttpNotFound();

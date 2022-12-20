@@ -11,6 +11,6 @@ namespace K9.WebApplication.Services
         Product Find(string seoFriendlyId);
         Product GetFullProduct(Product product);
         Product DuplicateProduct(int id);
-        List<Product> List(bool retrieveFullProduct = false);
+        List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false);
     }
 }

@@ -24,7 +24,7 @@ namespace K9.WebApplication.Controllers
         [Route("product/all")]
         public ActionResult Index()
         {
-            return View(_productsRepository.List());;
+            return View(_productService.List());;
         }
 
         [Route("product/{seoFriendlyId}")]

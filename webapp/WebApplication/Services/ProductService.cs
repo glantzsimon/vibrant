@@ -118,9 +118,15 @@ namespace K9.WebApplication.Services
             return product;
         }
 
-        public List<Product> List(bool retrieveFullProduct = false)
+        public List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false)
         {
             var products = _productsRepository.List().OrderBy(e => e.Name).ToList();
+
+            if (!includeCustomProducts)
+            {
+                products = products.Where(e => e.ContactId == 0).ToList();
+            }
+
             if (retrieveFullProduct)
             {
                 var fullProducts = new List<Product>();

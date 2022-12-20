@@ -297,6 +297,10 @@
     <Compile Include="Migrations\202212180402538_IngredientIsHygroscopic.designer.cs">
       <DependentUpon>202212180402538_IngredientIsHygroscopic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212200626454_AddCustomerSpecificFunctionality.cs" />
+    <Compile Include="Migrations\202212200626454_AddCustomerSpecificFunctionality.designer.cs">
+      <DependentUpon>202212200626454_AddCustomerSpecificFunctionality.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\SaleItem.cs" />
@@ -361,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212180402538_IngredientIsHygroscopic.resx">
       <DependentUpon>202212180402538_IngredientIsHygroscopic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212200626454_AddCustomerSpecificFunctionality.resx">
+      <DependentUpon>202212200626454_AddCustomerSpecificFunctionality.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1675,6 +1675,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is Hidden.
+        /// </summary>
+        public static string IsHiddenLabel {
+            get {
+                return ResourceManager.GetString("IsHiddenLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Go-Live Date.
         /// </summary>
         public static string IsLiveOnLabel {

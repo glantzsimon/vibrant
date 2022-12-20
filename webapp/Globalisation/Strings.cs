@@ -4,6 +4,7 @@
     {
         public static class Labels
         {
+            public const string IsHiddenLabel = "IsHiddenLabel";
             public const string PurchaseUrlsLabel = "PurchaseUrlsLabel";
             public const string NotesLabel = "NotesLabel";
             public const string NumberToCreateLabel = "NumberToCreateLabel";

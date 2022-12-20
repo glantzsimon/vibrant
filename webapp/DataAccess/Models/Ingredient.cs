@@ -137,6 +137,9 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PurchaseUrlsLabel)]
 	    public string PurchaseUrls { get; set; }
 
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHiddenLabel)]
+	    public bool IsHidden { get; set; }
+
 	    private string GetMeasuredInText()
 	    {
 	        switch (IngredientType)

@@ -4,7 +4,6 @@ using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Extensions;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
