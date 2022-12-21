@@ -910,7 +910,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customer.
+        ///   Looks up a localized string similar to Client.
         /// </summary>
         public static string CustomerLabel {
             get {

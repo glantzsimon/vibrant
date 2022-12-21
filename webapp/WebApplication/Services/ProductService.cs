@@ -124,7 +124,7 @@ namespace K9.WebApplication.Services
 
             if (!includeCustomProducts)
             {
-                products = products.Where(e => e.ContactId == 0).ToList();
+                products = products.Where(e => e.ContactId <= 0 || !e.ContactId.HasValue).ToList();
             }
 
             if (retrieveFullProduct)

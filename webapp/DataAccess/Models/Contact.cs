@@ -9,7 +9,7 @@ using System.Linq;
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
-    [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Clients, PluralName = Globalisation.Strings.Names.Clients, Name = Globalisation.Strings.Names.Client)]
+    [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Contacts, PluralName = Globalisation.Strings.Names.Clients, Name = Globalisation.Strings.Names.Client)]
     public class Contact : ObjectBase
 	{
 	    [ForeignKey("User")]
