@@ -45,9 +45,14 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult LabSheet(int id, int index = 0)
+        public ActionResult LabSheet(int id, int index = 0, int batchSize = 1)
         {
             var product = index == 1 ? _productService.FindNext(id) : index == -1 ? _productService.FindPrevious(id) : _productService.Find(id);
+            if (batchSize > 1)
+            {
+                product = _productService.UpdateBatchSize(product, batchSize);
+            }
+            
             return View(product);
         }
 
@@ -62,8 +67,7 @@ namespace K9.WebApplication.Controllers
         [RequirePermissions(Permission = Permissions.Edit)]
         public ActionResult EditIngredientQuantities(Product model)
         {
-            var totalIngredients = model.Ingredients.Sum(e => e.Amount);
-            if (totalIngredients != model.AmountPerServing)
+            if (!model.IngredientAmountsAreCorrect())
             {
                 ModelState.AddModelError("", model.GetIngredientAmountIncorrectError());
                 return View(model);

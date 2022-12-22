@@ -1210,4 +1210,10 @@
   <data name="SelectedProductLabel" xml:space="preserve">
     <value>Selected Product</value>
   </data>
+  <data name="BatchSizeLabel" xml:space="preserve">
+    <value>Batch Size</value>
+  </data>
+  <data name="ConcentrationLabel" xml:space="preserve">
+    <value>Concentration</value>
+  </data>
 </root>

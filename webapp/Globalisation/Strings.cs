@@ -4,6 +4,7 @@
     {
         public static class Labels
         {
+            public const string ConcentrationLabel = "ConcentrationLabel";
             public const string IsHiddenLabel = "IsHiddenLabel";
             public const string PurchaseUrlsLabel = "PurchaseUrlsLabel";
             public const string NotesLabel = "NotesLabel";
@@ -79,6 +80,7 @@
             public const string QuantityPurchasedLabel = "QuantityPurchasedLabel";
             public const string StockLowWarningLevelLabel = "StockLowWarningLevelLabel";
             public const string StockLowWarningLabel = "StockLowWarningLabel";
+            public const string BatchSizeLabel = "BatchSizeLabel";
             public const string AmountPerProductLabel = "AmountPerProductLabel";
             public const string InStockLabel = "InStockLabel";
             public const string IsHydroscopicLabel = "IdHydroscopicLabel";

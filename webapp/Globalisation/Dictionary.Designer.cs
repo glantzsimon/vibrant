@@ -277,6 +277,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Batch Size.
+        /// </summary>
+        public static string BatchSizeLabel {
+            get {
+                return ResourceManager.GetString("BatchSizeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Benefits.
         /// </summary>
         public static string BenefitsLabel {
@@ -565,6 +574,15 @@ namespace K9.Globalisation {
         public static string CompletedOnLabel {
             get {
                 return ResourceManager.GetString("CompletedOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Concentration.
+        /// </summary>
+        public static string ConcentrationLabel {
+            get {
+                return ResourceManager.GetString("ConcentrationLabel", resourceCulture);
             }
         }
         

@@ -301,6 +301,10 @@
     <Compile Include="Migrations\202212200626454_AddCustomerSpecificFunctionality.designer.cs">
       <DependentUpon>202212200626454_AddCustomerSpecificFunctionality.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212211137346_IngredientConcentration.cs" />
+    <Compile Include="Migrations\202212211137346_IngredientConcentration.designer.cs">
+      <DependentUpon>202212211137346_IngredientConcentration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\SaleItem.cs" />
@@ -368,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212200626454_AddCustomerSpecificFunctionality.resx">
       <DependentUpon>202212200626454_AddCustomerSpecificFunctionality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212211137346_IngredientConcentration.resx">
+      <DependentUpon>202212211137346_IngredientConcentration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

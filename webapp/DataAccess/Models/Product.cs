@@ -156,9 +156,13 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.VideoUrlLabel)]
         public string VideoUrl { get; set; }
 
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BatchSizeLabel)]
+        public int BatchSize { get; set; } = 1;
+
         public float GetTotalIngredientsAmount()
         {
-            return Ingredients?.Sum(e => e.Amount) ?? 0;
+            return Ingredients?.Sum(e => e.AmountPerConcentration) ?? 0;
         }
 
         public string GetFormattedTotalIngredientsAmount()

@@ -10,7 +10,16 @@
     using (Html.BeginBootstrapForm())
     {
         @Html.Hidden("index", 0)
-        @Html.BootstrapDropdownFor(model => Model.Id, this.GetDropdownData().GetSelectList<Product>(Model.Id, true))
+
+        <div class="row">
+            <div class="col-xs-6">
+                @Html.BootstrapDropdownFor(model => Model.Id, this.GetDropdownData().GetSelectList<Product>(Model.Id, true))
+            </div>
+            <div class="col-xs-6">
+                @Html.BootstrapEditorFor(model => Model.BatchSize)
+            </div>
+        </div>
+
         <hr />
         @Html.Partial("_ProductLabSheet")
         <hr />
@@ -22,7 +31,7 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#Id").change(function() {
+        $("#Id, #BatchSize").change(function () {
             $("#Id").closest("form").submit();
         });
     })

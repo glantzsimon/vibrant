@@ -99,6 +99,12 @@ namespace K9.WebApplication.Services
             newProduct.Id = 0;
             var newProductName = $"{product.Name} Copy";
             newProduct.Name = newProductName;
+
+            foreach (var pi in newProduct.ProductIngredients)
+            {
+                pi.Id = 0;
+                pi.ProductId = newProduct.Id;
+            }
             
             _productsRepository.Create(newProduct);
             newProduct = Find(newProductName);
@@ -107,14 +113,23 @@ namespace K9.WebApplication.Services
                 throw new Exception("Error duplicating product");
             }
 
-            newProduct.ProductIngredients = product.ProductIngredients.ToList();
-            foreach (var pi in newProduct.ProductIngredients)
-            {
-                pi.Id = 0;
-                pi.ProductId = newProduct.Id;
-            }
-            _productIngredientsRepository.CreateBatch(newProduct.ProductIngredients.ToList());
+            //newProduct.ProductIngredients = product.ProductIngredients.ToList();
+            //foreach (var pi in newProduct.ProductIngredients)
+            //{
+            //    pi.Id = 0;
+            //    pi.ProductId = newProduct.Id;
+            //}
+            //_productIngredientsRepository.CreateBatch(newProduct.ProductIngredients.ToList());
 
+            return product;
+        }
+
+        public Product UpdateBatchSize(Product product, int batchSize)
+        {
+            if (batchSize > 1)
+            {
+                product.Ingredients.ForEach(e => e.Amount *= batchSize);
+            }
             return product;
         }
 
