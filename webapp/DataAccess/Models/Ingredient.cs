@@ -140,7 +140,7 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHiddenLabel)]
 	    public bool IsHidden { get; set; }
 
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHiddenLabel)]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ConcentrationLabel)]
 	    public float Concentration { get; set; } = 1;
 
 	    private string GetMeasuredInText()

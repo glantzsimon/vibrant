@@ -18,6 +18,9 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Products, PluralName = Globalisation.Strings.Names.Products, Name = Globalisation.Strings.Names.Product)]
     public class Product : ObjectBase
     {
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductLabel)]
+        public int ProductId => Id;
+
         [UIHint("ProductType")]
         [Required]
         [Display(ResourceType = typeof(Globalisation.Dictionary),

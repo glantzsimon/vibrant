@@ -23,17 +23,28 @@
         @Html.BootstrapDisplayFor(model => model.FormattedQuantityInStock)
     </div>
     <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.IsStockLowWarning)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.IsHydroscopic)
+    </div>
+    <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.IsHidden)
     </div>
 </div>
 <div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.StockLowWarningLevel)
+        @Html.BootstrapDisplayFor(model => model.Concentration)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.IsStockLowWarning)
+        @Html.BootstrapDisplayFor(model => model.StockLowWarningLevel)
     </div>
 </div>
+
+<hr />
+
 <div class="row">
     @Html.BootstrapDisplayFor(model => model.PurchaseUrls)
 </div>
