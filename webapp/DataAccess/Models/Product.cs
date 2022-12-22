@@ -168,12 +168,7 @@ namespace K9.DataAccessLayer.Models
         {
             return Ingredients?.Sum(e => e.AmountPerConcentration) ?? 0;
         }
-
-        public float GetTotalIngredientsAmountPerBatch()
-        {
-            return Ingredients?.Sum(e => e.AmountPerConcentration) ?? 0;
-        }
-
+        
         public string GetFormattedTotalIngredientsAmount()
         {
             return $"{GetTotalIngredientsAmount()} {ServingMeasuredIn}";

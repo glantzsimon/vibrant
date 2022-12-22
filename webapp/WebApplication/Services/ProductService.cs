@@ -128,7 +128,7 @@ namespace K9.WebApplication.Services
         {
             if (batchSize > 1)
             {
-                product.Ingredients.ForEach(e => e.Amount *= batchSize);
+                product.Ingredients.ForEach(e => e.BatchSize = batchSize);
             }
             return product;
         }

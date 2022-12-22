@@ -36,15 +36,29 @@ namespace K9.DataAccessLayer.Models
 	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 	    public float Amount { get; set; }
 
+	    [NotMapped]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BatchSizeLabel)]
+	    public int BatchSize { get; set; } = 1;
+
+	    [UIHint("Quantity")]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
+	    [Required(ErrorMessageResourceType = typeof(Dictionary),
+	        ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+	    public float AmountPerBatch => Amount * BatchSize;
+
 	    [UIHint("Quantity")]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
 	    public float AmountPerConcentration => Amount * (1 / (Ingredient?.Concentration ?? 1));
+
+	    [UIHint("Quantity")]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
+	    public float AmountPerConcentrationPerBatch => AmountPerBatch * (1 / (Ingredient?.Concentration ?? 1));
 
 	    public string FormattedAmount =>
 	        $"{Amount} {Globalisation.Strings.Constants.Measures.Milligrams}";
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
-	    public float AmountPer100Capsules => AmountPerConcentration * 100;
+	    public float AmountPer100Capsules => AmountPerConcentrationPerBatch * 100;
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
 	    public string FormattedAmountPer100Capsules =>
@@ -52,7 +66,7 @@ namespace K9.DataAccessLayer.Models
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
 	    public string FormattedLargeAmountPer100Capsules =>
-	        $"{AmountPerConcentration / 10} {Ingredient?.MeasuredInForLargeQuantity}";
+	        $"{AmountPerConcentrationPerBatch / 10} {Ingredient?.MeasuredInForLargeQuantity}";
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostLabel)]
 	    [DataType(DataType.Currency)]
