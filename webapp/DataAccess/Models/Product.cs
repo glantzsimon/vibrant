@@ -18,6 +18,7 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Products, PluralName = Globalisation.Strings.Names.Products, Name = Globalisation.Strings.Names.Product)]
     public class Product : ObjectBase
     {
+        [UIHint("Product")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductLabel)]
         public int ProductId => Id;
 
@@ -68,7 +69,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerServingLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public float AmountPerServing { get; set; }
-
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerServingLabel)]
         public string FormattedAmountPerServing => $"{AmountPerServing} {ServingMeasuredIn}";
 
@@ -168,6 +169,11 @@ namespace K9.DataAccessLayer.Models
             return Ingredients?.Sum(e => e.AmountPerConcentration) ?? 0;
         }
 
+        public float GetTotalIngredientsAmountPerBatch()
+        {
+            return Ingredients?.Sum(e => e.AmountPerConcentration) ?? 0;
+        }
+
         public string GetFormattedTotalIngredientsAmount()
         {
             return $"{GetTotalIngredientsAmount()} {ServingMeasuredIn}";
@@ -175,12 +181,12 @@ namespace K9.DataAccessLayer.Models
 
         public bool IngredientAmountsAreCorrect()
         {
-            return GetTotalIngredientsAmount() == AmountPerServing;
+            return GetTotalIngredientsAmount() == (AmountPerServing);
         }
 
         public string GetIngredientAmountIncorrectError()
         {
-            return $"Total ingredients must equal {AmountPerServing} {ServingMeasuredIn}. The current value is {GetFormattedTotalIngredientsAmount()}";
+            return $"Total ingredients per serving must equal {AmountPerServing} {ServingMeasuredIn}. The current value is {GetFormattedTotalIngredientsAmount()}";
         }
 
         private string GetMeasuredInText()

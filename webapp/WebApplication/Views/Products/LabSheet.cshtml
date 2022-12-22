@@ -13,7 +13,7 @@
 
         <div class="row">
             <div class="col-xs-6">
-                @Html.BootstrapDropdownFor(model => Model.ProductId, this.GetDropdownData().GetSelectList<Product>(Model.ProductId, true))
+                @Html.BootstrapEditorFor(model => Model.ProductId)
             </div>
             <div class="col-xs-6">
                 @Html.BootstrapEditorFor(model => Model.BatchSize)
@@ -23,9 +23,13 @@
         <hr />
         @Html.Partial("_ProductLabSheet")
         <hr />
+        @Html.BootstrapActionLinkButton(Dictionary.EditIngredients, "EditIngredients", null, new { id = Model.Id }, "fa-arrow-pencil")
+        @Html.BootstrapActionLinkButton(Dictionary.EditIngredientQuantities, "EditIngredientQuantities", null, new { id = Model.Id }, "fa-arrow-pencil")
+
+        <br />
         @Html.BootstrapBackToListButton()
-        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Previous, "LabSheet", null, new { productId = Model.Id, index = -1 }, "fa-arrow-left")
-        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Next, "LabSheet", null, new { productId = Model.Id, index = 1 }, "fa-arrow-right")
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Previous, "LabSheet", null, new { id = Model.Id, index = -1 }, "fa-arrow-left")
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Next, "LabSheet", null, new { Id = Model.Id, index = 1 }, "fa-arrow-right")
     }
 }
 

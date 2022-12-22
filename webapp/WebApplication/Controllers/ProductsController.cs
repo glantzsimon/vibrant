@@ -45,8 +45,13 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult LabSheet(int productId, int index = 0, int batchSize = 1)
+        public ActionResult LabSheet(int productId = 0, int id = 0, int index = 0, int batchSize = 1)
         {
+            if (productId == 0)
+            {
+                productId = id;
+            }
+
             var product = index == 1 ? _productService.FindNext(productId) : index == -1 ? _productService.FindPrevious(productId) : _productService.Find(productId);
             if (batchSize > 1)
             {
