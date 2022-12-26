@@ -36,5 +36,11 @@ namespace K9.WebApplication.Controllers
         {
             return View(); ;
         }
+
+        [Route("methylation-support")]
+        public ActionResult MethylationSupport()
+        {
+            return View(); ;
+        }
     }
 }

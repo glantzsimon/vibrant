@@ -6,13 +6,79 @@
     Layout = "../Shared/_LayoutForm.cshtml";
 }
 
-
 <div class="container main-content">
     <div class="well margin-bottom-0">
         @Html.ImagePanel("Welcome", "~/Images/pages/default-image.jpg")
 
         <article>
-            @MvcHtmlString.Create(Dictionary.ComingSoon)
+            <h5>@Dictionary.ColdExposure</h5>
+            <p>Many people are discovering the incredible benefits of cold exposure, from cold showers to ice baths.</p>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "ColdExposure", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.Breathwork</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Breathwork", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.Detoxification</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Detoxification", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.Electromedicine</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Electromedicine", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.EMFs</h5>@Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "EMFs", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.Grounding</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Grounding", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.ImmuneSupport</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "ImmuneSupport", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.Infections</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Infections", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.SaunaTherapy</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "SaunaTherapy", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.OralCare</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "OralCare", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.Rebounding</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Rebounding", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.Sleep</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Sleep", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.Sungazing</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Sungazing", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.WaterMagic</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "WaterMagic", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.AcidAlkaline</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "AcidAlkaline", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.Doshas</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Doshas", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.Fats</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Fats", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.FermentedFoods</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "FermentedFoods", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.MetabolicTypes</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "MetabolicTypes", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.Minerals</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Minerals", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.RawOrCooked</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "RawOrCooked", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.VeganOrOmni</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "VeganOrOmni", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
+
+            <h5>@Dictionary.MeditationTechniques</h5>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "MeditationTechniques", "SelfCare", null, "", EButtonClass.Primary, EButtonClass.Small)
         </article>
     </div>
 </div>

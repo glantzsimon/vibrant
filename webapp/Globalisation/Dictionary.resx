@@ -1210,6 +1210,9 @@
   <data name="SelectedProductLabel" xml:space="preserve">
     <value>Selected Product</value>
   </data>
+  <data name="AmmoniaDetox" xml:space="preserve">
+    <value>Ammonia Detox</value>
+  </data>
   <data name="BatchSizeLabel" xml:space="preserve">
     <value>Batch Size</value>
   </data>
@@ -1221,5 +1224,11 @@
   </data>
   <data name="HealthQuestionnaire" xml:space="preserve">
     <value>Health Questionnaire</value>
+  </data>
+  <data name="MethylationSupport" xml:space="preserve">
+    <value>Methylation Support</value>
+  </data>
+  <data name="SulfurDetox" xml:space="preserve">
+    <value>Sulfur Detox</value>
   </data>
 </root>

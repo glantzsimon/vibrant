@@ -6,8 +6,6 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    [Route("self-care")]
-    [Route("wellness")]
     public class SelfCareController : BasePureController
     {
         private readonly IAuthentication _authentication;
@@ -29,11 +27,13 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        [Route("doshas")]
         public ActionResult Doshas()
         {
             return View();
         }
 
+        [Route("fats")]
         public ActionResult Fats()
         {
             return View();
@@ -57,6 +57,7 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        [Route("minerals")]
         public ActionResult Minerals()
         {
             return View();
@@ -86,21 +87,25 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        [Route("detoxification")]
         public ActionResult Detoxification()
         {
             return View();
         }
 
+        [Route("electromedicine")]
         public ActionResult ElectroMedicine()
         {
             return View();
         }
 
+        [Route("emfs")]
         public ActionResult EMFs()
         {
             return View();
         }
 
+        [Route("grounding")]
         public ActionResult Grounding()
         {
             return View();
@@ -112,11 +117,13 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        [Route("infections")]
         public ActionResult Infections()
         {
             return View();
         }
 
+        [Route("sauna-therapy")]
         public ActionResult SaunaTherapy()
         {
             return View();
@@ -128,11 +135,13 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        [Route("rebounding")]
         public ActionResult Rebounding()
         {
             return View();
         }
-
+        
+        [Route("sleep")]
         public ActionResult Sleep()
         {
             return View();
@@ -149,10 +158,6 @@ namespace K9.WebApplication.Controllers
         {
             return View();
         }
-
-        public override string GetObjectName()
-        {
-            return string.Empty;
-        }
+        
     }
 }

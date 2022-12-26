@@ -106,6 +106,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ammonia Detox.
+        /// </summary>
+        public static string AmmoniaDetox {
+            get {
+                return ResourceManager.GetString("AmmoniaDetox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount Donated.
         /// </summary>
         public static string AmountDonatedLabel {
@@ -1932,6 +1941,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Methylation Support.
+        /// </summary>
+        public static string MethylationSupport {
+            get {
+                return ResourceManager.GetString("MethylationSupport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Minerals.
         /// </summary>
         public static string Minerals {
@@ -3054,6 +3072,15 @@ namespace K9.Globalisation {
         public static string SuggestedRetailPriceLabel {
             get {
                 return ResourceManager.GetString("SuggestedRetailPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sulfur Detox.
+        /// </summary>
+        public static string SulfurDetox {
+            get {
+                return ResourceManager.GetString("SulfurDetox", resourceCulture);
             }
         }
         
