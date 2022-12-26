@@ -1,6 +1,7 @@
 ﻿h2 {
     font-size: 40px;
     color: #392c24;
+    font-weight: bold;
 }
 
 
@@ -33,7 +34,7 @@ article h4 {
     margin-top: 32px;
     margin-bottom: 15px;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.7em;
     color: #444;
 }
 
@@ -45,7 +46,7 @@ article h5 {
     margin-top: 20px;
     margin-bottom: 5px;
     font-weight: bold;
-    font-size: 1.4em;
+    font-size: 1.3em;
     line-height: 1.5em;
     /*text-shadow: 1px 1px #666;*/
 }

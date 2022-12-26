@@ -903,12 +903,23 @@ div.row + hr {
     font-size: 0.8em;
 }
 
-.benefits p {
-    
-}
-
 .benefits p:before {
     content: url(../../Images/ui/small-tick.png);
     padding-right: 5px;
     vertical-align: middle;
 }
+
+.content-table {
+    text-align: left !important;
+    vertical-align: top !important;
+}
+
+    .content-table h5 {
+        margin: 0;
+    }
+
+    .content-table .row {
+        border-bottom: 1px solid #d9d9d9;
+        padding-top:8px;
+        padding-bottom: 8px;
+    }

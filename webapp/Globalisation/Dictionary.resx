@@ -866,7 +866,7 @@
     <value>Personalised Nutrition</value>
   </data>
   <data name="SelfCareAndNutrition" xml:space="preserve">
-    <value>Wellness</value>
+    <value>Self-Care</value>
   </data>
   <data name="SuperFoods" xml:space="preserve">
     <value>Super Foods</value>
@@ -1145,13 +1145,13 @@
     <value>See Full List</value>
   </data>
   <data name="SeeAllArticles" xml:space="preserve">
-    <value>See Full List of Articles</value>
+    <value>See All Articles</value>
   </data>
   <data name="SeeAllIngredients" xml:space="preserve">
-    <value>See Full List of Ingredients</value>
+    <value>See All Ingredients</value>
   </data>
   <data name="SeeAllProducts" xml:space="preserve">
-    <value>See Full List of Products</value>
+    <value>See All Products</value>
   </data>
   <data name="AmountPerBatchLabel" xml:space="preserve">
     <value>Amount per Batch</value>
@@ -1213,7 +1213,13 @@
   <data name="BatchSizeLabel" xml:space="preserve">
     <value>Batch Size</value>
   </data>
+  <data name="CbsUpregulation" xml:space="preserve">
+    <value>Cbs Upregulation</value>
+  </data>
   <data name="ConcentrationLabel" xml:space="preserve">
     <value>Concentration</value>
+  </data>
+  <data name="HealthQuestionnaire" xml:space="preserve">
+    <value>Health Questionnaire</value>
   </data>
 </root>

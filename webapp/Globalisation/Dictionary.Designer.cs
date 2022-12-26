@@ -425,6 +425,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cbs Upregulation.
+        /// </summary>
+        public static string CbsUpregulation {
+            get {
+                return ResourceManager.GetString("CbsUpregulation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Amount.
         /// </summary>
         public static string ChangeAmount {
@@ -1576,6 +1585,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Health Questionnaire.
+        /// </summary>
+        public static string HealthQuestionnaire {
+            get {
+                return ResourceManager.GetString("HealthQuestionnaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Heaven.
         /// </summary>
         public static string Heaven {
@@ -2706,7 +2724,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to See Full List of Articles.
+        ///   Looks up a localized string similar to See All Articles.
         /// </summary>
         public static string SeeAllArticles {
             get {
@@ -2715,7 +2733,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to See Full List of Ingredients.
+        ///   Looks up a localized string similar to See All Ingredients.
         /// </summary>
         public static string SeeAllIngredients {
             get {
@@ -2724,7 +2742,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to See Full List of Products.
+        ///   Looks up a localized string similar to See All Products.
         /// </summary>
         public static string SeeAllProducts {
             get {
@@ -2760,7 +2778,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wellness.
+        ///   Looks up a localized string similar to Self-Care.
         /// </summary>
         public static string SelfCareAndNutrition {
             get {
@@ -3527,10 +3545,13 @@ namespace K9.Globalisation {
         ///    Some of the most advanced nutritional supplements on the market
         ///&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    After decades of research and trial and error, we have identified which compounds are the safest, most effective and provide the greatest benefits. We have also figured out how to carefully combine different ingredients in the correct dosages in powerful formulations to provide you with optimum benefits.
+        ///    Decades of research and in depth exploration has helped us to identify the most effective compounds with the greatest therapeutic potential as well as how to carefully combine them in the appropriate dosages, in order to provide you with safe yet extremely powerful formulations.
         ///&lt;/p&gt;
         ///&lt;h5&gt;
-        ///    &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/i&gt; Only 100% pure, active ingredients &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/ [rest of string was truncated]&quot;;.
+        ///    &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/i&gt; Only 100% pure, active ingredients &lt;i class=&quot;fa fa-leaf green&quot;&gt;&lt;/i&gt;
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    All of [rest of string was truncated]&quot;;.
         /// </summary>
         public static string welcome {
             get {

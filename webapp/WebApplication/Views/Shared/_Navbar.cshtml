@@ -4,9 +4,9 @@
 @using K9.WebApplication.Helpers
 @{
     var roles = this.GetRoles();
-    var products = this.GetDropdownData().GetDataSet<Product>(true, "Name", "SeoFriendlyId");
-    var ingredients = this.GetDropdownData().GetDataSet<Ingredient>(true, "Name", "SeoFriendlyId");
-    var articles = this.GetDropdownData().GetDataSet<Article>(true, "Name", "SeoFriendlyId");
+    var products = this.GetDropdownData().GetDataSet<Product>(true, "Name", "SeoFriendlyId").OrderBy(e => e.Id).Take(11).ToList();
+    var ingredients = this.GetDropdownData().GetDataSet<Ingredient>(true, "Name", "SeoFriendlyId").OrderBy(e => e.Id).Take(11).ToList();
+    var articles = this.GetDropdownData().GetDataSet<Article>(true, "Name", "SeoFriendlyId").OrderBy(e => e.Id).Take(11).ToList(); ;
 }
 <div id="account-header">
     <div id="account-controls">
@@ -77,14 +77,14 @@
                                 @if (products != null)
                                 {
                                     <li class="@ViewContext.GetActiveClass("Index", "Products")"><a href="@Url.Action("Index", "Product")"> @Dictionary.SeeAllProducts</a></li>
-                           
+
                                     <li class="divider"></li>
 
                                     foreach (var product in products)
                                     {
-                                    <li>
-                                        <a href="@Url.Action("Details", "Product", new {seoFriendlyId = product.Value})"> @product.Name</a>
-                                    </li>
+                                        <li>
+                                            <a href="@Url.Action("Details", "Product", new {seoFriendlyId = product.Value})"> @product.Name</a>
+                                        </li>
                                     }
                                 }
                             </ul>
@@ -94,7 +94,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Ingredients</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
                                 <li class="@ViewContext.GetActiveClass("Index", "Ingredients")"><a href="@Url.Action("Index", "Ingredient")"> @Dictionary.SeeAllIngredients</a></li>
-                           
+
                                 <li class="divider"></li>
 
                                 @if (ingredients != null)
@@ -113,10 +113,16 @@
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.SelfCareAndNutrition</span> <span class="caret"></span></a>
+                            
                             <ul class="dropdown-menu nav navbar-nav">
+
+                                <li class="@ViewContext.GetActiveClass("Questionnaire", "Protocols")"><a href="@Url.Action("Questionnaire", "Protocols")"> @Dictionary.HealthQuestionnaire</a></li>
+                                <li class="@ViewContext.GetActiveClass("Index", "Protocols")"><a href="@Url.Action("Index", "Protocols")"> @Dictionary.Protocols</a></li>
+
+                                <li class="divider"></li>
+
                                 <li class="@ViewContext.GetActiveClass("Index", "SelfCare")"><a href="@Url.Action("Index", "SelfCare")"> @Dictionary.SeeAll</a></li>
-                                <li class="@ViewContext.GetActiveClass("Protocols", "SelfCare")"><a href="@Url.Action("Protocols", "SelfCare")"> @Dictionary.Protocols</a></li>
-                                
+
                                 <li class="divider"></li>
 
                                 <li class="@ViewContext.GetActiveClass("ColdExposure", "SelfCare")"><a href="@Url.Action("ColdExposure", "SelfCare")"> @Dictionary.ColdExposure</a></li>
@@ -128,21 +134,6 @@
                                 <li class="@ViewContext.GetActiveClass("ImmuneSupport", "SelfCare")"><a href="@Url.Action("ImmuneSupport", "SelfCare")"> @Dictionary.ImmuneSupport</a></li>
                                 <li class="@ViewContext.GetActiveClass("Infections", "SelfCare")"><a href="@Url.Action("Infections", "SelfCare")"> @Dictionary.Infections</a></li>
                                 <li class="@ViewContext.GetActiveClass("SaunaTherapy", "SelfCare")"><a href="@Url.Action("SaunaTherapy", "SelfCare")"> @Dictionary.SaunaTherapy</a></li>
-                                <li class="@ViewContext.GetActiveClass("OralCare", "SelfCare")"><a href="@Url.Action("OralCare", "SelfCare")"> @Dictionary.OralCare</a></li>
-                                <li class="@ViewContext.GetActiveClass("Rebounding", "SelfCare")"><a href="@Url.Action("Rebounding", "SelfCare")"> @Dictionary.Rebounding</a></li>
-                                <li class="@ViewContext.GetActiveClass("Sleep", "SelfCare")"><a href="@Url.Action("Sleep", "SelfCare")"> @Dictionary.Sleep</a></li>
-                                <li class="@ViewContext.GetActiveClass("Sungazing", "SelfCare")"><a href="@Url.Action("Sungazing", "SelfCare")"> @Dictionary.Sungazing</a></li>
-                                <li class="@ViewContext.GetActiveClass("WaterMagic", "SelfCare")"><a href="@Url.Action("WaterMagic", "SelfCare")"> @Dictionary.WaterMagic</a></li>
-                                <li class="@ViewContext.GetActiveClass("AcidAlkaline", "SelfCare")"><a href="@Url.Action("AcidAlkaline", "SelfCare")"> @Dictionary.AcidAlkaline</a></li>
-                                <li class="@ViewContext.GetActiveClass("Doshas", "SelfCare")"><a href="@Url.Action("Doshas", "SelfCare")"> @Dictionary.Doshas</a></li>
-                                <li class="@ViewContext.GetActiveClass("Fats", "SelfCare")"><a href="@Url.Action("Fats", "SelfCare")"> @Dictionary.Fats</a></li>
-                                <li class="@ViewContext.GetActiveClass("FermentedFoods", "SelfCare")"><a href="@Url.Action("FermentedFoods", "SelfCare")"> @Dictionary.FermentedFoods</a></li>
-                                <li class="@ViewContext.GetActiveClass("MetabolicTypes", "SelfCare")"><a href="@Url.Action("MetabolicTypes", "SelfCare")"> @Dictionary.MetabolicTypes</a></li>
-                                <li class="@ViewContext.GetActiveClass("Minerals", "SelfCare")"><a href="@Url.Action("Minerals", "SelfCare")"> @Dictionary.Minerals</a></li>
-                                <li class="@ViewContext.GetActiveClass("RawOrCooked", "SelfCare")"><a href="@Url.Action("RawOrCooked", "SelfCare")"> @Dictionary.RawOrCooked</a></li>
-                                <li class="@ViewContext.GetActiveClass("VeganOrOmni", "SelfCare")"><a href="@Url.Action("VeganOrOmni", "SelfCare")"> @Dictionary.VeganOrOmni</a></li>
-                                <li class="@ViewContext.GetActiveClass("MeditationTechniques", "SelfCare")"><a href="@Url.Action("MeditationTechniques", "SelfCare")"> @Dictionary.MeditationTechniques</a></li>
-
                             </ul>
                         </li>
 
@@ -152,7 +143,7 @@
                                 @if (articles != null)
                                 {
                                     <li class="@ViewContext.GetActiveClass("Index", "Article")"><a href="@Url.Action("Index", "Article")"> @Dictionary.SeeAllArticles</a></li>
-                           
+
                                     <li class="divider"></li>
 
                                     foreach (var article in articles)

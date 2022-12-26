@@ -22,13 +22,7 @@ namespace K9.WebApplication.Controllers
         {
             return View();
         }
-
-        [Route("protocols")]
-        public ActionResult Protocols()
-        {
-            return View();
-        }
-
+        
         [Route("acid-alkaline")]
         public ActionResult AcidAlkaline()
         {

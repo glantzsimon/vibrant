@@ -85,10 +85,14 @@
         border-bottom-right-radius: 8px;
     }
 
-    .top-nav ul li a {
-        font-size: 1.4em !important;
+    .top-nav ul.main-navbar li.open > ul.dropdown-menu > li > a {
+        font-size: 1.8em !important;
     }
 
+    .top-nav ul.main-navbar li a {
+        font-size: 1.4em !important;
+    }
+    
     .clear-on-device {
         clear: both !important;
     }
