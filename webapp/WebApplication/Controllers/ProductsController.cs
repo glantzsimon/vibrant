@@ -20,11 +20,13 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IProductService _productService;
         private readonly IRepository<ProductIngredient> _productIngredientsRepository;
+        private readonly IRepository<Ingredient> _ingredientsRepository;
 
-        public ProductsController(IControllerPackage<Product> controllerPackage, IProductService productService, IRepository<ProductIngredient> productIngredientsRepository) : base(controllerPackage)
+        public ProductsController(IControllerPackage<Product> controllerPackage, IProductService productService, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository) : base(controllerPackage)
         {
             _productService = productService;
             _productIngredientsRepository = productIngredientsRepository;
+            _ingredientsRepository = ingredientsRepository;
             RecordBeforeCreate += ProductsController_RecordBeforeCreate;
             RecordBeforeCreated += ProductsController_RecordBeforeCreated;
             RecordBeforeUpdated += ProductsController_RecordBeforeUpdated;
@@ -104,7 +106,12 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult EditList()
         {
-            return View(Repository.List());
+            var products = Repository.List();
+            foreach (var product in products)
+            {
+                _productService.GetFullProduct(product);
+            }
+            return View(products.OrderBy(e => e.Name).ToList());
         }
 
         [HttpPost]
@@ -120,8 +127,7 @@ namespace K9.WebApplication.Controllers
                 item.AmountPerServing = product.AmountPerServing;
                 item.CostOfMaterials = product.CostOfMaterials;
                 item.Price = product.Price;
-                item.Dosage = product.Dosage;
-	            
+                
                 Repository.Update(item);
             }
 

@@ -31,12 +31,31 @@
 </div>
 <div class="row">
     <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.PriceDiscount1)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.PriceDiscount2)
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.CostOfMaterials)
     </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.CostOfIngredients)
+    </div>
+</div>
+<div class="row">
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.TotalCost)
     </div>
 </div>
+
+<hr />
+
 <div class="row">
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.FormattedAmount)

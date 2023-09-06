@@ -1237,6 +1237,9 @@
   <data name="IngredientsList" xml:space="preserve">
     <value>Ingredients List</value>
   </data>
+  <data name="CostOfIngredientsLabel" xml:space="preserve">
+    <value>Cost of Ingredients</value>
+  </data>
   <data name="PriceDiscount1Label" xml:space="preserve">
     <value>Special Discount Price</value>
   </data>

@@ -21,6 +21,7 @@
             public const string CreditsPurchaseAmountLabel = "CreditsPurchaseAmountLabel";
             public const string TotalPriceLabel = "TotalPriceLabel";
             public const string TotalCostLabel = "TotalCostLabel";
+            public const string CostOfIngredientsLabel = "CostOfIngredientsLabel";
             public const string SuggestedRetailPriceLabel = "SuggestedRetailPriceLabel";
             public const string ProfitMarginLabel = "ProfitMarginLabel";
             public const string PriceDiscount1Label = "PriceDiscount1Label";

@@ -12,6 +12,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Linq;
 using System.Web.Mvc;
+using K9.DataAccessLayer.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -114,13 +115,17 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double CostOfMaterials { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostOfIngredientsLabel)]
+        [DataType(DataType.Currency)]
+        public double CostOfIngredients => ((ProductIngredients?.Sum(e => e.Cost) ?? 0) * Amount);
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalCostLabel)]
         [DataType(DataType.Currency)]
-        public double TotalCost => ((ProductIngredients?.Sum(e => e.Cost) ?? 0) * Amount) + CostOfMaterials;
+        public double TotalCost => CostOfIngredients + CostOfMaterials;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
         [DataType(DataType.Currency)]
-        public double SuggestedRetailPrice => TotalCost * 10;
+        public double SuggestedRetailPrice => TotalCost * 3 + + 700;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginLabel)]
         [DataType(DataType.Currency)]
@@ -130,13 +135,13 @@ namespace K9.DataAccessLayer.Models
         public string FormattedProfitMargin => double.Parse(ProfitMargin.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
-        [DataType(DataType.Currency)] public double PriceDiscount1 => Price * 0.66;
+        [DataType(DataType.Currency)] public double PriceDiscount1 => Methods.RoundToInteger(Price * 0.66, 100);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
         public string FormattedPriceDiscount1 => double.Parse(PriceDiscount1.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount2Label)]
-        [DataType(DataType.Currency)] public double PriceDiscount2 => Price * 0.5;
+        [DataType(DataType.Currency)] public double PriceDiscount2 => Methods.RoundToInteger(Price * 0.5, 100);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount2Label)]
         public string FormattedPriceDiscount2 => double.Parse(PriceDiscount2.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));

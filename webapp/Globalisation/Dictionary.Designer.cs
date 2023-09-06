@@ -798,6 +798,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cost of Ingredients.
+        /// </summary>
+        public static string CostOfIngredientsLabel {
+            get {
+                return ResourceManager.GetString("CostOfIngredientsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cost of Materials.
         /// </summary>
         public static string CostOfMaterialsLabel {
