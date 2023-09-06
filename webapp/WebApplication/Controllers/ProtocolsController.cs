@@ -19,7 +19,7 @@ namespace K9.WebApplication.Controllers
             _productsRepository = productsRepository;
             _productService = productService;
         }
-        
+
         public ActionResult Index()
         {
             return View(); ;
@@ -37,8 +37,26 @@ namespace K9.WebApplication.Controllers
             return View(); ;
         }
 
+        [Route("sulfur-detox")]
+        public ActionResult SulfurDetox()
+        {
+            return View(); ;
+        }
+
         [Route("methylation-support")]
         public ActionResult MethylationSupport()
+        {
+            return View(); ;
+        }
+
+        [Route("heavy-metal-detox")]
+        public ActionResult HeavyMetalDetox()
+        {
+            return View(); ;
+        }
+
+        [Route("general-wellbeing")]
+        public ActionResult GeneralWellbeing()
         {
             return View(); ;
         }

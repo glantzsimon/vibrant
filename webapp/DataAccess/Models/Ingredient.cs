@@ -93,6 +93,7 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHydroscopicLabel)]
 	    public bool IsHydroscopic { get; set; } = false;
 
+	    [UIHint("Quantity")]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantityInStockLabel)]
 	    public int QuantityInStock { get; set; }
 

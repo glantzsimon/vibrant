@@ -22,6 +22,9 @@
             public const string TotalPriceLabel = "TotalPriceLabel";
             public const string TotalCostLabel = "TotalCostLabel";
             public const string SuggestedRetailPriceLabel = "SuggestedRetailPriceLabel";
+            public const string ProfitMarginLabel = "ProfitMarginLabel";
+            public const string PriceDiscount1Label = "PriceDiscount1Label";
+            public const string PriceDiscount2Label = "PriceDiscount2Label";
             public const string PriceLabel = "PriceLabel";
             public const string CostOfMaterialsLabel = "CostOfMaterialsLabel";
             public const string CostPer100GramsLabel = "CostPer100GramsLabel";
@@ -58,6 +61,7 @@
             public const string StartsOnLabel = "StartsOnLabel";
             public const string EndsOnLabel = "EndsOnLabel";
             public const string IsLiveOnLabel = "IsLiveOnLabel";
+            public const string IsMainLabel = "IsMainLabel";
             public const string TotalLabel = "TotalLabel";
             public const string AutoRenewLabel = "AutoRenewLabel";
             public const string DeactivatedLabel = "DeactivatedLabel";

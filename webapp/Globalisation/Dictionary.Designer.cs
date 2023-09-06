@@ -1693,6 +1693,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ingredients List.
+        /// </summary>
+        public static string IngredientsList {
+            get {
+                return ResourceManager.GetString("IngredientsList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingredient Type.
         /// </summary>
         public static string IngredientTypeLabel {
@@ -1734,6 +1743,15 @@ namespace K9.Globalisation {
         public static string IsLiveOnLabel {
             get {
                 return ResourceManager.GetString("IsLiveOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is Main.
+        /// </summary>
+        public static string IsMainLabel {
+            get {
+                return ResourceManager.GetString("IsMainLabel", resourceCulture);
             }
         }
         
@@ -2360,6 +2378,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Special Discount Price.
+        /// </summary>
+        public static string PriceDiscount1Label {
+            get {
+                return ResourceManager.GetString("PriceDiscount1Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Special Discount Price 2.
+        /// </summary>
+        public static string PriceDiscount2Label {
+            get {
+                return ResourceManager.GetString("PriceDiscount2Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Price.
         /// </summary>
         public static string PriceLabel {
@@ -2458,11 +2494,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Products List.
+        /// </summary>
+        public static string ProductsList {
+            get {
+                return ResourceManager.GetString("ProductsList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Product Type.
         /// </summary>
         public static string ProductTypeLabel {
             get {
                 return ResourceManager.GetString("ProductTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profit Margin.
+        /// </summary>
+        public static string ProfitMarginLabel {
+            get {
+                return ResourceManager.GetString("ProfitMarginLabel", resourceCulture);
             }
         }
         

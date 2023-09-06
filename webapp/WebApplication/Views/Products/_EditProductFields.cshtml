@@ -1,0 +1,31 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model List<Product>
+
+
+@for (int i = 0; i < Model.Count; i++)
+{
+    @Html.HiddenFor(e => Model[i].Id)
+
+    <div class="row">
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].Name)
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].Amount)
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].AmountPerServing)
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].CostOfMaterials)
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].Price)
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].Dosage)
+        </div>
+    </div>
+}
+

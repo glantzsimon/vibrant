@@ -1360,6 +1360,12 @@
     <Content Include="Views\Protocols\MethylationSupport.cshtml" />
     <Content Include="Views\Protocols\SulfurDetox.cshtml" />
     <Content Include="Views\Protocols\AmmoniaDetox.cshtml" />
+    <Content Include="Views\Protocols\GeneralWellbeing.cshtml" />
+    <Content Include="Views\Protocols\HeavyMetalDetox.cshtml" />
+    <Content Include="Views\Ingredients\EditList.cshtml" />
+    <Content Include="Views\Ingredients\_EditIngredientsFields.cshtml" />
+    <Content Include="Views\Products\EditList.cshtml" />
+    <Content Include="Views\Products\_EditProductFields.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

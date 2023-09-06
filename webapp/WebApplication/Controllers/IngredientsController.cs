@@ -1,4 +1,5 @@
-﻿using K9.Base.WebApplication.EventArgs;
+﻿using System.Collections.Generic;
+using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
@@ -17,6 +18,31 @@ namespace K9.WebApplication.Controllers
             RecordBeforeCreated += IngredientsController_RecordBeforeCreated;
             RecordBeforeUpdated += IngredientsController_RecordBeforeUpdated;
 		}
+
+	    public ActionResult EditList()
+	    {
+	        return View(Repository.List());
+	    }
+
+	    [HttpPost]
+	    [ValidateAntiForgeryToken]
+	    [RequirePermissions(Permission = Permissions.Edit)]
+	    public ActionResult EditList(List<Ingredient> model)
+	    {
+	        foreach (var ingredient in model)
+	        {
+	            var item = Repository.Find(ingredient.Id);
+	            item.Name = ingredient.Name;
+	            item.Cost = ingredient.Cost;
+	            item.QuantityInStock = ingredient.QuantityInStock;
+	            item.IsHydroscopic = ingredient.IsHydroscopic;
+	            item.Concentration = ingredient.Concentration;
+	            
+	            Repository.Update(item);
+	        }
+
+	        return RedirectToAction("EditList");
+	    }
 
         private void IngredientsController_RecordBeforeUpdated(object sender, CrudEventArgs e)
         {

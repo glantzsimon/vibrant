@@ -51,11 +51,11 @@ namespace K9.DataAccessLayer.Models
         public int ProductIngredientsId => Id;
 
         public virtual IEnumerable<ProductIngredient> ProductIngredients { get; set; }
-        
+
         public List<ProductIngredient> Ingredients { get; set; }
-        
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLiveOnLabel)]
-        public DateTime IsLiveOn { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsMainLabel)]
+        public bool IsMain { get; set; }
 
         [UIHint("Quantity")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
@@ -69,7 +69,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerServingLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public float AmountPerServing { get; set; }
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerServingLabel)]
         public string FormattedAmountPerServing => $"{AmountPerServing} {ServingMeasuredIn}";
 
@@ -122,6 +122,25 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double SuggestedRetailPrice => TotalCost * 10;
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginLabel)]
+        [DataType(DataType.Currency)]
+        public double ProfitMargin => Price - TotalCost;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginLabel)]
+        public string FormattedProfitMargin => double.Parse(ProfitMargin.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
+        [DataType(DataType.Currency)] public double PriceDiscount1 => Price * 0.66;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
+        public string FormattedPriceDiscount1 => double.Parse(PriceDiscount1.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount2Label)]
+        [DataType(DataType.Currency)] public double PriceDiscount2 => Price * 0.5;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount2Label)]
+        public string FormattedPriceDiscount2 => double.Parse(PriceDiscount2.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
         public bool IsHydroscopic() => Ingredients?.Any(e => e.Ingredient.IsHydroscopic) ?? false;
 
@@ -168,7 +187,7 @@ namespace K9.DataAccessLayer.Models
         {
             return Ingredients?.Sum(e => e.AmountPerConcentration) ?? 0;
         }
-        
+
         public string GetFormattedTotalIngredientsAmount()
         {
             return $"{GetTotalIngredientsAmount()} {ServingMeasuredIn}";

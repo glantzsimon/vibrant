@@ -1231,4 +1231,22 @@
   <data name="SulfurDetox" xml:space="preserve">
     <value>Sulfur Detox</value>
   </data>
+  <data name="IsMainLabel" xml:space="preserve">
+    <value>Is Main</value>
+  </data>
+  <data name="IngredientsList" xml:space="preserve">
+    <value>Ingredients List</value>
+  </data>
+  <data name="PriceDiscount1Label" xml:space="preserve">
+    <value>Special Discount Price</value>
+  </data>
+  <data name="PriceDiscount2Label" xml:space="preserve">
+    <value>Special Discount Price 2</value>
+  </data>
+  <data name="ProductsList" xml:space="preserve">
+    <value>Products List</value>
+  </data>
+  <data name="ProfitMarginLabel" xml:space="preserve">
+    <value>Profit Margin</value>
+  </data>
 </root>

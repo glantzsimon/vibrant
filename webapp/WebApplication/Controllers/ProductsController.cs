@@ -8,6 +8,7 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Services;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -101,6 +102,32 @@ namespace K9.WebApplication.Controllers
             return EditMultiple<Product, Ingredient>(model);
         }
 
+        public ActionResult EditList()
+        {
+            return View(Repository.List());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult EditList(List<Product> model)
+        {
+            foreach (var product in model)
+            {
+                var item = Repository.Find(product.Id);
+                item.Name = product.Name;
+                item.Amount = product.Amount;
+                item.AmountPerServing = product.AmountPerServing;
+                item.CostOfMaterials = product.CostOfMaterials;
+                item.Price = product.Price;
+                item.Dosage = product.Dosage;
+	            
+                Repository.Update(item);
+            }
+
+            return RedirectToAction("EditList");
+        }
+
         private void ProductsController_RecordBeforeUpdated(object sender, CrudEventArgs e)
         {
             var product = e.Item as Product;
@@ -124,7 +151,6 @@ namespace K9.WebApplication.Controllers
         private void ProductsController_RecordBeforeCreate(object sender, CrudEventArgs e)
         {
             var product = e.Item as Product;
-            product.IsLiveOn = DateTime.Now;
         }
 
         private void ProductsController_RecordBeforeDetails(object sender, CrudEventArgs e)
