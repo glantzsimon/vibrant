@@ -1252,4 +1252,7 @@
   <data name="ProfitMarginLabel" xml:space="preserve">
     <value>Profit Margin</value>
   </data>
+  <data name="RDALabel" xml:space="preserve">
+    <value>RDA (Recommended Daily Allowance)</value>
+  </data>
 </root>

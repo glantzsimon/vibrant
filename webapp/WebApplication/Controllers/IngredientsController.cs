@@ -12,37 +12,38 @@ namespace K9.WebApplication.Controllers
     [Authorize]
     [RequirePermissions(Role = RoleNames.Administrators)]
     public class IngredientsController : HtmlControllerBase<Ingredient>
-	{
-		public IngredientsController(IControllerPackage<Ingredient> controllerPackage) : base(controllerPackage)
-		{
+    {
+        public IngredientsController(IControllerPackage<Ingredient> controllerPackage) : base(controllerPackage)
+        {
             RecordBeforeCreated += IngredientsController_RecordBeforeCreated;
             RecordBeforeUpdated += IngredientsController_RecordBeforeUpdated;
-		}
+        }
 
-	    public ActionResult EditList()
-	    {
-	        return View(Repository.List());
-	    }
+        public ActionResult EditList()
+        {
+            return View(Repository.List());
+        }
 
-	    [HttpPost]
-	    [ValidateAntiForgeryToken]
-	    [RequirePermissions(Permission = Permissions.Edit)]
-	    public ActionResult EditList(List<Ingredient> model)
-	    {
-	        foreach (var ingredient in model)
-	        {
-	            var item = Repository.Find(ingredient.Id);
-	            item.Name = ingredient.Name;
-	            item.Cost = ingredient.Cost;
-	            item.QuantityInStock = ingredient.QuantityInStock;
-	            item.IsHydroscopic = ingredient.IsHydroscopic;
-	            item.Concentration = ingredient.Concentration;
-	            
-	            Repository.Update(item);
-	        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult EditList(List<Ingredient> model)
+        {
+            foreach (var ingredient in model)
+            {
+                var item = Repository.Find(ingredient.Id);
+                item.Name = ingredient.Name;
+                item.Cost = ingredient.Cost;
+                item.Quantity = ingredient.Quantity;
+                item.QuantityInStock = ingredient.QuantityInStock;
+                item.Concentration = ingredient.Concentration;
+                item.RecommendedDailyAllownace = ingredient.RecommendedDailyAllownace;
 
-	        return RedirectToAction("EditList");
-	    }
+                Repository.Update(item);
+            }
+
+            return RedirectToAction("EditList");
+        }
 
         private void IngredientsController_RecordBeforeUpdated(object sender, CrudEventArgs e)
         {
@@ -63,5 +64,5 @@ namespace K9.WebApplication.Controllers
                 ingredient.SeoFriendlyId = ingredient.Name.ToSeoFriendlyString();
             }
         }
-	}
+    }
 }

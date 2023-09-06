@@ -2733,6 +2733,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to RDA (Recommended Daily Allowance).
+        /// </summary>
+        public static string RDALabel {
+            get {
+                return ResourceManager.GetString("RDALabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rebounding.
         /// </summary>
         public static string Rebounding {

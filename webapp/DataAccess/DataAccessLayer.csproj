@@ -309,6 +309,10 @@
     <Compile Include="Migrations\202301160742377_IsMain.designer.cs">
       <DependentUpon>202301160742377_IsMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309061220032_RDA.cs" />
+    <Compile Include="Migrations\202309061220032_RDA.designer.cs">
+      <DependentUpon>202309061220032_RDA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\SaleItem.cs" />
@@ -382,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301160742377_IsMain.resx">
       <DependentUpon>202301160742377_IsMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309061220032_RDA.resx">
+      <DependentUpon>202309061220032_RDA.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -30,6 +30,7 @@
             public const string CostOfMaterialsLabel = "CostOfMaterialsLabel";
             public const string CostPer100GramsLabel = "CostPer100GramsLabel";
             public const string CostPerMilligramLabel = "CostPerMilligramLabel";
+            public const string RDALabel = "RDALabel";
             public const string CreditsTotalAmountLabel = "CreditsTotalAmountLabel";
             public const string StatusLabel = "StatusLabel";
             public const string AmountToDonateLabel = "AmountToDonateLabel";

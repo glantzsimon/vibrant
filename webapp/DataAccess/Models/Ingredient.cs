@@ -144,6 +144,9 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ConcentrationLabel)]
 	    public float Concentration { get; set; } = 1;
 
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RDALabel)]
+	    public float RecommendedDailyAllownace { get; set; }
+
 	    private string GetMeasuredInText()
 	    {
 	        switch (IngredientType)
