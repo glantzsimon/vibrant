@@ -8,10 +8,11 @@
     @Html.HiddenFor(e => Model[i].Id)
 
     <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-1">
             @Html.BootstrapEditorFor(e => Model[i].Name)
         </div>
         <div class="col-sm-2">
+            @Html.HiddenFor(e => Model[i].ProductType, new { data_input_id = "product-type" })
             @Html.BootstrapEditorFor(e => Model[i].Amount)
         </div>
         <div class="col-sm-2">
@@ -20,12 +21,29 @@
         <div class="col-sm-2">
             @Html.BootstrapEditorFor(e => Model[i].CostOfMaterials)
         </div>
+        <div class="col-sm-1">
+            @Html.BootstrapDisplayFor(e => Model[i].TotalCost)
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapDisplayFor(e => Model[i].SuggestedRetailPrice)
+        </div>
         <div class="col-sm-2">
             @Html.BootstrapEditorFor(e => Model[i].Price)
         </div>
-        <div class="col-sm-2">
-            @Html.BootstrapEditorFor(e => Model[i].Dosage)
-        </div>
     </div>
+    @*<div class="row">
+            <div class="col-sm-3">
+                @Html.BootstrapEditorFor(e => Model[i].ShortDescription)
+            </div>
+            <div class="col-sm-3">
+                @Html.BootstrapEditorFor(e => Model[i].Body)
+            </div>
+            <div class="col-sm-3">
+                @Html.BootstrapEditorFor(e => Model[i].Benefits)
+            </div>
+            <div class="col-sm-3">
+                @Html.BootstrapEditorFor(e => Model[i].Dosage)
+            </div>
+        </div>*@
 }
 

@@ -80,12 +80,13 @@ function bootstrapControls(config) {
     }
 
     function initQuantityInputs() {
-        let $typeInput = $("form").find("select[data-input-id='ingredient-type'], select[data-input-id='product-type']");
+        let $typeInput = $("form").find("select[data-input-id='ingredient-type'], select[data-input-id='product-type'], input[data-input-id='product-type']");
         let quantityFn = function ($el) {
             if ($el.length > 0) {
-                var type = $el[0].getSelectedText();
+                let isHidden = $el[0].type === "hidden";
+                var type = isHidden ? $el[0].value : $el[0].getSelectedText();
                 var measure = type === "Liquid" ? "ml" : type === "Capsules" ? "capsules" : "mg";
-                let $labels = $el.closest("form").find("span[data-input-id='quantity']");
+                let $labels = isHidden ? $el.parent().find("span[data-input-id='quantity']") : $el.closest("form").find("span[data-input-id='quantity']");
                 $labels.each(function() {
                     var $label = $(this);
                     if ($label.parent().find("input").attr("id") === "AmountPerServing" && measure === "capsules") {
