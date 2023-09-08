@@ -25,7 +25,7 @@
                     @Html.DisplayFor(e => Model.Products[i].Product.Name)
                 </a>
             }
-            @if (this.GetRoles().CurrentUserIsInRoles(Constants.UnicornUser))
+            else if (this.GetRoles().CurrentUserIsInRoles(Constants.UnicornUser))
             {
                 <a target="_blank" href="@Url.Action("Link", "Product", new {id = Model.Products[i].Product.ExternalId})">
                     @Html.DisplayFor(e => Model.Products[i].Product.Name)
