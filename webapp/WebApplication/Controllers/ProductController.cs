@@ -44,7 +44,7 @@ namespace K9.WebApplication.Controllers
         [Authorize]
         public ActionResult Link(Guid id)
         {
-            if(!Roles.CurrentUserIsInRoles(Constants.Constants.UnicornUser) || !Roles.CurrentUserIsInRoles(RoleNames.Administrators))
+            if(!Roles.CurrentUserIsInRoles(Constants.Constants.UnicornUser) && !Roles.CurrentUserIsInRoles(RoleNames.Administrators))
             {
                 return new HttpNotFoundResult();
             }
