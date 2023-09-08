@@ -46,13 +46,13 @@ namespace K9.WebApplication.Controllers
         {
             if(!Roles.CurrentUserIsInRoles(Constants.Constants.UnicornUser) && !Roles.CurrentUserIsInRoles(RoleNames.Administrators))
             {
-                return new HttpNotFoundResult();
+                return HttpNotFound();
             }
 
             var product = _productService.Find(id);
             if (product == null)
             {
-                return new HttpNotFoundResult();
+                return HttpNotFound();
             }
             return View("Link", product);
         }
