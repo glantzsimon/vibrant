@@ -21,7 +21,7 @@
 {
     <div class="row">
         <div class="col-sm-5">
-            <a target="_blank" href="@Url.Action("Edit", "Ingredients", new {id = Model.Ingredients[i].Id})">
+            <a target="_blank" href="@Url.Action("Edit", "Ingredients", new {id = Model.Ingredients[i].IngredientId})">
                 @Html.DisplayFor(e => Model.Ingredients[i].Ingredient.Name)
             </a>
         </div>

@@ -75,6 +75,14 @@
 <hr />
 
 <div class="row">
+    <div class="col-sm-4">
+        @Html.BootstrapDisplayFor(model => model.SuggestedRetailPrice)
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
     <div class="col-sm-12">
         <h4><strong>@Html.ValueFor(model => model.FormattedSmallPackAmount)</strong></h4>
     </div>
@@ -100,14 +108,6 @@
     </div>
     <div class="col-sm-4">
         @Html.BootstrapDisplayFor(model => model.ProfitMarginSmallPackDiscount2)
-    </div>
-</div>
-
-<hr />
-
-<div class="row">
-    <div class="col-sm-4">
-        @Html.BootstrapDisplayFor(model => model.SuggestedRetailPrice)
     </div>
 </div>
 
