@@ -1297,4 +1297,7 @@
   <data name="RDALabel" xml:space="preserve">
     <value>RDA</value>
   </data>
+  <data name="SmallPackAmountLabel" xml:space="preserve">
+    <value>Small Pack Amount</value>
+  </data>
 </root>

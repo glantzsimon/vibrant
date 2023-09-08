@@ -45,6 +45,11 @@
 </div>
 
 <div class="row">
+    <div class="col-sm-12">
+        <strong>@Html.BootstrapDisplayFor(model => model.FormattedAmount)</strong>
+    </div>
+</div>
+<div class="row">
     <div class="col-sm-4">
         @Html.BootstrapDisplayFor(model => model.Price)
     </div>
@@ -69,6 +74,11 @@
 
 <hr />
 
+<div class="row">
+    <div class="col-sm-12">
+        <strong>@Html.BootstrapDisplayFor(model => model.FormattedSmallPackAmount)</strong>
+    </div>
+</div>
 <div class="row">
     <div class="col-sm-4">
         @Html.BootstrapDisplayFor(model => model.PriceSmallPack)

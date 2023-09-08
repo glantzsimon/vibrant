@@ -66,6 +66,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
         public string FormattedAmount => $"{Amount} {MeasuredIn}";
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
+        public string FormattedSmallPackAmount => $"{Amount / 2} {MeasuredIn}";
+
         [UIHint("Quantity")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerServingLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]

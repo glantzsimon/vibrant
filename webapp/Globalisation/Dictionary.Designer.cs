@@ -3093,6 +3093,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Small Pack Amount.
+        /// </summary>
+        public static string SmallPackAmountLabel {
+            get {
+                return ResourceManager.GetString("SmallPackAmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
         ///    &lt;h4&gt;&lt;strong&gt;Annual Standard Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
