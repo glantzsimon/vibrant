@@ -309,6 +309,7 @@
     <Compile Include="Config\RecaptchaConfiguration.cs" />
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
+    <Compile Include="Constants\Constants.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\ProtocolsController.cs" />
     <Compile Include="Controllers\ProductController.cs" />

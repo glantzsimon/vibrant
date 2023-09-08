@@ -1,13 +1,11 @@
-﻿using System;
-using K9.Base.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Services;
 using NLog;
-using System.Linq;
+using System;
 using System.Web.Mvc;
-using K9.Base.WebApplication.Filters;
 using K9.SharedLibrary.Authentication;
 
 namespace K9.WebApplication.Controllers
@@ -46,7 +44,7 @@ namespace K9.WebApplication.Controllers
         [Authorize]
         public ActionResult Link(Guid id)
         {
-            if(!Roles.CurrentUserIsInRoles("Unicorn User"))
+            if(!Roles.CurrentUserIsInRoles(Constants.Constants.UnicornUser) || !Roles.CurrentUserIsInRoles(RoleNames.Administrators))
             {
                 return new HttpUnauthorizedResult();
             }
