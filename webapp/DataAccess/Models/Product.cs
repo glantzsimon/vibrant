@@ -131,11 +131,11 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double ProfitMargin => Price - TotalCost;
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginDiscount1Label)]
         [DataType(DataType.Currency)]
         public double ProfitMarginDiscount1 => PriceDiscount1 - TotalCost;
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginDiscount2Label)]
         [DataType(DataType.Currency)]
         public double ProfitMarginDiscount2 => PriceDiscount2 - TotalCost;
 
