@@ -56,6 +56,22 @@ namespace K9.WebApplication.Controllers
             }
             return View("Link", product);
         }
+
+        [Authorize]
+        public ActionResult PackLink(Guid id)
+        {
+            if(!Roles.CurrentUserIsInRoles(Constants.Constants.UnicornUser) && !Roles.CurrentUserIsInRoles(RoleNames.Administrators))
+            {
+                return HttpNotFound();
+            }
+
+            var pack = _productService.FindPack(id);
+            if (pack == null)
+            {
+                return HttpNotFound();
+            }
+            return View("PackLink", pack);
+        }
         
         public override string GetObjectName()
         {

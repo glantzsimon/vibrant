@@ -317,8 +317,14 @@
     <Compile Include="Migrations\202309081126403_Add-Product-ExternalId.designer.cs">
       <DependentUpon>202309081126403_Add-Product-ExternalId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309081501389_AddProductPacks.cs" />
+    <Compile Include="Migrations\202309081501389_AddProductPacks.designer.cs">
+      <DependentUpon>202309081501389_AddProductPacks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
+    <Compile Include="Models\ProductPack.cs" />
+    <Compile Include="Models\ProductPackProduct.cs" />
     <Compile Include="Models\SaleItem.cs" />
     <Compile Include="Models\Sale.cs" />
     <Compile Include="Models\ProductIngredient.cs" />
@@ -396,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309081126403_Add-Product-ExternalId.resx">
       <DependentUpon>202309081126403_Add-Product-ExternalId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309081501389_AddProductPacks.resx">
+      <DependentUpon>202309081501389_AddProductPacks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

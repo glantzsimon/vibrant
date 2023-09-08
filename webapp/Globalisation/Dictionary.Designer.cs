@@ -1315,6 +1315,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit Number of Products.
+        /// </summary>
+        public static string EditProductQuantities {
+            get {
+                return ResourceManager.GetString("EditProductQuantities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Products.
+        /// </summary>
+        public static string EditProducts {
+            get {
+                return ResourceManager.GetString("EditProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Electromedicine.
         /// </summary>
         public static string Electromedicine {
@@ -2584,11 +2602,56 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Product Pack.
+        /// </summary>
+        public static string ProductPack {
+            get {
+                return ResourceManager.GetString("ProductPack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Pack.
+        /// </summary>
+        public static string ProductPackLabel {
+            get {
+                return ResourceManager.GetString("ProductPackLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Packs.
+        /// </summary>
+        public static string ProductPacks {
+            get {
+                return ResourceManager.GetString("ProductPacks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Packs List.
+        /// </summary>
+        public static string ProductPacksList {
+            get {
+                return ResourceManager.GetString("ProductPacksList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Products.
         /// </summary>
         public static string Products {
             get {
                 return ResourceManager.GetString("Products", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Products.
+        /// </summary>
+        public static string ProductsLabel {
+            get {
+                return ResourceManager.GetString("ProductsLabel", resourceCulture);
             }
         }
         

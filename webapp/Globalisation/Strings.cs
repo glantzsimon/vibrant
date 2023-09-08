@@ -112,6 +112,8 @@
             public const string ProductIngredientsLabel = "EditIngredients";
             public const string AmountPerIngredientLabel = "AmountPerIngredientLabel";
             public const string AmountPerServingLabel = "AmountPerServingLabel";
+            public const string ProductsLabel = "ProductsLabel";
+            public const string ProductPackLabel = "ProductPackLabel";
         }
 
         public static class Names
@@ -141,7 +143,9 @@
             public const string Ingredient = "Ingredient";
             public const string Ingredients = "Ingredients";
             public const string Product = "Product";
+            public const string ProductPack = "ProductPack";
             public const string Products = "Products";
+            public const string ProductPacks = "ProductPacks";
             public const string ProductIngredient = "ProductIngredient";
             public const string ProductIngredients = "ProductIngredients";
             public const string ContactProduct = "ContactProduct";

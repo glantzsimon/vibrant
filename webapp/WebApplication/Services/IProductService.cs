@@ -16,5 +16,8 @@ namespace K9.WebApplication.Services
         Product DuplicateProduct(int id);
         Product UpdateBatchSize(Product product, int batchSize);
         List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false);
+
+        ProductPack FindPack(Guid id);
+        ProductPack GetFullProductPack(ProductPack productPack);
     }
 }

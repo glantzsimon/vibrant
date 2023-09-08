@@ -1300,7 +1300,28 @@
   <data name="SmallPackAmountLabel" xml:space="preserve">
     <value>Small Pack Amount</value>
   </data>
+  <data name="EditProductQuantities" xml:space="preserve">
+    <value>Edit Number of Products</value>
+  </data>
+  <data name="EditProducts" xml:space="preserve">
+    <value>Edit Products</value>
+  </data>
   <data name="ExternalLink" xml:space="preserve">
     <value>External Link</value>
+  </data>
+  <data name="ProductPack" xml:space="preserve">
+    <value>Product Pack</value>
+  </data>
+  <data name="ProductPackLabel" xml:space="preserve">
+    <value>Product Pack</value>
+  </data>
+  <data name="ProductPacks" xml:space="preserve">
+    <value>Product Packs</value>
+  </data>
+  <data name="ProductPacksList" xml:space="preserve">
+    <value>Product Packs List</value>
+  </data>
+  <data name="ProductsLabel" xml:space="preserve">
+    <value>Products</value>
   </data>
 </root>

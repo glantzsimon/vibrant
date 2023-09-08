@@ -21,6 +21,7 @@ namespace K9.DataAccessLayer.Models
     {
         public Guid ExternalId { get; set; }
 
+        [NotMapped]
         [UIHint("Product")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductLabel)]
         public int ProductId => Id;

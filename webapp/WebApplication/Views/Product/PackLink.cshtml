@@ -1,0 +1,17 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model ProductPack
+@{
+    Layout = "../Shared/_LayoutForm.cshtml";
+    ViewBag.Title = $"{Model.Name} {Dictionary.ProductPackLabel}";
+    ViewBag.SubTitle = $"{Model.Name} {Dictionary.ProductPackLabel}";
+}
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.HiddenFor(model => model.Id)
+
+        @Html.Partial("../ProductPacks/_DisplayFields")
+    }
+}

@@ -14,13 +14,17 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Product> _productsRepository;
         private readonly IRepository<ProductIngredient> _productIngredientsRepository;
         private readonly IRepository<Ingredient> _ingredientsRepository;
+        private readonly IRepository<ProductPackProduct> _productPackProductRepository;
+        private readonly IRepository<ProductPack> _productPackRepository;
 
-        public ProductService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository)
+        public ProductService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProductPack> productPackRepository)
         {
             _logger = logger;
             _productsRepository = productsRepository;
             _productIngredientsRepository = productIngredientsRepository;
             _ingredientsRepository = ingredientsRepository;
+            _productPackProductRepository = productPackProductRepository;
+            _productPackRepository = productPackRepository;
         }
 
         public Product Find(int id)
@@ -76,6 +80,16 @@ namespace K9.WebApplication.Services
             }
 
             return product;
+        }
+
+        public ProductPack FindPack(Guid id)
+        {
+            var pack = _productPackRepository.Find(e => e.ExternalId == id).FirstOrDefault();
+            if (pack != null)
+            {
+                pack = GetFullProductPack(pack);
+            }
+            return pack;
         }
 
         public Product GetFullProduct(Product product)
@@ -165,6 +179,20 @@ namespace K9.WebApplication.Services
             }
 
             return products;
+        }
+
+        public ProductPack GetFullProductPack(ProductPack productPack)
+        {
+            var products = _productPackProductRepository.Find(e => e.ProductPackId == productPack.Id).ToList();
+
+            foreach (var product in products)
+            {
+                product.Product = _productsRepository.Find(e => e.Id == product.ProductId).FirstOrDefault();
+            }
+
+            productPack.Products = products.OrderBy(e => e.Product.Name).ToList();
+            
+            return productPack;
         }
     }
 }

@@ -310,6 +310,8 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Controllers\ProductPackProductsController.cs" />
+    <Compile Include="Controllers\ProductPacksController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\ProtocolsController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -1374,6 +1376,23 @@
     <Content Include="Views\Product\Link.cshtml" />
     <Content Include="Views\Shared\ProductMenuList.cshtml" />
     <Content Include="Views\Shared\IngredientMenuList.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ProductPack.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ProductPack.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ProductPackProducts.cshtml" />
+    <Content Include="Views\ProductPacks\_DisplayFields.cshtml" />
+    <Content Include="Views\ProductPacks\_DisplaySummary.cshtml" />
+    <Content Include="Views\ProductPacks\_EditFields.cshtml" />
+    <Content Include="Views\ProductPacks\_EditProductsFields.cshtml" />
+    <Content Include="Views\ProductPacks\_EditProductPackFields.cshtml" />
+    <Content Include="Views\ProductPacks\_ProductsSummary.cshtml" />
+    <Content Include="Views\ProductPacks\Create.cshtml" />
+    <Content Include="Views\ProductPacks\Delete.cshtml" />
+    <Content Include="Views\ProductPacks\Details.cshtml" />
+    <Content Include="Views\ProductPacks\Edit.cshtml" />
+    <Content Include="Views\ProductPacks\EditProductQuantities.cshtml" />
+    <Content Include="Views\ProductPacks\EditList.cshtml" />
+    <Content Include="Views\ProductPacks\Index.cshtml" />
+    <Content Include="Views\Product\PackLink.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
