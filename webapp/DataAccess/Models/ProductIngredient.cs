@@ -71,5 +71,8 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostLabel)]
 	    [DataType(DataType.Currency)]
 	    public double Cost => (Amount / 100f) * Ingredient?.CostPer100Grams ?? 0;
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostLabel)]
+	    public float? PercentageOfDailyAllowance => AmountPerConcentration / Ingredient?.RecommendedDailyAllownace;
 	}
 }

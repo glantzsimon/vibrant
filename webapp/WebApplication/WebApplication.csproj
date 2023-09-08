@@ -1366,6 +1366,7 @@
     <Content Include="Views\Ingredients\_EditIngredientsFields.cshtml" />
     <Content Include="Views\Products\EditList.cshtml" />
     <Content Include="Views\Products\_EditProductFields.cshtml" />
+    <Content Include="Views\Products\_IngredientsSummary.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

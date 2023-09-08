@@ -789,6 +789,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cost Information.
+        /// </summary>
+        public static string CostInfo {
+            get {
+                return ResourceManager.GetString("CostInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cost.
         /// </summary>
         public static string CostLabel {
@@ -1711,6 +1720,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ingredients Summary.
+        /// </summary>
+        public static string IngredientsSummary {
+            get {
+                return ResourceManager.GetString("IngredientsSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingredient Type.
         /// </summary>
         public static string IngredientTypeLabel {
@@ -2320,6 +2338,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to % of RDA.
+        /// </summary>
+        public static string PercentageOfRDALabel {
+            get {
+                return ResourceManager.GetString("PercentageOfRDALabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Personalised Nutrition.
         /// </summary>
         public static string PersonalisedNutrition {
@@ -2419,6 +2446,15 @@ namespace K9.Globalisation {
         public static string PricePerCredit {
             get {
                 return ResourceManager.GetString("PricePerCredit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pricing Information.
+        /// </summary>
+        public static string PricingInfo {
+            get {
+                return ResourceManager.GetString("PricingInfo", resourceCulture);
             }
         }
         
@@ -2733,7 +2769,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RDA (Recommended Daily Allowance).
+        ///   Looks up a localized string similar to RDA.
         /// </summary>
         public static string RDALabel {
             get {

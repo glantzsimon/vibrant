@@ -5,29 +5,15 @@
 
 @Html.HiddenFor(e => e.AmountPerServing)
 
-@if (!Model.IngredientAmountsAreCorrect())
-{
-    <div class="row">
-        <div class="col-sm-12">
-            <span class="field-validation-error">
-                @Model.GetIngredientAmountIncorrectError()
-            </span>
-            <br />
-        </div>
-    </div>
-}
 <div class="row">
     <div class="col-sm-5">
         @Html.LabelFor(e => Model.Ingredients[0].Name)
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         @Html.LabelFor(e => Model.Ingredients[0].AmountPer100Capsules)
     </div>
-    <div class="col-sm-2">
-        @Html.LabelFor(e => Model.Ingredients[0].Ingredient.IsHydroscopic)
-    </div>
-    <div class="col-sm-2">
-        @Html.LabelFor(e => Model.Ingredients[0].PercentageOfDailyAllowance)
+    <div class="col-sm-3">
+        @Html.LabelFor(e => Model.Ingredients[0].Cost)
     </div>
 </div>
 <hr />
@@ -37,14 +23,11 @@
         <div class="col-sm-5">
             @Html.DisplayFor(e => Model.Ingredients[i].Ingredient.Name)
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             @Html.DisplayFor(e => Model.Ingredients[i].FormattedLargeAmountPer100Capsules)
         </div>
-        <div class="col-sm-2">
-            @Model.Ingredients[i].Ingredient.IsHydroscopic.ToYesNo()
-        </div>
-        <div class="col-sm-2">
-            @Model.Ingredients[i].PercentageOfDailyAllowance
+        <div class="col-sm-3">
+            @Html.DisplayFor(e => Model.Ingredients[i].Cost
         </div>
     </div>
     if (i < Model.Ingredients.Count - 1)

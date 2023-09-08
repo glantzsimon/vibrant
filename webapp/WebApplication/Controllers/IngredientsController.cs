@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
@@ -21,7 +22,7 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult EditList()
         {
-            return View(Repository.List());
+            return View(Repository.List().OrderBy(e => e.Name).ToList());
         }
 
         [HttpPost]

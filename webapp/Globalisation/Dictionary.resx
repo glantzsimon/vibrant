@@ -1237,14 +1237,26 @@
   <data name="IngredientsList" xml:space="preserve">
     <value>Ingredients List</value>
   </data>
+  <data name="CostInfo" xml:space="preserve">
+    <value>Cost Information</value>
+  </data>
   <data name="CostOfIngredientsLabel" xml:space="preserve">
     <value>Cost of Ingredients</value>
+  </data>
+  <data name="IngredientsSummary" xml:space="preserve">
+    <value>Ingredients Summary</value>
+  </data>
+  <data name="PercentageOfRDALabel" xml:space="preserve">
+    <value>% of RDA</value>
   </data>
   <data name="PriceDiscount1Label" xml:space="preserve">
     <value>Special Discount Price</value>
   </data>
   <data name="PriceDiscount2Label" xml:space="preserve">
     <value>Special Discount Price 2</value>
+  </data>
+  <data name="PricingInfo" xml:space="preserve">
+    <value>Pricing Information</value>
   </data>
   <data name="ProductsList" xml:space="preserve">
     <value>Products List</value>
@@ -1253,6 +1265,6 @@
     <value>Profit Margin</value>
   </data>
   <data name="RDALabel" xml:space="preserve">
-    <value>RDA (Recommended Daily Allowance)</value>
+    <value>RDA</value>
   </data>
 </root>

@@ -54,6 +54,7 @@
             public const string StripeCustomerIdLabel = "StripeCustomerIdLabel";
             public const string MembershipLabel = "MembershipLabel";
             public const string CostLabel = "CostLabel";
+            public const string PercentageOfRDALabel = "PercentageOfRDALabel";
             public const string SubscriptionCostLabel = "SubscriptionCostLabel";
             public const string SubscriptionTypeLabel = "SubscriptionTypeLabel";
             public const string UsedOnLabel = "UsedOnLabel";

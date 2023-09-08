@@ -1699,7 +1699,7 @@ mark,
 }
 
 .text-capitalize {
-    text-transform: capitalize;
+    text-transform: capitalize !important;
 }
 
 .text-muted {

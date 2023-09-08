@@ -60,7 +60,7 @@ namespace K9.WebApplication.Controllers
             {
                 product = _productService.UpdateBatchSize(product, batchSize);
             }
-            
+
             return View(product);
         }
 
@@ -114,6 +114,11 @@ namespace K9.WebApplication.Controllers
             return View(products.OrderBy(e => e.Name).ToList());
         }
 
+        public ActionResult View(int productId)
+        {
+            return RedirectToAction("Details", null, new {id = productId});
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         [RequirePermissions(Permission = Permissions.Edit)]
@@ -127,7 +132,7 @@ namespace K9.WebApplication.Controllers
                 item.AmountPerServing = product.AmountPerServing;
                 item.CostOfMaterials = product.CostOfMaterials;
                 item.Price = product.Price;
-                
+
                 Repository.Update(item);
             }
 

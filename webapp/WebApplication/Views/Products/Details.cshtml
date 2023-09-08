@@ -3,14 +3,18 @@
 @{
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
+@using (Html.BeginForm("View", "Products"))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.BootstrapEditorFor(model => model.ProductId)
+    }
+}
 @using (Html.BeginForm())
 {
     using (Html.BeginBootstrapForm())
     {
         @Html.HiddenFor(model => model.Id)
-        @Html.BootstrapEditorFor(model => model.ProductId)
-
-        <hr />
 
         @Html.Partial("_DisplayFields")
         @Html.AuditFieldsForModel(Model);
