@@ -46,7 +46,7 @@ namespace K9.WebApplication.Controllers
         {
             if(!Roles.CurrentUserIsInRoles(Constants.Constants.UnicornUser) || !Roles.CurrentUserIsInRoles(RoleNames.Administrators))
             {
-                return new HttpUnauthorizedResult();
+                return new HttpNotFoundResult();
             }
 
             var product = _productService.Find(id);
