@@ -1261,6 +1261,12 @@
   <data name="ProductsList" xml:space="preserve">
     <value>Products List</value>
   </data>
+  <data name="ProfitMarginDiscount1Label" xml:space="preserve">
+    <value>Profit Margin Discount 1</value>
+  </data>
+  <data name="ProfitMarginDiscount2Label" xml:space="preserve">
+    <value>Profit Margin Discount 2</value>
+  </data>
   <data name="ProfitMarginLabel" xml:space="preserve">
     <value>Profit Margin</value>
   </data>

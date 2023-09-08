@@ -80,6 +80,14 @@
     </div>
 </div>
 <div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.ProfitMarginDiscount1)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.ProfitMarginDiscount2)
+    </div>
+</div>
+<div class="row">
     <div class="col-sm-12">
         @Html.CollapsiblePanel(Dictionary.IngredientsSummary, Html.Partial("_IngredientsSummary").ToString())
     </div>

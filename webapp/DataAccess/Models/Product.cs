@@ -132,6 +132,14 @@ namespace K9.DataAccessLayer.Models
         public double ProfitMargin => Price - TotalCost;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginLabel)]
+        [DataType(DataType.Currency)]
+        public double ProfitMarginDiscount1 => PriceDiscount1 - TotalCost;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginLabel)]
+        [DataType(DataType.Currency)]
+        public double ProfitMarginDiscount2 => PriceDiscount2 - TotalCost;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginLabel)]
         public string FormattedProfitMargin => double.Parse(ProfitMargin.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]

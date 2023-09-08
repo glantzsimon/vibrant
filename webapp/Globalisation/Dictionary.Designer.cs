@@ -2557,6 +2557,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Profit Margin Discount 1.
+        /// </summary>
+        public static string ProfitMarginDiscount1Label {
+            get {
+                return ResourceManager.GetString("ProfitMarginDiscount1Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profit Margin Discount 2.
+        /// </summary>
+        public static string ProfitMarginDiscount2Label {
+            get {
+                return ResourceManager.GetString("ProfitMarginDiscount2Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Profit Margin.
         /// </summary>
         public static string ProfitMarginLabel {
