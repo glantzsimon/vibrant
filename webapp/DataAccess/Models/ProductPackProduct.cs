@@ -35,7 +35,7 @@ namespace K9.DataAccessLayer.Models
 	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 	    public int Amount { get; set; }
         
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostLabel)]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
 	    [DataType(DataType.Currency)]
 	    public double TotalPrice => Amount * Product?.Price ?? 0;
 	}
