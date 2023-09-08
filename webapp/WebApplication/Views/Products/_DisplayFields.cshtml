@@ -3,88 +3,91 @@
 @model Product
 
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
+        <h3>@Dictionary.GeneralInfo</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
         @Html.BootstrapDisplayFor(model => model.Name)
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         @Html.BootstrapDisplayFor(model => model.SeoFriendlyId)
+    </div>
+    <div class="col-sm-4">
+        @Html.BootstrapDisplayFor(model => model.ProductType)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        @Html.BootstrapDisplayFor(model => model.FormattedAmount)
+    </div>
+    <div class="col-sm-4">
+        @Html.BootstrapDisplayFor(model => model.FormattedAmountPerServing)
+    </div>
+    <div class="col-sm-4">
+        @Html.BootstrapDisplayFor(model => model.QuantityInStock)
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.ProductType)
-    </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         @Html.BootstrapDisplayFor(model => model.ContactId)
     </div>
 </div>
 
-<hr />
-
-<div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.FormattedAmount)
-    </div>
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.FormattedAmountPerServing)
-    </div>
-</div>
-
-<hr />
-
+<br />
 <div class="row">
     <div class="col-sm-12">
-        <h4 class="text-uppercase">@Dictionary.PricingInfo</h4>
+        <h3>@Dictionary.PricingInfo</h3>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.Price)
-    </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         @Html.BootstrapDisplayFor(model => model.SuggestedRetailPrice)
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
+        @Html.BootstrapDisplayFor(model => model.Price)
+    </div>
+    <div class="col-sm-4">
         @Html.BootstrapDisplayFor(model => model.PriceDiscount1)
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         @Html.BootstrapDisplayFor(model => model.PriceDiscount2)
     </div>
 </div>
-
-<hr />
-
 <div class="row">
-    <div class="col-sm-12">
-        <h4 class="text-uppercase">@Dictionary.CostInfo</h4>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.CostOfMaterials)
-    </div>
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.CostOfIngredients)
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.TotalCost)
-    </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         @Html.BootstrapDisplayFor(model => model.ProfitMargin)
     </div>
-</div>
-<div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         @Html.BootstrapDisplayFor(model => model.ProfitMarginDiscount1)
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         @Html.BootstrapDisplayFor(model => model.ProfitMarginDiscount2)
+    </div>
+</div>
+
+<br />
+<div class="row">
+    <div class="col-sm-12">
+        <h3>@Dictionary.CostInfo</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        @Html.BootstrapDisplayFor(model => model.CostOfMaterials)
+    </div>
+    <div class="col-sm-4">
+        @Html.BootstrapDisplayFor(model => model.CostOfIngredients)
+    </div>
+    <div class="col-sm-4">
+        @Html.BootstrapDisplayFor(model => model.TotalCost)
     </div>
 </div>
 <div class="row">
@@ -93,26 +96,12 @@
     </div>
 </div>
 
-<hr />
-
+<br />
 <div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.QuantityInStock)
-    </div>
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.StockLowWarningLevel)
+    <div class="col-sm-12">
+        <h3>@Dictionary.OtherInfo</h3>
     </div>
 </div>
-<div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.IsInStock)
-    </div>
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.IsStockLowWarning)
-    </div>
-</div>
-
-<hr />
 
 <div class="row">
     @Html.BootstrapDisplayFor(model => model.ShortDescription)

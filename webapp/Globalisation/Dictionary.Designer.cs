@@ -1585,6 +1585,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to General Information.
+        /// </summary>
+        public static string GeneralInfo {
+            get {
+                return ResourceManager.GetString("GeneralInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Grounding.
         /// </summary>
         public static string Grounding {
@@ -2257,6 +2266,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Other Information.
+        /// </summary>
+        public static string OtherInfo {
+            get {
+                return ResourceManager.GetString("OtherInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Overview.
         /// </summary>
         public static string OverviewLabel {
@@ -2414,7 +2432,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Special Discount Price.
+        ///   Looks up a localized string similar to Discount 1 Price.
         /// </summary>
         public static string PriceDiscount1Label {
             get {
@@ -2423,7 +2441,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Special Discount Price 2.
+        ///   Looks up a localized string similar to Discount 2 Price.
         /// </summary>
         public static string PriceDiscount2Label {
             get {

@@ -1243,17 +1243,23 @@
   <data name="CostOfIngredientsLabel" xml:space="preserve">
     <value>Cost of Ingredients</value>
   </data>
+  <data name="GeneralInfo" xml:space="preserve">
+    <value>General Information</value>
+  </data>
   <data name="IngredientsSummary" xml:space="preserve">
     <value>Ingredients Summary</value>
+  </data>
+  <data name="OtherInfo" xml:space="preserve">
+    <value>Other Information</value>
   </data>
   <data name="PercentageOfRDALabel" xml:space="preserve">
     <value>% of RDA</value>
   </data>
   <data name="PriceDiscount1Label" xml:space="preserve">
-    <value>Special Discount Price</value>
+    <value>Discount 1 Price</value>
   </data>
   <data name="PriceDiscount2Label" xml:space="preserve">
-    <value>Special Discount Price 2</value>
+    <value>Discount 2 Price</value>
   </data>
   <data name="PricingInfo" xml:space="preserve">
     <value>Pricing Information</value>
