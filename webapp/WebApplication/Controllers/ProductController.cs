@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Models;
+﻿using System;
+using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
@@ -6,6 +7,8 @@ using K9.WebApplication.Services;
 using NLog;
 using System.Linq;
 using System.Web.Mvc;
+using K9.Base.WebApplication.Filters;
+using K9.SharedLibrary.Authentication;
 
 namespace K9.WebApplication.Controllers
 {
@@ -24,7 +27,7 @@ namespace K9.WebApplication.Controllers
         [Route("product/all")]
         public ActionResult Index()
         {
-            return View(_productService.List());;
+            return View(_productService.List());
         }
 
         [Route("product/{seoFriendlyId}")]
@@ -38,6 +41,22 @@ namespace K9.WebApplication.Controllers
             
             LoadUploadedFiles(product);
             return View(product);
+        }
+
+        [Authorize]
+        public ActionResult Link(Guid id)
+        {
+            if(!Roles.CurrentUserIsInRoles("Unicorn User"))
+            {
+                return new HttpUnauthorizedResult();
+            }
+
+            var product = _productService.Find(id);
+            if (product == null)
+            {
+                return new HttpNotFoundResult();
+            }
+            return View("Link", product);
         }
         
         public override string GetObjectName()

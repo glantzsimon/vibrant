@@ -309,6 +309,7 @@
     <Compile Include="Config\RecaptchaConfiguration.cs" />
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
+    <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\ProtocolsController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\IngredientController.cs" />
@@ -369,6 +370,8 @@
     <Compile Include="Models\LogItem.cs" />
     <Compile Include="Options\GaugeOptions.cs" />
     <Compile Include="Options\PaymentsOptions.cs" />
+    <Compile Include="Services\IIngredientService.cs" />
+    <Compile Include="Services\IngredientService.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\ConsultationService.cs" />
     <Compile Include="Services\IProductService.cs" />
@@ -1367,7 +1370,9 @@
     <Content Include="Views\Products\EditList.cshtml" />
     <Content Include="Views\Products\_EditProductFields.cshtml" />
     <Content Include="Views\Products\_IngredientsSummary.cshtml" />
-    <Content Include="Views\Products\Link.cshtml" />
+    <Content Include="Views\Product\Link.cshtml" />
+    <Content Include="Views\Shared\ProductMenuList.cshtml" />
+    <Content Include="Views\Shared\IngredientMenuList.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

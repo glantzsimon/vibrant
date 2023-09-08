@@ -12,9 +12,13 @@ namespace K9.WebApplication.Services
         {
             _config = config.Value;
         }
-        
+
         public bool Validate(string encodedResponse)
         {
+#if DEBUG
+            return true;
+#endif
+
             if (string.IsNullOrEmpty(encodedResponse)) return false;
 
             var client = new System.Net.WebClient();

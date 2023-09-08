@@ -1,11 +1,7 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.SharedLibrary.Authentication
-@using K9.SharedLibrary.Models
-@using K9.WebApplication.Helpers
 @{
     var roles = this.GetRoles();
-    var products = this.GetDropdownData().GetDataSet<Product>(true, "Name", "SeoFriendlyId").OrderBy(e => e.Id).Take(11).ToList();
-    var ingredients = this.GetDropdownData().GetDataSet<Ingredient>(true, "Name", "SeoFriendlyId").OrderBy(e => e.Id).Take(11).ToList();
     var articles = this.GetDropdownData().GetDataSet<Article>(true, "Name", "SeoFriendlyId").OrderBy(e => e.Id).Take(11).ToList(); ;
 }
 <div id="account-header">
@@ -76,38 +72,14 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Products</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
-                                @if (products != null)
-                                {
-                                    <li class="@ViewContext.GetActiveClass("Index", "Products")"><a href="@Url.Action("Index", "Product")"> @Dictionary.SeeAllProducts</a></li>
-
-                                    <li class="divider"></li>
-
-                                    foreach (var product in products)
-                                    {
-                                        <li>
-                                            <a href="@Url.Action("Details", "Product", new {seoFriendlyId = product.Value})"> @product.Name</a>
-                                        </li>
-                                    }
-                                }
+                                @Html.Action("ProductMenuList", "Shared")
                             </ul>
                         </li>
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Ingredients</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
-                                <li class="@ViewContext.GetActiveClass("Index", "Ingredients")"><a href="@Url.Action("Index", "Ingredient")"> @Dictionary.SeeAllIngredients</a></li>
-
-                                <li class="divider"></li>
-
-                                @if (ingredients != null)
-                                {
-                                    foreach (var ingredient in ingredients)
-                                    {
-                                        <li>
-                                            <a href="@Url.Action("Details", "Ingredient", new {seoFriendlyId = ingredient.Value})"> @ingredient.Name</a>
-                                        </li>
-                                    }
-                                }
+                                @Html.Action("IngredientMenuList", "Shared")
                             </ul>
                         </li>
 

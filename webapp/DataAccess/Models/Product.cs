@@ -19,7 +19,7 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Products, PluralName = Globalisation.Strings.Names.Products, Name = Globalisation.Strings.Names.Product)]
     public class Product : ObjectBase
     {
-        public Guid ExternalId { get; set; } = new Guid();
+        public Guid ExternalId { get; set; }
 
         [UIHint("Product")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductLabel)]

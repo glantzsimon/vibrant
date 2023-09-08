@@ -146,7 +146,7 @@ namespace K9.WebApplication.Services
 
         public List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false)
         {
-            var products = _productsRepository.List().OrderBy(e => e.Name).ToList();
+            var products = _productsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
 
             if (!includeCustomProducts)
             {

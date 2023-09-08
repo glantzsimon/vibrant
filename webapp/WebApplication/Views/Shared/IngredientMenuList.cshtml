@@ -1,0 +1,16 @@
+﻿@using K9.Base.WebApplication.Extensions
+@model List<Ingredient>
+
+@if (Model != null)
+{
+    <li class="@ViewContext.GetActiveClass("Index", "Ingredients")"><a href="@Url.Action("Index", "Ingredient")"> @Dictionary.SeeAllIngredients</a></li>
+
+    <li class="divider"></li>
+
+    foreach (var ingredient in Model)
+    {
+        <li>
+            <a href="@Url.Action("Details", "Ingredient", new {seoFriendlyId = ingredient.SeoFriendlyId})"> @ingredient.Name</a>
+        </li>
+    }
+}

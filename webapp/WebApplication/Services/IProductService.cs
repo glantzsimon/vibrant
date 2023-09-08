@@ -1,6 +1,7 @@
 ﻿using K9.DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
+using K9.SharedLibrary.Models;
 
 namespace K9.WebApplication.Services
 {

@@ -65,6 +65,7 @@ namespace K9.WebApplication
             builder.RegisterType<RecaptchaService>().As<IRecaptchaService>().InstancePerRequest();
             builder.RegisterType<LogService>().As<ILogService>().InstancePerRequest();
             builder.RegisterType<ProductService>().As<IProductService>().InstancePerRequest();
+            builder.RegisterType<IngredientService>().As<IIngredientService>().InstancePerRequest();
 
             RegisterConfiguration(builder);
 
