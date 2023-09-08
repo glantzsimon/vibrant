@@ -166,19 +166,19 @@ namespace K9.DataAccessLayer.Models
         public string FormattedProfitMargin => double.Parse(ProfitMargin.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
-        [DataType(DataType.Currency)] public double PriceDiscount1 => Methods.RoundToInteger(Price * 0.66, 100);
+        [DataType(DataType.Currency)] public double PriceDiscount1 => Methods.RoundToInteger(Price * 0.88, 100);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceSmallPackDiscount1Label)]
-        [DataType(DataType.Currency)] public double PriceSmallPackDiscount1 => Methods.RoundToInteger(PriceSmallPack * 0.66, 100);
+        [DataType(DataType.Currency)] public double PriceSmallPackDiscount1 => Methods.RoundToInteger(PriceSmallPack * 0.88, 100);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
         public string FormattedPriceDiscount1 => double.Parse(PriceDiscount1.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount2Label)]
-        [DataType(DataType.Currency)] public double PriceDiscount2 => Methods.RoundToInteger(Price * 0.5, 100);
+        [DataType(DataType.Currency)] public double PriceDiscount2 => Methods.RoundToInteger(Price * 0.66, 100);
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceSmallPackDiscount1Label)]
-        [DataType(DataType.Currency)] public double PriceSmallPackDiscount2 => Methods.RoundToInteger(PriceSmallPack * 0.5, 100);
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceSmallPackDiscount2Label)]
+        [DataType(DataType.Currency)] public double PriceSmallPackDiscount2 => Methods.RoundToInteger(PriceSmallPack * 0.66, 100);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount2Label)]
         public string FormattedPriceDiscount2 => double.Parse(PriceDiscount2.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
