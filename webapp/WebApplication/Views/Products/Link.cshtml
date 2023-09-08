@@ -1,0 +1,17 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model Product
+@{
+    Layout = "../Shared/_LayoutForm.cshtml";
+    ViewBag.Title = Model.Name;
+    ViewBag.SubTitle = Model.Name;
+}
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.HiddenFor(model => model.Id)
+
+        @Html.Partial("_DisplayFields")
+    }
+}

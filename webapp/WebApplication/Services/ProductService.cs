@@ -67,6 +67,17 @@ namespace K9.WebApplication.Services
             return product;
         }
 
+        public Product Find(Guid id)
+        {
+            var product = _productsRepository.Find(e => e.ExternalId == id).FirstOrDefault();
+            if (product != null)
+            {
+                product = GetFullProduct(product);
+            }
+
+            return product;
+        }
+
         public Product GetFullProduct(Product product)
         {
             var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id)

@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using K9.DataAccessLayer.Models;
+﻿using K9.DataAccessLayer.Models;
+using System;
+using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
 {
@@ -9,6 +10,7 @@ namespace K9.WebApplication.Services
         Product FindPrevious(int id);
         Product FindNext(int id);
         Product Find(string seoFriendlyId);
+        Product Find(Guid id);
         Product GetFullProduct(Product product);
         Product DuplicateProduct(int id);
         Product UpdateBatchSize(Product product, int batchSize);

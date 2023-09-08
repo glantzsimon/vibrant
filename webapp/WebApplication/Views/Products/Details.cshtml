@@ -22,6 +22,7 @@
         <hr />
         @Html.BootstrapBackToListButton()
         @Html.CrudButtonsForModel(Model)
+        @Html.BootstrapActionLinkButton(Dictionary.ExternalLink, "Link", "Products", new {id = Model.ExternalId}, "", EButtonClass.Success)
     }
 }
 

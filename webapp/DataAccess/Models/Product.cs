@@ -19,6 +19,8 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Products, PluralName = Globalisation.Strings.Names.Products, Name = Globalisation.Strings.Names.Product)]
     public class Product : ObjectBase
     {
+        public Guid ExternalId { get; set; } = new Guid();
+
         [UIHint("Product")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductLabel)]
         public int ProductId => Id;
@@ -137,7 +139,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
         [DataType(DataType.Currency)]
         public double SuggestedRetailPrice => Methods.RoundToInteger(TotalCost * 2 + 900, 100);
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginLabel)]
         [DataType(DataType.Currency)]
         public double ProfitMargin => Price - TotalCost;

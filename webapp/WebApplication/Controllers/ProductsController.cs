@@ -139,6 +139,17 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("EditList");
         }
 
+        [RequirePermissions(Permission = Permissions.View)]
+        public ActionResult Link(Guid id)
+        {
+            var product = _productService.Find(id);
+            if (product == null)
+            {
+                return new HttpNotFoundResult();
+            }
+            return View(product);
+        }
+
         private void ProductsController_RecordBeforeUpdated(object sender, CrudEventArgs e)
         {
             var product = e.Item as Product;

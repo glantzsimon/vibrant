@@ -1300,4 +1300,7 @@
   <data name="SmallPackAmountLabel" xml:space="preserve">
     <value>Small Pack Amount</value>
   </data>
+  <data name="ExternalLink" xml:space="preserve">
+    <value>External Link</value>
+  </data>
 </root>

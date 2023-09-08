@@ -1459,6 +1459,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to External Link.
+        /// </summary>
+        public static string ExternalLink {
+            get {
+                return ResourceManager.GetString("ExternalLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FAQ.
         /// </summary>
         public static string FAQ {
