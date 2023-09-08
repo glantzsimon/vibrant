@@ -1256,16 +1256,16 @@
     <value>% of RDA</value>
   </data>
   <data name="PriceDiscount1Label" xml:space="preserve">
-    <value>Discount 1 Price</value>
+    <value>Koh Phangan Discount Price</value>
   </data>
   <data name="PriceDiscount2Label" xml:space="preserve">
-    <value>Discount 2 Price</value>
+    <value>Family &amp; Friends Discount Price</value>
   </data>
   <data name="PriceSmallPackDiscount1Label" xml:space="preserve">
-    <value>Discount 1 Price Small Pack</value>
+    <value>Koh Phangan Discount Price Small Pack</value>
   </data>
   <data name="PriceSmallPackDiscount2Label" xml:space="preserve">
-    <value>Discount 2 Price Small Pack</value>
+    <value>Family Friends Discount Price Small Pack</value>
   </data>
   <data name="PriceSmallPackLabel" xml:space="preserve">
     <value>Price Small Pack</value>
@@ -1277,19 +1277,19 @@
     <value>Products List</value>
   </data>
   <data name="ProfitMarginDiscount1Label" xml:space="preserve">
-    <value>Profit Margin Discount 1</value>
+    <value>Profit Margin Koh Phangan Discount</value>
   </data>
   <data name="ProfitMarginDiscount2Label" xml:space="preserve">
-    <value>Profit Margin Discount 2</value>
+    <value>Profit Margin Family &amp; Friends Discount</value>
   </data>
   <data name="ProfitMarginLabel" xml:space="preserve">
     <value>Profit Margin</value>
   </data>
   <data name="ProfitMarginSmallPackDiscount1Label" xml:space="preserve">
-    <value>Profie Margin Discount 1 Small Pack</value>
+    <value>Profit Margin Koh Phangan Discount Small Pack</value>
   </data>
   <data name="ProfitMarginSmallPackDiscount2Label" xml:space="preserve">
-    <value>Profie Margin Discount 2 Small Pack</value>
+    <value>Profit Margin Family &amp; Friends Discount Small Pack</value>
   </data>
   <data name="ProfitMarginSmallPackLabel" xml:space="preserve">
     <value>Profit Margin Small Pack</value>

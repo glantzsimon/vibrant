@@ -2432,7 +2432,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discount 1 Price.
+        ///   Looks up a localized string similar to Koh Phangan Discount Price.
         /// </summary>
         public static string PriceDiscount1Label {
             get {
@@ -2441,7 +2441,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discount 2 Price.
+        ///   Looks up a localized string similar to Family &amp; Friends Discount Price.
         /// </summary>
         public static string PriceDiscount2Label {
             get {
@@ -2468,7 +2468,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discount 1 Price Small Pack.
+        ///   Looks up a localized string similar to Koh Phangan Discount Price Small Pack.
         /// </summary>
         public static string PriceSmallPackDiscount1Label {
             get {
@@ -2477,7 +2477,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discount 2 Price Small Pack.
+        ///   Looks up a localized string similar to Family Friends Discount Price Small Pack.
         /// </summary>
         public static string PriceSmallPackDiscount2Label {
             get {
@@ -2602,7 +2602,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Profit Margin Discount 1.
+        ///   Looks up a localized string similar to Profit Margin Koh Phangan Discount.
         /// </summary>
         public static string ProfitMarginDiscount1Label {
             get {
@@ -2611,7 +2611,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Profit Margin Discount 2.
+        ///   Looks up a localized string similar to Profit Margin Family &amp; Friends Discount.
         /// </summary>
         public static string ProfitMarginDiscount2Label {
             get {
@@ -2629,7 +2629,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Profie Margin Discount 1 Small Pack.
+        ///   Looks up a localized string similar to Profit Margin Koh Phangan Discount Small Pack.
         /// </summary>
         public static string ProfitMarginSmallPackDiscount1Label {
             get {
@@ -2638,7 +2638,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Profie Margin Discount 2 Small Pack.
+        ///   Looks up a localized string similar to Profit Margin Family &amp; Friends Discount Small Pack.
         /// </summary>
         public static string ProfitMarginSmallPackDiscount2Label {
             get {
