@@ -1,7 +1,6 @@
 ﻿using K9.DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
-using K9.SharedLibrary.Models;
 
 namespace K9.WebApplication.Services
 {
@@ -18,6 +17,7 @@ namespace K9.WebApplication.Services
         List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false);
 
         ProductPack FindPack(Guid id);
+        ProductPack FindPack(int id);
         ProductPack GetFullProductPack(ProductPack productPack);
     }
 }

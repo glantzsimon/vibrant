@@ -31,11 +31,13 @@ namespace K9.WebApplication.Controllers
             _productPackRepository = productPackRepository;
             RecordBeforeCreated += ProductPacksController_RecordBeforeCreated;
             RecordBeforeUpdated += ProductPacksController_RecordBeforeUpdated;
+            RecordBeforeEditMultiple += ProductPacksController_RecordBeforeEditMultiple;
+            RecordBeforeDetails += ProductPacksController_RecordBeforeDetails;
         }
         
         public ActionResult EditProductQuantities(int id)
         {
-            var productPack = _productPackRepository.Find(id);
+            var productPack = _productService.FindPack(id);
             return View(productPack);
         }
 
@@ -44,7 +46,7 @@ namespace K9.WebApplication.Controllers
         [RequirePermissions(Permission = Permissions.Edit)]
         public ActionResult EditProductQuantities(ProductPack model)
         {
-            foreach (var product in model.ProductPackProducts)
+            foreach (var product in model.Products)
             {
                 var item = _productPackProductRepository.Find(product.Id);
                 item.Amount = product.Amount;
@@ -79,7 +81,7 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult View(int productPackId)
         {
-            return RedirectToAction("Details", null, new {id = productPackId});
+            return RedirectToAction("Details", null, new { id = productPackId });
         }
 
         [HttpPost]
@@ -120,5 +122,24 @@ namespace K9.WebApplication.Controllers
             pack.ExternalId = Guid.NewGuid();
         }
 
+        private void ProductPacksController_RecordBeforeEditMultiple(object sender, CrudEventArgs e)
+        {
+            var pack = _productService.FindPack(e.Item.Id);
+            foreach (var productPackProduct in pack.Products)
+            {
+                if (productPackProduct.Amount == 0)
+                {
+                    var packProductToEdit = _productPackProductRepository.Find(productPackProduct.Id);
+                    packProductToEdit.Amount = 1;
+                    _productPackProductRepository.Update(packProductToEdit);
+                }
+            }
+        }
+
+        private void ProductPacksController_RecordBeforeDetails(object sender, CrudEventArgs e)
+        {
+            var productPack = e.Item as ProductPack;
+            productPack = _productService.GetFullProductPack(productPack);
+        }
     }
 }

@@ -1324,4 +1324,7 @@
   <data name="ProductsLabel" xml:space="preserve">
     <value>Products</value>
   </data>
+  <data name="ProductSummary" xml:space="preserve">
+    <value>Products Summary</value>
+  </data>
 </root>

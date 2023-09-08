@@ -92,6 +92,16 @@ namespace K9.WebApplication.Services
             return pack;
         }
 
+        public ProductPack FindPack(int id)
+        {
+            var pack = _productPackRepository.Find(id);
+            if (pack != null)
+            {
+                pack = GetFullProductPack(pack);
+            }
+            return pack;
+        }
+
         public Product GetFullProduct(Product product)
         {
             var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id)

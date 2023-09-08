@@ -2665,6 +2665,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Products Summary.
+        /// </summary>
+        public static string ProductSummary {
+            get {
+                return ResourceManager.GetString("ProductSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Product Type.
         /// </summary>
         public static string ProductTypeLabel {
