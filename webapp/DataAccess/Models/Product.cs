@@ -136,7 +136,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
         [DataType(DataType.Currency)]
-        public double SuggestedRetailPrice => Methods.RoundToInteger(TotalCost * 3 + 300, 100);
+        public double SuggestedRetailPrice => Methods.RoundToInteger(TotalCost * 2 + 900, 100);
         
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginLabel)]
         [DataType(DataType.Currency)]
