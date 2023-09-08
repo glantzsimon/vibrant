@@ -23,13 +23,13 @@ namespace K9.WebApplication.Controllers
         [ChildActionOnly]
         public ActionResult ProductMenuList()
         {
-            return View("ProductMenuList", _productService.List());
+            return PartialView("ProductMenuList", _productService.List());
         }
 
         [ChildActionOnly]
         public ActionResult IngredientMenuList()
         {
-            return View("IngredientMenuList", _ingredientService.List());
+            return PartialView("IngredientMenuList", _ingredientService.List());
         }
 
         public override string GetObjectName()
