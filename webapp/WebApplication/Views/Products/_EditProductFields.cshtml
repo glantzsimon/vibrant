@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="col-sm-1">
-            @Html.BootstrapEditorFor(e => Model[i].Name)
+            @Html.BootstrapEditorFor(e => Model[i].Description)
             <a target="_blank" href="@Url.Action("Edit", "Products", new {id = Model[i].Id})">
                 @Html.DisplayFor(e => Model[i].Name)
             </a>

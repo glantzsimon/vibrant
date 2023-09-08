@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-sm-5">
             <a target="_blank" href="@Url.Action("Edit", "Ingredients", new {id = Model.Ingredients[i].Id})">
-                @Html.DisplayFor(e => Model.Ingredients[i].Name)
+                @Html.DisplayFor(e => Model.Ingredients[i].Ingredient.Name)
             </a>
         </div>
         <div class="col-sm-4">
