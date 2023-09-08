@@ -1261,6 +1261,15 @@
   <data name="PriceDiscount2Label" xml:space="preserve">
     <value>Discount 2 Price</value>
   </data>
+  <data name="PriceSmallPackDiscount1Label" xml:space="preserve">
+    <value>Discount 1 Price Small Pack</value>
+  </data>
+  <data name="PriceSmallPackDiscount2Label" xml:space="preserve">
+    <value>Discount 2 Price Small Pack</value>
+  </data>
+  <data name="PriceSmallPackLabel" xml:space="preserve">
+    <value>Price Small Pack</value>
+  </data>
   <data name="PricingInfo" xml:space="preserve">
     <value>Pricing Information</value>
   </data>
@@ -1275,6 +1284,15 @@
   </data>
   <data name="ProfitMarginLabel" xml:space="preserve">
     <value>Profit Margin</value>
+  </data>
+  <data name="ProfitMarginSmallPackDiscount1Label" xml:space="preserve">
+    <value>Profie Margin Discount 1 Small Pack</value>
+  </data>
+  <data name="ProfitMarginSmallPackDiscount2Label" xml:space="preserve">
+    <value>Profie Margin Discount 2 Small Pack</value>
+  </data>
+  <data name="ProfitMarginSmallPackLabel" xml:space="preserve">
+    <value>Profit Margin Small Pack</value>
   </data>
   <data name="RDALabel" xml:space="preserve">
     <value>RDA</value>

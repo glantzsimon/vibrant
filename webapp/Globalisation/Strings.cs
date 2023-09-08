@@ -24,11 +24,17 @@
             public const string CostOfIngredientsLabel = "CostOfIngredientsLabel";
             public const string SuggestedRetailPriceLabel = "SuggestedRetailPriceLabel";
             public const string ProfitMarginLabel = "ProfitMarginLabel";
+            public const string ProfitMarginSmallPackLabel = "ProfitMarginSmallPackLabel";
             public const string ProfitMarginDiscount1Label = "ProfitMarginDiscount1Label";
             public const string ProfitMarginDiscount2Label = "ProfitMarginDiscount2Label";
+            public const string ProfitMarginSmallPackDiscount1Label = "ProfitMarginSmallPackDiscount1Label";
+            public const string ProfitMarginSmallPackDiscount2Label = "ProfitMarginSmallPackDiscount2Label";
             public const string PriceDiscount1Label = "PriceDiscount1Label";
             public const string PriceDiscount2Label = "PriceDiscount2Label";
+            public const string PriceSmallPackDiscount1Label = "PriceSmallPackDiscount1Label";
+            public const string PriceSmallPackDiscount2Label = "PriceSmallPackDiscount2Label";
             public const string PriceLabel = "PriceLabel";
+            public const string PriceSmallPackLabel = "PriceSmallPackLabel";
             public const string CostOfMaterialsLabel = "CostOfMaterialsLabel";
             public const string CostPer100GramsLabel = "CostPer100GramsLabel";
             public const string CostPerMilligramLabel = "CostPerMilligramLabel";

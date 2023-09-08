@@ -2468,6 +2468,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Discount 1 Price Small Pack.
+        /// </summary>
+        public static string PriceSmallPackDiscount1Label {
+            get {
+                return ResourceManager.GetString("PriceSmallPackDiscount1Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discount 2 Price Small Pack.
+        /// </summary>
+        public static string PriceSmallPackDiscount2Label {
+            get {
+                return ResourceManager.GetString("PriceSmallPackDiscount2Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price Small Pack.
+        /// </summary>
+        public static string PriceSmallPackLabel {
+            get {
+                return ResourceManager.GetString("PriceSmallPackLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pricing Information.
         /// </summary>
         public static string PricingInfo {
@@ -2598,6 +2625,33 @@ namespace K9.Globalisation {
         public static string ProfitMarginLabel {
             get {
                 return ResourceManager.GetString("ProfitMarginLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profie Margin Discount 1 Small Pack.
+        /// </summary>
+        public static string ProfitMarginSmallPackDiscount1Label {
+            get {
+                return ResourceManager.GetString("ProfitMarginSmallPackDiscount1Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profie Margin Discount 2 Small Pack.
+        /// </summary>
+        public static string ProfitMarginSmallPackDiscount2Label {
+            get {
+                return ResourceManager.GetString("ProfitMarginSmallPackDiscount2Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profit Margin Small Pack.
+        /// </summary>
+        public static string ProfitMarginSmallPackLabel {
+            get {
+                return ResourceManager.GetString("ProfitMarginSmallPackLabel", resourceCulture);
             }
         }
         
