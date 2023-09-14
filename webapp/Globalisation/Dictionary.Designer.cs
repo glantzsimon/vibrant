@@ -401,11 +401,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Capsule.
+        /// </summary>
+        public static string Capsule {
+            get {
+                return ResourceManager.GetString("Capsule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capsules.
         /// </summary>
         public static string Capsules {
             get {
                 return ResourceManager.GetString("Capsules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capsules Dosage.
+        /// </summary>
+        public static string CapsulesDosageLabel {
+            get {
+                return ResourceManager.GetString("CapsulesDosageLabel", resourceCulture);
             }
         }
         
@@ -973,6 +991,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Daily Values.
+        /// </summary>
+        public static string DailyValuesLabel {
+            get {
+                return ResourceManager.GetString("DailyValuesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date Of Birth.
         /// </summary>
         public static string DateOfBirthLabel {
@@ -1212,6 +1239,15 @@ namespace K9.Globalisation {
         public static string Doshas {
             get {
                 return ResourceManager.GetString("Doshas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download as CSV.
+        /// </summary>
+        public static string DownloadAsCsv {
+            get {
+                return ResourceManager.GetString("DownloadAsCsv", resourceCulture);
             }
         }
         
@@ -1910,6 +1946,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Max Dosage.
+        /// </summary>
+        public static string MaxDosageLabel {
+            get {
+                return ResourceManager.GetString("MaxDosageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Multimedia.
         /// </summary>
         public static string MediaTheque {
@@ -2027,6 +2072,15 @@ namespace K9.Globalisation {
         public static string MethylationSupport {
             get {
                 return ResourceManager.GetString("MethylationSupport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Min Dosage.
+        /// </summary>
+        public static string MinDosageLabel {
+            get {
+                return ResourceManager.GetString("MinDosageLabel", resourceCulture);
             }
         }
         
@@ -2904,6 +2958,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quantities.
+        /// </summary>
+        public static string QuantitiesLabel {
+            get {
+                return ResourceManager.GetString("QuantitiesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quantity In Stock.
         /// </summary>
         public static string QuantityInStockLabel {
@@ -3089,6 +3152,15 @@ namespace K9.Globalisation {
         public static string Send {
             get {
                 return ResourceManager.GetString("Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serving Size.
+        /// </summary>
+        public static string ServingSizeLabel {
+            get {
+                return ResourceManager.GetString("ServingSizeLabel", resourceCulture);
             }
         }
         
@@ -3351,6 +3423,15 @@ namespace K9.Globalisation {
         public static string SubscriptionTypeLabel {
             get {
                 return ResourceManager.GetString("SubscriptionTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sub Title.
+        /// </summary>
+        public static string SubTitleLabel {
+            get {
+                return ResourceManager.GetString("SubTitleLabel", resourceCulture);
             }
         }
         

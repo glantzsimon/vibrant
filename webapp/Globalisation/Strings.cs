@@ -91,8 +91,15 @@
             public const string SubjectiveEffectsLabel = "SubjectiveEffectsLabel";
             public const string SideEffectsLabel = "SideEffectsLabel";
             public const string ShortDescriptionLabel = "ShortDescriptionLabel";
+            public const string SubTitleLabel = "SubTitleLabel";
+            public const string MaxDosageLabel = "MaxDosageLabel";
+            public const string MinDosageLabel = "MinDosageLabel";
+            public const string ServingSizeLabel = "ServingSizeLabel";
+            public const string CapsulesDosageLabel = "CapsulesDosageLabel";
             public const string QuantityInStockLabel = "QuantityInStockLabel";
             public const string QuantityLabel = "QuantityLabel";
+            public const string QuantitiesLabel = "QuantitiesLabel";
+            public const string DailyValuesLabel = "DailyValuesLabel";
             public const string QuantityPurchasedLabel = "QuantityPurchasedLabel";
             public const string StockLowWarningLevelLabel = "StockLowWarningLevelLabel";
             public const string StockLowWarningLabel = "StockLowWarningLabel";

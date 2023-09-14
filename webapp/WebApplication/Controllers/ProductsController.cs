@@ -10,7 +10,12 @@ using K9.WebApplication.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web.Mvc;
+using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Models;
+using ServiceStack.Text;
 
 namespace K9.WebApplication.Controllers
 {
@@ -116,7 +121,37 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult View(int productId)
         {
-            return RedirectToAction("Details", null, new {id = productId});
+            return RedirectToAction("Details", null, new { id = productId });
+        }
+
+        [Route("export/csv")]
+        public ActionResult DownloadProductsCsv()
+        {
+            var products = _productService.List(true);
+            var productLabelFields = Product.GetProductLabelProperties();
+            //var data = new StringBuilder();
+
+            var productItems = products.MapTo<ProductItem>();
+            var data = productItems.ToCsv();
+
+            //foreach (var product in products)
+            //{
+            //    // Add column names
+            //    data.Append(string.Join(", ", productLabelFields.Select(e => e.Name)));
+
+            //    // Add values
+            //    data.Append(string.Join(", ", productLabelFields.Select(e => product.GetProperty(e))));
+
+            //    data.AppendLine();
+            //}
+
+            Response.Clear();
+            Response.ContentType = "application/CSV";
+            Response.AddHeader("content-disposition", $"attachment; filename=\"Products.csv\"");
+            Response.Write(data);
+            Response.End();
+
+            return new EmptyResult();
         }
 
         [HttpPost]

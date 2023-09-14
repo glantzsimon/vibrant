@@ -56,7 +56,7 @@ namespace K9.DataAccessLayer.Models
 
 	    public string FormattedAmount =>
 	        $"{Amount} {Globalisation.Strings.Constants.Measures.Milligrams}";
-
+        
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
 	    public float AmountPer100Capsules => AmountPerConcentrationPerBatch * 100;
 
@@ -78,5 +78,7 @@ namespace K9.DataAccessLayer.Models
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostLabel)]
 	    public float? PercentageOfDailyAllowance => AmountPerConcentration / Ingredient?.RecommendedDailyAllownace;
+
+	    public string FormattedPercentageOfDailyAllowance => PercentageOfDailyAllowance?.ToString("P0") ?? "*";
 	}
 }

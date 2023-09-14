@@ -1,7 +1,9 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
+using K9.DataAccessLayer.Attributes;
 using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Helpers;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Enums;
 using K9.SharedLibrary.Models;
@@ -11,8 +13,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -62,6 +64,7 @@ namespace K9.DataAccessLayer.Models
         public bool IsMain { get; set; }
 
         [UIHint("Quantity")]
+        [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public float Amount { get; set; }
@@ -86,7 +89,7 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Html)]
         [AllowHtml]
         public string ShortDescription { get; set; }
-
+        
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BodyLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [StringLength(int.MaxValue)]
@@ -141,6 +144,10 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double SuggestedRetailPrice => Methods.RoundToInteger(TotalCost * 2 + 900, 100);
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
+        public string FormattedSuggestedRetailPrice => double.Parse(SuggestedRetailPrice.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
+        [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginLabel)]
         [DataType(DataType.Currency)]
         public double ProfitMargin => Price - TotalCost;
@@ -227,6 +234,63 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BatchSizeLabel)]
         public int BatchSize { get; set; } = 1;
+
+        #region Product Label
+
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductLabel)]
+        public string ProductName => Name;
+
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTitleLabel)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary),
+            ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        public string SubTitleLabelText { get; set; } = "Default";
+
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.MaxDosageLabel)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        public int MaxDosage { get; set; } = 1;
+
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.MinDosageLabel)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary),
+            ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        public int MinDosage { get; set; } = 1;
+
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CapsulesDosageLabel)]
+        public string CapsulesDosageLabelText => $"{MinDosage} - {MaxDosage}";
+
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CapsulesDosageLabel)]
+        public string CapsulesLabellext => MaxDosage > 1 ? Globalisation.Dictionary.Capsules : Globalisation.Dictionary.Capsule;
+
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BenefitsLabel)]
+        public string BenefitsLabelText => Benefits.Replace("{/p}", string.Empty).Replace("{p}", string.Empty);
+
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IngredientLabel)]
+        public string IngredientsList => GetList(Ingredients?.Select(e => e.Ingredient.Name).ToArray());
+
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantitiesLabel)]
+        public string QuantitiesList => GetList(Ingredients?.Select(e => e.FormattedAmount).ToArray());
+
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DailyValuesLabel)]
+        public string DailyValues => GetList(Ingredients?.Select(e => e.FormattedPercentageOfDailyAllowance).ToArray());
+
+        public string GetList(string[] items)
+        {
+            return items == null ? string.Empty : string.Join(Environment.NewLine, items);
+        }
+
+        #endregion
+
+        public static List<PropertyInfo> GetProductLabelProperties() => typeof(Product).GetProperties()
+            .Where(e => e.GetCustomAttributes<ProductLabelAttribute>().Any()).ToList();
 
         public float GetTotalIngredientsAmount()
         {
