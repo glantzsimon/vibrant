@@ -14,7 +14,7 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTitleLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary),
             ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-        public string SubTitleLabelText { get; set; }
+        public string ProductSubTitle { get; set; }
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.MaxDosageLabel)]

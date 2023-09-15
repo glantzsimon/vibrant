@@ -17,6 +17,7 @@
 @for (int i = 0; i < Model.Count; i++)
 {
     @Html.HiddenFor(e => Model[i].Id)
+    @Html.HiddenFor(e => Model[i].Name)
 
     <div class="row margin-bottom-0 padding-bottom-0">
         <div class="col-sm-9">
@@ -53,20 +54,20 @@
             @Html.BootstrapEditorFor(e => Model[i].Price)
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-3">
+            @Html.BootstrapEditorFor(e => Model[i].ShortDescription)
+        </div>
+        <div class="col-sm-3">
+            @Html.BootstrapEditorFor(e => Model[i].Body)
+        </div>
+        <div class="col-sm-3">
+            @Html.BootstrapEditorFor(e => Model[i].Benefits)
+        </div>
+        <div class="col-sm-3">
+            @Html.BootstrapEditorFor(e => Model[i].Dosage)
+        </div>
+    </div>
     <br />
-    @*<div class="row">
-            <div class="col-sm-3">
-                @Html.BootstrapEditorFor(e => Model[i].ShortDescription)
-            </div>
-            <div class="col-sm-3">
-                @Html.BootstrapEditorFor(e => Model[i].Body)
-            </div>
-            <div class="col-sm-3">
-                @Html.BootstrapEditorFor(e => Model[i].Benefits)
-            </div>
-            <div class="col-sm-3">
-                @Html.BootstrapEditorFor(e => Model[i].Dosage)
-            </div>
-        </div>*@
 }
 

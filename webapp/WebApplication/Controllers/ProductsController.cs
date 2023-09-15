@@ -2,20 +2,20 @@
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.Base.WebApplication.ViewModels;
+using K9.DataAccessLayer.Helpers;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Extensions;
+using K9.WebApplication.Helpers;
+using K9.WebApplication.Models;
 using K9.WebApplication.Services;
+using ServiceStack.Text;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Web.Mvc;
-using K9.SharedLibrary.Extensions;
-using K9.SharedLibrary.Helpers;
-using K9.WebApplication.Models;
-using ServiceStack.Text;
 
 namespace K9.WebApplication.Controllers
 {
@@ -115,6 +115,7 @@ namespace K9.WebApplication.Controllers
             foreach (var product in products)
             {
                 _productService.GetFullProduct(product);
+                product.Benefits = product.Benefits.RemoveEmptyLines();
             }
             return View(products.OrderBy(e => e.Name).ToList());
         }
@@ -128,22 +129,15 @@ namespace K9.WebApplication.Controllers
         public ActionResult DownloadProductsCsv()
         {
             var products = _productService.List(true);
-            var productLabelFields = Product.GetProductLabelProperties();
-            //var data = new StringBuilder();
+            var productItems = new List<ProductItem>();
 
-            var productItems = products.MapTo<ProductItem>();
+            foreach (var product in products)
+            {
+                var productItem = product.MapTo<ProductItem>();
+                productItems.Add(productItem);
+            }
+
             var data = productItems.ToCsv();
-
-            //foreach (var product in products)
-            //{
-            //    // Add column names
-            //    data.Append(string.Join(", ", productLabelFields.Select(e => e.Name)));
-
-            //    // Add values
-            //    data.Append(string.Join(", ", productLabelFields.Select(e => product.GetProperty(e))));
-
-            //    data.AppendLine();
-            //}
 
             Response.Clear();
             Response.ContentType = "application/CSV";
@@ -163,10 +157,19 @@ namespace K9.WebApplication.Controllers
             {
                 var item = Repository.Find(product.Id);
                 item.Name = product.Name;
+                item.SubTitleLabelText = product.SubTitleLabelText;
                 item.Amount = product.Amount;
                 item.AmountPerServing = product.AmountPerServing;
                 item.CostOfMaterials = product.CostOfMaterials;
                 item.Price = product.Price;
+                item.MinDosage = product.MinDosage;
+                item.MaxDosage = product.MaxDosage;
+                item.ShortDescription = product.ShortDescription;
+                item.Body = product.Body;
+                item.Benefits = product.Benefits;
+                item.Dosage = product.Dosage;
+
+                HtmlParser.ParseHtml(product);
 
                 Repository.Update(item);
             }
@@ -207,3 +210,4 @@ namespace K9.WebApplication.Controllers
         }
     }
 }
+

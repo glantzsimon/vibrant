@@ -78,6 +78,9 @@
     <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\Facebook.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.53.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.53\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="K9.Base.DataAccessLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\K9.Base.DataAccessLayer.dll</HintPath>
     </Reference>
@@ -284,6 +287,7 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\WebGrease.dll</HintPath>
@@ -480,7 +484,9 @@
     <Content Include="Global.asax" />
     <Content Include="Images\background\bg.gif" />
     <Content Include="Images\background\bg1.jpg" />
+    <Content Include="Images\background\bg2.jpg" />
     <Content Include="Images\background\form-background.jpg" />
+    <Content Include="Images\background\bg1.svg" />
     <Content Include="Images\company\logo-med.png" />
     <Content Include="Images\company\logo-small.png" />
     <Content Include="Images\company\logo.png" />
@@ -732,6 +738,7 @@
     <Content Include="Images\flags\za.png" />
     <Content Include="Images\flags\zm.png" />
     <Content Include="Images\flags\zw.png" />
+    <Content Include="Images\icons\logo-med.png" />
     <Content Include="Images\pages\default-image.jpg" />
     <Content Include="Images\icons\android-chrome-192x192.png" />
     <Content Include="Images\icons\apple-touch-icon-114x114.png" />
@@ -757,7 +764,6 @@
     <Content Include="Images\icons\instagram.png" />
     <Content Include="Images\icons\logo-small.png" />
     <Content Include="Images\icons\logo.png" />
-    <Content Include="Images\icons\pure alchemy icon.png" />
     <Content Include="Images\icons\safari-pinned-tab.svg" />
     <Content Include="Images\icons\web.png" />
     <Content Include="Images\membership\free-membership.png" />
@@ -849,8 +855,8 @@
     <Content Include="Upload\products\Product\8\serenity-plus.png" />
     <Content Include="Upload\products\Product\9\nmn-2.png" />
     <Content Include="Upload\products\Product\9\nmn-1.png" />
-    <Content Include="Videos\welcomemobile.mp4" />
-    <Content Include="Videos\welcome9.mp4" />
+    <Content Include="Videos\welcome-desktop.mp4" />
+    <Content Include="Videos\welcome-mobile.mp4" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

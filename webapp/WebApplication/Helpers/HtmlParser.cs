@@ -1,5 +1,4 @@
 ﻿using K9.SharedLibrary.Extensions;
-using K9.SharedLibrary.Models;
 using System.IO;
 using System.Text;
 using System.Web.Mvc;
@@ -9,6 +8,11 @@ namespace K9.WebApplication.Helpers
     public static class HtmlParser
     {
         public static void ParseHtml<T>(ref T model)
+        {
+            ParseHtml(ref model);
+        }
+
+        public static T ParseHtml<T>(T model)
         {
             foreach (var propertyInfo in model.GetProperties())
             {
@@ -21,6 +25,8 @@ namespace K9.WebApplication.Helpers
                     }
                 }
             }
+
+            return model;
         }
 
         private static string ParseHtml(string value)

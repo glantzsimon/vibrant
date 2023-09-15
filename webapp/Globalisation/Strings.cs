@@ -304,6 +304,7 @@
             {
                 public const string Millilitres = "ml";
                 public const string Milligrams = "mg";
+                public const string Micrograms = "mcg";
                 public const string Grams = "g";
                 public const string Capsules = "capsules";
                 public const string Litres = "litres";

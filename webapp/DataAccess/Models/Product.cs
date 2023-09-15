@@ -89,7 +89,7 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Html)]
         [AllowHtml]
         public string ShortDescription { get; set; }
-        
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BodyLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [StringLength(int.MaxValue)]
@@ -239,13 +239,19 @@ namespace K9.DataAccessLayer.Models
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductLabel)]
-        public string ProductName => Name;
+        public string ProductName => Name.ToUpper();
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTitleLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary),
             ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-        public string SubTitleLabelText { get; set; } = "Default";
+        public string SubTitleLabelText { get; set; }
+
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTitleLabel)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary),
+            ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        public string ProductSubTitle => SubTitleLabelText?.ToUpper();
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.MaxDosageLabel)]
@@ -268,7 +274,7 @@ namespace K9.DataAccessLayer.Models
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BenefitsLabel)]
-        public string BenefitsLabelText => Benefits.Replace("{/p}", string.Empty).Replace("{p}", string.Empty);
+        public string BenefitsLabelText => string.Join(Environment.NewLine, Benefits.ToUpper().HtmlToText().Split('\n').Where(e => !string.IsNullOrEmpty(e)).Take(8));
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IngredientLabel)]
@@ -276,7 +282,7 @@ namespace K9.DataAccessLayer.Models
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantitiesLabel)]
-        public string QuantitiesList => GetList(Ingredients?.Select(e => e.FormattedAmount).ToArray());
+        public string QuantitiesList => GetList(Ingredients?.Select(e => e.FormattedLabelAmount).ToArray());
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DailyValuesLabel)]
