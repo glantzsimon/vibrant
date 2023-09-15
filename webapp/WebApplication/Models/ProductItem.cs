@@ -17,6 +17,11 @@ namespace K9.WebApplication.Models
         public string ProductSubTitle { get; set; }
 
         [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        public float Amount { get; set; }
+
+        [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.MaxDosageLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public int MaxDosage { get; set; } = 1;
@@ -29,11 +34,16 @@ namespace K9.WebApplication.Models
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CapsulesDosageLabel)]
-        public string CapsulesDosageLabelText => $"{MinDosage} - {MaxDosage}";
+        public string CapsulesDosageLabelText { get; set; }
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CapsulesDosageLabel)]
-        public string CapsulesLabellext => MaxDosage > 1 ? Globalisation.Dictionary.Capsules : Globalisation.Dictionary.Capsule;
+        public string CapsulesDailyLabellext { get; set; }
+
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.FullDosageText)]
+        public string FullDosageLabellext { get; set; }
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BenefitsLabel)]

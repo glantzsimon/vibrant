@@ -13,6 +13,14 @@ namespace K9.WebApplication.Controllers
             RecordBeforeCreated += HtmlControllerBase_RecordBeforeCreated;
             RecordBeforeUpdated += HtmlControllerBase_RecordBeforeUpdated;
             RecordBeforeUpdate += HtmlControllerBase_RecordBeforeUpdate;
+            RecordBeforeDeleted += HtmlControllerBase_RecordBeforeDeleted;
+        }
+
+        private void HtmlControllerBase_RecordBeforeDeleted(object sender, CrudEventArgs e)
+        {
+            var model = e.Item as T;
+            model.IsDeleted = true;
+            Repository.Update(model);
         }
 
         private void HtmlControllerBase_RecordBeforeUpdated(object sender, CrudEventArgs e)

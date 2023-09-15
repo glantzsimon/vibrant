@@ -96,6 +96,9 @@
             public const string MinDosageLabel = "MinDosageLabel";
             public const string ServingSizeLabel = "ServingSizeLabel";
             public const string CapsulesDosageLabel = "CapsulesDosageLabel";
+            public const string CapsulesLabel = "Capsules";
+            public const string CapsulesDailyText = "CapsulesDailyText";
+            public const string FullDosageText = "FullDosageText";
             public const string QuantityInStockLabel = "QuantityInStockLabel";
             public const string QuantityLabel = "QuantityLabel";
             public const string QuantitiesLabel = "QuantitiesLabel";

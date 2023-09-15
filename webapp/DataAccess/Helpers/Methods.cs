@@ -25,5 +25,10 @@ namespace K9.DataAccessLayer.Helpers
         {
             return string.Join(Environment.NewLine, Regex.Split(value, Environment.NewLine).Select(e => e.Trim()).Where(e => !string.IsNullOrEmpty(e) && !string.IsNullOrWhiteSpace(e)));
         }
+
+        public static string SelectLines(this string value, int numberOfLines)
+        {
+            return string.Join(Environment.NewLine, Regex.Split(value, Environment.NewLine).Select(e => e.Trim()).Where(e => !string.IsNullOrEmpty(e) && !string.IsNullOrWhiteSpace(e)).Take(numberOfLines));
+        }
     }
 }

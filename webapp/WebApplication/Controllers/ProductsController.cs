@@ -116,6 +116,7 @@ namespace K9.WebApplication.Controllers
             {
                 _productService.GetFullProduct(product);
                 product.Benefits = product.Benefits.RemoveEmptyLines();
+                HtmlParser.ParseHtml(product);
             }
             return View(products.OrderBy(e => e.Name).ToList());
         }
@@ -159,7 +160,6 @@ namespace K9.WebApplication.Controllers
                 item.Name = product.Name;
                 item.SubTitleLabelText = product.SubTitleLabelText;
                 item.Amount = product.Amount;
-                item.AmountPerServing = product.AmountPerServing;
                 item.CostOfMaterials = product.CostOfMaterials;
                 item.Price = product.Price;
                 item.MinDosage = product.MinDosage;
@@ -169,7 +169,7 @@ namespace K9.WebApplication.Controllers
                 item.Benefits = product.Benefits;
                 item.Dosage = product.Dosage;
 
-                HtmlParser.ParseHtml(product);
+                HtmlParser.ParseHtml(item);
 
                 Repository.Update(item);
             }

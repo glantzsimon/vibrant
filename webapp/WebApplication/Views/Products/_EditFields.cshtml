@@ -9,15 +9,23 @@
         @Html.BootstrapEditorFor(model => model.Name)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.SeoFriendlyId)
+        @Html.BootstrapEditorFor(model => model.SubTitleLabelText)
     </div>
 </div>
 <div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.ProductType)
+        @Html.BootstrapEditorFor(model => model.SeoFriendlyId)
     </div>
     <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.ProductType)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.ContactId)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.IsMain)
     </div>
 </div>
 
@@ -39,6 +47,14 @@
         @Html.BootstrapEditorFor(model => model.AmountPerServing)
     </div>
 </div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.MinDosage)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.MaxDosage)
+    </div>
+</div>
 
 <hr />
 
@@ -54,10 +70,7 @@
 <hr />
 
 <div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.IsMain)
-    </div>
-    <div class="col-sm-6">
+    <div class="col-sm-12">
         @Html.BootstrapEditorFor(model => model.ProductIngredientsId)
     </div>
 </div>

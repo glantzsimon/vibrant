@@ -21,6 +21,8 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Products, PluralName = Globalisation.Strings.Names.Products, Name = Globalisation.Strings.Names.Product)]
     public class Product : ObjectBase
     {
+        public const int ProductLabelBenefitsCount = 9;
+
         public Guid ExternalId { get; set; }
 
         [NotMapped]
@@ -266,15 +268,25 @@ namespace K9.DataAccessLayer.Models
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CapsulesDosageLabel)]
-        public string CapsulesDosageLabelText => $"{MinDosage} - {MaxDosage}";
+        public string CapsulesDosageLabelText => MaxDosage > 1 ? $"{MinDosage} - {MaxDosage}" : MaxDosage.ToString();
 
         [ProductLabel]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CapsulesDosageLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CapsulesLabel)]
         public string CapsulesLabellext => MaxDosage > 1 ? Globalisation.Dictionary.Capsules : Globalisation.Dictionary.Capsule;
 
         [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.CapsulesDailyText)]
+        public string CapsulesDailyLabellext => $"{CapsulesLabellext} Daily";
+
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.FullDosageText)]
+        public string FullDosageLabellext => $"{CapsulesDosageLabelText} {CapsulesDailyLabellext}";
+
+        [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BenefitsLabel)]
-        public string BenefitsLabelText => string.Join(Environment.NewLine, Benefits.ToUpper().HtmlToText().Split('\n').Where(e => !string.IsNullOrEmpty(e)).Take(8));
+        public string BenefitsLabelText => Benefits.HtmlToText().SelectLines(ProductLabelBenefitsCount);
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IngredientLabel)]

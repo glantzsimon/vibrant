@@ -419,6 +419,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Capsules Daily.
+        /// </summary>
+        public static string CapsulesDailyText {
+            get {
+                return ResourceManager.GetString("CapsulesDailyText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capsules Dosage.
         /// </summary>
         public static string CapsulesDosageLabel {
@@ -1608,6 +1617,15 @@ namespace K9.Globalisation {
         public static string FreeMembership {
             get {
                 return ResourceManager.GetString("FreeMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Full Dosage Text.
+        /// </summary>
+        public static string FullDosageText {
+            get {
+                return ResourceManager.GetString("FullDosageText", resourceCulture);
             }
         }
         

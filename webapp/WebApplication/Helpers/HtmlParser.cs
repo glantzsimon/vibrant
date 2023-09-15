@@ -9,7 +9,7 @@ namespace K9.WebApplication.Helpers
     {
         public static void ParseHtml<T>(ref T model)
         {
-            ParseHtml(ref model);
+            ParseHtml(model);
         }
 
         public static T ParseHtml<T>(T model)

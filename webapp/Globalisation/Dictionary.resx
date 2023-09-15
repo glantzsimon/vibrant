@@ -1303,6 +1303,9 @@
   <data name="Capsule" xml:space="preserve">
     <value>Capsule</value>
   </data>
+  <data name="CapsulesDailyText" xml:space="preserve">
+    <value>Capsules Daily</value>
+  </data>
   <data name="CapsulesDosageLabel" xml:space="preserve">
     <value>Capsules Dosage</value>
   </data>
@@ -1320,6 +1323,9 @@
   </data>
   <data name="ExternalLink" xml:space="preserve">
     <value>External Link</value>
+  </data>
+  <data name="FullDosageText" xml:space="preserve">
+    <value>Full Dosage Text</value>
   </data>
   <data name="MaxDosageLabel" xml:space="preserve">
     <value>Max Dosage</value>
