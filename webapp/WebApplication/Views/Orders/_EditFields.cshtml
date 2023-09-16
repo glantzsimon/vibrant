@@ -3,17 +3,19 @@
 @model Order
 
 <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.Name)
     </div>
     <div class="col-sm-3">
-        @Html.BootstrapEditorFor(model => model.Description)
+        @Html.BootstrapEditorFor(model => model.ContactId)
     </div>
     <div class="col-sm-3">
         @Html.BootstrapEditorFor(model => model.UserId)
     </div>
-    <div class="col-sm-3">
-        @Html.BootstrapEditorFor(model => model.ContactId)
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        @Html.BootstrapEditorFor(model => model.ShortDescription)
     </div>
 </div>
 

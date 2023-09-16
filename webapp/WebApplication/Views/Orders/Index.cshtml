@@ -12,13 +12,14 @@
     AllowCreate = true,
     AllowEdit = true,
     AllowDelete = ((BaseController<Order>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
-    Controller = "OrdersController",
-    Action = "List",
     VisibleColumns = new List<string>
     {
         "CreateOn",
         "UserName",
         "ContactName",
+        "RequestedOn",
+        "DueBy"
+
     },
     CustomButtons = new List<IButton>
     {

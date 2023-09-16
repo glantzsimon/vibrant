@@ -280,6 +280,10 @@
     <Compile Include="Migrations\202309160540128_UpdateOrdersSaleItem.Designer.cs">
       <DependentUpon>202309160540128_UpdateOrdersSaleItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309161620235_AddShortDescriptionToOrders.cs" />
+    <Compile Include="Migrations\202309161620235_AddShortDescriptionToOrders.Designer.cs">
+      <DependentUpon>202309161620235_AddShortDescriptionToOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\OrderItemProductPack.cs" />
@@ -377,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309160540128_UpdateOrdersSaleItem.resx">
       <DependentUpon>202309160540128_UpdateOrdersSaleItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309161620235_AddShortDescriptionToOrders.resx">
+      <DependentUpon>202309161620235_AddShortDescriptionToOrders.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -650,6 +650,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Consultant.
+        /// </summary>
+        public static string ConsultantLabel {
+            get {
+                return ResourceManager.GetString("ConsultantLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Consultation.
         /// </summary>
         public static string Consultation {

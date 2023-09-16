@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Web.Mvc;
+using K9.Base.Globalisation;
 using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccessLayer.Models
@@ -16,15 +18,37 @@ namespace K9.DataAccessLayer.Models
     {
         public Guid ExternalId { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        [StringLength(int.MaxValue)]
+        [DataType(DataType.Html)]
+        [AllowHtml]
+        public string ShortDescription { get; set; }
+
         [UIHint("User")]
         [Required]
         [ForeignKey("User")]
+        [Display(ResourceType = typeof(K9.Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.ConsultantLabel)]
         public int UserId { get; set; }
 
         public virtual User User { get; set; }
 
         [LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Username")]
+        [Display(ResourceType = typeof(K9.Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.ConsultantLabel)]
         public string UserName { get; set; }
+
+        [UIHint("Contact")]
+        [ForeignKey("Contact")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.CustomerLabel)]
+        public int? ContactId { get; set; }
+
+        public virtual Contact Contact { get; set; }
+
+        [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.CustomerLabel)]
+        public string ContactName { get; set; }
 
         [UIHint("OrderType")]
         [Required]
@@ -58,7 +82,7 @@ namespace K9.DataAccessLayer.Models
         public bool IsMade => MadeOn != null && MadeOn >= DateTime.Today;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.StartedOnLabel)]
+            Name = Globalisation.Strings.Labels.CompletedOnLabel)]
         public DateTime? CompletedOn { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
@@ -80,17 +104,6 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.OrderStatusLabel)]
         public string OrderStatusText => OrderStatus.GetAttribute<EnumDescriptionAttribute>().GetDescription();
-
-        [UIHint("Contact")]
-        [ForeignKey("Contact")]
-        [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.CustomerLabel)]
-        public int? ContactId { get; set; }
-
-        public virtual Contact Contact { get; set; }
-
-        [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
-        public string ContactName { get; set; }
 
         [UIHint("OrderOrderItems")]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
