@@ -11,6 +11,7 @@ using ServiceStack.Text;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using K9.WebApplication.Config;
 
 namespace K9.WebApplication.Controllers
 {
@@ -19,11 +20,13 @@ namespace K9.WebApplication.Controllers
     public class OrdersController : HtmlControllerBase<Order>
     {
         private readonly IRepository<OrderItem> _orderItemsRepository;
+        private readonly DefaultValuesConfiguration _defaultValues;
         private readonly IOrderService _OrderService;
         
-        public OrdersController(IControllerPackage<Order> controllerPackage, IRepository<OrderItem> orderItemsRepository): base(controllerPackage)
+        public OrdersController(IControllerPackage<Order> controllerPackage, IRepository<OrderItem> orderItemsRepository, IOptions<DefaultValuesConfiguration> defaultValues): base(controllerPackage)
         {
             _orderItemsRepository = orderItemsRepository;
+            _defaultValues = defaultValues.Value;
             RecordBeforeCreate += OrdersController_RecordBeforeCreate;
             RecordBeforeCreated += OrdersController_RecordBeforeCreated;
             RecordBeforeDetails += OrdersController_RecordBeforeDetails;
@@ -91,8 +94,12 @@ namespace K9.WebApplication.Controllers
         private void OrdersController_RecordBeforeCreate(object sender, CrudEventArgs e)
         {
             var order = e.Item as Order;
+            
             order.RequestedOn = DateTime.Now;
             order.DueBy = DateTime.Today.AddDays(11);
+            
+            int.TryParse(_defaultValues.DefaultUserId, out var userId);
+            order.UserId = userId > 0 ? userId : 3;
         }
 
         private void OrdersController_RecordBeforeDetails(object sender, CrudEventArgs e)

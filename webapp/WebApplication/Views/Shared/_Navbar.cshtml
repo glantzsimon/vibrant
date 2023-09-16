@@ -2,7 +2,7 @@
 @using K9.SharedLibrary.Authentication
 @{
     var roles = this.GetRoles();
-    var articles = this.GetDropdownData().GetDataSet<Article>(true, "Name", "SeoFriendlyId").OrderBy(e => e.Id).Take(11).ToList(); ;
+    var articles = this.GetDropdownData().GetDataSet<Article>(true, "Name", "SeoFriendlyId").OrderBy(e => e.Id).Take(11).ToList();
 }
 <div id="account-header">
     <div id="account-controls">

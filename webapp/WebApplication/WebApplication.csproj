@@ -311,6 +311,7 @@
     <Compile Include="Config\MailChimpConfiguration.cs" />
     <Compile Include="Config\ColumnsConfig.cs" />
     <Compile Include="Config\RecaptchaConfiguration.cs" />
+    <Compile Include="Config\DefaultValuesConfiguration.cs" />
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\Constants.cs" />
@@ -1410,15 +1411,11 @@
     <Content Include="Views\Orders\_DisplayFields.cshtml" />
     <Content Include="Views\Orders\_DisplaySummary.cshtml" />
     <Content Include="Views\Orders\_EditFields.cshtml" />
-    <Content Include="Views\Orders\_EditProductPackFields.cshtml" />
-    <Content Include="Views\Orders\_EditProductsFields.cshtml" />
     <Content Include="Views\Orders\_ProductsSummary.cshtml" />
     <Content Include="Views\Orders\Create.cshtml" />
     <Content Include="Views\Orders\Delete.cshtml" />
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
-    <Content Include="Views\Orders\EditList.cshtml" />
-    <Content Include="Views\Orders\EditProductQuantities.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
     <Content Include="Views\OrderItems\_DisplayFields.cshtml" />
     <Content Include="Views\OrderItems\_DisplaySummary.cshtml" />
