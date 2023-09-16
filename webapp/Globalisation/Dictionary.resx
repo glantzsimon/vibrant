@@ -1360,4 +1360,112 @@
   <data name="SubTitleLabel" xml:space="preserve">
     <value>Sub Title</value>
   </data>
+  <data name="Bottle" xml:space="preserve">
+    <value>Bottle</value>
+  </data>
+  <data name="Bottles" xml:space="preserve">
+    <value>Bottles</value>
+  </data>
+  <data name="EditOrderItems" xml:space="preserve">
+    <value>Edit Order Items</value>
+  </data>
+  <data name="EditSaleItems" xml:space="preserve">
+    <value>Edit Sale Items</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="Jar" xml:space="preserve">
+    <value>Jar</value>
+  </data>
+  <data name="Jars" xml:space="preserve">
+    <value>Jars</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="OrderItem" xml:space="preserve">
+    <value>Order Item</value>
+  </data>
+  <data name="OrderItemLabel" xml:space="preserve">
+    <value>Order Item</value>
+  </data>
+  <data name="OrderItemProduct" xml:space="preserve">
+    <value>Order Item Product</value>
+  </data>
+  <data name="OrderItemProductPack" xml:space="preserve">
+    <value>Order Item Product Pack</value>
+  </data>
+  <data name="OrderItemProductPacks" xml:space="preserve">
+    <value>Order Item Product Packs</value>
+  </data>
+  <data name="OrderItemProducts" xml:space="preserve">
+    <value>Order Item Products</value>
+  </data>
+  <data name="OrderItems" xml:space="preserve">
+    <value>Order Items</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="Pack" xml:space="preserve">
+    <value>Pack</value>
+  </data>
+  <data name="Packs" xml:space="preserve">
+    <value>Packs</value>
+  </data>
+  <data name="DueByLabel" xml:space="preserve">
+    <value>Due By</value>
+  </data>
+  <data name="Gift" xml:space="preserve">
+    <value>Gift</value>
+  </data>
+  <data name="HealthCoachingPackage" xml:space="preserve">
+    <value>Health Coaching Package</value>
+  </data>
+  <data name="InPreparation" xml:space="preserve">
+    <value>In Preparation</value>
+  </data>
+  <data name="InProgress" xml:space="preserve">
+    <value>In Progress</value>
+  </data>
+  <data name="IsCompleteLabel" xml:space="preserve">
+    <value>Is Complete</value>
+  </data>
+  <data name="IsMadeLabel" xml:space="preserve">
+    <value>Is Made</value>
+  </data>
+  <data name="IsOverDueLabel" xml:space="preserve">
+    <value>Is Overdue</value>
+  </data>
+  <data name="IsPaidLabel" xml:space="preserve">
+    <value>Is Paid</value>
+  </data>
+  <data name="MadeOnLabel" xml:space="preserve">
+    <value>Made On</value>
+  </data>
+  <data name="OrderItemsLabel" xml:space="preserve">
+    <value>Order Items</value>
+  </data>
+  <data name="OrderStatusLabel" xml:space="preserve">
+    <value>Order Status</value>
+  </data>
+  <data name="PaidOnLabel" xml:space="preserve">
+    <value>Paid On</value>
+  </data>
+  <data name="ReadyForDelivery" xml:space="preserve">
+    <value>Ready For Delivery</value>
+  </data>
+  <data name="RequestedOnLabel" xml:space="preserve">
+    <value>Requested On</value>
+  </data>
+  <data name="StartedOnLabel" xml:space="preserve">
+    <value>Started On</value>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>Waiting</value>
+  </data>
 </root>

@@ -1,0 +1,34 @@
+﻿@using K9.Base.WebApplication.Controllers
+@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Authentication
+@using K9.SharedLibrary.Models
+@using EButtonType = K9.SharedLibrary.Models.EButtonType
+@model Order
+@{
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+@Html.BootstrapTable(new DataTableOptions<Order>
+{
+    AllowCreate = true,
+    AllowEdit = true,
+    AllowDelete = ((BaseController<Order>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    Controller = "Orders",
+    Action = "List",
+    VisibleColumns = new List<string>
+    {
+        "CreateOn",
+        "Name",
+        "UserName",
+        "ContactName",
+    },
+    CustomButtons = new List<IButton>
+    {
+        new Button
+        {
+            Action = "EditOrderItems",
+            Text = Dictionary.EditProducts,
+            ButtonType = EButtonType.Primary,
+            IconCssClass = "fa fa-pencil"
+        }
+    }
+})

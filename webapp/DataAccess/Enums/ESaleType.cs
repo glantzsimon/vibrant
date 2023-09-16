@@ -7,8 +7,8 @@ namespace K9.DataAccessLayer.Enums
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Sale)]
         Sale = 1,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Trial)]
-        Trial = 2,
+        Gift = 2,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.PersonalUse)]
-        PersonalUse = 3,
+        HealthCoachingPackage = 3,
     }
 }

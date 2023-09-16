@@ -1,0 +1,23 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model List<ProductPack>
+
+@for (int i = 0; i < Model.Count; i++)
+{
+    @Html.HiddenFor(e => Model[i].Id)
+
+    <div class="row">
+        <div class="col-sm-4">
+            <a target="_blank" href="@Url.Action("Edit", "ProductPacks", new {id = Model[i].Id})">
+                @Html.DisplayFor(e => Model[i].Name)
+            </a>
+        </div>
+        <div class="col-sm-4">
+            @Html.BootstrapDisplayFor(e => Model[i].SuggestedRetailPrice)
+        </div>
+        <div class="col-sm-4">
+            @Html.BootstrapEditorFor(e => Model[i].Price)
+        </div>
+    </div>
+}
+

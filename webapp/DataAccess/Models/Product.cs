@@ -60,6 +60,7 @@ namespace K9.DataAccessLayer.Models
 
         public virtual IEnumerable<ProductIngredient> ProductIngredients { get; set; }
 
+        [NotMapped]
         public List<ProductIngredient> Ingredients { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsMainLabel)]
@@ -282,7 +283,7 @@ namespace K9.DataAccessLayer.Models
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.FullDosageText)]
-        public string FullDosageLabellext => $"{CapsulesDosageLabelText} {CapsulesDailyLabellext}";
+        public string FullDosageLabellext => $"{CapsulesDosageLabelText} {CapsulesDailyLabellext.ToLower()}";
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BenefitsLabel)]

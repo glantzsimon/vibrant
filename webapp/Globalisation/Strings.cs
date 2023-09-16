@@ -18,6 +18,8 @@
             public const string AmountPerBatchLabel = "AmountPerBatchLabel";
             public const string SelectedProductLabel = "SelectedProductLabel";
             public const string OrderLabel = "OrderLabel";
+            public const string OrderItemLabel = "OrderItemLabel";
+            public const string OrderItemsLabel = "OrderItemsLabel";
             public const string NumberOfCreditsLabel = "NumberOfCreditsLabel";
             public const string CreditsPurchaseAmountLabel = "CreditsPurchaseAmountLabel";
             public const string TotalPriceLabel = "TotalPriceLabel";
@@ -45,6 +47,16 @@
             public const string AmountToDonateLabel = "AmountToDonateLabel";
             public const string AmountToPayLabel = "AmountToPayLabel";
             public const string CustomerLabel = "CustomerLabel";
+            public const string RequestedOnLabel = "RequestedOnLabel";
+            public const string StartedOnLabel = "StartedOnLabel";
+            public const string MadeOnLabel = "MadeOnLabel";
+            public const string IsMadeLabel = "IsMadeLabel";
+            public const string DueByLabel = "DueByLabel";
+            public const string IsCompleteLabel = "IsCompleteLabel";
+            public const string IsOverDueLabel = "IsOverDueLabel";
+            public const string PaidOnLabel = "PaidOnLabel";
+            public const string IsPaidLabel = "IsPaidLabel";
+            public const string OrderStatusLabel = "OrderStatusLabel";
             public const string AdditionalCommentsLabel = "AdditionalComments";
             public const string ConsultationDurationLabel = "ConsultationDurationLabel";
             public const string DurationLabel = "Duration";
@@ -166,8 +178,21 @@
             public const string IngredientInventoryItem = "IngredientInventoryItem";
             public const string Sale = "Sale";
             public const string Sales = "Sales";
+            public const string Order = "Order";
+            public const string Orders = "Orders";
+            public const string OrderItem = "OrderItem";
+            public const string OrderItems = "OrderItems";
+            public const string OrderItemProduct = "OrderItemProduct";
+            public const string OrderItemProducts = "OrderItemProducts";
+            public const string OrderItemProductPack = "OrderItemProductPack";
+            public const string OrderItemProductPacks = "OrderItemProductPacks";
             public const string Trial = "Trial";
+            public const string Gift = "Gift";
+            public const string HealthCoachingPackage = "HealthCoachingPackage";
             public const string PersonalUse = "PersonalUse";
+            public const string InPreparation = "InPreparation";
+            public const string InProgress = "InProgress";
+            public const string ReadyForDelivery = "ReadyForDelivery";
             
             public const string MembershipOption = "MembershipOption";
             public const string ProfileReading = "ProfileReading";

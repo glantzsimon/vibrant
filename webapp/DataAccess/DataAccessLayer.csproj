@@ -84,7 +84,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\Antlr3.Runtime.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.178\lib\net461\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Autofac, Version=6.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\Autofac.dll</HintPath>
@@ -99,10 +99,10 @@
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\DataAnnotationsExtensions.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.176\lib\net461\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\Facebook.dll</HintPath>
@@ -114,28 +114,28 @@
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\K9.Base.DataAccessLayer.dll</HintPath>
     </Reference>
     <Reference Include="K9.Base.Globalisation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\K9.Base.Globalisation.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.178\lib\net461\K9.Base.Globalisation.dll</HintPath>
     </Reference>
     <Reference Include="K9.Base.WebApplication, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\K9.Base.WebApplication.dll</HintPath>
     </Reference>
     <Reference Include="K9.SharedLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\K9.SharedLibrary.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.178\lib\net461\K9.SharedLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\Microsoft.Web.Infrastructure.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.178\lib\net461\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.178\lib\net461\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\NLog.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.178\lib\net461\NLog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -165,25 +165,25 @@
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\System.Web.Helpers.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.178\lib\net461\System.Web.Helpers.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\System.Web.Mvc.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.178\lib\net461\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.178\lib\net461\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\System.Web.WebPages.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.178\lib\net461\System.Web.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\System.Web.WebPages.Deployment.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.178\lib\net461\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\System.Web.WebPages.Razor.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.178\lib\net461\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\WebGrease.dll</HintPath>
+      <HintPath>..\packages\K9.SharedLibrary.2.0.0.178\lib\net461\WebGrease.dll</HintPath>
     </Reference>
     <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\WebMatrix.WebData.dll</HintPath>
@@ -196,6 +196,7 @@
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
     <Compile Include="Enums\EIngredientType.cs" />
+    <Compile Include="Enums\EOrderStatus.cs" />
     <Compile Include="Enums\ESaleType.cs" />
     <Compile Include="Enums\EProductType.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
@@ -268,12 +269,22 @@
     <Compile Include="Migrations\202309140734511_NewProductFields.designer.cs">
       <DependentUpon>202309140734511_NewProductFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309160138410_AddOrders.cs" />
+    <Compile Include="Migrations\202309160138410_AddOrders.designer.cs">
+      <DependentUpon>202309160138410_AddOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309160505263_ExpandOrders.cs" />
+    <Compile Include="Migrations\202309160505263_ExpandOrders.designer.cs">
+      <DependentUpon>202309160505263_ExpandOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
+    <Compile Include="Models\OrderItemProductPack.cs" />
+    <Compile Include="Models\OrderItemProduct.cs" />
     <Compile Include="Models\ProductPack.cs" />
     <Compile Include="Models\ProductPackProduct.cs" />
-    <Compile Include="Models\SaleItem.cs" />
-    <Compile Include="Models\Sale.cs" />
+    <Compile Include="Models\OrderItem.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\ProductIngredient.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ArticleCategory.cs" />
@@ -354,6 +365,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309140734511_NewProductFields.resx">
       <DependentUpon>202309140734511_NewProductFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309160138410_AddOrders.resx">
+      <DependentUpon>202309160138410_AddOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309160505263_ExpandOrders.resx">
+      <DependentUpon>202309160505263_ExpandOrders.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

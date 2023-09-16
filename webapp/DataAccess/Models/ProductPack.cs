@@ -1,10 +1,8 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
-using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Helpers;
 using K9.SharedLibrary.Attributes;
-using K9.SharedLibrary.Enums;
-using K9.SharedLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,7 +10,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Linq;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -44,6 +41,7 @@ namespace K9.DataAccessLayer.Models
 
         public virtual IEnumerable<ProductPackProduct> ProductPackProducts { get; set; }
 
+        [NotMapped]
         public List<ProductPackProduct> Products { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]

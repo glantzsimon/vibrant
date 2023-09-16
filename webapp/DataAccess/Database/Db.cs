@@ -16,12 +16,14 @@ namespace K9.DataAccessLayer.Database
 	    public DbSet<Product> Products { get; set; }
 	    public DbSet<Ingredient> Ingredients { get; set; }
 	    public DbSet<ProductIngredient> ProductIngredients { get; set; }
-	    public DbSet<Sale> Sales { get; set; }
-	    public DbSet<SaleItem> SaleItems { get; set; }
+	    public DbSet<Order> Orders { get; set; }
+	    public DbSet<OrderItem> OrderItems { get; set; }
+	    public DbSet<OrderItemProduct> OrderItemProducts { get; set; }
+	    public DbSet<OrderItemProductPack> OrderItemProductPacks { get; set; }
 	    public DbSet<ContactProduct> ContactProducts { get; set; }
 	    public DbSet<ProductPack> ProductPacks { get; set; }
 	    public DbSet<ProductPackProduct> ProductPackProducts { get; set; }
-
+	    
 	    public DbSet<UserConsultation> UserConsultations { get; set; }
 	    public DbSet<UserCreditPack> UserCreditPack { get; set; }
 	    public DbSet<UserMembership> UserMemberships { get; set; }

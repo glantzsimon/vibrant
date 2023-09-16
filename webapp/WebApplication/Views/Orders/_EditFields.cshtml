@@ -1,0 +1,60 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model Order
+
+<div class="row">
+    <div class="col-sm-3">
+        @Html.BootstrapEditorFor(model => model.Name)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapEditorFor(model => model.Description)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapEditorFor(model => model.UserId)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapEditorFor(model => model.ContactId)
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-3">
+        @Html.BootstrapEditorFor(model => model.SaleType)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapEditorFor(model => model.DueBy)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapDisplayFor(model => model.OrderStatusText)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapDisplayFor(model => model.IsPaid)
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-3">
+        @Html.BootstrapEditorFor(model => model.RequestedOn)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapEditorFor(model => model.StartedOn)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapEditorFor(model => model.MadeOn)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapEditorFor(model => model.CompletedOn)
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-12">
+        @Html.BootstrapEditorFor(model => model.OrderItemsId)
+    </div>
+</div>
