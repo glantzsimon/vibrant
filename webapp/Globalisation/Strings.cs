@@ -128,6 +128,7 @@
             public const string ArticleCategory = "ArticleCategory";
             public const string ProductTypeLabel = "ProductTypeLabel";
             public const string ProductLabel = "Product";
+            public const string OrderTypeLabel = "OrderTypeLabel";
             public const string IngredientTypeLabel = "IngredientTypeLabel";
             public const string IngredientLabel = "Ingredient";
             public const string IngredientsLabel = "Ingredients";

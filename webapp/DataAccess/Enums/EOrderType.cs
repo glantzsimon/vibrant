@@ -2,7 +2,7 @@
 
 namespace K9.DataAccessLayer.Enums
 {
-    public enum ESaleType
+    public enum EOrderType
     {
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Sale)]
         Sale = 1,

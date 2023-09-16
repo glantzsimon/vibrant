@@ -26,11 +26,11 @@ namespace K9.DataAccessLayer.Models
         [LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Username")]
         public string UserName { get; set; }
 
-        [UIHint("SaleType")]
+        [UIHint("OrderType")]
         [Required]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.IngredientTypeLabel)]
-        public ESaleType SaleType { get; set; }
+            Name = Globalisation.Strings.Labels.OrderTypeLabel)]
+        public EOrderType OrderType { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.RequestedOnLabel)]

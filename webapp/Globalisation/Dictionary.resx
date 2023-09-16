@@ -1453,6 +1453,9 @@
   <data name="OrderStatusLabel" xml:space="preserve">
     <value>Order Status</value>
   </data>
+  <data name="OrderTypeLabel" xml:space="preserve">
+    <value>Order Type</value>
+  </data>
   <data name="PaidOnLabel" xml:space="preserve">
     <value>Paid On</value>
   </data>

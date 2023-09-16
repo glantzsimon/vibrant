@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -99,10 +98,10 @@
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\DataAnnotationsExtensions.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.176\lib\net461\Facebook.dll</HintPath>
@@ -197,7 +196,7 @@
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
     <Compile Include="Enums\EIngredientType.cs" />
     <Compile Include="Enums\EOrderStatus.cs" />
-    <Compile Include="Enums\ESaleType.cs" />
+    <Compile Include="Enums\EOrderType.cs" />
     <Compile Include="Enums\EProductType.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
     <Compile Include="Helpers\Methods.cs" />
@@ -276,6 +275,10 @@
     <Compile Include="Migrations\202309160505263_ExpandOrders.cs" />
     <Compile Include="Migrations\202309160505263_ExpandOrders.designer.cs">
       <DependentUpon>202309160505263_ExpandOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309160540128_UpdateOrdersSaleItem.cs" />
+    <Compile Include="Migrations\202309160540128_UpdateOrdersSaleItem.Designer.cs">
+      <DependentUpon>202309160540128_UpdateOrdersSaleItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
@@ -372,16 +375,11 @@
     <EmbeddedResource Include="Migrations\202309160505263_ExpandOrders.resx">
       <DependentUpon>202309160505263_ExpandOrders.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309160540128_UpdateOrdersSaleItem.resx">
+      <DependentUpon>202309160540128_UpdateOrdersSaleItem.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
-  </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

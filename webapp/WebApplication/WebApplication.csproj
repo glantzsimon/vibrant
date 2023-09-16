@@ -1329,7 +1329,7 @@
     <Content Include="Views\Shared\EditorTemplates\ProductInventory.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\IngredientInventory.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ProductInventory.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\SaleType.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\OrderType.cshtml" />
     <Content Include="Views\Products\_DisplayFields.cshtml" />
     <Content Include="Views\Products\_EditFields.cshtml" />
     <Content Include="Views\Products\Create.cshtml" />
