@@ -1474,4 +1474,19 @@
   <data name="ConsultantLabel" xml:space="preserve">
     <value>Consultant</value>
   </data>
+  <data name="OnEmptyStomach" xml:space="preserve">
+    <value>On an empty stomach</value>
+  </data>
+  <data name="RecommendationsLabel" xml:space="preserve">
+    <value>Recommendations</value>
+  </data>
+  <data name="WithFat" xml:space="preserve">
+    <value>With fat</value>
+  </data>
+  <data name="WithFood" xml:space="preserve">
+    <value>With food</value>
+  </data>
+  <data name="WithOrWithoutFood" xml:space="preserve">
+    <value>With or without food</value>
+  </data>
 </root>

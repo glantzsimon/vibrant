@@ -2491,6 +2491,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to On an empty stomach.
+        /// </summary>
+        public static string OnEmptyStomach {
+            get {
+                return ResourceManager.GetString("OnEmptyStomach", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Oral Care.
         /// </summary>
         public static string OralCare {
@@ -3350,6 +3359,15 @@ namespace K9.Globalisation {
         public static string Rebounding {
             get {
                 return ResourceManager.GetString("Rebounding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recommendations.
+        /// </summary>
+        public static string RecommendationsLabel {
+            get {
+                return ResourceManager.GetString("RecommendationsLabel", resourceCulture);
             }
         }
         
@@ -4344,6 +4362,33 @@ namespace K9.Globalisation {
         public static string WelcomeSubTitle {
             get {
                 return ResourceManager.GetString("WelcomeSubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to With fat.
+        /// </summary>
+        public static string WithFat {
+            get {
+                return ResourceManager.GetString("WithFat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to With food.
+        /// </summary>
+        public static string WithFood {
+            get {
+                return ResourceManager.GetString("WithFood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to With or without food.
+        /// </summary>
+        public static string WithOrWithoutFood {
+            get {
+                return ResourceManager.GetString("WithOrWithoutFood", resourceCulture);
             }
         }
         

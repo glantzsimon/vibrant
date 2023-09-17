@@ -197,6 +197,7 @@
     <Compile Include="Enums\EIngredientType.cs" />
     <Compile Include="Enums\EOrderStatus.cs" />
     <Compile Include="Enums\EOrderType.cs" />
+    <Compile Include="Enums\EProductRecommendation.cs" />
     <Compile Include="Enums\EProductType.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
     <Compile Include="Helpers\Methods.cs" />
@@ -283,6 +284,10 @@
     <Compile Include="Migrations\202309161620235_AddShortDescriptionToOrders.cs" />
     <Compile Include="Migrations\202309161620235_AddShortDescriptionToOrders.Designer.cs">
       <DependentUpon>202309161620235_AddShortDescriptionToOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309170437096_ProductRecommendations.cs" />
+    <Compile Include="Migrations\202309170437096_ProductRecommendations.Designer.cs">
+      <DependentUpon>202309170437096_ProductRecommendations.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
@@ -384,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309161620235_AddShortDescriptionToOrders.resx">
       <DependentUpon>202309161620235_AddShortDescriptionToOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309170437096_ProductRecommendations.resx">
+      <DependentUpon>202309170437096_ProductRecommendations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

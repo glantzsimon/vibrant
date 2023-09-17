@@ -67,6 +67,15 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.Dosage)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.Recommendations)
+    </div>
+</div>
+
 <hr />
 
 <div class="row">
@@ -83,12 +92,8 @@
 <div class="row">
     @Html.BootstrapEditorFor(model => model.Body)
 </div>
-
 <div class="row">
     @Html.BootstrapEditorFor(model => model.Benefits)
-</div>
-<div class="row">
-    @Html.BootstrapEditorFor(model => model.Dosage)
 </div>
 
 <hr />

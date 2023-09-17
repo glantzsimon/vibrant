@@ -148,6 +148,28 @@ namespace K9.DataAccessLayer.Models
         [UIHint("Quantity")]
 	    public float RecommendedDailyAllownace { get; set; }
         
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RDALabel)]
+	    public string FormattedRDA => GetFormattedRDA();
+
+	    private string GetFormattedRDA()
+	    {
+	        var amountIndMiligrams = RecommendedDailyAllownace;
+	        var amountInMicrograms = RecommendedDailyAllownace * 1000;
+
+	        if (RecommendedDailyAllownace == 0)
+	        {
+	            return string.Empty;
+	        }
+
+	        var mgAmount = $"{amountIndMiligrams} {Globalisation.Strings.Constants.Measures.Milligrams}";
+	        if (RecommendedDailyAllownace >= 1)
+	        {
+	            return mgAmount;
+	        }
+
+	        return $"{mgAmount} ({amountInMicrograms} {Globalisation.Strings.Constants.Measures.Micrograms})";
+	    }
+
 	    private string GetMeasuredInText()
 	    {
 	        switch (IngredientType)

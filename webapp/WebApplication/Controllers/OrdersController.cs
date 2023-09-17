@@ -46,7 +46,7 @@ namespace K9.WebApplication.Controllers
       
         public ActionResult EditOrderItems(int id = 0)
         {
-            return RedirectToAction("EditOrderItemsForOrder", "OrderItems", new { id });
+            return RedirectToAction("List", "OrderItems", new { id });
         }
 
         [HttpPost]

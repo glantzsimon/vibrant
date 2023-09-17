@@ -60,6 +60,12 @@ namespace K9.WebApplication.Models
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DailyValuesLabel)]
         public string DailyValues { get; set; }
+        
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RecommendationsLabel)]
+        public string RecommendationsText { get; set; }
+
+        
 
     }
 }

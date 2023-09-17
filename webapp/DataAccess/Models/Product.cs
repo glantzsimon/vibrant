@@ -6,6 +6,7 @@ using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Helpers;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Enums;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -114,6 +115,11 @@ namespace K9.DataAccessLayer.Models
         [AllowHtml]
         public string Dosage { get; set; }
 
+        [UIHint("ProductRecommendations")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RecommendationsLabel)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        public EProductRecommendation Recommendations { get; set; }
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [DataType(DataType.Currency)]
@@ -300,6 +306,11 @@ namespace K9.DataAccessLayer.Models
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DailyValuesLabel)]
         public string DailyValues => GetList(Ingredients?.Select(e => e.FormattedPercentageOfDailyAllowance).ToArray());
+
+        [ProductLabel]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.RecommendationsLabel)]
+        public string RecommendationsText => Recommendations.GetAttribute<EnumDescriptionAttribute>().GetDescription();
 
         public string GetList(string[] items)
         {

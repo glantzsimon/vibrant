@@ -1434,6 +1434,7 @@
     <Content Include="Views\Shared\EditorTemplates\OrderItemProducts.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\OrderItemProductPacks.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\OrderOrderItems.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ProductRecommendations.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

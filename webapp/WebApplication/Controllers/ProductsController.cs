@@ -168,6 +168,7 @@ namespace K9.WebApplication.Controllers
                 item.Body = product.Body;
                 item.Benefits = product.Benefits;
                 item.Dosage = product.Dosage;
+                item.Recommendations = product.Recommendations;
 
                 HtmlParser.ParseHtml(item);
 

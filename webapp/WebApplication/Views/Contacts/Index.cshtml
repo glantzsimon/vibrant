@@ -8,7 +8,7 @@
 
 @Html.BootstrapTable(new DataTableOptions<Contact>
 {
-    AllowCreate = false,
+    AllowCreate = true,
     AllowEdit = true,
     AllowDelete = ((BaseController<Contact>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     VisibleColumns = new List<string>

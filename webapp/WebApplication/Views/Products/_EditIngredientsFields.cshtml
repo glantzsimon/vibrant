@@ -11,13 +11,16 @@
     @Html.HiddenFor(e => Model.Ingredients[i].Ingredient.Name)
     @Html.HiddenFor(e => Model.Ingredients[i].Ingredient.Concentration)
 
-    <div class="row">
-        <div class="col-sm-6">
-            @Html.BootstrapDisplayFor(e => Model.Ingredients[i].Ingredient.Name)
-        </div>
-        <div class="col-sm-6">
-            @Html.BootstrapEditorFor(e => Model.Ingredients[i].Amount)
-        </div>
+<div class="row">
+    <div class="col-sm-4">
+        @Html.BootstrapDisplayFor(e => Model.Ingredients[i].Ingredient.Name)
     </div>
+    <div class="col-sm-4">
+        @Html.BootstrapDisplayFor(e => Model.Ingredients[i].Ingredient.FormattedRDA)
+    </div>
+    <div class="col-sm-4">
+        @Html.BootstrapEditorFor(e => Model.Ingredients[i].Amount)
+    </div>
+</div>
 }
 

@@ -35,20 +35,5 @@ namespace K9.WebApplication.Controllers
 	    {
 	        return RedirectToAction("EditProductPacksForOrderItem", "OrderItemProductPacks", new { id });
 	    }
-
-		[RequirePermissions(Permission = Permissions.Edit)]
-		public ActionResult EditOrderItemsForOrder(int id = 0)
-		{
-			return EditMultiple<Order, OrderItem>(_ordersRepository.Find(id));
-		}
-
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		[RequirePermissions(Permission = Permissions.Edit)]
-		public ActionResult EditOrderItemsForOrder(MultiSelectViewModel model)
-		{
-			return EditMultiple<Order, OrderItem>(model);
-		}
-
 	}
 }

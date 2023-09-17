@@ -99,6 +99,7 @@
             public const string CodeLabel = "Code";
             public const string BenefitsLabel = "BenefitsLabel";
             public const string DosageLabel = "DosageLabel";
+            public const string RecommendationsLabel = "RecommendationsLabel";
             public const string DeficiencySymptomsLabel = "DeficiencySymptomsLabel";
             public const string ResearchLabel = "ResearchLabel";
             public const string SubjectiveEffectsLabel = "SubjectiveEffectsLabel";
@@ -215,6 +216,11 @@
             public const string Capsules = "Capsules";
             public const string Powder = "Powder";
             public const string Liquid = "Liquid";
+
+            public const string OnEmptyStomach = "OnEmptyStomach";
+            public const string WithOrWithoutFood = "WithOrWithoutFood";
+            public const string WithFood = "WithFood";
+            public const string WithFat = "WithFat";
 
             public const string Female = "Female";
             public const string Male = "Male";
