@@ -1,0 +1,10 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.Base.WebApplication.Helpers
+@model Contact
+
+@{
+    Layout = "../Shared/_LayoutPrint.cshtml";
+    ViewBag.SubTitle = $"{Model.Name} {Dictionary.LabSheet}";
+}
+
+@Html.Partial("_AddressPrintPage")

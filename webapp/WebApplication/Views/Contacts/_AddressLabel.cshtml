@@ -1,0 +1,13 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model Contact
+
+<div class="address-label">
+    <h4><strong>@Html.ValueFor(model => model.FullName)</strong></h4>
+    <h4>@Html.ValueFor(model => model.PhoneNumber)</h4>
+    <p>@Html.Raw(Model.AddressHtmlString)</p>
+
+    @if (Model.Country?.Name != Dictionary.Thailand)
+    {
+        <h4><strong>@Html.ValueFor(model => model.Country)</strong></h4>
+    }
+</div>

@@ -310,7 +310,7 @@ namespace K9.DataAccessLayer.Models
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.RecommendationsLabel)]
-        public string RecommendationsText => Recommendations.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+        public string RecommendationsText => $"Take {FullDosageLabellext} {Recommendations.GetAttribute<EnumDescriptionAttribute>().GetDescription().ToLower()}";
 
         public string GetList(string[] items)
         {

@@ -3,6 +3,13 @@
 @{
 	Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
+@using (Html.BeginForm("Edit", "Contacts"))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.BootstrapEditorFor(model => model.ContactId)
+    }
+}
 @using (Html.BeginForm())
 {
 	using (Html.BeginBootstrapForm())
@@ -14,3 +21,11 @@
 		@Html.BootstrapBackToListButton()
 	}
 }
+
+<script type="text/javascript">
+    $(function () {
+        $("#ContactId").change(function () {
+            $("#ContactId").closest("form").submit();
+        });
+    })
+</script>

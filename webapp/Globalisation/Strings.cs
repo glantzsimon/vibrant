@@ -58,6 +58,7 @@
             public const string IsPaidLabel = "IsPaidLabel";
             public const string OrderStatusLabel = "OrderStatusLabel";
             public const string AdditionalCommentsLabel = "AdditionalComments";
+            public const string AddressLabel = "AddressLabel";
             public const string ConsultationDurationLabel = "ConsultationDurationLabel";
             public const string DurationLabel = "Duration";
             public const string DonatedOnLabel = "DonatedOnLabel";

@@ -1471,6 +1471,9 @@
   <data name="Waiting" xml:space="preserve">
     <value>Waiting</value>
   </data>
+  <data name="AddressLabel" xml:space="preserve">
+    <value>Address</value>
+  </data>
   <data name="ConsultantLabel" xml:space="preserve">
     <value>Consultant</value>
   </data>
@@ -1488,5 +1491,11 @@
   </data>
   <data name="WithOrWithoutFood" xml:space="preserve">
     <value>With or without food</value>
+  </data>
+  <data name="Thailand" xml:space="preserve">
+    <value>Thailand</value>
+  </data>
+  <data name="ViewContactAddressLabel" xml:space="preserve">
+    <value>View Address Label</value>
   </data>
 </root>

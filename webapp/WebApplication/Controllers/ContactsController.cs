@@ -11,6 +11,7 @@ using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using K9.Base.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -21,12 +22,14 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<Donation> _donationRepository;
         private readonly ILogger _logger;
         private readonly IMailChimpService _mailChimpService;
+        private readonly IRepository<Country> _countriesRepository;
 
-        public ContactsController(IControllerPackage<Contact> controllerPackage, IRepository<Donation> donationRepository, ILogger logger, IMailChimpService mailChimpService) : base(controllerPackage)
+        public ContactsController(IControllerPackage<Contact> controllerPackage, IRepository<Donation> donationRepository, ILogger logger, IMailChimpService mailChimpService, IRepository<Country> countriesRepository) : base(controllerPackage)
         {
             _donationRepository = donationRepository;
             _logger = logger;
             _mailChimpService = mailChimpService;
+            _countriesRepository = countriesRepository;
         }
 
         public ActionResult ImportContactsFromDonations()
@@ -49,6 +52,14 @@ namespace K9.WebApplication.Controllers
         public ActionResult SignUpToNewsLetter()
         {
             return View(new Contact());
+        }
+
+        [OutputCache(NoStore = true, Duration = 0)]
+        public ActionResult ViewContactAddressLabel(int id)
+        {
+            var contact = Repository.Find(id);
+            contact.Country = _countriesRepository.Find(contact.CountryId ?? 0);
+            return View(contact);
         }
 
         [HttpPost]

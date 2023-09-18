@@ -62,7 +62,7 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Details", null, new { id = orderId });
         }
 
-        [Route("export/csv")]
+        [Route("orders/export/csv")]
         public ActionResult DownloadOrdersCsv()
         {
             var Orders = _OrderService.List(true);

@@ -97,6 +97,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string AddressLabel {
+            get {
+                return ResourceManager.GetString("AddressLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Whilst using this site, you agree to have read and accepted our &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;terms of use, cookie and privacy policy&lt;/a&gt;.
         /// </summary>
         public static string AgreeToTerms {
@@ -3991,6 +4000,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thailand.
+        /// </summary>
+        public static string Thailand {
+            get {
+                return ResourceManager.GetString("Thailand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thank you for booking a Pure Alchemy consultation.
         /// </summary>
         public static string ThankyouForBookingConsultationEmailTitle {
@@ -4257,6 +4275,15 @@ namespace K9.Globalisation {
         public static string View {
             get {
                 return ResourceManager.GetString("View", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Address Label.
+        /// </summary>
+        public static string ViewContactAddressLabel {
+            get {
+                return ResourceManager.GetString("ViewContactAddressLabel", resourceCulture);
             }
         }
         

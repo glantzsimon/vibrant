@@ -28,6 +28,16 @@
     src: url('../fonts/valent.ttf') format('truetype');
 }
 
+@media print {
+    body {
+        visibility: hidden;
+    }
+
+    .print-layout {
+        visibility: visible;
+    }
+}
+
 body a, h4 {
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
@@ -920,6 +930,44 @@ div.row + hr {
 
     .content-table .row {
         border-bottom: 1px solid #d9d9d9;
-        padding-top:8px;
+        padding-top: 8px;
         padding-bottom: 8px;
+    }
+
+
+.print-layout {
+    background: white;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 111111;
+}
+
+.print-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+
+    .print-container p {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+.address-label {
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+    margin: 1px;
+    text-align: center;
+    border: 2px #eeeeee solid;
+    border-radius: 3px;
+}
+
+    .address-label h4 {
+        text-transform: uppercase;
     }
