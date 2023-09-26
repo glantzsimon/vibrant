@@ -16,6 +16,11 @@
                 @Html.BootstrapEditorFor(model => Model.OrderId)
             </div>
         </div>
+        <div class="row">
+            <div class="col-xs-12">
+                @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.CreateNew, "Create", "Orders", null, "fa-plus-circle")
+            </div>
+        </div>
     }
 }
 
