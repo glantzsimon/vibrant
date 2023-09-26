@@ -19,4 +19,6 @@
     @Html.BootstrapActionLinkButton(Dictionary.DuplicateOrder, "DuplicateOrder", "Orders", new { id = Model.Id }, "", EButtonClass.Info)
 
     @Html.BootstrapActionLinkButton(Dictionary.OrderReview, "OrderReview", "Orders", new { id = Model.Id }, "", EButtonClass.Success)
+
+    @Html.BootstrapActionLinkButton(Dictionary.DownloadAsCsv, "DownloadAsCsv", "Orders", new { id = Model.Id }, "", EButtonClass.Primary)
 }

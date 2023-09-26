@@ -1531,8 +1531,17 @@
   <data name="GrandTotalLabel" xml:space="preserve">
     <value>Grand Total</value>
   </data>
+  <data name="InvoiceDateLabel" xml:space="preserve">
+    <value>Invoice Date</value>
+  </data>
+  <data name="InvoiceNumbersLabel" xml:space="preserve">
+    <value>Invoice Numbers</value>
+  </data>
   <data name="OrderReview" xml:space="preserve">
     <value>Order Review</value>
+  </data>
+  <data name="PricesListLabel" xml:space="preserve">
+    <value>Prices</value>
   </data>
   <data name="SeeAllProductPacks" xml:space="preserve">
     <value>See All Product Packs</value>
@@ -1540,10 +1549,16 @@
   <data name="ShowCompletedLabel" xml:space="preserve">
     <value>Show Completed</value>
   </data>
+  <data name="SubTotalLabel" xml:space="preserve">
+    <value>Sub Total</value>
+  </data>
   <data name="TotalProductPacksPriceLabel" xml:space="preserve">
     <value>Total Product Packs Price</value>
   </data>
   <data name="TotalProductsPriceLabel" xml:space="preserve">
     <value>Total Products Price</value>
+  </data>
+  <data name="TotalsLabel" xml:space="preserve">
+    <value>Totals</value>
   </data>
 </root>

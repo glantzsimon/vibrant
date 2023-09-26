@@ -107,8 +107,11 @@
             public const string PromoCodeLabel = "PromoCode";
             public const string CodeLabel = "Code";
             public const string BenefitsLabel = "BenefitsLabel";
+            public const string InvoiceNumbersLabel = "InvoiceNumbersLabel";
             public const string DosageLabel = "DosageLabel";
             public const string RecommendationsLabel = "RecommendationsLabel";
+            public const string TotalsLabel = "TotalsLabel";
+            public const string SubTotalLabel = "SubTotalLabel";
             public const string DeficiencySymptomsLabel = "DeficiencySymptomsLabel";
             public const string ResearchLabel = "ResearchLabel";
             public const string SubjectiveEffectsLabel = "SubjectiveEffectsLabel";
@@ -127,6 +130,7 @@
             public const string QuantityLabel = "QuantityLabel";
             public const string QuantitiesLabel = "QuantitiesLabel";
             public const string DailyValuesLabel = "DailyValuesLabel";
+            public const string PricesListLabel = "PricesListLabel";
             public const string QuantityPurchasedLabel = "QuantityPurchasedLabel";
             public const string StockLowWarningLevelLabel = "StockLowWarningLevelLabel";
             public const string StockLowWarningLabel = "StockLowWarningLabel";
@@ -140,6 +144,7 @@
             public const string ArticleCategory = "ArticleCategory";
             public const string ProductTypeLabel = "ProductTypeLabel";
             public const string ProductLabel = "Product";
+            public const string InvoiceDateLabel = "InvoiceDateLabel";
             public const string OrderTypeLabel = "OrderTypeLabel";
             public const string OrderItemTypeLabel = "OrderItemTypeLabel";
             public const string IngredientTypeLabel = "IngredientTypeLabel";

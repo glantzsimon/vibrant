@@ -3,10 +3,14 @@ using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using K9.WebApplication.Models;
 using K9.WebApplication.Services;
+using ServiceStack.Text;
 using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
@@ -34,7 +38,7 @@ namespace K9.WebApplication.Controllers
             RecordBeforeDelete += OrdersController_RecordBeforeDelete;
             RecordBeforeDeleted += OrdersController_RecordBeforeDeleted;
         }
-        
+
         public ActionResult EditProducts(int id = 0)
         {
             return RedirectToAction("EditProductsForOrder", "OrderProducts", new { id });
@@ -150,24 +154,24 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("orders/export/csv")]
-        public ActionResult DownloadOrdersCsv()
+        public ActionResult DownloadOrderCsv(int? id = 0)
         {
-            //var Orders = _OrderService.List(true);
-            //var OrderItems = new List<OrderItem>();
+            var order = _orderService.Find(id);
+            var orderItem = order.MapTo<OrderItem>();
+            orderItem.CreatedOn = DateTime.Today;
 
-            //foreach (var Order in Orders)
-            //{
-            //    var OrderItem = Order.MapTo<OrderItem>();
-            //    OrderItems.Add(OrderItem);
-            //}
+            var orderItems = new List<OrderItem>
+            {
+                orderItem
+            };
+            
+            var data = orderItems.ToCsv();
 
-            //var data = OrderItems.ToCsv();
-
-            //Response.Clear();
-            //Response.ContentType = "application/CSV";
-            //Response.AddHeader("content-disposition", $"attachment; filename=\"Orders.csv\"");
-            //Response.Write(data);
-            //Response.End();
+            Response.Clear();
+            Response.ContentType = "application/CSV";
+            Response.AddHeader("content-disposition", $"attachment; filename=\"Orders.csv\"");
+            Response.Write(data);
+            Response.End();
 
             return new EmptyResult();
         }

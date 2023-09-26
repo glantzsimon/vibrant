@@ -292,26 +292,21 @@ namespace K9.DataAccessLayer.Models
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IngredientLabel)]
-        public string IngredientsList => GetList(Ingredients?.Select(e => e.Ingredient.Name).ToArray());
+        public string IngredientsList => Ingredients?.Select(e => e.Ingredient.Name).ToArray().ToDisplayList();
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantitiesLabel)]
-        public string QuantitiesList => GetList(Ingredients?.Select(e => e.FormattedLabelAmount).ToArray());
+        public string QuantitiesList => Ingredients?.Select(e => e.FormattedLabelAmount).ToArray().ToDisplayList();
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DailyValuesLabel)]
-        public string DailyValues => GetList(Ingredients?.Select(e => e.FormattedPercentageOfDailyAllowance).ToArray());
+        public string DailyValues => Ingredients?.Select(e => e.FormattedPercentageOfDailyAllowance).ToArray().ToDisplayList();
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.RecommendationsLabel)]
         public string RecommendationsText => $"Take {FullDosageLabellext} {Recommendations.GetAttribute<EnumDescriptionAttribute>().GetDescription().ToLower()}";
-
-        public string GetList(string[] items)
-        {
-            return items == null ? string.Empty : string.Join(Environment.NewLine, items);
-        }
-
+        
         #endregion
 
         public static List<PropertyInfo> GetProductLabelProperties() => typeof(Product).GetProperties()

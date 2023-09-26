@@ -2035,6 +2035,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invoice Date.
+        /// </summary>
+        public static string InvoiceDateLabel {
+            get {
+                return ResourceManager.GetString("InvoiceDateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invoice Numbers.
+        /// </summary>
+        public static string InvoiceNumbersLabel {
+            get {
+                return ResourceManager.GetString("InvoiceNumbersLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is Complete.
         /// </summary>
         public static string IsCompleteLabel {
@@ -2959,6 +2977,15 @@ namespace K9.Globalisation {
         public static string PricePerCredit {
             get {
                 return ResourceManager.GetString("PricePerCredit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prices.
+        /// </summary>
+        public static string PricesListLabel {
+            get {
+                return ResourceManager.GetString("PricesListLabel", resourceCulture);
             }
         }
         
@@ -3940,6 +3967,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sub Total.
+        /// </summary>
+        public static string SubTotalLabel {
+            get {
+                return ResourceManager.GetString("SubTotalLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Suggested Retail Price.
         /// </summary>
         public static string SuggestedRetailPriceLabel {
@@ -4212,6 +4248,15 @@ namespace K9.Globalisation {
         public static string TotalProductsPriceLabel {
             get {
                 return ResourceManager.GetString("TotalProductsPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Totals.
+        /// </summary>
+        public static string TotalsLabel {
+            get {
+                return ResourceManager.GetString("TotalsLabel", resourceCulture);
             }
         }
         

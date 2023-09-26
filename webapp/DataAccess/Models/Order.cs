@@ -10,13 +10,17 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 using System.Web.Mvc;
+using K9.DataAccessLayer.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Orders, PluralName = Globalisation.Strings.Names.Orders, Name = Globalisation.Strings.Names.Order)]
     public class Order : ObjectBase
     {
+        public const int MaxInvoiceProductNameLength = 24;
+
         [UIHint("Order")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
         public int OrderId => Id;
@@ -127,6 +131,9 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double TotalProductPacksPrice => ProductPacks?.Sum(e => e.TotalPrice) ?? 0;
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        public string FormattedTotalPrice => double.Parse(TotalPrice.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
         [UIHint("Percentage")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public double? Discount { get; set; }
@@ -138,15 +145,59 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double DiscountAmount => TotalPrice * (Discount / 100 ?? 0);
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
+        public string FormattedDiscountAmount => double.Parse(DiscountAmount.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         [DataType(DataType.Currency)]
         public double GrandTotal => TotalPrice - DiscountAmount;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
+        public string FormattedGrandTotal => double.Parse(GrandTotal.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         public int TotalProducts => Products?.Sum(e => e.Amount) ?? 0;
 
         public int TotalProductPacks => ProductPacks?.Sum(e => e.Amount) ?? 0;
 
         public virtual IEnumerable<OrderProduct> OrderProducts { get; set; }
+        
+        #region Invoice
+
+        private int TotalItems => Products?.Count ?? 0 + ProductPacks?.Count ?? 0;
+
+        public string InvoiceNumbersText => GetInvoiceNumbersText();
+
+        private string GetInvoiceNumbersText()
+        {
+            var sb = new StringBuilder();
+            for (int i = 0; i < TotalItems; i++)
+            {
+                sb.AppendLine(i.ToString());
+            }
+            return sb.ToString();
+        }
+
+        private List<OrderProduct> GetOrderedProducts()
+        {
+            return Products.OrderBy(e => e.Name).ToList();
+        }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductsLabel)]
+        public string ProductsList => GetOrderedProducts().Select(e => e.ProductName.Substring(0, MaxInvoiceProductNameLength)).ToDisplayList();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantitiesLabel)]
+        public string QuantitiesList => GetOrderedProducts().Select(e => e.Amount.ToString()).ToDisplayList();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PricesListLabel)]
+        public string PricesList => GetOrderedProducts().Select(e => e.FormattedPrice).ToDisplayList();
+        
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalsLabel)]
+        public string TotalsList => GetOrderedProducts().Select(e => e.FormattedTotalPrice).ToDisplayList();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTotalLabel)]
+        public string SubTotal => FormattedTotalPrice;
+
+        #endregion
 
         [NotMapped]
         public List<OrderProduct> Products { get; set; }

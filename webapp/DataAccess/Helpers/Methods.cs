@@ -1,5 +1,6 @@
 ﻿using HtmlAgilityPack;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -19,6 +20,16 @@ namespace K9.DataAccessLayer.Helpers
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(html);
             return htmlDoc.DocumentNode.InnerText;
+        }
+
+        public static string ToDisplayList(this string[] items)
+        {
+            return items == null ? string.Empty : string.Join(Environment.NewLine, items);
+        }
+
+        public static string ToDisplayList(this IEnumerable<string> items)
+        {
+            return items.ToArray().ToDisplayList();
         }
 
         public static string RemoveEmptyLines(this string value)

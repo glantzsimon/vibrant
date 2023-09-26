@@ -5,6 +5,7 @@ using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Attributes;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -46,6 +47,9 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double Price => GetPrice();
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        public string FormattedPrice => double.Parse(Price.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
         private double GetPrice()
         {
             switch (PriceTier)
@@ -70,9 +74,12 @@ namespace K9.DataAccessLayer.Models
             }
         }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
         public double TotalPrice => Amount * Price;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        public string FormattedTotalPrice => double.Parse(TotalPrice.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         public string FormattedAmount =>
             $"{Amount} {PackageType}";
