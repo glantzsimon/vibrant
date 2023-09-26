@@ -1333,7 +1333,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Download Product List as CSV.
+        ///   Looks up a localized string similar to Download as CSV.
         /// </summary>
         public static string DownloadAsCsv {
             get {

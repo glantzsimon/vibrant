@@ -11,6 +11,7 @@ using K9.WebApplication.Services;
 using ServiceStack.Text;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
@@ -153,18 +154,39 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("OrderReview", new { orderId = order.Id });
         }
 
-        [Route("orders/export/csv")]
-        public ActionResult DownloadOrderCsv(int? id = 0)
+        [Route("orders/exportsingle/csv")]
+        public ActionResult DownloadOrderCsv(int id)
         {
             var order = _orderService.Find(id);
+            var orderItems = new List<OrderItem>();
+            
             var orderItem = order.MapTo<OrderItem>();
             orderItem.CreatedOn = DateTime.Today;
+            orderItems.Add(orderItem);
 
-            var orderItems = new List<OrderItem>
+            var data = orderItems.ToCsv();
+
+            Response.Clear();
+            Response.ContentType = "application/CSV";
+            Response.AddHeader("content-disposition", $"attachment; filename=\"Order.csv\"");
+            Response.Write(data);
+            Response.End();
+
+            return new EmptyResult();
+        }
+
+        [Route("orders/export/csv")]
+        public ActionResult DownloadOrdersCsv()
+        {
+            var orders = _orderService.List(true).Where(e => !e.IsPaid).ToList();
+            var orderItems = new List<OrderItem>();
+
+            foreach (var order in orders)
             {
-                orderItem
-            };
-            
+                var orderItem = order.MapTo<OrderItem>();
+                orderItem.CreatedOn = DateTime.Today;
+                orderItems.Add(orderItem);
+            }
             var data = orderItems.ToCsv();
 
             Response.Clear();

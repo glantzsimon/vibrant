@@ -179,7 +179,7 @@ namespace K9.DataAccessLayer.Models
 
         private List<OrderProduct> GetOrderedProducts()
         {
-            return Products.OrderBy(e => e.Name).ToList();
+            return Products?.OrderBy(e => e.Name).ToList() ?? new List<OrderProduct>();
         }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductsLabel)]

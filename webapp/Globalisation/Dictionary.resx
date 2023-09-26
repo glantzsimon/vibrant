@@ -1313,7 +1313,7 @@
     <value>Daily Values</value>
   </data>
   <data name="DownloadAsCsv" xml:space="preserve">
-    <value>Download Product List as CSV</value>
+    <value>Download as CSV</value>
   </data>
   <data name="EditProductQuantities" xml:space="preserve">
     <value>Edit Number of Products</value>
