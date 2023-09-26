@@ -36,8 +36,9 @@ namespace K9.WebApplication.Controllers
             RecordBeforeCreated += ProductsController_RecordBeforeCreated;
             RecordBeforeUpdated += ProductsController_RecordBeforeUpdated;
             RecordBeforeDetails += ProductsController_RecordBeforeDetails;
+            RecordBeforeDeleted += ProductsController_RecordBeforeDeleted;
         }
-
+        
         [RequirePermissions(Permission = Permissions.Edit)]
         public ActionResult DuplicateProduct(int id)
         {
@@ -200,6 +201,17 @@ namespace K9.WebApplication.Controllers
         {
             var product = e.Item as Product;
             product = _productService.GetFullProduct(product);
+        }
+
+        private void ProductsController_RecordBeforeDeleted(object sender, CrudEventArgs e)
+        {
+            var product = e.Item as Product;
+            product = _productService.GetFullProduct(product);
+
+            foreach (var productIngredient in product.Ingredients)
+            {
+                _productIngredientsRepository.Delete(productIngredient.Id);
+            }
         }
     }
 }

@@ -31,8 +31,10 @@ namespace K9.WebApplication.Controllers
             RecordBeforeDetails += OrdersController_RecordBeforeDetails;
             RecordBeforeUpdate += OrdersController_RecordBeforeUpdate;
             RecordBeforeUpdated += OrdersController_RecordBeforeUpdated;
+            RecordBeforeDelete += OrdersController_RecordBeforeDelete;
+            RecordBeforeDeleted += OrdersController_RecordBeforeDeleted;
         }
-
+        
         public ActionResult EditProducts(int id = 0)
         {
             return RedirectToAction("EditProductsForOrder", "OrderProducts", new { id });
@@ -117,17 +119,30 @@ namespace K9.WebApplication.Controllers
         [RequirePermissions(Permission = Permissions.Edit)]
         public ActionResult UpdateOrderProgress(Order order)
         {
-            foreach (var orderProduct in order.Products)
+            if (order.Products != null)
             {
-                var item = _orderProductsRepository.Find(orderProduct.Id);
-                item.AmountCompleted = orderProduct.AmountCompleted;
-                _orderProductsRepository.Update(item);
+                foreach (var orderProduct in order.Products)
+                {
+                    var item = _orderProductsRepository.Find(orderProduct.Id);
+                    item.AmountCompleted = orderProduct.AmountCompleted;
+                    _orderProductsRepository.Update(item);
+                }
             }
-            foreach (var pack in order.ProductPacks)
+
+            if (order.ProductPacks != null)
             {
-                var item = _orderProductPackRepository.Find(pack.Id);
-                item.AmountCompleted = pack.AmountCompleted;
-                _orderProductPackRepository.Update(item);
+                foreach (var pack in order.ProductPacks)
+                {
+                    var item = _orderProductPackRepository.Find(pack.Id);
+                    item.AmountCompleted = pack.AmountCompleted;
+                    _orderProductPackRepository.Update(item);
+                }
+            }
+
+            if (order.IsOrderMade())
+            {
+                order.MadeOn = DateTime.Today;
+                Repository.Update(order);
             }
 
             return RedirectToAction("OrderReview", new { orderId = order.Id });
@@ -190,6 +205,28 @@ namespace K9.WebApplication.Controllers
         {
             var order = e.Item as Order;
             order.FullName = order.GetFullName();
+        }
+
+        private void OrdersController_RecordBeforeDelete(object sender, CrudEventArgs e)
+        {
+            var order = e.Item as Order;
+            order = _orderService.GetFullOrder(order);
+        }
+
+        private void OrdersController_RecordBeforeDeleted(object sender, CrudEventArgs e)
+        {
+            var order = e.Item as Order;
+            order = _orderService.GetFullOrder(order);
+
+            foreach (var orderProduct in order.Products)
+            {
+                _orderProductsRepository.Delete(orderProduct.Id);
+            }
+
+            foreach (var orderProductPack in order.ProductPacks)
+            {
+                _orderProductPackRepository.Delete(orderProductPack.Id);
+            }
         }
     }
 }

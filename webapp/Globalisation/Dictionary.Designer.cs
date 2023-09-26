@@ -3678,6 +3678,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show Completed.
+        /// </summary>
+        public static string ShowCompletedLabel {
+            get {
+                return ResourceManager.GetString("ShowCompletedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Side Effects.
         /// </summary>
         public static string SideEffectsLabel {

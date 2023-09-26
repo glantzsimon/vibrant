@@ -18,6 +18,7 @@ namespace K9.DataAccessLayer.Models
     public class Order : ObjectBase
     {
         [UIHint("Order")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
         public int OrderId => Id;
 
         public Guid ExternalId { get; set; }
@@ -152,8 +153,15 @@ namespace K9.DataAccessLayer.Models
 
         public virtual IEnumerable<OrderProductPack> OrderProductPacks { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShowCompletedLabel)]
+        [NotMapped]
+        public bool ShowCompleted { get; set; }
+
         [NotMapped]
         public List<OrderProductPack> ProductPacks { get; set; }
+
+        public bool IsOrderMade() =>
+            Products?.Count(e => e.AmountRemaining > 0) + ProductPacks?.Count(e => e.AmountRemaining > 0) == 0;
 
         private EOrderStatus GetOrderStatus()
         {

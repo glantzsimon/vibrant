@@ -25,6 +25,7 @@
             public const string NumberOfCreditsLabel = "NumberOfCreditsLabel";
             public const string CreditsPurchaseAmountLabel = "CreditsPurchaseAmountLabel";
             public const string TotalPriceLabel = "TotalPriceLabel";
+            public const string ShowCompletedLabel = "ShowCompletedLabel";
             public const string GrandTotalLabel = "GrandTotalLabel";
             public const string TotalProductsPriceLabel = "TotalProductsPriceLabel";
             public const string TotalProductPacksPriceLabel = "TotalProductPacksPriceLabel";

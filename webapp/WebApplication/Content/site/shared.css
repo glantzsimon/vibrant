@@ -163,6 +163,14 @@
     padding-left: 5px;
 }
 
+.padding-left-16 {
+    padding-left: 16px;
+}
+
+.padding-left-18 {
+    padding-left: 18px;
+}
+
 .padding-left-20-desktop {
     padding-left: 20px;
 }
@@ -189,7 +197,11 @@
 }
 
 .padding-top-15 {
-    padding-top: 15px;
+    padding-top: 15px !important;
+}
+
+.padding-top-18 {
+    padding-top: 18px !important;
 }
 
 .padding-bottom-0 {
@@ -218,6 +230,10 @@
 
 .border-top-2 {
     border-top: 2px !important;
+}
+
+.border-bottom-1 {
+    border-bottom: 1px solid #ddd !important;
 }
 
 .bold {
@@ -286,4 +302,8 @@
 
 .zoom-50 {
     zoom: 50%;
+}
+
+.hidden-rows {
+    background: greenyellow;
 }

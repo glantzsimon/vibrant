@@ -1537,6 +1537,9 @@
   <data name="SeeAllProductPacks" xml:space="preserve">
     <value>See All Product Packs</value>
   </data>
+  <data name="ShowCompletedLabel" xml:space="preserve">
+    <value>Show Completed</value>
+  </data>
   <data name="TotalProductPacksPriceLabel" xml:space="preserve">
     <value>Total Product Packs Price</value>
   </data>
