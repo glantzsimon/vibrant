@@ -14,13 +14,12 @@
     AllowDelete = ((BaseController<Order>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     VisibleColumns = new List<string>
     {
+        "FullName",
         "CreateOn",
         "UserName",
         "ContactName",
         "RequestedOn",
-        "DueBy",
-        "StartedOn",
-        "CompletedOn"
+        "DueBy"
 
     },
     CustomButtons = new List<IButton>

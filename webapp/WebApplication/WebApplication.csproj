@@ -1440,6 +1440,7 @@
     <Content Include="Views\Shared\EditorTemplates\Order.cshtml" />
     <Content Include="Views\Orders\_ProductsReview.cshtml" />
     <Content Include="Views\Orders\_ProductPacksReview.cshtml" />
+    <Content Include="Views\Orders\_DisplaySummary.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
