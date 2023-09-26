@@ -315,9 +315,9 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\Constants.cs" />
-    <Compile Include="Controllers\OrderItemProductPacksController.cs" />
-    <Compile Include="Controllers\OrderItemProductsController.cs" />
-    <Compile Include="Controllers\OrderItemsController.cs" />
+    <Compile Include="Controllers\OrderProductPacksController.cs" />
+    <Compile Include="Controllers\OrderProductsController.cs" />
+    <Compile Include="Controllers\ProductPackController.cs" />
     <Compile Include="Controllers\ProductPackProductsController.cs" />
     <Compile Include="Controllers\ProductPacksController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
@@ -1358,7 +1358,6 @@
     <Content Include="Views\Product\_Ingredients.cshtml" />
     <Content Include="Views\Products\_DisplaySummary.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\ProductIngredients.cshtml" />
     <Content Include="Views\Products\EditIngredientQuantities.cshtml" />
     <Content Include="Views\Products\_EditIngredientsFields.cshtml" />
     <Content Include="Views\Products\_ProductLabSheet.cshtml" />
@@ -1388,11 +1387,8 @@
     <Content Include="Views\Products\_EditProductFields.cshtml" />
     <Content Include="Views\Products\_IngredientsSummary.cshtml" />
     <Content Include="Views\Product\Link.cshtml" />
-    <Content Include="Views\Shared\ProductMenuList.cshtml" />
-    <Content Include="Views\Shared\IngredientMenuList.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ProductPack.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ProductPack.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\ProductPackProducts.cshtml" />
     <Content Include="Views\ProductPacks\_DisplayFields.cshtml" />
     <Content Include="Views\ProductPacks\_DisplaySummary.cshtml" />
     <Content Include="Views\ProductPacks\_EditFields.cshtml" />
@@ -1409,7 +1405,6 @@
     <Content Include="Views\Product\PackLink.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SaleItems.cshtml" />
     <Content Include="Views\Orders\_DisplayFields.cshtml" />
-    <Content Include="Views\Orders\_DisplaySummary.cshtml" />
     <Content Include="Views\Orders\_EditFields.cshtml" />
     <Content Include="Views\Orders\_ProductsSummary.cshtml" />
     <Content Include="Views\Orders\Create.cshtml" />
@@ -1417,23 +1412,6 @@
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
-    <Content Include="Views\OrderItems\_DisplayFields.cshtml" />
-    <Content Include="Views\OrderItems\_DisplaySummary.cshtml" />
-    <Content Include="Views\OrderItems\_EditFields.cshtml" />
-    <Content Include="Views\OrderItems\_EditProductPackFields.cshtml" />
-    <Content Include="Views\OrderItems\_EditProductsFields.cshtml" />
-    <Content Include="Views\OrderItems\_ProductsSummary.cshtml" />
-    <Content Include="Views\OrderItems\Create.cshtml" />
-    <Content Include="Views\OrderItems\Delete.cshtml" />
-    <Content Include="Views\OrderItems\Details.cshtml" />
-    <Content Include="Views\OrderItems\Edit.cshtml" />
-    <Content Include="Views\OrderItems\EditList.cshtml" />
-    <Content Include="Views\OrderItems\EditProductQuantities.cshtml" />
-    <Content Include="Views\OrderItems\Index.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\OrderItem.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\OrderItemProducts.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\OrderItemProductPacks.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\OrderOrderItems.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ProductRecommendations.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Country.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Country.cshtml" />
@@ -1441,6 +1419,20 @@
     <Content Include="Views\Contacts\_AddressLabel.cshtml" />
     <Content Include="Views\Shared\_LayoutPrint.cshtml" />
     <Content Include="Views\Contacts\_AddressPrintPage.cshtml" />
+    <Content Include="Views\Orders\EditProductQuantities.cshtml" />
+    <Content Include="Views\Orders\EditProductPackQuantities.cshtml" />
+    <Content Include="Views\Orders\_EditProductsFields.cshtml" />
+    <Content Include="Views\Orders\_EditProductPacksFields.cshtml" />
+    <Content Include="Views\Orders\_ProductPackSummary.cshtml" />
+    <Content Include="Views\ProductPack\_Ingredients.cshtml" />
+    <Content Include="Views\ProductPack\_ProductPack.cshtml" />
+    <Content Include="Views\ProductPack\_ProductPackList.cshtml" />
+    <Content Include="Views\ProductPack\Details.cshtml" />
+    <Content Include="Views\ProductPack\Index.cshtml" />
+    <Content Include="Views\ProductPack\Link.cshtml" />
+    <Content Include="Views\Orders\_CollectionsButtons.cshtml" />
+    <Content Include="Views\ProductPacks\_CollectionsButtons.cshtml" />
+    <Content Include="Views\Products\_CollectionsButtons.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

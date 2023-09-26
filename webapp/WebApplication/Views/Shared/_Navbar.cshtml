@@ -78,14 +78,15 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Products</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
-                                @Html.Action("ProductMenuList", "Shared")
+                                <li class="@ViewContext.GetActiveClass("Index", "Product") sub-item"><a href="@Url.Action("Index", "Product")">@Dictionary.Products</a></li>
+                                <li class="@ViewContext.GetActiveClass("Index", "ProductPack") sub-item"><a href="@Url.Action("Index", "ProductPack")">@Dictionary.ProductPacks</a></li>
                             </ul>
                         </li>
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Ingredients</span> <span class="caret"></span></a>
                             <ul class="dropdown-menu nav navbar-nav">
-                                @*@Html.Action("IngredientMenuList", "Shared")*@
+                                <li class="@ViewContext.GetActiveClass("Index", "Ingredient") sub-item"><a href="@Url.Action("Index", "Ingredient")">@Dictionary.IngredientsList</a></li>
                             </ul>
                         </li>
 

@@ -196,6 +196,7 @@
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
     <Compile Include="Enums\EIngredientType.cs" />
     <Compile Include="Enums\EOrderStatus.cs" />
+    <Compile Include="Enums\EPriceTier.cs" />
     <Compile Include="Enums\EOrderType.cs" />
     <Compile Include="Enums\EProductRecommendation.cs" />
     <Compile Include="Enums\EProductType.cs" />
@@ -293,13 +294,20 @@
     <Compile Include="Migrations\202309180452487_AddAddressToContact.Designer.cs">
       <DependentUpon>202309180452487_AddAddressToContact.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309210701315_UpdateOrderItems.cs" />
+    <Compile Include="Migrations\202309210701315_UpdateOrderItems.Designer.cs">
+      <DependentUpon>202309210701315_UpdateOrderItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309260726176_UpdateOrders.cs" />
+    <Compile Include="Migrations\202309260726176_UpdateOrders.Designer.cs">
+      <DependentUpon>202309260726176_UpdateOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
-    <Compile Include="Models\OrderItemProductPack.cs" />
-    <Compile Include="Models\OrderItemProduct.cs" />
+    <Compile Include="Models\OrderProductPack.cs" />
+    <Compile Include="Models\OrderProduct.cs" />
     <Compile Include="Models\ProductPack.cs" />
     <Compile Include="Models\ProductPackProduct.cs" />
-    <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\ProductIngredient.cs" />
     <Compile Include="Models\Product.cs" />
@@ -399,6 +407,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309180452487_AddAddressToContact.resx">
       <DependentUpon>202309180452487_AddAddressToContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309210701315_UpdateOrderItems.resx">
+      <DependentUpon>202309210701315_UpdateOrderItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309260726176_UpdateOrders.resx">
+      <DependentUpon>202309260726176_UpdateOrders.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

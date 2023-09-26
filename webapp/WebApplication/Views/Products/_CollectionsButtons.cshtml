@@ -1,0 +1,12 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model Product
+
+@if (Model.Id > 0)
+{
+    @Html.BootstrapActionLinkButton(Dictionary.EditIngredients, "EditIngredients", "Products", new { id = Model.Id }, "", EButtonClass.Info)
+    if (Model.Ingredients.Any())
+    {
+        @Html.BootstrapActionLinkButton(Dictionary.EditIngredientQuantities, "EditIngredientQuantities", "Products", new { id = Model.Id }, "", EButtonClass.Info)
+    }
+}

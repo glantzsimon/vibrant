@@ -14,9 +14,6 @@
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.ContactId)
     </div>
-    <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.ProductPackProductsId)
-    </div>
 </div>
 
 <hr />
@@ -44,4 +41,13 @@
 </div>
 <div class="row">
     @Html.BootstrapEditorFor(model => model.Dosage)
+</div>
+
+<hr />
+
+<div class="row">
+    @Html.BootstrapEditorFor(model => model.ImageFileSource)
+</div>
+<div class="row">
+    @Html.BootstrapEditorFor(model => model.VideoFileSource)
 </div>

@@ -2,7 +2,6 @@
 using K9.Base.DataAccessLayer.Database;
 using K9.DataAccessLayer.Database;
 using K9.DataAccessLayer.Database.Seeds;
-using System.Data.Entity.Migrations;
 using K9.WebApplication.Config;
 using WebMatrix.WebData;
 
@@ -12,8 +11,8 @@ namespace K9.WebApplication
     {
         public static void InitialiseDatabase(SeedConfiguration config)
         {
-            var migrator = new DbMigrator(new DatabaseInitialiserLocal(config.EnableSeed));
-            migrator.Update();
+            //var migrator = new DbMigrator(new DatabaseInitialiserLocal(config.EnableSeed));
+            //migrator.Update();
         }
 
         public static void InitialiseWebsecurity()

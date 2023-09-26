@@ -286,6 +286,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Awaiting Payment.
+        /// </summary>
+        public static string AwaitingPayment {
+            get {
+                return ResourceManager.GetString("AwaitingPayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string Back {
@@ -529,6 +538,15 @@ namespace K9.Globalisation {
         public static string Checkout {
             get {
                 return ResourceManager.GetString("Checkout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check out our product packs!.
+        /// </summary>
+        public static string CheckOutOurProductPacks {
+            get {
+                return ResourceManager.GetString("CheckOutOurProductPacks", resourceCulture);
             }
         }
         
@@ -1108,6 +1126,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Discount.
+        /// </summary>
+        public static string DiscountLabel {
+            get {
+                return ResourceManager.GetString("DiscountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Donate.
         /// </summary>
         public static string Donate {
@@ -1410,6 +1437,24 @@ namespace K9.Globalisation {
         public static string EditOrderItems {
             get {
                 return ResourceManager.GetString("EditOrderItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Number of Product Packs.
+        /// </summary>
+        public static string EditProductPackQuantities {
+            get {
+                return ResourceManager.GetString("EditProductPackQuantities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Product Packs.
+        /// </summary>
+        public static string EditProductPacks {
+            get {
+                return ResourceManager.GetString("EditProductPacks", resourceCulture);
             }
         }
         
@@ -2527,74 +2572,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Order Item.
+        ///   Looks up a localized string similar to Order Item Type.
         /// </summary>
-        public static string OrderItem {
+        public static string OrderItemTypeLabel {
             get {
-                return ResourceManager.GetString("OrderItem", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Order Item.
-        /// </summary>
-        public static string OrderItemLabel {
-            get {
-                return ResourceManager.GetString("OrderItemLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Order Item Product.
-        /// </summary>
-        public static string OrderItemProduct {
-            get {
-                return ResourceManager.GetString("OrderItemProduct", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Order Item Product Pack.
-        /// </summary>
-        public static string OrderItemProductPack {
-            get {
-                return ResourceManager.GetString("OrderItemProductPack", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Order Item Product Packs.
-        /// </summary>
-        public static string OrderItemProductPacks {
-            get {
-                return ResourceManager.GetString("OrderItemProductPacks", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Order Item Products.
-        /// </summary>
-        public static string OrderItemProducts {
-            get {
-                return ResourceManager.GetString("OrderItemProducts", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Order Items.
-        /// </summary>
-        public static string OrderItems {
-            get {
-                return ResourceManager.GetString("OrderItems", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Order Items.
-        /// </summary>
-        public static string OrderItemsLabel {
-            get {
-                return ResourceManager.GetString("OrderItemsLabel", resourceCulture);
+                return ResourceManager.GetString("OrderItemTypeLabel", resourceCulture);
             }
         }
         
@@ -2604,6 +2586,42 @@ namespace K9.Globalisation {
         public static string OrderLabel {
             get {
                 return ResourceManager.GetString("OrderLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Product.
+        /// </summary>
+        public static string OrderProduct {
+            get {
+                return ResourceManager.GetString("OrderProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Product Pack.
+        /// </summary>
+        public static string OrderProductPack {
+            get {
+                return ResourceManager.GetString("OrderProductPack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Product Packs.
+        /// </summary>
+        public static string OrderProductPacks {
+            get {
+                return ResourceManager.GetString("OrderProductPacks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Products.
+        /// </summary>
+        public static string OrderProducts {
+            get {
+                return ResourceManager.GetString("OrderProducts", resourceCulture);
             }
         }
         
@@ -2918,6 +2936,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Price Tier.
+        /// </summary>
+        public static string PriceTierLabel {
+            get {
+                return ResourceManager.GetString("PriceTierLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pricing Information.
         /// </summary>
         public static string PricingInfo {
@@ -3025,11 +3052,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Product Packs.
+        /// </summary>
+        public static string ProductPacksLabel {
+            get {
+                return ResourceManager.GetString("ProductPacksLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Product Packs List.
         /// </summary>
         public static string ProductPacksList {
             get {
                 return ResourceManager.GetString("ProductPacksList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Packs Summary.
+        /// </summary>
+        public static string ProductPackSummary {
+            get {
+                return ResourceManager.GetString("ProductPackSummary", resourceCulture);
             }
         }
         
@@ -3390,6 +3435,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Regular Price.
+        /// </summary>
+        public static string RegularPrice {
+            get {
+                return ResourceManager.GetString("RegularPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Requested On.
         /// </summary>
         public static string RequestedOnLabel {
@@ -3467,6 +3521,15 @@ namespace K9.Globalisation {
         public static string SeeAllIngredients {
             get {
                 return ResourceManager.GetString("SeeAllIngredients", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to See All Product Packs.
+        /// </summary>
+        public static string SeeAllProductPacks {
+            get {
+                return ResourceManager.GetString("SeeAllProductPacks", resourceCulture);
             }
         }
         

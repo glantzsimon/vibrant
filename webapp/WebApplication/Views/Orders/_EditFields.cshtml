@@ -37,7 +37,7 @@
     </div>
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.DueBy)
-    </div>   
+    </div>
 </div>
 <div class="row">
     <div class="col-sm-6">
@@ -56,10 +56,21 @@
     </div>
 </div>
 
-<hr />
+<br />
+<div class="row">
+    <div class="col-sm-12">
+        <h3>@Dictionary.Details</h3>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-sm-12">
-        @Html.BootstrapEditorFor(model => model.OrderItemsId)
+        @Html.CollapsiblePanel(Dictionary.ProductSummary, Html.Partial("../Orders/_ProductsSummary").ToString())
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        @Html.CollapsiblePanel(Dictionary.ProductPackSummary, Html.Partial("../Orders/_ProductPackSummary").ToString())
     </div>
 </div>

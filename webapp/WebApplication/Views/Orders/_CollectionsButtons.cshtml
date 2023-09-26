@@ -1,0 +1,18 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model Order
+
+@if (Model.Id > 0)
+{
+    @Html.BootstrapActionLinkButton(Dictionary.EditProducts, "EditProducts", "Orders", new { id = Model.Id }, "", EButtonClass.Info)
+    if (Model.Products.Any())
+    {
+        @Html.BootstrapActionLinkButton(Dictionary.EditProductQuantities, "EditProductQuantities", "Orders", new { id = Model.Id }, "", EButtonClass.Info)
+    }
+
+    @Html.BootstrapActionLinkButton(Dictionary.EditProductPacks, "EditProductPacks", "Orders", new { id = Model.Id }, "", EButtonClass.Info)
+    if (Model.ProductPacks.Any())
+    {
+        @Html.BootstrapActionLinkButton(Dictionary.EditProductPackQuantities, "EditProductPackQuantities", "Orders", new { id = Model.Id }, "", EButtonClass.Info)
+    }
+}

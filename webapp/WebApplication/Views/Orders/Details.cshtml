@@ -15,5 +15,7 @@
         <hr />
         @Html.BootstrapBackToListButton()
         @Html.CrudButtonsForModel(Model)
+
+        @Html.Partial("_CollectionsButtons", Model)
     }
 }

@@ -10,7 +10,9 @@ namespace K9.DataAccessLayer.Enums
         InProgress = 2,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ReadyForDelivery)]
         ReadyForDelivery = 3,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ReadyForDelivery)]
-        Complete = 4,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.AwaitingPayment)]
+        AwaitingPayment = 4,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Complete)]
+        Complete = 5,
     }
 }

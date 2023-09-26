@@ -53,12 +53,7 @@ namespace K9.DataAccessLayer.Models
 
         [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
         public string ContactName { get; set; }
-
-        [UIHint("ProductIngredients")]
-        [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.IngredientsLabel)]
-        public int ProductIngredientsId => Id;
-
+        
         public virtual IEnumerable<ProductIngredient> ProductIngredients { get; set; }
 
         [NotMapped]

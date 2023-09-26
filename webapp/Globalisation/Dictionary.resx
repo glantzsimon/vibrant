@@ -1387,26 +1387,17 @@
   <data name="Order" xml:space="preserve">
     <value>Order</value>
   </data>
-  <data name="OrderItem" xml:space="preserve">
-    <value>Order Item</value>
+  <data name="OrderProduct" xml:space="preserve">
+    <value>Order Product</value>
   </data>
-  <data name="OrderItemLabel" xml:space="preserve">
-    <value>Order Item</value>
+  <data name="OrderProductPack" xml:space="preserve">
+    <value>Order Product Pack</value>
   </data>
-  <data name="OrderItemProduct" xml:space="preserve">
-    <value>Order Item Product</value>
+  <data name="OrderProductPacks" xml:space="preserve">
+    <value>Order Product Packs</value>
   </data>
-  <data name="OrderItemProductPack" xml:space="preserve">
-    <value>Order Item Product Pack</value>
-  </data>
-  <data name="OrderItemProductPacks" xml:space="preserve">
-    <value>Order Item Product Packs</value>
-  </data>
-  <data name="OrderItemProducts" xml:space="preserve">
-    <value>Order Item Products</value>
-  </data>
-  <data name="OrderItems" xml:space="preserve">
-    <value>Order Items</value>
+  <data name="OrderProducts" xml:space="preserve">
+    <value>Order Products</value>
   </data>
   <data name="Orders" xml:space="preserve">
     <value>Orders</value>
@@ -1446,9 +1437,6 @@
   </data>
   <data name="MadeOnLabel" xml:space="preserve">
     <value>Made On</value>
-  </data>
-  <data name="OrderItemsLabel" xml:space="preserve">
-    <value>Order Items</value>
   </data>
   <data name="OrderStatusLabel" xml:space="preserve">
     <value>Order Status</value>
@@ -1497,5 +1485,38 @@
   </data>
   <data name="ViewContactAddressLabel" xml:space="preserve">
     <value>View Address Label</value>
+  </data>
+  <data name="AwaitingPayment" xml:space="preserve">
+    <value>Awaiting Payment</value>
+  </data>
+  <data name="DiscountLabel" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="EditProductPacks" xml:space="preserve">
+    <value>Edit Product Packs</value>
+  </data>
+  <data name="OrderItemTypeLabel" xml:space="preserve">
+    <value>Order Item Type</value>
+  </data>
+  <data name="PriceTierLabel" xml:space="preserve">
+    <value>Price Tier</value>
+  </data>
+  <data name="ProductPacksLabel" xml:space="preserve">
+    <value>Product Packs</value>
+  </data>
+  <data name="ProductPackSummary" xml:space="preserve">
+    <value>Product Packs Summary</value>
+  </data>
+  <data name="RegularPrice" xml:space="preserve">
+    <value>Regular Price</value>
+  </data>
+  <data name="CheckOutOurProductPacks" xml:space="preserve">
+    <value>Check out our product packs!</value>
+  </data>
+  <data name="EditProductPackQuantities" xml:space="preserve">
+    <value>Edit Number of Product Packs</value>
+  </data>
+  <data name="SeeAllProductPacks" xml:space="preserve">
+    <value>See All Product Packs</value>
   </data>
 </root>

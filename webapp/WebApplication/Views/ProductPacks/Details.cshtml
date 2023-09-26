@@ -22,7 +22,8 @@
         <hr />
         @Html.BootstrapBackToListButton()
         @Html.CrudButtonsForModel(Model)
-        @Html.BootstrapActionLinkButton(Dictionary.ExternalLink, "PackLink", "Product", new {id = Model.ExternalId}, "", EButtonClass.Success)
+        @Html.BootstrapActionLinkButton(Dictionary.ExternalLink, "Link", "ProductPack", new { id = Model.ExternalId }, "", EButtonClass.Success)
+        @Html.Partial("_CollectionsButtons")
     }
 }
 

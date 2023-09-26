@@ -11,17 +11,15 @@ namespace K9.WebApplication.Services
     {
         private readonly ILogger _logger;
         private readonly IRepository<Order> _ordersRepository;
-        private readonly IRepository<OrderItem> _orderItemsRepository;
-        private readonly IRepository<OrderItemProduct> _orderItemProductsRepository;
-        private readonly IRepository<OrderItemProductPack> _orderItemProductPacksRepository;
+        private readonly IRepository<OrderProduct> _orderProductsRepository;
+        private readonly IRepository<OrderProductPack> _orderProductPacksRepository;
 
-        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderItem> orderItemsRepository, IRepository<OrderItemProduct> orderItemProductsRepository, IRepository<OrderItemProductPack> orderItemProductPacksRepository)
+        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository)
         {
             _logger = logger;
             _ordersRepository = ordersRepository;
-            _orderItemsRepository = orderItemsRepository;
-            _orderItemProductsRepository = orderItemProductsRepository;
-            _orderItemProductPacksRepository = orderItemProductPacksRepository;
+            _orderProductsRepository = orderProductsRepository;
+            _orderProductPacksRepository = orderProductPacksRepository;
         }
 
         public Order Find(int id)
@@ -68,23 +66,10 @@ namespace K9.WebApplication.Services
             return order;
         }
 
-        public List<OrderItem> GetFullOrderItems(int orderId)
-        {
-            var orderItems = _orderItemsRepository.Find(e => e.OrderId == orderId).ToList();
-            foreach (var orderItem in orderItems)
-            {
-                orderItem.Products = _orderItemProductsRepository.Find(e => e.OrderItemId == orderItem.Id).ToList();
-                orderItem.ProductPacks = _orderItemProductPacksRepository.Find(e => e.OrderItemId == orderItem.Id).ToList();
-            }
-
-            return orderItems;
-        }
-
         public Order GetFullOrder(Order order)
         {
-            order.OrderItems = GetFullOrderItems(order.Id);
-            order.Products = order.OrderItems.SelectMany(e => e.Products).ToList();
-            order.ProductPacks = order.OrderItems.SelectMany(e => e.ProductPacks).ToList();
+            order.Products = _orderProductsRepository.Find(e => e.OrderId == order.Id).ToList();
+            order.ProductPacks = _orderProductPacksRepository.Find(e => e.OrderId == order.Id).ToList();
             return order;
         }
 

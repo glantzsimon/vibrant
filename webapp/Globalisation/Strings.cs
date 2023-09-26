@@ -32,11 +32,13 @@
             public const string ProfitMarginDiscount2Label = "ProfitMarginDiscount2Label";
             public const string ProfitMarginSmallPackDiscount1Label = "ProfitMarginSmallPackDiscount1Label";
             public const string ProfitMarginSmallPackDiscount2Label = "ProfitMarginSmallPackDiscount2Label";
+            public const string PriceTierLabel = "PriceTierLabel";
             public const string PriceDiscount1Label = "PriceDiscount1Label";
             public const string PriceDiscount2Label = "PriceDiscount2Label";
             public const string PriceSmallPackDiscount1Label = "PriceSmallPackDiscount1Label";
             public const string PriceSmallPackDiscount2Label = "PriceSmallPackDiscount2Label";
             public const string PriceLabel = "PriceLabel";
+            public const string DiscountLabel = "DiscountLabel";
             public const string PriceSmallPackLabel = "PriceSmallPackLabel";
             public const string CostOfMaterialsLabel = "CostOfMaterialsLabel";
             public const string CostPer100GramsLabel = "CostPer100GramsLabel";
@@ -132,6 +134,7 @@
             public const string ProductTypeLabel = "ProductTypeLabel";
             public const string ProductLabel = "Product";
             public const string OrderTypeLabel = "OrderTypeLabel";
+            public const string OrderItemTypeLabel = "OrderItemTypeLabel";
             public const string IngredientTypeLabel = "IngredientTypeLabel";
             public const string IngredientLabel = "Ingredient";
             public const string IngredientsLabel = "Ingredients";
@@ -140,6 +143,7 @@
             public const string AmountPerServingLabel = "AmountPerServingLabel";
             public const string ProductsLabel = "ProductsLabel";
             public const string ProductPackLabel = "ProductPackLabel";
+            public const string ProductPacksLabel = "ProductPacksLabel";
         }
 
         public static class Names
@@ -180,16 +184,15 @@
             public const string ProductInventoryItem = "ProductInventoryItem";
             public const string IngredientInventory = "IngredientInventory";
             public const string IngredientInventoryItem = "IngredientInventoryItem";
+            public const string RegularPrice = "RegularPrice";
             public const string Sale = "Sale";
             public const string Sales = "Sales";
             public const string Order = "Order";
             public const string Orders = "Orders";
-            public const string OrderItem = "OrderItem";
-            public const string OrderItems = "OrderItems";
-            public const string OrderItemProduct = "OrderItemProduct";
-            public const string OrderItemProducts = "OrderItemProducts";
-            public const string OrderItemProductPack = "OrderItemProductPack";
-            public const string OrderItemProductPacks = "OrderItemProductPacks";
+            public const string OrderProduct = "OrderProduct";
+            public const string OrderProducts = "OrderProducts";
+            public const string OrderProductPack = "OrderProductPack";
+            public const string OrderProductPacks = "OrderProductPacks";
             public const string Trial = "Trial";
             public const string Gift = "Gift";
             public const string HealthCoachingPackage = "HealthCoachingPackage";
@@ -245,6 +248,7 @@
             public const string Unspecified = "Unspecified";
             public const string Free = "Free";
             public const string Complete = "Complete";
+            public const string AwaitingPayment = "AwaitingPayment";
             public const string Yin = "Yin";
             public const string Yang = "Yang";
             public const string North = "North";

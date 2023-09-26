@@ -18,17 +18,40 @@
         "UserName",
         "ContactName",
         "RequestedOn",
-        "DueBy"
+        "DueBy",
+        "StartedOn",
+        "CompletedOn"
 
     },
     CustomButtons = new List<IButton>
     {
         new Button
         {
-            Action = "EditOrderItems",
+            Action = "EditProducts",
             Text = Dictionary.EditProducts,
             ButtonType = EButtonType.Primary,
             IconCssClass = "fa fa-pencil"
-        }
+        },
+        new Button
+        {
+            Action = "EditProductQuantities",
+            Text = Dictionary.EditProductQuantities,
+            ButtonType = EButtonType.Primary,
+            IconCssClass = "fa fa-pencil"
+        },
+        new Button
+        {
+            Action = "EditProductPacks",
+            Text = Dictionary.EditProductPacks,
+            ButtonType = EButtonType.Primary,
+            IconCssClass = "fa fa-pencil"
+        },
+        new Button
+        {
+            Action = "EditProductPackQuantities",
+            Text = Dictionary.EditProductPackQuantities,
+            ButtonType = EButtonType.Primary,
+            IconCssClass = "fa fa-pencil"
+        },
     }
 })

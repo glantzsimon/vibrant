@@ -10,6 +10,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Linq;
 using System.Web.Mvc;
+using K9.SharedLibrary.Enums;
+using K9.SharedLibrary.Models;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -33,11 +35,6 @@ namespace K9.DataAccessLayer.Models
 
         [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
         public string ContactName { get; set; }
-
-        [UIHint("ProductPackProducts")]
-        [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.ProductsLabel)]
-        public int ProductPackProductsId => Id;
 
         public virtual IEnumerable<ProductPackProduct> ProductPackProducts { get; set; }
 
@@ -98,6 +95,14 @@ namespace K9.DataAccessLayer.Models
         
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SeoFriendlyIdLabel)]
         public string SeoFriendlyId { get; set; }
+
+        [FileSourceInfo("upload/products", Filter = EFilesSourceFilter.Images)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]
+        public FileSource ImageFileSource { get; set; }
+
+        [FileSourceInfo("upload/products", Filter = EFilesSourceFilter.Videos)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadVideo)]
+        public FileSource VideoFileSource { get; set; }
 
         private double TotalProductsPrice => Products?.Sum(e => e.Product.Price) ?? 0;
     }

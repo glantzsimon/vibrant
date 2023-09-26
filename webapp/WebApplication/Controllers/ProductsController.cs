@@ -101,14 +101,6 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("EditIngredientsForProduct", "ProductIngredients", new { id });
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [RequirePermissions(Permission = Permissions.Edit)]
-        public ActionResult EditIngredientsForProduct(MultiSelectViewModel model)
-        {
-            return EditMultiple<Product, Ingredient>(model);
-        }
-
         public ActionResult EditList()
         {
             var products = Repository.List();

@@ -20,18 +20,6 @@ namespace K9.WebApplication.Controllers
             _ingredientService = ingredientService;
         }
 
-        [ChildActionOnly]
-        public ActionResult ProductMenuList()
-        {
-            return PartialView("ProductMenuList", _productService.List());
-        }
-
-        [ChildActionOnly]
-        public ActionResult IngredientMenuList()
-        {
-            return PartialView("IngredientMenuList", _ingredientService.List());
-        }
-
         public override string GetObjectName()
         {
             return string.Empty;

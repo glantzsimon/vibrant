@@ -1,0 +1,30 @@
+﻿@using System.Web.Mvc.Html
+@using K9.Base.WebApplication.ViewModels
+@model List<ProductPack>
+
+
+<div class="row text-center">
+    <div class="col-md-12">
+        <h1 class="margin-top-5 goldenrod">
+            @Dictionary.ProductPacks
+        </h1>
+    </div>
+</div>
+
+<hr />
+
+<article>
+    @if (Model.Any())
+    {
+        foreach (var productPack in Model)
+        {
+            <h5>@productPack.Name</h5>
+            <p>@MvcHtmlString.Create(productPack.ShortDescription)</p>
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Details", "ProductPack", new { seoFriendlyId = productPack.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Small)
+        }
+    }
+    else
+    {
+        @MvcHtmlString.Create(Dictionary.ComingSoon)
+    }
+</article>

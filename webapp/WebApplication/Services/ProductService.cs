@@ -102,6 +102,17 @@ namespace K9.WebApplication.Services
             return pack;
         }
 
+        public ProductPack FindPack(string seoFriendlyId)
+        {
+            var productPack = _productPackRepository.Find(e => e.SeoFriendlyId == seoFriendlyId).FirstOrDefault();
+            if (productPack != null)
+            {
+                productPack = GetFullProductPack(productPack);
+            }
+
+            return productPack;
+        }
+
         public Product GetFullProduct(Product product)
         {
             var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id)
@@ -189,6 +200,24 @@ namespace K9.WebApplication.Services
             }
 
             return products;
+        }
+
+        public List<ProductPack> ListProductPacks(bool retrieveFullProduct = false)
+        {
+            var productPacks = _productPackRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+            
+            if (retrieveFullProduct)
+            {
+                foreach (var pack in productPacks)
+                {
+                    foreach (var productPackProduct in pack.Products)
+                    {
+                        productPackProduct.Product = GetFullProduct(productPackProduct.Product);
+                    }
+                }
+            }
+
+            return productPacks;
         }
 
         public ProductPack GetFullProductPack(ProductPack productPack)

@@ -10,7 +10,7 @@ namespace K9.WebApplication.Services
         Order FindPrevious(int id);
         Order FindNext(int id);
         Order Find(Guid id);
-        Order GetFullOrder(Order product);
+        Order GetFullOrder(Order order);
 
         List<Order> List(bool retrieveFullOrder = false, bool includeCustomOrders = false);
     }

@@ -10,35 +10,35 @@ using K9.SharedLibrary.Authentication;
 
 namespace K9.WebApplication.Controllers
 {
-    public class ProductController : BasePureController
+    public class ProductPackController : BasePureController
     {
         private readonly IRepository<Product> _productsRepository;
         private readonly IProductService _productService;
 
-        public ProductController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Product> productsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProductService productService)
+        public ProductPackController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Product> productsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProductService productService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _productsRepository = productsRepository;
             _productService = productService;
         }
 
-        [Route("product/all")]
+        [Route("productpack/all")]
         public ActionResult Index()
         {
-            return View(_productService.List());
+            return View(_productService.ListProductPacks());
         }
 
-        [Route("product/{seoFriendlyId}")]
+        [Route("productpack/{seoFriendlyId}")]
         public ActionResult Details(string seoFriendlyId)
         {
-            var product = _productService.Find(seoFriendlyId);
-            if (product == null)
+            var productPack = _productService.FindPack(seoFriendlyId);
+            if (productPack == null)
             {
                 return HttpNotFound();
             }
             
-            LoadUploadedFiles(product);
-            return View(product);
+            LoadUploadedFiles(productPack);
+            return View(productPack);
         }
 
         [Authorize]
@@ -49,12 +49,12 @@ namespace K9.WebApplication.Controllers
                 return HttpNotFound();
             }
 
-            var product = _productService.Find(id);
-            if (product == null)
+            var productPack = _productService.FindPack(id);
+            if (productPack == null)
             {
                 return HttpNotFound();
             }
-            return View("Link", product);
+            return View("Link", productPack);
         }
         
         public override string GetObjectName()

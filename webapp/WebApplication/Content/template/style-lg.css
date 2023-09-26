@@ -4,6 +4,10 @@
         margin-right: 2px;
     }
 
+    form .btn:not(:last-of-type) {
+        margin-right: 6px;
+    }
+
     form .well .col-sm-6, .well form .col-sm-6,
     form .well .col-sm-12, .well form .col-sm-12 {
         padding: 0;

@@ -104,24 +104,24 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.OrderStatusLabel)]
         public string OrderStatusText => OrderStatus.GetAttribute<EnumDescriptionAttribute>().GetDescription();
-
-        [UIHint("OrderOrderItems")]
-        [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.OrderItemsLabel)]
-        public int OrderItemsId => Id;
-
-
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [DataType(DataType.Currency)]
-        public double Price => OrderItems?.Sum(e => e.Price) ?? 0;
+        public double TotalPrice => Products?.Sum(e => e.TotalPrice) + ProductPacks?.Sum(e => e.TotalPrice) ?? 0;
 
-        public virtual IEnumerable<OrderItem> OrderItems { get; set; }
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
+        [DataType(DataType.Currency)]
+        public double? Discount { get; set; }
+
+        public virtual IEnumerable<OrderProduct> OrderProducts { get; set; }
 
         [NotMapped]
-        public List<OrderItemProduct> Products { get; set; }
+        public List<OrderProduct> Products { get; set; }
+
+        public virtual IEnumerable<OrderProductPack> OrderProductPacks { get; set; }
 
         [NotMapped]
-        public List<OrderItemProductPack> ProductPacks { get; set; }
+        public List<OrderProductPack> ProductPacks { get; set; }
 
         private EOrderStatus GetOrderStatus()
         {
@@ -138,6 +138,11 @@ namespace K9.DataAccessLayer.Models
             if (!CompletedOn.HasValue)
             {
                 return EOrderStatus.ReadyForDelivery;
+            }
+
+            if (!IsPaid)
+            {
+                return EOrderStatus.AwaitingPayment;
             }
 
             return EOrderStatus.Complete;
