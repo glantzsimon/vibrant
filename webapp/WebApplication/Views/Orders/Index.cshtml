@@ -29,14 +29,14 @@
         {
             Action = "EditProducts",
             Text = Dictionary.EditProducts,
-            ButtonType = EButtonType.Success,
+            ButtonType = EButtonType.Primary,
             IconCssClass = "fa fa-pencil"
         },
         new Button
         {
             Action = "EditProductQuantities",
             Text = Dictionary.EditProductQuantities,
-            ButtonType = EButtonType.Success,
+            ButtonType = EButtonType.Primary,
             IconCssClass = "fa fa-pencil"
         },
         new Button
@@ -52,6 +52,20 @@
             Text = Dictionary.EditProductPackQuantities,
             ButtonType = EButtonType.Primary,
             IconCssClass = "fa fa-pencil"
+        },
+        new Button
+        {
+            Action = "DuplicateOrder",
+            Text = Dictionary.DuplicateOrder,
+            ButtonType = EButtonType.Info,
+            IconCssClass = "fa fa-copy"
+        },
+        new Button
+        {
+            Action = "OrderReview",
+            Text = Dictionary.OrderReview,
+            ButtonType = EButtonType.Success,
+            IconCssClass = "fa fa-file"
         },
     }
 })

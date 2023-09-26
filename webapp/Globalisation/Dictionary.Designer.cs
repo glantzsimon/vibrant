@@ -1387,6 +1387,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Duplicate Order.
+        /// </summary>
+        public static string DuplicateOrder {
+            get {
+                return ResourceManager.GetString("DuplicateOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Duplicate Product.
         /// </summary>
         public static string DuplicateProduct {
@@ -1752,6 +1761,15 @@ namespace K9.Globalisation {
         public static string FullDosageText {
             get {
                 return ResourceManager.GetString("FullDosageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Full Name.
+        /// </summary>
+        public static string FullNameLabel {
+            get {
+                return ResourceManager.GetString("FullNameLabel", resourceCulture);
             }
         }
         

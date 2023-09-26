@@ -19,7 +19,7 @@ namespace K9.DataAccessLayer.Models
     {
         [UIHint("Order")]
         public int OrderId => Id;
-        
+
         public Guid ExternalId { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
@@ -28,6 +28,11 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Html)]
         [AllowHtml]
         public string ShortDescription { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FullNameLabel)]
+        public string FullName { get; set; }
+
+        public string GetFullName() => $"{Name} - {RequestedOn.ToShortDateString()}";
 
         [UIHint("User")]
         [Required]
@@ -108,14 +113,14 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.OrderStatusLabel)]
         public string OrderStatusText => OrderStatus.GetAttribute<EnumDescriptionAttribute>().GetDescription();
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
         public double TotalPrice => Products?.Sum(e => e.TotalPrice) + ProductPacks?.Sum(e => e.TotalPrice) ?? 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
-        public double TotalProductsPrice => Products?.Sum(e => e.TotalPrice)  ?? 0;
+        public double TotalProductsPrice => Products?.Sum(e => e.TotalPrice) ?? 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductPacksPriceLabel)]
         [DataType(DataType.Currency)]
@@ -137,9 +142,9 @@ namespace K9.DataAccessLayer.Models
         public double GrandTotal => TotalPrice - DiscountAmount;
 
         public int TotalProducts => Products?.Sum(e => e.Amount) ?? 0;
-        
+
         public int TotalProductPacks => ProductPacks?.Sum(e => e.Amount) ?? 0;
-        
+
         public virtual IEnumerable<OrderProduct> OrderProducts { get; set; }
 
         [NotMapped]

@@ -110,8 +110,8 @@
             let discountAmount = (totalPrice * (perc / 100));
             var grandTotal = totalPrice - discountAmount;
             
-            var formattedDiscountAmount = "฿" + $.fn.formatNumberWithCommas(discountAmount).toFixed(2);
-            var formattedTotal = "฿" + $.fn.formatNumberWithCommas(grandTotal).toFixed(2);
+            var formattedDiscountAmount = "฿" + $.fn.formatNumberWithCommas(discountAmount.toFixed(2));
+            var formattedTotal = "฿" + $.fn.formatNumberWithCommas(grandTotal.toFixed(2));
 
             $("div[data-input-id='GrandTotal']").find("div").text(formattedTotal);
             $("div[data-input-id='DiscountAmount']").find("div").text(formattedDiscountAmount);

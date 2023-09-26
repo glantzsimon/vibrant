@@ -1,7 +1,7 @@
 ﻿@using K9.Base.WebApplication.Helpers
-@model Product
+@model Order
 @{
-    ViewBag.SubTitle = $"{Dictionary.EditIngredients} for {Model.Name}";
+    ViewBag.SubTitle = $"{Dictionary.EditProductPacks} for {Model.Name}";
     Layout = "../Shared/_LayoutForm.cshtml";
 }
 @using (Html.BeginForm())

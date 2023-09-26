@@ -141,33 +141,37 @@ namespace K9.WebApplication.Services
             }
 
             var newProduct = new Product();
+            var newProductExternalId = Guid.NewGuid();
+            
             product.MapTo(newProduct);
             newProduct.Id = 0;
-            var newProductName = $"{product.Name} Copy";
-            newProduct.Name = newProductName;
-
-            foreach (var pi in newProduct.ProductIngredients)
-            {
-                pi.Id = 0;
-                pi.ProductId = newProduct.Id;
-            }
+            newProduct.Name = $"{product.Name} (Copy)";
+            newProduct.ExternalId = newProductExternalId;
             
             _productsRepository.Create(newProduct);
-            newProduct = Find(newProductName);
+
+            // Get new Id
+            newProduct = Find(newProductExternalId);
+            
             if (newProduct == null)
             {
                 throw new Exception("Error duplicating product");
             }
 
-            //newProduct.ProductIngredients = product.ProductIngredients.ToList();
-            //foreach (var pi in newProduct.ProductIngredients)
-            //{
-            //    pi.Id = 0;
-            //    pi.ProductId = newProduct.Id;
-            //}
-            //_productIngredientsRepository.CreateBatch(newProduct.ProductIngredients.ToList());
+            // Copy Ingredients
+            foreach (var ingredient in product.Ingredients)
+            {
+                var newIngredient = new ProductIngredient
+                {
+                    ProductId = newProduct.Id,
+                    IngredientId = ingredient.IngredientId,
+                    Amount = ingredient.Amount
+                };
 
-            return product;
+                _productIngredientsRepository.Create(newIngredient);
+            }
+
+            return newProduct;
         }
 
         public Product UpdateBatchSize(Product product, int batchSize)

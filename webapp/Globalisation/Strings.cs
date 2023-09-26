@@ -121,6 +121,7 @@
             public const string CapsulesLabel = "Capsules";
             public const string CapsulesDailyText = "CapsulesDailyText";
             public const string FullDosageText = "FullDosageText";
+            public const string FullNameLabel = "FullNameLabel";
             public const string QuantityInStockLabel = "QuantityInStockLabel";
             public const string QuantityLabel = "QuantityLabel";
             public const string QuantitiesLabel = "QuantitiesLabel";

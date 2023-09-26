@@ -4,6 +4,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using K9.WebApplication.Config;
 
 namespace K9.WebApplication.Services
 {
@@ -15,8 +16,9 @@ namespace K9.WebApplication.Services
         private readonly IRepository<OrderProductPack> _orderProductPacksRepository;
         private readonly IRepository<Product> _productsRepository;
         private readonly IRepository<ProductPack> _productPackRepository;
+        private readonly DefaultValuesConfiguration _defaultValues;
 
-        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository)
+        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues)
         {
             _logger = logger;
             _ordersRepository = ordersRepository;
@@ -24,6 +26,7 @@ namespace K9.WebApplication.Services
             _orderProductPacksRepository = orderProductPacksRepository;
             _productsRepository = productsRepository;
             _productPackRepository = productPackRepository;
+            _defaultValues = defaultValues.Value;
         }
 
         public Order Find(int id)
@@ -122,6 +125,69 @@ namespace K9.WebApplication.Services
             }
 
             return orders;
+        }
+
+        public Order DuplicateOrder(int id)
+        {
+            var order = _ordersRepository.Find(id);
+            if (order != null)
+            {
+                order = GetFullOrder(order);
+            }
+            var newOrderExternalId = Guid.NewGuid();
+            int.TryParse(_defaultValues.DefaultUserId, out var userId);
+
+            var newOrder = new Order
+            {
+                RequestedOn = DateTime.Today,
+                DueBy = DateTime.Today.AddDays(11),
+                UserId = userId > 0 ? userId : 3,
+                Name = $"{order.Name} (Copy)",
+                ShortDescription = order.ShortDescription,
+                OrderType = order.OrderType,
+                StartedOn = order.StartedOn,
+                MadeOn = order.MadeOn,
+                CompletedOn = order.CompletedOn,
+                PaidOn = order.PaidOn,
+                ContactId = order.ContactId,
+                Discount = order.Discount,
+                ExternalId = newOrderExternalId
+            };
+            
+            _ordersRepository.Create(newOrder);
+
+            // Get Id
+            newOrder = Find(newOrderExternalId);
+
+            // Copy products
+            foreach (var orderProduct in order.Products)
+            {
+                var newProduct = new OrderProduct
+                {
+                    OrderId = newOrder.Id,
+                    ProductId = orderProduct.Id,
+                    PriceTier = orderProduct.PriceTier,
+                    Amount = orderProduct.Amount
+                };
+
+                _orderProductsRepository.Create(newProduct);
+            }
+
+            // Copy product packs
+            foreach (var orderProductPack in order.ProductPacks)
+            {
+                var newProductPack = new OrderProductPack
+                {
+                    OrderId = newOrder.Id,
+                    ProductPackId = orderProductPack.Id,
+                    PriceTier = orderProductPack.PriceTier,
+                    Amount = orderProductPack.Amount
+                };
+
+                _orderProductPacksRepository.Create(newProductPack);
+            }
+
+            return newOrder;
         }
     }
 }

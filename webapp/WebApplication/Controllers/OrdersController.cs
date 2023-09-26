@@ -30,6 +30,7 @@ namespace K9.WebApplication.Controllers
             RecordBeforeCreated += OrdersController_RecordBeforeCreated;
             RecordBeforeDetails += OrdersController_RecordBeforeDetails;
             RecordBeforeUpdate += OrdersController_RecordBeforeUpdate;
+            RecordBeforeUpdated += OrdersController_RecordBeforeUpdated;
         }
 
         public ActionResult EditProducts(int id = 0)
@@ -105,6 +106,12 @@ namespace K9.WebApplication.Controllers
             return View(order);
         }
 
+        public ActionResult DuplicateOrder(int id)
+        {
+            var duplicate = _orderService.DuplicateOrder(id);
+            return RedirectToAction("Edit", new { id = duplicate.Id });
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         [RequirePermissions(Permission = Permissions.Edit)]
@@ -152,6 +159,7 @@ namespace K9.WebApplication.Controllers
         private void OrdersController_RecordBeforeCreated(object sender, CrudEventArgs e)
         {
             var order = e.Item as Order;
+            order.FullName = order.GetFullName();
             order.ExternalId = Guid.NewGuid();
         }
 
@@ -176,6 +184,12 @@ namespace K9.WebApplication.Controllers
         {
             var order = e.Item as Order;
             order = _orderService.GetFullOrder(order);
+        }
+
+        private void OrdersController_RecordBeforeUpdated(object sender, CrudEventArgs e)
+        {
+            var order = e.Item as Order;
+            order.FullName = order.GetFullName();
         }
     }
 }
