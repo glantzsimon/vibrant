@@ -1256,19 +1256,19 @@
     <value>% of RDA</value>
   </data>
   <data name="PriceDiscount1Label" xml:space="preserve">
-    <value>Koh Phangan Discount Price</value>
+    <value>Regular Pack - KPG Discount</value>
   </data>
   <data name="PriceDiscount2Label" xml:space="preserve">
-    <value>Family &amp; Friends Discount Price</value>
+    <value>Regular Pack - Family Discount</value>
   </data>
   <data name="PriceSmallPackDiscount1Label" xml:space="preserve">
-    <value>Koh Phangan Discount Price Small Pack</value>
+    <value>Small Pack - KPG Discount</value>
   </data>
   <data name="PriceSmallPackDiscount2Label" xml:space="preserve">
-    <value>Family Friends Discount Price Small Pack</value>
+    <value>Small Pack - Family Discount</value>
   </data>
   <data name="PriceSmallPackLabel" xml:space="preserve">
-    <value>Price Small Pack</value>
+    <value>Small Pack - Full Price</value>
   </data>
   <data name="PricingInfo" xml:space="preserve">
     <value>Pricing Information</value>
@@ -1508,7 +1508,7 @@
     <value>Product Packs Summary</value>
   </data>
   <data name="RegularPrice" xml:space="preserve">
-    <value>Regular Price</value>
+    <value>Regular Pack - Full Price</value>
   </data>
   <data name="CheckOutOurProductPacks" xml:space="preserve">
     <value>Check out our product packs!</value>

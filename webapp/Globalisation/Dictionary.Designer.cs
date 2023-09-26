@@ -2873,7 +2873,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Koh Phangan Discount Price.
+        ///   Looks up a localized string similar to Regular Pack - KPG Discount.
         /// </summary>
         public static string PriceDiscount1Label {
             get {
@@ -2882,7 +2882,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Family &amp; Friends Discount Price.
+        ///   Looks up a localized string similar to Regular Pack - Family Discount.
         /// </summary>
         public static string PriceDiscount2Label {
             get {
@@ -2909,7 +2909,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Koh Phangan Discount Price Small Pack.
+        ///   Looks up a localized string similar to Small Pack - KPG Discount.
         /// </summary>
         public static string PriceSmallPackDiscount1Label {
             get {
@@ -2918,7 +2918,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Family Friends Discount Price Small Pack.
+        ///   Looks up a localized string similar to Small Pack - Family Discount.
         /// </summary>
         public static string PriceSmallPackDiscount2Label {
             get {
@@ -2927,7 +2927,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Price Small Pack.
+        ///   Looks up a localized string similar to Small Pack - Full Price.
         /// </summary>
         public static string PriceSmallPackLabel {
             get {
@@ -3435,7 +3435,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Regular Price.
+        ///   Looks up a localized string similar to Regular Pack - Full Price.
         /// </summary>
         public static string RegularPrice {
             get {

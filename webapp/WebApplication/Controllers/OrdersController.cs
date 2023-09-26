@@ -17,13 +17,14 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IRepository<OrderProduct> _orderProductsRepository;
         private readonly IRepository<OrderProductPack> _orderProductPackRepository;
+        private readonly IOrderService _orderService;
         private readonly DefaultValuesConfiguration _defaultValues;
-        private readonly IOrderService _OrderService;
 
-        public OrdersController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPackRepository) : base(controllerPackage)
+        public OrdersController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPackRepository, IOrderService orderService) : base(controllerPackage)
         {
             _orderProductsRepository = orderProductsRepository;
             _orderProductPackRepository = orderProductPackRepository;
+            _orderService = orderService;
             _defaultValues = defaultValues.Value;
             RecordBeforeCreate += OrdersController_RecordBeforeCreate;
             RecordBeforeCreated += OrdersController_RecordBeforeCreated;
@@ -38,7 +39,8 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult EditProductQuantities(int id)
         {
-            var order = _OrderService.Find(id);
+            var order = _orderService.Find(id);
+            order = _orderService.FillZeroQuantities(order);
             return View(order);
         }
 
@@ -51,6 +53,7 @@ namespace K9.WebApplication.Controllers
             {
                 var item = _orderProductsRepository.Find(product.Id);
                 item.Amount = product.Amount;
+                item.PriceTier = product.PriceTier;
                 _orderProductsRepository.Update(item);
             }
 
@@ -64,7 +67,8 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult EditProductPackQuantities(int id)
         {
-            var order = _OrderService.Find(id);
+            var order = _orderService.Find(id);
+            order = _orderService.FillZeroQuantities(order);
             return View(order);
         }
 
@@ -77,6 +81,7 @@ namespace K9.WebApplication.Controllers
             {
                 var item = _orderProductPackRepository.Find(pack.Id);
                 item.Amount = pack.Amount;
+                item.PriceTier = pack.PriceTier;
                 _orderProductPackRepository.Update(item);
             }
 
@@ -131,13 +136,13 @@ namespace K9.WebApplication.Controllers
         private void OrdersController_RecordBeforeDetails(object sender, CrudEventArgs e)
         {
             var order = e.Item as Order;
-            _OrderService.GetFullOrder(order);
+            order =_orderService.GetFullOrder(order);
         }
 
         private void OrdersController_RecordBeforeUpdate(object sender, CrudEventArgs e)
         {
             var order = e.Item as Order;
-            _OrderService.GetFullOrder(order);
+            order = _orderService.GetFullOrder(order);
         }
     }
 }

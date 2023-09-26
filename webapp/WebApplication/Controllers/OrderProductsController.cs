@@ -23,7 +23,7 @@ namespace K9.WebApplication.Controllers
 
 	    public override ActionResult Index()
 	    {
-	        return RedirectToAction("Index", "Products");
+	        return RedirectToAction("Index", "Orders");
 	    }
 
 	    [RequirePermissions(Permission = Permissions.Edit)]

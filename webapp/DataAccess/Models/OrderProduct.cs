@@ -1,11 +1,10 @@
-﻿using System;
-using K9.Base.DataAccessLayer.Attributes;
+﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Attributes;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -13,6 +12,7 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.OrderProducts, PluralName = Globalisation.Strings.Names.OrderProducts, Name = Globalisation.Strings.Names.OrderProduct)]
     public class OrderProduct : ObjectBase
     {
+        [UIHint("PriceTier")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceTierLabel)]
         public EPriceTier PriceTier { get; set; }
 

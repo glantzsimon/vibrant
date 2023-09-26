@@ -1433,6 +1433,7 @@
     <Content Include="Views\Orders\_CollectionsButtons.cshtml" />
     <Content Include="Views\ProductPacks\_CollectionsButtons.cshtml" />
     <Content Include="Views\Products\_CollectionsButtons.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PriceTier.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

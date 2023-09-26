@@ -13,13 +13,17 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Order> _ordersRepository;
         private readonly IRepository<OrderProduct> _orderProductsRepository;
         private readonly IRepository<OrderProductPack> _orderProductPacksRepository;
+        private readonly IRepository<Product> _productsRepository;
+        private readonly IRepository<ProductPack> _productPackRepository;
 
-        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository)
+        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository)
         {
             _logger = logger;
             _ordersRepository = ordersRepository;
             _orderProductsRepository = orderProductsRepository;
             _orderProductPacksRepository = orderProductPacksRepository;
+            _productsRepository = productsRepository;
+            _productPackRepository = productPackRepository;
         }
 
         public Order Find(int id)
@@ -69,7 +73,31 @@ namespace K9.WebApplication.Services
         public Order GetFullOrder(Order order)
         {
             order.Products = _orderProductsRepository.Find(e => e.OrderId == order.Id).ToList();
+            foreach (var orderProduct in order.Products)
+            {
+                orderProduct.Product = _productsRepository.Find(orderProduct.ProductId);
+            }
+
             order.ProductPacks = _orderProductPacksRepository.Find(e => e.OrderId == order.Id).ToList();
+            foreach (var orderProductPack in order.ProductPacks)
+            {
+                orderProductPack.ProductPack = _productPackRepository.Find(orderProductPack.ProductPackId);
+            }
+
+            return order;
+        }
+
+        public Order FillZeroQuantities(Order order)
+        {
+            foreach (var product in order.Products.Where(e => e.Amount == 0))
+            {
+                product.Amount = 1;
+            }
+            foreach (var pack in order.ProductPacks.Where(e => e.Amount == 0))
+            {
+                pack.Amount = 1;
+            }
+
             return order;
         }
 

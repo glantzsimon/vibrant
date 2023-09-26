@@ -13,7 +13,7 @@
             @Html.BootstrapDisplayFor(e => Model.Products[i].Product.Name)
         </div>
         <div class="col-sm-4">
-            @Html.BootstrapDisplayFor(e => Model.Products[i].PriceTier)
+            @Html.BootstrapEditorFor(e => Model.Products[i].PriceTier)
         </div>
         <div class="col-sm-4">
             @Html.BootstrapEditorFor(e => Model.Products[i].Amount)

@@ -11,6 +11,7 @@ namespace K9.WebApplication.Services
         Order FindNext(int id);
         Order Find(Guid id);
         Order GetFullOrder(Order order);
+        Order FillZeroQuantities(Order order);
 
         List<Order> List(bool retrieveFullOrder = false, bool includeCustomOrders = false);
     }
