@@ -139,10 +139,11 @@ namespace K9.WebApplication.Controllers
                 }
             }
 
-            if (order.IsOrderMade())
+            if (order.AreAllItemsReady())
             {
-                order.MadeOn = DateTime.Today;
-                Repository.Update(order);
+                var item = Repository.Find(order.Id);
+                item.MadeOn = DateTime.Today;
+                Repository.Update(item);
             }
 
             return RedirectToAction("OrderReview", new { orderId = order.Id });

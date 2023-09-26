@@ -160,8 +160,11 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         public List<OrderProductPack> ProductPacks { get; set; }
 
-        public bool IsOrderMade() =>
-            Products?.Count(e => e.AmountRemaining > 0) + ProductPacks?.Count(e => e.AmountRemaining > 0) == 0;
+        public bool AreProductsReady() => !Products?.Any(e => e.AmountRemaining > 0) ?? true;
+
+        public bool AreProductPacksReady() => !ProductPacks?.Any(e => e.AmountRemaining > 0) ?? true;
+
+        public bool AreAllItemsReady() => AreProductsReady() && AreProductPacksReady();
 
         private EOrderStatus GetOrderStatus()
         {

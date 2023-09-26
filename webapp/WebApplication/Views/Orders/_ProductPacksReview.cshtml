@@ -10,6 +10,7 @@
     var visibleClass = isVisible ? "" : "hidden-rows";
 
     @Html.HiddenFor(e => Model.ProductPacks[i].Id)
+    @Html.HiddenFor(e => Model.ProductPacks[i].Amount)
 
     <div class="border-bottom-1 padding-5 padding-top-15 row @visibleClass" style="display: @visible;">
         <div class="col-sm-3">
