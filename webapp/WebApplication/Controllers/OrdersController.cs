@@ -28,6 +28,7 @@ namespace K9.WebApplication.Controllers
             RecordBeforeCreate += OrdersController_RecordBeforeCreate;
             RecordBeforeCreated += OrdersController_RecordBeforeCreated;
             RecordBeforeDetails += OrdersController_RecordBeforeDetails;
+            RecordBeforeUpdate += OrdersController_RecordBeforeUpdate;
         }
         
         public ActionResult EditProducts(int id = 0)
@@ -130,7 +131,13 @@ namespace K9.WebApplication.Controllers
         private void OrdersController_RecordBeforeDetails(object sender, CrudEventArgs e)
         {
             var order = e.Item as Order;
-            order = _OrderService.GetFullOrder(order);
+            _OrderService.GetFullOrder(order);
+        }
+
+        private void OrdersController_RecordBeforeUpdate(object sender, CrudEventArgs e)
+        {
+            var order = e.Item as Order;
+            _OrderService.GetFullOrder(order);
         }
     }
 }

@@ -22,8 +22,13 @@
 </div>
 <div class="row">
     <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.OrderType)
+    </div>
+    <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.OrderStatusText)
     </div>
+</div>
+<div class="row">
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.IsPaid)
     </div>
@@ -33,7 +38,7 @@
 
 <div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.OrderType)
+        @Html.BootstrapEditorFor(model => model.RequestedOn)
     </div>
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.DueBy)
@@ -41,15 +46,15 @@
 </div>
 <div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.RequestedOn)
+        @Html.BootstrapEditorFor(model => model.StartedOn)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.StartedOn)
+        @Html.BootstrapEditorFor(model => model.MadeOn)
     </div>
 </div>
 <div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.MadeOn)
+        @Html.BootstrapEditorFor(model => model.PaidOn)
     </div>
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.CompletedOn)

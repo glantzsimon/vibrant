@@ -90,7 +90,7 @@ namespace K9.DataAccessLayer.Models
         public bool IsComplete => CompletedOn != null && CompletedOn <= DateTime.Today;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.StartedOnLabel)]
+            Name = Globalisation.Strings.Labels.PaidOnLabel)]
         public DateTime? PaidOn { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
