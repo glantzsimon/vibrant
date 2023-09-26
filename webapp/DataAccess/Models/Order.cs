@@ -179,11 +179,20 @@ namespace K9.DataAccessLayer.Models
 
         private List<OrderProduct> GetOrderedProducts()
         {
-            return Products?.OrderBy(e => e.Name).ToList() ?? new List<OrderProduct>();
+            return Products?.OrderBy(e => e.ProductName).ToList() ?? new List<OrderProduct>();
+        }
+
+        private string GetMaxProductNameLength(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                return value;
+
+            var maxLength = value.Length > MaxInvoiceProductNameLength ? MaxInvoiceProductNameLength : value.Length;
+            return value.Substring(0, maxLength);
         }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductsLabel)]
-        public string ProductsList => GetOrderedProducts().Select(e => e.ProductName.Substring(0, MaxInvoiceProductNameLength)).ToDisplayList();
+        public string ProductsList => GetOrderedProducts().Select(e => GetMaxProductNameLength(e.ProductName)).ToDisplayList();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantitiesLabel)]
         public string QuantitiesList => GetOrderedProducts().Select(e => e.Amount.ToString()).ToDisplayList();

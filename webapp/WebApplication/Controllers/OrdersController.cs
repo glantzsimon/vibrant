@@ -8,11 +8,11 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
-using ServiceStack.Text;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using ServiceStack.Text;
 
 namespace K9.WebApplication.Controllers
 {
@@ -159,7 +159,6 @@ namespace K9.WebApplication.Controllers
         {
             var order = _orderService.Find(id);
             var orderItems = new List<OrderItem>();
-            
             var orderItem = order.MapTo<OrderItem>();
             orderItem.CreatedOn = DateTime.Today;
             orderItems.Add(orderItem);
@@ -168,6 +167,7 @@ namespace K9.WebApplication.Controllers
 
             Response.Clear();
             Response.ContentType = "application/CSV";
+            Response.ContentEncoding = System.Text.Encoding.UTF8;     
             Response.AddHeader("content-disposition", $"attachment; filename=\"Order.csv\"");
             Response.Write(data);
             Response.End();
@@ -191,6 +191,7 @@ namespace K9.WebApplication.Controllers
 
             Response.Clear();
             Response.ContentType = "application/CSV";
+            Response.ContentEncoding = System.Text.Encoding.UTF8;     
             Response.AddHeader("content-disposition", $"attachment; filename=\"Orders.csv\"");
             Response.Write(data);
             Response.End();
