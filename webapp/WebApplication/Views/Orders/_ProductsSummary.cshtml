@@ -49,9 +49,21 @@
             @Html.DisplayFor(e => Model.Products[i].TotalPrice)
         </div>
     </div>
-    if (i < Model.Products.Count - 1)
-    {
-        <hr />
-    }
+
+    <hr />
+
 }
+<div class="row">
+    <div class="col-sm-3">
+        <strong>@Dictionary.TotalLabel</strong>
+    </div>
+    <div class="col-sm-3">
+        <strong>@Html.DisplayFor(e => Model.TotalProducts)</strong>
+    </div>
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-3">
+        <strong>@Html.DisplayFor(e => Model.TotalProductsPrice)</strong>
+    </div>
+</div>
 

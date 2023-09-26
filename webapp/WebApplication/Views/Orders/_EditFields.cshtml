@@ -3,12 +3,10 @@
 @model Order
 
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.Name)
     </div>
-</div>
-<div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.ShortDescription)
     </div>
 </div>
@@ -24,11 +22,34 @@
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.OrderType)
     </div>
+</div>
+
+<hr />
+
+<div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.OrderStatusText)
+        @Html.HiddenFor(model => model.TotalPrice)
+        @Html.BootstrapDisplayFor(model => model.TotalPrice)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.Discount)
     </div>
 </div>
 <div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.DiscountAmount)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.GrandTotal)
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.OrderStatus)
+    </div>
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.IsPaid)
     </div>
@@ -79,3 +100,22 @@
         @Html.CollapsiblePanel(Dictionary.ProductPackSummary, Html.Partial("../Orders/_ProductPackSummary").ToString())
     </div>
 </div>
+
+<script type="text/javascript">
+
+    $(function() {
+        $("#Discount").change(function() {
+            var totalPrice = $("#TotalPrice").val();
+            var perc = $("#Discount").val();
+            let discountAmount = (totalPrice * (perc / 100));
+            var grandTotal = totalPrice - discountAmount;
+            
+            var formattedDiscountAmount = "฿" + $.fn.formatNumberWithCommas(discountAmount).toFixed(2);
+            var formattedTotal = "฿" + $.fn.formatNumberWithCommas(grandTotal).toFixed(2);
+
+            $("div[data-input-id='GrandTotal']").find("div").text(formattedTotal);
+            $("div[data-input-id='DiscountAmount']").find("div").text(formattedDiscountAmount);
+        });
+    })
+
+</script>

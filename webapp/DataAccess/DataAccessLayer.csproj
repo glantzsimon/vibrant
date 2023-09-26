@@ -302,6 +302,10 @@
     <Compile Include="Migrations\202309260726176_UpdateOrders.Designer.cs">
       <DependentUpon>202309260726176_UpdateOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309261023286_AddAmountCompleted.cs" />
+    <Compile Include="Migrations\202309261023286_AddAmountCompleted.Designer.cs">
+      <DependentUpon>202309261023286_AddAmountCompleted.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\OrderProductPack.cs" />
@@ -413,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309260726176_UpdateOrders.resx">
       <DependentUpon>202309260726176_UpdateOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309261023286_AddAmountCompleted.resx">
+      <DependentUpon>202309261023286_AddAmountCompleted.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

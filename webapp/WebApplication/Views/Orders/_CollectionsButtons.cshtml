@@ -4,15 +4,15 @@
 
 @if (Model.Id > 0)
 {
-    @Html.BootstrapActionLinkButton(Dictionary.EditProducts, "EditProducts", "Orders", new { id = Model.Id }, "", EButtonClass.Info)
+    @Html.BootstrapActionLinkButton(Dictionary.EditProducts, "EditProducts", "Orders", new { id = Model.Id }, "", EButtonClass.Success)
     if (Model.Products != null && Model.Products.Any())
     {
-        @Html.BootstrapActionLinkButton(Dictionary.EditProductQuantities, "EditProductQuantities", "Orders", new { id = Model.Id }, "", EButtonClass.Info)
+        @Html.BootstrapActionLinkButton(Dictionary.EditProductQuantities, "EditProductQuantities", "Orders", new { id = Model.Id }, "", EButtonClass.Success)
     }
 
-    @Html.BootstrapActionLinkButton(Dictionary.EditProductPacks, "EditProductPacks", "Orders", new { id = Model.Id }, "", EButtonClass.Info)
+    @Html.BootstrapActionLinkButton(Dictionary.EditProductPacks, "EditProductPacks", "Orders", new { id = Model.Id }, "", EButtonClass.Primary)
     if (Model.ProductPacks != null && Model.ProductPacks.Any())
     {
-        @Html.BootstrapActionLinkButton(Dictionary.EditProductPackQuantities, "EditProductPackQuantities", "Orders", new { id = Model.Id }, "", EButtonClass.Info)
+        @Html.BootstrapActionLinkButton(Dictionary.EditProductPackQuantities, "EditProductPackQuantities", "Orders", new { id = Model.Id }, "", EButtonClass.Primary)
     }
 }

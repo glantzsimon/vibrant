@@ -1510,13 +1510,31 @@
   <data name="RegularPrice" xml:space="preserve">
     <value>Regular Pack - Full Price</value>
   </data>
+  <data name="AmountCompletedLabel" xml:space="preserve">
+    <value>Amount Completed</value>
+  </data>
+  <data name="AmountRemainingLabel" xml:space="preserve">
+    <value>Amount Remaining</value>
+  </data>
   <data name="CheckOutOurProductPacks" xml:space="preserve">
     <value>Check out our product packs!</value>
   </data>
   <data name="EditProductPackQuantities" xml:space="preserve">
     <value>Edit Number of Product Packs</value>
   </data>
+  <data name="GrandTotalLabel" xml:space="preserve">
+    <value>Grand Total</value>
+  </data>
+  <data name="OrderReview" xml:space="preserve">
+    <value>Order Review</value>
+  </data>
   <data name="SeeAllProductPacks" xml:space="preserve">
     <value>See All Product Packs</value>
+  </data>
+  <data name="TotalProductPacksPriceLabel" xml:space="preserve">
+    <value>Total Product Packs Price</value>
+  </data>
+  <data name="TotalProductsPriceLabel" xml:space="preserve">
+    <value>Total Products Price</value>
   </data>
 </root>

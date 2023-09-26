@@ -31,7 +31,7 @@ namespace K9.WebApplication.Controllers
             RecordBeforeDetails += OrdersController_RecordBeforeDetails;
             RecordBeforeUpdate += OrdersController_RecordBeforeUpdate;
         }
-        
+
         public ActionResult EditProducts(int id = 0)
         {
             return RedirectToAction("EditProductsForOrder", "OrderProducts", new { id });
@@ -57,7 +57,7 @@ namespace K9.WebApplication.Controllers
                 _orderProductsRepository.Update(item);
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", new { id = model.Id });
         }
 
         public ActionResult EditProductPacks(int id = 0)
@@ -85,12 +85,45 @@ namespace K9.WebApplication.Controllers
                 _orderProductPackRepository.Update(item);
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", new { id = model.Id });
         }
 
         public ActionResult View(int orderId)
         {
             return RedirectToAction("Details", null, new { id = orderId });
+        }
+
+        public ActionResult OrderReview(int orderId = 0, int id = 0, int index = 0)
+        {
+            if (orderId == 0)
+            {
+                orderId = id;
+            }
+
+            var order = index == 1 ? _orderService.FindNext(orderId) : index == -1 ? _orderService.FindPrevious(orderId) : _orderService.Find(orderId);
+
+            return View(order);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult UpdateOrderProgress(Order order)
+        {
+            foreach (var orderProduct in order.Products)
+            {
+                var item = _orderProductsRepository.Find(orderProduct.Id);
+                item.AmountCompleted = orderProduct.AmountCompleted;
+                _orderProductsRepository.Update(item);
+            }
+            foreach (var pack in order.ProductPacks)
+            {
+                var item = _orderProductPackRepository.Find(pack.Id);
+                item.AmountCompleted = pack.AmountCompleted;
+                _orderProductPackRepository.Update(item);
+            }
+
+            return RedirectToAction("OrderReview", new { orderId = order.Id });
         }
 
         [Route("orders/export/csv")]
@@ -136,7 +169,7 @@ namespace K9.WebApplication.Controllers
         private void OrdersController_RecordBeforeDetails(object sender, CrudEventArgs e)
         {
             var order = e.Item as Order;
-            order =_orderService.GetFullOrder(order);
+            order = _orderService.GetFullOrder(order);
         }
 
         private void OrdersController_RecordBeforeUpdate(object sender, CrudEventArgs e)

@@ -216,6 +216,10 @@
     border-top: 0 !important;
 }
 
+.border-top-2 {
+    border-top: 2px !important;
+}
+
 .bold {
     font-weight: bold;
 }

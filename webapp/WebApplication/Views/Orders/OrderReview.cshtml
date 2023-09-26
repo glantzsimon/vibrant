@@ -1,0 +1,47 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.Base.WebApplication.Helpers
+@model Order
+@{
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+    ViewBag.SubTitle = $"{Model.Name} {Dictionary.OrderReview}";
+}
+@using (Html.BeginForm())
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.Hidden("index", 0)
+
+        <div class="row">
+            <div class="col-xs-12">
+                @Html.BootstrapEditorFor(model => Model.OrderId)
+            </div>
+        </div>
+    }
+}
+
+@using (Html.BeginForm("UpdateOrderProgress"))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.HiddenFor(e => e.Id)
+
+        <hr />
+        @Html.Partial("_OrderReviewSheet")
+
+        <hr />
+        @Html.Partial("_CollectionsButtons")
+
+        <br />
+        @Html.BootstrapBackToListButton()
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Previous, "OrderReview", null, new { id = Model.Id, index = -1 }, "fa-arrow-left")
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Next, "OrderReview", null, new { Id = Model.Id, index = 1 }, "fa-arrow-right")
+    }
+}
+
+<script type="text/javascript">
+    $(function () {
+        $("#ProductId, #BatchSize").change(function () {
+            $("#ProductId").closest("form").submit();
+        });
+    })
+</script>

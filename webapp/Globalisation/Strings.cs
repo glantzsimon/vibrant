@@ -14,6 +14,8 @@
             public const string ContactLabel = "ContactLabel";
             public const string AmountDonatedLabel = "AmountDonatedLabel";
             public const string AmountLabel = "AmountLabel";
+            public const string AmountCompletedLabel = "AmountCompletedLabel";
+            public const string AmountRemainingLabel = "AmountRemainingLabel";
             public const string SmallPackAmountLabel = "SmallPackAmountLabel";
             public const string AmountPerBatchLabel = "AmountPerBatchLabel";
             public const string SelectedProductLabel = "SelectedProductLabel";
@@ -23,6 +25,9 @@
             public const string NumberOfCreditsLabel = "NumberOfCreditsLabel";
             public const string CreditsPurchaseAmountLabel = "CreditsPurchaseAmountLabel";
             public const string TotalPriceLabel = "TotalPriceLabel";
+            public const string GrandTotalLabel = "GrandTotalLabel";
+            public const string TotalProductsPriceLabel = "TotalProductsPriceLabel";
+            public const string TotalProductPacksPriceLabel = "TotalProductPacksPriceLabel";
             public const string TotalCostLabel = "TotalCostLabel";
             public const string CostOfIngredientsLabel = "CostOfIngredientsLabel";
             public const string SuggestedRetailPriceLabel = "SuggestedRetailPriceLabel";

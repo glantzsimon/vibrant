@@ -2,11 +2,9 @@
 @using K9.SharedLibrary.Extensions
 @using K9.SharedLibrary.Helpers
 @using K9.WebApplication.Extensions
-
 @{
     var glossaryJson = Json.Encode(typeof(Glossary).ToGlossaryItems());
 }
-
 <script type="text/javascript">
 
 	$(function () {
@@ -101,6 +99,10 @@
 	            scrollTop: offset.top + (adjustment || 0)
 	        }, 40);
         };
+
+        $.fn.formatNumberWithCommas = function(value) {
+            return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
 
 	    $.fn.displayValidationWarningFor = function(field, validationMessage) {
 	        var validationSpan = $("span[data-valmsg-for='" + field + "']");

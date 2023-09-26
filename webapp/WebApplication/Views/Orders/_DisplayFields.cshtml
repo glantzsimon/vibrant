@@ -3,12 +3,10 @@
 @model Order
 
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.Name)
     </div>
-</div>
-<div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.ShortDescription)
     </div>
 </div>
@@ -22,13 +20,35 @@
 </div>
 <div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.OrderType)
+        @Html.BootstrapDisplayFor(model => model.OrderType)
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.TotalPrice)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.OrderStatusText)
+        @Html.BootstrapDisplayFor(model => model.FormattedDiscount)
     </div>
 </div>
 <div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.DiscountAmount)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.GrandTotal)
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.OrderStatus)
+    </div>
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.IsPaid)
     </div>
@@ -38,25 +58,44 @@
 
 <div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.RequestedOn)
+        @Html.BootstrapDisplayFor(model => model.RequestedOn)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.DueBy)
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.StartedOn)
-    </div>
-    <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.MadeOn)
+        @Html.BootstrapDisplayFor(model => model.DueBy)
     </div>
 </div>
 <div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.PaidOn)
+        @Html.BootstrapDisplayFor(model => model.StartedOn)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.CompletedOn)
+        @Html.BootstrapDisplayFor(model => model.MadeOn)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.PaidOn)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.CompletedOn)
+    </div>
+</div>
+
+<br />
+<div class="row">
+    <div class="col-sm-12">
+        <h3>@Dictionary.Details</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        @Html.CollapsiblePanel(Dictionary.ProductSummary, Html.Partial("../Orders/_ProductsSummary").ToString())
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        @Html.CollapsiblePanel(Dictionary.ProductPackSummary, Html.Partial("../Orders/_ProductPackSummary").ToString())
     </div>
 </div>

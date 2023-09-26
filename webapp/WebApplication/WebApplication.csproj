@@ -1434,6 +1434,12 @@
     <Content Include="Views\ProductPacks\_CollectionsButtons.cshtml" />
     <Content Include="Views\Products\_CollectionsButtons.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PriceTier.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Percentage.cshtml" />
+    <Content Include="Views\Orders\OrderReview.cshtml" />
+    <Content Include="Views\Orders\_OrderReviewSheet.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Order.cshtml" />
+    <Content Include="Views\Orders\_ProductsReview.cshtml" />
+    <Content Include="Views\Orders\_ProductPacksReview.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

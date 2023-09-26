@@ -1,21 +1,25 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
+using K9.Base.Globalisation;
 using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Attributes;
+using K9.SharedLibrary.Extensions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 using System.Linq;
 using System.Web.Mvc;
-using K9.Base.Globalisation;
-using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccessLayer.Models
 {
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Orders, PluralName = Globalisation.Strings.Names.Orders, Name = Globalisation.Strings.Names.Order)]
     public class Order : ObjectBase
     {
+        [UIHint("Order")]
+        public int OrderId => Id;
+        
         public Guid ExternalId { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
@@ -105,14 +109,37 @@ namespace K9.DataAccessLayer.Models
             Name = Globalisation.Strings.Labels.OrderStatusLabel)]
         public string OrderStatusText => OrderStatus.GetAttribute<EnumDescriptionAttribute>().GetDescription();
         
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
         public double TotalPrice => Products?.Sum(e => e.TotalPrice) + ProductPacks?.Sum(e => e.TotalPrice) ?? 0;
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
+        public double TotalProductsPrice => Products?.Sum(e => e.TotalPrice)  ?? 0;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductPacksPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalProductPacksPrice => ProductPacks?.Sum(e => e.TotalPrice) ?? 0;
+
+        [UIHint("Percentage")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public double? Discount { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
+        public string FormattedDiscount => (Discount / 100)?.ToString("P", CultureInfo.InvariantCulture);
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
+        [DataType(DataType.Currency)]
+        public double DiscountAmount => TotalPrice * (Discount / 100 ?? 0);
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
+        [DataType(DataType.Currency)]
+        public double GrandTotal => TotalPrice - DiscountAmount;
+
+        public int TotalProducts => Products?.Sum(e => e.Amount) ?? 0;
+        
+        public int TotalProductPacks => ProductPacks?.Sum(e => e.Amount) ?? 0;
+        
         public virtual IEnumerable<OrderProduct> OrderProducts { get; set; }
 
         [NotMapped]

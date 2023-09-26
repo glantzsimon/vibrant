@@ -124,6 +124,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount Completed.
+        /// </summary>
+        public static string AmountCompletedLabel {
+            get {
+                return ResourceManager.GetString("AmountCompletedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount Donated.
         /// </summary>
         public static string AmountDonatedLabel {
@@ -174,6 +183,15 @@ namespace K9.Globalisation {
         public static string AmountPerServingLabel {
             get {
                 return ResourceManager.GetString("AmountPerServingLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount Remaining.
+        /// </summary>
+        public static string AmountRemainingLabel {
+            get {
+                return ResourceManager.GetString("AmountRemainingLabel", resourceCulture);
             }
         }
         
@@ -1792,6 +1810,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Grand Total.
+        /// </summary>
+        public static string GrandTotalLabel {
+            get {
+                return ResourceManager.GetString("GrandTotalLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Grounding.
         /// </summary>
         public static string Grounding {
@@ -2622,6 +2649,15 @@ namespace K9.Globalisation {
         public static string OrderProducts {
             get {
                 return ResourceManager.GetString("OrderProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Review.
+        /// </summary>
+        public static string OrderReview {
+            get {
+                return ResourceManager.GetString("OrderReview", resourceCulture);
             }
         }
         
@@ -4131,6 +4167,24 @@ namespace K9.Globalisation {
         public static string TotalPriceLabel {
             get {
                 return ResourceManager.GetString("TotalPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Product Packs Price.
+        /// </summary>
+        public static string TotalProductPacksPriceLabel {
+            get {
+                return ResourceManager.GetString("TotalProductPacksPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Products Price.
+        /// </summary>
+        public static string TotalProductsPriceLabel {
+            get {
+                return ResourceManager.GetString("TotalProductsPriceLabel", resourceCulture);
             }
         }
         
