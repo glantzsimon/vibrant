@@ -1558,6 +1558,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit Sections.
+        /// </summary>
+        public static string EditSections {
+            get {
+                return ResourceManager.GetString("EditSections", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Electromedicine.
         /// </summary>
         public static string Electromedicine {

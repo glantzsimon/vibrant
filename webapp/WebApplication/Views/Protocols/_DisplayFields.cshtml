@@ -1,79 +1,47 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Helpers
-@model ProductPack
+@model Protocol
 
 <div class="row">
-    <div class="col-sm-12">
-        <h3>@Dictionary.GeneralInfo</h3>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.Name)
     </div>
-    <div class="col-sm-4">
-        @Html.BootstrapDisplayFor(model => model.SeoFriendlyId)
-    </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.ContactId)
     </div>
 </div>
-
-<br />
 <div class="row">
-    <div class="col-sm-12">
-        <h3>@Dictionary.PricingInfo</h3>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.SeoFriendlyId)
     </div>
 </div>
-
 <div class="row">
-    <div class="col-sm-4">
-        @Html.BootstrapDisplayFor(model => model.Price)
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.ShortDescription)
     </div>
-    <div class="col-sm-4">
-        @Html.BootstrapDisplayFor(model => model.PriceDiscount1)
-    </div>
-    <div class="col-sm-4">
-        @Html.BootstrapDisplayFor(model => model.PriceDiscount2)
-    </div>
-</div>
-
-<hr />
-
-<div class="row">
-    <div class="col-sm-4">
-        @Html.BootstrapDisplayFor(model => model.SuggestedRetailPrice)
-    </div>
-</div>
-
-<br />
-
-<div class="row">
-    <div class="col-sm-12">
-        @Html.CollapsiblePanel(Dictionary.ProductSummary, Html.Partial("../ProductPacks/_ProductsSummary").ToString())
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.Body)
     </div>
 </div>
 
 <br />
 <div class="row">
     <div class="col-sm-12">
-        <h3>@Dictionary.OtherInfo</h3>
+        <h3>@Dictionary.Details</h3>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-12">
+        @Html.CollapsiblePanel(Dictionary.ProductSummary, Html.Partial("../Protocols/_ProductsSummary").ToString())
     </div>
 </div>
 
 <div class="row">
-    @Html.BootstrapDisplayFor(model => model.ShortDescription)
-</div>
-<div class="row">
-    @Html.BootstrapDisplayFor(model => model.Body)
-</div>
-
-<div class="row">
-    @Html.BootstrapDisplayFor(model => model.Benefits)
-</div>
-<div class="row">
-    @Html.BootstrapDisplayFor(model => model.Dosage)
+    <div class="col-sm-12">
+        @Html.CollapsiblePanel(Dictionary.ProductPackSummary, Html.Partial("../Protocols/_ProductPackSummary").ToString())
+    </div>
 </div>
 
 <hr />

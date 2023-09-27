@@ -27,7 +27,7 @@ namespace K9.WebApplication.Controllers
 	    }
         
 	    [RequirePermissions(Permission = Permissions.Edit)]
-	    public ActionResult EditProductPacksForProtocol(int id = 0)
+	    public ActionResult EditProductsForProtocol(int id = 0)
 	    {
 	        return EditMultiple<Protocol, Product>(_protocolRepository.Find(id));
 	    }
@@ -35,7 +35,7 @@ namespace K9.WebApplication.Controllers
 	    [HttpPost]
 	    [ValidateAntiForgeryToken]
 	    [RequirePermissions(Permission = Permissions.Edit)]
-	    public ActionResult EditProductPacksForOrder(MultiSelectViewModel model)
+	    public ActionResult EditProductsForProtocol(MultiSelectViewModel model)
 	    {
 	        return EditMultiple<Protocol, Product>(model);
 	    }

@@ -1469,6 +1469,8 @@
     <Content Include="Views\Protocols\Edit.cshtml" />
     <Content Include="Views\Protocols\Index.cshtml" />
     <Content Include="Views\Protocols\_CollectionsButtons.cshtml" />
+    <Content Include="Views\Protocols\_ProductsSummary.cshtml" />
+    <Content Include="Views\Protocols\_ProductPackSummary.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

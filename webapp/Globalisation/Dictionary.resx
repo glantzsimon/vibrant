@@ -1540,6 +1540,9 @@
   <data name="EditProductPackQuantities" xml:space="preserve">
     <value>Edit Number of Product Packs</value>
   </data>
+  <data name="EditSections" xml:space="preserve">
+    <value>Edit Sections</value>
+  </data>
   <data name="FullNameLabel" xml:space="preserve">
     <value>Full Name</value>
   </data>

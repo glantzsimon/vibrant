@@ -22,13 +22,15 @@
         <hr />
         @Html.BootstrapBackToListButton()
         @Html.CrudButtonsForModel(Model)
+
+        @Html.Partial("_CollectionsButtons")
     }
 }
 
 <script type="text/javascript">
     $(function () {
-        $("#ProtocolSectionId").change(function () {
-            $("#ProtocolSectionId").closest("form").submit();
+        $("#ProtocolId").change(function () {
+            $("#ProtocolId").closest("form").submit();
         });
     })
 </script>

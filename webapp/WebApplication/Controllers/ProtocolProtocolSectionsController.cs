@@ -35,7 +35,7 @@ namespace K9.WebApplication.Controllers
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		[RequirePermissions(Permission = Permissions.Edit)]
-		public ActionResult EditIngredientsForProduct(MultiSelectViewModel model)
+		public ActionResult EditProtocolProtocolSectionsForProtocol(MultiSelectViewModel model)
 		{
 			return EditMultiple<Protocol, ProtocolProtocolSection>(model);
 		}

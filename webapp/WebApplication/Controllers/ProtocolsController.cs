@@ -37,19 +37,19 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Edit", new { id = duplicate.Id });
         }
 
-        public ActionResult EditProtocolSections(int id = 0)
+        public ActionResult EditSections(int id = 0)
         {
-            return RedirectToAction("EditProductPacksForOrder", "OrderProductPacks", new { id });
+            return RedirectToAction("EditProtocolProtocolSectionsForProtocol", "ProtocolProtocolSections", new { id });
         }
 
         public ActionResult EditProducts(int id = 0)
         {
-            return RedirectToAction("EditProductPacksForOrder", "OrderProductPacks", new { id });
+            return RedirectToAction("EditProductsForProtocol", "ProtocolProducts", new { id });
         }
 
         public ActionResult EditProductPacks(int id = 0)
         {
-            return RedirectToAction("EditProductPacksForOrder", "OrderProductPacks", new { id });
+            return RedirectToAction("EditProductPacksForProtocol", "ProtocolProductPacks", new { id });
         }
 
         private void ProtocolsController_RecordBeforeDeleted(object sender, CrudEventArgs e)
