@@ -143,7 +143,7 @@ namespace K9.DataAccessLayer.Models
         public double? Discount { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
-        public string FormattedDiscountAsPercent => (Discount / 100)?.ToString("P", CultureInfo.InvariantCulture);
+        public string FormattedDiscountAsPercent => (Discount / 100)?.ToString("P0", CultureInfo.InvariantCulture);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         [DataType(DataType.Currency)]
