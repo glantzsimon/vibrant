@@ -10,7 +10,7 @@ namespace K9.WebApplication.Services
         Protocol FindPrevious(int id);
         Protocol FindNext(int id);
         Protocol Find(Guid id);
-        Protocol GetFullProtocol(Protocol protocol);
+        Protocol GetFullProtocol(Protocol protocolItem);
         Protocol Duplicate(int id);
         void DeleteChildRecords(int id);
         void AddDefaultSections(int id);

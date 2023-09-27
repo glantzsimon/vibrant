@@ -320,13 +320,29 @@
     <Compile Include="Migrations\202309270718163_AddProtocols.Designer.cs">
       <DependentUpon>202309270718163_AddProtocols.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309270957187_ModifyProtocolSection.cs" />
+    <Compile Include="Migrations\202309270957187_ModifyProtocolSection.Designer.cs">
+      <DependentUpon>202309270957187_ModifyProtocolSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309270959176_ChangeNameBack.cs" />
+    <Compile Include="Migrations\202309270959176_ChangeNameBack.Designer.cs">
+      <DependentUpon>202309270959176_ChangeNameBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309271022137_UpateProtocols.cs" />
+    <Compile Include="Migrations\202309271022137_UpateProtocols.Designer.cs">
+      <DependentUpon>202309271022137_UpateProtocols.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309271023353_ExtendProtocols.cs" />
+    <Compile Include="Migrations\202309271023353_ExtendProtocols.Designer.cs">
+      <DependentUpon>202309271023353_ExtendProtocols.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\OrderProductPack.cs" />
     <Compile Include="Models\OrderProduct.cs" />
-    <Compile Include="Models\ProtocolProtocolSectionProduct.cs" />
-    <Compile Include="Models\ProtocolProtocolSection.cs" />
+    <Compile Include="Models\ProtocolSectionProduct.cs" />
     <Compile Include="Models\ProtocolSection.cs" />
+    <Compile Include="Models\Section.cs" />
     <Compile Include="Models\ProtocolProductPack.cs" />
     <Compile Include="Models\ProtocolProduct.cs" />
     <Compile Include="Models\Protocol.cs" />
@@ -449,6 +465,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309270718163_AddProtocols.resx">
       <DependentUpon>202309270718163_AddProtocols.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309270957187_ModifyProtocolSection.resx">
+      <DependentUpon>202309270957187_ModifyProtocolSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309270959176_ChangeNameBack.resx">
+      <DependentUpon>202309270959176_ChangeNameBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309271022137_UpateProtocols.resx">
+      <DependentUpon>202309271022137_UpateProtocols.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309271023353_ExtendProtocols.resx">
+      <DependentUpon>202309271023353_ExtendProtocols.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

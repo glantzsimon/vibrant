@@ -19,12 +19,13 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Protocol> _protocolsRepository;
         private readonly IRepository<ProtocolProduct> _protocolProductsRepository;
         private readonly IRepository<ProtocolProductPack> _protocolProductPackRepository;
-        private readonly IRepository<ProtocolProtocolSection> _protocolProtocolSectionRepository;
-        private readonly IRepository<ProtocolSection> _protocolSectionRepository;
-        private readonly IRepository<ProtocolProtocolSectionProduct> _protocolProtocolSectionProductsRepository;
+        private readonly IRepository<ProtocolSection> _protocolProtocolSectionRepository;
+        private readonly IRepository<Section> _protocolSectionRepository;
+        private readonly IRepository<ProtocolSectionProduct> _protocolProtocolSectionProductsRepository;
+        private readonly IRepository<ProductPackProduct> _productPackProductRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public ProtocolService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Contact> contactsRepository, IRepository<User> usersRepository, IRepository<Protocol> protocolsRepository, IRepository<ProtocolProduct> protocolProductsRepository, IRepository<ProtocolProductPack> protocolProductPackRepository, IRepository<ProtocolProtocolSection> protocolProtocolSectionRepository, IRepository<ProtocolSection> protocolSectionRepository, IRepository<ProtocolProtocolSectionProduct> protocolProtocolSectionProductsRepository)
+        public ProtocolService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Contact> contactsRepository, IRepository<User> usersRepository, IRepository<Protocol> protocolsRepository, IRepository<ProtocolProduct> protocolProductsRepository, IRepository<ProtocolProductPack> protocolProductPackRepository, IRepository<ProtocolSection> protocolProtocolSectionRepository, IRepository<Section> protocolSectionRepository, IRepository<ProtocolSectionProduct> protocolProtocolSectionProductsRepository, IRepository<ProductPackProduct> productPackProductRepository)
         {
             _logger = logger;
             _productsRepository = productsRepository;
@@ -37,6 +38,7 @@ namespace K9.WebApplication.Services
             _protocolProtocolSectionRepository = protocolProtocolSectionRepository;
             _protocolSectionRepository = protocolSectionRepository;
             _protocolProtocolSectionProductsRepository = protocolProtocolSectionProductsRepository;
+            _productPackProductRepository = productPackProductRepository;
             _defaultValues = defaultValues.Value;
         }
 
@@ -96,15 +98,29 @@ namespace K9.WebApplication.Services
             foreach (var protocolProductPack in protocol.ProductPacks)
             {
                 protocolProductPack.ProductPack = _productPackRepository.Find(protocolProductPack.ProductPackId);
+
+                protocolProductPack.ProductPack.Products =
+                    _productPackProductRepository.Find(e => e.ProductPackId == protocolProductPack.ProductPack.Id).ToList();
+
+                foreach (var productPackProduct in protocolProductPack.ProductPack.Products)
+                {
+                    productPackProduct.Product = _productsRepository.Find(productPackProduct.ProductId);
+                }
             }
 
             protocol.ProtocolSections = _protocolProtocolSectionRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
             foreach (var section in protocol.ProtocolSections)
             {
-                section.ProtocolSection = _protocolSectionRepository.Find(section.ProtocolSectionId);
+                section.Section = _protocolSectionRepository.Find(section.SectionId);
 
                 section.ProtocolSectionProducts =
-                    _protocolProtocolSectionProductsRepository.Find(e => e.ProtocolProtocolSectionId == section.Id).ToList();
+                    _protocolProtocolSectionProductsRepository.Find(e => e.ProtocolSectionId == section.Id).ToList();
+
+                foreach (var protocolProtocolSectionProduct in section.ProtocolSectionProducts)
+                {
+                    protocolProtocolSectionProduct.Product =
+                        _productsRepository.Find(protocolProtocolSectionProduct.ProductId);
+                }
             }
 
             protocol.Contact = _contactsRepository.Find(protocol.ContactId ?? 0);
@@ -181,27 +197,27 @@ namespace K9.WebApplication.Services
             // Copy sections
             foreach (var section in protocol.ProtocolSections)
             {
-                var newProtocolSection = new ProtocolProtocolSection
+                var newProtocolSection = new ProtocolSection
                 {
                     ProtocolId = newProtocol.Id,
-                    ProtocolSectionId = section.ProtocolSectionId
+                    SectionId = section.SectionId
                 };
 
                 _protocolProtocolSectionRepository.Create(newProtocolSection);
 
                 // Copy products and product packs
                 var protocolSection =
-                    _protocolProtocolSectionRepository.Find(e => e.ProtocolSectionId == section.ProtocolSectionId).FirstOrDefault();
+                    _protocolProtocolSectionRepository.Find(e => e.SectionId == section.SectionId).FirstOrDefault();
 
                 var sectionProducts = _protocolProtocolSectionProductsRepository.Find(e =>
-                    e.ProtocolProtocolSectionId == protocolSection.ProtocolSectionId);
+                    e.ProtocolSectionId == protocolSection.SectionId);
 
                 foreach (var product in sectionProducts)
                 {
                     // ProtocolId = newProtocol.Id,
-                    var newProtocolSectionProduct = new ProtocolProtocolSectionProduct
+                    var newProtocolSectionProduct = new ProtocolSectionProduct
                     {
-                        ProtocolProtocolSectionId = protocolSection.ProtocolSectionId,
+                        ProtocolSectionId = protocolSection.SectionId,
                         ProductId = product.ProductId
                     };
 
@@ -247,10 +263,10 @@ namespace K9.WebApplication.Services
                 // Copy default sections
                 foreach (var section in defaultSections)
                 {
-                    var newProtocolSection = new ProtocolProtocolSection
+                    var newProtocolSection = new ProtocolSection
                     {
                         ProtocolId = protocol.Id,
-                        ProtocolSectionId = section.Id
+                        SectionId = section.Id
                     };
 
                     _protocolProtocolSectionRepository.Create(newProtocolSection);

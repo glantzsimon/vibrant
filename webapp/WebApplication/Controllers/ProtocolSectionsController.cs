@@ -1,38 +1,44 @@
-﻿using K9.Base.WebApplication.EventArgs;
+﻿using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
+using K9.Base.WebApplication.ViewModels;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
-using System.Linq;
+using K9.SharedLibrary.Models;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
-    [RequirePermissions(Role = RoleNames.Administrators)]
-    public class ProtocolSectionsController : HtmlControllerBase<ProtocolSection>
-    {
-        public ProtocolSectionsController(IControllerPackage<ProtocolSection> controllerPackage) : base(controllerPackage)
-        {
-            RecordBeforeCreate += ProtocolSectionsController_RecordBeforeCreate;
-        }
+	[RequirePermissions(Role = RoleNames.Administrators)]
+	public class ProtocolSectionsController : BaseController<ProtocolSection>
+	{
+	    private readonly IRepository<Protocol> _protocolRepository;
 
-        public ActionResult View(int protocolSectionId)
-        {
-            return RedirectToAction("Details", null, new { id = protocolSectionId });
-        }
+	    public ProtocolSectionsController(IControllerPackage<ProtocolSection> controllerPackage, IRepository<Protocol> protocolRepository)
+			: base(controllerPackage)
+	    {
+	        _protocolRepository = protocolRepository;
+	    }
 
-        private void ProtocolSectionsController_RecordBeforeCreate(object sender, CrudEventArgs e)
-        {
-            var protocolSection = e.Item as ProtocolSection;
-            UpdateDisplayOrder(protocolSection);
-        }
+	    public override ActionResult Index()
+	    {
+	        return RedirectToAction("Index", "Protocols");
+	    }
 
-        private void UpdateDisplayOrder(ProtocolSection protocolSection)
-        {
-            var lastSection = Repository.CustomQuery<ProtocolSection>(
-                $"SELECT TOP 1 * FROM {nameof(ProtocolSection)} ORDER BY {nameof(ProtocolSection.DisplayOrder)} DESC").FirstOrDefault();
-            protocolSection.DisplayOrder = lastSection?.DisplayOrder + 1 ?? 0;
-        }
-    }
+		[RequirePermissions(Permission = Permissions.Edit)]
+		public ActionResult EditProtocolProtocolSectionsForProtocol(int id = 0)
+		{
+			return EditMultiple<Protocol, Section>(_protocolRepository.Find(id));
+		}
+
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		[RequirePermissions(Permission = Permissions.Edit)]
+		public ActionResult EditProtocolProtocolSectionsForProtocol(MultiSelectViewModel model)
+		{
+			return EditMultiple<Protocol, Section>(model);
+		}
+
+	}
 }

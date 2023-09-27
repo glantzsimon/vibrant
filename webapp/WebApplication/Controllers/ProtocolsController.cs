@@ -39,7 +39,7 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult EditSections(int id = 0)
         {
-            return RedirectToAction("EditProtocolProtocolSectionsForProtocol", "ProtocolProtocolSections", new { id });
+            return RedirectToAction("EditProtocolProtocolSectionsForProtocol", "ProtocolSections", new { id });
         }
 
         public ActionResult EditProducts(int id = 0)

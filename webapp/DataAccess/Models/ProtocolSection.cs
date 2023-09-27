@@ -1,35 +1,39 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
-using K9.Base.Globalisation;
-using K9.DataAccessLayer.Enums;
+using K9.SharedLibrary.Attributes;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Web.Mvc;
 
 namespace K9.DataAccessLayer.Models
 {
-    [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.ProtocolSections, PluralName = Globalisation.Strings.Names.ProtocolSections, Name = Globalisation.Strings.Names.ProtocolSection)]
+    [AutoGenerateName]
+    [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.ProtocolProtocolSections, PluralName = Globalisation.Strings.Names.ProtocolProtocolSections, Name = Globalisation.Strings.Names.ProtocolProtocolSection)]
     public class ProtocolSection : ObjectBase
     {
-        [NotMapped]
+        [UIHint("Protocol")]
+        [ForeignKey("Protocol")]
+        public int ProtocolId { get; set; }
+
+        public virtual Protocol Protocol { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProtocolLabel)]
+        [LinkedColumn(LinkedTableName = "Protocol", LinkedColumnName = "Name")]
+        public string ProtocolName { get; set; }
+
         [UIHint("ProtocolSection")]
+        [ForeignKey("Section")]
+        public int SectionId { get; set; }
+
+        public virtual Section Section { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProtocolSectionLabel)]
-        public int ProtocolSectionId => Id;
+        [LinkedColumn(LinkedTableName = "Section", LinkedColumnName = "Name")]
+        public string SectionName { get; set; }
 
-        [UIHint("ProductRecommendations")]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RecommendationsLabel)]
-        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-        public EProductRecommendation Recommendations { get; set; }
-        
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
-        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-        [StringLength(int.MaxValue)]
-        [DataType(DataType.Html)]
-        [AllowHtml]
-        public string ShortDescription { get; set; }
+        public virtual IEnumerable<ProtocolSectionProduct> ProtocolProtocolSectionProducts { get; set; }
 
-        [Index("IX_ProtocolSection_DisplayOrder", IsUnique = true)]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DisplayOrderLabel)]
-        public int DisplayOrder { get; set; }
+        [NotMapped]
+        public List<ProtocolSectionProduct> ProtocolSectionProducts { get; set; }
     }
 }

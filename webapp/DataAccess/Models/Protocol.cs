@@ -43,10 +43,10 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         public List<ProtocolProductPack> ProductPacks { get; set; }
 
-        public virtual IEnumerable<ProtocolProtocolSection> ProtocolProtocolSections { get; set; }
-
+        public virtual IEnumerable<ProtocolSection> ProtocolProtocolSections { get; set; }
+        
         [NotMapped]
-        public List<ProtocolProtocolSection> ProtocolSections { get; set; }
+        public List<ProtocolSection> ProtocolSections { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]

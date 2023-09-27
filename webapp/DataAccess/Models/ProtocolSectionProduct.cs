@@ -8,12 +8,12 @@ namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.ProtocolProtocolSectionProducts, PluralName = Globalisation.Strings.Names.ProtocolProtocolSectionProducts, Name = Globalisation.Strings.Names.ProtocolProtocolSectionProduct)]
-    public class ProtocolProtocolSectionProduct : ObjectBase
+    public class ProtocolSectionProduct : ObjectBase
     {
-        [ForeignKey("ProtocolProtocolSection")]
-        public int ProtocolProtocolSectionId { get; set; }
+        [ForeignKey("ProtocolSection")]
+        public int ProtocolSectionId { get; set; }
 
-        public virtual ProtocolProtocolSection ProtocolProtocolSection { get; set; }
+        public virtual ProtocolSection ProtocolSection { get; set; }
         
         [UIHint("Product")]
         [ForeignKey("Product")]

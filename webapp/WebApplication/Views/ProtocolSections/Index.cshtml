@@ -3,15 +3,15 @@
 @using K9.SharedLibrary.Authentication
 @using K9.SharedLibrary.Models
 @using EButtonType = K9.SharedLibrary.Models.EButtonType
-@model ProtocolSection
+@model Section
 @{
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
-@Html.BootstrapTable(new DataTableOptions<ProtocolSection>
+@Html.BootstrapTable(new DataTableOptions<Section>
 {
     AllowCreate = true,
     AllowEdit = true,
-    AllowDelete = ((BaseController<ProtocolSection>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    AllowDelete = ((BaseController<Section>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     VisibleColumns = new List<string>
     {
         "Name",

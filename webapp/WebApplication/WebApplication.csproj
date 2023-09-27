@@ -317,9 +317,9 @@
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Controllers\ProtocolProductsController.cs" />
     <Compile Include="Controllers\ProtocolProductPacksController.cs" />
-    <Compile Include="Controllers\ProtocolProtocolSectionsController.cs" />
-    <Compile Include="Controllers\ProtocolsController.cs" />
     <Compile Include="Controllers\ProtocolSectionsController.cs" />
+    <Compile Include="Controllers\ProtocolsController.cs" />
+    <Compile Include="Controllers\SectionsController.cs" />
     <Compile Include="Controllers\OrderProductPacksController.cs" />
     <Compile Include="Controllers\OrderProductsController.cs" />
     <Compile Include="Controllers\ProductPackController.cs" />
