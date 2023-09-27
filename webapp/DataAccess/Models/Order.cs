@@ -20,7 +20,7 @@ namespace K9.DataAccessLayer.Models
     public class Order : ObjectBase
     {
         public const int MaxInvoiceProductNameLength = 24;
-        public const int OrderNumberRoot = 11110;
+        public const int OrderNumberRoot = 11111 + 9 + 7 + 3;
 
         [UIHint("Order")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]

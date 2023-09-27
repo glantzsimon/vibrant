@@ -10,11 +10,15 @@
         @Html.BootstrapActionLinkButton(Dictionary.EditProductQuantities, "EditProductQuantities", "Orders", new { id = Model.Id }, "", EButtonClass.Primary)
     }
 
+    <hr />
+
     @Html.BootstrapActionLinkButton(Dictionary.EditProductPacks, "EditProductPacks", "Orders", new { id = Model.Id }, "", EButtonClass.Primary)
     if (Model.ProductPacks != null && Model.ProductPacks.Any())
     {
         @Html.BootstrapActionLinkButton(Dictionary.EditProductPackQuantities, "EditProductPackQuantities", "Orders", new { id = Model.Id }, "", EButtonClass.Primary)
     }
+
+    <hr />
 
     @Html.BootstrapActionLinkButton(Dictionary.DuplicateOrder, "DuplicateOrder", "Orders", new { id = Model.Id }, "", EButtonClass.Info)
 

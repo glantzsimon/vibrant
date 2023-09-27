@@ -1360,6 +1360,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download Orders as CSV.
+        /// </summary>
+        public static string DownloadOrdersCsv {
+            get {
+                return ResourceManager.GetString("DownloadOrdersCsv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download Products as CSV.
+        /// </summary>
+        public static string DownloadProductsCsv {
+            get {
+                return ResourceManager.GetString("DownloadProductsCsv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Due By.
         /// </summary>
         public static string DueByLabel {

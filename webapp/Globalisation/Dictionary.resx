@@ -1522,6 +1522,12 @@
   <data name="CheckOutOurProductPacks" xml:space="preserve">
     <value>Check out our product packs!</value>
   </data>
+  <data name="DownloadOrdersCsv" xml:space="preserve">
+    <value>Download Orders as CSV</value>
+  </data>
+  <data name="DownloadProductsCsv" xml:space="preserve">
+    <value>Download Products as CSV</value>
+  </data>
   <data name="DuplicateOrder" xml:space="preserve">
     <value>Duplicate Order</value>
   </data>

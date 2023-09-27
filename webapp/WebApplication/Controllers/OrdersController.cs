@@ -204,8 +204,11 @@ namespace K9.WebApplication.Controllers
 
         private void UpdateOrderNumberIfEmpty(Order order)
         {
-            var orderNumberCount = order.Id + Order.OrderNumberRoot;
-            order.OrderNumber = $"PA-{orderNumberCount}";
+            if (string.IsNullOrEmpty(order.OrderNumber))
+            {
+                var orderNumberCount = order.Id + Order.OrderNumberRoot;
+                order.OrderNumber = $"PA-{orderNumberCount}";
+            }
         }
 
         private void OrdersController_RecordBeforeCreated(object sender, CrudEventArgs e)
