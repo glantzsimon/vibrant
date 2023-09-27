@@ -1633,4 +1633,7 @@
   <data name="ValueTooLowException" xml:space="preserve">
     <value>The value entered is too low.</value>
   </data>
+  <data name="ViewSummary" xml:space="preserve">
+    <value>View Summary</value>
+  </data>
 </root>

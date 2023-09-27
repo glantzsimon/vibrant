@@ -52,6 +52,12 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("EditProductPacksForProtocol", "ProtocolProductPacks", new { id });
         }
 
+        public ActionResult Summary(int id = 0)
+        {
+            var protocol = _protocolService.GetProtocolWithProtocolSections(id);
+            return View(protocol);
+        }
+
         public ActionResult EditSectionDetails(int id = 0)
         {
             var protocol = _protocolService.GetProtocolWithProtocolSections(id);
@@ -63,9 +69,21 @@ namespace K9.WebApplication.Controllers
         [RequirePermissions(Permission = Permissions.Edit)]
         public ActionResult EditSectionDetails(Protocol model)
         {
-            _protocolService.UpdateSectionDetails(model);
-            var protocol = _protocolService.Find(model.Id);
-            return View(protocol);
+            try
+            {
+                _protocolService.UpdateSectionDetails(model);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                ModelState.AddModelError("", e.Message);
+                return View(model);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            return RedirectToAction("EditSectionDetails", new { id = model.Id });
         }
 
         private void ProtocolsController_RecordBeforeDeleted(object sender, CrudEventArgs e)

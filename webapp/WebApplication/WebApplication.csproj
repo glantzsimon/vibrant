@@ -1452,14 +1452,14 @@
     <Content Include="Views\Shared\DisplayTemplates\Protocol.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Protocol.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ProtocolSection.cshtml" />
-    <Content Include="Views\ProtocolSections\_DisplayFields.cshtml" />
-    <Content Include="Views\ProtocolSections\_DisplaySummary.cshtml" />
-    <Content Include="Views\ProtocolSections\_EditFields.cshtml" />
-    <Content Include="Views\ProtocolSections\Create.cshtml" />
-    <Content Include="Views\ProtocolSections\Delete.cshtml" />
-    <Content Include="Views\ProtocolSections\Details.cshtml" />
-    <Content Include="Views\ProtocolSections\Edit.cshtml" />
-    <Content Include="Views\ProtocolSections\Index.cshtml" />
+    <Content Include="Views\Sections\_DisplayFields.cshtml" />
+    <Content Include="Views\Sections\_DisplaySummary.cshtml" />
+    <Content Include="Views\Sections\_EditFields.cshtml" />
+    <Content Include="Views\Sections\Create.cshtml" />
+    <Content Include="Views\Sections\Delete.cshtml" />
+    <Content Include="Views\Sections\Details.cshtml" />
+    <Content Include="Views\Sections\Edit.cshtml" />
+    <Content Include="Views\Sections\Index.cshtml" />
     <Content Include="Views\Protocols\_DisplayFields.cshtml" />
     <Content Include="Views\Protocols\_DisplaySummary.cshtml" />
     <Content Include="Views\Protocols\_EditFields.cshtml" />
@@ -1473,6 +1473,8 @@
     <Content Include="Views\Protocols\_ProductPackSummary.cshtml" />
     <Content Include="Views\Protocols\EditSectionDetails.cshtml" />
     <Content Include="Views\Protocols\_EditSectionDetailsFields.cshtml" />
+    <Content Include="Views\Protocols\Summary.cshtml" />
+    <Content Include="Views\Protocols\_SummaryFields.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

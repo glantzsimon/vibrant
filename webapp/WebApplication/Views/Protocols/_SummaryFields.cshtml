@@ -26,12 +26,13 @@
 
 @for (int i = 0; i < Model.ProtocolSections.Count; i++)
 {
-    @Html.HiddenFor(e => Model.ProtocolSections[i].Id)
-    @Html.HiddenFor(e => Model.ProtocolSections[i].SectionId)
-    @Html.HiddenFor(e => Model.ProtocolSections[i].Section.Name)
-    var section = Model.ProtocolSections[i];
+    @Html.HiddenFor(e => Model.ProtocolSections[i].Section.Id)
 
-    <div class="row">
+    var section = Model.ProtocolSections[i];
+    var isVisible = section.ProtocolSectionProducts.Where(e => e.Amount > 0).Any();
+    var displayClass = isVisible ? "" : "none";
+
+    <div class="row" style="display: @displayClass;">
         <div class="col-sm-2">
             @Html.DisplayFor(e => section.Section.Name)
         </div>
@@ -45,17 +46,15 @@
 
                 @Html.HiddenFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].Id)
                 @Html.HiddenFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].Product.Id)
-                @Html.HiddenFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].Product.ProductType)
-                @Html.HiddenFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].Product.Amount)
 
-                if (product.IsVisible)
+                if (product.IsVisible && product.Amount > 0)
                 {
                     <div class="row">
                         <div class="col-sm-7">
                             @Html.Label(product.Product.Name)
                         </div>
                         <div class="col-sm-5">
-                            @Html.BootstrapEditorFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].Amount, new EditorOptions
+                            @Html.BootstrapDisplayFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].FormattedAmount, new EditorOptions
                             {
                                 Label = ""
                             })
@@ -65,5 +64,8 @@
             }
         </div>
     </div>
-    <hr />
+    if (isVisible)
+    {
+        <hr />
+    }
 }

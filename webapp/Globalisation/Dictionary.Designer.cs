@@ -4711,6 +4711,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View Summary.
+        /// </summary>
+        public static string ViewSummary {
+            get {
+                return ResourceManager.GetString("ViewSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Waiting.
         /// </summary>
         public static string Waiting {

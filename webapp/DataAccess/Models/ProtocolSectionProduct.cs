@@ -4,6 +4,7 @@ using K9.Base.Globalisation;
 using K9.SharedLibrary.Attributes;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -15,7 +16,7 @@ namespace K9.DataAccessLayer.Models
         public int ProtocolSectionId { get; set; }
 
         public virtual ProtocolSection ProtocolSection { get; set; }
-        
+
         [UIHint("Product")]
         [ForeignKey("Product")]
         public int ProductId { get; set; }
@@ -26,9 +27,39 @@ namespace K9.DataAccessLayer.Models
         [LinkedColumn(LinkedTableName = "Product", LinkedColumnName = "Title")]
         public string ProductName { get; set; }
 
-        [UIHint("Quantity")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public int Amount { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
+        public string FormattedAmount => $"{Amount} {GetMeasuredInText(Product)}";
+
+        private string GetMeasuredInText(Product product)
+        {
+            switch (product.ProductType)
+            {
+                case EProductType.Capsules:
+                    if (Amount == 1)
+                    {
+                        return Globalisation.Strings.Constants.Measures.Capsules;
+                    }
+                    else
+                    {
+                        return Globalisation.Dictionary.Capsule;
+                    }
+
+                case EProductType.Powder:
+                    return Globalisation.Strings.Constants.Measures.Milligrams;
+
+                case EProductType.Liquid:
+                    return Globalisation.Strings.Constants.Measures.Millilitres;
+
+                default:
+                    return string.Empty;
+            }
+        }
+
+        [NotMapped]
+        public bool IsVisible { get; set; }
     }
 }

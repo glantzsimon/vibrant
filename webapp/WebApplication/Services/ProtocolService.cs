@@ -141,12 +141,26 @@ namespace K9.WebApplication.Services
             {
                 foreach (var protocolProduct in protocol.Products)
                 {
-                    var protocolSectionProduct = new ProtocolSectionProduct
+                    var existing = protocolProtocolSection.ProtocolSectionProducts.FirstOrDefault(e =>
+                        e.ProductId == protocolProduct.ProductId);
+
+                    if (existing != null)
                     {
-                        ProtocolSectionId = protocolProtocolSection.Id,
-                        ProductId = protocolProduct.ProductId
-                    };
-                    protocolProtocolSection.ProtocolSectionProducts.Add(protocolSectionProduct);
+                        existing.IsVisible =
+                            protocolProduct.Product.CheckRecommendations(
+                                protocolProtocolSection.Section.Recommendations);
+                    }
+                    else
+                    {
+                        var protocolSectionProduct = new ProtocolSectionProduct
+                        {
+                            ProtocolSectionId = protocolProtocolSection.Id,
+                            ProductId = protocolProduct.ProductId,
+                            Product = protocolProduct.Product,
+                            IsVisible = protocolProduct.Product.CheckRecommendations(protocolProtocolSection.Section.Recommendations)
+                        };
+                        protocolProtocolSection.ProtocolSectionProducts.Add(protocolSectionProduct);
+                    }
                 }
             }
 
@@ -282,7 +296,7 @@ namespace K9.WebApplication.Services
         {
             foreach (var protocolProtocolSection in protocol.ProtocolSections)
             {
-                foreach (var protocolProduct in protocol.Products)
+                foreach (var protocolProduct in protocolProtocolSection.ProtocolSectionProducts)
                 {
                     var items = _protocolProtocolSectionProductsRepository.Find(e =>
                         e.ProtocolSectionId == protocolProtocolSection.Id && e.ProductId == protocolProduct.Product.Id);
