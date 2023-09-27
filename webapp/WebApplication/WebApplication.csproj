@@ -315,6 +315,7 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Controllers\ActivitiesController.cs" />
     <Compile Include="Controllers\ProtocolActivitiesController.cs" />
     <Compile Include="Controllers\ProtocolProductsController.cs" />
     <Compile Include="Controllers\ProtocolProductPacksController.cs" />

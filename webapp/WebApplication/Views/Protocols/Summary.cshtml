@@ -4,6 +4,7 @@
 @model Protocol
 @{
     Layout = "../Shared/_LayoutForm.cshtml";
+    ViewBag.SubTitle = Model.Name;
 }
 @using (Html.BeginForm())
 {
