@@ -312,6 +312,10 @@
     <Compile Include="Migrations\202309261116598_AddOrderFullName.Designer.cs">
       <DependentUpon>202309261116598_AddOrderFullName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309270430322_AddOrderNumberToOrders.cs" />
+    <Compile Include="Migrations\202309270430322_AddOrderNumberToOrders.Designer.cs">
+      <DependentUpon>202309270430322_AddOrderNumberToOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\OrderProductPack.cs" />
@@ -429,6 +433,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309261116598_AddOrderFullName.resx">
       <DependentUpon>202309261116598_AddOrderFullName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309270430322_AddOrderNumberToOrders.resx">
+      <DependentUpon>202309270430322_AddOrderNumberToOrders.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
