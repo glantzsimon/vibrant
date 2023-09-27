@@ -110,6 +110,7 @@
             public const string CodeLabel = "Code";
             public const string BenefitsLabel = "BenefitsLabel";
             public const string InvoiceNumbersLabel = "InvoiceNumbersLabel";
+            public const string InvoiceLabel = "InvoiceLabel";
             public const string DosageLabel = "DosageLabel";
             public const string RecommendationsLabel = "RecommendationsLabel";
             public const string TotalsLabel = "TotalsLabel";

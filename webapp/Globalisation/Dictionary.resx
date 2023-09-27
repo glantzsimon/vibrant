@@ -1537,6 +1537,9 @@
   <data name="InvoiceDateLabel" xml:space="preserve">
     <value>Invoice Date</value>
   </data>
+  <data name="InvoiceLabel" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
   <data name="InvoiceNumbersLabel" xml:space="preserve">
     <value>Invoice Numbers</value>
   </data>

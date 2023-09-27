@@ -8,6 +8,9 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderNumberLabel)]
         public string OrderNumber { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InvoiceLabel)]
+        public string InvoiceNumber => $"{Globalisation.Dictionary.InvoiceLabel.ToUpper()} {OrderNumber}";
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ContactLabel)]
         public string ContactName { get; set; }
 

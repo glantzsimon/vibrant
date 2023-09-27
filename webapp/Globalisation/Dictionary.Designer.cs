@@ -2053,6 +2053,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invoice.
+        /// </summary>
+        public static string InvoiceLabel {
+            get {
+                return ResourceManager.GetString("InvoiceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invoice Numbers.
         /// </summary>
         public static string InvoiceNumbersLabel {
