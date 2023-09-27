@@ -132,7 +132,7 @@ namespace K9.WebApplication.Services
             return product;
         }
 
-        public Product DuplicateProduct(int id)
+        public Product Duplicate(int id)
         {
             var product = Find(id);
             if (product == null)
@@ -181,6 +181,16 @@ namespace K9.WebApplication.Services
                 product.Ingredients.ForEach(e => e.BatchSize = batchSize);
             }
             return product;
+        }
+
+        public void DeleteChildRecords(int id)
+        {
+            var product = Find(id);
+
+            foreach (var productIngredient in product.Ingredients)
+            {
+                _productIngredientsRepository.Delete(productIngredient.Id);
+            }
         }
 
         public List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false)

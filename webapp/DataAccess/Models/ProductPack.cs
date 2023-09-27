@@ -96,11 +96,11 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SeoFriendlyIdLabel)]
         public string SeoFriendlyId { get; set; }
 
-        [FileSourceInfo("upload/products", Filter = EFilesSourceFilter.Images)]
+        [FileSourceInfo("upload/productpacks", Filter = EFilesSourceFilter.Images)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]
         public FileSource ImageFileSource { get; set; }
 
-        [FileSourceInfo("upload/products", Filter = EFilesSourceFilter.Videos)]
+        [FileSourceInfo("upload/productpacks", Filter = EFilesSourceFilter.Videos)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadVideo)]
         public FileSource VideoFileSource { get; set; }
 

@@ -67,6 +67,7 @@ namespace K9.WebApplication
             builder.RegisterType<ProductService>().As<IProductService>().InstancePerRequest();
             builder.RegisterType<OrderService>().As<IOrderService>().InstancePerRequest();
             builder.RegisterType<IngredientService>().As<IIngredientService>().InstancePerRequest();
+            builder.RegisterType<ProtocolService>().As<IProtocolService>().InstancePerRequest();
 
             RegisterConfiguration(builder);
 

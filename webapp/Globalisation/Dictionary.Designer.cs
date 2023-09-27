@@ -1162,6 +1162,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Display Order.
+        /// </summary>
+        public static string DisplayOrderLabel {
+            get {
+                return ResourceManager.GetString("DisplayOrderLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Donate.
         /// </summary>
         public static string Donate {
@@ -1428,6 +1437,15 @@ namespace K9.Globalisation {
         public static string DuplicateProduct {
             get {
                 return ResourceManager.GetString("DuplicateProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duplicate Protocol.
+        /// </summary>
+        public static string DuplicateProtocol {
+            get {
+                return ResourceManager.GetString("DuplicateProtocol", resourceCulture);
             }
         }
         
@@ -3372,11 +3390,110 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Protocol.
+        /// </summary>
+        public static string Protocol {
+            get {
+                return ResourceManager.GetString("Protocol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Product.
+        /// </summary>
+        public static string ProtocolProduct {
+            get {
+                return ResourceManager.GetString("ProtocolProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Product Packs.
+        /// </summary>
+        public static string ProtocolProductPack {
+            get {
+                return ResourceManager.GetString("ProtocolProductPack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Product Packs.
+        /// </summary>
+        public static string ProtocolProductPacks {
+            get {
+                return ResourceManager.GetString("ProtocolProductPacks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Products.
+        /// </summary>
+        public static string ProtocolProducts {
+            get {
+                return ResourceManager.GetString("ProtocolProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Protocol Section.
+        /// </summary>
+        public static string ProtocolProtocolSection {
+            get {
+                return ResourceManager.GetString("ProtocolProtocolSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Protocol Section Product.
+        /// </summary>
+        public static string ProtocolProtocolSectionProduct {
+            get {
+                return ResourceManager.GetString("ProtocolProtocolSectionProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Protocol Section Products.
+        /// </summary>
+        public static string ProtocolProtocolSectionProducts {
+            get {
+                return ResourceManager.GetString("ProtocolProtocolSectionProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Protocol Sections.
+        /// </summary>
+        public static string ProtocolProtocolSections {
+            get {
+                return ResourceManager.GetString("ProtocolProtocolSections", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Protocols.
         /// </summary>
         public static string Protocols {
             get {
                 return ResourceManager.GetString("Protocols", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Section.
+        /// </summary>
+        public static string ProtocolSection {
+            get {
+                return ResourceManager.GetString("ProtocolSection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Sections.
+        /// </summary>
+        public static string ProtocolSections {
+            get {
+                return ResourceManager.GetString("ProtocolSections", resourceCulture);
             }
         }
         

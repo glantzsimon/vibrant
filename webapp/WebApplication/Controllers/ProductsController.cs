@@ -50,7 +50,7 @@ namespace K9.WebApplication.Controllers
         [RequirePermissions(Permission = Permissions.Create)]
         public ActionResult DuplicateProduct(Product product)
         {
-            _productService.DuplicateProduct(product.Id);
+            _productService.Duplicate(product.Id);
             return RedirectToAction("Index");
         }
 
@@ -205,13 +205,7 @@ namespace K9.WebApplication.Controllers
 
         private void ProductsController_RecordBeforeDeleted(object sender, CrudEventArgs e)
         {
-            var product = e.Item as Product;
-            product = _productService.GetFullProduct(product);
-
-            foreach (var productIngredient in product.Ingredients)
-            {
-                _productIngredientsRepository.Delete(productIngredient.Id);
-            }
+            _productService.DeleteChildRecords(e.Item.Id);
         }
     }
 }

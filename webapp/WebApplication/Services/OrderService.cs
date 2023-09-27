@@ -149,7 +149,7 @@ namespace K9.WebApplication.Services
             return orders;
         }
 
-        public Order DuplicateOrder(int id)
+        public Order Duplicate(int id)
         {
             var order = _ordersRepository.Find(id);
             if (order != null)
@@ -210,6 +210,21 @@ namespace K9.WebApplication.Services
             }
 
             return newOrder;
+        }
+
+        public void DeleteChildRecords(int id)
+        {
+            var order = Find(id);
+
+            foreach (var orderProduct in order.Products)
+            {
+                _orderProductsRepository.Delete(orderProduct.Id);
+            }
+
+            foreach (var orderProductPack in order.ProductPacks)
+            {
+                _orderProductPacksRepository.Delete(orderProductPack.Id);
+            }
         }
     }
 }

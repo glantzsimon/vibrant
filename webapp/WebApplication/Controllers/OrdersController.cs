@@ -116,7 +116,7 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult DuplicateOrder(int id)
         {
-            var duplicate = _orderService.DuplicateOrder(id);
+            var duplicate = _orderService.Duplicate(id);
             return RedirectToAction("Edit", new { id = duplicate.Id });
         }
 
@@ -257,18 +257,7 @@ namespace K9.WebApplication.Controllers
 
         private void OrdersController_RecordBeforeDeleted(object sender, CrudEventArgs e)
         {
-            var order = e.Item as Order;
-            order = _orderService.GetFullOrder(order);
-
-            foreach (var orderProduct in order.Products)
-            {
-                _orderProductsRepository.Delete(orderProduct.Id);
-            }
-
-            foreach (var orderProductPack in order.ProductPacks)
-            {
-                _orderProductPackRepository.Delete(orderProductPack.Id);
-            }
+            _orderService.DeleteChildRecords(e.Item.Id);
         }
     }
 }

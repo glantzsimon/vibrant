@@ -23,6 +23,13 @@ namespace K9.DataAccessLayer.Database
 	    public DbSet<ProductPack> ProductPacks { get; set; }
 	    public DbSet<ProductPackProduct> ProductPackProducts { get; set; }
 	    
+	    public DbSet<Protocol> Protocols { get; set; }
+	    public DbSet<ProtocolProduct> ProtocolProducts { get; set; }
+	    public DbSet<ProtocolProductPack> ProtocolProductPacks { get; set; }
+	    public DbSet<ProtocolSection> ProtocolSections { get; set; }
+	    public DbSet<ProtocolProtocolSection> ProtocolProtocolSections { get; set; }
+	    public DbSet<ProtocolProtocolSectionProduct> ProtocolProtocolSectionProducts { get; set; }
+	    
 	    public DbSet<UserConsultation> UserConsultations { get; set; }
 	    public DbSet<UserCreditPack> UserCreditPack { get; set; }
 	    public DbSet<UserMembership> UserMemberships { get; set; }

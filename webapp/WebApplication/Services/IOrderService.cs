@@ -13,7 +13,8 @@ namespace K9.WebApplication.Services
         Order Find(string orderNumber);
         Order GetFullOrder(Order order);
         Order FillZeroQuantities(Order order);
-        Order DuplicateOrder(int id);
+        Order Duplicate(int id);
+        void DeleteChildRecords(int id);
 
         List<Order> List(bool retrieveFullOrder = false, bool includeCustomOrders = false);
     }

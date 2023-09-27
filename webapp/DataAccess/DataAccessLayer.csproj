@@ -316,10 +316,20 @@
     <Compile Include="Migrations\202309270430322_AddOrderNumberToOrders.Designer.cs">
       <DependentUpon>202309270430322_AddOrderNumberToOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309270718163_AddProtocols.cs" />
+    <Compile Include="Migrations\202309270718163_AddProtocols.Designer.cs">
+      <DependentUpon>202309270718163_AddProtocols.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\OrderProductPack.cs" />
     <Compile Include="Models\OrderProduct.cs" />
+    <Compile Include="Models\ProtocolProtocolSectionProduct.cs" />
+    <Compile Include="Models\ProtocolProtocolSection.cs" />
+    <Compile Include="Models\ProtocolSection.cs" />
+    <Compile Include="Models\ProtocolProductPack.cs" />
+    <Compile Include="Models\ProtocolProduct.cs" />
+    <Compile Include="Models\Protocol.cs" />
     <Compile Include="Models\ProductPack.cs" />
     <Compile Include="Models\ProductPackProduct.cs" />
     <Compile Include="Models\Order.cs" />
@@ -436,6 +446,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309270430322_AddOrderNumberToOrders.resx">
       <DependentUpon>202309270430322_AddOrderNumberToOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309270718163_AddProtocols.resx">
+      <DependentUpon>202309270718163_AddProtocols.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

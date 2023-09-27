@@ -34,6 +34,11 @@
 
                         <li class="divider"></li>
 
+                        <li class="@ViewContext.GetActiveClass("Index", "Protocols") sub-item"><a href="@Url.Action("Index", "Protocols")">@Dictionary.Protocols</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "ProtocolSections") sub-item"><a href="@Url.Action("Index", "ProtocolSections")">@Dictionary.ProtocolSections</a></li>
+
+                        <li class="divider"></li>
+
                         @*<li class="@ViewContext.GetActiveClass("Index", "Donations") sub-item"><a href="@Url.Action("Index", "Donations")">@Dictionary.Donations</a></li>*@
                         <li class="@ViewContext.GetActiveClass("Index", "Log") sub-item"><a href="@Url.Action("Index", "Log")">@Dictionary.ErrorLog</a></li>
                         <li class="@ViewContext.GetActiveClass("Index", "Roles") sub-item"><a href="@Url.Action("Index", "Roles")">@K9.Base.Globalisation.Dictionary.Roles</a></li>
@@ -98,8 +103,8 @@
                             
                             <ul class="dropdown-menu nav navbar-nav">
 
-                                <li class="@ViewContext.GetActiveClass("Questionnaire", "Protocols")"><a href="@Url.Action("Questionnaire", "Protocols")"> @Dictionary.HealthQuestionnaire</a></li>
-                                <li class="@ViewContext.GetActiveClass("Index", "Protocols")"><a href="@Url.Action("Index", "Protocols")"> @Dictionary.Protocols</a></li>
+                                <li class="@ViewContext.GetActiveClass("Questionnaire", "ProtocolArticles")"><a href="@Url.Action("Questionnaire", "ProtocolArticles")"> @Dictionary.HealthQuestionnaire</a></li>
+                                <li class="@ViewContext.GetActiveClass("Index", "ProtocolArticles")"><a href="@Url.Action("Index", "ProtocolArticles")"> @Dictionary.Protocols</a></li>
 
                                 <li class="divider"></li>
 

@@ -1522,6 +1522,9 @@
   <data name="CheckOutOurProductPacks" xml:space="preserve">
     <value>Check out our product packs!</value>
   </data>
+  <data name="DisplayOrderLabel" xml:space="preserve">
+    <value>Display Order</value>
+  </data>
   <data name="DownloadOrdersCsv" xml:space="preserve">
     <value>Download Orders as CSV</value>
   </data>
@@ -1530,6 +1533,9 @@
   </data>
   <data name="DuplicateOrder" xml:space="preserve">
     <value>Duplicate Order</value>
+  </data>
+  <data name="DuplicateProtocol" xml:space="preserve">
+    <value>Duplicate Protocol</value>
   </data>
   <data name="EditProductPackQuantities" xml:space="preserve">
     <value>Edit Number of Product Packs</value>
@@ -1557,6 +1563,39 @@
   </data>
   <data name="PricesListLabel" xml:space="preserve">
     <value>Prices</value>
+  </data>
+  <data name="Protocol" xml:space="preserve">
+    <value>Protocol</value>
+  </data>
+  <data name="ProtocolProduct" xml:space="preserve">
+    <value>Protocol Product</value>
+  </data>
+  <data name="ProtocolProductPack" xml:space="preserve">
+    <value>Protocol Product Packs</value>
+  </data>
+  <data name="ProtocolProductPacks" xml:space="preserve">
+    <value>Protocol Product Packs</value>
+  </data>
+  <data name="ProtocolProducts" xml:space="preserve">
+    <value>Protocol Products</value>
+  </data>
+  <data name="ProtocolProtocolSection" xml:space="preserve">
+    <value>Protocol Protocol Section</value>
+  </data>
+  <data name="ProtocolProtocolSectionProduct" xml:space="preserve">
+    <value>Protocol Protocol Section Product</value>
+  </data>
+  <data name="ProtocolProtocolSectionProducts" xml:space="preserve">
+    <value>Protocol Protocol Section Products</value>
+  </data>
+  <data name="ProtocolProtocolSections" xml:space="preserve">
+    <value>Protocol Protocol Sections</value>
+  </data>
+  <data name="ProtocolSection" xml:space="preserve">
+    <value>Protocol Section</value>
+  </data>
+  <data name="ProtocolSections" xml:space="preserve">
+    <value>Protocol Sections</value>
   </data>
   <data name="SeeAllProductPacks" xml:space="preserve">
     <value>See All Product Packs</value>

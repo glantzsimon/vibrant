@@ -1,0 +1,87 @@
+﻿@using System.Web.Mvc.Html
+@using K9.WebApplication.Helpers
+@using K9.WebApplication.Options
+@model List<Product>
+
+@{
+    ViewBag.Title = Dictionary.Protocols;
+    ViewBag.SubTitle = Dictionary.Protocols;
+    Layout = "../Shared/_LayoutFormMedium.cshtml";
+    ViewBag.Background = ViewBagHelper.EViewBackground.Default;
+}
+
+<div class="container main-content">
+    <div class="well margin-bottom-0">
+        @Html.ImagePanel("", "~/Images/pages/protocols.png", EPanelImageSize.Medium)
+
+        <article>
+            <h2>Disclaimer:</h2>
+            <p>
+                <strong>
+                    The following protocols as offered to you for educational purposes only. They should not be used to treat any medical condition. Anybody who uses the infomration provided below takes full responsibility for doing so.
+                </strong>
+            </p>
+
+            <p>Not every protocol is appropriate for every person. Following a protocol that is not suitable could have unpredictable consequences and could make matters worse. Some protocols can be used individually, whereas others need to be used as part of a more comprehensive healing programme. The order in which some protocols are followed is very important.</p>
+
+            <p>
+                <strong>
+                    We strongly encourage you to work with a qualified healthcare professional.
+                </strong>
+            </p>
+
+            <hr />
+            
+            <h4>
+                Protocols
+            </h4>
+            
+            <div class="content-table">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h5>CBS Upregulation Programme</h5>
+                    </div>
+                    <div class="col-sm-7">
+                        CBS Upregulation occurs due to a genetic mutation that affects a small but not insignificant percentage of the population. Most of those affected by this mutation suffer some form of neurological symptoms, such as anxiety, depression, insomnia, short-term memory issues and other cognitive deficits. Most of those suffering from psychiatric illness or autism spectrum disorders test positive for this mutation, as do those with mystery, hard-to-treat illnesses such as fibromyalgia, chronic fatigue and multiple chemical sensitivity.
+                    </div>
+                    <div class="col-sm-2">
+                        @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "CbsUpregulation", "ProtocolArticles", null, "", EButtonClass.Info, EButtonClass.Large)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h5>Heavy Metal Detox</h5>
+                    </div>
+                    <div class="col-sm-7">
+                        Due to their widespread use in industry and agriculture, heavy metals are increasingly posing a great threat to our health. Many people accumluate heavy metals in their tissues throughout their lives and certain individuals whose genetics predispose them to poor detoxification of heavy metals can get into trouble from a young age. This protocol can help you to safely and effectively eliminate heavy metals from your body.
+                    </div>
+                    <div class="col-sm-2">
+                        @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "HeavyMetalDetox", "ProtocolArticles", null, "", EButtonClass.Info, EButtonClass.Large)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h5>Sulfur Detox</h5>
+                    </div>
+                    <div class="col-sm-7">
+                        Whilst sulfur is highly a beneficial mineral for many people, supporting healthy detoxification and tissue repair, for an increasing number of individuals, especially those exposed to certain environmental chemicals, sulfur can bio-accumulate, causing serious health issues. This protocol is a safe and highly effective way to lower excess sulfur levels and help to restore a more balanced metabolism.
+                    </div>
+                    <div class="col-sm-2">
+                        @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "SulfurDetox", "ProtocolArticles", null, "", EButtonClass.Info, EButtonClass.Large)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h5>General Well-being</h5>
+                    </div>
+                    <div class="col-sm-7">
+                        This protocol is a gentle yet powerful protocol designed to help anyone boost their energy and well-being, no matter what their state of health is. Using simple, effective techniques and powerful, natural supplements, people of all ages and all walks of life can experience greater energy levels, improved focus, mood and motivation as well as more physical energy.
+                    </div>
+                    <div class="col-sm-2">
+                        @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "GeneralWellbeing", "ProtocolArticles", null, "", EButtonClass.Info, EButtonClass.Large)
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>

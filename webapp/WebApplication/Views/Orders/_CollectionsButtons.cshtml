@@ -4,6 +4,14 @@
 
 @if (Model.Id > 0)
 {
+    @Html.BootstrapActionLinkButton(Dictionary.OrderReview, "OrderReview", "Orders", new { id = Model.Id }, "", EButtonClass.Success)
+
+    @Html.BootstrapActionLinkButton(Dictionary.DuplicateOrder, "DuplicateOrder", "Orders", new { id = Model.Id }, "", EButtonClass.Info)
+
+    @Html.BootstrapActionLinkButton(Dictionary.DownloadAsCsv, "DownloadOrderCsv", "Orders", new { id = Model.Id }, "", EButtonClass.Primary)
+
+    <hr />
+
     @Html.BootstrapActionLinkButton(Dictionary.EditProducts, "EditProducts", "Orders", new { id = Model.Id }, "", EButtonClass.Primary)
     if (Model.Products != null && Model.Products.Any())
     {
@@ -17,12 +25,4 @@
     {
         @Html.BootstrapActionLinkButton(Dictionary.EditProductPackQuantities, "EditProductPackQuantities", "Orders", new { id = Model.Id }, "", EButtonClass.Primary)
     }
-
-    <hr />
-
-    @Html.BootstrapActionLinkButton(Dictionary.DuplicateOrder, "DuplicateOrder", "Orders", new { id = Model.Id }, "", EButtonClass.Info)
-
-    @Html.BootstrapActionLinkButton(Dictionary.OrderReview, "OrderReview", "Orders", new { id = Model.Id }, "", EButtonClass.Success)
-
-    @Html.BootstrapActionLinkButton(Dictionary.DownloadAsCsv, "DownloadOrderCsv", "Orders", new { id = Model.Id }, "", EButtonClass.Primary)
 }

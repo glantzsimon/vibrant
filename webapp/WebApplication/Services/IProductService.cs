@@ -12,8 +12,9 @@ namespace K9.WebApplication.Services
         Product Find(string seoFriendlyId);
         Product Find(Guid id);
         Product GetFullProduct(Product product);
-        Product DuplicateProduct(int id);
+        Product Duplicate(int id);
         Product UpdateBatchSize(Product product, int batchSize);
+        void DeleteChildRecords(int id);
         List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false);
         List<ProductPack> ListProductPacks(bool retrieveFullProduct = false);
 
