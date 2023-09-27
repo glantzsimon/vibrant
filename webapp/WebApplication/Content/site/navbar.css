@@ -114,7 +114,13 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
         #account-header ul.admin-menu {
             left: 0;
             margin-left: 5px;
-            width: 200px !important;
+            width: 240px !important;
+        }
+
+        #account-header ul.admin-submenu {
+            max-height: 97%;
+            overflow-y: auto;
+            width: 240px !important;
         }
 
         #account-header ul > li {

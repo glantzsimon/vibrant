@@ -129,6 +129,12 @@ namespace K9.WebApplication.Services
             return protocol;
         }
 
+        public Protocol GetProtocolWithProtocolSections(Guid id)
+        {
+            var protocol = _protocolsRepository.Find(e => e.ExternalId == id).FirstOrDefault();
+            return GetProtocolWithProtocolSections(protocol?.Id ?? 0);
+        }
+
         public Protocol GetProtocolWithProtocolSections(int id)
         {
             var protocol = _protocolsRepository.Find(id);

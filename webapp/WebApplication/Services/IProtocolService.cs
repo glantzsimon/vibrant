@@ -13,6 +13,7 @@ namespace K9.WebApplication.Services
         Protocol GetFullProtocol(Protocol protocolItem);
         Protocol Duplicate(int id);
         Protocol GetProtocolWithProtocolSections(int id);
+        Protocol GetProtocolWithProtocolSections(Guid id);
         void DeleteChildRecords(int id);
         void AddDefaultSections(int id);
         void UpdateSectionDetails(Protocol protocol);

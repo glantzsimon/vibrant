@@ -41,11 +41,11 @@ namespace K9.DataAccessLayer.Models
                 case EProductType.Capsules:
                     if (Amount == 1)
                     {
-                        return Globalisation.Strings.Constants.Measures.Capsules;
+                        return Globalisation.Dictionary.Capsule;
                     }
                     else
                     {
-                        return Globalisation.Dictionary.Capsule;
+                        return Globalisation.Strings.Constants.Measures.Capsules;
                     }
 
                 case EProductType.Powder:

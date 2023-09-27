@@ -28,7 +28,7 @@
     }
 
     function renderEmail(value, type, row) {
-        return value !== null && value.indexOf("@@") >= 0 ? '<a target="_blank" href="mailto:' + value + '">' + value + '</a>' : value;
+        return value !== undefined && value !== null && value.indexOf("@@") >= 0 ? '<a target="_blank" href="mailto:' + value + '">' + value + '</a>' : value;
     }
 
     function getColumnDefs() {
