@@ -1516,6 +1516,9 @@
   <data name="AmountRemainingLabel" xml:space="preserve">
     <value>Amount Remaining</value>
   </data>
+  <data name="BulkDiscountLabel" xml:space="preserve">
+    <value>Bulk Discount</value>
+  </data>
   <data name="CheckOutOurProductPacks" xml:space="preserve">
     <value>Check out our product packs!</value>
   </data>

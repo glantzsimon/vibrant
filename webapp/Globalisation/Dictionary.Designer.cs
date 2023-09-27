@@ -446,6 +446,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bulk Discount.
+        /// </summary>
+        public static string BulkDiscountLabel {
+            get {
+                return ResourceManager.GetString("BulkDiscountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, you cannot switch to the selected membership.
         /// </summary>
         public static string CannotSwitchMembershipError {

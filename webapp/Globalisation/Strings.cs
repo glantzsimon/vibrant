@@ -12,6 +12,7 @@
             public const string DonationAmountLabel = "DonationAmountLabel";
             public const string CompanyLabel = "CompanyLabel";
             public const string ContactLabel = "ContactLabel";
+            public const string BulkDiscountLabel = "BulkDiscountLabel";
             public const string AmountDonatedLabel = "AmountDonatedLabel";
             public const string AmountLabel = "AmountLabel";
             public const string AmountCompletedLabel = "AmountCompletedLabel";

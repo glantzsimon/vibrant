@@ -213,6 +213,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         public string FormattedGrandTotal => GrandTotal.ToCurrency();
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ContactLabel)]
+        public string BulkDiscountText => $"{FormattedDiscount} {Globalisation.Dictionary.BulkDiscountLabel}";
+
         #endregion
 
         [NotMapped]

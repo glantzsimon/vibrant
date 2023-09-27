@@ -17,6 +17,9 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InvoiceNumbersLabel)]
         public string InvoiceNumbersText { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ContactLabel)]
+        public string BulkDiscountText { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductsLabel)]
         public string ProductsList { get; set; }
 
