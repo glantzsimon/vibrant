@@ -128,7 +128,31 @@ namespace K9.WebApplication.Services
 
             return protocol;
         }
-        
+
+        public Protocol GetProtocolWithProtocolSections(int id)
+        {
+            var protocol = _protocolsRepository.Find(id);
+            if (protocol != null)
+            {
+                protocol = GetFullProtocol(protocol);
+            }
+
+            foreach (var protocolProtocolSection in protocol.ProtocolSections)
+            {
+                foreach (var protocolProduct in protocol.Products)
+                {
+                    var protocolSectionProduct = new ProtocolSectionProduct
+                    {
+                        ProtocolSectionId = protocolProtocolSection.Id,
+                        ProductId = protocolProduct.ProductId
+                    };
+                    protocolProtocolSection.ProtocolSectionProducts.Add(protocolSectionProduct);
+                }
+            }
+
+            return protocol;
+        }
+
         public List<Protocol> List(bool retrieveFullProtocol = false)
         {
             var protocols = _protocolsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
@@ -253,7 +277,64 @@ namespace K9.WebApplication.Services
             var protocol = Find(id);
             AddDefaultSections(protocol);
         }
-        
+
+        public void UpdateSectionDetails(Protocol protocol)
+        {
+            foreach (var protocolProtocolSection in protocol.ProtocolSections)
+            {
+                foreach (var protocolProduct in protocol.Products)
+                {
+                    var items = _protocolProtocolSectionProductsRepository.Find(e =>
+                        e.ProtocolSectionId == protocolProtocolSection.Id && e.ProductId == protocolProduct.Product.Id);
+                    var item = items.FirstOrDefault();
+                    var product = _productsRepository.Find(protocolProduct.Product.Id);
+
+                    if (protocolProduct.Amount == 0 && !items.Any())
+                    {
+                        continue;
+                    }
+                    if (protocolProduct.Amount > 0 && !items.Any())
+                    {
+                        // Create new
+                        var newItem = new ProtocolSectionProduct
+                        {
+                            ProtocolSectionId = protocolProtocolSection.Id,
+                            ProductId = protocolProduct.Product.Id,
+                            Amount = protocolProduct.Amount
+                        };
+
+                        var sectionMessage =
+                            $"{nameof(Product.ProductName)}: {product.Name}, {nameof(ProtocolSection.SectionName)}: {protocolProtocolSection.Section.Name}";
+                        var acceptableMessage = string.Format(Globalisation.Dictionary.AcceptableValuesMessage,
+                        product.MinDosage, product.MaxDosage);
+
+                        if (newItem.Amount > product.MaxDosage)
+                        {
+                            throw new ArgumentOutOfRangeException("Amount", $"{Globalisation.Dictionary.ValueTooHighException} {acceptableMessage} {sectionMessage}"); ;
+                        }
+
+                        if (newItem.Amount < product.MinDosage)
+                        {
+                            throw new ArgumentOutOfRangeException("Amount", $"{Globalisation.Dictionary.ValueTooLowException} {acceptableMessage} {sectionMessage}"); ;
+                        }
+
+                        _protocolProtocolSectionProductsRepository.Create(newItem);
+                    }
+                    else if (items.Any() && protocolProduct.Amount == 0)
+                    {
+                        // Remove item
+                        _protocolProtocolSectionProductsRepository.Delete(item.Id);
+                    }
+                    else if (items.Any() && item.Amount != protocolProduct.Amount)
+                    {
+                        // Change amount
+                        item.Amount = protocolProduct.Amount;
+                        _protocolProtocolSectionProductsRepository.Update(item);
+                    }
+                }
+            }
+        }
+
         private void AddDefaultSections(Protocol protocol)
         {
             if (!protocol.ProtocolSections.Any())

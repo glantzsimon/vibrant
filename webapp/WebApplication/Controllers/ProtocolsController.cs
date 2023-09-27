@@ -52,6 +52,22 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("EditProductPacksForProtocol", "ProtocolProductPacks", new { id });
         }
 
+        public ActionResult EditSectionDetails(int id = 0)
+        {
+            var protocol = _protocolService.GetProtocolWithProtocolSections(id);
+            return View(protocol);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult EditSectionDetails(Protocol model)
+        {
+            _protocolService.UpdateSectionDetails(model);
+            var protocol = _protocolService.Find(model.Id);
+            return View(protocol);
+        }
+
         private void ProtocolsController_RecordBeforeDeleted(object sender, CrudEventArgs e)
         {
             _protocolService.DeleteChildRecords(e.Item.Id);

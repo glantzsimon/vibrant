@@ -1540,6 +1540,9 @@
   <data name="EditProductPackQuantities" xml:space="preserve">
     <value>Edit Number of Product Packs</value>
   </data>
+  <data name="EditSectionDetails" xml:space="preserve">
+    <value>Edit Section Details</value>
+  </data>
   <data name="EditSections" xml:space="preserve">
     <value>Edit Sections</value>
   </data>
@@ -1617,5 +1620,17 @@
   </data>
   <data name="TotalsLabel" xml:space="preserve">
     <value>Totals</value>
+  </data>
+  <data name="AcceptableValuesMessage" xml:space="preserve">
+    <value>Acceptable values are between {0} and {1}.</value>
+  </data>
+  <data name="IsSelectedLabel" xml:space="preserve">
+    <value>Is Selected</value>
+  </data>
+  <data name="ValueTooHighException" xml:space="preserve">
+    <value>The value entered is too high.</value>
+  </data>
+  <data name="ValueTooLowException" xml:space="preserve">
+    <value>The value entered is too low.</value>
   </data>
 </root>

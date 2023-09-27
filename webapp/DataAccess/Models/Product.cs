@@ -53,7 +53,7 @@ namespace K9.DataAccessLayer.Models
 
         [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
         public string ContactName { get; set; }
-        
+
         public virtual IEnumerable<ProductIngredient> ProductIngredients { get; set; }
 
         [NotMapped]
@@ -114,7 +114,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RecommendationsLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public EProductRecommendation Recommendations { get; set; }
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [DataType(DataType.Currency)]
@@ -306,8 +306,29 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.RecommendationsLabel)]
         public string RecommendationsText => $"Take {FullDosageLabellext} {Recommendations.GetAttribute<EnumDescriptionAttribute>().GetDescription().ToLower()}";
-        
+
         #endregion
+
+        public bool CheckRecommendations(EProductRecommendation recommendation)
+        {
+            switch (Recommendations)
+            {
+                case EProductRecommendation.WithOrWithoutFood:
+                    return true;
+
+                case EProductRecommendation.OnEmptyStomach:
+                    return recommendation == EProductRecommendation.OnEmptyStomach;
+
+                case EProductRecommendation.WithFood:
+                    return recommendation == EProductRecommendation.WithFood || recommendation == EProductRecommendation.WithFat || recommendation == EProductRecommendation.WithOrWithoutFood;
+
+                case EProductRecommendation.WithFat:
+                    return recommendation == EProductRecommendation.WithFat;
+
+                default:
+                    return false;
+            }
+        }
 
         public static List<PropertyInfo> GetProductLabelProperties() => typeof(Product).GetProperties()
             .Where(e => e.GetCustomAttributes<ProductLabelAttribute>().Any()).ToList();

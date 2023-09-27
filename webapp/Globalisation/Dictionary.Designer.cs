@@ -70,6 +70,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Acceptable values are between {0} and {1}..
+        /// </summary>
+        public static string AcceptableValuesMessage {
+            get {
+                return ResourceManager.GetString("AcceptableValuesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Acid Alkaline.
         /// </summary>
         public static string AcidAlkaline {
@@ -1558,6 +1567,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit Section Details.
+        /// </summary>
+        public static string EditSectionDetails {
+            get {
+                return ResourceManager.GetString("EditSectionDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit Sections.
         /// </summary>
         public static string EditSections {
@@ -2175,6 +2193,15 @@ namespace K9.Globalisation {
         public static string IsPaidLabel {
             get {
                 return ResourceManager.GetString("IsPaidLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is Selected.
+        /// </summary>
+        public static string IsSelectedLabel {
+            get {
+                return ResourceManager.GetString("IsSelectedLabel", resourceCulture);
             }
         }
         
@@ -4617,6 +4644,24 @@ namespace K9.Globalisation {
         public static string ValidUntil {
             get {
                 return ResourceManager.GetString("ValidUntil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value entered is too high..
+        /// </summary>
+        public static string ValueTooHighException {
+            get {
+                return ResourceManager.GetString("ValueTooHighException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value entered is too low..
+        /// </summary>
+        public static string ValueTooLowException {
+            get {
+                return ResourceManager.GetString("ValueTooLowException", resourceCulture);
             }
         }
         

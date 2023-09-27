@@ -336,6 +336,18 @@
     <Compile Include="Migrations\202309271023353_ExtendProtocols.Designer.cs">
       <DependentUpon>202309271023353_ExtendProtocols.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309271149214_LatestUpdates.cs" />
+    <Compile Include="Migrations\202309271149214_LatestUpdates.Designer.cs">
+      <DependentUpon>202309271149214_LatestUpdates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309271212082_RemoveAmount.cs" />
+    <Compile Include="Migrations\202309271212082_RemoveAmount.Designer.cs">
+      <DependentUpon>202309271212082_RemoveAmount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309271213479_AddAmountAgainFuck.cs" />
+    <Compile Include="Migrations\202309271213479_AddAmountAgainFuck.Designer.cs">
+      <DependentUpon>202309271213479_AddAmountAgainFuck.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\OrderProductPack.cs" />
@@ -477,6 +489,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309271023353_ExtendProtocols.resx">
       <DependentUpon>202309271023353_ExtendProtocols.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309271149214_LatestUpdates.resx">
+      <DependentUpon>202309271149214_LatestUpdates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309271212082_RemoveAmount.resx">
+      <DependentUpon>202309271212082_RemoveAmount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309271213479_AddAmountAgainFuck.resx">
+      <DependentUpon>202309271213479_AddAmountAgainFuck.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
