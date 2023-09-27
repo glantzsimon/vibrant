@@ -5,11 +5,14 @@ namespace K9.WebApplication.Models
 {
     public class OrderItem
     {
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderNumberLabel)]
+        public string OrderNumber { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ContactLabel)]
         public string ContactName { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InvoiceDateLabel)]
-        public DateTime CreatedOn { get; set; }
+        public string InvoiceDate { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InvoiceNumbersLabel)]
         public string InvoiceNumbersText { get; set; }

@@ -2653,6 +2653,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Order Number.
+        /// </summary>
+        public static string OrderNumberLabel {
+            get {
+                return ResourceManager.GetString("OrderNumberLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Order Product.
         /// </summary>
         public static string OrderProduct {

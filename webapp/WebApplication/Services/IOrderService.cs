@@ -10,6 +10,7 @@ namespace K9.WebApplication.Services
         Order FindPrevious(int id);
         Order FindNext(int id);
         Order Find(Guid id);
+        Order Find(string orderNumber);
         Order GetFullOrder(Order order);
         Order FillZeroQuantities(Order order);
         Order DuplicateOrder(int id);

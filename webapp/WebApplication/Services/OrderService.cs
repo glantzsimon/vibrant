@@ -78,6 +78,17 @@ namespace K9.WebApplication.Services
             return order;
         }
 
+        public Order Find(string orderNumber)
+        {
+            var order = _ordersRepository.Find(e => e.OrderNumber == orderNumber).FirstOrDefault();
+            if (order != null)
+            {
+                order = GetFullOrder(order);
+            }
+
+            return order;
+        }
+
         public Order GetFullOrder(Order order)
         {
             order.Products = _orderProductsRepository.Find(e => e.OrderId == order.Id).ToList();
@@ -93,7 +104,7 @@ namespace K9.WebApplication.Services
             }
 
             order.Contact = _contactsRepository.Find(order.ContactId ?? 0);
-            order.ContactName = order.Contact?.Name;
+            order.ContactName = order.Contact?.FullName;
 
             order.User = _usersRepository.Find(order.UserId);
             order.UserName = order.User.Name;

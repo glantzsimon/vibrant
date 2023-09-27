@@ -20,12 +20,16 @@ namespace K9.DataAccessLayer.Models
     public class Order : ObjectBase
     {
         public const int MaxInvoiceProductNameLength = 24;
+        public const int OrderNumberRoot = 11110;
 
         [UIHint("Order")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
         public int OrderId => Id;
 
         public Guid ExternalId { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
+        public string OrderNumber { get;set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
@@ -195,19 +199,19 @@ namespace K9.DataAccessLayer.Models
         public string QuantitiesList => GetOrderedProducts().Select(e => e.Amount.ToString()).ToDisplayList();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PricesListLabel)]
-        public string PricesList => GetOrderedProducts().Select(e => e.FormattedPrice).ToDisplayList();
+        public string PricesList => GetOrderedProducts().Select(e => e.Price.ToCurrency()).ToDisplayList();
         
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalsLabel)]
-        public string TotalsList => GetOrderedProducts().Select(e => e.FormattedTotalPrice).ToDisplayList();
+        public string TotalsList => GetOrderedProducts().Select(e => e.TotalPrice.ToCurrency()).ToDisplayList();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTotalLabel)]
-        public string FormattedSubTotal => double.Parse(TotalPrice.ToString()).ToCurrency();
+        public string FormattedSubTotal => TotalPrice.ToCurrency();
         
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
-        public string FormattedDiscount => double.Parse(DiscountAmount.ToString()).ToCurrency();
+        public string FormattedDiscount => DiscountAmount.ToCurrency();
       
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
-        public string FormattedGrandTotal => double.Parse(GrandTotal.ToString()).ToCurrency();
+        public string FormattedGrandTotal => GrandTotal.ToCurrency();
 
         #endregion
 

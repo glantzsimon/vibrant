@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using K9.DataAccessLayer.Attributes;
 using ServiceStack.Text;
 
 namespace K9.WebApplication.Controllers
@@ -154,6 +155,7 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("OrderReview", new { orderId = order.Id });
         }
 
+        [NoCache]
         [Route("orders/exportsingle/csv")]
         public ActionResult DownloadOrderCsv(int id)
         {
@@ -162,9 +164,10 @@ namespace K9.WebApplication.Controllers
             orderItems.Add(GetOrderItem(order));
 
             var data = orderItems.ToCsv();
-            return ExportToCsv(data, "Order.csv");
+            return ExportToCsv(data, "Order1.csv");
         }
 
+        [NoCache]
         [Route("orders/export/csv")]
         public ActionResult DownloadOrdersCsv()
         {
@@ -183,10 +186,11 @@ namespace K9.WebApplication.Controllers
         private OrderItem GetOrderItem(Order order)
         {
             var orderItem = order.MapTo<OrderItem>();
-            orderItem.CreatedOn = DateTime.Today;
+            orderItem.InvoiceDate = DateTime.Today.ToShortDateString();
             return orderItem;
         }
 
+        [NoCache]
         private ActionResult ExportToCsv(string data, string fileName)
         {
             Response.Clear();
@@ -196,6 +200,12 @@ namespace K9.WebApplication.Controllers
             Response.End();
 
             return new EmptyResult();
+        }
+
+        private void UpdateOrderNumberIfEmpty(Order order)
+        {
+            var orderNumberCount = order.Id + Order.OrderNumberRoot;
+            order.OrderNumber = $"PA-{orderNumberCount}";
         }
 
         private void OrdersController_RecordBeforeCreated(object sender, CrudEventArgs e)
@@ -208,12 +218,13 @@ namespace K9.WebApplication.Controllers
         private void OrdersController_RecordBeforeCreate(object sender, CrudEventArgs e)
         {
             var order = e.Item as Order;
-
             order.RequestedOn = DateTime.Now;
             order.DueBy = DateTime.Today.AddDays(11);
-
+            
             int.TryParse(_defaultValues.DefaultUserId, out var userId);
             order.UserId = userId > 0 ? userId : 3;
+
+            UpdateOrderNumberIfEmpty(order);
         }
 
         private void OrdersController_RecordBeforeDetails(object sender, CrudEventArgs e)
@@ -226,6 +237,7 @@ namespace K9.WebApplication.Controllers
         {
             var order = e.Item as Order;
             order = _orderService.GetFullOrder(order);
+            UpdateOrderNumberIfEmpty(order);
         }
 
         private void OrdersController_RecordBeforeUpdated(object sender, CrudEventArgs e)

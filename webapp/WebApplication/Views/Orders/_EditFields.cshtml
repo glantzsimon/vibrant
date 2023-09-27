@@ -2,6 +2,9 @@
 @using K9.WebApplication.Helpers
 @model Order
 
+@Html.HiddenFor(model => model.ExternalId)
+@Html.HiddenFor(model => model.OrderId)
+
 <div class="row">
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.Name)

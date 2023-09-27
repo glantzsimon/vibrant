@@ -20,6 +20,7 @@
             public const string AmountPerBatchLabel = "AmountPerBatchLabel";
             public const string SelectedProductLabel = "SelectedProductLabel";
             public const string OrderLabel = "OrderLabel";
+            public const string OrderNumberLabel = "OrderNumberLabel";
             public const string OrderItemLabel = "OrderItemLabel";
             public const string OrderItemsLabel = "OrderItemsLabel";
             public const string NumberOfCreditsLabel = "NumberOfCreditsLabel";
