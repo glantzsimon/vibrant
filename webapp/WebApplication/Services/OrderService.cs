@@ -1,10 +1,11 @@
-﻿using K9.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Config;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using K9.WebApplication.Config;
 
 namespace K9.WebApplication.Services
 {
@@ -16,9 +17,11 @@ namespace K9.WebApplication.Services
         private readonly IRepository<OrderProductPack> _orderProductPacksRepository;
         private readonly IRepository<Product> _productsRepository;
         private readonly IRepository<ProductPack> _productPackRepository;
+        private readonly IRepository<Contact> _contactsRepository;
+        private readonly IRepository<User> _usersRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues)
+        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Contact> contactsRepository, IRepository<User> usersRepository)
         {
             _logger = logger;
             _ordersRepository = ordersRepository;
@@ -26,6 +29,8 @@ namespace K9.WebApplication.Services
             _orderProductPacksRepository = orderProductPacksRepository;
             _productsRepository = productsRepository;
             _productPackRepository = productPackRepository;
+            _contactsRepository = contactsRepository;
+            _usersRepository = usersRepository;
             _defaultValues = defaultValues.Value;
         }
 
@@ -86,6 +91,12 @@ namespace K9.WebApplication.Services
             {
                 orderProductPack.ProductPack = _productPackRepository.Find(orderProductPack.ProductPackId);
             }
+
+            order.Contact = _contactsRepository.Find(order.ContactId ?? 0);
+            order.ContactName = order.Contact?.Name;
+
+            order.User = _usersRepository.Find(order.UserId);
+            order.UserName = order.User.Name;
 
             return order;
         }

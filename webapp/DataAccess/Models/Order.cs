@@ -139,7 +139,7 @@ namespace K9.DataAccessLayer.Models
         public double? Discount { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
-        public string FormattedDiscount => (Discount / 100)?.ToString("P", CultureInfo.InvariantCulture);
+        public string FormattedDiscountAsPercent => (Discount / 100)?.ToString("P", CultureInfo.InvariantCulture);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         [DataType(DataType.Currency)]
@@ -147,13 +147,10 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public string FormattedDiscountAmount => double.Parse(DiscountAmount.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
-
+  
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         [DataType(DataType.Currency)]
         public double GrandTotal => TotalPrice - DiscountAmount;
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
-        public string FormattedGrandTotal => double.Parse(GrandTotal.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         public int TotalProducts => Products?.Sum(e => e.Amount) ?? 0;
 
@@ -170,16 +167,16 @@ namespace K9.DataAccessLayer.Models
         private string GetInvoiceNumbersText()
         {
             var sb = new StringBuilder();
-            for (int i = 0; i < TotalItems; i++)
+            for (int i = 1; i <= TotalItems; i++)
             {
-                sb.AppendLine(i.ToString());
+                sb.AppendLine(i.ToString().Trim());
             }
-            return sb.ToString();
+            return sb.ToString().Trim();
         }
 
         private List<OrderProduct> GetOrderedProducts()
         {
-            return Products?.OrderBy(e => e.ProductName).ToList() ?? new List<OrderProduct>();
+            return Products?.OrderBy(e => e.Product.Name).ToList() ?? new List<OrderProduct>();
         }
 
         private string GetMaxProductNameLength(string value)
@@ -192,7 +189,7 @@ namespace K9.DataAccessLayer.Models
         }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductsLabel)]
-        public string ProductsList => GetOrderedProducts().Select(e => GetMaxProductNameLength(e.ProductName)).ToDisplayList();
+        public string ProductsList => GetOrderedProducts().Select(e => GetMaxProductNameLength(e.Product.Name)).ToDisplayList();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantitiesLabel)]
         public string QuantitiesList => GetOrderedProducts().Select(e => e.Amount.ToString()).ToDisplayList();
@@ -204,7 +201,13 @@ namespace K9.DataAccessLayer.Models
         public string TotalsList => GetOrderedProducts().Select(e => e.FormattedTotalPrice).ToDisplayList();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTotalLabel)]
-        public string SubTotal => FormattedTotalPrice;
+        public string FormattedSubTotal => double.Parse(TotalPrice.ToString()).ToCurrency();
+        
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
+        public string FormattedDiscount => double.Parse(DiscountAmount.ToString()).ToCurrency();
+      
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
+        public string FormattedGrandTotal => double.Parse(GrandTotal.ToString()).ToCurrency();
 
         #endregion
 

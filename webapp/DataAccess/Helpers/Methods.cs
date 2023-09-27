@@ -41,5 +41,10 @@ namespace K9.DataAccessLayer.Helpers
         {
             return string.Join(Environment.NewLine, Regex.Split(value, Environment.NewLine).Select(e => e.Trim()).Where(e => !string.IsNullOrEmpty(e) && !string.IsNullOrWhiteSpace(e)).Take(numberOfLines));
         }
+
+        public static string ToCurrency(this double value, string currencyFormat = "฿")
+        {
+            return $"{currencyFormat}{value:n0}";
+        }
     }
 }

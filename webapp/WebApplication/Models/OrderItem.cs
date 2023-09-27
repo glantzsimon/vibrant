@@ -27,7 +27,7 @@ namespace K9.WebApplication.Models
         public string TotalsList { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTotalLabel)]
-        public string SubTotal { get; set; }
+        public string FormattedSubTotal { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public string FormattedDiscount { get; set; }

@@ -159,20 +159,10 @@ namespace K9.WebApplication.Controllers
         {
             var order = _orderService.Find(id);
             var orderItems = new List<OrderItem>();
-            var orderItem = order.MapTo<OrderItem>();
-            orderItem.CreatedOn = DateTime.Today;
-            orderItems.Add(orderItem);
+            orderItems.Add(GetOrderItem(order));
 
             var data = orderItems.ToCsv();
-
-            Response.Clear();
-            Response.ContentType = "application/CSV";
-            Response.ContentEncoding = System.Text.Encoding.UTF8;     
-            Response.AddHeader("content-disposition", $"attachment; filename=\"Order.csv\"");
-            Response.Write(data);
-            Response.End();
-
-            return new EmptyResult();
+            return ExportToCsv(data, "Order.csv");
         }
 
         [Route("orders/export/csv")]
@@ -183,16 +173,25 @@ namespace K9.WebApplication.Controllers
 
             foreach (var order in orders)
             {
-                var orderItem = order.MapTo<OrderItem>();
-                orderItem.CreatedOn = DateTime.Today;
-                orderItems.Add(orderItem);
+                orderItems.Add(GetOrderItem(order));
             }
-            var data = orderItems.ToCsv();
 
+            var data = orderItems.ToCsv();
+            return ExportToCsv(data, "Orders.csv");
+        }
+
+        private OrderItem GetOrderItem(Order order)
+        {
+            var orderItem = order.MapTo<OrderItem>();
+            orderItem.CreatedOn = DateTime.Today;
+            return orderItem;
+        }
+
+        private ActionResult ExportToCsv(string data, string fileName)
+        {
             Response.Clear();
             Response.ContentType = "application/CSV";
-            Response.ContentEncoding = System.Text.Encoding.UTF8;     
-            Response.AddHeader("content-disposition", $"attachment; filename=\"Orders.csv\"");
+            Response.AddHeader("content-disposition", $"attachment; filename=\"{fileName}\"");
             Response.Write(data);
             Response.End();
 
