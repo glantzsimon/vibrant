@@ -1,4 +1,6 @@
-﻿@using K9.Base.WebApplication.Helpers
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Authentication
 @model Protocol
 @{
     Layout = "../Shared/_LayoutForm.cshtml";
@@ -7,10 +9,13 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.Partial("_SummaryFields")
-        
-        <hr />
-        @Html.BootstrapBackToListButton()
+        @Html.Partial("../Protocols/_SummaryFields")
+        @Html.Partial("../Protocols/_SummaryActivityFields")
 
+        if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
+        {
+            <hr />
+            @Html.BootstrapBackToListButton()
+        }
     }
 }

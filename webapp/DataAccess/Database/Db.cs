@@ -5,6 +5,7 @@ namespace K9.DataAccessLayer.Database
 {
     public class LocalDb : Base.DataAccessLayer.Database.Db
 	{
+	    public DbSet<Activity> Activities { get; set; }
 	    public DbSet<Article> Articles { get; set; }
 	    public DbSet<ArticleCategory> ArticleCategories { get; set; }
 	    public DbSet<ArticleSection> ArticleSections { get; set; }
@@ -29,6 +30,7 @@ namespace K9.DataAccessLayer.Database
         public DbSet<Section> Sections { get; set; }
         public DbSet<ProtocolSection> ProtocolSections { get; set; }
         public DbSet<ProtocolSectionProduct> ProtocolSectionProducts { get; set; }
+	    public DbSet<ProtocolActivity> ProtocolActivities { get; set; }
 
         public DbSet<UserConsultation> UserConsultations { get; set; }
 	    public DbSet<UserCreditPack> UserCreditPack { get; set; }

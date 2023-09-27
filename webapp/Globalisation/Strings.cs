@@ -149,6 +149,7 @@
             public const string ArticleCategory = "ArticleCategory";
             public const string ProductTypeLabel = "ProductTypeLabel";
             public const string ProductLabel = "Product";
+            public const string ActivityLabel = "Activity";
             public const string ProtocolLabel = "Protocol";
             public const string ProtocolSectionLabel = "ProtocolSection";
             public const string InvoiceDateLabel = "InvoiceDateLabel";
@@ -193,6 +194,8 @@
             public const string Ingredients = "Ingredients";
             public const string Product = "Product";
             public const string ProductPack = "ProductPack";
+            public const string Activity = "Activity";
+            public const string Activities = "Activities";
             public const string Products = "Products";
             public const string Protocol = "Protocol";
             public const string Protocols = "Protocols";
@@ -207,6 +210,8 @@
             public const string ProductIngredients = "ProductIngredients";
             public const string ProtocolProduct = "ProtocolProduct";
             public const string ProtocolProducts = "ProtocolProducts";
+            public const string ProtocolActivities = "ProtocolActivities";
+            public const string ProtocolActivity = "ProtocolActivity";
             public const string ProtocolProductPack = "ProtocolProductPack";
             public const string ProtocolProductPacks = "ProtocolProductPacks";
             public const string ContactProduct = "ContactProduct";

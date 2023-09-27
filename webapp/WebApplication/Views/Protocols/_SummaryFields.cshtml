@@ -31,6 +31,7 @@
     var section = Model.ProtocolSections[i];
     var isVisible = section.ProtocolSectionProducts.Where(e => e.Amount > 0).Any();
     var displayClass = isVisible ? "" : "none";
+    var isLast = i == Model.ProtocolSections.Count - 1;
 
     <div class="row" style="display: @displayClass;">
         <div class="col-sm-2">
@@ -43,7 +44,7 @@
             @for (int j = 0; j < Model.ProtocolSections[i].ProtocolSectionProducts.Count; j++)
             {
                 var product = Model.ProtocolSections[i].ProtocolSectionProducts[j];
-
+                
                 @Html.HiddenFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].Id)
                 @Html.HiddenFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].Product.Id)
 
@@ -64,7 +65,7 @@
             }
         </div>
     </div>
-    if (isVisible)
+    if (isVisible && !isLast)
     {
         <hr />
     }

@@ -348,10 +348,16 @@
     <Compile Include="Migrations\202309271213479_AddAmountAgainFuck.Designer.cs">
       <DependentUpon>202309271213479_AddAmountAgainFuck.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309271534392_AddActivities.cs" />
+    <Compile Include="Migrations\202309271534392_AddActivities.Designer.cs">
+      <DependentUpon>202309271534392_AddActivities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\OrderProductPack.cs" />
     <Compile Include="Models\OrderProduct.cs" />
+    <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\ProtocolActivity.cs" />
     <Compile Include="Models\ProtocolSectionProduct.cs" />
     <Compile Include="Models\ProtocolSection.cs" />
     <Compile Include="Models\Section.cs" />
@@ -498,6 +504,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309271213479_AddAmountAgainFuck.resx">
       <DependentUpon>202309271213479_AddAmountAgainFuck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309271534392_AddActivities.resx">
+      <DependentUpon>202309271534392_AddActivities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

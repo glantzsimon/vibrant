@@ -52,6 +52,12 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("EditProductPacksForProtocol", "ProtocolProductPacks", new { id });
         }
 
+        public ActionResult Summary(int id)
+        {
+            var protocol = _protocolService.GetProtocolWithProtocolSections(id);
+            return View(protocol);
+        }
+
         public ActionResult Summary(Guid id)
         {
             var protocol = _protocolService.Find(id);

@@ -315,8 +315,10 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Controllers\ProtocolActivitiesController.cs" />
     <Compile Include="Controllers\ProtocolProductsController.cs" />
     <Compile Include="Controllers\ProtocolProductPacksController.cs" />
+    <Compile Include="Controllers\ProtocolController.cs" />
     <Compile Include="Controllers\ProtocolSectionsController.cs" />
     <Compile Include="Controllers\ProtocolsController.cs" />
     <Compile Include="Controllers\SectionsController.cs" />
@@ -1475,6 +1477,18 @@
     <Content Include="Views\Protocols\_EditSectionDetailsFields.cshtml" />
     <Content Include="Views\Protocols\Summary.cshtml" />
     <Content Include="Views\Protocols\_SummaryFields.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Activity.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Activity.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ProtocolSection.cshtml" />
+    <Content Include="Views\Protocols\_SummaryActivityFields.cshtml" />
+    <Content Include="Views\Activities\_DisplayFields.cshtml" />
+    <Content Include="Views\Activities\_DisplaySummary.cshtml" />
+    <Content Include="Views\Activities\_EditFields.cshtml" />
+    <Content Include="Views\Activities\Create.cshtml" />
+    <Content Include="Views\Activities\Delete.cshtml" />
+    <Content Include="Views\Activities\Details.cshtml" />
+    <Content Include="Views\Activities\Edit.cshtml" />
+    <Content Include="Views\Activities\Index.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

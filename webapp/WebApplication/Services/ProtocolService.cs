@@ -23,9 +23,11 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Section> _protocolSectionRepository;
         private readonly IRepository<ProtocolSectionProduct> _protocolProtocolSectionProductsRepository;
         private readonly IRepository<ProductPackProduct> _productPackProductRepository;
+        private readonly IRepository<ProtocolActivity> _protocolActivitiesRepository;
+        private readonly IRepository<Activity> _activitiesRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public ProtocolService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Contact> contactsRepository, IRepository<User> usersRepository, IRepository<Protocol> protocolsRepository, IRepository<ProtocolProduct> protocolProductsRepository, IRepository<ProtocolProductPack> protocolProductPackRepository, IRepository<ProtocolSection> protocolProtocolSectionRepository, IRepository<Section> protocolSectionRepository, IRepository<ProtocolSectionProduct> protocolProtocolSectionProductsRepository, IRepository<ProductPackProduct> productPackProductRepository)
+        public ProtocolService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Contact> contactsRepository, IRepository<User> usersRepository, IRepository<Protocol> protocolsRepository, IRepository<ProtocolProduct> protocolProductsRepository, IRepository<ProtocolProductPack> protocolProductPackRepository, IRepository<ProtocolSection> protocolProtocolSectionRepository, IRepository<Section> protocolSectionRepository, IRepository<ProtocolSectionProduct> protocolProtocolSectionProductsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProtocolActivity> protocolActivitiesRepository, IRepository<Activity> activitiesRepository)
         {
             _logger = logger;
             _productsRepository = productsRepository;
@@ -39,6 +41,8 @@ namespace K9.WebApplication.Services
             _protocolSectionRepository = protocolSectionRepository;
             _protocolProtocolSectionProductsRepository = protocolProtocolSectionProductsRepository;
             _productPackProductRepository = productPackProductRepository;
+            _protocolActivitiesRepository = protocolActivitiesRepository;
+            _activitiesRepository = activitiesRepository;
             _defaultValues = defaultValues.Value;
         }
 
@@ -88,6 +92,12 @@ namespace K9.WebApplication.Services
 
         public Protocol GetFullProtocol(Protocol protocol)
         {
+            protocol.Activities = _protocolActivitiesRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
+            foreach (var protocolActivity in protocol.Activities)
+            {
+                protocolActivity.Activity = _activitiesRepository.Find(protocolActivity.ActivityId);
+            }
+
             protocol.Products = _protocolProductsRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
             foreach (var protocolProduct in protocol.Products)
             {

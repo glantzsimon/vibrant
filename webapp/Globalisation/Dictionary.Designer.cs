@@ -88,6 +88,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activities.
+        /// </summary>
+        public static string Activities {
+            get {
+                return ResourceManager.GetString("Activities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activity.
+        /// </summary>
+        public static string Activity {
+            get {
+                return ResourceManager.GetString("Activity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Additional Comments.
         /// </summary>
         public static string AdditionalComments {
@@ -1491,6 +1509,15 @@ namespace K9.Globalisation {
         public static string EarthElement {
             get {
                 return ResourceManager.GetString("EarthElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Activities.
+        /// </summary>
+        public static string EditActivities {
+            get {
+                return ResourceManager.GetString("EditActivities", resourceCulture);
             }
         }
         
@@ -3431,6 +3458,24 @@ namespace K9.Globalisation {
         public static string Protocol {
             get {
                 return ResourceManager.GetString("Protocol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Activities.
+        /// </summary>
+        public static string ProtocolActivities {
+            get {
+                return ResourceManager.GetString("ProtocolActivities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Activity.
+        /// </summary>
+        public static string ProtocolActivity {
+            get {
+                return ResourceManager.GetString("ProtocolActivity", resourceCulture);
             }
         }
         

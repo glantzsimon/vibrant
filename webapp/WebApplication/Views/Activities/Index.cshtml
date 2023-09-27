@@ -1,0 +1,20 @@
+﻿@using K9.Base.WebApplication.Controllers
+@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Authentication
+@model Activity
+@{
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+
+@Html.BootstrapTable(new DataTableOptions<Activity>
+{
+    AllowCreate = true,
+    AllowEdit = true,
+    AllowDelete = ((BaseController<Activity>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    VisibleColumns = new List<string>
+    {
+        "Name",
+        "ShortDescription",
+        "Recommendations"
+    }
+})

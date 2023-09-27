@@ -33,6 +33,11 @@ namespace K9.DataAccessLayer.Models
         [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
         public string ContactName { get; set; }
 
+        public virtual IEnumerable<ProtocolActivity> ProtocolActivities { get; set; }
+
+        [NotMapped]
+        public List<ProtocolActivity> Activities { get; set; }
+
         public virtual IEnumerable<ProtocolProduct> ProtocolProducts { get; set; }
 
         [NotMapped]

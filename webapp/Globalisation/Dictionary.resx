@@ -1624,8 +1624,23 @@
   <data name="AcceptableValuesMessage" xml:space="preserve">
     <value>Acceptable values are between {0} and {1}.</value>
   </data>
+  <data name="Activities" xml:space="preserve">
+    <value>Activities</value>
+  </data>
+  <data name="Activity" xml:space="preserve">
+    <value>Activity</value>
+  </data>
+  <data name="EditActivities" xml:space="preserve">
+    <value>Edit Activities</value>
+  </data>
   <data name="IsSelectedLabel" xml:space="preserve">
     <value>Is Selected</value>
+  </data>
+  <data name="ProtocolActivities" xml:space="preserve">
+    <value>Protocol Activities</value>
+  </data>
+  <data name="ProtocolActivity" xml:space="preserve">
+    <value>Protocol Activity</value>
   </data>
   <data name="ValueTooHighException" xml:space="preserve">
     <value>The value entered is too high.</value>
