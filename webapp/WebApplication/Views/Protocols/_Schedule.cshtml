@@ -14,13 +14,11 @@
         break;
 
     case EFrequency.Fortnightly:
+        @Html.Partial("_FortnightlySchedule")
         break;
-
-    case EFrequency.Monthly:
-        break;
-
+    
     default:
-    case EFrequency.Custom:
+        @Html.Partial("_CustomSchedule")
         break;
 }
 

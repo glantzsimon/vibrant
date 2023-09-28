@@ -384,10 +384,10 @@ namespace K9.WebApplication.Services
                         return protocol.NumberOfPeriodsOff <= 2;
 
                     case DayOfWeek.Wednesday:
-                        return new []{4, 3, 1, 0}.Contains(protocol.NumberOfPeriodsOff);
+                        return new[] { 4, 3, 1, 0 }.Contains(protocol.NumberOfPeriodsOff);
 
                     case DayOfWeek.Thursday:
-                        return new []{5, 2, 1, 0}.Contains(protocol.NumberOfPeriodsOff);
+                        return new[] { 5, 2, 1, 0 }.Contains(protocol.NumberOfPeriodsOff);
 
                     case DayOfWeek.Friday:
                         return protocol.NumberOfPeriodsOff <= 4;
@@ -401,6 +401,25 @@ namespace K9.WebApplication.Services
             }
 
             return false;
+        }
+
+        public static int[] GetSchedule(Protocol protocol)
+        {
+            if (protocol.Frequency == EFrequency.Monthly)
+            {
+                var intervalLength = protocol.GetPeriodLength();
+                var interval = (int)Math.Floor((double)intervalLength / protocol.NumberOfPeriodsOn);
+                var list = new List<int>();
+
+                for (int i = !; i <= intervalLength; i += interval)
+                {
+                    list.Add(i);
+                }
+
+                return list.ToArray();
+            }
+
+            return null;
         }
 
         private void AddDefaultSections(Protocol protocol)

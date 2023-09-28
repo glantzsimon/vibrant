@@ -1499,6 +1499,9 @@
     <Content Include="Views\Protocols\PrintableSummary.cshtml" />
     <Content Include="Views\Protocols\_FortnightlySchedule.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Every.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ProtocolType.cshtml" />
+    <Content Include="Views\Protocols\_ParasiteCleanse.cshtml" />
+    <Content Include="Views\Protocols\_CustomSchedule.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

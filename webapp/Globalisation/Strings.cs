@@ -152,6 +152,7 @@
             public const string ActivityLabel = "Activity";
             public const string ProtocolLabel = "Protocol";
             public const string FrequencyLabel = "Frequency";
+            public const string ProtocolTypeLabel = "ProtocolTypeLabel";
             public const string PeriodLabel = "PeriodLabel";
             public const string PeriodValueLabel = "PeriodValueLabel";
             public const string NumberOfDaysOffLabel = "NumberOfDaysOffLabel";
@@ -272,6 +273,9 @@
             public const string Weekly = "Weekly";
             public const string Fortnightly = "Fortnightly";
             public const string Custom = "Custom";
+            
+            public const string Default = "Default";
+            public const string ParasiteCleanse = "ParasiteCleanse";
 
             public const string Days = "Days";
             public const string Weeks = "Weeks";

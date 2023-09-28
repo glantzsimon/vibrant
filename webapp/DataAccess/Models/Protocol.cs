@@ -1,6 +1,7 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
+using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Enums;
 using K9.SharedLibrary.Models;
@@ -8,9 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Enums;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -23,6 +22,10 @@ namespace K9.DataAccessLayer.Models
         [UIHint("Protocol")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProtocolLabel)]
         public int ProtocolId => Id;
+
+        [UIHint("ProtocolType")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProtocolTypeLabel)]
+        public EProtocolType Type { get; set; }
 
         [UIHint("Frequency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FrequencyLabel)]
@@ -101,5 +104,19 @@ namespace K9.DataAccessLayer.Models
         [StringLength(512)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.VideoUrlLabel)]
         public string VideoUrl { get; set; }
+
+        public int GetPeriodLength()
+        {
+            switch (Frequency)
+            {
+                case EFrequency.Fortnightly:
+                    return 14;
+
+                case EFrequency.Monthly:
+                    return 28;
+            }
+
+            return 0;
+        }
     }
 }

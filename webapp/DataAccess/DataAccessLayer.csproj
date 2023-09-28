@@ -196,6 +196,7 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\EProtocolType.cs" />
     <Compile Include="Enums\EPeriod.cs" />
     <Compile Include="Enums\EIngredientType.cs" />
     <Compile Include="Enums\EOrderStatus.cs" />
@@ -366,6 +367,10 @@
     <Compile Include="Migrations\202309280549008_ProtocolFeatures.Designer.cs">
       <DependentUpon>202309280549008_ProtocolFeatures.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309280757408_ProtocolType.cs" />
+    <Compile Include="Migrations\202309280757408_ProtocolType.Designer.cs">
+      <DependentUpon>202309280757408_ProtocolType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\OrderProductPack.cs" />
@@ -530,6 +535,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309280549008_ProtocolFeatures.resx">
       <DependentUpon>202309280549008_ProtocolFeatures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309280757408_ProtocolType.resx">
+      <DependentUpon>202309280757408_ProtocolType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

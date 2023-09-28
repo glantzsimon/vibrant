@@ -1717,10 +1717,19 @@
   <data name="Day" xml:space="preserve">
     <value>Day</value>
   </data>
+  <data name="Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
   <data name="Every" xml:space="preserve">
     <value>Every</value>
   </data>
   <data name="NumberOfPeriodsOnLabel" xml:space="preserve">
     <value>Number of Times per Period</value>
+  </data>
+  <data name="ParasiteCleanse" xml:space="preserve">
+    <value>Parasite Cleane</value>
+  </data>
+  <data name="ProtocolTypeLabel" xml:space="preserve">
+    <value>Protocol Type</value>
   </data>
 </root>

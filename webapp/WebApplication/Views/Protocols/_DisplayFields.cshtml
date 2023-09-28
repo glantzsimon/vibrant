@@ -6,6 +6,7 @@
 @{
     var periodDisplayValue = Model.Frequency == EFrequency.Custom ? "" : "none";
     var daysOnOffDisplayValue = Model.Frequency == EFrequency.Custom ? "none" : "";
+    var optionalFieldsDisplayValue = Model.Type == EProtocolType.Default ? "" : "none";
 }
 
 <div class="row">
@@ -18,23 +19,28 @@
 </div>
 <div class="row">
     <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.Type)
+    </div>
+    <div class="col-sm-6" style="display: @optionalFieldsDisplayValue;">
         @Html.BootstrapDisplayFor(model => model.Frequency)
     </div>
 </div>
-<div id="days-container" class="row" style="display: @daysOnOffDisplayValue;">
-    <div id="daysOn-container" class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.NumberOfPeriodsOn)
+<div id="optional-fields-container" style="display: @optionalFieldsDisplayValue;">
+    <div id="days-container" class="row" style="display: @daysOnOffDisplayValue;">
+        <div id="daysOn-container" class="col-sm-6">
+            @Html.BootstrapDisplayFor(model => model.NumberOfPeriodsOn)
+        </div>
+        <div id="daysoff-container" class="col-sm-6">
+            @Html.BootstrapDisplayFor(model => model.NumberOfPeriodsOff)
+        </div>
     </div>
-    <div id="daysoff-container" class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.NumberOfPeriodsOff)
-    </div>
-</div>
-<div id="period-container" class="row" style="display: @periodDisplayValue;">
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.PeriodValue)
-    </div>
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.Period)
+    <div id="period-container" class="row" style="display: @periodDisplayValue;">
+        <div class="col-sm-6">
+            @Html.BootstrapDisplayFor(model => model.PeriodValue)
+        </div>
+        <div class="col-sm-6">
+            @Html.BootstrapDisplayFor(model => model.Period)
+        </div>
     </div>
 </div>
 

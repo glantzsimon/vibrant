@@ -1171,6 +1171,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        public static string Default {
+            get {
+                return ResourceManager.GetString("Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Symptoms of Deficiency.
         /// </summary>
         public static string DeficiencySymptomsLabel {
@@ -3040,6 +3049,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Parasite Cleane.
+        /// </summary>
+        public static string ParasiteCleanse {
+            get {
+                return ResourceManager.GetString("ParasiteCleanse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!doctype html&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
         ///&lt;head&gt;
@@ -3710,6 +3728,15 @@ namespace K9.Globalisation {
         public static string ProtocolSections {
             get {
                 return ResourceManager.GetString("ProtocolSections", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Type.
+        /// </summary>
+        public static string ProtocolTypeLabel {
+            get {
+                return ResourceManager.GetString("ProtocolTypeLabel", resourceCulture);
             }
         }
         

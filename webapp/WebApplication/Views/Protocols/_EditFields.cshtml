@@ -4,8 +4,9 @@
 @model Protocol
 
 @{
-    var periodDisplayValue = Model.Frequency == EFrequency.Custom ? "" : "none";
+    var periodDisplayValue = Model.Frequency != EFrequency.Custom ? "none" : "";
     var daysOnOffDisplayValue = Model.Frequency == EFrequency.Custom ? "none" : "";
+    var optionalFieldsDisplayValue = Model.Type == EProtocolType.Default ? "" : "none";
 }
 
 <div class="row">
@@ -18,23 +19,28 @@
 </div>
 <div class="row">
     <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.Type)
+    </div>
+    <div id="frequency-container" class="col-sm-6" style="display: @optionalFieldsDisplayValue;">
         @Html.BootstrapEditorFor(model => model.Frequency)
     </div>
 </div>
-<div id="days-container" class="row" style="display: @daysOnOffDisplayValue;">
-    <div id="daysOn-container" class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.NumberOfPeriodsOn)
+<div id="optional-fields-container" style="display: @optionalFieldsDisplayValue;">
+    <div id="days-container" class="row" style="display: @daysOnOffDisplayValue;">
+        <div id="daysOn-container" class="col-sm-6">
+            @Html.BootstrapEditorFor(model => model.NumberOfPeriodsOn)
+        </div>
+        <div id="daysoff-container" class="col-sm-6">
+            @Html.BootstrapEditorFor(model => model.NumberOfPeriodsOff)
+        </div>
     </div>
-    <div id="daysoff-container" class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.NumberOfPeriodsOff)
-    </div>
-</div>
-<div id="period-container" class="row" style="display: @periodDisplayValue;">
-    <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.PeriodValue)
-    </div>
-    <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.Period)
+    <div id="period-container" class="row" style="display: @periodDisplayValue;">
+        <div class="col-sm-6">
+            @Html.BootstrapEditorFor(model => model.PeriodValue)
+        </div>
+        <div class="col-sm-6">
+            @Html.BootstrapEditorFor(model => model.Period)
+        </div>
     </div>
 </div>
 
@@ -58,29 +64,14 @@
     @Html.BootstrapEditorFor(model => model.VideoFileSource)
 </div>
 
-@*var periodDisplayValue = Model.Frequency == EFrequency.Custom ? "" : "none";
-    var daysOnOffDisplayValue = Model.Frequency == EFrequency.Custom ? "none" : "";*@
-
 <script type="text/javascript">
     $(function () {
-        $("#Period").change(function () {
-            let period = $("#Period").find("option:selected").val();
-            let $numberOfPeriodsOff = $("#@nameof(Protocol.NumberOfPeriodsOff)");
-            let $numberOfPeriodsOn = $("#@nameof(Protocol.NumberOfPeriodsOn)");
-
-            if (period === "@((int)EPeriod.Days)") {
-                $numberOfPeriodsOff.show();
-                $numberOfPeriodsOn.hide();
-            } else {
-                $numberOfPeriodsOff.hide();
-                $numberOfPeriodsOn.show();
-            }
-        });
-
         $("#Frequency").change(function () {
             let frequency = $("#Frequency").find("option:selected").val();
             let $daysContainer = $("#days-container");
             let $periodContainer = $("#period-container");
+            let $numberOfPeriodsOff = $("#@nameof(Protocol.NumberOfPeriodsOff)");
+            let $numberOfPeriodsOn = $("#@nameof(Protocol.NumberOfPeriodsOn)");
 
             if (frequency === "@((int)EFrequency.Custom)") {
                 $daysContainer.hide();
@@ -88,6 +79,27 @@
             } else {
                 $daysContainer.show();
                 $periodContainer.hide();
+            }
+
+            if (frequency === "@((int)EFrequency.Daily)") {
+                $numberOfPeriodsOff.show();
+                $numberOfPeriodsOn.hide();
+            } else if (frequency === "@((int)EFrequency.Monthly)" || frequency === "@((int)EFrequency.Fortnightly)") {
+                $numberOfPeriodsOn.show();
+            }
+        });
+
+        $("#Type").change(function () {
+            let type = $("#Type").find("option:selected").val();
+            let $optionalContainer = $("#optional-fields-container");
+            let $frequencyContainer = $("#frequency-container");
+            
+            if (type === "@((int)EProtocolType.Default)") {
+                $optionalContainer.show();
+                $frequencyContainer.show();
+            } else {
+                $optionalContainer.hide();
+                $frequencyContainer.hide();
             }
         });
     })
