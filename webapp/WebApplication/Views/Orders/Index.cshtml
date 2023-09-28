@@ -7,6 +7,13 @@
 @{
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
+
+<script language="javascript">
+    $(function () {
+        customOrder = [[3, "desc"]];
+    });
+</script>
+
 @Html.BootstrapTable(new DataTableOptions<Order>
 {
     AllowCreate = true,
