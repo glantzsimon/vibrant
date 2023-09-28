@@ -4,6 +4,8 @@
     {
         public static class Labels
         {
+            public const string File2Label = "File2Label";
+            public const string File1Label = "File1Label";
             public const string ConcentrationLabel = "ConcentrationLabel";
             public const string IsHiddenLabel = "IsHiddenLabel";
             public const string PurchaseUrlsLabel = "PurchaseUrlsLabel";
@@ -95,6 +97,7 @@
             public const string SubscriptionDiscountLabel = "SubscriptionDiscountLabel";
             public const string SubscriptionDiscountedPriceLabel = "SubscriptionDiscountedPriceLabel";
             public const string SubscriptionDetailsLabel = "SubscriptionDetailsLabel";
+            public const string DetailsLabel = "DetailsLabel";
             public const string StartsOnLabel = "StartsOnLabel";
             public const string EndsOnLabel = "EndsOnLabel";
             public const string IsLiveOnLabel = "IsLiveOnLabel";

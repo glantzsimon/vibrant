@@ -1720,6 +1720,9 @@
   <data name="Default" xml:space="preserve">
     <value>Default</value>
   </data>
+  <data name="DetailsLabel" xml:space="preserve">
+    <value>Details</value>
+  </data>
   <data name="Every" xml:space="preserve">
     <value>Every</value>
   </data>
@@ -1734,5 +1737,14 @@
   </data>
   <data name="RecommendedActivitties" xml:space="preserve">
     <value>Recommended Activities</value>
+  </data>
+  <data name="File1Label" xml:space="preserve">
+    <value>File Url</value>
+  </data>
+  <data name="File2Label" xml:space="preserve">
+    <value>File Two Url</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>Links</value>
   </data>
 </root>

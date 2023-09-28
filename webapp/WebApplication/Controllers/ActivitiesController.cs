@@ -15,6 +15,12 @@ namespace K9.WebApplication.Controllers
         public ActivitiesController(IControllerPackage<Activity> controllerPackage) : base(controllerPackage)
         {
             RecordBeforeCreated += ActivitiesController_RecordBeforeCreated;
+            RecordBeforeUpdated += ActivitiesController_RecordBeforeUpdated;
+        }
+
+        private void ActivitiesController_RecordBeforeUpdated(object sender, CrudEventArgs e)
+        {
+            var activity = e.Item as Activity;
         }
 
         private void ActivitiesController_RecordBeforeCreated(object sender, CrudEventArgs e)

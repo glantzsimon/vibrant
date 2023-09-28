@@ -1207,6 +1207,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string DetailsLabel {
+            get {
+                return ResourceManager.GetString("DetailsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Detoxification.
         /// </summary>
         public static string Detoxification {
@@ -1855,6 +1864,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File Url.
+        /// </summary>
+        public static string File1Label {
+            get {
+                return ResourceManager.GetString("File1Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File Two Url.
+        /// </summary>
+        public static string File2Label {
+            get {
+                return ResourceManager.GetString("File2Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Find Out More.
         /// </summary>
         public static string FindOutMore {
@@ -2374,6 +2401,15 @@ namespace K9.Globalisation {
         public static string Learn {
             get {
                 return ResourceManager.GetString("Learn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Links.
+        /// </summary>
+        public static string Links {
+            get {
+                return ResourceManager.GetString("Links", resourceCulture);
             }
         }
         
