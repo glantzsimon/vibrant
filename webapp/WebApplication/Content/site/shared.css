@@ -316,5 +316,14 @@
     border: 1px solid #ddd !Important;
     width: 100%;
     padding: 7px;
-    margin-bottom: 5px;
+    margin-bottom: 11px;
+}
+
+.schedule-print-container {
+    background: url(../../Images/background/bg-trans.png) no-repeat !important;
+    background-size: cover;
+    background-position: top left;
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 – 15.3, Edge */
+    color-adjust: exact !important;                 /* Firefox 48 – 96 */
+    print-color-adjust: exact !important;     
 }

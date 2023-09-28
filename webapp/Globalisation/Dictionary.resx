@@ -1664,7 +1664,7 @@
     <value>Number of Days Off</value>
   </data>
   <data name="NumberOfPeriodsOffLabel" xml:space="preserve">
-    <value>Number of Periods Off</value>
+    <value>Number of Times Off per Period</value>
   </data>
   <data name="PeriodLabel" xml:space="preserve">
     <value>Period</value>
@@ -1713,5 +1713,14 @@
   </data>
   <data name="Weeks" xml:space="preserve">
     <value>Weeks</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="Every" xml:space="preserve">
+    <value>Every</value>
+  </data>
+  <data name="NumberOfPeriodsOnLabel" xml:space="preserve">
+    <value>Number of Times per Period</value>
   </data>
 </root>

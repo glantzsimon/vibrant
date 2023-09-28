@@ -3,6 +3,11 @@
 @using K9.WebApplication.Helpers
 @model Protocol
 
+@{
+    var periodDisplayValue = Model.Frequency == EFrequency.Custom ? "" : "none";
+    var daysOnOffDisplayValue = Model.Frequency == EFrequency.Custom ? "none" : "";
+}
+
 <div class="row">
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.Name)
@@ -15,24 +20,23 @@
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.Frequency)
     </div>
-    @if (Model.Frequency != EFrequency.Custom)
-    {
-        <div id="daysoff-container" class="col-sm-6" style="display: @daysOffDisplayValue;">
-            @Html.BootstrapDisplayFor(model => model.NumberOfPeriodsOff)
-        </div>
-    }
 </div>
-@if (Model.Frequency == EFrequency.Custom)
-{
-    <div id="period-container" class="row" style="display: @periodDisplayValue;">
-        <div class="col-sm-6">
-            @Html.BootstrapDisplayFor(model => model.Period)
-        </div>
-        <div class="col-sm-6">
-            @Html.BootstrapDisplayFor(model => model.PeriodValue)
-        </div>
+<div id="days-container" class="row" style="display: @daysOnOffDisplayValue;">
+    <div id="daysOn-container" class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.NumberOfPeriodsOn)
     </div>
-}
+    <div id="daysoff-container" class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.NumberOfPeriodsOff)
+    </div>
+</div>
+<div id="period-container" class="row" style="display: @periodDisplayValue;">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.PeriodValue)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.Period)
+    </div>
+</div>
 
 <hr />
 
@@ -46,28 +50,6 @@
         @Html.BootstrapDisplayFor(model => model.Body)
     </div>
 </div>
-
-<br />
-<div class="row">
-    <div class="col-sm-12">
-        <h3>@Dictionary.Details</h3>
-    </div>
-</div>
-
-
-<div class="row">
-    <div class="col-sm-12">
-        @Html.CollapsiblePanel(Dictionary.ProductSummary, Html.Partial("../Protocols/_ProductsSummary").ToString())
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-12">
-        @Html.CollapsiblePanel(Dictionary.ProductPackSummary, Html.Partial("../Protocols/_ProductPackSummary").ToString())
-    </div>
-</div>
-
-<hr />
 
 <div class="row">
     @Html.BootstrapDisplayFor(model => model.ImageFileSource)

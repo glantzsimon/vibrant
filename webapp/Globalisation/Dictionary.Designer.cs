@@ -1144,6 +1144,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Day.
+        /// </summary>
+        public static string Day {
+            get {
+                return ResourceManager.GetString("Day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Days.
         /// </summary>
         public static string Days {
@@ -1770,6 +1779,15 @@ namespace K9.Globalisation {
         public static string ErrorLog {
             get {
                 return ResourceManager.GetString("ErrorLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Every.
+        /// </summary>
+        public static string Every {
+            get {
+                return ResourceManager.GetString("Every", resourceCulture);
             }
         }
         
@@ -2779,11 +2797,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Number of Periods Off.
+        ///   Looks up a localized string similar to Number of Times Off per Period.
         /// </summary>
         public static string NumberOfPeriodsOffLabel {
             get {
                 return ResourceManager.GetString("NumberOfPeriodsOffLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Times per Period.
+        /// </summary>
+        public static string NumberOfPeriodsOnLabel {
+            get {
+                return ResourceManager.GetString("NumberOfPeriodsOnLabel", resourceCulture);
             }
         }
         

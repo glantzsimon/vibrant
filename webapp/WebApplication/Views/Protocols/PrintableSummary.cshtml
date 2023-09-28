@@ -7,7 +7,14 @@
     ViewBag.SubTitle = Model.Name;
 }
 
-<div class="print-container">
+<div class="print-container background-image schedule-print-container">
+    <div class="row">
+        <div class="col-xs-12 center-block">
+            <img src="~/Images/company/logo.png" class="center-block" />
+        </div>
+    </div>
+    <br />
+
     @Html.Partial("../Protocols/_Schedule")
 
     <br />
@@ -15,10 +22,4 @@
 
     @Html.Partial("../Protocols/_SummaryFields")
     @Html.Partial("../Protocols/_SummaryActivityFields")
-
-    @if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
-    {
-        <hr />
-        @Html.BootstrapBackToListButton()
-    }
 </div>

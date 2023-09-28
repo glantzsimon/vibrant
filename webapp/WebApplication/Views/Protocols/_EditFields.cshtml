@@ -5,7 +5,7 @@
 
 @{
     var periodDisplayValue = Model.Frequency == EFrequency.Custom ? "" : "none";
-    var daysOffDisplayValue = Model.Frequency == EFrequency.Custom ? "none" : "";
+    var daysOnOffDisplayValue = Model.Frequency == EFrequency.Custom ? "none" : "";
 }
 
 <div class="row">
@@ -20,16 +20,21 @@
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.Frequency)
     </div>
-    <div id="daysoff-container" class="col-sm-6" style="display: @daysOffDisplayValue;">
+</div>
+<div id="days-container" class="row" style="display: @daysOnOffDisplayValue;">
+    <div id="daysOn-container" class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.NumberOfPeriodsOn)
+    </div>
+    <div id="daysoff-container" class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.NumberOfPeriodsOff)
     </div>
 </div>
 <div id="period-container" class="row" style="display: @periodDisplayValue;">
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.Period)
+        @Html.BootstrapEditorFor(model => model.PeriodValue)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.PeriodValue)
+        @Html.BootstrapEditorFor(model => model.Period)
     </div>
 </div>
 
@@ -53,11 +58,37 @@
     @Html.BootstrapEditorFor(model => model.VideoFileSource)
 </div>
 
+@*var periodDisplayValue = Model.Frequency == EFrequency.Custom ? "" : "none";
+    var daysOnOffDisplayValue = Model.Frequency == EFrequency.Custom ? "none" : "";*@
+
 <script type="text/javascript">
     $(function () {
         $("#Period").change(function () {
-            var period = $("this").val();
-            alert(period);
+            let period = $("#Period").find("option:selected").val();
+            let $numberOfPeriodsOff = $("#@nameof(Protocol.NumberOfPeriodsOff)");
+            let $numberOfPeriodsOn = $("#@nameof(Protocol.NumberOfPeriodsOn)");
+
+            if (period === "@((int)EPeriod.Days)") {
+                $numberOfPeriodsOff.show();
+                $numberOfPeriodsOn.hide();
+            } else {
+                $numberOfPeriodsOff.hide();
+                $numberOfPeriodsOn.show();
+            }
+        });
+
+        $("#Frequency").change(function () {
+            let frequency = $("#Frequency").find("option:selected").val();
+            let $daysContainer = $("#days-container");
+            let $periodContainer = $("#period-container");
+
+            if (frequency === "@((int)EFrequency.Custom)") {
+                $daysContainer.hide();
+                $periodContainer.show();
+            } else {
+                $daysContainer.show();
+                $periodContainer.hide();
+            }
         });
     })
 </script>

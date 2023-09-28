@@ -500,6 +500,7 @@
     <Content Include="Content\k9\pageSpinner.css" />
     <Content Include="Content\_colors.txt" />
     <Content Include="Global.asax" />
+    <Content Include="Images\background\bg-trans.png" />
     <Content Include="Images\background\bg.gif" />
     <Content Include="Images\background\bg1.jpg" />
     <Content Include="Images\background\bg2.jpg" />
@@ -1494,8 +1495,10 @@
     <Content Include="Views\Shared\EditorTemplates\Period.cshtml" />
     <Content Include="Views\Protocols\_DailySchedule.cshtml" />
     <Content Include="Views\Protocols\_Schedule.cshtml" />
-    <Content Include="Views\Protocols\_WeeklySchedule.cshtml" />
+    <Content Include="Views\Protocols\_MonthlySchedule.cshtml" />
     <Content Include="Views\Protocols\PrintableSummary.cshtml" />
+    <Content Include="Views\Protocols\_FortnightlySchedule.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Every.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

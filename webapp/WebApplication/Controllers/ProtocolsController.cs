@@ -57,12 +57,6 @@ namespace K9.WebApplication.Controllers
             var protocol = _protocolService.GetProtocolWithProtocolSections(id);
             return View(protocol);
         }
-        
-        public ActionResult PrintableSummary(int id)
-        {
-            var protocol = _protocolService.GetProtocolWithProtocolSections(id);
-            return View(protocol);
-        }
 
         public ActionResult EditSectionDetails(int id = 0)
         {

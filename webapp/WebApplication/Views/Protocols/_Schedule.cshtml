@@ -9,7 +9,8 @@
         @Html.Partial("_DailySchedule")
         break;
 
-    case EFrequency.Weekly:
+    case EFrequency.Monthly:
+        @Html.Partial("_MonthlySchedule")
         break;
 
     case EFrequency.Fortnightly:

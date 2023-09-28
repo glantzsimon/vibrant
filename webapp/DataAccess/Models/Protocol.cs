@@ -32,11 +32,15 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PeriodLabel)]
         public EPeriod Period { get; set; }
 
+        [UIHint("Every")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PeriodValueLabel)]
         public int PeriodValue { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfPeriodsOffLabel)]
         public int NumberOfPeriodsOff { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfPeriodsOnLabel)]
+        public int NumberOfPeriodsOn { get; set; }
 
         [UIHint("Contact")]
         [ForeignKey("Contact")]
@@ -97,42 +101,5 @@ namespace K9.DataAccessLayer.Models
         [StringLength(512)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.VideoUrlLabel)]
         public string VideoUrl { get; set; }
-        
-        public bool CheckSchedule(DayOfWeek dayofWeek)
-        {
-            if (Frequency == EFrequency.Daily)
-            {
-                if (NumberOfPeriodsOff >= 7)
-                {
-                    return false;
-                }
-
-                switch (dayofWeek)
-                {
-                    case DayOfWeek.Monday:
-                        return true;
-
-                    case DayOfWeek.Tuesday:
-                        return NumberOfPeriodsOff <= 2;
-
-                    case DayOfWeek.Wednesday:
-                        return new []{4, 3, 1, 0}.Contains(NumberOfPeriodsOff);
-
-                    case DayOfWeek.Thursday:
-                        return new []{5, 2, 1, 0}.Contains(NumberOfPeriodsOff);
-
-                    case DayOfWeek.Friday:
-                        return NumberOfPeriodsOff <= 4;
-
-                    case DayOfWeek.Saturday:
-                        return NumberOfPeriodsOff <= 3;
-
-                    case DayOfWeek.Sunday:
-                        return NumberOfPeriodsOff == 0;
-                }
-            }
-
-            return false;
-        }
     }
 }

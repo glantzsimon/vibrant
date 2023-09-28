@@ -156,6 +156,7 @@
             public const string PeriodValueLabel = "PeriodValueLabel";
             public const string NumberOfDaysOffLabel = "NumberOfDaysOffLabel";
             public const string NumberOfPeriodsOffLabel = "NumberOfPeriodsOffLabel";
+            public const string NumberOfPeriodsOnLabel = "NumberOfPeriodsOnLabel";
             public const string ProtocolSectionLabel = "ProtocolSection";
             public const string InvoiceDateLabel = "InvoiceDateLabel";
             public const string OrderTypeLabel = "OrderTypeLabel";

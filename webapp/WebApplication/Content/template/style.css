@@ -70,7 +70,7 @@ body {
 .background-image {
     background: url(../../Images/background/bg2.jpg) no-repeat;
     background-size: cover;
-    background-position: top right;
+    background-position: top left;
 }
 
 .background-fixed {

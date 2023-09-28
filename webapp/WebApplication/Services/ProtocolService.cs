@@ -6,6 +6,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Services
 {
@@ -363,6 +364,43 @@ namespace K9.WebApplication.Services
                     }
                 }
             }
+        }
+
+        public static bool CheckSchedule(Protocol protocol, DayOfWeek dayofWeek)
+        {
+            if (protocol.Frequency == EFrequency.Daily)
+            {
+                if (protocol.NumberOfPeriodsOff >= 7)
+                {
+                    return false;
+                }
+
+                switch (dayofWeek)
+                {
+                    case DayOfWeek.Monday:
+                        return true;
+
+                    case DayOfWeek.Tuesday:
+                        return protocol.NumberOfPeriodsOff <= 2;
+
+                    case DayOfWeek.Wednesday:
+                        return new []{4, 3, 1, 0}.Contains(protocol.NumberOfPeriodsOff);
+
+                    case DayOfWeek.Thursday:
+                        return new []{5, 2, 1, 0}.Contains(protocol.NumberOfPeriodsOff);
+
+                    case DayOfWeek.Friday:
+                        return protocol.NumberOfPeriodsOff <= 4;
+
+                    case DayOfWeek.Saturday:
+                        return protocol.NumberOfPeriodsOff <= 3;
+
+                    case DayOfWeek.Sunday:
+                        return protocol.NumberOfPeriodsOff == 0;
+                }
+            }
+
+            return false;
         }
 
         private void AddDefaultSections(Protocol protocol)

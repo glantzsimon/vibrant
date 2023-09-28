@@ -1,5 +1,7 @@
-﻿@using K9.Base.WebApplication.Helpers
+﻿@using System.Web.Mvc.Html
+@using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Helpers
+@using K9.WebApplication.Services
 @model Protocol
 
 <div class="daily-schedule-container">
@@ -9,46 +11,48 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-2 col-xs-3">
+        <div class="col-xs-2 col-xs-offset-1">
             <div class="schedule-box">
                 @Dictionary.Monday.Substring(0, 3)
-                @Html.CheckBox("mon", Model.CheckSchedule(DayOfWeek.Monday))
+                @Html.CheckBox("mon", ProtocolService.CheckSchedule(Model, DayOfWeek.Monday))
             </div>
         </div>
-        <div class="col-sm-2 col-xs-3">
+        <div class="col-xs-2">
             <div class="schedule-box">
                 @Dictionary.Tuesday.Substring(0, 3)
-                @Html.CheckBox("tue", Model.CheckSchedule(DayOfWeek.Tuesday))
+                @Html.CheckBox("tue", ProtocolService.CheckSchedule(Model, DayOfWeek.Tuesday))
             </div>
         </div>
-        <div class="col-sm-2 col-xs-3">
+        <div class="col-xs-2">
             <div class="schedule-box">
                 @Dictionary.Wednesday.Substring(0, 3)
-                @Html.CheckBox("wed", Model.CheckSchedule(DayOfWeek.Wednesday))
+                @Html.CheckBox("wed", ProtocolService.CheckSchedule(Model, DayOfWeek.Wednesday))
             </div>
         </div>
-        <div class="col-sm-2 col-xs-3">
+        <div class="col-xs-2">
             <div class="schedule-box">
                 @Dictionary.Thursday.Substring(0, 3)
-                @Html.CheckBox("thu", Model.CheckSchedule(DayOfWeek.Thursday))
+                @Html.CheckBox("thu", ProtocolService.CheckSchedule(Model, DayOfWeek.Thursday))
             </div>
         </div>
-        <div class="col-sm-2 col-xs-3">
+        <div class="col-xs-2">
             <div class="schedule-box">
                 @Dictionary.Friday.Substring(0, 3)
-                @Html.CheckBox("fri", Model.CheckSchedule(DayOfWeek.Friday))
+                @Html.CheckBox("fri", ProtocolService.CheckSchedule(Model, DayOfWeek.Friday))
             </div>
         </div>
-        <div class="col-sm-2 col-xs-3">
+    </div>
+    <div class="row">
+        <div class="col-xs-2 col-xs-offset-4">
             <div class="schedule-box">
                 @Dictionary.Saturday.Substring(0, 3)
-                @Html.CheckBox("sat", Model.CheckSchedule(DayOfWeek.Saturday))
+                @Html.CheckBox("sat", ProtocolService.CheckSchedule(Model, DayOfWeek.Saturday))
             </div>
         </div>
-        <div class="col-sm-2 col-xs-3">
+        <div class="col-xs-2">
             <div class="schedule-box">
                 @Dictionary.Sunday.Substring(0, 3)
-                @Html.CheckBox("sun", Model.CheckSchedule(DayOfWeek.Sunday))
+                @Html.CheckBox("sun", ProtocolService.CheckSchedule(Model, DayOfWeek.Sunday))
             </div>
         </div>
     </div>

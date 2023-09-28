@@ -15,8 +15,14 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu nav navbar-nav admin-submenu">
-                        <li class="@ViewContext.GetActiveClass("Index", "Articles") sub-item"><a href="@Url.Action("Index", "Articles")">@Dictionary.Articles</a></li>
-                        <li class="@ViewContext.GetActiveClass("Index", "ArticleCategories") sub-item"><a href="@Url.Action("Index", "ArticleCategories")">@Dictionary.ArticleCategories</a></li>
+                        
+                        <li class="@ViewContext.GetActiveClass("Index", "Activities") sub-item"><a href="@Url.Action("Index", "Activities")">@Dictionary.Activities</a></li>
+
+                        <li class="@ViewContext.GetActiveClass("Index", "Protocols") sub-item"><a href="@Url.Action("Index", "Protocols")">@Dictionary.Protocols</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "Sections") sub-item"><a href="@Url.Action("Index", "Sections")">@Dictionary.ProtocolSections</a></li>
+                     
+                        <li class="divider"></li>
+
                         <li class="@ViewContext.GetActiveClass("Index", "Consultations") sub-item"><a href="@Url.Action("Index", "Consultations")">@Dictionary.Consultations</a></li>
                         <li class="@ViewContext.GetActiveClass("Index", "Contacts") sub-item"><a href="@Url.Action("Index", "Contacts")">@Dictionary.Clients</a></li>
                         <li class="@ViewContext.GetActiveClass("Index", "Orders") sub-item"><a href="@Url.Action("Index", "Orders")">@Dictionary.Orders</a></li>
@@ -34,12 +40,8 @@
 
                         <li class="divider"></li>
 
-                        <li class="@ViewContext.GetActiveClass("Index", "Protocols") sub-item"><a href="@Url.Action("Index", "Protocols")">@Dictionary.Protocols</a></li>
-                        <li class="@ViewContext.GetActiveClass("Index", "Sections") sub-item"><a href="@Url.Action("Index", "Sections")">@Dictionary.ProtocolSections</a></li>
-                        <li class="@ViewContext.GetActiveClass("Index", "Activities") sub-item"><a href="@Url.Action("Index", "Activities")">@Dictionary.Activities</a></li>
-
-                        <li class="divider"></li>
-
+                        <li class="@ViewContext.GetActiveClass("Index", "Articles") sub-item"><a href="@Url.Action("Index", "Articles")">@Dictionary.Articles</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "ArticleCategories") sub-item"><a href="@Url.Action("Index", "ArticleCategories")">@Dictionary.ArticleCategories</a></li>
                         @*<li class="@ViewContext.GetActiveClass("Index", "Donations") sub-item"><a href="@Url.Action("Index", "Donations")">@Dictionary.Donations</a></li>*@
                         <li class="@ViewContext.GetActiveClass("Index", "Log") sub-item"><a href="@Url.Action("Index", "Log")">@Dictionary.ErrorLog</a></li>
                         <li class="@ViewContext.GetActiveClass("Index", "Roles") sub-item"><a href="@Url.Action("Index", "Roles")">@K9.Base.Globalisation.Dictionary.Roles</a></li>
