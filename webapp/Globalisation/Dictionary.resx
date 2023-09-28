@@ -1630,11 +1630,38 @@
   <data name="Activity" xml:space="preserve">
     <value>Activity</value>
   </data>
+  <data name="Custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>Days</value>
+  </data>
   <data name="EditActivities" xml:space="preserve">
     <value>Edit Activities</value>
   </data>
+  <data name="Fortnightly" xml:space="preserve">
+    <value>Fortnightly</value>
+  </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
   <data name="IsSelectedLabel" xml:space="preserve">
     <value>Is Selected</value>
+  </data>
+  <data name="Months" xml:space="preserve">
+    <value>Months</value>
+  </data>
+  <data name="NumberOfDaysOffLabel" xml:space="preserve">
+    <value>Number of Days Off</value>
+  </data>
+  <data name="PeriodLabel" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="PeriodValueLabel" xml:space="preserve">
+    <value>Period Value</value>
   </data>
   <data name="ProtocolActivities" xml:space="preserve">
     <value>Protocol Activities</value>
@@ -1650,5 +1677,11 @@
   </data>
   <data name="ViewSummary" xml:space="preserve">
     <value>View Summary</value>
+  </data>
+  <data name="Weekly" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="Weeks" xml:space="preserve">
+    <value>Weeks</value>
   </data>
 </root>

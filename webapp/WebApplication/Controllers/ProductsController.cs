@@ -1,7 +1,6 @@
 ﻿using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
-using K9.Base.WebApplication.ViewModels;
 using K9.DataAccessLayer.Helpers;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;

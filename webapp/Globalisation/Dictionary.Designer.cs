@@ -1090,6 +1090,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Custom.
+        /// </summary>
+        public static string Custom {
+            get {
+                return ResourceManager.GetString("Custom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Customer Email Address.
         /// </summary>
         public static string CustomerEmailLabel {
@@ -1108,6 +1117,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Daily.
+        /// </summary>
+        public static string Daily {
+            get {
+                return ResourceManager.GetString("Daily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Daily Values.
         /// </summary>
         public static string DailyValuesLabel {
@@ -1122,6 +1140,15 @@ namespace K9.Globalisation {
         public static string DateOfBirthLabel {
             get {
                 return ResourceManager.GetString("DateOfBirthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Days.
+        /// </summary>
+        public static string Days {
+            get {
+                return ResourceManager.GetString("Days", resourceCulture);
             }
         }
         
@@ -1837,6 +1864,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fortnightly.
+        /// </summary>
+        public static string Fortnightly {
+            get {
+                return ResourceManager.GetString("Fortnightly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Free.
         /// </summary>
         public static string Free {
@@ -1851,6 +1887,15 @@ namespace K9.Globalisation {
         public static string FreeMembership {
             get {
                 return ResourceManager.GetString("FreeMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequency.
+        /// </summary>
+        public static string Frequency {
+            get {
+                return ResourceManager.GetString("Frequency", resourceCulture);
             }
         }
         
@@ -2553,6 +2598,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Months.
+        /// </summary>
+        public static string Months {
+            get {
+                return ResourceManager.GetString("Months", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to More Details.
         /// </summary>
         public static string MoreDetails {
@@ -2694,6 +2748,15 @@ namespace K9.Globalisation {
         public static string NumberOfCreditsLeft {
             get {
                 return ResourceManager.GetString("NumberOfCreditsLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Days Off.
+        /// </summary>
+        public static string NumberOfDaysOffLabel {
+            get {
+                return ResourceManager.GetString("NumberOfDaysOffLabel", resourceCulture);
             }
         }
         
@@ -3000,6 +3063,24 @@ namespace K9.Globalisation {
         public static string PercentageOfRDALabel {
             get {
                 return ResourceManager.GetString("PercentageOfRDALabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Period.
+        /// </summary>
+        public static string PeriodLabel {
+            get {
+                return ResourceManager.GetString("PeriodLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Period Value.
+        /// </summary>
+        public static string PeriodValueLabel {
+            get {
+                return ResourceManager.GetString("PeriodValueLabel", resourceCulture);
             }
         }
         
@@ -4797,6 +4878,24 @@ namespace K9.Globalisation {
         public static string WaterMagic {
             get {
                 return ResourceManager.GetString("WaterMagic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weekly.
+        /// </summary>
+        public static string Weekly {
+            get {
+                return ResourceManager.GetString("Weekly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weeks.
+        /// </summary>
+        public static string Weeks {
+            get {
+                return ResourceManager.GetString("Weeks", resourceCulture);
             }
         }
         

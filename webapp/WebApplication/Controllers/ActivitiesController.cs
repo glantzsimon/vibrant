@@ -1,10 +1,9 @@
-﻿using System;
-using K9.Base.WebApplication.EventArgs;
+﻿using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
-using K9.WebApplication.Extensions;
+using System;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers

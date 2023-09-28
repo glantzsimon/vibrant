@@ -151,6 +151,10 @@
             public const string ProductLabel = "Product";
             public const string ActivityLabel = "Activity";
             public const string ProtocolLabel = "Protocol";
+            public const string FrequencyLabel = "Frequency";
+            public const string PeriodLabel = "PeriodLabel";
+            public const string PeriodValueLabel = "PeriodValueLabel";
+            public const string NumberOfDaysOffLabel = "NumberOfDaysOffLabel";
             public const string ProtocolSectionLabel = "ProtocolSection";
             public const string InvoiceDateLabel = "InvoiceDateLabel";
             public const string OrderTypeLabel = "OrderTypeLabel";
@@ -261,6 +265,15 @@
             public const string WithOrWithoutFood = "WithOrWithoutFood";
             public const string WithFood = "WithFood";
             public const string WithFat = "WithFat";
+
+            public const string Daily = "Daily";
+            public const string Weekly = "Weekly";
+            public const string Fortnightly = "Fortnightly";
+            public const string Custom = "Custom";
+
+            public const string Days = "Days";
+            public const string Weeks = "Weeks";
+            public const string Months = "Months";
 
             public const string Female = "Female";
             public const string Male = "Male";

@@ -1,6 +1,12 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@using K9.DataAccessLayer.Enums
 @using K9.WebApplication.Helpers
 @model Protocol
+
+@{
+    var periodDisplayValue = Model.Frequency == EFrequency.Custom ? "" : "none";
+    var daysOffDisplayValue = Model.Frequency == EFrequency.Custom ? "none" : "";
+}
 
 <div class="row">
     <div class="col-sm-6">
@@ -11,20 +17,34 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-12">
-        @Html.BootstrapEditorFor(model => model.SeoFriendlyId)
+    <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.Frequency)
+    </div>
+    <div id="daysoff-container" class="col-sm-6" style="display: @daysOffDisplayValue;">
+        @Html.BootstrapEditorFor(model => model.NumberOfDaysOff)
     </div>
 </div>
-<div class="row">
+<div id="period-container" class="row" style="display: @periodDisplayValue;">
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.ShortDescription)
+        @Html.BootstrapEditorFor(model => model.Period)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.Body)
+        @Html.BootstrapEditorFor(model => model.PeriodValue)
     </div>
 </div>
 
 <hr />
+
+<div class="row">
+    <div class="col-sm-12">
+        @Html.BootstrapEditorFor(model => model.ShortDescription)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        @Html.BootstrapEditorFor(model => model.Body)
+    </div>
+</div>
 
 <div class="row">
     @Html.BootstrapEditorFor(model => model.ImageFileSource)
@@ -33,3 +53,11 @@
     @Html.BootstrapEditorFor(model => model.VideoFileSource)
 </div>
 
+<script type="text/javascript">
+    $(function () {
+        $("#Period").change(function () {
+            var period = $("this").val();
+            alert(period);
+        });
+    })
+</script>

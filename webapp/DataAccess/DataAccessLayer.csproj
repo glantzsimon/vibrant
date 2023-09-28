@@ -196,8 +196,10 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\EPeriod.cs" />
     <Compile Include="Enums\EIngredientType.cs" />
     <Compile Include="Enums\EOrderStatus.cs" />
+    <Compile Include="Enums\EFrequency.cs" />
     <Compile Include="Enums\EPriceTier.cs" />
     <Compile Include="Enums\EOrderType.cs" />
     <Compile Include="Enums\EProductRecommendation.cs" />
@@ -351,6 +353,10 @@
     <Compile Include="Migrations\202309271534392_AddActivities.cs" />
     <Compile Include="Migrations\202309271534392_AddActivities.Designer.cs">
       <DependentUpon>202309271534392_AddActivities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309280109096_ProtocolPeriodFrequency.cs" />
+    <Compile Include="Migrations\202309280109096_ProtocolPeriodFrequency.Designer.cs">
+      <DependentUpon>202309280109096_ProtocolPeriodFrequency.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
@@ -507,6 +513,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309271534392_AddActivities.resx">
       <DependentUpon>202309271534392_AddActivities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309280109096_ProtocolPeriodFrequency.resx">
+      <DependentUpon>202309280109096_ProtocolPeriodFrequency.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

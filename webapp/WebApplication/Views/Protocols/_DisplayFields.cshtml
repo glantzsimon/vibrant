@@ -1,4 +1,5 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@using K9.DataAccessLayer.Enums
 @using K9.WebApplication.Helpers
 @model Protocol
 
@@ -12,9 +13,36 @@
 </div>
 <div class="row">
     <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.Frequency)
+    </div>
+    @if (Model.Frequency != EFrequency.Custom)
+    {
+        <div id="daysoff-container" class="col-sm-6" style="display: @daysOffDisplayValue;">
+            @Html.BootstrapDisplayFor(model => model.NumberOfDaysOff)
+        </div>
+    }
+</div>
+@if (Model.Frequency == EFrequency.Custom)
+{
+    <div id="period-container" class="row" style="display: @periodDisplayValue;">
+        <div class="col-sm-6">
+            @Html.BootstrapDisplayFor(model => model.Period)
+        </div>
+        <div class="col-sm-6">
+            @Html.BootstrapDisplayFor(model => model.PeriodValue)
+        </div>
+    </div>
+}
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-12">
         @Html.BootstrapDisplayFor(model => model.ShortDescription)
     </div>
-    <div class="col-sm-6">
+</div>
+<div class="row">
+    <div class="col-sm-12">
         @Html.BootstrapDisplayFor(model => model.Body)
     </div>
 </div>
