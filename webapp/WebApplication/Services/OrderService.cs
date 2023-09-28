@@ -126,6 +126,29 @@ namespace K9.WebApplication.Services
             return order;
         }
 
+        public Order UpdatePricesForContact(Order order)
+        {
+            if (!order.Products.Any(e => e.Amount > 0))
+            {
+                // New order - update price tier
+                foreach (var product in order.Products.Where(e => e.Amount == 0))
+                {
+                    product.PriceTier = order.Contact.PriceTier;
+                }
+            }
+            
+            if (!order.ProductPacks.Any(e => e.Amount > 0))
+            {
+                // New order - update price tier
+                foreach (var pack in order.ProductPacks.Where(e => e.Amount == 0))
+                {
+                    pack.PriceTier = order.Contact.PriceTier;
+                }
+            }
+
+            return order;
+        }
+
         public List<Order> List(bool retrieveFullOrder = false, bool includeCustomOrders = false)
         {
             var orders = _ordersRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();

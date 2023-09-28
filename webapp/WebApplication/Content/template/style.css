@@ -936,8 +936,8 @@ div.row + hr {
 
 
 .print-layout {
-    background: white;
-    position: fixed;
+    background-color: white;
+    position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
@@ -948,9 +948,16 @@ div.row + hr {
 }
 
 .print-container {
+    background: url(../../Images/background/bg-trans.png) repeat-y !important;
+    background-size: cover;
+    background-position: top left;
+    -webkit-print-color-adjust: exact !important; /* Chrome, Safari 6 – 15.3, Edge */
+    color-adjust: exact !important; /* Firefox 48 – 96 */
+    print-color-adjust: exact !important;
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
+    position: relative;
 }
 
     .print-container p {
@@ -958,15 +965,19 @@ div.row + hr {
         margin-bottom: 0 !important;
     }
 
-.address-label {
-    width: 100%;
-    height: 100%;
-    padding: 4px;
-    margin: 1px;
-    text-align: center;
-    border: 2px #eeeeee solid;
-    border-radius: 3px;
-}
+    .print-container .well {
+        background: none !important;
+    }
+
+    .address-label {
+        width: 100%;
+        height: 100%;
+        padding: 4px;
+        margin: 1px;
+        text-align: center;
+        border: 2px #eeeeee solid;
+        border-radius: 3px;
+    }
 
     .address-label h4 {
         text-transform: uppercase;

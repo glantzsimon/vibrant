@@ -13,6 +13,7 @@ namespace K9.WebApplication.Services
         Order Find(string orderNumber);
         Order GetFullOrder(Order order);
         Order FillZeroQuantities(Order order);
+        Order UpdatePricesForContact(Order order);
         Order Duplicate(int id);
         void DeleteChildRecords(int id);
 

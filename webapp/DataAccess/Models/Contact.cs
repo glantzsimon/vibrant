@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text.RegularExpressions;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -14,6 +15,10 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Contacts, PluralName = Globalisation.Strings.Names.Clients, Name = Globalisation.Strings.Names.Client)]
     public class Contact : ObjectBase
     {
+        [UIHint("PriceTier")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceTierLabel)]
+        public EPriceTier PriceTier { get; set; }
+
         [UIHint("Contact")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ContactLabel)]
         public int ContactId => Id;
