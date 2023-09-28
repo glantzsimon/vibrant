@@ -10,6 +10,8 @@
 
     <hr />
 
+    @Html.BootstrapActionLinkButton(Dictionary.EditActivities, "EditActivities", "Protocols", new { id = Model.Id }, "", EButtonClass.Primary)
+
     @Html.BootstrapActionLinkButton(Dictionary.EditSections, "EditSections", "Protocols", new { id = Model.Id }, "", EButtonClass.Primary)
 
     @Html.BootstrapActionLinkButton(Dictionary.EditProducts, "EditProducts", "Protocols", new { id = Model.Id }, "", EButtonClass.Primary)
