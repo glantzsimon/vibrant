@@ -1750,4 +1750,7 @@
   <data name="Links" xml:space="preserve">
     <value>Links</value>
   </data>
+  <data name="SummaryLink" xml:space="preserve">
+    <value>Summary Link</value>
+  </data>
 </root>

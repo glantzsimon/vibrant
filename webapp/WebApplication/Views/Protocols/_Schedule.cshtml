@@ -12,19 +12,19 @@ else
     switch (Model.Frequency)
     {
         case EFrequency.Daily:
-            @Html.Partial("_DailySchedule")
+            @Html.Partial("../Protocols/_DailySchedule")
             break;
 
         case EFrequency.Monthly:
-            @Html.Partial("_MonthlySchedule")
+            @Html.Partial("../Protocols/_MonthlySchedule")
             break;
 
         case EFrequency.Fortnightly:
-            @Html.Partial("_FortnightlySchedule")
+            @Html.Partial("../Protocols/_FortnightlySchedule")
             break;
 
         default:
-            @Html.Partial("_CustomSchedule")
+            @Html.Partial("../Protocols/_CustomSchedule")
             break;
     }
 }

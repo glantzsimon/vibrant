@@ -4,7 +4,7 @@
 
 @if (Model.Id > 0)
 {
-    @Html.BootstrapActionLinkButton(Dictionary.SummaryLabel, "Summary", "Protocol", new { id = Model.ExternalId }, "", EButtonClass.Success)
+    @Html.BootstrapActionLinkButton(Dictionary.SummaryLink, "Summary", "Protocol", new { id = Model.ExternalId }, "", EButtonClass.Success)
 
     @Html.BootstrapActionLinkButton(Dictionary.DuplicateProtocol, "DuplicateProtocol", "Protocols", new { id = Model.Id }, "", EButtonClass.Info)
 

@@ -4480,6 +4480,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Summary Link.
+        /// </summary>
+        public static string SummaryLink {
+            get {
+                return ResourceManager.GetString("SummaryLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Summer.
         /// </summary>
         public static string Summer {
