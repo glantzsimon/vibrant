@@ -379,11 +379,17 @@
     <Compile Include="Migrations\202309281414029_ContactPriceTier.Designer.cs">
       <DependentUpon>202309281414029_ContactPriceTier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309281535500_AddDietaryAdvice.cs" />
+    <Compile Include="Migrations\202309281535500_AddDietaryAdvice.Designer.cs">
+      <DependentUpon>202309281535500_AddDietaryAdvice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DietaryRecommendation.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\OrderProductPack.cs" />
     <Compile Include="Models\OrderProduct.cs" />
     <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\ProtocolDietaryRecommendation.cs" />
     <Compile Include="Models\ProtocolActivity.cs" />
     <Compile Include="Models\ProtocolSectionProduct.cs" />
     <Compile Include="Models\ProtocolSection.cs" />
@@ -552,6 +558,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309281414029_ContactPriceTier.resx">
       <DependentUpon>202309281414029_ContactPriceTier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309281535500_AddDietaryAdvice.resx">
+      <DependentUpon>202309281535500_AddDietaryAdvice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

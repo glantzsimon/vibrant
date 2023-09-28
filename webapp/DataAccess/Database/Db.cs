@@ -11,6 +11,7 @@ namespace K9.DataAccessLayer.Database
 	    public DbSet<ArticleSection> ArticleSections { get; set; }
 	    public DbSet<Consultation> Consultations { get; set; }
 	    public DbSet<Contact> Contacts { get; set; }
+	    public DbSet<DietaryRecommendation> DietaryRecommendations { get; set; }
 	    public DbSet<Donation> Donations { get; set; }
 	    public DbSet<MembershipOption> MembershipOptions { get; set; }
 	    public DbSet<PromoCode> PromoCodes { get; set; }
@@ -31,6 +32,7 @@ namespace K9.DataAccessLayer.Database
         public DbSet<ProtocolSection> ProtocolSections { get; set; }
         public DbSet<ProtocolSectionProduct> ProtocolSectionProducts { get; set; }
 	    public DbSet<ProtocolActivity> ProtocolActivities { get; set; }
+	    public DbSet<ProtocolDietaryRecommendation> ProtocolDietaryRecommendations { get; set; }
 
         public DbSet<UserConsultation> UserConsultations { get; set; }
 	    public DbSet<UserCreditPack> UserCreditPack { get; set; }

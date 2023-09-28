@@ -27,6 +27,18 @@
     }
 </div>
 
+@if (Model.DietaryRecommendations.Any())
+{
+    using (Html.BeginForm())
+    {
+        using (Html.BeginBootstrapForm())
+        {
+            @Html.Partial("../Protocols/_SummaryDietaryRecommendationsFields")
+        }
+    }
+} }
+}
+
 @if (Model.Activities.Any())
 {
     using (Html.BeginForm())

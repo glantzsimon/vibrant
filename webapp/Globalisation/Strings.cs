@@ -154,6 +154,7 @@
             public const string ProductTypeLabel = "ProductTypeLabel";
             public const string ProductLabel = "Product";
             public const string ActivityLabel = "Activity";
+            public const string DietaryRecommendationLabel = "DietaryRecommendation";
             public const string ProtocolLabel = "Protocol";
             public const string FrequencyLabel = "Frequency";
             public const string ProtocolTypeLabel = "ProtocolTypeLabel";
@@ -207,6 +208,8 @@
             public const string ProductPack = "ProductPack";
             public const string Activity = "Activity";
             public const string Activities = "Activities";
+            public const string DietaryRecommendation = "DietaryRecommendation";
+            public const string DietaryRecommendations = "DietaryRecommendations";
             public const string Products = "Products";
             public const string Protocol = "Protocol";
             public const string Protocols = "Protocols";
@@ -223,6 +226,8 @@
             public const string ProtocolProducts = "ProtocolProducts";
             public const string ProtocolActivities = "ProtocolActivities";
             public const string ProtocolActivity = "ProtocolActivity";
+            public const string ProtocolDietaryRecommendations = "ProtocolDietaryRecommendations";
+            public const string ProtocolDietaryRecommendation = "ProtocolDietaryRecommendation";
             public const string ProtocolProductPack = "ProtocolProductPack";
             public const string ProtocolProductPacks = "ProtocolProductPacks";
             public const string ContactProduct = "ContactProduct";

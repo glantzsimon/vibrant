@@ -1741,6 +1741,12 @@
   <data name="CountryLabel" xml:space="preserve">
     <value>Country</value>
   </data>
+  <data name="DietaryRecommendation" xml:space="preserve">
+    <value>Dietary Recommendation</value>
+  </data>
+  <data name="DietaryRecommendations" xml:space="preserve">
+    <value>Dietary Recommendations</value>
+  </data>
   <data name="File1Label" xml:space="preserve">
     <value>File Url</value>
   </data>
@@ -1750,10 +1756,19 @@
   <data name="Links" xml:space="preserve">
     <value>Links</value>
   </data>
+  <data name="ProtocolDietaryRecommendation" xml:space="preserve">
+    <value>Protocol Dietary Recommendation</value>
+  </data>
+  <data name="ProtocolDietaryRecommendations" xml:space="preserve">
+    <value>Protocol Dietary Recommendations</value>
+  </data>
   <data name="SummaryLink" xml:space="preserve">
     <value>Summary Link</value>
   </data>
   <data name="SupplementSchedule" xml:space="preserve">
     <value>Supplement Schedule</value>
+  </data>
+  <data name="EditDietaryRecommendations" xml:space="preserve">
+    <value>Edit Dietary Recommendations</value>
   </data>
 </root>

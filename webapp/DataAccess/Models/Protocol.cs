@@ -61,6 +61,11 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         public List<ProtocolActivity> Activities { get; set; }
 
+        public virtual IEnumerable<ProtocolDietaryRecommendation> ProtocolDietaryRecommendations { get; set; }
+
+        [NotMapped]
+        public List<ProtocolDietaryRecommendation> DietaryRecommendations { get; set; }
+
         public virtual IEnumerable<ProtocolProduct> ProtocolProducts { get; set; }
 
         [NotMapped]

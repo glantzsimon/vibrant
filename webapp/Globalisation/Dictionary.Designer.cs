@@ -1234,6 +1234,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dietary Recommendation.
+        /// </summary>
+        public static string DietaryRecommendation {
+            get {
+                return ResourceManager.GetString("DietaryRecommendation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dietary Recommendations.
+        /// </summary>
+        public static string DietaryRecommendations {
+            get {
+                return ResourceManager.GetString("DietaryRecommendations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Diplomat.
         /// </summary>
         public static string Diplomat {
@@ -1581,6 +1599,15 @@ namespace K9.Globalisation {
         public static string EditActivities {
             get {
                 return ResourceManager.GetString("EditActivities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Dietary Recommendations.
+        /// </summary>
+        public static string EditDietaryRecommendations {
+            get {
+                return ResourceManager.GetString("EditDietaryRecommendations", resourceCulture);
             }
         }
         
@@ -3674,6 +3701,24 @@ namespace K9.Globalisation {
         public static string ProtocolActivity {
             get {
                 return ResourceManager.GetString("ProtocolActivity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Dietary Recommendation.
+        /// </summary>
+        public static string ProtocolDietaryRecommendation {
+            get {
+                return ResourceManager.GetString("ProtocolDietaryRecommendation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Dietary Recommendations.
+        /// </summary>
+        public static string ProtocolDietaryRecommendations {
+            get {
+                return ResourceManager.GetString("ProtocolDietaryRecommendations", resourceCulture);
             }
         }
         

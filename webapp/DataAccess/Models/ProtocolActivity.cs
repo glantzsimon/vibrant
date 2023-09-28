@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
-    [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.ProtocolProducts, PluralName = Globalisation.Strings.Names.ProtocolProducts, Name = Globalisation.Strings.Names.ProtocolProduct)]
+    [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.ProtocolActivities, PluralName = Globalisation.Strings.Names.ProtocolActivities, Name = Globalisation.Strings.Names.ProtocolActivity)]
     public class ProtocolActivity : ObjectBase
     {
         [UIHint("Protocol")]
