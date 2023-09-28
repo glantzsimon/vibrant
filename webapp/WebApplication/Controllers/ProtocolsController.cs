@@ -37,6 +37,11 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Edit", new { id = duplicate.Id });
         }
 
+        public ActionResult EditActivities(int id = 0)
+        {
+            return RedirectToAction("EditActivitiesForProtocol", "ProtocolActivities", new { id });
+        }
+
         public ActionResult EditSections(int id = 0)
         {
             return RedirectToAction("EditProtocolProtocolSectionsForProtocol", "ProtocolSections", new { id });
