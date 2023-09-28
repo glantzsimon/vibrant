@@ -411,7 +411,7 @@ namespace K9.WebApplication.Services
                 var interval = (int)Math.Floor((double)intervalLength / protocol.NumberOfPeriodsOn);
                 var list = new List<int>();
 
-                for (int i = !; i <= intervalLength; i += interval)
+                for (int i = 1; i <= intervalLength; i += interval)
                 {
                     list.Add(i);
                 }

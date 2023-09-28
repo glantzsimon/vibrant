@@ -1,5 +1,6 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
+@using K9.DataAccessLayer.Enums
 @using K9.SharedLibrary.Authentication
 @using K9.WebApplication.Helpers
 @model Protocol
@@ -22,11 +23,14 @@
 
         @Html.Partial("../Protocols/_Schedule")
 
-        <br />
-        <br />
+        if (Model.Type == EProtocolType.Default)
+        {
+            <br />
+            <br />
 
-        @Html.Partial("../Protocols/_SummaryFields")
-        @Html.Partial("../Protocols/_SummaryActivityFields")
+            @Html.Partial("../Protocols/_SummaryFields")
+            @Html.Partial("../Protocols/_SummaryActivityFields")
+        }
 
         if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
         {

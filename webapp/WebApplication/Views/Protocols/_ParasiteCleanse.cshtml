@@ -13,34 +13,34 @@
 }
 
 <div class="row">
-    <div class="col-xs-3">
-        @Dictionary.Day
+    <div class="col-xs-1">
+        <strong>@Dictionary.Day</strong>
+    </div>
+    <div class="col-xs-4">
+        <strong>@parasiteCleanse.Product.Name</strong>
+    </div>
+    <div class="col-xs-4">
+        <strong>@parasiteCleanse2.Product.Name</strong>
     </div>
     <div class="col-xs-3">
-        @parasiteCleanse.Name
-    </div>
-    <div class="col-xs-3">
-        @parasiteCleanse2.Name
-    </div>
-    <div class="col-xs-3">
-        @parasiteCleanse3.Name
+        <strong>@parasiteCleanse3.Product.Name</strong>
     </div>
 </div>
 
 <hr />
 
 <div class="row">
-    <div class="col-xs-3">
+    <div class="col-xs-1">
 
     </div>
-    <div class="col-xs-3">
-        @parasiteCleanse.Product.Dosage
+    <div class="col-xs-4">
+        <span class="italic">@parasiteCleanse.Product.Dosage</span>
+    </div>
+    <div class="col-xs-4">
+        <span class="italic">@parasiteCleanse2.Product.Dosage</span>
     </div>
     <div class="col-xs-3">
-        @parasiteCleanse2.Product.Dosage
-    </div>
-    <div class="col-xs-3">
-        @parasiteCleanse3.Product.Dosage
+        <span class="italic">@parasiteCleanse3.Product.Dosage</span>
     </div>
 </div>
 
@@ -57,17 +57,27 @@
     var parasite3CapsuleText = parasite3Dosage == 1 ? Dictionary.Capsule : Dictionary.Capsules;
 
     <div class="row">
-        <div class="col-xs-3">
-            @i
+        <div class="col-xs-1">
+            @(i + 1)
+        </div>
+        <div class="col-xs-4">
+            @if (parasite1Dosage > 0)
+            {
+                @($"{parasite1Dosage} {parasite1CapsuleText}")
+            }
+        </div>
+        <div class="col-xs-4">
+            @if (parasite2Dosage > 0)
+            {
+                @($"{parasite2Dosage} {parasite2CapsuleText}")
+            }
         </div>
         <div class="col-xs-3">
-            @parasite1Dosage @parasite1CapsuleText
-        </div>
-        <div class="col-xs-3">
-            @parasite2Dosage @parasite2CapsuleText
-        </div>
-        <div class="col-xs-3">
-            @parasite3Dosage @parasite3CapsuleText
+            @if (parasite3Dosage > 0)
+            {
+                @($"{parasite3Dosage} {parasite3CapsuleText}")
+            }
         </div>
     </div>
+    <hr />
 }

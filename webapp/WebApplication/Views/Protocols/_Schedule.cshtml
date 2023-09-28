@@ -3,22 +3,28 @@
 @using K9.WebApplication.Helpers
 @model Protocol
 
-@switch (Model.Frequency)
+@if (Model.Type == EProtocolType.ParasiteCleanse)
 {
-    case EFrequency.Daily:
-        @Html.Partial("_DailySchedule")
-        break;
-
-    case EFrequency.Monthly:
-        @Html.Partial("_MonthlySchedule")
-        break;
-
-    case EFrequency.Fortnightly:
-        @Html.Partial("_FortnightlySchedule")
-        break;
-    
-    default:
-        @Html.Partial("_CustomSchedule")
-        break;
+    @Html.Partial("_ParasiteCleanse")
 }
+else
+{
+    switch (Model.Frequency)
+    {
+        case EFrequency.Daily:
+            @Html.Partial("_DailySchedule")
+            break;
 
+        case EFrequency.Monthly:
+            @Html.Partial("_MonthlySchedule")
+            break;
+
+        case EFrequency.Fortnightly:
+            @Html.Partial("_FortnightlySchedule")
+            break;
+
+        default:
+            @Html.Partial("_CustomSchedule")
+            break;
+    }
+}
