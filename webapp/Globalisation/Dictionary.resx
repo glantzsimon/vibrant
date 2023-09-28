@@ -1648,14 +1648,23 @@
   <data name="Frequency" xml:space="preserve">
     <value>Frequency</value>
   </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Friday</value>
+  </data>
   <data name="IsSelectedLabel" xml:space="preserve">
     <value>Is Selected</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Monday</value>
   </data>
   <data name="Months" xml:space="preserve">
     <value>Months</value>
   </data>
   <data name="NumberOfDaysOffLabel" xml:space="preserve">
     <value>Number of Days Off</value>
+  </data>
+  <data name="NumberOfPeriodsOffLabel" xml:space="preserve">
+    <value>Number of Periods Off</value>
   </data>
   <data name="PeriodLabel" xml:space="preserve">
     <value>Period</value>
@@ -1669,14 +1678,35 @@
   <data name="ProtocolActivity" xml:space="preserve">
     <value>Protocol Activity</value>
   </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Saturday</value>
+  </data>
+  <data name="Schedule" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Sunday</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Thursday</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Tuesday</value>
+  </data>
   <data name="ValueTooHighException" xml:space="preserve">
     <value>The value entered is too high.</value>
   </data>
   <data name="ValueTooLowException" xml:space="preserve">
     <value>The value entered is too low.</value>
   </data>
+  <data name="ViewPrintableVersion" xml:space="preserve">
+    <value>View Printable Version</value>
+  </data>
   <data name="ViewSummary" xml:space="preserve">
     <value>View Summary</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Wednesday</value>
   </data>
   <data name="Weekly" xml:space="preserve">
     <value>Weekly</value>

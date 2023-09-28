@@ -1,0 +1,24 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Authentication
+@model Protocol
+@{
+    Layout = "../Shared/_LayoutPrint.cshtml";
+    ViewBag.SubTitle = Model.Name;
+}
+
+<div class="print-container">
+    @Html.Partial("../Protocols/_Schedule")
+
+    <br />
+    <br />
+
+    @Html.Partial("../Protocols/_SummaryFields")
+    @Html.Partial("../Protocols/_SummaryActivityFields")
+
+    @if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
+    {
+        <hr />
+        @Html.BootstrapBackToListButton()
+    }
+</div>

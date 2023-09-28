@@ -358,6 +358,10 @@
     <Compile Include="Migrations\202309280109096_ProtocolPeriodFrequency.Designer.cs">
       <DependentUpon>202309280109096_ProtocolPeriodFrequency.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309280129279_ChangePeriodOffName.cs" />
+    <Compile Include="Migrations\202309280129279_ChangePeriodOffName.Designer.cs">
+      <DependentUpon>202309280129279_ChangePeriodOffName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\OrderProductPack.cs" />
@@ -516,6 +520,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309280109096_ProtocolPeriodFrequency.resx">
       <DependentUpon>202309280109096_ProtocolPeriodFrequency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309280129279_ChangePeriodOffName.resx">
+      <DependentUpon>202309280129279_ChangePeriodOffName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

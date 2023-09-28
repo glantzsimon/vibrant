@@ -1,15 +1,30 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
 @using K9.SharedLibrary.Authentication
+@using K9.WebApplication.Helpers
 @model Protocol
 @{
     Layout = "../Shared/_LayoutForm.cshtml";
     ViewBag.SubTitle = Model.Name;
 }
+
 @using (Html.BeginForm())
 {
     using (Html.BeginBootstrapForm())
     {
+        <div class="row">
+            <div class="col-sm-6">
+                @Html.BootstrapActionLinkButton(Dictionary.ViewPrintableVersion, "PrintableSummary", "Protocols", new { id = Model.Id }, "", EButtonClass.Info)
+            </div>
+        </div>
+
+        <br />
+
+        @Html.Partial("../Protocols/_Schedule")
+
+        <br />
+        <br />
+
         @Html.Partial("../Protocols/_SummaryFields")
         @Html.Partial("../Protocols/_SummaryActivityFields")
 

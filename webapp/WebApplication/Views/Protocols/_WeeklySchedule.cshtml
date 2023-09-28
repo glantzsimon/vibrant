@@ -1,0 +1,42 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model Protocol
+
+<div class="daily-schedule-container">
+    <div class="row">
+        @Html.Label(Dictionary.Schedule)
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="width-7">
+                @Dictionary.Monday.Substring(0, 3)
+                @Html.CheckBox("mon", Model.CheckSchedule(DayOfWeek.Monday))
+            </div>
+            <div class="width-7">
+                @Dictionary.Tuesday.Substring(0, 3)
+                @Html.CheckBox("tue", Model.CheckSchedule(DayOfWeek.Tuesday))
+            </div>
+            <div class="width-7">
+                @Dictionary.Wednesday.Substring(0, 3)
+                @Html.CheckBox("wed", Model.CheckSchedule(DayOfWeek.Wednesday))
+            </div>
+            <div class="width-7">
+                @Dictionary.Thursday.Substring(0, 3)
+                @Html.CheckBox("thu", Model.CheckSchedule(DayOfWeek.Thursday))
+            </div>
+            <div class="width-7">
+                @Dictionary.Friday.Substring(0, 3)
+                @Html.CheckBox("fri", Model.CheckSchedule(DayOfWeek.Friday))
+            </div>
+            <div class="width-7">
+                @Dictionary.Saturday.Substring(0, 3)
+                @Html.CheckBox("sat", Model.CheckSchedule(DayOfWeek.Saturday))
+            </div>
+            <div class="width-7">
+                @Dictionary.Sunday.Substring(0, 3)
+                @Html.CheckBox("sun", Model.CheckSchedule(DayOfWeek.Sunday))
+            </div>
+        </div>
+    </div>
+</div>
+

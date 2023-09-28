@@ -1,0 +1,56 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model Protocol
+
+<div class="daily-schedule-container">
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.Label(Dictionary.Schedule)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 col-xs-3">
+            <div class="schedule-box">
+                @Dictionary.Monday.Substring(0, 3)
+                @Html.CheckBox("mon", Model.CheckSchedule(DayOfWeek.Monday))
+            </div>
+        </div>
+        <div class="col-sm-2 col-xs-3">
+            <div class="schedule-box">
+                @Dictionary.Tuesday.Substring(0, 3)
+                @Html.CheckBox("tue", Model.CheckSchedule(DayOfWeek.Tuesday))
+            </div>
+        </div>
+        <div class="col-sm-2 col-xs-3">
+            <div class="schedule-box">
+                @Dictionary.Wednesday.Substring(0, 3)
+                @Html.CheckBox("wed", Model.CheckSchedule(DayOfWeek.Wednesday))
+            </div>
+        </div>
+        <div class="col-sm-2 col-xs-3">
+            <div class="schedule-box">
+                @Dictionary.Thursday.Substring(0, 3)
+                @Html.CheckBox("thu", Model.CheckSchedule(DayOfWeek.Thursday))
+            </div>
+        </div>
+        <div class="col-sm-2 col-xs-3">
+            <div class="schedule-box">
+                @Dictionary.Friday.Substring(0, 3)
+                @Html.CheckBox("fri", Model.CheckSchedule(DayOfWeek.Friday))
+            </div>
+        </div>
+        <div class="col-sm-2 col-xs-3">
+            <div class="schedule-box">
+                @Dictionary.Saturday.Substring(0, 3)
+                @Html.CheckBox("sat", Model.CheckSchedule(DayOfWeek.Saturday))
+            </div>
+        </div>
+        <div class="col-sm-2 col-xs-3">
+            <div class="schedule-box">
+                @Dictionary.Sunday.Substring(0, 3)
+                @Html.CheckBox("sun", Model.CheckSchedule(DayOfWeek.Sunday))
+            </div>
+        </div>
+    </div>
+</div>
+

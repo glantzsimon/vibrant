@@ -1,0 +1,25 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.DataAccessLayer.Enums
+@using K9.WebApplication.Helpers
+@model Protocol
+
+@switch (Model.Frequency)
+{
+    case EFrequency.Daily:
+        @Html.Partial("_DailySchedule")
+        break;
+
+    case EFrequency.Weekly:
+        break;
+
+    case EFrequency.Fortnightly:
+        break;
+
+    case EFrequency.Monthly:
+        break;
+
+    default:
+    case EFrequency.Custom:
+        break;
+}
+

@@ -79,6 +79,10 @@
     margin-bottom: 5px;
 }
 
+.margin-bottom-8 {
+    margin-bottom: 8px;
+}
+
 .margin-bottom-10 {
     margin-bottom: 10px;
 }
@@ -306,4 +310,11 @@
 
 .hidden-rows {
     background: greenyellow;
+}
+
+.schedule-box {
+    border: 1px solid #ddd !Important;
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 5px;
 }

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Web.Mvc;
 using K9.DataAccessLayer.Enums;
 
@@ -34,8 +35,8 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PeriodValueLabel)]
         public int PeriodValue { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfDaysOffLabel)]
-        public int NumberOfDaysOff { get; set; }
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfPeriodsOffLabel)]
+        public int NumberOfPeriodsOff { get; set; }
 
         [UIHint("Contact")]
         [ForeignKey("Contact")]
@@ -64,7 +65,7 @@ namespace K9.DataAccessLayer.Models
         public List<ProtocolProductPack> ProductPacks { get; set; }
 
         public virtual IEnumerable<ProtocolSection> ProtocolProtocolSections { get; set; }
-        
+
         [NotMapped]
         public List<ProtocolSection> ProtocolSections { get; set; }
 
@@ -96,5 +97,42 @@ namespace K9.DataAccessLayer.Models
         [StringLength(512)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.VideoUrlLabel)]
         public string VideoUrl { get; set; }
+        
+        public bool CheckSchedule(DayOfWeek dayofWeek)
+        {
+            if (Frequency == EFrequency.Daily)
+            {
+                if (NumberOfPeriodsOff >= 7)
+                {
+                    return false;
+                }
+
+                switch (dayofWeek)
+                {
+                    case DayOfWeek.Monday:
+                        return true;
+
+                    case DayOfWeek.Tuesday:
+                        return NumberOfPeriodsOff <= 2;
+
+                    case DayOfWeek.Wednesday:
+                        return new []{4, 3, 1, 0}.Contains(NumberOfPeriodsOff);
+
+                    case DayOfWeek.Thursday:
+                        return new []{5, 2, 1, 0}.Contains(NumberOfPeriodsOff);
+
+                    case DayOfWeek.Friday:
+                        return NumberOfPeriodsOff <= 4;
+
+                    case DayOfWeek.Saturday:
+                        return NumberOfPeriodsOff <= 3;
+
+                    case DayOfWeek.Sunday:
+                        return NumberOfPeriodsOff == 0;
+                }
+            }
+
+            return false;
+        }
     }
 }

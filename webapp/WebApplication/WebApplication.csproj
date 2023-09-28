@@ -1492,6 +1492,10 @@
     <Content Include="Views\Activities\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Frequency.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Period.cshtml" />
+    <Content Include="Views\Protocols\_DailySchedule.cshtml" />
+    <Content Include="Views\Protocols\_Schedule.cshtml" />
+    <Content Include="Views\Protocols\_WeeklySchedule.cshtml" />
+    <Content Include="Views\Protocols\PrintableSummary.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
