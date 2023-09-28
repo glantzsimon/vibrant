@@ -22,16 +22,11 @@
                 }
             </div>
         </div>
-
-        <br />
-
+        
         @Html.Partial("../Protocols/_Schedule")
 
         if (Model.Type == EProtocolType.Default)
         {
-            <br />
-            <br />
-
             @Html.Partial("../Protocols/_SummaryFields")
         }
     }

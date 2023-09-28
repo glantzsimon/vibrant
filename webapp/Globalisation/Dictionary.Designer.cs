@@ -4543,7 +4543,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Supplementation.
+        ///   Looks up a localized string similar to Supplementation Details.
         /// </summary>
         public static string Supplementation {
             get {
