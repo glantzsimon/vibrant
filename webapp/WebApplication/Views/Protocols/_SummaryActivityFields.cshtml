@@ -22,7 +22,7 @@
         </div>
         <div class="row">
             <div class="col-xs-6">
-                @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => activity.ShortDescription), activity.Benefits)
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => activity.ShortDescription), activity.ShortDescription)
             </div>
             <div class="col-xs-6">
                 @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => activity.Recommendations), activity.Recommendations)
@@ -30,7 +30,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => activity.Benefits), activity.ShortDescription)
+                @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => activity.Benefits), activity.Benefits)
             </div>
         </div>
         <div class="row">
