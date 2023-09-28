@@ -4552,6 +4552,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Supplement Schedule.
+        /// </summary>
+        public static string SupplementSchedule {
+            get {
+                return ResourceManager.GetString("SupplementSchedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Support.
         /// </summary>
         public static string Support {

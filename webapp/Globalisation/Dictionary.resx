@@ -1753,4 +1753,7 @@
   <data name="SummaryLink" xml:space="preserve">
     <value>Summary Link</value>
   </data>
+  <data name="SupplementSchedule" xml:space="preserve">
+    <value>Supplement Schedule</value>
+  </data>
 </root>
