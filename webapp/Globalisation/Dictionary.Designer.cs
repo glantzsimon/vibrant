@@ -3912,6 +3912,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Recommended Activities.
+        /// </summary>
+        public static string RecommendedActivitties {
+            get {
+                return ResourceManager.GetString("RecommendedActivitties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register Promo Code.
         /// </summary>
         public static string RegisterPromoCode {

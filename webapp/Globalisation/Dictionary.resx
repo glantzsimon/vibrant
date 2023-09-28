@@ -1732,4 +1732,7 @@
   <data name="ProtocolTypeLabel" xml:space="preserve">
     <value>Protocol Type</value>
   </data>
+  <data name="RecommendedActivitties" xml:space="preserve">
+    <value>Recommended Activities</value>
+  </data>
 </root>

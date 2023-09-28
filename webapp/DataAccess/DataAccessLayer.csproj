@@ -371,6 +371,10 @@
     <Compile Include="Migrations\202309280757408_ProtocolType.Designer.cs">
       <DependentUpon>202309280757408_ProtocolType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309281045319_ActivityRenamefield.cs" />
+    <Compile Include="Migrations\202309281045319_ActivityRenamefield.Designer.cs">
+      <DependentUpon>202309281045319_ActivityRenamefield.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
     <Compile Include="Models\OrderProductPack.cs" />
@@ -538,6 +542,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309280757408_ProtocolType.resx">
       <DependentUpon>202309280757408_ProtocolType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309281045319_ActivityRenamefield.resx">
+      <DependentUpon>202309281045319_ActivityRenamefield.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

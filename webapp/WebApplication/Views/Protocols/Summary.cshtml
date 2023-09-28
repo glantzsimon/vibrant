@@ -14,8 +14,12 @@
     using (Html.BeginBootstrapForm())
     {
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
                 @Html.BootstrapActionLinkButton(Dictionary.ViewPrintableVersion, "PrintableSummary", "Protocol", new { id = Model.ExternalId }, "", EButtonClass.Info)
+                @if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
+                {
+                    @Html.BootstrapBackToListButton()
+                }
             </div>
         </div>
 
@@ -29,13 +33,17 @@
             <br />
 
             @Html.Partial("../Protocols/_SummaryFields")
-            @Html.Partial("../Protocols/_SummaryActivityFields")
         }
+    }
+}
 
-        if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
+@if (Model.Activities.Any())
+{
+    using (Html.BeginForm())
+    {
+        using (Html.BeginBootstrapForm())
         {
-            <hr />
-            @Html.BootstrapBackToListButton()
+            @Html.Partial("../Protocols/_SummaryActivityFields")
         }
     }
 }

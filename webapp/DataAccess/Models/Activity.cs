@@ -47,7 +47,7 @@ namespace K9.DataAccessLayer.Models
         [StringLength(int.MaxValue)]
         [DataType(DataType.Html)]
         [AllowHtml]
-        public string Reommendations { get; set; }
+        public string Recommendations { get; set; }
 
         [FileSourceInfo("upload/activities", Filter = EFilesSourceFilter.Images)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]

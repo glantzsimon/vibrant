@@ -5,6 +5,12 @@
 @Html.HiddenFor(e => Model.Id)
 
 <div class="row">
+    <div class="col-xs-12">
+        <h3>@Dictionary.Supplementation</h3>
+    </div>
+</div>
+
+<div class="row">
     <div class="col-xs-2">
         @Html.LabelFor(e => Model.ProtocolSections[0].Section.Name)
     </div>
@@ -44,7 +50,7 @@
             @for (int j = 0; j < Model.ProtocolSections[i].ProtocolSectionProducts.Count; j++)
             {
                 var product = Model.ProtocolSections[i].ProtocolSectionProducts[j];
-                
+
                 @Html.HiddenFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].Id)
                 @Html.HiddenFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].Product.Id)
 

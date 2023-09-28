@@ -5,23 +5,10 @@
 @if (Model.Activities.Any())
 {
     <div class="row">
-        <div class="col-xs-2">
-            @Html.LabelFor(e => Model.Activities[0].Activity.Name)
-        </div>
-        <div class="col-xs-3">
-            @Html.LabelFor(e => Model.Activities[0].Activity.ShortDescription)
-        </div>
-        <div class="col-xs-3">
-            @Html.LabelFor(e => Model.Activities[0].Activity.Body)
-        </div>
-        <div class="col-xs-2">
-            @Html.LabelFor(e => Model.Activities[0].Activity.Benefits)
-        </div>
-        <div class="col-xs-2">
-            @Html.LabelFor(e => Model.Activities[0].Activity.Reommendations)
+        <div class="col-xs-12">
+            <h3>@Dictionary.RecommendedActivitties</h3>
         </div>
     </div>
-    <hr />
 
     for (int i = 0; i < Model.Activities.Count; i++)
     {
@@ -29,35 +16,22 @@
         var isLast = i == Model.Activities.Count - 1;
 
         <div class="row">
-            <div class="col-xs-2">
-                @Html.BootstrapDisplayFor(e => activity.Name, new EditorOptions
-                {
-                    Label = ""
-                })
+            <div class="col-xs-12">
+                @Html.BootstrapDisplayFor(e => activity.Name)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">
+                @Html.CollapsiblePanel(nameof(Activity.ShortDescription), activity.ShortDescription)
             </div>
             <div class="col-xs-3">
-                @Html.BootstrapDisplayFor(e => activity.ShortDescription, new EditorOptions
-                {
-                    Label = ""
-                })
+                @Html.CollapsiblePanel(nameof(Activity.Body), activity.Body)
             </div>
             <div class="col-xs-3">
-                @Html.BootstrapDisplayFor(e => activity.Body, new EditorOptions
-                {
-                    Label = ""
-                })
+                @Html.CollapsiblePanel(nameof(Activity.Benefits), activity.Benefits)
             </div>
-            <div class="col-xs-2">
-                @Html.BootstrapDisplayFor(e => activity.Benefits, new EditorOptions
-                {
-                    Label = ""
-                })
-            </div>
-            <div class="col-xs-2">
-                @Html.BootstrapDisplayFor(e => activity.Reommendations, new EditorOptions
-                {
-                    Label = ""
-                })
+            <div class="col-xs-3">
+                @Html.CollapsiblePanel(nameof(Activity.Recommendations), activity.Recommendations)
             </div>
         </div>
         if (!isLast)

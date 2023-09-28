@@ -1,5 +1,6 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
+@using K9.DataAccessLayer.Enums
 @using K9.SharedLibrary.Authentication
 @model Protocol
 @{
@@ -10,16 +11,29 @@
 <div class="print-container background-image schedule-print-container">
     <div class="row">
         <div class="col-xs-12 center-block">
-            <img src="~/Images/company/logo.png" class="center-block" />
+            <img src="~/Images/company/logo-small.png" class="center-block" />
         </div>
     </div>
     <br />
 
     @Html.Partial("../Protocols/_Schedule")
 
-    <br />
-    <br />
+    @if (Model.Type == EProtocolType.Default)
+    {
+        <br />
+        <br />
 
-    @Html.Partial("../Protocols/_SummaryFields")
-    @Html.Partial("../Protocols/_SummaryActivityFields")
+        @Html.Partial("../Protocols/_SummaryFields")
+    }
 </div>
+
+@if (Model.Activities.Any())
+{
+    using (Html.BeginForm())
+    {
+        using (Html.BeginBootstrapForm())
+        {
+            @Html.Partial("../Protocols/_SummaryActivityFields")
+        }
+    }
+}
