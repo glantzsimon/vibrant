@@ -57,6 +57,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("Country")]
         [ForeignKey("Country")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CountryLabel)]
         public int? CountryId { get; set; }
 
         public virtual Country Country { get; set; }

@@ -1738,6 +1738,9 @@
   <data name="RecommendedActivitties" xml:space="preserve">
     <value>Recommended Activities</value>
   </data>
+  <data name="CountryLabel" xml:space="preserve">
+    <value>Country</value>
+  </data>
   <data name="File1Label" xml:space="preserve">
     <value>File Url</value>
   </data>

@@ -23,20 +23,20 @@
             @if (Model.Membership != null)
             {
                 @Html.Partial("../Membership/_MembershipDetails", Model.Membership)
-                if (Model.Membership.MembershipOption.IsUpgradable)
+                @*if (Model.Membership.MembershipOption.IsUpgradable)
                 {
                     <hr />
                     <div class="margin-top-15">
                         @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership", null, "fa-level-up-alt")
                         <div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt")</div>
                     </div>
-                }
+                }*@
             }
             else
             {
                 <hr />
-                @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")
-                <div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt")</div>
+                @*@Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")*@
+                @*<div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt")</div>*@
             }
         </div>
     </div>
