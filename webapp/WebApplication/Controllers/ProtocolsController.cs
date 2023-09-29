@@ -31,9 +31,18 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Details", null, new { id = protocolId });
         }
 
+        [RequirePermissions(Permission = Permissions.Edit)]
         public ActionResult DuplicateProtocol(int id)
         {
-            var duplicate = _protocolService.Duplicate(id);
+            return View(Repository.Find(id));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [RequirePermissions(Permission = Permissions.Create)]
+        public ActionResult DuplicateProtocol(Protocol protocol)
+        {
+            var duplicate = _protocolService.Duplicate(protocol.Id);
             return RedirectToAction("Edit", new { id = duplicate.Id });
         }
 

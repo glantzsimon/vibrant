@@ -1513,7 +1513,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure you wish to duplicate the selected product?.
+        ///   Looks up a localized string similar to Are you sure you wish to duplicate the selected item?.
         /// </summary>
         public static string DuplicateConfirm {
             get {

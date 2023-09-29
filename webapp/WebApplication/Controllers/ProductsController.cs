@@ -37,7 +37,7 @@ namespace K9.WebApplication.Controllers
             RecordBeforeDetails += ProductsController_RecordBeforeDetails;
             RecordBeforeDeleted += ProductsController_RecordBeforeDeleted;
         }
-        
+
         [RequirePermissions(Permission = Permissions.Edit)]
         public ActionResult DuplicateProduct(int id)
         {
@@ -49,8 +49,8 @@ namespace K9.WebApplication.Controllers
         [RequirePermissions(Permission = Permissions.Create)]
         public ActionResult DuplicateProduct(Product product)
         {
-            _productService.Duplicate(product.Id);
-            return RedirectToAction("Index");
+            var duplicate = _productService.Duplicate(product.Id);
+            return RedirectToAction("Edit", new { id = duplicate.Id });
         }
 
         public ActionResult LabSheet(int productId = 0, int id = 0, int index = 0, int batchSize = 1)

@@ -1516,6 +1516,7 @@
     <Content Include="Views\DietaryRecommendations\Edit.cshtml" />
     <Content Include="Views\DietaryRecommendations\Index.cshtml" />
     <Content Include="Views\Protocols\_SummaryDietaryRecommendationsFields.cshtml" />
+    <Content Include="Views\Protocols\DuplicateProtocol.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

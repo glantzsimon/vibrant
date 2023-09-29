@@ -1169,7 +1169,7 @@
     <value>Duplicate</value>
   </data>
   <data name="DuplicateConfirm" xml:space="preserve">
-    <value>Are you sure you wish to duplicate the selected product?</value>
+    <value>Are you sure you wish to duplicate the selected item?</value>
   </data>
   <data name="DuplicateProduct" xml:space="preserve">
     <value>Duplicate Product</value>
