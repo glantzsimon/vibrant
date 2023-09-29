@@ -121,6 +121,7 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
             max-height: 97%;
             overflow-y: auto;
             width: 240px !important;
+            padding-bottom: 22px;
         }
 
         #account-header ul > li {
