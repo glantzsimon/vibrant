@@ -44,7 +44,7 @@
             @Model.Ingredients[i].Ingredient.IsHydroscopic.ToYesNo()
         </div>
         <div class="col-sm-2">
-            @Model.Ingredients[i].PercentageOfDailyAllowance
+            @Model.Ingredients[i].FormattedPercentageOfDailyAllowance
         </div>
     </div>
     if (i < Model.Ingredients.Count - 1)
