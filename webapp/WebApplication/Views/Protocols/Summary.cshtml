@@ -13,7 +13,7 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        <div class="row">
+        <div class="row margin-bottom-15">
             <div class="col-sm-12">
                 @Html.BootstrapActionLinkButton(Dictionary.ViewPrintableVersion, "PrintableSummary", "Protocol", new { id = Model.ExternalId }, "", EButtonClass.Info)
                 @if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
