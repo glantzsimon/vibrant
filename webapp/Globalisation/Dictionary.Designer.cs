@@ -2062,6 +2062,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to General Wellbeing.
+        /// </summary>
+        public static string GeneralWellbeing {
+            get {
+                return ResourceManager.GetString("GeneralWellbeing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gift.
         /// </summary>
         public static string Gift {
@@ -2130,6 +2139,15 @@ namespace K9.Globalisation {
         public static string Heaven {
             get {
                 return ResourceManager.GetString("Heaven", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heavy Metals Detox.
+        /// </summary>
+        public static string HeavyMetalDetox {
+            get {
+                return ResourceManager.GetString("HeavyMetalDetox", resourceCulture);
             }
         }
         

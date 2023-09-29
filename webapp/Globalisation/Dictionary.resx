@@ -1771,4 +1771,10 @@
   <data name="EditDietaryRecommendations" xml:space="preserve">
     <value>Edit Dietary Recommendations</value>
   </data>
+  <data name="GeneralWellbeing" xml:space="preserve">
+    <value>General Wellbeing</value>
+  </data>
+  <data name="HeavyMetalDetox" xml:space="preserve">
+    <value>Heavy Metals Detox</value>
+  </data>
 </root>

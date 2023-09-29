@@ -4,7 +4,7 @@
 
 @{
     ViewBag.Title = Dictionary.Protocols;
-    ViewBag.SubTitle = Dictionary.Protocols;
+    ViewBag.SubTitle = Dictionary.HealthQuestionnaire;
     Layout = "../Shared/_LayoutFormMedium.cshtml";
     ViewBag.Background = ViewBagHelper.EViewBackground.Default;
 }
@@ -12,7 +12,7 @@
 <div class="container main-content">
     <div class="well margin-bottom-0">
         <article>
-
+            @MvcHtmlString.Create(Dictionary.ComingSoon)
         </article>
     </div>
 </div>
