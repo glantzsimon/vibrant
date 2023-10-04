@@ -12,35 +12,69 @@ namespace K9.WebApplication.Services
     {
         private readonly ILogger _logger;
         private readonly IRepository<Ingredient> _ingredientsRepository;
+        private readonly IRepository<IngredientSubstitute> _ingredientSubstituesRepository;
 
-        public IngredientService(ILogger logger, IRepository<Ingredient> ingredientsRepository)
+        public IngredientService(ILogger logger, IRepository<Ingredient> ingredientsRepository, IRepository<IngredientSubstitute> ingredientSubstituesRepository)
         {
             _logger = logger;
             _ingredientsRepository = ingredientsRepository;
+            _ingredientSubstituesRepository = ingredientSubstituesRepository;
         }
 
         public Ingredient Find(int id)
         {
             var ingredient = _ingredientsRepository.Find(id);
+            if (ingredient != null)
+            {
+                ingredient = GetFullIngredient(ingredient);
+            }
             return ingredient;
         }
 
         public Ingredient FindNext(int id)
         {
             var ingredient = _ingredientsRepository.Find(e => e.Id > id).OrderBy(e => e.Id).FirstOrDefault() ?? _ingredientsRepository.GetQuery("SELECT TOP 1 * FROM [Ingredient] ORDER BY [Id]").FirstOrDefault();
+            if (ingredient != null)
+            {
+                ingredient = GetFullIngredient(ingredient);
+            }
             return ingredient;
         }
 
         public Ingredient FindPrevious(int id)
         {
             var ingredient = _ingredientsRepository.Find(e => e.Id < id).OrderByDescending(e => e.Id).FirstOrDefault() ?? _ingredientsRepository.GetQuery("SELECT TOP 1 * FROM [Ingredient] ORDER BY [Id] DESC").FirstOrDefault();
-
+            if (ingredient != null)
+            {
+                ingredient = GetFullIngredient(ingredient);
+            }
             return ingredient;
         }
 
         public Ingredient Find(string seoFriendlyId)
         {
             var ingredient = _ingredientsRepository.Find(e => e.SeoFriendlyId == seoFriendlyId).FirstOrDefault();
+            if (ingredient != null)
+            {
+                ingredient = GetFullIngredient(ingredient);
+            }
+            return ingredient;
+        }
+
+        public Ingredient GetFullIngredient(Ingredient ingredient)
+        {
+            var ingredientSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == ingredient.Id)
+                .OrderByDescending(e => e.Priority).ToList();
+
+            foreach (var ingredientSubstitute in ingredientSubstitutes)
+            {
+                ingredientSubstitute.Ingredient = ingredient;
+                ingredientSubstitute.SubstituteIngredient =_ingredientsRepository.Find(e => e.Id == ingredientSubstitute.IngredientId).FirstOrDefault();
+            }
+
+            ingredient.IngredientSubstitutes = ingredientSubstitutes;
+            ingredient.Substitutes = ingredientSubstitutes;
+
             return ingredient;
         }
 
@@ -68,9 +102,21 @@ namespace K9.WebApplication.Services
             return ingredient;
         }
 
-        public List<Ingredient> List()
+        public List<Ingredient> List(bool retrieveFullIngredient = false)
         {
             var ingredients = _ingredientsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+            
+            if (retrieveFullIngredient)
+            {
+                var fullIngredients = new List<Ingredient>();
+                foreach (var ingredient in ingredients)
+                {
+                    fullIngredients.Add(GetFullIngredient(ingredient));
+                }
+
+                return fullIngredients;
+            }
+
             return ingredients;
         }
     }

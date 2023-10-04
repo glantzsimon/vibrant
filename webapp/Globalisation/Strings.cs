@@ -17,6 +17,7 @@
             public const string BulkDiscountLabel = "BulkDiscountLabel";
             public const string AmountDonatedLabel = "AmountDonatedLabel";
             public const string AmountLabel = "AmountLabel";
+            public const string PriorityLabel = "PriorityLabel";
             public const string AmountCompletedLabel = "AmountCompletedLabel";
             public const string AmountRemainingLabel = "AmountRemainingLabel";
             public const string SmallPackAmountLabel = "SmallPackAmountLabel";
@@ -169,6 +170,7 @@
             public const string OrderItemTypeLabel = "OrderItemTypeLabel";
             public const string IngredientTypeLabel = "IngredientTypeLabel";
             public const string IngredientLabel = "Ingredient";
+            public const string IngredientSubstituteLabel = "IngredientSubstitute";
             public const string IngredientsLabel = "Ingredients";
             public const string ProductIngredientsLabel = "EditIngredients";
             public const string AmountPerIngredientLabel = "AmountPerIngredientLabel";
@@ -222,6 +224,8 @@
             public const string ProductPacks = "ProductPacks";
             public const string ProductIngredient = "ProductIngredient";
             public const string ProductIngredients = "ProductIngredients";
+            public const string IngredientSubstitute = "IngredientSubstitute";
+            public const string IngredientSubstitutes = "IngredientSubstitutes";
             public const string ProtocolProduct = "ProtocolProduct";
             public const string ProtocolProducts = "ProtocolProducts";
             public const string ProtocolActivities = "ProtocolActivities";

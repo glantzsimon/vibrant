@@ -317,6 +317,7 @@
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Controllers\DietaryRecommendationsController.cs" />
     <Compile Include="Controllers\ActivitiesController.cs" />
+    <Compile Include="Controllers\IngredientSubstitutesController.cs" />
     <Compile Include="Controllers\ProtocolDietaryRecommendationsController.cs" />
     <Compile Include="Controllers\ProtocolActivitiesController.cs" />
     <Compile Include="Controllers\ProtocolProductsController.cs" />
@@ -1517,6 +1518,10 @@
     <Content Include="Views\DietaryRecommendations\Index.cshtml" />
     <Content Include="Views\Protocols\_SummaryDietaryRecommendationsFields.cshtml" />
     <Content Include="Views\Protocols\DuplicateProtocol.cshtml" />
+    <Content Include="Views\Ingredients\_SubstitutesSummary.cshtml" />
+    <Content Include="Views\Ingredients\_CollectionsButtons.cshtml" />
+    <Content Include="Views\Ingredients\EditIngredientSubstitutePriorities.cshtml" />
+    <Content Include="Views\Ingredients\_EditIngredientSubstitutesFields.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

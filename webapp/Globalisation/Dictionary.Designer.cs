@@ -1630,6 +1630,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit Substitute Priorities.
+        /// </summary>
+        public static string EditIngredientSubstitutePriorities {
+            get {
+                return ResourceManager.GetString("EditIngredientSubstitutePriorities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Ingredient Substitutes.
+        /// </summary>
+        public static string EditIngredientSubstitutes {
+            get {
+                return ResourceManager.GetString("EditIngredientSubstitutes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit Order Items.
         /// </summary>
         public static string EditOrderItems {
@@ -2247,6 +2265,24 @@ namespace K9.Globalisation {
         public static string IngredientsSummary {
             get {
                 return ResourceManager.GetString("IngredientsSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingredient Substitute.
+        /// </summary>
+        public static string IngredientSubstitute {
+            get {
+                return ResourceManager.GetString("IngredientSubstitute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingredient Substitutes.
+        /// </summary>
+        public static string IngredientSubstitutes {
+            get {
+                return ResourceManager.GetString("IngredientSubstitutes", resourceCulture);
             }
         }
         
@@ -3400,6 +3436,15 @@ namespace K9.Globalisation {
         public static string PricingInfo {
             get {
                 return ResourceManager.GetString("PricingInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Priority.
+        /// </summary>
+        public static string PriorityLabel {
+            get {
+                return ResourceManager.GetString("PriorityLabel", resourceCulture);
             }
         }
         

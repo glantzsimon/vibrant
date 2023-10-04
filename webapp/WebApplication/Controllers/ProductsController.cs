@@ -103,10 +103,9 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult EditList()
         {
-            var products = Repository.List();
+            var products = _productService.List(true);
             foreach (var product in products)
             {
-                _productService.GetFullProduct(product);
                 product.Benefits = product.Benefits.RemoveEmptyLines();
                 HtmlParser.ParseHtml(product);
             }

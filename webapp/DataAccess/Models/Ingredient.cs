@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Attributes;
+﻿using System.Collections.Generic;
+using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.DataAccessLayer.Enums;
@@ -6,6 +7,7 @@ using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Enums;
 using K9.SharedLibrary.Models;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Mvc;
 
 namespace K9.DataAccessLayer.Models
@@ -13,6 +15,11 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Ingredients, PluralName = Globalisation.Strings.Names.Ingredients, Name = Globalisation.Strings.Names.Ingredient)]
     public class Ingredient : ObjectBase
 	{
+	    public virtual IEnumerable<IngredientSubstitute> IngredientSubstitutes { get; set; }
+
+	    [NotMapped]
+	    public List<IngredientSubstitute> Substitutes { get; set; }
+
 	    [UIHint("IngredientType")]
 	    [Required]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary),

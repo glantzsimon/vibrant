@@ -1771,10 +1771,25 @@
   <data name="EditDietaryRecommendations" xml:space="preserve">
     <value>Edit Dietary Recommendations</value>
   </data>
+  <data name="EditIngredientSubstitutePriorities" xml:space="preserve">
+    <value>Edit Substitute Priorities</value>
+  </data>
+  <data name="EditIngredientSubstitutes" xml:space="preserve">
+    <value>Edit Ingredient Substitutes</value>
+  </data>
   <data name="GeneralWellbeing" xml:space="preserve">
     <value>General Wellbeing</value>
   </data>
   <data name="HeavyMetalDetox" xml:space="preserve">
     <value>Heavy Metals Detox</value>
+  </data>
+  <data name="IngredientSubstitute" xml:space="preserve">
+    <value>Ingredient Substitute</value>
+  </data>
+  <data name="IngredientSubstitutes" xml:space="preserve">
+    <value>Ingredient Substitutes</value>
+  </data>
+  <data name="PriorityLabel" xml:space="preserve">
+    <value>Priority</value>
   </data>
 </root>
