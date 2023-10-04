@@ -69,7 +69,7 @@ namespace K9.WebApplication.Services
             foreach (var ingredientSubstitute in ingredientSubstitutes)
             {
                 ingredientSubstitute.Ingredient = ingredient;
-                ingredientSubstitute.SubstituteIngredient =_ingredientsRepository.Find(e => e.Id == ingredientSubstitute.IngredientId).FirstOrDefault();
+                ingredientSubstitute.SubstituteIngredient = _ingredientsRepository.Find(e => e.Id == ingredientSubstitute.IngredientId).FirstOrDefault();
             }
 
             ingredient.IngredientSubstitutes = ingredientSubstitutes;
@@ -105,7 +105,7 @@ namespace K9.WebApplication.Services
         public List<Ingredient> List(bool retrieveFullIngredient = false)
         {
             var ingredients = _ingredientsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
-            
+
             if (retrieveFullIngredient)
             {
                 var fullIngredients = new List<Ingredient>();
@@ -118,6 +118,22 @@ namespace K9.WebApplication.Services
             }
 
             return ingredients;
+        }
+
+        public Ingredient FindWithSubstitutesSelectList(int id)
+        {
+            var model = Find(id);
+            var existingSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == id).ToList();
+            
+            var selectListItems = _ingredientsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+            foreach (var ingredient in selectListItems)
+            {
+                ingredient.IsSelected = existingSubstitutes.Exists(e => e.SubstituteIngredientId == ingredient.Id);
+            }
+
+            model.SubstitutesSelectList = selectListItems.OrderByDescending(e => e.IsSelected).ThenBy(e => e.Name).ToList();
+            
+            return model;
         }
     }
 }

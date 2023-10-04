@@ -7,6 +7,6 @@
     @Html.BootstrapActionLinkButton(Dictionary.EditIngredientSubstitutes, "EditIngredientSubstitutes", "Ingredients", new { id = Model.Id }, "", EButtonClass.Info)
     if (Model.Substitutes != null && Model.Substitutes.Any())
     {
-        @Html.BootstrapActionLinkButton(Dictionary.EditIngredientSubstitutePriorities, "EditIngredientQuantities", "Products", new { id = Model.Id }, "", EButtonClass.Info)
+        @Html.BootstrapActionLinkButton(Dictionary.EditIngredientSubstitutePriorities, "EditIngredientSubstitutePriorities", "Ingredients", new { id = Model.Id }, "", EButtonClass.Info)
     }
 }

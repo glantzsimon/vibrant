@@ -54,6 +54,42 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("EditList");
         }
 
+        public ActionResult EditIngredientSubstitutes(int id)
+        {
+            var ingredient = _ingredientService.FindWithSubstitutesSelectList(id);
+            return View(ingredient);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult EditIngredientSubstitutes(Ingredient model)
+        {
+            var existingSubstitutes = _ingredientSubstituteRepository.Find(e => e.IngredientId == model.Id).ToList();
+            var newItems = model.SubstitutesSelectList.Where(e => e.IsSelected).ToList();
+            var itemsToDelete = existingSubstitutes
+                .Where(i => !newItems.Select(e => e.Id).Contains(i.SubstituteIngredientId)).ToList();
+            var itemsToAdd = newItems
+                .Where(i => !existingSubstitutes.Select(e => e.SubstituteIngredientId).Contains(i.Id)).ToList();
+
+            foreach (var item in itemsToAdd)
+            {
+                var newItem = new IngredientSubstitute
+                {
+                    IngredientId = model.Id,
+                    SubstituteIngredientId = item.Id
+                };
+                _ingredientSubstituteRepository.Create(newItem);
+            }
+
+            foreach (var item in itemsToDelete)
+            {
+                _ingredientSubstituteRepository.Delete(item.Id);
+            }
+
+            return RedirectToAction("Index");
+        }
+        
         public ActionResult EditIngredientSubstitutePriorities(int id)
         {
             var ingredient = _ingredientService.Find(id);
@@ -73,11 +109,6 @@ namespace K9.WebApplication.Controllers
             }
 
             return RedirectToAction("Index");
-        }
-
-        public ActionResult EditIngredientSubstitutes(int id = 0)
-        {
-            return RedirectToAction("EditSubstitutesForIngredient", "IngredientSubstitutes", new { id });
         }
 
         private void IngredientsController_RecordBeforeDetails(object sender, CrudEventArgs e)

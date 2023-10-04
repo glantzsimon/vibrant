@@ -1,0 +1,19 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model Ingredient
+
+@for (int i = 0; i < Model.Substitutes.Count; i++)
+{
+    @Html.HiddenFor(e => Model.Substitutes[i].Id)
+    @Html.HiddenFor(e => Model.Substitutes[i].Ingredient.Id)
+    @Html.HiddenFor(e => Model.Substitutes[i].Ingredient.Name)
+
+    <div class="row">
+        <div class="col-sm-6">
+            @Html.BootstrapDisplayFor(e => Model.Substitutes[i].Ingredient.Name)
+        </div>
+        <div class="col-sm-6">
+            @Html.BootstrapDisplayFor(e => Model.Substitutes[i].Priority)
+        </div>
+    </div>
+}

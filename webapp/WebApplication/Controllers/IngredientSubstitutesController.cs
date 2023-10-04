@@ -25,20 +25,5 @@ namespace K9.WebApplication.Controllers
 	    {
 	        return RedirectToAction("Index", "Ingredients");
 	    }
-
-		[RequirePermissions(Permission = Permissions.Edit)]
-		public ActionResult EditSubstitutesForIngredient(int id = 0)
-		{
-			return EditMultiple<Ingredient, Ingredient>(_ingredientsRepository.Find(id));
-		}
-
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		[RequirePermissions(Permission = Permissions.Edit)]
-		public ActionResult EditSubstitutesForIngredient(MultiSelectViewModel model)
-		{
-			return EditMultiple<Ingredient, Ingredient>(model);
-		}
-
 	}
 }

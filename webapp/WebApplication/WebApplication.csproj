@@ -1520,8 +1520,10 @@
     <Content Include="Views\Protocols\DuplicateProtocol.cshtml" />
     <Content Include="Views\Ingredients\_SubstitutesSummary.cshtml" />
     <Content Include="Views\Ingredients\_CollectionsButtons.cshtml" />
-    <Content Include="Views\Ingredients\EditIngredientSubstitutePriorities.cshtml" />
+    <Content Include="Views\Ingredients\EditIngredientSubstitutes.cshtml" />
     <Content Include="Views\Ingredients\_EditIngredientSubstitutesFields.cshtml" />
+    <Content Include="Views\Ingredients\EditIngredientSubstitutePriorities.cshtml" />
+    <Content Include="Views\Ingredients\_EditIngredientSubstitutesPriorityFields.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

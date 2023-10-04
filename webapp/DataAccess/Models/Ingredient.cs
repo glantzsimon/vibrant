@@ -20,6 +20,9 @@ namespace K9.DataAccessLayer.Models
 	    [NotMapped]
 	    public List<IngredientSubstitute> Substitutes { get; set; }
 
+	    [NotMapped]
+	    public List<Ingredient> SubstitutesSelectList { get; set; }
+
 	    [UIHint("IngredientType")]
 	    [Required]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary),

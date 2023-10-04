@@ -2,15 +2,19 @@
 @using K9.WebApplication.Helpers
 @model Ingredient
 
-@for (int i = 0; i < Model.Substitutes.Count; i++)
+<h3>@Dictionary.Ingredient: @Model.Name</h3>
+
+@for (int i = 0; i < Model.SubstitutesSelectList.Count; i++)
 {
-    @Html.HiddenFor(e => Model.Substitutes[i].Id)
-    @Html.HiddenFor(e => Model.Substitutes[i].Ingredient.Id)
-    @Html.HiddenFor(e => Model.Substitutes[i].Ingredient.Name)
-    
+    @Html.HiddenFor(e => Model.SubstitutesSelectList[i].Id)
+    @Html.HiddenFor(e => Model.SubstitutesSelectList[i].Id)
+    @Html.HiddenFor(e => Model.SubstitutesSelectList[i].Name)
+
     <div class="row">
         <div class="col-sm-12">
-            @Html.BootstrapDisplayFor(e => Model.Substitutes[i].Ingredient.Name)
+            <div class="checkbox">
+                <label>@Html.CheckBoxFor(model => Model.SubstitutesSelectList[i].IsSelected)@Model.SubstitutesSelectList[i].Name</label>
+            </div>
         </div>
     </div>
 }

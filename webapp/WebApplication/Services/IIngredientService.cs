@@ -11,6 +11,7 @@ namespace K9.WebApplication.Services
         Ingredient Find(string seoFriendlyId);
         Ingredient DuplicateIngredient(int id);
         Ingredient GetFullIngredient(Ingredient ingredient);
+        Ingredient FindWithSubstitutesSelectList(int id);
         List<Ingredient> List(bool retrieveFullIngredient = false);
     }
 }
