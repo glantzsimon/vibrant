@@ -7,6 +7,8 @@ namespace K9.DataAccessLayer.Enums
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Default)]
         Default,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ParasiteCleanse)]
-        ParasiteCleanse
+        ParasiteCleanse,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ParasiteCleanseMaintenance)]
+        ParasiteCleanseMaintenance
     }
 }

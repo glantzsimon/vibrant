@@ -242,7 +242,7 @@ namespace K9.WebApplication.Services
                 var newProduct = new ProtocolProduct
                 {
                     ProtocolId = newProtocol.Id,
-                    ProductId = protocolProduct.Id
+                    ProductId = protocolProduct.ProductId
                 };
 
                 _protocolProductsRepository.Create(newProduct);

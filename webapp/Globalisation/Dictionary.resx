@@ -1789,6 +1789,9 @@
   <data name="IngredientSubstitutes" xml:space="preserve">
     <value>Ingredient Substitutes</value>
   </data>
+  <data name="ParasiteCleanseMaintenance" xml:space="preserve">
+    <value>Parasite Cleanse Maintenance</value>
+  </data>
   <data name="PriorityLabel" xml:space="preserve">
     <value>Priority</value>
   </data>

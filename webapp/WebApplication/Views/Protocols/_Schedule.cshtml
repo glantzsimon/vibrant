@@ -7,6 +7,10 @@
 {
     @Html.Partial("../Protocols/_ParasiteCleanse")
 }
+else if (Model.Type == EProtocolType.ParasiteCleanseMaintenance)
+{
+    @Html.Partial("../Protocols/_ParasiteCleanseMaintenance")
+}
 else
 {
     switch (Model.Frequency)

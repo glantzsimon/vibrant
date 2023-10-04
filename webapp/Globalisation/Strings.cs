@@ -289,6 +289,7 @@
             
             public const string Default = "Default";
             public const string ParasiteCleanse = "ParasiteCleanse";
+            public const string ParasiteCleanseMaintenance = "ParasiteCleanseMaintenance";
 
             public const string Days = "Days";
             public const string Weeks = "Weeks";
