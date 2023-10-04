@@ -13,74 +13,80 @@
 }
 
 <div class="row">
-    <div class="col-xs-1">
-        <strong>@Dictionary.Day</strong>
-    </div>
-    <div class="col-xs-4">
-        <strong>@parasiteCleanse.Product.Name</strong>
-    </div>
-    <div class="col-xs-4">
-        <strong>@parasiteCleanse2.Product.Name</strong>
-    </div>
-    <div class="col-xs-3">
-        <strong>@parasiteCleanse3.Product.Name</strong>
+    <div class="col-xs-12">
+        <h4>This protocol repeats indefinitely (twice a month, each month). It's good to take a month off 1-2 times a year.</h4>
     </div>
 </div>
-
-<hr />
-
-<div class="row">
-    <div class="col-xs-1">
-
-    </div>
-    <div class="col-xs-4">
-        <span class="italic">@parasiteCleanse.Product.Dosage</span>
-    </div>
-    <div class="col-xs-4">
-        <span class="italic">@parasiteCleanse2.Product.Dosage</span>
-    </div>
-    <div class="col-xs-3">
-        <span class="italic">@parasiteCleanse3.Product.Dosage</span>
-    </div>
-</div>
-
-<hr />
-
-@for (int i = 0; i < 18; i++)
-{
-    var parasite1Dosage = parasite1Dosages[i];
-    var parasite2Dosage = parasite2Dosages[i];
-    var parasite3Dosage = parasite3Dosages[i];
-
-    var parasite1CapsuleText = parasite1Dosage == 1 ? Dictionary.Capsule : Dictionary.Capsules;
-    var parasite2CapsuleText = parasite2Dosage == 1 ? Dictionary.Capsule : Dictionary.Capsules;
-    var parasite3CapsuleText = parasite3Dosage == 1 ? Dictionary.Capsule : Dictionary.Capsules;
 
     <div class="row">
         <div class="col-xs-1">
-            @(i + 1)
+            <strong>@Dictionary.Day</strong>
         </div>
         <div class="col-xs-4">
-            @if (parasite1Dosage > 0)
-            {
-                @($"{parasite1Dosage} {parasite1CapsuleText}")
-            }
+            <strong>@parasiteCleanse.Product.Name</strong>
         </div>
         <div class="col-xs-4">
-            @if (parasite2Dosage > 0)
-            {
-                @($"{parasite2Dosage} {parasite2CapsuleText}")
-            }
+            <strong>@parasiteCleanse2.Product.Name</strong>
         </div>
         <div class="col-xs-3">
-            @if (parasite3Dosage > 0)
-            {
-                @($"{parasite3Dosage} {parasite3CapsuleText}")
-            }
+            <strong>@parasiteCleanse3.Product.Name</strong>
         </div>
     </div>
-    if (i < 17)
+
+    <hr />
+
+    <div class="row">
+        <div class="col-xs-1">
+
+        </div>
+        <div class="col-xs-4">
+            <span class="italic">@parasiteCleanse.Product.Dosage</span>
+        </div>
+        <div class="col-xs-4">
+            <span class="italic">@parasiteCleanse2.Product.Dosage</span>
+        </div>
+        <div class="col-xs-3">
+            <span class="italic">@parasiteCleanse3.Product.Dosage</span>
+        </div>
+    </div>
+
+    <hr />
+
+    @for (int i = 0; i < 14; i++)
     {
-        <hr />
+        var parasite1Dosage = parasite1Dosages[i];
+        var parasite2Dosage = parasite2Dosages[i];
+        var parasite3Dosage = parasite3Dosages[i];
+
+        var parasite1CapsuleText = parasite1Dosage == 1 ? Dictionary.Capsule : Dictionary.Capsules;
+        var parasite2CapsuleText = parasite2Dosage == 1 ? Dictionary.Capsule : Dictionary.Capsules;
+        var parasite3CapsuleText = parasite3Dosage == 1 ? Dictionary.Capsule : Dictionary.Capsules;
+
+        <div class="row">
+            <div class="col-xs-1">
+                @(i + 1)
+            </div>
+            <div class="col-xs-4">
+                @if (parasite1Dosage > 0)
+                {
+                    @($"{parasite1Dosage} {parasite1CapsuleText}")
+                }
+            </div>
+            <div class="col-xs-4">
+                @if (parasite2Dosage > 0)
+                {
+                    @($"{parasite2Dosage} {parasite2CapsuleText}")
+                }
+            </div>
+            <div class="col-xs-3">
+                @if (parasite3Dosage > 0)
+                {
+                    @($"{parasite3Dosage} {parasite3CapsuleText}")
+                }
+            </div>
+        </div>
+        if (i < 17)
+        {
+            <hr />
+        }
     }
-}
