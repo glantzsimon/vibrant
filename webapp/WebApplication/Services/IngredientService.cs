@@ -66,10 +66,19 @@ namespace K9.WebApplication.Services
             var ingredientSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == ingredient.Id)
                 .OrderByDescending(e => e.Priority).ToList();
 
+            var isZeroPriorities = ingredientSubstitutes.All(e => e.Priority == 0);
+            var priority = 1;
+
             foreach (var ingredientSubstitute in ingredientSubstitutes)
             {
                 ingredientSubstitute.Ingredient = ingredient;
-                ingredientSubstitute.SubstituteIngredient = _ingredientsRepository.Find(e => e.Id == ingredientSubstitute.IngredientId).FirstOrDefault();
+                ingredientSubstitute.SubstituteIngredient = _ingredientsRepository.Find(e => e.Id == ingredientSubstitute.SubstituteIngredientId).FirstOrDefault();
+
+                if (isZeroPriorities)
+                {
+                    ingredientSubstitute.Priority = priority;
+                    priority++;
+                }
             }
 
             ingredient.IngredientSubstitutes = ingredientSubstitutes;
