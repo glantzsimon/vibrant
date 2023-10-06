@@ -1693,6 +1693,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit Protocols.
+        /// </summary>
+        public static string EditProtocols {
+            get {
+                return ResourceManager.GetString("EditProtocols", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit Sale Items.
         /// </summary>
         public static string EditSaleItems {
@@ -5080,6 +5089,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User Protocol.
+        /// </summary>
+        public static string UserProtocol {
+            get {
+                return ResourceManager.GetString("UserProtocol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Protocols.
+        /// </summary>
+        public static string UserProtocols {
+            get {
+                return ResourceManager.GetString("UserProtocols", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Valid until:.
         /// </summary>
         public static string ValidUntil {
@@ -5379,6 +5406,15 @@ namespace K9.Globalisation {
         public static string YourCurrentMembership {
             get {
                 return ResourceManager.GetString("YourCurrentMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Protocols.
+        /// </summary>
+        public static string YourProtocols {
+            get {
+                return ResourceManager.GetString("YourProtocols", resourceCulture);
             }
         }
         

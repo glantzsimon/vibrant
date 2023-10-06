@@ -202,6 +202,8 @@
             public const string Donations = "Donations";
             public const string Consultation = "Consultation";
             public const string Consultations = "Consultations";
+            public const string UserProtocol = "UserProtocol";
+            public const string UserProtocols = "UserProtocols";
             public const string MembershipOptions = "MembershipOptions";
             public const string ProfileReadings = "ProfileReadings";
             public const string Ingredient = "Ingredient";

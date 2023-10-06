@@ -318,6 +318,7 @@
     <Compile Include="Controllers\DietaryRecommendationsController.cs" />
     <Compile Include="Controllers\ActivitiesController.cs" />
     <Compile Include="Controllers\IngredientSubstitutesController.cs" />
+    <Compile Include="Controllers\UserProtocolsController.cs" />
     <Compile Include="Controllers\ProtocolDietaryRecommendationsController.cs" />
     <Compile Include="Controllers\ProtocolActivitiesController.cs" />
     <Compile Include="Controllers\ProtocolProductsController.cs" />
@@ -1525,6 +1526,8 @@
     <Content Include="Views\Ingredients\EditIngredientSubstitutePriorities.cshtml" />
     <Content Include="Views\Ingredients\_EditIngredientSubstitutesPriorityFields.cshtml" />
     <Content Include="Views\Protocols\_ParasiteCleanseMaintenance.cshtml" />
+    <Content Include="Views\Users\_CollectionsButtons.cshtml" />
+    <Content Include="Views\Account\_UserProtocols.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

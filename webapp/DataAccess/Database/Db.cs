@@ -39,5 +39,6 @@ namespace K9.DataAccessLayer.Database
 	    public DbSet<UserCreditPack> UserCreditPack { get; set; }
 	    public DbSet<UserMembership> UserMemberships { get; set; }
 	    public DbSet<UserPromoCode> UserPromoCodes { get; set; }
+	    public DbSet<UserProtocol> UserProtocols { get; set; }
 	}
 }

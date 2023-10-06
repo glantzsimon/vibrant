@@ -37,9 +37,11 @@ namespace K9.WebApplication.Controllers
         private readonly IUserService _userService;
         private readonly IRepository<PromoCode> _promoCodesRepository;
         private readonly IRecaptchaService _recaptchaService;
+        private readonly IRepository<UserProtocol> _userProtocolsRepository;
+        private readonly IRepository<Protocol> _protocolsRepository;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService)
+        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<UserProtocol> userProtocolsRepository, IRepository<Protocol> protocolsRepository)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _userRepository = userRepository;
@@ -52,6 +54,8 @@ namespace K9.WebApplication.Controllers
             _userService = userService;
             _promoCodesRepository = promoCodesRepository;
             _recaptchaService = recaptchaService;
+            _userProtocolsRepository = userProtocolsRepository;
+            _protocolsRepository = protocolsRepository;
             _recaptchaConfig = recaptchaConfig.Value;
 
             websiteConfig.Value.RegistrationEmailTemplateText = Globalisation.Dictionary.WelcomeEmail;
@@ -85,11 +89,7 @@ namespace K9.WebApplication.Controllers
                         {
                             return Redirect(TempData["ReturnUrl"].ToString());
                         }
-                        if (TempData["RetrieveLast"] != null)
-                        {
-                            return RedirectToAction("RetrieveLast", "Vibrant");
-                        }
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("MyAccount", "Account");
 
                     case ELoginResult.AccountLocked:
                         return RedirectToAction("AccountLocked");
@@ -362,10 +362,15 @@ namespace K9.WebApplication.Controllers
         public ActionResult MyAccount()
         {
             var user = _userRepository.Find(u => u.Username == User.Identity.Name).FirstOrDefault();
+            var userProtocols = _userProtocolsRepository.Find(e => e.UserId == user.Id);
+            var protocols = _protocolsRepository.Find(e => userProtocols.Select(u => u.ProtocolId).Contains(e.Id))
+                .ToList();
+
             return View(new MyAccountViewModel
             {
                 User = user,
-                Membership = _membershipService.GetActiveUserMembership(user?.Id)
+                Membership = _membershipService.GetActiveUserMembership(user?.Id),
+                Protocols = protocols
             });
         }
 

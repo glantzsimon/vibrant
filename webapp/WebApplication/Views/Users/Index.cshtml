@@ -1,16 +1,27 @@
-﻿@model User
+﻿@using EButtonType = K9.SharedLibrary.Models.EButtonType
+@model User
 @{
-	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
 @Html.BootstrapTable(new DataTableOptions<User>
 {
-	 VisibleColumns = new List<string>
-	 {
-		 "FullName",
-		 "Username",
-		 "BirthDate",
-		 "EmailAddress",
-		 "PhoneNumber",
-		 "IsUnsubscribed"
-	 }
+    VisibleColumns = new List<string>
+    {
+         "FullName",
+         "Username",
+         "BirthDate",
+         "EmailAddress",
+         "PhoneNumber",
+         "IsUnsubscribed"
+    },
+    CustomButtons =
+    {
+        new Button
+        {
+            Action = "EditProtocols",
+            Text = Dictionary.EditProtocols,
+            ButtonType = EButtonType.Primary,
+            IconCssClass = "fa fa-pencil"
+        }
+    }
 })

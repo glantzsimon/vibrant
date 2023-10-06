@@ -17,5 +17,7 @@
 			@Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.ActivateAccount, "ActivateUserAccount", "Account", new { userId = Model.Id })
 		}
 		@Html.BootstrapBackToListButton()
+
+	    @Html.Partial("_CollectionsButtons")
 	}
 }

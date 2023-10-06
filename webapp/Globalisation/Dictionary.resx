@@ -1777,6 +1777,9 @@
   <data name="EditIngredientSubstitutes" xml:space="preserve">
     <value>Edit Ingredient Substitutes</value>
   </data>
+  <data name="EditProtocols" xml:space="preserve">
+    <value>Edit Protocols</value>
+  </data>
   <data name="GeneralWellbeing" xml:space="preserve">
     <value>General Wellbeing</value>
   </data>
@@ -1794,5 +1797,14 @@
   </data>
   <data name="PriorityLabel" xml:space="preserve">
     <value>Priority</value>
+  </data>
+  <data name="UserProtocol" xml:space="preserve">
+    <value>User Protocol</value>
+  </data>
+  <data name="UserProtocols" xml:space="preserve">
+    <value>User Protocols</value>
+  </data>
+  <data name="YourProtocols" xml:space="preserve">
+    <value>Your Protocols</value>
   </data>
 </root>
