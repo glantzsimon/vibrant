@@ -10,5 +10,6 @@ namespace K9.WebApplication.Models
         public int[] ParasiteCleanseDosages { get; set; }
         public int[] ParasiteCleanse2Dosages { get; set; }
         public int[] ParasiteCleanse3Dosages { get; set; }
+        public int NumberOfDays { get; set; }
     }
 }
