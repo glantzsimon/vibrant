@@ -1,92 +1,18 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Helpers
+@using K9.WebApplication.Models
 @model Protocol
 
 @{
-    var parasiteCleanse = Model.Products.First(e => e.ProductId == 35);
-    var parasiteCleanse2 = Model.Products.First(e => e.ProductId == 37);
-    var parasiteCleanse3 = Model.Products.First(e => e.ProductId == 39);
-
-    var parasite1Dosages = new[] { 13, 0, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0 };
-    var parasite2Dosages = new[] { 3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0 };
-    var parasite3Dosages = new[] { 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    var parasiteCleanseViewModel = new ParasiteCleanseViewModel
+    {
+        ParasiteCleanseProduct = Model.Products.First(e => e.ProductId == 35),
+        ParasiteCleanse2Product = Model.Products.First(e => e.ProductId == 37),
+        ParasiteCleanse3Product = Model.Products.First(e => e.ProductId == 39),
+        ParasiteCleanseDosages = new[] { 13, 0, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0 },
+        ParasiteCleanse2Dosages = new[] { 3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0 },
+        ParasiteCleanse3Dosages = new[] { 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+    };
 }
 
-<div class="row">
-    <div class="col-xs-12">
-        <h4>This protocol repeats indefinitely (twice a month, each month). It's good to take a month off 1-2 times a year.</h4>
-    </div>
-</div>
-
-    <div class="row">
-        <div class="col-xs-1">
-            <strong>@Dictionary.Day</strong>
-        </div>
-        <div class="col-xs-4">
-            <strong>@parasiteCleanse.Product.Name</strong>
-        </div>
-        <div class="col-xs-4">
-            <strong>@parasiteCleanse2.Product.Name</strong>
-        </div>
-        <div class="col-xs-3">
-            <strong>@parasiteCleanse3.Product.Name</strong>
-        </div>
-    </div>
-
-    <hr />
-
-    <div class="row">
-        <div class="col-xs-1">
-
-        </div>
-        <div class="col-xs-4">
-            <span class="italic">@parasiteCleanse.Product.Dosage</span>
-        </div>
-        <div class="col-xs-4">
-            <span class="italic">@parasiteCleanse2.Product.Dosage</span>
-        </div>
-        <div class="col-xs-3">
-            <span class="italic">@parasiteCleanse3.Product.Dosage</span>
-        </div>
-    </div>
-
-    <hr />
-
-    @for (int i = 0; i < 14; i++)
-    {
-        var parasite1Dosage = parasite1Dosages[i];
-        var parasite2Dosage = parasite2Dosages[i];
-        var parasite3Dosage = parasite3Dosages[i];
-
-        var parasite1CapsuleText = parasite1Dosage == 1 ? Dictionary.Capsule : Dictionary.Capsules;
-        var parasite2CapsuleText = parasite2Dosage == 1 ? Dictionary.Capsule : Dictionary.Capsules;
-        var parasite3CapsuleText = parasite3Dosage == 1 ? Dictionary.Capsule : Dictionary.Capsules;
-
-        <div class="row">
-            <div class="col-xs-1">
-                @(i + 1)
-            </div>
-            <div class="col-xs-4">
-                @if (parasite1Dosage > 0)
-                {
-                    @($"{parasite1Dosage} {parasite1CapsuleText}")
-                }
-            </div>
-            <div class="col-xs-4">
-                @if (parasite2Dosage > 0)
-                {
-                    @($"{parasite2Dosage} {parasite2CapsuleText}")
-                }
-            </div>
-            <div class="col-xs-3">
-                @if (parasite3Dosage > 0)
-                {
-                    @($"{parasite3Dosage} {parasite3CapsuleText}")
-                }
-            </div>
-        </div>
-        if (i < 17)
-        {
-            <hr />
-        }
-    }
+@Html.Partial("_ParasiteCleanseBody", parasiteCleanseViewModel)

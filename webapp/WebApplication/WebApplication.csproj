@@ -387,6 +387,7 @@
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
+    <Compile Include="Models\ParasiteCleanseViewModel.cs" />
     <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\ProductItem.cs" />
     <Compile Include="Models\GlossaryItem.cs" />
@@ -1528,6 +1529,7 @@
     <Content Include="Views\Protocols\_ParasiteCleanseMaintenance.cshtml" />
     <Content Include="Views\Users\_CollectionsButtons.cshtml" />
     <Content Include="Views\Account\_UserProtocols.cshtml" />
+    <Content Include="Views\Protocols\_ParasiteCleanseBody.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
