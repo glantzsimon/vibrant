@@ -1,10 +1,10 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
-@model Contact
+@model K9.WebApplication.Models.AddressLabelViewModel
 
 @{
     Layout = "../Shared/_LayoutPrint.cshtml";
-    ViewBag.SubTitle = $"{Model.Name} {Dictionary.LabSheet}";
+    ViewBag.SubTitle = $"{Dictionary.ViewContactAddressLabel} for {Model.Recipient.Name}";
 }
 
 @Html.Partial("_AddressPrintPage")

@@ -12,6 +12,7 @@ using System;
 using System.Linq;
 using System.Web.Mvc;
 using K9.Base.DataAccessLayer.Models;
+using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -57,9 +58,17 @@ namespace K9.WebApplication.Controllers
         [OutputCache(NoStore = true, Duration = 0)]
         public ActionResult ViewContactAddressLabel(int id)
         {
-            var contact = Repository.Find(id);
-            contact.Country = _countriesRepository.Find(contact.CountryId ?? 0);
-            return View(contact);
+            var recipient = Repository.Find(id);
+            var sender = Repository.Find(1);
+
+            recipient.Country = _countriesRepository.Find(recipient.CountryId ?? 0);
+            sender.Country = _countriesRepository.Find(sender.CountryId ?? 0);
+
+            return View(new AddressLabelViewModel
+            {
+                Recipient = recipient,
+                Sender = sender
+            });
         }
 
         [HttpPost]
