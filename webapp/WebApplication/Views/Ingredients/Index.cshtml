@@ -6,6 +6,7 @@
 @{
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
+
 @Html.BootstrapTable(new DataTableOptions<Ingredient>
 {
     AllowCreate = true,
@@ -32,6 +33,6 @@
             Text = Dictionary.EditIngredientSubstitutePriorities,
             ButtonType = EButtonType.Primary,
             IconCssClass = "fa fa-pencil"
-        },
+        }
     }
 })

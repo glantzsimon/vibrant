@@ -1807,4 +1807,7 @@
   <data name="YourProtocols" xml:space="preserve">
     <value>Your Protocols</value>
   </data>
+  <data name="IngredientsPurchaseList" xml:space="preserve">
+    <value>Ingredients Purchase List</value>
+  </data>
 </root>

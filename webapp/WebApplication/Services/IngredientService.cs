@@ -1,6 +1,7 @@
 ﻿using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using Microsoft.Extensions.Caching.Memory;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -8,12 +9,12 @@ using System.Linq;
 
 namespace K9.WebApplication.Services
 {
-    public class IngredientService : IIngredientService
+    public class IngredientService : CacheableServiceBase<Ingredient>, IIngredientService
     {
         private readonly ILogger _logger;
         private readonly IRepository<Ingredient> _ingredientsRepository;
         private readonly IRepository<IngredientSubstitute> _ingredientSubstituesRepository;
-
+        
         public IngredientService(ILogger logger, IRepository<Ingredient> ingredientsRepository, IRepository<IngredientSubstitute> ingredientSubstituesRepository)
         {
             _logger = logger;
@@ -23,12 +24,18 @@ namespace K9.WebApplication.Services
 
         public Ingredient Find(int id)
         {
-            var ingredient = _ingredientsRepository.Find(id);
-            if (ingredient != null)
+            return MemoryCache.GetOrCreate(GetCacheKey(id), entry =>
             {
-                ingredient = GetFullIngredient(ingredient);
-            }
-            return ingredient;
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
+
+                var ingredient = _ingredientsRepository.Find(id);
+                if (ingredient != null)
+                {
+                    ingredient = GetFullIngredient(ingredient);
+                }
+
+                return ingredient;
+            });
         }
 
         public Ingredient FindNext(int id)
@@ -63,28 +70,34 @@ namespace K9.WebApplication.Services
 
         public Ingredient GetFullIngredient(Ingredient ingredient)
         {
-            var ingredientSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == ingredient.Id)
-                .OrderByDescending(e => e.Priority).ToList();
-
-            var isZeroPriorities = ingredientSubstitutes.All(e => e.Priority == 0);
-            var priority = 1;
-
-            foreach (var ingredientSubstitute in ingredientSubstitutes)
+            return MemoryCache.GetOrCreate(GetCacheKey(ingredient.Id), entry =>
             {
-                ingredientSubstitute.Ingredient = ingredient;
-                ingredientSubstitute.SubstituteIngredient = _ingredientsRepository.Find(e => e.Id == ingredientSubstitute.SubstituteIngredientId).FirstOrDefault();
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
 
-                if (isZeroPriorities)
+                var ingredientSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == ingredient.Id)
+                    .OrderByDescending(e => e.Priority).ToList();
+
+                var isZeroPriorities = ingredientSubstitutes.All(e => e.Priority == 0);
+                var priority = 1;
+
+                foreach (var ingredientSubstitute in ingredientSubstitutes)
                 {
-                    ingredientSubstitute.Priority = priority;
-                    priority++;
+                    ingredientSubstitute.Ingredient = ingredient;
+                    ingredientSubstitute.SubstituteIngredient = _ingredientsRepository
+                        .Find(e => e.Id == ingredientSubstitute.SubstituteIngredientId).FirstOrDefault();
+
+                    if (isZeroPriorities)
+                    {
+                        ingredientSubstitute.Priority = priority;
+                        priority++;
+                    }
                 }
-            }
 
-            ingredient.IngredientSubstitutes = ingredientSubstitutes;
-            ingredient.Substitutes = ingredientSubstitutes;
+                ingredient.IngredientSubstitutes = ingredientSubstitutes;
+                ingredient.Substitutes = ingredientSubstitutes;
 
-            return ingredient;
+                return ingredient;
+            });
         }
 
         public Ingredient DuplicateIngredient(int id)
@@ -113,27 +126,32 @@ namespace K9.WebApplication.Services
 
         public List<Ingredient> List(bool retrieveFullIngredient = false)
         {
-            var ingredients = _ingredientsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
-
-            if (retrieveFullIngredient)
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
             {
-                var fullIngredients = new List<Ingredient>();
-                foreach (var ingredient in ingredients)
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TwoHours));
+
+                var ingredients = _ingredientsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+
+                if (retrieveFullIngredient)
                 {
-                    fullIngredients.Add(GetFullIngredient(ingredient));
+                    var fullIngredients = new List<Ingredient>();
+                    foreach (var ingredient in ingredients)
+                    {
+                        fullIngredients.Add(GetFullIngredient(ingredient));
+                    }
+
+                    return fullIngredients;
                 }
 
-                return fullIngredients;
-            }
-
-            return ingredients;
+                return ingredients;
+            });
         }
 
         public Ingredient FindWithSubstitutesSelectList(int id)
         {
             var model = Find(id);
             var existingSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == id).ToList();
-            
+
             var selectListItems = _ingredientsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
             foreach (var ingredient in selectListItems)
             {
@@ -141,7 +159,7 @@ namespace K9.WebApplication.Services
             }
 
             model.SubstitutesSelectList = selectListItems.OrderByDescending(e => e.IsSelected).ThenBy(e => e.Name).ToList();
-            
+
             return model;
         }
     }

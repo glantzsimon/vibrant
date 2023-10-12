@@ -17,6 +17,6 @@ namespace K9.WebApplication.Services
         Order Duplicate(int id);
         void DeleteChildRecords(int id);
 
-        List<Order> List(bool retrieveFullOrder = false, bool includeCustomOrders = false);
+        List<Order> List(bool retrieveFullOrder = false);
     }
 }

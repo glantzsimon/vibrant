@@ -20,7 +20,9 @@ using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -73,7 +75,8 @@ namespace K9.WebApplication.Controllers
 
             TempData["ReturnUrl"] = returnUrl;
             TempData["RetrieveLast"] = retrieveLast;
-            return View(new UserAccount.LoginModel());
+
+            return View(CookieService.GetLoginCookie());
         }
 
         [HttpPost]
@@ -85,6 +88,8 @@ namespace K9.WebApplication.Controllers
                 switch (_accountService.Login(model.UserName, model.Password, model.RememberMe))
                 {
                     case ELoginResult.Success:
+                        CookieService.SetUsernameCookie(model.UserName, model.Password);
+
                         if (TempData["ReturnUrl"] != null)
                         {
                             return Redirect(TempData["ReturnUrl"].ToString());

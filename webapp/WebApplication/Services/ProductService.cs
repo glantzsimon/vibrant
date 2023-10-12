@@ -1,6 +1,7 @@
 ﻿using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using Microsoft.Extensions.Caching.Memory;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Linq;
 
 namespace K9.WebApplication.Services
 {
-    public class ProductService : IProductService
+    public class ProductService : CacheableServiceBase<Product>, IProductService
     {
         private readonly ILogger _logger;
         private readonly IRepository<Product> _productsRepository;
@@ -16,7 +17,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Ingredient> _ingredientsRepository;
         private readonly IRepository<ProductPackProduct> _productPackProductRepository;
         private readonly IRepository<ProductPack> _productPackRepository;
-
+        
         public ProductService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProductPack> productPackRepository)
         {
             _logger = logger;
@@ -29,13 +30,18 @@ namespace K9.WebApplication.Services
 
         public Product Find(int id)
         {
-            var product = _productsRepository.Find(id);
-            if (product != null)
+            return MemoryCache.GetOrCreate(GetCacheKey(id), entry =>
             {
-                product = GetFullProduct(product);
-            }
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
 
-            return product;
+                var product = _productsRepository.Find(id);
+                if (product != null)
+                {
+                    product = GetFullProduct(product);
+                }
+
+                return product;
+            });
         }
 
         public Product FindNext(int id)
@@ -115,21 +121,26 @@ namespace K9.WebApplication.Services
 
         public Product GetFullProduct(Product product)
         {
-            var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id)
-                .OrderByDescending(e => e.Amount).ToList();
-
-            foreach (var productIngredient in productIngredients)
+            return MemoryCache.GetOrCreate(GetCacheKey(product.Id), entry =>
             {
-                productIngredient.Ingredient =
-                    _ingredientsRepository.Find(e => e.Id == productIngredient.IngredientId).FirstOrDefault();
-            }
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
 
-            product.ProductIngredients = productIngredients.OrderByDescending(e => e.Amount)
-                .ThenBy(e => e.Ingredient.Name);
+                var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id)
+                    .OrderByDescending(e => e.Amount).ToList();
 
-            product.Ingredients = product.ProductIngredients.ToList();
+                foreach (var productIngredient in productIngredients)
+                {
+                    productIngredient.Ingredient =
+                        _ingredientsRepository.Find(e => e.Id == productIngredient.IngredientId).FirstOrDefault();
+                }
 
-            return product;
+                product.ProductIngredients = productIngredients.OrderByDescending(e => e.Amount)
+                    .ThenBy(e => e.Ingredient.Name);
+
+                product.Ingredients = product.ProductIngredients.ToList();
+
+                return product;
+            });
         }
 
         public Product Duplicate(int id)
@@ -142,17 +153,17 @@ namespace K9.WebApplication.Services
 
             var newProduct = new Product();
             var newProductExternalId = Guid.NewGuid();
-            
+
             product.MapTo(newProduct);
             newProduct.Id = 0;
             newProduct.Name = $"{product.Name} (Copy)";
             newProduct.ExternalId = newProductExternalId;
-            
+
             _productsRepository.Create(newProduct);
 
             // Get new Id
             newProduct = Find(newProductExternalId);
-            
+
             if (newProduct == null)
             {
                 throw new Exception("Error duplicating product");
@@ -195,57 +206,72 @@ namespace K9.WebApplication.Services
 
         public List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false)
         {
-            var products = _productsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
-
-            if (!includeCustomProducts)
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
             {
-                products = products.Where(e => e.ContactId <= 0 || !e.ContactId.HasValue).ToList();
-            }
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TwoHours));
 
-            if (retrieveFullProduct)
-            {
-                var fullProducts = new List<Product>();
-                foreach (var product in products)
+                var products = _productsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+
+                if (!includeCustomProducts)
                 {
-                    fullProducts.Add(GetFullProduct(product));
+                    products = products.Where(e => e.ContactId <= 0 || !e.ContactId.HasValue).ToList();
                 }
 
-                return fullProducts;
-            }
+                if (retrieveFullProduct)
+                {
+                    var fullProducts = new List<Product>();
+                    foreach (var product in products)
+                    {
+                        fullProducts.Add(GetFullProduct(product));
+                    }
 
-            return products;
+                    return fullProducts;
+                }
+
+                return products;
+            });
         }
 
         public List<ProductPack> ListProductPacks(bool retrieveFullProduct = false)
         {
-            var productPacks = _productPackRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
-            
-            if (retrieveFullProduct)
+            return MemoryCache.GetOrCreate(GetCacheKey<ProductPack>(), entry =>
             {
-                foreach (var pack in productPacks)
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TwoHours));
+
+                var productPacks = _productPackRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+
+                if (retrieveFullProduct)
                 {
-                    foreach (var productPackProduct in pack.Products)
+                    foreach (var pack in productPacks)
                     {
-                        productPackProduct.Product = GetFullProduct(productPackProduct.Product);
+                        foreach (var productPackProduct in pack.Products)
+                        {
+                            productPackProduct.Product = GetFullProduct(productPackProduct.Product);
+                        }
                     }
                 }
-            }
 
-            return productPacks;
+                return productPacks;
+            });
         }
 
         public ProductPack GetFullProductPack(ProductPack productPack)
         {
-            var products = _productPackProductRepository.Find(e => e.ProductPackId == productPack.Id).ToList();
-
-            foreach (var product in products)
+            return MemoryCache.GetOrCreate(GetCacheKey<ProductPack>(productPack.Id), entry =>
             {
-                product.Product = _productsRepository.Find(e => e.Id == product.ProductId).FirstOrDefault();
-            }
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
 
-            productPack.Products = products.OrderBy(e => e.Product.Name).ToList();
-            
-            return productPack;
+                var products = _productPackProductRepository.Find(e => e.ProductPackId == productPack.Id).ToList();
+
+                foreach (var product in products)
+                {
+                    product.Product = _productsRepository.Find(e => e.Id == product.ProductId).FirstOrDefault();
+                }
+
+                productPack.Products = products.OrderBy(e => e.Product.Name).ToList();
+
+                return productPack;
+            });
         }
     }
 }

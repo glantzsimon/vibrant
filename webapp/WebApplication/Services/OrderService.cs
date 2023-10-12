@@ -2,6 +2,7 @@
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using Microsoft.Extensions.Caching.Memory;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Linq;
 
 namespace K9.WebApplication.Services
 {
-    public class OrderService : IOrderService
+    public class OrderService : CacheableServiceBase<Order>, IOrderService
     {
         private readonly ILogger _logger;
         private readonly IRepository<Order> _ordersRepository;
@@ -36,13 +37,18 @@ namespace K9.WebApplication.Services
 
         public Order Find(int id)
         {
-            var order = _ordersRepository.Find(id);
-            if (order != null)
+            return MemoryCache.GetOrCreate(GetCacheKey(id), entry =>
             {
-                order = GetFullOrder(order);
-            }
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
 
-            return order;
+                var order = _ordersRepository.Find(id);
+                if (order != null)
+                {
+                    order = GetFullOrder(order);
+                }
+
+                return order;
+            });
         }
 
         public Order FindNext(int id)
@@ -91,25 +97,30 @@ namespace K9.WebApplication.Services
 
         public Order GetFullOrder(Order order)
         {
-            order.Products = _orderProductsRepository.Find(e => e.OrderId == order.Id).ToList();
-            foreach (var orderProduct in order.Products)
+            return MemoryCache.GetOrCreate(GetCacheKey(order.Id), entry =>
             {
-                orderProduct.Product = _productsRepository.Find(orderProduct.ProductId);
-            }
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
 
-            order.ProductPacks = _orderProductPacksRepository.Find(e => e.OrderId == order.Id).ToList();
-            foreach (var orderProductPack in order.ProductPacks)
-            {
-                orderProductPack.ProductPack = _productPackRepository.Find(orderProductPack.ProductPackId);
-            }
+                order.Products = _orderProductsRepository.Find(e => e.OrderId == order.Id).ToList();
+                foreach (var orderProduct in order.Products)
+                {
+                    orderProduct.Product = _productsRepository.Find(orderProduct.ProductId);
+                }
 
-            order.Contact = _contactsRepository.Find(order.ContactId ?? 0);
-            order.ContactName = order.Contact?.FullName;
+                order.ProductPacks = _orderProductPacksRepository.Find(e => e.OrderId == order.Id).ToList();
+                foreach (var orderProductPack in order.ProductPacks)
+                {
+                    orderProductPack.ProductPack = _productPackRepository.Find(orderProductPack.ProductPackId);
+                }
 
-            order.User = _usersRepository.Find(order.UserId);
-            order.UserName = order.User.Name;
+                order.Contact = _contactsRepository.Find(order.ContactId ?? 0);
+                order.ContactName = order.Contact?.FullName;
 
-            return order;
+                order.User = _usersRepository.Find(order.UserId);
+                order.UserName = order.User.Name;
+
+                return order;
+            });
         }
 
         public Order FillZeroQuantities(Order order)
@@ -136,7 +147,7 @@ namespace K9.WebApplication.Services
                     product.PriceTier = order.Contact.PriceTier;
                 }
             }
-            
+
             if (!order.ProductPacks.Any(e => e.Amount > 0))
             {
                 // New order - update price tier
@@ -149,27 +160,27 @@ namespace K9.WebApplication.Services
             return order;
         }
 
-        public List<Order> List(bool retrieveFullOrder = false, bool includeCustomOrders = false)
+        public List<Order> List(bool retrieveFullOrder = false)
         {
-            var orders = _ordersRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
-
-            if (!includeCustomOrders)
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
             {
-                orders = orders.Where(e => e.ContactId <= 0 || !e.ContactId.HasValue).ToList();
-            }
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TwoHours));
 
-            if (retrieveFullOrder)
-            {
-                var fullOrders = new List<Order>();
-                foreach (var order in orders)
+                var orders = _ordersRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+
+                if (retrieveFullOrder)
                 {
-                    fullOrders.Add(GetFullOrder(order));
+                    var fullOrders = new List<Order>();
+                    foreach (var order in orders)
+                    {
+                        fullOrders.Add(GetFullOrder(order));
+                    }
+
+                    return fullOrders;
                 }
 
-                return fullOrders;
-            }
-
-            return orders;
+                return orders;
+            });
         }
 
         public Order Duplicate(int id)
@@ -198,7 +209,7 @@ namespace K9.WebApplication.Services
                 Discount = order.Discount,
                 ExternalId = newOrderExternalId
             };
-            
+
             _ordersRepository.Create(newOrder);
 
             // Get Id

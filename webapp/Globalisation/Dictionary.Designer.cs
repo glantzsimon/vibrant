@@ -2269,6 +2269,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ingredients Purchase List.
+        /// </summary>
+        public static string IngredientsPurchaseList {
+            get {
+                return ResourceManager.GetString("IngredientsPurchaseList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingredients Summary.
         /// </summary>
         public static string IngredientsSummary {

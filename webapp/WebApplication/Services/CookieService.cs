@@ -1,11 +1,32 @@
-﻿using System;
+﻿using K9.Base.DataAccessLayer.Models;
+using System;
 using System.Web;
 
 namespace K9.WebApplication.Services
 {
     public static class CookieService
     {
+        public const string UsernameCookie = "UsernameCookie";
+        public const string UserPasswordCookie = "UserPasswordCookie";
         private const string HideCookieWarning = "HideCookieWarning";
+        
+        public static void SetUsernameCookie(string username, string password)
+        {
+            SetCookie(UsernameCookie, username, TimeSpan.FromDays(90));
+            SetCookie(UserPasswordCookie, password, TimeSpan.FromDays(90));
+        }
+
+        public static UserAccount.LoginModel GetLoginCookie()
+        {
+            var username = GetCookieValue(UsernameCookie);
+            var password = GetCookieValue(UserPasswordCookie);
+
+            return new UserAccount.LoginModel
+            {
+                UserName = username,
+                Password = password
+            };
+        }
 
         public static bool IsDisplayCookiesWarning()
         {

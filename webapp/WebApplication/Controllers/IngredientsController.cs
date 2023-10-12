@@ -3,12 +3,13 @@ using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Models;
 using K9.WebApplication.Extensions;
+using K9.WebApplication.Services;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using K9.SharedLibrary.Models;
-using K9.WebApplication.Services;
+using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -18,11 +19,15 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IIngredientService _ingredientService;
         private readonly IRepository<IngredientSubstitute> _ingredientSubstituteRepository;
+        private readonly IOrderService _ordersService;
+        private readonly IProductService _productService;
 
-        public IngredientsController(IControllerPackage<Ingredient> controllerPackage, IIngredientService ingredientService, IRepository<IngredientSubstitute> ingredientSubstituteRepository) : base(controllerPackage)
+        public IngredientsController(IControllerPackage<Ingredient> controllerPackage, IIngredientService ingredientService, IRepository<IngredientSubstitute> ingredientSubstituteRepository, IOrderService ordersService, IProductService productService) : base(controllerPackage)
         {
             _ingredientService = ingredientService;
             _ingredientSubstituteRepository = ingredientSubstituteRepository;
+            _ordersService = ordersService;
+            _productService = productService;
             RecordBeforeCreated += IngredientsController_RecordBeforeCreated;
             RecordBeforeUpdated += IngredientsController_RecordBeforeUpdated;
             RecordBeforeDetails += IngredientsController_RecordBeforeDetails;
@@ -52,6 +57,25 @@ namespace K9.WebApplication.Controllers
             }
 
             return RedirectToAction("EditList");
+        }
+
+        public ActionResult IngredientsPurchaseList()
+        {
+            var orders = _ordersService.List(true);
+            var products = _productService.List(true);
+            var productsUsed = products.Where(p =>
+                orders.SelectMany(e => e.Products).Select(e => e.Product.Id).Contains(p.Id)).ToList();
+            var ingredientsUsed = productsUsed.SelectMany(e => e.Ingredients).Select(e => e.IngredientId).ToList();
+
+            var list = products.SelectMany(e => e.Ingredients).GroupBy(e => e.IngredientId).Select(group => new IngredientViewModel
+            {
+                Ingredient = _ingredientService.Find(group.Key),
+                TotalAmountUsed = group.Sum(e => e.Amount),
+                TotalProductsUsedIn = products.Count(e => e.Ingredients.Any(i => i.IngredientId == group.Key)),
+                TotalOrdersUsedIn = ingredientsUsed.Count(e => e == group.Key)
+            }).OrderByDescending(e => e.TotalOrdersUsedIn).ThenByDescending(e => e.TotalProductsUsedIn).ThenBy(e => e.Ingredient.Name).ToList();
+            
+            return View(list);
         }
 
         public ActionResult EditIngredientSubstitutes(int id)
