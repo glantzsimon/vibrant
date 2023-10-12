@@ -88,7 +88,10 @@ namespace K9.WebApplication.Controllers
                 switch (_accountService.Login(model.UserName, model.Password, model.RememberMe))
                 {
                     case ELoginResult.Success:
-                        CookieService.SetUsernameCookie(model.UserName, model.Password);
+                        if (model.RememberMe)
+                        {
+                            CookieService.SetUsernameCookie(model.UserName, model.Password);
+                        }
 
                         if (TempData["ReturnUrl"] != null)
                         {
