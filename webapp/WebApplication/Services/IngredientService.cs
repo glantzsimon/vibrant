@@ -86,11 +86,11 @@ namespace K9.WebApplication.Services
                     ingredientSubstitute.SubstituteIngredient = _ingredientsRepository
                         .Find(e => e.Id == ingredientSubstitute.SubstituteIngredientId).FirstOrDefault();
 
-                    if (isZeroPriorities)
-                    {
-                        ingredientSubstitute.Priority = priority;
-                        priority++;
-                    }
+                    //if (isZeroPriorities)
+                    //{
+                    //    ingredientSubstitute.Priority = priority;
+                    //    priority++;
+                    //}
                 }
 
                 ingredient.IngredientSubstitutes = ingredientSubstitutes;

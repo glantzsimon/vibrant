@@ -408,6 +408,7 @@
     <Compile Include="Models\PurchaseModel.cs" />
     <Compile Include="Models\LogItem.cs" />
     <Compile Include="Options\GaugeOptions.cs" />
+    <Compile Include="Options\SearchBoxOptions.cs" />
     <Compile Include="Options\PaymentsOptions.cs" />
     <Compile Include="Services\CacheableServiceBase.cs" />
     <Compile Include="Services\IIngredientService.cs" />
@@ -859,6 +860,7 @@
     <Content Include="Scripts\k9\fileUploader.js" />
     <Content Include="Scripts\k9\fadePageIn.js" />
     <Content Include="Scripts\k9\backgroundImageSwitcher.js" />
+    <Content Include="Scripts\k9\jQueryExtend.js" />
     <Content Include="Scripts\k9\payments.js" />
     <Content Include="Scripts\k9\revealText.js" />
     <Content Include="Scripts\k9\navbar.js" />
@@ -1544,6 +1546,7 @@
     <Content Include="Views\Account\_UserProtocols.cshtml" />
     <Content Include="Views\Protocols\_ParasiteCleanseBody.cshtml" />
     <Content Include="Views\Ingredients\IngredientsPurchaseList.cshtml" />
+    <Content Include="Views\Shared\Controls\_SearchBox.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

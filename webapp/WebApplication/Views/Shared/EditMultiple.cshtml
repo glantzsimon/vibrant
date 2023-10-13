@@ -1,4 +1,5 @@
-﻿@model K9.Base.WebApplication.ViewModels.MultiSelectViewModel
+﻿@using K9.WebApplication.Options
+@model K9.Base.WebApplication.ViewModels.MultiSelectViewModel
 
 @{
     Layout = "~/Views/Shared/_LayoutForm.cshtml";
@@ -13,8 +14,20 @@
         @Html.HiddenFor(model => Model.ParentId)
         @Html.HiddenFor(model => Model.ParentTypeName)
         @Html.HiddenFor(model => Model.ParentDescription)
+        
+        <div class="row">
+            <div class="col-xs-6">
+                <h4>@Model.GetSubTitle()</h4>
+            </div>
+            <div class="col-xs-6">
+                @Html.Partial("Controls/_SearchBox", new SearchBoxOptions
+                {
+                    CssSelector = "div.checkbox"
+                })
+            </div>
+        </div>
 
-        <h3>@Model.GetSubTitle()</h3>
+        <hr />
 
         for (int i = 0; i < Model.Items.Count; i++)
         {
