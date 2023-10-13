@@ -30,23 +30,26 @@
     function initBootstrapSortable() {
         var $sortableList = $("ul.sortable");
 
-        new Sortable($sortableList[0], {
-            dataIdAttr: 'data-id',
+        if ($sortableList.length > 0) {
+            new Sortable($sortableList[0],
+                {
+                    dataIdAttr: 'data-id',
 
-            onSort: function (e) {
-                var children = e.to.children;
-                var results = [];
+                    onSort: function(e) {
+                        var children = e.to.children;
+                        var results = [];
 
-                for (var i = 0; i < children.length; i++) {
-                    var id = $(children[i]).data("id");
-                    if (id) {
-                        results.push({ id: $(children[i]).data("id"), displayIndex: i });
+                        for (var i = 0; i < children.length; i++) {
+                            var id = $(children[i]).data("id");
+                            if (id) {
+                                results.push({ id: $(children[i]).data("id"), displayIndex: i });
+                            }
+                        }
+
+                        $sortableList.trigger("indexChanged", { items: results });
                     }
-                }
-
-                $sortableList.trigger("indexChanged", { items: results });
-            }
-        });
+                });
+        }
     }
 
     function initTextScroller() {
