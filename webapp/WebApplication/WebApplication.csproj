@@ -400,6 +400,8 @@
     <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Models\AddressLabelViewModel.cs" />
     <Compile Include="Models\IngredientViewModel.cs" />
+    <Compile Include="Models\SortableItemsViewModel.cs" />
+    <Compile Include="Models\SortableItem.cs" />
     <Compile Include="Models\ParasiteCleanseViewModel.cs" />
     <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\ProductItem.cs" />

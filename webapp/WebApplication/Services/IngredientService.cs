@@ -1,6 +1,7 @@
 ﻿using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Models;
 using Microsoft.Extensions.Caching.Memory;
 using NLog;
 using System;
@@ -75,9 +76,8 @@ namespace K9.WebApplication.Services
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
 
                 var ingredientSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == ingredient.Id)
-                    .OrderByDescending(e => e.Priority).ToList();
+                    .OrderBy(e => e.Priority).ToList();
 
-                var isZeroPriorities = ingredientSubstitutes.All(e => e.Priority == 0);
                 var priority = 1;
 
                 foreach (var ingredientSubstitute in ingredientSubstitutes)
@@ -85,12 +85,6 @@ namespace K9.WebApplication.Services
                     ingredientSubstitute.Ingredient = ingredient;
                     ingredientSubstitute.SubstituteIngredient = _ingredientsRepository
                         .Find(e => e.Id == ingredientSubstitute.SubstituteIngredientId).FirstOrDefault();
-
-                    //if (isZeroPriorities)
-                    //{
-                    //    ingredientSubstitute.Priority = priority;
-                    //    priority++;
-                    //}
                 }
 
                 ingredient.IngredientSubstitutes = ingredientSubstitutes;
@@ -163,16 +157,15 @@ namespace K9.WebApplication.Services
             return model;
         }
 
-        public void UpdateIngredientPriorities(int newId, int oldId, int newDisplayIndex, int oldDisplayIndex)
+        public void UpdateIngredientPriorities(List<SortableItem> items)
         {
-            var newIngredient = _ingredientSubstituesRepository.Find(newId);
-            var oldIngredient = _ingredientSubstituesRepository.Find(oldId);
-
-            newIngredient.Priority = newDisplayIndex;
-            _ingredientSubstituesRepository.Update(newIngredient);
-
-            oldIngredient.Priority = oldDisplayIndex;
-            _ingredientSubstituesRepository.Update(oldIngredient);
+            foreach (var sortableItem in items)
+            {
+                var substitute = _ingredientSubstituesRepository.Find(sortableItem.Id);
+                substitute.Priority = sortableItem.DisplayIndex;
+                _ingredientSubstituesRepository.Update(substitute);
+                MemoryCache.Remove(GetCacheKey(substitute.IngredientId));
+            }
         }
     }
 }

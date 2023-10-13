@@ -1,15 +1,17 @@
-﻿using System;
+﻿using K9.WebApplication.Models;
+using System;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
     public partial class IngredientsController
     {
-        public JsonResult UpdateIngredientPriorities(int newId, int oldId, int newDisplayIndex, int oldDisplayIndex)
+        public JsonResult UpdateIngredientPriorities(SortableItemsViewModel model)
         {
             try
             {
-                _ingredientService.UpdateIngredientPriorities(newId, oldId, newDisplayIndex, oldDisplayIndex);
+                _ingredientService.UpdateIngredientPriorities(model.Items.ToList());
                 return Json(new { success = true });
             }
             catch (Exception ex)

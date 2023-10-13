@@ -34,13 +34,17 @@
             dataIdAttr: 'data-id',
 
             onSort: function (e) {
-                $sortableList.trigger("indexChanged",
-                    {
-                        newId: e.newIndex, 
-                        oldId: e.oldIndex, 
-                        newDisplayIndex: e.newDraggableIndex, 
-                        oldDisplayIndex: e.oldDraggableIndex
-                    });
+                var children = e.to.children;
+                var results = [];
+
+                for (var i = 0; i < children.length; i++) {
+                    var id = $(children[i]).data("id");
+                    if (id) {
+                        results.push({ id: $(children[i]).data("id"), displayIndex: i });
+                    }
+                }
+
+                $sortableList.trigger("indexChanged", { items: results });
             }
         });
     }
