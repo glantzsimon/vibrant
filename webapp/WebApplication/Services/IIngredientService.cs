@@ -13,5 +13,6 @@ namespace K9.WebApplication.Services
         Ingredient GetFullIngredient(Ingredient ingredient);
         Ingredient FindWithSubstitutesSelectList(int id);
         List<Ingredient> List(bool retrieveFullIngredient = false);
+        void UpdateIngredientPriorities(int newId, int oldId, int newDisplayIndex, int oldDisplayIndex);
     }
 }

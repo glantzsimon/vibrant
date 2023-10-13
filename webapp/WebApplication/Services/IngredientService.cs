@@ -162,5 +162,18 @@ namespace K9.WebApplication.Services
 
             return model;
         }
+
+        public void UpdateIngredientPriorities(int newId, int oldId, int newDisplayIndex, int oldDisplayIndex)
+        {
+            var newIngredient = _ingredientSubstituesRepository.Find(newId);
+            var oldIngredient = _ingredientSubstituesRepository.Find(oldId);
+
+            newIngredient.Priority = newDisplayIndex;
+            _ingredientSubstituesRepository.Update(newIngredient);
+
+            oldIngredient.Priority = oldDisplayIndex;
+            _ingredientSubstituesRepository.Update(oldIngredient);
+        }
     }
 }
+

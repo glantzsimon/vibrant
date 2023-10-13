@@ -15,7 +15,7 @@ namespace K9.WebApplication.Controllers
 {
     [Authorize]
     [RequirePermissions(Role = RoleNames.Administrators)]
-    public class IngredientsController : HtmlControllerBase<Ingredient>
+    public partial class IngredientsController : HtmlControllerBase<Ingredient>
     {
         private readonly IIngredientService _ingredientService;
         private readonly IRepository<IngredientSubstitute> _ingredientSubstituteRepository;

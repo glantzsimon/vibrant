@@ -1,4 +1,4 @@
-function bootstrapControls(config) {
+﻿function bootstrapControls(config) {
 
     function initBootstrapDateTimePickers() {
         $("div.dateonly").datetimepicker({
@@ -24,6 +24,24 @@ function bootstrapControls(config) {
             this.getSelectedText = function () {
                 return $(this).parent().find("li[data-original-index=" + this.selectedIndex + "] span.text").html();
             };
+        });
+    }
+
+    function initBootstrapSortable() {
+        var $sortableList = $("ul.sortable");
+
+        new Sortable($sortableList[0], {
+            dataIdAttr: 'data-id',
+
+            onSort: function (e) {
+                $sortableList.trigger("indexChanged",
+                    {
+                        newId: e.newIndex, 
+                        oldId: e.oldIndex, 
+                        newDisplayIndex: e.newDraggableIndex, 
+                        oldDisplayIndex: e.oldDraggableIndex
+                    });
+            }
         });
     }
 
@@ -87,7 +105,7 @@ function bootstrapControls(config) {
                 var type = isHidden ? $el[0].value : $el[0].getSelectedText();
                 var measure = type === "Liquid" ? "ml" : type === "Capsules" ? "capsules" : "mg";
                 let $labels = isHidden ? $el.parent().find("span[data-input-id='quantity']") : $el.closest("form").find("span[data-input-id='quantity']");
-                $labels.each(function() {
+                $labels.each(function () {
                     var $label = $(this);
                     if ($label.parent().find("input").attr("id") === "AmountPerServing" && measure === "capsules") {
                         $label.text("mg");
@@ -97,7 +115,7 @@ function bootstrapControls(config) {
                 });
             }
         };
-        $typeInput.change(function() {
+        $typeInput.change(function () {
             quantityFn($typeInput);
         });
         quantityFn($typeInput);
@@ -175,6 +193,7 @@ function bootstrapControls(config) {
         initGlossary();
         initGauges();
         initDataTables();
+        initBootstrapSortable();
     };
 
     return {
