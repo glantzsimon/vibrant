@@ -110,6 +110,9 @@ namespace K9.DataAccessLayer.Models
         [AllowHtml]
         public string Dosage { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AllowIngredientSubstitutesLabel)]
+        public bool AllowIngredientSubstitutes { get; set; }
+
         [UIHint("ProductRecommendations")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RecommendationsLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]

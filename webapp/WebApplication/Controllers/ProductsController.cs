@@ -96,6 +96,24 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult EditIngredientSubstitutes(int id)
+        {
+            var product = _productService.Find(id);
+            return View(product);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult EditIngredientSubstitutes(Product model)
+        {
+            _productService.EditIngredientSubstitutes(model);
+
+            return RedirectToAction("EditIngredientSubstitutes", new { id = model.Id });
+
+            return RedirectToAction("Index");
+        }
+
         public ActionResult EditIngredients(int id = 0)
         {
             return RedirectToAction("EditIngredientsForProduct", "ProductIngredients", new { id });

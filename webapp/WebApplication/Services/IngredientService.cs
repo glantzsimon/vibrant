@@ -167,6 +167,31 @@ namespace K9.WebApplication.Services
                 MemoryCache.Remove(GetCacheKey(substitute.IngredientId));
             }
         }
+
+        public void EditIngredientSubstitutes(Ingredient model)
+        {
+            var existingSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == model.Id).ToList();
+            var newItems = model.SubstitutesSelectList.Where(e => e.IsSelected).ToList();
+            var itemsToDelete = existingSubstitutes
+                .Where(i => !newItems.Select(e => e.Id).Contains(i.SubstituteIngredientId)).ToList();
+            var itemsToAdd = newItems
+                .Where(i => !existingSubstitutes.Select(e => e.SubstituteIngredientId).Contains(i.Id)).ToList();
+
+            foreach (var item in itemsToAdd)
+            {
+                var newItem = new IngredientSubstitute
+                {
+                    IngredientId = model.Id,
+                    SubstituteIngredientId = item.Id
+                };
+                _ingredientSubstituesRepository.Create(newItem);
+            }
+
+            foreach (var item in itemsToDelete)
+            {
+                _ingredientSubstituesRepository.Delete(item.Id);
+            }
+        }
     }
 }
 

@@ -17,8 +17,10 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Ingredient> _ingredientsRepository;
         private readonly IRepository<ProductPackProduct> _productPackProductRepository;
         private readonly IRepository<ProductPack> _productPackRepository;
-        
-        public ProductService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProductPack> productPackRepository)
+        private readonly IRepository<ProductIngredientSubstitute> _productIngredientSubstituteRepository;
+        private readonly IIngredientService _ingredientService;
+
+        public ProductService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProductPack> productPackRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstituteRepository, IIngredientService ingredientService)
         {
             _logger = logger;
             _productsRepository = productsRepository;
@@ -26,6 +28,8 @@ namespace K9.WebApplication.Services
             _ingredientsRepository = ingredientsRepository;
             _productPackProductRepository = productPackProductRepository;
             _productPackRepository = productPackRepository;
+            _productIngredientSubstituteRepository = productIngredientSubstituteRepository;
+            _ingredientService = ingredientService;
         }
 
         public Product Find(int id)
@@ -125,13 +129,11 @@ namespace K9.WebApplication.Services
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
 
-                var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id)
-                    .OrderByDescending(e => e.Amount).ToList();
-
+                var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id).ToList();
                 foreach (var productIngredient in productIngredients)
                 {
-                    productIngredient.Ingredient =
-                        _ingredientsRepository.Find(e => e.Id == productIngredient.IngredientId).FirstOrDefault();
+                    productIngredient.Ingredient = _ingredientService.Find(productIngredient.IngredientId);
+                    productIngredient.IngredientName = productIngredient.Ingredient.Name;
                 }
 
                 product.ProductIngredients = productIngredients.OrderByDescending(e => e.Amount)
@@ -272,6 +274,34 @@ namespace K9.WebApplication.Services
 
                 return productPack;
             });
+        }
+
+        public void EditIngredientSubstitutes(Product model)
+        {
+            foreach (var productIngredient in model.Ingredients)
+            {
+                var existingSubstitutes = _productIngredientSubstituteRepository.Find(e => e.ProductIngredientId == productIngredient.Id).ToList();
+                var newItems = productIngredient.Ingredient.Substitutes.Where(e => e.IsSelected).ToList();
+                var itemsToDelete = existingSubstitutes
+                    .Where(i => !newItems.Select(e => e.Id).Contains(i.SubstituteIngredientId)).ToList();
+                var itemsToAdd = newItems
+                    .Where(i => !existingSubstitutes.Select(e => e.SubstituteIngredientId).Contains(i.Id)).ToList();
+
+                foreach (var item in itemsToAdd)
+                {
+                    var newItem = new ProductIngredientSubstitute
+                    {
+                        ProductIngredientId = productIngredient.Id,
+                        SubstituteIngredientId = item.IngredientId
+                    };
+                    _productIngredientSubstituteRepository.Create(newItem);
+                }
+
+                foreach (var item in itemsToDelete)
+                {
+                    _productIngredientSubstituteRepository.Delete(item.Id);
+                }
+            }
         }
     }
 }

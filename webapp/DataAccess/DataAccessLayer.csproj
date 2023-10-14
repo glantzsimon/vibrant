@@ -391,9 +391,18 @@
     <Compile Include="Migrations\202310060320053_AddUserProtocols.Designer.cs">
       <DependentUpon>202310060320053_AddUserProtocols.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310140235599_ProductAllowSubstitutes.cs" />
+    <Compile Include="Migrations\202310140235599_ProductAllowSubstitutes.Designer.cs">
+      <DependentUpon>202310140235599_ProductAllowSubstitutes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310140716157_ProductIngredientSubstitutesFix.cs" />
+    <Compile Include="Migrations\202310140716157_ProductIngredientSubstitutesFix.Designer.cs">
+      <DependentUpon>202310140716157_ProductIngredientSubstitutesFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DietaryRecommendation.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
+    <Compile Include="Models\ProductIngredientSubstitute.cs" />
     <Compile Include="Models\OrderProductPack.cs" />
     <Compile Include="Models\OrderProduct.cs" />
     <Compile Include="Models\Activity.cs" />
@@ -577,6 +586,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310060320053_AddUserProtocols.resx">
       <DependentUpon>202310060320053_AddUserProtocols.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310140235599_ProductAllowSubstitutes.resx">
+      <DependentUpon>202310140235599_ProductAllowSubstitutes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310140716157_ProductIngredientSubstitutesFix.resx">
+      <DependentUpon>202310140716157_ProductIngredientSubstitutesFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

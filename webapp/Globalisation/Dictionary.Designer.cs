@@ -142,6 +142,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Allow Ingredient Substitutes.
+        /// </summary>
+        public static string AllowIngredientSubstitutesLabel {
+            get {
+                return ResourceManager.GetString("AllowIngredientSubstitutesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ammonia Detox.
         /// </summary>
         public static string AmmoniaDetox {
@@ -2968,6 +2977,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Number Of Substitutes To Use.
+        /// </summary>
+        public static string NumberOfSubstitutesToUseLabel {
+            get {
+                return ResourceManager.GetString("NumberOfSubstitutesToUseLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of items to create.
         /// </summary>
         public static string NumberToCreateLabel {
@@ -3525,6 +3543,24 @@ namespace K9.Globalisation {
         public static string ProductIngredients {
             get {
                 return ResourceManager.GetString("ProductIngredients", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Ingredient Substitute.
+        /// </summary>
+        public static string ProductIngredientSubstitute {
+            get {
+                return ResourceManager.GetString("ProductIngredientSubstitute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Ingredient Substitutes.
+        /// </summary>
+        public static string ProductIngredientSubstitutes {
+            get {
+                return ResourceManager.GetString("ProductIngredientSubstitutes", resourceCulture);
             }
         }
         

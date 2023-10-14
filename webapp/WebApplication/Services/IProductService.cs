@@ -15,6 +15,7 @@ namespace K9.WebApplication.Services
         Product Duplicate(int id);
         Product UpdateBatchSize(Product product, int batchSize);
         void DeleteChildRecords(int id);
+        void EditIngredientSubstitutes(Product model);
         List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false);
         List<ProductPack> ListProductPacks(bool retrieveFullProduct = false);
 

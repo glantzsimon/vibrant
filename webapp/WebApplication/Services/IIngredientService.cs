@@ -15,5 +15,6 @@ namespace K9.WebApplication.Services
         Ingredient FindWithSubstitutesSelectList(int id);
         List<Ingredient> List(bool retrieveFullIngredient = false);
         void UpdateIngredientPriorities(List<SortableItem> items);
+        void EditIngredientSubstitutes(Ingredient model);
     }
 }

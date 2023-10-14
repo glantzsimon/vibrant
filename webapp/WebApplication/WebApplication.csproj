@@ -1550,6 +1550,8 @@
     <Content Include="Views\Protocols\_ParasiteCleanseBody.cshtml" />
     <Content Include="Views\Ingredients\IngredientsPurchaseList.cshtml" />
     <Content Include="Views\Shared\Controls\_SearchBox.cshtml" />
+    <Content Include="Views\Products\EditIngredientSubstitutes.cshtml" />
+    <Content Include="Views\Products\_EditIngredientSubstitutesFields.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
