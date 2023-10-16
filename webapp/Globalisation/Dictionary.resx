@@ -1810,6 +1810,9 @@
   <data name="IngredientsPurchaseList" xml:space="preserve">
     <value>Ingredients Purchase List</value>
   </data>
+  <data name=";" xml:space="preserve">
+    <value />
+  </data>
   <data name="AllowIngredientSubstitutesLabel" xml:space="preserve">
     <value>Allow Ingredient Substitutes</value>
   </data>

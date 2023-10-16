@@ -152,6 +152,9 @@ namespace K9.WebApplication.Services
                             ingredientSubstitute.Priority += 1000;
                         }
                     }
+
+                    productIngredient.IngredientSubstitutes = productIngredient.IngredientSubstitutes
+                        .OrderByDescending(e => e.Priority).ToList();
                 }
                 
                 product.ProductIngredients = productIngredients.OrderByDescending(e => e.Amount)
