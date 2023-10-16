@@ -2,7 +2,7 @@
 @using K9.Base.WebApplication.Helpers
 @model Product
 @{
-    Layout = "../Shared/_LayoutFormSmall.cshtml";
+    Layout = "../Shared/_LayoutForm.cshtml";
     ViewBag.SubTitle = $"{Model.Name} {Dictionary.LabSheet}";
 }
 @using (Html.BeginForm())
@@ -10,6 +10,7 @@
     using (Html.BeginBootstrapForm())
     {
         @Html.Hidden("index", 0)
+        @Html.HiddenFor(e => Model.Id)
 
         <div class="row">
             <div class="col-xs-6">

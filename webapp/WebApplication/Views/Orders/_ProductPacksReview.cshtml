@@ -7,7 +7,7 @@
 {
     var isVisible = Model.ProductPacks[i].AmountRemaining > 0;
     var visible = isVisible ? "" : "none";
-    var visibleClass = isVisible ? "" : "hidden-rows";
+    var visibleClass = isVisible ? "" : "complete-rows";
 
     @Html.HiddenFor(e => Model.ProductPacks[i].Id)
     @Html.HiddenFor(e => Model.ProductPacks[i].Amount)

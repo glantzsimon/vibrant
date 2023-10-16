@@ -68,13 +68,17 @@ namespace K9.DataAccessLayer.Models
 
         public float AmountPer100Capsules => AmountPerConcentrationPerBatch * 100;
 
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
+        public bool IsAdded { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
         public string FormattedAmountPer100Capsules =>
             $"{AmountPer100Capsules} {Ingredient?.MeasuredIn}";
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
         public string FormattedLargeAmountPer100Capsules =>
-            $"{AmountPerConcentrationPerBatch / 10} {Ingredient?.MeasuredInForLargeQuantity}";
+            $"{Math.Round(AmountPerConcentrationPerBatch / 10, 3, MidpointRounding.AwayFromZero)} {Ingredient?.MeasuredInForLargeQuantity}";
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostLabel)]
         [DataType(DataType.Currency)]

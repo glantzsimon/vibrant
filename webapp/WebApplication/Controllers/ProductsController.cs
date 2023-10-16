@@ -20,17 +20,19 @@ namespace K9.WebApplication.Controllers
 {
     [Authorize]
     [RequirePermissions(Role = RoleNames.Administrators)]
-    public class ProductsController : HtmlControllerBase<Product>
+    public partial class ProductsController : HtmlControllerBase<Product>
     {
         private readonly IProductService _productService;
         private readonly IRepository<ProductIngredient> _productIngredientsRepository;
         private readonly IRepository<Ingredient> _ingredientsRepository;
+        private readonly IIngredientService _ingredientService;
 
-        public ProductsController(IControllerPackage<Product> controllerPackage, IProductService productService, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository) : base(controllerPackage)
+        public ProductsController(IControllerPackage<Product> controllerPackage, IProductService productService, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository, IIngredientService ingredientService) : base(controllerPackage)
         {
             _productService = productService;
             _productIngredientsRepository = productIngredientsRepository;
             _ingredientsRepository = ingredientsRepository;
+            _ingredientService = ingredientService;
             RecordBeforeCreate += ProductsController_RecordBeforeCreate;
             RecordBeforeCreated += ProductsController_RecordBeforeCreated;
             RecordBeforeUpdated += ProductsController_RecordBeforeUpdated;
@@ -69,6 +71,28 @@ namespace K9.WebApplication.Controllers
             return View(product);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LabSheet(Product model)
+        {
+            var product = _productService.Find(model.Id);
+            if (product.BatchSize > 1)
+            {
+                product = _productService.UpdateBatchSize(product, product.BatchSize);
+            }
+
+            foreach (var productIngredient in model.IngredientsWithSubstitutes)
+            {
+                var ingredient = product.IngredientsWithSubstitutes.FirstOrDefault(e =>
+                    e.Ingredient.Id == productIngredient.IngredientId);
+                
+                if (ingredient != null)
+                    ingredient.IsSelected = productIngredient.IsSelected;
+            }
+
+            return View(product);
+        }
+
         public ActionResult EditIngredientQuantities(int id)
         {
             var product = _productService.Find(id);
@@ -99,6 +123,10 @@ namespace K9.WebApplication.Controllers
         public ActionResult EditIngredientSubstitutes(int id)
         {
             var product = _productService.Find(id);
+            if (!product.AllowIngredientSubstitutes)
+            {
+                ModelState.AddModelError("", Globalisation.Dictionary.ProductDoesNotAllowSubstitutes);
+            }
             return View(product);
         }
 
@@ -108,9 +136,6 @@ namespace K9.WebApplication.Controllers
         public ActionResult EditIngredientSubstitutes(Product model)
         {
             _productService.EditIngredientSubstitutes(model);
-
-            return RedirectToAction("EditIngredientSubstitutes", new { id = model.Id });
-
             return RedirectToAction("Index");
         }
 

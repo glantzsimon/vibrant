@@ -59,6 +59,9 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         public List<ProductIngredient> Ingredients { get; set; }
 
+        [NotMapped]
+        public List<ProductIngredient> IngredientsWithSubstitutes { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsMainLabel)]
         public bool IsMain { get; set; }
 

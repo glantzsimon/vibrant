@@ -12,7 +12,10 @@
         @Html.Partial("_EditIngredientSubstitutesFields")
 
         <hr />
-        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save")
+        if (Model.AllowIngredientSubstitutes)
+        {
+            @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save")
+        }
         @Html.BootstrapBackToListButton()
     }
 }

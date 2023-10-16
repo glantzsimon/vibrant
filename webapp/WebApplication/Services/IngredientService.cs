@@ -168,6 +168,13 @@ namespace K9.WebApplication.Services
             }
         }
 
+        public void MarkIngredientAsOutOfStock(int id)
+        {
+            var ingredient = _ingredientsRepository.Find(id);
+            ingredient.QuantityInStock = 0;
+            _ingredientsRepository.Update(ingredient);
+        }
+
         public void EditIngredientSubstitutes(Ingredient model)
         {
             var existingSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == model.Id).ToList();

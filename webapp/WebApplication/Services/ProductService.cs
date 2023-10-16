@@ -130,6 +130,8 @@ namespace K9.WebApplication.Services
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
 
                 var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id).ToList();
+                var productIngredientsWithSubstitutes = new List<ProductIngredient>();
+
                 foreach (var productIngredient in productIngredients)
                 {
                     productIngredient.Ingredient = _ingredientService.Find(productIngredient.IngredientId);
@@ -152,12 +154,36 @@ namespace K9.WebApplication.Services
                     productIngredient.Ingredient.Substitutes = productIngredient.Ingredient.Substitutes
                         .OrderByDescending(e => e.IsSelected)
                         .ThenBy(e => e.Priority).ToList();
+
+                    if (productIngredient.Ingredient.IsInStock)
+                    {
+                        productIngredientsWithSubstitutes.Add(productIngredient);
+                    }
+                    else
+                    {
+                        var substitutes = productIngredient.IngredientSubstitutes
+                            .Where(e => e.SubstituteIngredient.IsInStock)
+                            .Take(productIngredient.NumberOfSubstitutesToUse)
+                            .OrderBy(e => e.Priority).ToList();
+
+                        var splitAmount = productIngredient.Amount / substitutes.Count;
+
+                        productIngredientsWithSubstitutes.AddRange(substitutes.Select(e => new ProductIngredient
+                        {
+                            BatchSize = productIngredient.BatchSize,
+                            Ingredient = e.SubstituteIngredient,
+                            Amount = splitAmount
+                        }));
+                    }
                 }
 
                 product.ProductIngredients = productIngredients.OrderByDescending(e => e.Amount)
-                    .ThenBy(e => e.Ingredient.Name);
+                                .ThenBy(e => e.Ingredient.Name);
 
                 product.Ingredients = product.ProductIngredients.ToList();
+
+                product.IngredientsWithSubstitutes = productIngredientsWithSubstitutes.OrderByDescending(e => e.Amount)
+                    .ThenBy(e => e.Ingredient.Name).ToList();
 
                 return product;
             });
@@ -211,6 +237,8 @@ namespace K9.WebApplication.Services
             {
                 product.Ingredients.ForEach(e => e.BatchSize = batchSize);
             }
+
+            product.BatchSize = batchSize;
             return product;
         }
 

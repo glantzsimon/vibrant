@@ -75,6 +75,18 @@
     margin-top: -15px;
 }
 
+.margin-top-minus-14 {
+    margin-top: -14px !important;
+}
+
+.margin-top-minus-10 {
+    margin-top: -10px !important;
+}
+
+.margin-top-minus-7 {
+    margin-top: -7px !important;
+}
+
 .margin-bottom-0 {
     margin-bottom: 0 !important;
 }
@@ -312,7 +324,7 @@
     zoom: 50%;
 }
 
-.hidden-rows {
+.complete-rows {
     background: greenyellow;
 }
 
@@ -324,9 +336,19 @@
 }
 
 .schedule-print-container {
- 
 }
 
     .schedule-print-container hr {
         margin: 7px !important;
+    }
+
+.table-row {
+    border-bottom: 1px solid #d9d9d9;
+    padding-top: 13px;
+    padding-bottom: 9px;
+}
+
+    .table-row button, .table-row a.btn {
+        margin-top: -3px !important;
+        margin-bottom: 0 !important;
     }

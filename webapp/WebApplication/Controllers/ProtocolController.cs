@@ -10,7 +10,7 @@ using System.Web.Mvc;
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
-    [RequirePermissions(Role = Constants.Constants.UnicornUser)]
+    [RequirePermissions(Role = Constants.Constants.ClientUser)]
     public class ProtocolController : BasePureController
     {
         private readonly IProtocolService _protocolService;

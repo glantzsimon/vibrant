@@ -16,5 +16,6 @@ namespace K9.WebApplication.Services
         List<Ingredient> List(bool retrieveFullIngredient = false);
         void UpdateIngredientPriorities(List<SortableItem> items);
         void EditIngredientSubstitutes(Ingredient model);
+        void MarkIngredientAsOutOfStock(int id);
     }
 }

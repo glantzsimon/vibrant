@@ -325,6 +325,7 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Controllers\ProductsControllerAjax.cs" />
     <Compile Include="Controllers\ProductIngredientsControllerAjax.cs" />
     <Compile Include="Controllers\IngredientsControllerAjax.cs" />
     <Compile Include="Controllers\DietaryRecommendationsController.cs" />

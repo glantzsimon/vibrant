@@ -61,15 +61,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string _ {
-            get {
-                return ResourceManager.GetString(";", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to About Pure Alchemy.
         /// </summary>
         public static string AboutPureAlchemy {
@@ -2395,6 +2386,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Added.
+        /// </summary>
+        public static string isAddedLabel {
+            get {
+                return ResourceManager.GetString("isAddedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is Complete.
         /// </summary>
         public static string IsCompleteLabel {
@@ -2608,6 +2608,15 @@ namespace K9.Globalisation {
         public static string Male {
             get {
                 return ResourceManager.GetString("Male", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mark Out of Stock.
+        /// </summary>
+        public static string MarkOutOfStock {
+            get {
+                return ResourceManager.GetString("MarkOutOfStock", resourceCulture);
             }
         }
         
@@ -3184,6 +3193,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Out of Stock.
+        /// </summary>
+        public static string OutOfStock {
+            get {
+                return ResourceManager.GetString("OutOfStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Overview.
         /// </summary>
         public static string OverviewLabel {
@@ -3534,6 +3552,15 @@ namespace K9.Globalisation {
         public static string Product {
             get {
                 return ResourceManager.GetString("Product", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingredient substitutes are not allowed for this product..
+        /// </summary>
+        public static string ProductDoesNotAllowSubstitutes {
+            get {
+                return ResourceManager.GetString("ProductDoesNotAllowSubstitutes", resourceCulture);
             }
         }
         

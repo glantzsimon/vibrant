@@ -114,6 +114,8 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
 	    public bool IsInStock => QuantityInStock > 0;
 
+	    public float GetLowStockFactor => QuantityInStock / StockLowWarningLevel;
+
 	    [Display(ResourceType = typeof(Globalisation.Dictionary),
 	        Name = Globalisation.Strings.Labels.StockLowWarningLevelLabel)]
 	    public int StockLowWarningLevel { get; set; } = 100000;
