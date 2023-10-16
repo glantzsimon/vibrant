@@ -172,12 +172,13 @@ namespace K9.WebApplication.Services
         {
             var existingSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == model.Id).ToList();
             var newItems = model.SubstitutesSelectList.Where(e => e.IsSelected).ToList();
-            var itemsToDelete = existingSubstitutes
-                .Where(i => !newItems.Select(e => e.Id).Contains(i.SubstituteIngredientId)).ToList();
-            var itemsToAdd = newItems
-                .Where(i => !existingSubstitutes.Select(e => e.SubstituteIngredientId).Contains(i.Id)).ToList();
+            
+            foreach (var item in existingSubstitutes)
+            {
+                _ingredientSubstituesRepository.Delete(item.Id);
+            }
 
-            foreach (var item in itemsToAdd)
+            foreach (var item in newItems)
             {
                 var newItem = new IngredientSubstitute
                 {
@@ -185,11 +186,6 @@ namespace K9.WebApplication.Services
                     SubstituteIngredientId = item.Id
                 };
                 _ingredientSubstituesRepository.Create(newItem);
-            }
-
-            foreach (var item in itemsToDelete)
-            {
-                _ingredientSubstituesRepository.Delete(item.Id);
             }
         }
     }
