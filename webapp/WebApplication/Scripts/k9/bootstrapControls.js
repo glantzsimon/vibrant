@@ -29,13 +29,14 @@
 
     function initBootstrapSortable() {
         var $sortableList = $("ul.sortable");
+        var displayIndexFieldName = $sortableList.data("displayIndexFieldName");
 
         if ($sortableList.length > 0) {
             new Sortable($sortableList[0],
                 {
                     dataIdAttr: 'data-id',
 
-                    onSort: function(e) {
+                    onSort: function (e) {
                         var children = e.to.children;
                         var results = [];
 
@@ -43,6 +44,9 @@
                             var id = $(children[i]).data("id");
                             if (id) {
                                 results.push({ id: $(children[i]).data("id"), displayIndex: i });
+
+                                // Update display index field
+                                $sortableList.find("input[name*='" + displayIndexFieldName + "'][data-id='" + id + "']").val(i);
                             }
                         }
 

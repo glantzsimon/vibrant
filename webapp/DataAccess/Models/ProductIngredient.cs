@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
@@ -89,6 +90,11 @@ namespace K9.DataAccessLayer.Models
         public float? PercentageOfDailyAllowance => RDA > 0 ? Amount / Ingredient?.RecommendedDailyAllownace : 0;
 
         public string FormattedPercentageOfDailyAllowance => PercentageOfDailyAllowance > 0 ? PercentageOfDailyAllowance?.ToString("P0") : "*";
+
+        public virtual IEnumerable<ProductIngredientSubstitute> ProductIngredientSubstitutes { get; set; }
+
+        [NotMapped]
+        public List<ProductIngredientSubstitute> IngredientSubstitutes { get; set; }
 
         private string GetFormattedLabelAmount()
         {

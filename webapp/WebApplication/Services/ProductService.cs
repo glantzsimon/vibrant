@@ -134,8 +134,26 @@ namespace K9.WebApplication.Services
                 {
                     productIngredient.Ingredient = _ingredientService.Find(productIngredient.IngredientId);
                     productIngredient.IngredientName = productIngredient.Ingredient.Name;
-                }
+                    productIngredient.IngredientSubstitutes =
+                        _productIngredientSubstituteRepository.Find(e => e.ProductIngredientId == productIngredient.Id).ToList();
 
+                    foreach (var ingredientSubstitute in productIngredient.Ingredient.Substitutes)
+                    {
+                        var productIngredientSubstitute = productIngredient.IngredientSubstitutes.FirstOrDefault(e =>
+                            e.SubstituteIngredientId == ingredientSubstitute.SubstituteIngredientId);
+
+                        if (productIngredientSubstitute != null)
+                        {
+                            ingredientSubstitute.IsSelected = true;
+                            ingredientSubstitute.Priority = productIngredientSubstitute.Priority;
+                        }
+                        else
+                        {
+                            ingredientSubstitute.Priority += 1000;
+                        }
+                    }
+                }
+                
                 product.ProductIngredients = productIngredients.OrderByDescending(e => e.Amount)
                     .ThenBy(e => e.Ingredient.Name);
 
@@ -292,7 +310,8 @@ namespace K9.WebApplication.Services
                     var newItem = new ProductIngredientSubstitute
                     {
                         ProductIngredientId = productIngredient.Id,
-                        SubstituteIngredientId = item.IngredientId
+                        SubstituteIngredientId = item.IngredientId,
+                        Priority = item.Priority
                     };
                     _productIngredientSubstituteRepository.Create(newItem);
                 }

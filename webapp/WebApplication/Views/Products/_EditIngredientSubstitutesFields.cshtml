@@ -2,6 +2,8 @@
 @using K9.WebApplication.Helpers
 @model Product
 
+@Html.HiddenFor(e => Model.Id)
+
 @for (int i = 0; i < Model.Ingredients.Count; i++)
 {
     @Html.HiddenFor(e => Model.Ingredients[i].Id)
@@ -18,14 +20,20 @@
             </div>
             <div class="col-xs-4 substitutes-container">
                 @Html.Label(Dictionary.IngredientSubstitutes)
-                @for (int j = 0; j < Model.Ingredients[i].Ingredient.Substitutes.Count; j++)
-                {
-                    @Html.HiddenFor(e => Model.Ingredients[i].Ingredient.Substitutes[j].Id)
+                <ul data-displayIndexFieldName="Priority" class="substitutes-list list-group sortable">
+                    @for (int j = 0; j < Model.Ingredients[i].Ingredient.Substitutes.Count; j++)
+                    {
+                        @Html.HiddenFor(e => Model.Ingredients[i].Ingredient.Substitutes[j].Id)
+                        @Html.HiddenFor(e => Model.Ingredients[i].Ingredient.Substitutes[j].IngredientId)
+                        @Html.HiddenFor(e => Model.Ingredients[i].Ingredient.Substitutes[j].Priority, new { data_id = Model.Ingredients[i].Ingredient.Substitutes[j].Id })
 
-                    <div class="checkbox substitute">
-                        <label>@Html.CheckBoxFor(model => Model.Ingredients[i].Ingredient.Substitutes[j].IsSelected)@Model.Ingredients[i].Ingredient.Substitutes[j].SubstituteIngredient.Name</label>
-                    </div>
-                }
+                        <li data-parentid="@Model.Ingredients[i].Id" data-id="@Model.Ingredients[i].Ingredient.Substitutes[j].Id" class="list-group-item">
+                            <div class="checkbox substitute">
+                                <label>@Html.CheckBoxFor(model => Model.Ingredients[i].Ingredient.Substitutes[j].IsSelected)@Model.Ingredients[i].Ingredient.Substitutes[j].SubstituteIngredient.Name</label>
+                            </div>
+                        </li>
+                    }
+                </ul>
             </div>
         </div>
         <hr />
@@ -34,27 +42,32 @@
 
 <script type="text/javascript">
 
-    $("div.substitute input[type='checkbox']").mouseup(function() {
+    $("div.substitute input[type='checkbox']").click(function() {
         let $container = $(this).closest(".substitutes-container");
         var numberSelected = $container.find("input[type='checkbox']:checked").length;
         var $numberToUse = $container.parent().find("input[name*='NumberOfSubstitutesToUse']");
-        
-        if ($(this).is(":checked")) {
-            numberSelected += 1;
-        }
 
-        if ($numberToUse.val() === 0) {
-            $numberToUse.val(numberSelected);
-        }
-    })
+        $numberToUse.val(numberSelected);
+    });
 
-    @*$("#ingredients-list").on("indexChanged", function(e, data) {
-        ajaxcontroller().send("@Url.Action("UpdateIngredientPriorities")", data, "POST").done(
-            function(result) {
-                if (!result.success) {
-                    alert(result.error);
-                }
-            });
-    })*@
+    @*$(".substitutes-list").on("indexChanged",
+        function(e, data) {
+            ajaxcontroller().send("@Url.Action("UpdateIngredientPriorities")", data, "POST").done(
+                function(result) {
+                    if (!result.success) {
+                        alert(result.error);
+                    }
+                });
+        });
+
+    $(".substitutes-list").on("itemSelected",
+        function(e, data) {
+            ajaxcontroller().send("@Url.Action("UpdateIngredientPriorities")", data, "POST").done(
+                function(result) {
+                    if (!result.success) {
+                        alert(result.error);
+                    }
+                });
+        });*@
 
 </script>

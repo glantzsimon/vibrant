@@ -5,21 +5,24 @@ using K9.Base.WebApplication.ViewModels;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Services;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
 	[RequirePermissions(Role = RoleNames.Administrators)]
-	public class ProductIngredientsController : BaseController<ProductIngredient>
+	public partial class ProductIngredientsController : BaseController<ProductIngredient>
 	{
 		private readonly IRepository<Product> _productsRepository;
-		
-		public ProductIngredientsController(IControllerPackage<ProductIngredient> controllerPackage, IRepository<Product> productsRepository)
+	    private readonly IProductService _productService;
+
+	    public ProductIngredientsController(IControllerPackage<ProductIngredient> controllerPackage, IRepository<Product> productsRepository, IProductService productService)
 			: base(controllerPackage)
-		{
-			_productsRepository = productsRepository;
-		}
+	    {
+	        _productsRepository = productsRepository;
+	        _productService = productService;
+	    }
 
 	    public override ActionResult Index()
 	    {

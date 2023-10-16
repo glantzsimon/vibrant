@@ -990,6 +990,11 @@ div.row + hr {
         line-height: 1.44em !important;
     }
 
+ul.sortable {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
 ul.sortable li {
     cursor: move;
 }
