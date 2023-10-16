@@ -296,7 +296,7 @@ namespace K9.WebApplication.Services
 
         public void EditIngredientSubstitutes(Product model)
         {
-            foreach (var productIngredient in model.Ingredients)
+            foreach (var productIngredient in model.Ingredients.Where(e => e.Ingredient.Substitutes != null && e.Ingredient.Substitutes.Any()))
             {
                 var existingSubstitutes = _productIngredientSubstituteRepository.Find(e => e.ProductIngredientId == productIngredient.Id).ToList();
                 var newItems = productIngredient.Ingredient.Substitutes.Where(e => e.IsSelected).ToList();
@@ -310,7 +310,7 @@ namespace K9.WebApplication.Services
                     var newItem = new ProductIngredientSubstitute
                     {
                         ProductIngredientId = productIngredient.Id,
-                        SubstituteIngredientId = item.IngredientId,
+                        SubstituteIngredientId = item.SubstituteIngredientId,
                         Priority = item.Priority
                     };
                     _productIngredientSubstituteRepository.Create(newItem);

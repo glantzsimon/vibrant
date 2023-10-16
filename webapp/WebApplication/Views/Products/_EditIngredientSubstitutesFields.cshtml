@@ -8,6 +8,7 @@
 {
     @Html.HiddenFor(e => Model.Ingredients[i].Id)
     @Html.HiddenFor(e => Model.Ingredients[i].Name)
+    @Html.HiddenFor(e => Model.Ingredients[i].Ingredient.Id)
 
     if (Model.Ingredients[i].Ingredient.Substitutes.Any())
     {
@@ -25,6 +26,7 @@
                     {
                         @Html.HiddenFor(e => Model.Ingredients[i].Ingredient.Substitutes[j].Id)
                         @Html.HiddenFor(e => Model.Ingredients[i].Ingredient.Substitutes[j].IngredientId)
+                        @Html.HiddenFor(e => Model.Ingredients[i].Ingredient.Substitutes[j].SubstituteIngredientId)
                         @Html.HiddenFor(e => Model.Ingredients[i].Ingredient.Substitutes[j].Priority, new { data_id = Model.Ingredients[i].Ingredient.Substitutes[j].Id })
 
                         <li data-parentid="@Model.Ingredients[i].Id" data-id="@Model.Ingredients[i].Ingredient.Substitutes[j].Id" class="list-group-item">
