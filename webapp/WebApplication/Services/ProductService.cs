@@ -147,16 +147,13 @@ namespace K9.WebApplication.Services
                             ingredientSubstitute.IsSelected = true;
                             ingredientSubstitute.Priority = productIngredientSubstitute.Priority;
                         }
-                        else
-                        {
-                            ingredientSubstitute.Priority += 1000;
-                        }
                     }
 
-                    productIngredient.IngredientSubstitutes = productIngredient.IngredientSubstitutes
-                        .OrderByDescending(e => e.Priority).ToList();
+                    productIngredient.Ingredient.Substitutes = productIngredient.Ingredient.Substitutes
+                        .OrderByDescending(e => e.IsSelected)
+                        .ThenBy(e => e.Priority).ToList();
                 }
-                
+
                 product.ProductIngredients = productIngredients.OrderByDescending(e => e.Amount)
                     .ThenBy(e => e.Ingredient.Name);
 
@@ -303,7 +300,7 @@ namespace K9.WebApplication.Services
             {
                 var existingSubstitutes = _productIngredientSubstituteRepository.Find(e => e.ProductIngredientId == productIngredient.Id).ToList();
                 var newItems = productIngredient.Ingredient.Substitutes.Where(e => e.IsSelected).ToList();
-                
+
                 foreach (var item in existingSubstitutes)
                 {
                     _productIngredientSubstituteRepository.Delete(item.Id);
