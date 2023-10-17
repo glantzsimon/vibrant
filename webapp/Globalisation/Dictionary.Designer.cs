@@ -545,6 +545,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Category.
+        /// </summary>
+        public static string CategoryLabel {
+            get {
+                return ResourceManager.GetString("CategoryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    &lt;strong&gt;Could a &lt;span class=&quot;glossary&quot; key=&quot;CBSMutation&quot;&gt;CBS mutation&lt;/span&gt; could be causing your chronic health problems?&lt;/strong&gt;
         ///&lt;/p&gt;
@@ -2188,6 +2197,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Herb.
+        /// </summary>
+        public static string Herb {
+            get {
+                return ResourceManager.GetString("Herb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Here.
         /// </summary>
         public static string Here {
@@ -2476,6 +2494,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Item Code.
+        /// </summary>
+        public static string ItemCodeLabel {
+            get {
+                return ResourceManager.GetString("ItemCodeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Items.
         /// </summary>
         public static string Items {
@@ -2760,6 +2787,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mineral.
+        /// </summary>
+        public static string Mineral {
+            get {
+                return ResourceManager.GetString("Mineral", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Minerals.
         /// </summary>
         public static string Minerals {
@@ -2851,6 +2887,15 @@ namespace K9.Globalisation {
         public static string NewCreditPackThankYouEmail {
             get {
                 return ResourceManager.GetString("NewCreditPackThankYouEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is no new Item Code available at the selected index..
+        /// </summary>
+        public static string NewItemCodeNotAvailable {
+            get {
+                return ResourceManager.GetString("NewItemCodeNotAvailable", resourceCulture);
             }
         }
         
@@ -3369,6 +3414,15 @@ namespace K9.Globalisation {
         public static string PersonalUse {
             get {
                 return ResourceManager.GetString("PersonalUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phytonutrient.
+        /// </summary>
+        public static string Phytonutrient {
+            get {
+                return ResourceManager.GetString("Phytonutrient", resourceCulture);
             }
         }
         
@@ -4723,6 +4777,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Superfood.
+        /// </summary>
+        public static string Superfood {
+            get {
+                return ResourceManager.GetString("Superfood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Super Foods.
         /// </summary>
         public static string SuperFoods {
@@ -5071,6 +5134,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Update Item Codes.
+        /// </summary>
+        public static string UpdateItemCodes {
+            get {
+                return ResourceManager.GetString("UpdateItemCodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Update Your Details.
         /// </summary>
         public static string UpdateYourDetails {
@@ -5274,6 +5346,15 @@ namespace K9.Globalisation {
         public static string ViewSummary {
             get {
                 return ResourceManager.GetString("ViewSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vitamin.
+        /// </summary>
+        public static string Vitamin {
+            get {
+                return ResourceManager.GetString("Vitamin", resourceCulture);
             }
         }
         

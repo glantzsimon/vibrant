@@ -302,6 +302,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit\Services\ProductServiceTests.cs" />
     <Compile Include="Unit\Services\MembershipServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -196,6 +196,7 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\ECategory.cs" />
     <Compile Include="Enums\EProtocolType.cs" />
     <Compile Include="Enums\EPeriod.cs" />
     <Compile Include="Enums\EIngredientType.cs" />
@@ -207,6 +208,7 @@
     <Compile Include="Enums\EProductType.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
     <Compile Include="Helpers\Methods.cs" />
+    <Compile Include="Interfaces\ICategorisable.cs" />
     <Compile Include="Migrations\202211280432073_InitialCreate.cs" />
     <Compile Include="Migrations\202211280432073_InitialCreate.designer.cs">
       <DependentUpon>202211280432073_InitialCreate.cs</DependentUpon>
@@ -402,6 +404,10 @@
     <Compile Include="Migrations\202310140843411_Latest.cs" />
     <Compile Include="Migrations\202310140843411_Latest.Designer.cs">
       <DependentUpon>202310140843411_Latest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310171023123_Categories.cs" />
+    <Compile Include="Migrations\202310171023123_Categories.Designer.cs">
+      <DependentUpon>202310171023123_Categories.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DietaryRecommendation.cs" />
     <Compile Include="Models\Ingredient.cs" />
@@ -599,6 +605,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310140843411_Latest.resx">
       <DependentUpon>202310140843411_Latest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310171023123_Categories.resx">
+      <DependentUpon>202310171023123_Categories.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

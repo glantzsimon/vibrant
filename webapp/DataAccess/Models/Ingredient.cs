@@ -9,12 +9,25 @@ using K9.SharedLibrary.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Mvc;
+using K9.DataAccessLayer.Interfaces;
 
 namespace K9.DataAccessLayer.Models
 {
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Ingredients, PluralName = Globalisation.Strings.Names.Ingredients, Name = Globalisation.Strings.Names.Ingredient)]
-    public class Ingredient : ObjectBase
+    public class Ingredient : ObjectBase, ICategorisable
 	{
+	    [UIHint("IngredientCategory")]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CategoryLabel)]
+	    //[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+	    public ECategory Category { get; set; }
+        
+	    /// <summary>
+	    /// Used for labels in production
+	    /// </summary>
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ItemCodeLabel)]
+	    //[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+	    public int ItemCode { get; set; }
+
 	    public virtual IEnumerable<IngredientSubstitute> IngredientSubstitutes { get; set; }
 
 	    [NotMapped]

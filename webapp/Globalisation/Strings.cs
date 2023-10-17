@@ -157,6 +157,8 @@
             public const string ArticleCategory = "ArticleCategory";
             public const string ProductTypeLabel = "ProductTypeLabel";
             public const string ProductLabel = "Product";
+            public const string ItemCodeLabel = "ItemCodeLabel";
+            public const string CategoryLabel = "CategoryLabel";
             public const string ActivityLabel = "Activity";
             public const string DietaryRecommendationLabel = "DietaryRecommendation";
             public const string ProtocolLabel = "Protocol";
@@ -211,7 +213,14 @@
             public const string ProfileReadings = "ProfileReadings";
             public const string Ingredient = "Ingredient";
             public const string Ingredients = "Ingredients";
+            public const string Vitamin = "Vitamin";
+            public const string Mineral = "Mineral";
             public const string Product = "Product";
+            public const string DietarySupplement = "DietarySupplement";
+            public const string PersonalCare = "PersonalCare";
+            public const string Herb = "Herb";
+            public const string Superfood = "Superfood";
+            public const string Phytonutrient = "Phytonutrient";
             public const string ProductPack = "ProductPack";
             public const string Activity = "Activity";
             public const string Activities = "Activities";

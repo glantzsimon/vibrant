@@ -416,6 +416,7 @@
     <Compile Include="Options\SearchBoxOptions.cs" />
     <Compile Include="Options\PaymentsOptions.cs" />
     <Compile Include="Services\CacheableServiceBase.cs" />
+    <Compile Include="Services\ICategorisableService.cs" />
     <Compile Include="Services\IIngredientService.cs" />
     <Compile Include="Services\IngredientService.cs" />
     <Compile Include="Services\IProtocolService.cs" />
@@ -1554,6 +1555,8 @@
     <Content Include="Views\Shared\Controls\_SearchBox.cshtml" />
     <Content Include="Views\Products\EditIngredientSubstitutes.cshtml" />
     <Content Include="Views\Products\_EditIngredientSubstitutesFields.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ProductCategory.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\IngredientCategory.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

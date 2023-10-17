@@ -15,6 +15,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Interfaces;
 
 namespace K9.WebApplication.Controllers
 {
@@ -44,6 +46,13 @@ namespace K9.WebApplication.Controllers
         public ActionResult DuplicateProduct(int id)
         {
             return View(Repository.Find(id));
+        }
+
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult UpdateItemCodes()
+        {
+            _productService.UpdateProductCategories();
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -144,17 +153,6 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("EditIngredientsForProduct", "ProductIngredients", new { id });
         }
 
-        public ActionResult EditList()
-        {
-            var products = _productService.List(true);
-            foreach (var product in products)
-            {
-                product.Benefits = product.Benefits.RemoveEmptyLines();
-                HtmlParser.ParseHtml(product);
-            }
-            return View(products.OrderBy(e => e.Name).ToList());
-        }
-
         public ActionResult View(int productId)
         {
             return RedirectToAction("Details", null, new { id = productId });
@@ -183,6 +181,17 @@ namespace K9.WebApplication.Controllers
             return new EmptyResult();
         }
 
+        public ActionResult EditList()
+        {
+            var products = _productService.List(true);
+            foreach (var product in products)
+            {
+                product.Benefits = product.Benefits.RemoveEmptyLines();
+                HtmlParser.ParseHtml(product);
+            }
+            return View(products.OrderBy(e => e.Name).ToList());
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         [RequirePermissions(Permission = Permissions.Edit)]
@@ -192,6 +201,8 @@ namespace K9.WebApplication.Controllers
             {
                 var item = Repository.Find(product.Id);
                 item.Name = product.Name;
+                item.Category = product.Category;
+                item.ItemCode = product.ItemCode;
                 item.SubTitleLabelText = product.SubTitleLabelText;
                 item.Amount = product.Amount;
                 item.CostOfMaterials = product.CostOfMaterials;
@@ -230,6 +241,8 @@ namespace K9.WebApplication.Controllers
             {
                 product.SeoFriendlyId = product.Name.ToSeoFriendlyString();
             }
+
+            product.ItemCode = _productService.CreateItemCode(product, new List<ICategorisable>(_productService.List()));
             product.ExternalId = Guid.NewGuid();
         }
 

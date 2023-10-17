@@ -7,25 +7,34 @@
 {
     @Html.HiddenFor(e => Model[i].Id)
 
-<div class="row">
-    <div class="col-sm-2">
-        @Html.BootstrapEditorFor(e => Model[i].Name)
+    <div class="row">
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].Name)
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].ItemCode)
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].Cost)
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].Quantity)
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].QuantityInStock)
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].Concentration)
+        </div>
     </div>
-    <div class="col-sm-2">
-        @Html.BootstrapEditorFor(e => Model[i].Cost)
+    <div class="row">
+        <div class="col-sm-1">
+            @Html.BootstrapEditorFor(e => Model[i].RecommendedDailyAllownace)
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].Category)
+        </div>
     </div>
-    <div class="col-sm-2">
-        @Html.BootstrapEditorFor(e => Model[i].Quantity)
-    </div>
-    <div class="col-sm-2">
-        @Html.BootstrapEditorFor(e => Model[i].QuantityInStock)
-    </div>
-    <div class="col-sm-2">
-        @Html.BootstrapEditorFor(e => Model[i].Concentration)
-    </div>
-    <div class="col-sm-2">
-        @Html.BootstrapEditorFor(e => Model[i].RecommendedDailyAllownace)
-    </div>
-</div>
+    <br />
 }
 

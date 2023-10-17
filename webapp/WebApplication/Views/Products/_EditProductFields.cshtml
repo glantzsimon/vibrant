@@ -35,10 +35,10 @@
             @Html.BootstrapEditorFor(e => Model[i].SubTitleLabelText)
         </div>
         <div class="col-sm-2">
-            @Html.HiddenFor(e => Model[i].ProductType, new { data_input_id = "product-type" })
-            @Html.BootstrapEditorFor(e => Model[i].Amount)
+            @Html.BootstrapEditorFor(e => Model[i].ItemCode)
         </div>
         <div class="col-sm-2">
+            @Html.HiddenFor(e => Model[i].ProductType, new { data_input_id = "product-type" })
             @Html.BootstrapEditorFor(e => Model[i].Amount)
         </div>
         <div class="col-sm-2">
@@ -71,6 +71,12 @@
         </div>
         <div class="col-sm-2">
             @Html.BootstrapEditorFor(e => Model[i].Recommendations)
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].Category)
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapEditorFor(e => Model[i].ItemCode)
         </div>
     </div>
     <br />

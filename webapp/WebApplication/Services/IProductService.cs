@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
 {
-    public interface IProductService
+    public interface IProductService : ICategorisableService
     {
         Product Find(int id);
         Product FindPrevious(int id);
@@ -15,7 +15,8 @@ namespace K9.WebApplication.Services
         Product Duplicate(int id);
         Product UpdateBatchSize(Product product, int batchSize);
         void DeleteChildRecords(int id);
-        void EditIngredientSubstitutes(Product model);
+        void EditIngredientSubstitutes(Product product);
+        void UpdateProductCategories();
         List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false);
         List<ProductPack> ListProductPacks(bool retrieveFullProduct = false);
 

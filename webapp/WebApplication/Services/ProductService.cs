@@ -6,6 +6,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Services
 {
@@ -322,9 +323,9 @@ namespace K9.WebApplication.Services
             });
         }
 
-        public void EditIngredientSubstitutes(Product model)
+        public void EditIngredientSubstitutes(Product product)
         {
-            foreach (var productIngredient in model.Ingredients.Where(e => e.Ingredient.Substitutes != null && e.Ingredient.Substitutes.Any()))
+            foreach (var productIngredient in product.Ingredients.Where(e => e.Ingredient.Substitutes != null && e.Ingredient.Substitutes.Any()))
             {
                 var existingSubstitutes = _productIngredientSubstituteRepository.Find(e => e.ProductIngredientId == productIngredient.Id).ToList();
                 var newItems = productIngredient.Ingredient.Substitutes.Where(e => e.IsSelected).ToList();
@@ -348,6 +349,24 @@ namespace K9.WebApplication.Services
                 var productIngredientRecord = _productIngredientsRepository.Find(productIngredient.Id);
                 productIngredientRecord.NumberOfSubstitutesToUse = productIngredient.NumberOfSubstitutesToUse;
                 _productIngredientsRepository.Update(productIngredientRecord);
+            }
+        }
+
+        public void UpdateProductCategories()
+        {
+            foreach (var product in _productsRepository.List())
+            {
+                product.Category = ECategory.DietarySupplement;
+                _productsRepository.Update(product);
+            }
+
+            var itemCode = (int)ECategory.DietarySupplement + Constants.Constants.ItemCodeGap;
+
+            foreach (var product in _productsRepository.List().OrderBy(e => e.Name).ToList())
+            {
+                product.ItemCode = itemCode;
+                _productsRepository.Update(product);
+                itemCode += Constants.Constants.ItemCodeGap;
             }
         }
     }

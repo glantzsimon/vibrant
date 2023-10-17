@@ -7,6 +7,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Services
 {
@@ -15,7 +16,7 @@ namespace K9.WebApplication.Services
         private readonly ILogger _logger;
         private readonly IRepository<Ingredient> _ingredientsRepository;
         private readonly IRepository<IngredientSubstitute> _ingredientSubstituesRepository;
-        
+
         public IngredientService(ILogger logger, IRepository<Ingredient> ingredientsRepository, IRepository<IngredientSubstitute> ingredientSubstituesRepository)
         {
             _logger = logger;
@@ -175,11 +176,11 @@ namespace K9.WebApplication.Services
             _ingredientsRepository.Update(ingredient);
         }
 
-        public void EditIngredientSubstitutes(Ingredient model)
+        public void EditIngredientSubstitutes(Ingredient ingredient)
         {
-            var existingSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == model.Id).ToList();
-            var newItems = model.SubstitutesSelectList.Where(e => e.IsSelected).ToList();
-            
+            var existingSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == ingredient.Id).ToList();
+            var newItems = ingredient.SubstitutesSelectList.Where(e => e.IsSelected).ToList();
+
             foreach (var item in existingSubstitutes)
             {
                 _ingredientSubstituesRepository.Delete(item.Id);
@@ -189,10 +190,67 @@ namespace K9.WebApplication.Services
             {
                 var newItem = new IngredientSubstitute
                 {
-                    IngredientId = model.Id,
+                    IngredientId = ingredient.Id,
                     SubstituteIngredientId = item.Id
                 };
                 _ingredientSubstituesRepository.Create(newItem);
+            }
+        }
+
+        public void UpdateIngredientCategories()
+        {
+            var ingredients = _ingredientsRepository.List();
+            var ingredientCategories = Constants.Constants.IngredientCategories;
+
+            if (ingredients.Any(e => !ingredientCategories.Contains(e.Category)))
+            {
+                throw new Exception("Cannot update ingredients. Not all items have a valid ItemCode");
+            }
+
+            var vitamins = ingredients.Where(e => e.Category == ECategory.Vitamin).ToList();
+            var minerals = ingredients.Where(e => e.Category == ECategory.Mineral).ToList();
+            var phytoNutrients = ingredients.Where(e => e.Category == ECategory.Phytonutrient).ToList();
+            var herbs = ingredients.Where(e => e.Category == ECategory.Herb).ToList();
+            var superfoods = ingredients.Where(e => e.Category == ECategory.Superfood).ToList();
+
+            var itemCode = (int)ECategory.Vitamin + Constants.Constants.ItemCodeGap;
+            foreach (var ingredient in vitamins.OrderBy(e => e.Name).ToList())
+            {
+                ingredient.ItemCode = itemCode;
+                _ingredientsRepository.Update(ingredient);
+                itemCode += Constants.Constants.ItemCodeGap;
+            }
+
+            itemCode = (int)ECategory.Mineral + Constants.Constants.ItemCodeGap;
+            foreach (var ingredient in minerals.OrderBy(e => e.Name).ToList())
+            {
+                ingredient.ItemCode = itemCode;
+                _ingredientsRepository.Update(ingredient);
+                itemCode += Constants.Constants.ItemCodeGap;
+            }
+
+            itemCode = (int)ECategory.Phytonutrient + Constants.Constants.ItemCodeGap;
+            foreach (var ingredient in phytoNutrients.OrderBy(e => e.Name).ToList())
+            {
+                ingredient.ItemCode = itemCode;
+                _ingredientsRepository.Update(ingredient);
+                itemCode += Constants.Constants.ItemCodeGap;
+            }
+
+            itemCode = (int)ECategory.Herb + Constants.Constants.ItemCodeGap;
+            foreach (var ingredient in herbs.OrderBy(e => e.Name).ToList())
+            {
+                ingredient.ItemCode = itemCode;
+                _ingredientsRepository.Update(ingredient);
+                itemCode += Constants.Constants.ItemCodeGap;
+            }
+
+            itemCode = (int)ECategory.Superfood + Constants.Constants.ItemCodeGap;
+            foreach (var ingredient in superfoods.OrderBy(e => e.Name).ToList())
+            {
+                ingredient.ItemCode = itemCode;
+                _ingredientsRepository.Update(ingredient);
+                itemCode += Constants.Constants.ItemCodeGap;
             }
         }
     }

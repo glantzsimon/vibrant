@@ -9,6 +9,7 @@ using K9.WebApplication.Services;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using K9.DataAccessLayer.Interfaces;
 using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Controllers
@@ -74,7 +75,7 @@ namespace K9.WebApplication.Controllers
                 TotalProductsUsedIn = products.Count(e => e.Ingredients.Any(i => i.IngredientId == group.Key)),
                 TotalOrdersUsedIn = ingredientsUsed.Count(e => e == group.Key)
             }).OrderByDescending(e => e.TotalOrdersUsedIn).ThenByDescending(e => e.TotalProductsUsedIn).ThenBy(e => e.Ingredient.Name).ToList();
-            
+
             return View(list);
         }
 
@@ -93,7 +94,7 @@ namespace K9.WebApplication.Controllers
 
             return RedirectToAction("Index");
         }
-        
+
         public ActionResult EditIngredientSubstitutePriorities(int id)
         {
             var ingredient = _ingredientService.Find(id);
@@ -139,6 +140,7 @@ namespace K9.WebApplication.Controllers
             {
                 ingredient.SeoFriendlyId = ingredient.Name.ToSeoFriendlyString();
             }
+            ingredient.ItemCode = _productService.CreateItemCode(ingredient, new List<ICategorisable>(_ingredientService.List()));
         }
     }
 }

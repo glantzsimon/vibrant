@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
 {
-    public interface IIngredientService
+    public interface IIngredientService : ICategorisableService
     {
         Ingredient Find(int id);
         Ingredient FindPrevious(int id);
@@ -15,7 +15,7 @@ namespace K9.WebApplication.Services
         Ingredient FindWithSubstitutesSelectList(int id);
         List<Ingredient> List(bool retrieveFullIngredient = false);
         void UpdateIngredientPriorities(List<SortableItem> items);
-        void EditIngredientSubstitutes(Ingredient model);
+        void EditIngredientSubstitutes(Ingredient ingredient);
         void MarkIngredientAsOutOfStock(int id);
     }
 }

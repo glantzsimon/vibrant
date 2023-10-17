@@ -1834,4 +1834,31 @@
   <data name="MarkOutOfStock" xml:space="preserve">
     <value>Mark Out of Stock</value>
   </data>
+  <data name="CategoryLabel" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Herb" xml:space="preserve">
+    <value>Herb</value>
+  </data>
+  <data name="ItemCodeLabel" xml:space="preserve">
+    <value>Item Code</value>
+  </data>
+  <data name="Mineral" xml:space="preserve">
+    <value>Mineral</value>
+  </data>
+  <data name="NewItemCodeNotAvailable" xml:space="preserve">
+    <value>There is no new Item Code available at the selected index.</value>
+  </data>
+  <data name="Phytonutrient" xml:space="preserve">
+    <value>Phytonutrient</value>
+  </data>
+  <data name="Superfood" xml:space="preserve">
+    <value>Superfood</value>
+  </data>
+  <data name="UpdateItemCodes" xml:space="preserve">
+    <value>Update Item Codes</value>
+  </data>
+  <data name="Vitamin" xml:space="preserve">
+    <value>Vitamin</value>
+  </data>
 </root>

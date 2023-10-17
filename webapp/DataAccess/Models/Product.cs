@@ -4,6 +4,7 @@ using K9.Base.Globalisation;
 using K9.DataAccessLayer.Attributes;
 using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Helpers;
+using K9.DataAccessLayer.Interfaces;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Enums;
 using K9.SharedLibrary.Extensions;
@@ -20,11 +21,26 @@ using System.Web.Mvc;
 namespace K9.DataAccessLayer.Models
 {
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Products, PluralName = Globalisation.Strings.Names.Products, Name = Globalisation.Strings.Names.Product)]
-    public class Product : ObjectBase
+    public class Product : ObjectBase, ICategorisable
     {
         public const int ProductLabelBenefitsCount = 9;
-
+       
         public Guid ExternalId { get; set; }
+        
+        [UIHint("ProductCategory")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CategoryLabel)]
+        //[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        public ECategory Category { get; set; }
+
+        /// <summary>
+        /// Used for labels in production
+        /// </summary>
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ItemCodeLabel)]
+        //[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        public int ItemCode { get; set; }
+
+        [NotMapped]
+        public int ExpectedItemCode { get; set; }
 
         [NotMapped]
         [UIHint("Product")]
