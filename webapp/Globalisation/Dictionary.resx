@@ -1837,6 +1837,9 @@
   <data name="CategoryLabel" xml:space="preserve">
     <value>Category</value>
   </data>
+  <data name="DietarySupplement" xml:space="preserve">
+    <value>Dietary Supplement</value>
+  </data>
   <data name="Herb" xml:space="preserve">
     <value>Herb</value>
   </data>
@@ -1848,6 +1851,9 @@
   </data>
   <data name="NewItemCodeNotAvailable" xml:space="preserve">
     <value>There is no new Item Code available at the selected index.</value>
+  </data>
+  <data name="PersonalCare" xml:space="preserve">
+    <value>Personal Care</value>
   </data>
   <data name="Phytonutrient" xml:space="preserve">
     <value>Phytonutrient</value>

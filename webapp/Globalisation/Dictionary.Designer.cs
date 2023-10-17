@@ -1270,6 +1270,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dietary Supplement.
+        /// </summary>
+        public static string DietarySupplement {
+            get {
+                return ResourceManager.GetString("DietarySupplement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Diplomat.
         /// </summary>
         public static string Diplomat {
@@ -3396,6 +3405,15 @@ namespace K9.Globalisation {
         public static string PeriodValueLabel {
             get {
                 return ResourceManager.GetString("PeriodValueLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Care.
+        /// </summary>
+        public static string PersonalCare {
+            get {
+                return ResourceManager.GetString("PersonalCare", resourceCulture);
             }
         }
         
