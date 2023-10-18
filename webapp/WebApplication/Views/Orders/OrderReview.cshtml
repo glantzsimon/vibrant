@@ -32,7 +32,16 @@
 
         @Html.Partial("_OrderReviewSheet")
 
-        <br />
+        <hr />
+
+        @Html.BootstrapEditorFor(e => e.IsPaid)
+        @Html.BootstrapEditorFor(e => e.IsMade)
+        @Html.BootstrapEditorFor(e => e.IsComplete)
+
+        @Html.Partial("_AjaxPopup")
+
+        <hr />
+
         @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save")
         @Html.BootstrapBackToListButton()
         @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Previous, "OrderReview", null, new { id = Model.Id, index = -1 }, "fa-arrow-left")
@@ -42,8 +51,58 @@
 
 <script type="text/javascript">
     $(function () {
+
         $("#OrderId").change(function () {
             $("#OrderId").closest("form").submit();
         });
+
+        $("#@(nameof(Order.IsPaid))").click(function() {
+            var value = $(this).is(":checked");
+            ajaxcontroller().send("@Url.Action("UpdateOrderIsPaid")",
+                {
+                    id: @Model.Id,
+                    value: value
+                }, "POST").done(
+                function(result) {
+                    if (!result.success) {
+                        $("div#fail-popup").show();
+                    } else {
+                        $("div#success-popup").show();
+                    }
+                });
+        });
+
+        $("#@(nameof(Order.IsMade))").click(function() {
+            var value = $(this).is(":checked");
+            ajaxcontroller().send("@Url.Action("UpdateOrderIsMade")",
+                {
+                    id: @Model.Id,
+                    value: value
+                }, "POST").done(
+                function(result) {
+                    if (!result.success) {
+                        $("div#fail-popup").show();
+                    } else {
+                        $("div#success-popup").show();
+                    }
+                });
+        });
+
+        $("#@(nameof(Order.IsComplete))").click(function() {
+            var value = $(this).is(":checked");
+            ajaxcontroller().send("@Url.Action("UpdateOrderIsComplete")",
+                {
+                    id: @Model.Id,
+                    value: value
+                }, "POST").done(
+                function(result) {
+                    if (!result.success) {
+                        $("div#fail-popup").show();
+                    } else {
+                        $("div#success-popup").show();
+                    }
+                });
+        });
+
     })
 </script>

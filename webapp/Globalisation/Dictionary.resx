@@ -1882,6 +1882,12 @@
   <data name="MaintenanceComplete" xml:space="preserve">
     <value>Maintenance script completed successfully.</value>
   </data>
+  <data name="RecordUpdatedSuccessfully" xml:space="preserve">
+    <value>Record Updated Successfully</value>
+  </data>
+  <data name="RecordUpdateFailed" xml:space="preserve">
+    <value>Record Update Failed</value>
+  </data>
   <data name="RunMaintenanceScript" xml:space="preserve">
     <value>Run Maintenance Script</value>
   </data>

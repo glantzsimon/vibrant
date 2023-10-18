@@ -4281,6 +4281,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Record Updated Successfully.
+        /// </summary>
+        public static string RecordUpdatedSuccessfully {
+            get {
+                return ResourceManager.GetString("RecordUpdatedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Record Update Failed.
+        /// </summary>
+        public static string RecordUpdateFailed {
+            get {
+                return ResourceManager.GetString("RecordUpdateFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register Promo Code.
         /// </summary>
         public static string RegisterPromoCode {

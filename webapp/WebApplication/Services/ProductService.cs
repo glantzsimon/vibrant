@@ -254,6 +254,7 @@ namespace K9.WebApplication.Services
             if (batchSize > 1)
             {
                 product.Ingredients.ForEach(e => e.BatchSize = batchSize);
+                product.IngredientsWithSubstitutes.ForEach(e => e.BatchSize = batchSize);
             }
 
             product.BatchSize = batchSize;

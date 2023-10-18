@@ -260,6 +260,7 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Controllers\OrdersControllerAjax.cs" />
     <Compile Include="Controllers\ProductsControllerAjax.cs" />
     <Compile Include="Controllers\ProductIngredientsControllerAjax.cs" />
     <Compile Include="Controllers\IngredientsControllerAjax.cs" />
@@ -1496,6 +1497,7 @@
     <Content Include="Views\Products\EditIngredients.cshtml" />
     <Content Include="Views\Products\_EditIngredientsFields.cshtml" />
     <Content Include="Views\Shared\MaintenanceComplete.cshtml" />
+    <Content Include="Views\Shared\_AjaxPopup.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

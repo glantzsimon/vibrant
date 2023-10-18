@@ -20,7 +20,7 @@ namespace K9.WebApplication.Controllers
 {
     [Authorize]
     [RequirePermissions(Role = RoleNames.Administrators)]
-    public class OrdersController : HtmlControllerBase<Order>
+    public partial class OrdersController : HtmlControllerBase<Order>
     {
         private readonly IRepository<OrderProduct> _orderProductsRepository;
         private readonly IRepository<OrderProductPack> _orderProductPackRepository;
