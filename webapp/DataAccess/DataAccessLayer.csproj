@@ -413,6 +413,10 @@
     <Compile Include="Migrations\202310180436533_OrderRep.Designer.cs">
       <DependentUpon>202310180436533_OrderRep.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310180541291_ShippingCost.cs" />
+    <Compile Include="Migrations\202310180541291_ShippingCost.Designer.cs">
+      <DependentUpon>202310180541291_ShippingCost.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DietaryRecommendation.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
@@ -615,6 +619,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310180436533_OrderRep.resx">
       <DependentUpon>202310180436533_OrderRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310180541291_ShippingCost.resx">
+      <DependentUpon>202310180541291_ShippingCost.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

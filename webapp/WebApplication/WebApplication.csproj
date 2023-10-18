@@ -337,6 +337,7 @@
     <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Models\AddressLabelViewModel.cs" />
     <Compile Include="Models\IngredientViewModel.cs" />
+    <Compile Include="Models\IngredientItem.cs" />
     <Compile Include="Models\SortableItemsViewModel.cs" />
     <Compile Include="Models\SortableItem.cs" />
     <Compile Include="Models\ParasiteCleanseViewModel.cs" />
@@ -1494,6 +1495,7 @@
     <Content Include="Views\Shared\EditorTemplates\IngredientCategory.cshtml" />
     <Content Include="Views\Products\EditIngredients.cshtml" />
     <Content Include="Views\Products\_EditIngredientsFields.cshtml" />
+    <Content Include="Views\Shared\MaintenanceComplete.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

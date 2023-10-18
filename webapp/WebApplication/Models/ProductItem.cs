@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using K9.Base.Globalisation;
 using K9.DataAccessLayer.Attributes;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Models
 {
@@ -15,6 +16,18 @@ namespace K9.WebApplication.Models
         [Required(ErrorMessageResourceType = typeof(Dictionary),
             ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public string ProductSubTitle { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CategoryLabel)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        public string CategoryText  { get; set; }
+
+        /// <summary>
+        /// Used for labels in production
+        /// </summary>
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ItemCodeLabel)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        public int ItemCode { get; set; }
+
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]

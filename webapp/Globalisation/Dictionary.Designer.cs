@@ -1522,6 +1522,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download Ingredients as CSV.
+        /// </summary>
+        public static string DownloadIngredientsCsv {
+            get {
+                return ResourceManager.GetString("DownloadIngredientsCsv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Download Orders as CSV.
         /// </summary>
         public static string DownloadOrdersCsv {
@@ -2644,6 +2653,15 @@ namespace K9.Globalisation {
         public static string MailChimpImportSuccess {
             get {
                 return ResourceManager.GetString("MailChimpImportSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maintenance script completed successfully..
+        /// </summary>
+        public static string MaintenanceComplete {
+            get {
+                return ResourceManager.GetString("MaintenanceComplete", resourceCulture);
             }
         }
         
@@ -4317,6 +4335,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Run Maintenance Script.
+        /// </summary>
+        public static string RunMaintenanceScript {
+            get {
+                return ResourceManager.GetString("RunMaintenanceScript", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sale.
         /// </summary>
         public static string Sale {
@@ -4466,6 +4493,15 @@ namespace K9.Globalisation {
         public static string Shaking {
             get {
                 return ResourceManager.GetString("Shaking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shipping.
+        /// </summary>
+        public static string ShippingLabel {
+            get {
+                return ResourceManager.GetString("ShippingLabel", resourceCulture);
             }
         }
         

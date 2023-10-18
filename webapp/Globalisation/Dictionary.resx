@@ -1876,4 +1876,16 @@
   <data name="Vitamin" xml:space="preserve">
     <value>Vitamin</value>
   </data>
+  <data name="DownloadIngredientsCsv" xml:space="preserve">
+    <value>Download Ingredients as CSV</value>
+  </data>
+  <data name="MaintenanceComplete" xml:space="preserve">
+    <value>Maintenance script completed successfully.</value>
+  </data>
+  <data name="RunMaintenanceScript" xml:space="preserve">
+    <value>Run Maintenance Script</value>
+  </data>
+  <data name="ShippingLabel" xml:space="preserve">
+    <value>Shipping</value>
+  </data>
 </root>

@@ -1,6 +1,16 @@
 ﻿@using K9.Base.WebApplication.Extensions
+@using K9.DataAccessLayer.Enums
+@using K9.WebApplication.Constants
 @model int?
-@{
-}
 
-@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectList<Order>(Model, true, "FullName"))
+@{
+    var orderItems = this.GetDropdownData().GetDataSet<Order>(true, "FullName");
+    var completeOrders = orderItems.Where(e => e.Name.Contains("Complete")).Select(e => e.Id).ToList();
+    var orderedItems = orderItems
+        .OrderBy(e => completeOrders.Contains(e.Id))
+        .ThenByDescending(e => e.Id);
+}
+@Html.BootstrapDropdownFor(model => model, new SelectList(orderedItems,
+    "Id",
+    "Name",
+    Model))

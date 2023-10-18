@@ -46,6 +46,10 @@ namespace K9.DataAccessLayer.Models
 	        Name = Globalisation.Strings.Labels.IngredientTypeLabel)]
 	    public EIngredientType IngredientType { get; set; }
 
+	    [Display(ResourceType = typeof(Globalisation.Dictionary),
+	        Name = Globalisation.Strings.Labels.IngredientTypeLabel)]
+	    public string IngredientTypeText => IngredientType.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+
 	    public string MeasuredIn => GetMeasuredInText();
 	    
 	    public string MeasuredInForLargeQuantity => GetMeasuredInForLargeQuantityText();

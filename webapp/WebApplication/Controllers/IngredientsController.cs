@@ -1,16 +1,18 @@
 ﻿using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
+using K9.DataAccessLayer.Interfaces;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Extensions;
+using K9.WebApplication.Models;
 using K9.WebApplication.Services;
+using ServiceStack.Text;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Interfaces;
-using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -33,14 +35,7 @@ namespace K9.WebApplication.Controllers
             RecordBeforeUpdated += IngredientsController_RecordBeforeUpdated;
             RecordBeforeDetails += IngredientsController_RecordBeforeDetails;
         }
-
-        [RequirePermissions(Permission = Permissions.Edit)]
-        public ActionResult UpdateItemCodes()
-        {
-            _ingredientService.UpdateIngredientCategories();
-            return RedirectToAction("Index");
-        }
-
+        
         public ActionResult EditList()
         {
             return View(Repository.List().OrderBy(e => e.Name).ToList());
@@ -123,6 +118,29 @@ namespace K9.WebApplication.Controllers
             }
 
             return RedirectToAction("Index");
+        }
+
+        [Route("ingredients/export/csv")]
+        public ActionResult DownloadIngredientsCsv()
+        {
+            var ingredients = _ingredientService.List(true);
+            var ingredientsItems = new List<IngredientItem>();
+
+            foreach (var ingredient in ingredients)
+            {
+                var ingredientItem = ingredient.MapTo<IngredientItem>();
+                ingredientsItems.Add(ingredientItem);
+            }
+
+            var data = ingredientsItems.ToCsv();
+
+            Response.Clear();
+            Response.ContentType = "application/CSV";
+            Response.AddHeader("content-disposition", $"attachment; filename=\"Ingredients.csv\"");
+            Response.Write(data);
+            Response.End();
+
+            return new EmptyResult();
         }
 
         private void IngredientsController_RecordBeforeDetails(object sender, CrudEventArgs e)

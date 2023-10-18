@@ -47,14 +47,7 @@ namespace K9.WebApplication.Controllers
         {
             return View(Repository.Find(id));
         }
-
-        [RequirePermissions(Permission = Permissions.Edit)]
-        public ActionResult UpdateItemCodes()
-        {
-            _productService.UpdateProductCategories();
-            return RedirectToAction("Index");
-        }
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         [RequirePermissions(Permission = Permissions.Create)]

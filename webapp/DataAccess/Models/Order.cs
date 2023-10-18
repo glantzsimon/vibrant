@@ -29,7 +29,7 @@ namespace K9.DataAccessLayer.Models
         public Guid ExternalId { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
-        public string OrderNumber { get;set; }
+        public string OrderNumber { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
@@ -41,7 +41,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FullNameLabel)]
         public string FullName { get; set; }
 
-        public string GetFullName() => $"{Name} - {RequestedOn.ToShortDateString()}";
+        public string GetFullName() => $"{Name} - {RequestedOn.ToShortDateString()} - {OrderStatusText}";
 
         [UIHint("User")]
         [Required]
@@ -75,7 +75,7 @@ namespace K9.DataAccessLayer.Models
         public int? RepId { get; set; }
 
         public virtual Contact Rep { get; set; }
-        
+
         [UIHint("OrderType")]
         [Required]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
@@ -131,9 +131,19 @@ namespace K9.DataAccessLayer.Models
             Name = Globalisation.Strings.Labels.OrderStatusLabel)]
         public string OrderStatusText => OrderStatus.GetAttribute<EnumDescriptionAttribute>().GetDescription();
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShippingLabel)]
         [DataType(DataType.Currency)]
-        public double TotalPrice => Products?.Sum(e => e.TotalPrice) + ProductPacks?.Sum(e => e.TotalPrice) ?? 0;
+        public double ShippingCost { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShippingLabel)]
+        public string FormattedShippingCost => double.Parse(ShippingCost.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalPrice => TotalProductsPrice + TotalProductPacksPrice + ShippingCost;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        public string FormattedTotalPrice => double.Parse(TotalPrice.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
@@ -142,10 +152,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductPacksPriceLabel)]
         [DataType(DataType.Currency)]
         public double TotalProductPacksPrice => ProductPacks?.Sum(e => e.TotalPrice) ?? 0;
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
-        public string FormattedTotalPrice => double.Parse(TotalPrice.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
-
+        
         [UIHint("Percentage")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public double? Discount { get; set; }
@@ -159,7 +166,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public string FormattedDiscountAmount => double.Parse(DiscountAmount.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
-  
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         [DataType(DataType.Currency)]
         public double GrandTotal => TotalPrice - DiscountAmount;
@@ -169,7 +176,7 @@ namespace K9.DataAccessLayer.Models
         public int TotalProductPacks => ProductPacks?.Sum(e => e.Amount) ?? 0;
 
         public virtual IEnumerable<OrderProduct> OrderProducts { get; set; }
-        
+
         #region Invoice
 
         private int TotalItems => Products?.Count ?? 0 + ProductPacks?.Count ?? 0;
@@ -208,16 +215,16 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PricesListLabel)]
         public string PricesList => GetOrderedProducts().Select(e => e.Price.ToCurrency()).ToDisplayList();
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalsLabel)]
         public string TotalsList => GetOrderedProducts().Select(e => e.TotalPrice.ToCurrency()).ToDisplayList();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTotalLabel)]
         public string FormattedSubTotal => TotalPrice.ToCurrency();
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public string FormattedDiscount => DiscountAmount.ToCurrency();
-      
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         public string FormattedGrandTotal => GrandTotal.ToCurrency();
 

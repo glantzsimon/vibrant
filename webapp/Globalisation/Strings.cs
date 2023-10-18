@@ -52,6 +52,7 @@
             public const string PriceSmallPackDiscount1Label = "PriceSmallPackDiscount1Label";
             public const string PriceSmallPackDiscount2Label = "PriceSmallPackDiscount2Label";
             public const string PriceLabel = "PriceLabel";
+            public const string ShippingLabel = "ShippingLabel";
             public const string DiscountLabel = "DiscountLabel";
             public const string PriceSmallPackLabel = "PriceSmallPackLabel";
             public const string CostOfMaterialsLabel = "CostOfMaterialsLabel";
