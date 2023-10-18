@@ -25,7 +25,7 @@ namespace K9.DataAccessLayer.Models
         [Required]
         public double AmountRedeemed { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountRedeemedLabel)]
         public string FormattedAmountRedeemed => double.Parse(AmountRedeemed.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RedeemedOnLabel)]
