@@ -164,7 +164,7 @@ namespace K9.WebApplication.Controllers
             }
 
             var categoryHasChanged = original.Category != ingredient.Category;
-            if (categoryHasChanged)
+            if (categoryHasChanged || original.ItemCode == 0)
             {
                 var newItemCode = _productService.GetItemCode(ingredient, new List<ICategorisable>(Repository.List()));
                 ingredient.ItemCode = newItemCode;

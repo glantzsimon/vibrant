@@ -69,7 +69,7 @@ namespace K9.DataAccessLayer.Models
         public float AmountPer100Capsules => AmountPerConcentrationPerBatch * 100;
 
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsAddedLabel)]
         public bool IsAdded { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]

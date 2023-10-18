@@ -66,7 +66,7 @@ namespace K9.WebApplication.Controllers
         {
             return View(Repository.Find(id));
         }
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         [RequirePermissions(Permission = Permissions.Create)]
@@ -106,7 +106,7 @@ namespace K9.WebApplication.Controllers
             {
                 var ingredient = product.IngredientsWithSubstitutes.FirstOrDefault(e =>
                     e.Ingredient.Id == productIngredient.IngredientId);
-                
+
                 if (ingredient != null)
                     ingredient.IsSelected = productIngredient.IsSelected;
             }
@@ -256,6 +256,11 @@ namespace K9.WebApplication.Controllers
             if (string.IsNullOrEmpty(product.SeoFriendlyId) || titleHasChanged && original.SeoFriendlyId == original.Name.ToSeoFriendlyString())
             {
                 product.SeoFriendlyId = product.Name.ToSeoFriendlyString();
+            }
+
+            if (original.ItemCode == 0)
+            {
+                product.ItemCode = _productService.GetItemCode(product, new List<ICategorisable>(Repository.List()));
             }
         }
 

@@ -1,8 +1,14 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
+@using K9.DataAccessLayer.Enums
 @using K9.SharedLibrary.Authentication
+@using K9.SharedLibrary.Extensions
 @using K9.WebApplication.Helpers
 @model Product
+
+@{
+    var lastCategory = ECategory.Undefined;
+}
 
 @Html.HiddenFor(e => e.AmountPerServing)
 
@@ -18,34 +24,44 @@
     </div>
 }
 <div class="row table-row">
-    <div class="col-xs-4">
+    <div class="col-xs-5">
         @Html.LabelFor(e => Model.Ingredients[0].Name)
     </div>
-    <div class="col-xs-4">
+    <div class="col-xs-3">
         @Html.LabelFor(e => Model.Ingredients[0].AmountPer100Capsules)
     </div>
-    <div class="col-xs-1">
+    <div class="col-xs-4">
         @Html.LabelFor(e => Model.Ingredients[0].IsAdded)
-    </div>
-    <div class="col-xs-3">
     </div>
 </div>
 
 @for (int i = 0; i < Model.IngredientsWithSubstitutes.Count; i++)
 {
     var completeClass = Model.IngredientsWithSubstitutes[i].IsSelected ? "complete-rows" : "";
+    var ingredientCategory = Model.IngredientsWithSubstitutes[i].Ingredient.Category;
 
     @Html.HiddenFor(e => Model.IngredientsWithSubstitutes[i].IngredientId)
+    
+    if (lastCategory != Model.IngredientsWithSubstitutes[i].Ingredient.Category)
+    {
+        lastCategory = ingredientCategory;
+
+        <div class="row table-row">
+            <div class="col-xs-12">
+                <h4>@Model.IngredientsWithSubstitutes[i].Ingredient.CategoryText</h4>
+            </div>
+        </div>
+    }
 
     <div class="row table-row @completeClass">
-        <div class="col-xs-4">
-            @Html.DisplayFor(e => Model.IngredientsWithSubstitutes[i].Ingredient.Name)
+        <div class="col-xs-5">
+            <div><span class="bold">@Model.IngredientsWithSubstitutes[i].Ingredient.ItemCode</span> - @Model.IngredientsWithSubstitutes[i].Ingredient.Name</div>
             @if (!Model.IngredientsWithSubstitutes[i].Ingredient.IsInStock)
             {
                 <span class="field-validation-error">@Dictionary.OutOfStock</span>
             }
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-3">
             @Html.DisplayFor(e => Model.IngredientsWithSubstitutes[i].FormattedLargeAmountPer100Capsules)
         </div>
         <div class="col-xs-1">

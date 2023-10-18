@@ -2449,11 +2449,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Added.
+        ///   Looks up a localized string similar to Added to Powder Mix.
         /// </summary>
-        public static string isAddedLabel {
+        public static string IsAddedLabel {
             get {
-                return ResourceManager.GetString("isAddedLabel", resourceCulture);
+                return ResourceManager.GetString("IsAddedLabel", resourceCulture);
             }
         }
         

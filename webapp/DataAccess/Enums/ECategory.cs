@@ -4,6 +4,7 @@ namespace K9.DataAccessLayer.Enums
 {
     public enum ECategory
     {
+        Undefined,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.AminoAcid)]
         AminoAcid = 100000,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Mineral)]

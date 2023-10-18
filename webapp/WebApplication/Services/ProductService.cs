@@ -200,7 +200,7 @@ namespace K9.WebApplication.Services
 
                 product.Ingredients = product.ProductIngredients.ToList();
 
-                product.IngredientsWithSubstitutes = productIngredientsWithSubstitutes.OrderByDescending(e => e.Amount)
+                product.IngredientsWithSubstitutes = productIngredientsWithSubstitutes.OrderBy(e => e.Ingredient.Category).ThenByDescending(e => e.Amount)
                     .ThenBy(e => e.Ingredient.Name).ToList();
 
                 return product;

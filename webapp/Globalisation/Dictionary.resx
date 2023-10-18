@@ -1828,8 +1828,8 @@
   <data name="ProductIngredientSubstitutes" xml:space="preserve">
     <value>Product Ingredient Substitutes</value>
   </data>
-  <data name="isAddedLabel" xml:space="preserve">
-    <value>Added</value>
+  <data name="IsAddedLabel" xml:space="preserve">
+    <value>Added to Powder Mix</value>
   </data>
   <data name="MarkOutOfStock" xml:space="preserve">
     <value>Mark Out of Stock</value>

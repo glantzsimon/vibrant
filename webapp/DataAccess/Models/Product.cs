@@ -88,6 +88,9 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         public List<ProductIngredient> IngredientsWithSubstitutes { get; set; }
 
+        public List<ECategory> IngredientsCategories =>
+            IngredientsWithSubstitutes.Select(e => e.Ingredient.Category).Distinct().OrderBy(e => e).ToList();
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsMainLabel)]
         public bool IsMain { get; set; }
 
