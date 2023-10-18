@@ -34,6 +34,13 @@ namespace K9.WebApplication.Controllers
             RecordBeforeDetails += IngredientsController_RecordBeforeDetails;
         }
 
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult UpdateItemCodes()
+        {
+            _ingredientService.UpdateIngredientCategories();
+            return RedirectToAction("Index");
+        }
+
         public ActionResult EditList()
         {
             return View(Repository.List().OrderBy(e => e.Name).ToList());
@@ -53,6 +60,8 @@ namespace K9.WebApplication.Controllers
                 item.QuantityInStock = ingredient.QuantityInStock;
                 item.Concentration = ingredient.Concentration;
                 item.RecommendedDailyAllownace = ingredient.RecommendedDailyAllownace;
+                item.Category = ingredient.Category;
+                item.ItemCode = ingredient.ItemCode;
 
                 Repository.Update(item);
             }
@@ -131,6 +140,13 @@ namespace K9.WebApplication.Controllers
             {
                 ingredient.SeoFriendlyId = ingredient.Name.ToSeoFriendlyString();
             }
+
+            var categoryHasChanged = original.Category != ingredient.Category;
+            if (categoryHasChanged)
+            {
+                var newItemCode = _productService.GetItemCode(ingredient, new List<ICategorisable>(Repository.List()));
+                ingredient.ItemCode = newItemCode;
+            }
         }
 
         private void IngredientsController_RecordBeforeCreated(object sender, CrudEventArgs e)
@@ -140,7 +156,7 @@ namespace K9.WebApplication.Controllers
             {
                 ingredient.SeoFriendlyId = ingredient.Name.ToSeoFriendlyString();
             }
-            ingredient.ItemCode = _productService.CreateItemCode(ingredient, new List<ICategorisable>(_ingredientService.List()));
+            ingredient.ItemCode = _productService.GetItemCode(ingredient, new List<ICategorisable>(Repository.List()));
         }
     }
 }

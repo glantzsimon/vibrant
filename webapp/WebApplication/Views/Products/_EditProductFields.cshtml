@@ -1,4 +1,5 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
 @model List<Product>
 
 
@@ -79,6 +80,11 @@
             @Html.BootstrapEditorFor(e => Model[i].ItemCode)
         </div>
     </div>
-    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            @Html.CollapsiblePanel(Dictionary.Ingredients, Html.Partial("../Products/_IngredientsSummary", Model[i]).ToString())
+        </div>
+    </div>
+    <hr />
 }
 

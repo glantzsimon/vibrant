@@ -17,5 +17,6 @@ namespace K9.WebApplication.Services
         void UpdateIngredientPriorities(List<SortableItem> items);
         void EditIngredientSubstitutes(Ingredient ingredient);
         void MarkIngredientAsOutOfStock(int id);
+        void UpdateIngredientCategories();
     }
 }

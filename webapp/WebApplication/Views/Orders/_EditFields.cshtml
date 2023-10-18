@@ -4,6 +4,7 @@
 
 @Html.HiddenFor(model => model.ExternalId)
 @Html.HiddenFor(model => model.OrderNumber)
+@Html.HiddenFor(model => model.UserId)
 
 <div class="row">
     <div class="col-sm-6">
@@ -18,7 +19,7 @@
         @Html.BootstrapEditorFor(model => model.ContactId)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.UserId)
+        @Html.BootstrapEditorFor(model => model.RepId)
     </div>
 </div>
 <div class="row">

@@ -68,6 +68,14 @@ namespace K9.DataAccessLayer.Models
             Name = Globalisation.Strings.Labels.CustomerLabel)]
         public string ContactName { get; set; }
 
+        [UIHint("Contact")]
+        [ForeignKey("Rep")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.RepLabel)]
+        public int? RepId { get; set; }
+
+        public virtual Contact Rep { get; set; }
+        
         [UIHint("OrderType")]
         [Required]
         [Display(ResourceType = typeof(Globalisation.Dictionary),

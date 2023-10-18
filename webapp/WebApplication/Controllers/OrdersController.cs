@@ -14,6 +14,7 @@ using System.Linq;
 using System.Web.Mvc;
 using K9.DataAccessLayer.Attributes;
 using ServiceStack.Text;
+using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
@@ -224,9 +225,7 @@ namespace K9.WebApplication.Controllers
             var order = e.Item as Order;
             order.RequestedOn = DateTime.Now;
             order.DueBy = DateTime.Today.AddDays(11);
-            
-            int.TryParse(_defaultValues.DefaultUserId, out var userId);
-            order.UserId = userId > 0 ? userId : 3;
+            order.UserId = WebSecurity.CurrentUserId;
 
             UpdateOrderNumberIfEmpty(order);
         }

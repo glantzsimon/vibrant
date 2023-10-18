@@ -1,15 +1,17 @@
-﻿using System.Collections.Generic;
-using K9.Base.DataAccessLayer.Attributes;
+﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Interfaces;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Enums;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Interfaces;
+using K9.DataAccessLayer.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -18,14 +20,16 @@ namespace K9.DataAccessLayer.Models
 	{
 	    [UIHint("IngredientCategory")]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CategoryLabel)]
-	    //[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 	    public ECategory Category { get; set; }
+
+	    public string CategoryText => Category.GetAttribute<EnumDescriptionAttribute>().GetDescription().Pluralise();
         
 	    /// <summary>
 	    /// Used for labels in production
 	    /// </summary>
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ItemCodeLabel)]
-	    //[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 	    public int ItemCode { get; set; }
 
 	    public virtual IEnumerable<IngredientSubstitute> IngredientSubstitutes { get; set; }

@@ -14,11 +14,13 @@ namespace K9.WebApplication.Constants
 
         public static List<ECategory> IngredientCategories = new List<ECategory>
         {
+            ECategory.AminoAcid,
             ECategory.Vitamin,
             ECategory.Mineral,
             ECategory.Phytonutrient,
             ECategory.Herb,
-            ECategory.Superfood
+            ECategory.Superfood,
+            ECategory.Other
         };
 
         public static List<ECategory> ProductCategories = new List<ECategory>

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Ajax.Utilities;
 
 namespace K9.DataAccessLayer.Helpers
 {
@@ -45,6 +46,11 @@ namespace K9.DataAccessLayer.Helpers
         public static string ToCurrency(this double value, string currencyFormat = "฿")
         {
             return $"{currencyFormat}{value:n0}";
+        }
+
+        public static string Pluralise(this string value)
+        {
+            return $"{value}s";
         }
     }
 }

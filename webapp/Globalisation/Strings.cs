@@ -64,6 +64,7 @@
             public const string AmountToDonateLabel = "AmountToDonateLabel";
             public const string AmountToPayLabel = "AmountToPayLabel";
             public const string CustomerLabel = "CustomerLabel";
+            public const string RepLabel = "RepLabel";
             public const string RequestedOnLabel = "RequestedOnLabel";
             public const string StartedOnLabel = "StartedOnLabel";
             public const string MadeOnLabel = "MadeOnLabel";
@@ -221,6 +222,7 @@
             public const string Herb = "Herb";
             public const string Superfood = "Superfood";
             public const string Phytonutrient = "Phytonutrient";
+            public const string AminoAcid = "AminoAcid";
             public const string ProductPack = "ProductPack";
             public const string Activity = "Activity";
             public const string Activities = "Activities";

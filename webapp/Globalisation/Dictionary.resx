@@ -1834,6 +1834,12 @@
   <data name="MarkOutOfStock" xml:space="preserve">
     <value>Mark Out of Stock</value>
   </data>
+  <data name="AminoAcid" xml:space="preserve">
+    <value>Amino Acid</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
   <data name="CategoryLabel" xml:space="preserve">
     <value>Category</value>
   </data>
@@ -1857,6 +1863,9 @@
   </data>
   <data name="Phytonutrient" xml:space="preserve">
     <value>Phytonutrient</value>
+  </data>
+  <data name="RepLabel" xml:space="preserve">
+    <value>Rep</value>
   </data>
   <data name="Superfood" xml:space="preserve">
     <value>Superfood</value>

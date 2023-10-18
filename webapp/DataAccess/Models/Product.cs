@@ -29,14 +29,14 @@ namespace K9.DataAccessLayer.Models
         
         [UIHint("ProductCategory")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CategoryLabel)]
-        //[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public ECategory Category { get; set; }
 
         /// <summary>
         /// Used for labels in production
         /// </summary>
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ItemCodeLabel)]
-        //[Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public int ItemCode { get; set; }
 
         [NotMapped]
@@ -46,6 +46,9 @@ namespace K9.DataAccessLayer.Models
         [UIHint("Product")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductLabel)]
         public int ProductId => Id;
+
+        [NotMapped]
+        public List<Ingredient> IngredientsSelectList { get; set; }
 
         [UIHint("ProductType")]
         [Required]

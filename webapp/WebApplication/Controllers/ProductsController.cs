@@ -150,7 +150,16 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult EditIngredients(int id = 0)
         {
-            return RedirectToAction("EditIngredientsForProduct", "ProductIngredients", new { id });
+            return View(_productService.FindWithIngredientsSelectList(id));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult EditIngredients(Product model)
+        {
+            _productService.EditIngredients(model);
+            return RedirectToAction("Index");
         }
 
         public ActionResult View(int productId)
@@ -242,7 +251,7 @@ namespace K9.WebApplication.Controllers
                 product.SeoFriendlyId = product.Name.ToSeoFriendlyString();
             }
 
-            product.ItemCode = _productService.CreateItemCode(product, new List<ICategorisable>(_productService.List()));
+            product.ItemCode = _productService.GetItemCode(product, new List<ICategorisable>(Repository.List()));
             product.ExternalId = Guid.NewGuid();
         }
 

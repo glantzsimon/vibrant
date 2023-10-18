@@ -93,6 +93,23 @@ namespace K9.WebApplication.Services
             return product;
         }
 
+        public Product FindWithIngredientsSelectList(int id)
+        {
+            var model = Find(id);
+            var existingIngredients = _productIngredientsRepository.Find(e => e.ProductId == id).ToList();
+            var selectListItems = _ingredientsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+            foreach (var ingredient in selectListItems)
+            {
+                ingredient.IsSelected = existingIngredients.Exists(e => e.IngredientId == ingredient.Id);
+            }
+
+            model.IngredientsSelectList = selectListItems.OrderByDescending(e => e.IsSelected)
+                .ThenBy(e => e.Category)
+                .ThenBy(e => e.Name).ToList();
+
+            return model;
+        }
+
         public ProductPack FindPack(Guid id)
         {
             var pack = _productPackRepository.Find(e => e.ExternalId == id).FirstOrDefault();
@@ -352,13 +369,33 @@ namespace K9.WebApplication.Services
             }
         }
 
+        public void EditIngredients(Product product)
+        {
+            var existingIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id).ToList();
+            var newItems = product.IngredientsSelectList.Where(e => e.IsSelected)
+                .Where(i => !existingIngredients.Select(e => e.IngredientId).Contains(i.Id)).ToList();
+            var itemsToDelete = existingIngredients.Where(i => !product.IngredientsSelectList.Where(e => e.IsSelected).Select(e => e.Id).Contains(i.IngredientId)).Select(e => e.Id).ToList();
+
+            _productIngredientsRepository.DeleteBatch(itemsToDelete);
+            
+            foreach (var item in newItems)
+            {
+                var newItem = new ProductIngredient
+                {
+                    ProductId = product.Id,
+                    IngredientId = item.Id
+                };
+                _productIngredientsRepository.Create(newItem);
+            }
+        }
+
         public void UpdateProductCategories()
         {
-            foreach (var product in _productsRepository.List())
-            {
-                product.Category = ECategory.DietarySupplement;
-                _productsRepository.Update(product);
-            }
+            //foreach (var product in _productsRepository.List())
+            //{
+            //    product.Category = ECategory.DietarySupplement;
+            //    _productsRepository.Update(product);
+            //}
 
             var itemCode = (int)ECategory.DietarySupplement + Constants.Constants.ItemCodeGap;
 

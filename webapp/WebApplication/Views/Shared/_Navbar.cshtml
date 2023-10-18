@@ -75,6 +75,8 @@
 
                         <li class="@ViewContext.GetActiveClass("IngredientsPurchaseList", "Ingredients") sub-item"><a href="@Url.Action("IngredientsPurchaseList", "Ingredients")">@Dictionary.IngredientsPurchaseList</a></li>
 
+                        <li class="@ViewContext.GetActiveClass("UpdateItemCodes", "Ingredients") sub-item"><a href="@Url.Action("UpdateItemCodes", "Ingredients")">@Dictionary.UpdateItemCodes</a></li>
+
                         <li class="divider"></li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "Orders") sub-item"><a href="@Url.Action("Index", "Orders")">@Dictionary.Orders</a></li>
@@ -86,7 +88,7 @@
                         <li class="@ViewContext.GetActiveClass("Index", "Products") sub-item"><a href="@Url.Action("Index", "Products")">@Dictionary.Products</a></li>
                         <li class="@ViewContext.GetActiveClass("EditList", "Products") sub-item"><a href="@Url.Action("EditList", "Products")">@Dictionary.ProductsList</a></li>
 
-                        <li class="@ViewContext.GetActiveClass("UpdateItemCodes", "Products") sub-item"><a href="@Url.Action("UpdateItemCodes", "Products")">@Dictionary.UpdateItemCodes</a></li>
+                        @*<li class="@ViewContext.GetActiveClass("UpdateItemCodes", "Products") sub-item"><a href="@Url.Action("UpdateItemCodes", "Products")">@Dictionary.UpdateItemCodes</a></li>*@
 
                         <li class="@ViewContext.GetActiveClass("DownloadProductsCsv", "Products") sub-item"><a target="_blank" target="_blank" href="@Url.Action("DownloadProductsCsv", "Products")">@Dictionary.DownloadProductsCsv</a></li>
 

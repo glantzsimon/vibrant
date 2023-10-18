@@ -5,6 +5,6 @@ namespace K9.WebApplication.Services
 {
     public interface ICategorisableService
     {
-        int CreateItemCode(ICategorisable model, List<ICategorisable> items);
+        int GetItemCode(ICategorisable model, List<ICategorisable> items);
     }
 }

@@ -151,6 +151,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amino Acid.
+        /// </summary>
+        public static string AminoAcid {
+            get {
+                return ResourceManager.GetString("AminoAcid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ammonia Detox.
         /// </summary>
         public static string AmmoniaDetox {
@@ -541,6 +550,15 @@ namespace K9.Globalisation {
         public static string CardDetails {
             get {
                 return ResourceManager.GetString("CardDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category.
+        /// </summary>
+        public static string Category {
+            get {
+                return ResourceManager.GetString("Category", resourceCulture);
             }
         }
         
@@ -4259,6 +4277,15 @@ namespace K9.Globalisation {
         public static string RegularPrice {
             get {
                 return ResourceManager.GetString("RegularPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rep.
+        /// </summary>
+        public static string RepLabel {
+            get {
+                return ResourceManager.GetString("RepLabel", resourceCulture);
             }
         }
         

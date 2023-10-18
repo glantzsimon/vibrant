@@ -1,4 +1,5 @@
-﻿using K9.DataAccessLayer.Models;
+﻿using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Models;
@@ -7,7 +8,6 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Services
 {
@@ -212,6 +212,7 @@ namespace K9.WebApplication.Services
             var phytoNutrients = ingredients.Where(e => e.Category == ECategory.Phytonutrient).ToList();
             var herbs = ingredients.Where(e => e.Category == ECategory.Herb).ToList();
             var superfoods = ingredients.Where(e => e.Category == ECategory.Superfood).ToList();
+            var others = ingredients.Where(e => e.Category == ECategory.Other).ToList();
 
             var itemCode = (int)ECategory.Vitamin + Constants.Constants.ItemCodeGap;
             foreach (var ingredient in vitamins.OrderBy(e => e.Name).ToList())
@@ -247,6 +248,14 @@ namespace K9.WebApplication.Services
 
             itemCode = (int)ECategory.Superfood + Constants.Constants.ItemCodeGap;
             foreach (var ingredient in superfoods.OrderBy(e => e.Name).ToList())
+            {
+                ingredient.ItemCode = itemCode;
+                _ingredientsRepository.Update(ingredient);
+                itemCode += Constants.Constants.ItemCodeGap;
+            }
+
+            itemCode = (int)ECategory.Other + Constants.Constants.ItemCodeGap;
+            foreach (var ingredient in others.OrderBy(e => e.Name).ToList())
             {
                 ingredient.ItemCode = itemCode;
                 _ingredientsRepository.Update(ingredient);

@@ -148,9 +148,9 @@ namespace K9.WebApplication.Tests.Unit.Services
         [Fact]
         public void CreateItemCode()
         {
-            var result = _productService.CreateItemCode(_newProduct, new List<ICategorisable>(_products));
-            var result2 = _productService.CreateItemCode(_newProductAtEnd, new List<ICategorisable>(_products));
-            var result3 = _productService.CreateItemCode(_newProductAtBeginning, new List<ICategorisable>(_products));
+            var result = _productService.GetItemCode(_newProduct, new List<ICategorisable>(_products));
+            var result2 = _productService.GetItemCode(_newProductAtEnd, new List<ICategorisable>(_products));
+            var result3 = _productService.GetItemCode(_newProductAtBeginning, new List<ICategorisable>(_products));
 
             Assert.Equal(_newProduct.ExpectedItemCode, result);
             Assert.Equal(_newProductAtEnd.ExpectedItemCode, result2);
