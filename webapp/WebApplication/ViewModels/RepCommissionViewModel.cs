@@ -31,7 +31,7 @@ namespace K9.WebApplication.ViewModels
         [DataType(DataType.Currency)]
         public double AmountRedeemed { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountRedeemedLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalAmountRedeemedLabel)]
         public string FormattedAmountRedeemed => double.Parse(AmountRedeemable.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
     }
