@@ -16,7 +16,7 @@ namespace K9.WebApplication.Controllers
                 {
                     if (value)
                     {
-                        original.PaidOn = DateTime.Now;
+                        original.PaidOn = DateTime.Today;
                     }
                     else
                     {
@@ -46,7 +46,7 @@ namespace K9.WebApplication.Controllers
                 {
                     if (value)
                     {
-                        original.MadeOn = DateTime.Now;
+                        original.MadeOn = DateTime.Today;
                     }
                     else
                     {
@@ -87,7 +87,7 @@ namespace K9.WebApplication.Controllers
                 {
                     if (value)
                     {
-                        original.CompletedOn = DateTime.Now;
+                        original.CompletedOn = DateTime.Today;
                     }
                     else
                     {

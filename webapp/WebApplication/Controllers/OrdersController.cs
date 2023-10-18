@@ -242,7 +242,7 @@ namespace K9.WebApplication.Controllers
         private void OrdersController_RecordBeforeCreate(object sender, CrudEventArgs e)
         {
             var order = e.Item as Order;
-            order.RequestedOn = DateTime.Now;
+            order.RequestedOn = DateTime.Today;
             order.DueBy = DateTime.Today.AddDays(11);
             order.UserId = WebSecurity.CurrentUserId;
 
