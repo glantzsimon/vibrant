@@ -1,7 +1,8 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Helpers
-@model K9.WebApplication.ViewModels.OrdersReviewViewModel
+@using K9.WebApplication.ViewModels
+@model OrdersReviewViewModel
 
 <ul class="nav nav-pills">
     <li class="active"><a data-toggle="pill" href="#products">@Dictionary.Products</a></li>
@@ -25,7 +26,7 @@
 <script type="text/javascript">
 
     $(function () {
-        $("#@nameof(Order.ShowCompleted)").click(function () {
+        $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.ShowCompleted)}")").click(function () {
             var showComplete = $(this).is(":checked");
             var $hiddenRows = $(".complete-rows");
 

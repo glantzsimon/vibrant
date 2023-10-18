@@ -141,11 +141,12 @@
 	            5000);
 	    };
 
-	    $.fn.processResultAndShowPopup = function(result) {
+	    $.fn.processResultAndShowPopup = function(result, fn) {
 	        if (!result.success) {
 	            $.fn.showFailPopup();
 	        } else {
 	            $.fn.showSuccessPopup();
+	            window.setTimeout(fn, 3000);
 	        }
 	    };
 

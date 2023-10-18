@@ -84,7 +84,9 @@
                     value: value
                 }, "POST").done(
                 function(result) {
-                    $.fn.processResultAndShowPopup(result);
+                    $.fn.processResultAndShowPopup(result, function() {
+                        $("#SelectedOrderId").closest("form").submit();
+                    });
                 });
         });
 
@@ -97,7 +99,9 @@
                     value: value
                 }, "POST").done(
                 function(result) {
-                    $.fn.processResultAndShowPopup(result);
+                    $.fn.processResultAndShowPopup(result, function() {
+                        $("#SelectedOrderId").closest("form").submit();
+                    });
                 });
         });
 
@@ -110,7 +114,9 @@
                     value: value
                 }, "POST").done(
                 function(result) {
-                    $.fn.processResultAndShowPopup(result);
+                    $.fn.processResultAndShowPopup(result, function() {
+                        $("#SelectedOrderId").closest("form").submit();
+                    });
                 });
         });
 
