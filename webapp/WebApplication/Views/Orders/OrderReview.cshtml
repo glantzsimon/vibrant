@@ -1,106 +1,112 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
-@model Order
+@using K9.WebApplication.ViewModels
+@model OrdersReviewViewModel
 @{
     Layout = "../Shared/_LayoutForm.cshtml";
-    ViewBag.SubTitle = $"{Model.Name} {Dictionary.OrderReview}";
-}
-@using (Html.BeginForm())
-{
-    using (Html.BeginBootstrapForm())
-    {
-        @Html.Hidden("index", 0)
-
-        <div class="row">
-            <div class="col-xs-12">
-                @Html.BootstrapEditorFor(model => Model.OrderId)
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.CreateNew, "Create", "Orders", null, "fa-plus-circle")
-            </div>
-        </div>
-    }
+    ViewBag.SubTitle = $"{Model.SelectedOrder.Name} {Dictionary.OrderReview}";
 }
 
-@using (Html.BeginForm("UpdateOrderProgress", "Orders"))
-{
-    using (Html.BeginBootstrapForm())
-    {
-        @Html.HiddenFor(e => e.Id)
+<ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#orderreview">@Dictionary.OrderReview</a></li>
+    <li><a data-toggle="pill" href="#allorders">@Dictionary.AllOrdersOverview</a></li>
+</ul>
 
-        @Html.Partial("_OrderReviewSheet")
+<div class="tab-content">
+    <div id="orderreview" class="tab-pane fade in active padding-top-15">
+        @using (Html.BeginForm())
+        {
+            using (Html.BeginBootstrapForm())
+            {
+                @Html.Hidden("index", 0)
 
-        <hr />
+                <div class="row">
+                    <div class="col-xs-12">
+                        @Html.BootstrapEditorFor(model => Model.SelectedOrderId)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.CreateNew, "Create", "Orders", null, "fa-plus-circle")
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="inline-checkbox">
+                            @Html.BootstrapEditorFor(e => e.SelectedOrder.IsPaid)
+                            @Html.BootstrapEditorFor(e => e.SelectedOrder.IsMade)
+                            @Html.BootstrapEditorFor(e => e.SelectedOrder.IsComplete)
+                        </div>
+                    </div>
+                </div>
+            }
+        }
 
-        @Html.BootstrapEditorFor(e => e.IsPaid)
-        @Html.BootstrapEditorFor(e => e.IsMade)
-        @Html.BootstrapEditorFor(e => e.IsComplete)
+        @using (Html.BeginForm("UpdateOrderProgress", "Orders"))
+        {
+            using (Html.BeginBootstrapForm())
+            {
+                @Html.HiddenFor(e => e.SelectedOrder.Id)
 
-        @Html.Partial("_AjaxPopup")
+                @Html.Partial("_OrderReviewSheet", Model)
 
-        <hr />
+                @Html.Partial("_AjaxPopup")
 
-        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save")
-        @Html.BootstrapBackToListButton()
-        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Previous, "OrderReview", null, new { id = Model.Id, index = -1 }, "fa-arrow-left")
-        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Next, "OrderReview", null, new { id = Model.Id, index = 1 }, "fa-arrow-right")
-    }
-}
+                <hr />
+
+                @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save")
+                @Html.BootstrapBackToListButton()
+                @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Previous, "OrderReview", null, new { id = Model.SelectedOrder.Id, index = -1 }, "fa-arrow-left")
+                @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.Next, "OrderReview", null, new { id = Model.SelectedOrder.Id, index = 1 }, "fa-arrow-right")
+            }
+        }
+    </div>
+    <div id="allorders" class="tab-pane fade padding-top-15">
+        @Html.Partial("_AllOrdersReview")
+    </div>
+</div>
 
 <script type="text/javascript">
     $(function () {
 
-        $("#OrderId").change(function () {
-            $("#OrderId").closest("form").submit();
+        $("#SelectedOrderId").change(function () {
+            $("#SelectedOrderId").closest("form").submit();
         });
 
-        $("#@(nameof(Order.IsPaid))").click(function() {
+        $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.IsPaid)}")").click(function() {
             var value = $(this).is(":checked");
             ajaxcontroller().send("@Url.Action("UpdateOrderIsPaid")",
                 {
-                    id: @Model.Id,
+                    id: @Model.SelectedOrder.Id,
                     value: value
                 }, "POST").done(
                 function(result) {
-                    if (!result.success) {
-                        $("div#fail-popup").show();
-                    } else {
-                        $("div#success-popup").show();
-                    }
+                    $.fn.processResultAndShowPopup(result);
                 });
         });
 
-        $("#@(nameof(Order.IsMade))").click(function() {
+        $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.IsMade)}")").click(function() {
             var value = $(this).is(":checked");
             ajaxcontroller().send("@Url.Action("UpdateOrderIsMade")",
                 {
-                    id: @Model.Id,
+                    id: @Model.SelectedOrder.Id,
                     value: value
                 }, "POST").done(
                 function(result) {
-                    if (!result.success) {
-                        $("div#fail-popup").show();
-                    } else {
-                        $("div#success-popup").show();
-                    }
+                    $.fn.processResultAndShowPopup(result);
                 });
         });
 
-        $("#@(nameof(Order.IsComplete))").click(function() {
+        $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.IsComplete)}")").click(function() {
             var value = $(this).is(":checked");
             ajaxcontroller().send("@Url.Action("UpdateOrderIsComplete")",
                 {
-                    id: @Model.Id,
+                    id: @Model.SelectedOrder.Id,
                     value: value
                 }, "POST").done(
                 function(result) {
-                    if (!result.success) {
-                        $("div#fail-popup").show();
-                    } else {
-                        $("div#success-popup").show();
-                    }
+                    $.fn.processResultAndShowPopup(result);
                 });
         });
 

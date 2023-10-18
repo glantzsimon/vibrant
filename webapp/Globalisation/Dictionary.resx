@@ -1876,11 +1876,17 @@
   <data name="Vitamin" xml:space="preserve">
     <value>Vitamin</value>
   </data>
+  <data name="AllOrdersOverview" xml:space="preserve">
+    <value>All Orders Overview</value>
+  </data>
   <data name="DownloadIngredientsCsv" xml:space="preserve">
     <value>Download Ingredients as CSV</value>
   </data>
   <data name="MaintenanceComplete" xml:space="preserve">
     <value>Maintenance script completed successfully.</value>
+  </data>
+  <data name="OrdersReview" xml:space="preserve">
+    <value>Orders Review</value>
   </data>
   <data name="RecordUpdatedSuccessfully" xml:space="preserve">
     <value>Record Updated Successfully</value>

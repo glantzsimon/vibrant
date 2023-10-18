@@ -1,6 +1,12 @@
-﻿<div id="success-popup" class="display-none">
-    @Html.PopupAlert(EAlertType.Success, Dictionary.RecordUpdatedSuccessfully)
-</div>
-<div id="fail-popup" class="display-none">
-    @Html.PopupAlert(EAlertType.Fail, Dictionary.RecordUpdateFailed)
+﻿<div class="margin-top-10">
+    <div id="success-popup" class="display-none">
+        <div class="alert alert-@EAlertType.Success.ToString().ToLower() fade in">
+            @Dictionary.RecordUpdatedSuccessfully
+        </div>
+    </div>
+    <div id="fail-popup" class="display-none">
+        <div class="alert alert-@EAlertType.Fail.ToString().ToLower() fade in">
+            @Dictionary.RecordUpdateFailed
+        </div>
+    </div>
 </div>

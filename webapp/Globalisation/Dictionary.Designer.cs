@@ -142,6 +142,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Orders Overview.
+        /// </summary>
+        public static string AllOrdersOverview {
+            get {
+                return ResourceManager.GetString("AllOrdersOverview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allow Ingredient Substitutes.
         /// </summary>
         public static string AllowIngredientSubstitutesLabel {
@@ -3225,6 +3234,15 @@ namespace K9.Globalisation {
         public static string Orders {
             get {
                 return ResourceManager.GetString("Orders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orders Review.
+        /// </summary>
+        public static string OrdersReview {
+            get {
+                return ResourceManager.GetString("OrdersReview", resourceCulture);
             }
         }
         

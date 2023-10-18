@@ -36,6 +36,11 @@ namespace K9.DataAccessLayer.Models
         [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
         public string ContactName { get; set; }
 
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountCompletedLabel)]
+        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
+        public int AmountCompleted { get; set; }
+
         public virtual IEnumerable<ProductPackProduct> ProductPackProducts { get; set; }
 
         [NotMapped]

@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using K9.DataAccessLayer.Attributes;
+using K9.WebApplication.ViewModels;
 using ServiceStack.Text;
 using WebMatrix.WebData;
 
@@ -104,16 +105,22 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Details", null, new { id = orderId });
         }
 
-        public ActionResult OrderReview(int orderId = 0, int id = 0, int index = 0)
+        public ActionResult OrderReview(int selectedOrderId = 0, int id = 0, int index = 0)
         {
-            if (orderId == 0)
+            if (selectedOrderId == 0)
             {
-                orderId = id;
+                selectedOrderId = id;
             }
 
-            var order = index == 1 ? _orderService.FindNext(orderId) : index == -1 ? _orderService.FindPrevious(orderId) : _orderService.Find(orderId);
+            var order = index == 1 ? _orderService.FindNext(selectedOrderId) : index == -1 ? _orderService.FindPrevious(selectedOrderId) : _orderService.Find(selectedOrderId);
 
-            return View(order);
+            var allOrders = _orderService.List(true);
+            var ordersViewModel = new OrdersReviewViewModel(allOrders);
+
+            order = order ?? ordersViewModel.OrdersToMake.FirstOrDefault();
+            ordersViewModel.SelectedOrder = order;
+
+            return View(ordersViewModel);
         }
 
         public ActionResult DuplicateOrder(int id)

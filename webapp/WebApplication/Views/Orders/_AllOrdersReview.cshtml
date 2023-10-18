@@ -1,0 +1,37 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.ViewModels.OrdersReviewViewModel
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginBootstrapForm())
+    {
+        for (int i = 0; i < Model.CombinedOrderProducts.Count; i++)
+        {
+            var isVisible = Model.CombinedOrderProducts[i].AmountRemaining > 0;
+            var visible = isVisible ? "" : "none";
+            var visibleClass = isVisible ? "" : "complete-rows";
+
+            <div class="padding-5 padding-top-15 row @visibleClass" style="display: @visible">
+                <div class="col-sm-4">
+                    @Html.LabelFor(e => Model.CombinedOrderProducts[i].Product.Name)
+                    <a tabindex="-1" target="_blank" href="@Url.Action("LabSheet", "Products", new {id = Model.CombinedOrderProducts[i].ProductId, batchSize = Model.CombinedOrderProducts[i].AmountRemaining})">
+                        @Html.DisplayFor(e => Model.CombinedOrderProducts[i].Product.Name)
+                    </a>
+                </div>
+                <div class="col-sm-2">
+                    @Html.BootstrapDisplayFor(e => Model.CombinedOrderProducts[i].Amount)
+                </div>
+                <div class="col-sm-3">
+                    @Html.BootstrapDisplayFor(e => Model.CombinedOrderProducts[i].AmountCompleted)
+                </div>
+                <div class="col-sm-3">
+                    @Html.BootstrapDisplayFor(e => Model.CombinedOrderProducts[i].AmountRemaining)
+                </div>
+            </div>
+        }
+    }
+}
+
+

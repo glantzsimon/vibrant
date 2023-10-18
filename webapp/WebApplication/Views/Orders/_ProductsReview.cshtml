@@ -12,7 +12,7 @@
     @Html.HiddenFor(e => Model.Products[i].Id)
     @Html.HiddenFor(e => Model.Products[i].Amount)
 
-    <div class="border-bottom-1 padding-5 padding-top-15 row @visibleClass" style="display: @visible">
+    <div class="padding-5 padding-top-15 row @visibleClass" style="display: @visible">
         <div class="col-sm-4">
             @Html.LabelFor(e => Model.Products[i].Product.Name)
             <a tabindex="-1" target="_blank" href="@Url.Action("LabSheet", "Products", new {id = Model.Products[i].ProductId, batchSize = Model.Products[i].AmountRemaining})">

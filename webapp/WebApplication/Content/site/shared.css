@@ -352,3 +352,8 @@
         margin-top: -4px !important;
         margin-bottom: 0 !important;
     }
+
+.inline-checkbox div.checkbox {
+    display: inline !important;
+    margin-right: 13px;
+}
