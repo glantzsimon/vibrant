@@ -1921,4 +1921,7 @@
   <data name="ReviewRepCommissions" xml:space="preserve">
     <value>Review Rep Commission</value>
   </data>
+  <data name="TotalAmountRedeemedLabel" xml:space="preserve">
+    <value>Total Amount Redeemed To Date</value>
+  </data>
 </root>

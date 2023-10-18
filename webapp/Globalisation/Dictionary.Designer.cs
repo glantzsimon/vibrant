@@ -5170,6 +5170,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total Amount Redeemed To Date.
+        /// </summary>
+        public static string TotalAmountRedeemedLabel {
+            get {
+                return ResourceManager.GetString("TotalAmountRedeemedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Total Cost.
         /// </summary>
         public static string TotalCostLabel {

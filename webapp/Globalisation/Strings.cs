@@ -54,6 +54,7 @@
             public const string PriceLabel = "PriceLabel";
             public const string AmountRedeemableLabel = "AmountRedeemableLabel";
             public const string AmountRedeemedLabel = "AmountRedeemedLabel";
+            public const string TotalAmountRedeemedLabel = "TotalAmountRedeemedLabel";
             public const string RedeemedOnLabel = "RedeemedOnLabel";
             public const string ShippingLabel = "ShippingLabel";
             public const string DiscountLabel = "DiscountLabel";
