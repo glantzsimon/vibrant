@@ -30,7 +30,8 @@
                         @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.CreateNew, "Create", "Orders", null, "fa-plus-circle")
                     </div>
                 </div>
-                <hr />
+
+                <br />
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="inline-checkbox">
@@ -38,6 +39,8 @@
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsMade)
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsComplete)
                         </div>
+
+                        @Html.Partial("_AjaxPopup")
                     </div>
                 </div>
             }
@@ -50,8 +53,6 @@
                 @Html.HiddenFor(e => e.SelectedOrder.Id)
 
                 @Html.Partial("_OrderReviewSheet", Model)
-
-                @Html.Partial("_AjaxPopup")
 
                 <hr />
 
@@ -75,6 +76,7 @@
         });
 
         $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.IsPaid)}")").click(function() {
+            $("#pageSpinner").show();
             var value = $(this).is(":checked");
             ajaxcontroller().send("@Url.Action("UpdateOrderIsPaid")",
                 {
@@ -87,6 +89,7 @@
         });
 
         $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.IsMade)}")").click(function() {
+            $("#pageSpinner").show();
             var value = $(this).is(":checked");
             ajaxcontroller().send("@Url.Action("UpdateOrderIsMade")",
                 {
@@ -99,6 +102,7 @@
         });
 
         $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.IsComplete)}")").click(function() {
+            $("#pageSpinner").show();
             var value = $(this).is(":checked");
             ajaxcontroller().send("@Url.Action("UpdateOrderIsComplete")",
                 {

@@ -60,6 +60,8 @@
     </div>
 }
 
+@Html.Partial("_AjaxPopup")
+
 <script type="text/javascript">
 
     $(function () {
@@ -77,10 +79,14 @@
         $("a.out-of-stock").click(function() {
             var ingredientId = $(this).data("id");
             var data = { ingredientId: ingredientId };
+
+            $("#pageSpinner").show();
+
             ajaxcontroller().send("@Url.Action("MarkIngredientAsOutOfStock")", data, "POST").done(
                 function(result) {
                     if (!result.success) {
-                        alert(result.error);
+                        $.fn.processResultAndShowPopup(result);
+                        console.write(result.error);
                     } else {
                         $("#ProductId").closest("form").submit();
                     }

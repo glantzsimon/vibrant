@@ -14,13 +14,18 @@
     }
 </ul>
 
+@Html.Partial("_AjaxPopup")
+
 <script type="text/javascript">
 
     $("#ingredients-list").on("indexChanged", function(e, data) {
+        $("#pageSpinner").show();
+
         ajaxcontroller().send("@Url.Action("UpdateIngredientPriorities")", data, "POST").done(
             function(result) {
                 if (!result.success) {
-                    alert(result.error);
+                    console.log(result.error);
+                    $.fn.processResultAndShowPopup(result);
                 }
             });
     })

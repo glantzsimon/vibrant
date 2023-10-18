@@ -124,17 +124,19 @@
 	    };
 
 	    $.fn.showSuccessPopup = function() {
+	        $("#pageSpinner").fadeOut();
 	        $("div#success-popup").show();
 	        window.setTimeout(function() {
-                $("div#success-popup").fadeOut();
+                    $("div#success-popup").fadeOut();
 	            },
 	            5000);
 	    };
 
 	    $.fn.showFailPopup = function() {
+	        $("#pageSpinner").fadeOut();
 	        $("div#fail-popup").show();
 	        window.setTimeout(function() {
-                $("div#fail-popup").fadeOut();
+                    $("div#fail-popup").fadeOut();
 	            },
 	            5000);
 	    };

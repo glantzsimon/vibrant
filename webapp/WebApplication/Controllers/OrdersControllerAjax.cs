@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
@@ -36,8 +37,9 @@ namespace K9.WebApplication.Controllers
             try
             {
                 var original = Repository.Find(id);
+                var valueHasChanged = original.IsMade != value;
 
-                if (original.IsMade != value)
+                if (valueHasChanged)
                 {
                     if (value)
                     {
@@ -47,16 +49,29 @@ namespace K9.WebApplication.Controllers
                     {
                         original.MadeOn = null;
                     }
+
+                    Repository.Update(original);
+
+                    if (value)
+                    {
+                        // Update children
+                        var orderProducts = _orderProductsRepository.Find(e => e.OrderId == id).ToList();
+                        foreach (var orderProduct in orderProducts)
+                        {
+                            orderProduct.AmountCompleted = orderProduct.Amount;
+                            _orderProductsRepository.Update(orderProduct);
+                        }
+                    }
                 }
-                Repository.Update(original);
+
                 return Json(new { success = true });
             }
             catch (Exception ex)
             {
                 return Json(new { success = false, error = ex.Message });
             }
-        } 
-        
+        }
+
         public JsonResult UpdateOrderIsComplete(int id, bool value)
         {
             try
