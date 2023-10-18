@@ -78,9 +78,9 @@ namespace K9.WebApplication.Controllers
         public ActionResult LabSheet(Product model)
         {
             var product = _productService.Find(model.Id);
-            if (product.BatchSize > 1)
+            if (model.BatchSize > 1)
             {
-                product = _productService.UpdateBatchSize(product, product.BatchSize);
+                product = _productService.UpdateBatchSize(product, model.BatchSize);
             }
 
             foreach (var productIngredient in model.IngredientsWithSubstitutes)

@@ -25,12 +25,14 @@
 
                         <li class="@ViewContext.GetActiveClass("Index", "Orders") sub-item"><a href="@Url.Action("Index", "Orders")">@Dictionary.Orders</a></li>
 
+                        <li class="@ViewContext.GetActiveClass("OrderReview", "Orders") sub-item"><a href="@Url.Action("OrderReview", "Orders")">@Dictionary.OrdersReview</a></li>
+
                         <li class="@ViewContext.GetActiveClass("DownloadOrdersCsv", "Orders") sub-item"><a target="_blank" href="@Url.Action("DownloadOrdersCsv", "Orders")">@Dictionary.DownloadOrdersCsv</a></li>
 
                         <li class="divider"></li>
-                       
+
                         <li class="@ViewContext.GetActiveClass("DownloadProductsCsv", "Products") sub-item"><a target="_blank" target="_blank" href="@Url.Action("DownloadProductsCsv", "Products")">@Dictionary.DownloadProductsCsv</a></li>
-                        
+
                         <li class="divider"></li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "Articles") sub-item"><a href="@Url.Action("Index", "Articles")">@Dictionary.Articles</a></li>
