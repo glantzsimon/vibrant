@@ -166,7 +166,7 @@ namespace K9.WebApplication.Controllers
             var categoryHasChanged = original.Category != ingredient.Category;
             if (categoryHasChanged || original.ItemCode == 0)
             {
-                var newItemCode = _productService.GetItemCode(ingredient, new List<ICategorisable>(Repository.List()));
+                var newItemCode = _ingredientService.GetItemCode(ingredient, new List<ICategorisable>(Repository.List()));
                 ingredient.ItemCode = newItemCode;
             }
         }
@@ -178,7 +178,7 @@ namespace K9.WebApplication.Controllers
             {
                 ingredient.SeoFriendlyId = ingredient.Name.ToSeoFriendlyString();
             }
-            ingredient.ItemCode = _productService.GetItemCode(ingredient, new List<ICategorisable>(Repository.List()));
+            ingredient.ItemCode = _ingredientService.GetItemCode(ingredient, new List<ICategorisable>(Repository.List()));
         }
     }
 }

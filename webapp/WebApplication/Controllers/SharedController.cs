@@ -36,6 +36,7 @@ namespace K9.WebApplication.Controllers
             //_productService.UpdateProductCategories();
             //_ingredientService.UpdateIngredientCategories();
             //_orderService.UpdateFullName();
+            _ingredientService.UpdateIngredientCategories();
 
             return RedirectToAction("MaintenanceComplete");
         }

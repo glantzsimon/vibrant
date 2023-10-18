@@ -214,53 +214,84 @@ namespace K9.WebApplication.Services
             var herbs = ingredients.Where(e => e.Category == ECategory.Herb).ToList();
             var superfoods = ingredients.Where(e => e.Category == ECategory.Superfood).ToList();
             var others = ingredients.Where(e => e.Category == ECategory.Other).ToList();
+            var aminoAcids = ingredients.Where(e => e.Category == ECategory.AminoAcid).ToList();
+            var itemCode = 0;
 
-            var itemCode = (int)ECategory.Vitamin + Constants.Constants.ItemCodeGap;
-            foreach (var ingredient in vitamins.OrderBy(e => e.Name).ToList())
+            if (vitamins.All(e => e.ItemCode == 0))
             {
-                ingredient.ItemCode = itemCode;
-                _ingredientsRepository.Update(ingredient);
-                itemCode += Constants.Constants.ItemCodeGap;
+                itemCode = (int) ECategory.Vitamin + Constants.Constants.ItemCodeGap;
+                foreach (var ingredient in vitamins.OrderBy(e => e.Name).ToList())
+                {
+                    ingredient.ItemCode = itemCode;
+                    _ingredientsRepository.Update(ingredient);
+                    itemCode += Constants.Constants.ItemCodeGap;
+                }
             }
 
-            itemCode = (int)ECategory.Mineral + Constants.Constants.ItemCodeGap;
-            foreach (var ingredient in minerals.OrderBy(e => e.Name).ToList())
+            if (minerals.All(e => e.ItemCode == 0))
             {
-                ingredient.ItemCode = itemCode;
-                _ingredientsRepository.Update(ingredient);
-                itemCode += Constants.Constants.ItemCodeGap;
+                itemCode = (int) ECategory.Mineral + Constants.Constants.ItemCodeGap;
+                foreach (var ingredient in minerals.OrderBy(e => e.Name).ToList())
+                {
+                    ingredient.ItemCode = itemCode;
+                    _ingredientsRepository.Update(ingredient);
+                    itemCode += Constants.Constants.ItemCodeGap;
+                }
             }
 
-            itemCode = (int)ECategory.Phytonutrient + Constants.Constants.ItemCodeGap;
-            foreach (var ingredient in phytoNutrients.OrderBy(e => e.Name).ToList())
+            if (phytoNutrients.All(e => e.ItemCode == 0))
             {
-                ingredient.ItemCode = itemCode;
-                _ingredientsRepository.Update(ingredient);
-                itemCode += Constants.Constants.ItemCodeGap;
+                itemCode = (int) ECategory.Phytonutrient + Constants.Constants.ItemCodeGap;
+                foreach (var ingredient in phytoNutrients.OrderBy(e => e.Name).ToList())
+                {
+                    ingredient.ItemCode = itemCode;
+                    _ingredientsRepository.Update(ingredient);
+                    itemCode += Constants.Constants.ItemCodeGap;
+                }
             }
 
-            itemCode = (int)ECategory.Herb + Constants.Constants.ItemCodeGap;
-            foreach (var ingredient in herbs.OrderBy(e => e.Name).ToList())
+            if (herbs.All(e => e.ItemCode == 0))
             {
-                ingredient.ItemCode = itemCode;
-                _ingredientsRepository.Update(ingredient);
-                itemCode += Constants.Constants.ItemCodeGap;
+                itemCode = (int) ECategory.Herb + Constants.Constants.ItemCodeGap;
+                foreach (var ingredient in herbs.OrderBy(e => e.Name).ToList())
+                {
+                    ingredient.ItemCode = itemCode;
+                    _ingredientsRepository.Update(ingredient);
+                    itemCode += Constants.Constants.ItemCodeGap;
+                }
             }
 
-            itemCode = (int)ECategory.Superfood + Constants.Constants.ItemCodeGap;
-            foreach (var ingredient in superfoods.OrderBy(e => e.Name).ToList())
+            if (superfoods.All(e => e.ItemCode == 0))
             {
-                ingredient.ItemCode = itemCode;
-                _ingredientsRepository.Update(ingredient);
-                itemCode += Constants.Constants.ItemCodeGap;
+                itemCode = (int) ECategory.Superfood + Constants.Constants.ItemCodeGap;
+                foreach (var ingredient in superfoods.OrderBy(e => e.Name).ToList())
+                {
+                    ingredient.ItemCode = itemCode;
+                    _ingredientsRepository.Update(ingredient);
+                    itemCode += Constants.Constants.ItemCodeGap;
+                }
             }
 
-            itemCode = (int)ECategory.Other + Constants.Constants.ItemCodeGap;
-            foreach (var ingredient in others.OrderBy(e => e.Name).ToList())
+            if (others.All(e => e.ItemCode == 0))
             {
-                ingredient.ItemCode = itemCode;
-                _ingredientsRepository.Update(ingredient);
-                itemCode += Constants.Constants.ItemCodeGap;
+                itemCode = (int) ECategory.Other + Constants.Constants.ItemCodeGap;
+                foreach (var ingredient in others.OrderBy(e => e.Name).ToList())
+                {
+                    ingredient.ItemCode = itemCode;
+                    _ingredientsRepository.Update(ingredient);
+                    itemCode += Constants.Constants.ItemCodeGap;
+                }
+            }
+
+            if (aminoAcids.All(e => e.ItemCode == 0))
+            {
+                itemCode = (int) ECategory.AminoAcid + Constants.Constants.ItemCodeGap;
+                foreach (var ingredient in aminoAcids.OrderBy(e => e.Name).ToList())
+                {
+                    ingredient.ItemCode = itemCode;
+                    _ingredientsRepository.Update(ingredient);
+                    itemCode += Constants.Constants.ItemCodeGap;
+                }
             }
 
             ClearCache();
