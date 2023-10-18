@@ -241,6 +241,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount Redeemable.
+        /// </summary>
+        public static string AmountRedeemableLabel {
+            get {
+                return ResourceManager.GetString("AmountRedeemableLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount Redeemed.
+        /// </summary>
+        public static string AmountRedeemedLabel {
+            get {
+                return ResourceManager.GetString("AmountRedeemedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount Remaining.
         /// </summary>
         public static string AmountRemainingLabel {
@@ -4317,6 +4335,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Redeem.
+        /// </summary>
+        public static string Redeem {
+            get {
+                return ResourceManager.GetString("Redeem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Redeemed On.
+        /// </summary>
+        public static string RedeemedOnLabel {
+            get {
+                return ResourceManager.GetString("RedeemedOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register Promo Code.
         /// </summary>
         public static string RegisterPromoCode {
@@ -4331,6 +4367,24 @@ namespace K9.Globalisation {
         public static string RegularPrice {
             get {
                 return ResourceManager.GetString("RegularPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rep Commission.
+        /// </summary>
+        public static string RepCommission {
+            get {
+                return ResourceManager.GetString("RepCommission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rep Commissions.
+        /// </summary>
+        public static string RepCommissions {
+            get {
+                return ResourceManager.GetString("RepCommissions", resourceCulture);
             }
         }
         
@@ -4367,6 +4421,15 @@ namespace K9.Globalisation {
         public static string Results {
             get {
                 return ResourceManager.GetString("Results", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Review Rep Commission.
+        /// </summary>
+        public static string ReviewRepCommissions {
+            get {
+                return ResourceManager.GetString("ReviewRepCommissions", resourceCulture);
             }
         }
         

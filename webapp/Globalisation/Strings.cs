@@ -52,6 +52,9 @@
             public const string PriceSmallPackDiscount1Label = "PriceSmallPackDiscount1Label";
             public const string PriceSmallPackDiscount2Label = "PriceSmallPackDiscount2Label";
             public const string PriceLabel = "PriceLabel";
+            public const string AmountRedeemableLabel = "AmountRedeemableLabel";
+            public const string AmountRedeemedLabel = "AmountRedeemedLabel";
+            public const string RedeemedOnLabel = "RedeemedOnLabel";
             public const string ShippingLabel = "ShippingLabel";
             public const string DiscountLabel = "DiscountLabel";
             public const string PriceSmallPackLabel = "PriceSmallPackLabel";
@@ -266,6 +269,8 @@
             public const string Orders = "Orders";
             public const string OrderProduct = "OrderProduct";
             public const string OrderProducts = "OrderProducts";
+            public const string RepCommission = "RepCommission";
+            public const string RepCommissions = "RepCommissios";
             public const string OrderProductPack = "OrderProductPack";
             public const string OrderProductPacks = "OrderProductPacks";
             public const string Trial = "Trial";

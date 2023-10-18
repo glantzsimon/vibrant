@@ -7,6 +7,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Services
 {
@@ -20,9 +21,10 @@ namespace K9.WebApplication.Services
         private readonly IRepository<ProductPack> _productPackRepository;
         private readonly IRepository<Contact> _contactsRepository;
         private readonly IRepository<User> _usersRepository;
+        private readonly IRepository<RepCommission> _repCommissionsRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Contact> contactsRepository, IRepository<User> usersRepository)
+        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Contact> contactsRepository, IRepository<User> usersRepository, IRepository<RepCommission> repCommissionsRepository)
         {
             _logger = logger;
             _ordersRepository = ordersRepository;
@@ -32,6 +34,7 @@ namespace K9.WebApplication.Services
             _productPackRepository = productPackRepository;
             _contactsRepository = contactsRepository;
             _usersRepository = usersRepository;
+            _repCommissionsRepository = repCommissionsRepository;
             _defaultValues = defaultValues.Value;
         }
 
@@ -259,6 +262,27 @@ namespace K9.WebApplication.Services
             {
                 _orderProductPacksRepository.Delete(orderProductPack.Id);
             }
+        }
+
+        public RepCommissionViewModel CalculateRepCommission(int repId)
+        {
+            var redeemedCommissions = _repCommissionsRepository.Find(e => e.RepId == repId).ToList();
+            var repOrders = List(true).Where(e => e.RepId == repId || e.ContactId == repId).ToList();
+
+            var totalRedeemed = redeemedCommissions.Sum(e => e.AmountRedeemed);
+            var totalPrice = repOrders.SelectMany(e => e.Products).Sum(e => e.TotalPrice) +
+                             repOrders.SelectMany(e => e.ProductPacks).Sum(e => e.TotalPrice);
+            
+            var totalRedeemable = (totalPrice / 10) - totalRedeemed;
+
+            return new RepCommissionViewModel
+            {
+                AmountRedeemable = totalRedeemable,
+                AmountRedeemed = totalRedeemed,
+                RepId = repId,
+                Rep = _contactsRepository.Find(repId),
+                RepCommissions = redeemedCommissions
+            };
         }
     }
 }

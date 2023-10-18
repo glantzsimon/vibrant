@@ -260,6 +260,7 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Controllers\RepCommissionsController.cs" />
     <Compile Include="Controllers\OrdersControllerAjax.cs" />
     <Compile Include="Controllers\ProductsControllerAjax.cs" />
     <Compile Include="Controllers\ProductIngredientsControllerAjax.cs" />
@@ -371,6 +372,7 @@
     <Compile Include="Services\RecaptchaService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\IUserService.cs" />
+    <Compile Include="ViewModels\RepCommissionViewModel.cs" />
     <Compile Include="ViewModels\OrdersReviewViewModel.cs" />
     <Compile Include="ViewModels\EmailPromoCodeViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
@@ -1501,6 +1503,15 @@
     <Content Include="Views\Shared\MaintenanceComplete.cshtml" />
     <Content Include="Views\Shared\_AjaxPopup.cshtml" />
     <Content Include="Views\Orders\_AllOrdersReview.cshtml" />
+    <Content Include="Views\RepCommissions\_DisplayFields.cshtml" />
+    <Content Include="Views\RepCommissions\_EditFields.cshtml" />
+    <Content Include="Views\RepCommissions\Create.cshtml" />
+    <Content Include="Views\RepCommissions\Delete.cshtml" />
+    <Content Include="Views\RepCommissions\Details.cshtml" />
+    <Content Include="Views\RepCommissions\Edit.cshtml" />
+    <Content Include="Views\RepCommissions\Index.cshtml" />
+    <Content Include="Views\RepCommissions\Review.cshtml" />
+    <Content Include="Views\RepCommissions\_Redeemed.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

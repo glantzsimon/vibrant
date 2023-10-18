@@ -98,10 +98,10 @@
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.183\lib\net461\DataAnnotationsExtensions.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.183\lib\net461\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.183\lib\net461\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.183\lib\net461\Facebook.dll</HintPath>
@@ -417,9 +417,14 @@
     <Compile Include="Migrations\202310180541291_ShippingCost.Designer.cs">
       <DependentUpon>202310180541291_ShippingCost.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310181701380_AddRepCommission.cs" />
+    <Compile Include="Migrations\202310181701380_AddRepCommission.Designer.cs">
+      <DependentUpon>202310181701380_AddRepCommission.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DietaryRecommendation.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
+    <Compile Include="Models\RepCommission.cs" />
     <Compile Include="Models\ProductIngredientSubstitute.cs" />
     <Compile Include="Models\OrderProductPack.cs" />
     <Compile Include="Models\OrderProduct.cs" />
@@ -622,6 +627,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310180541291_ShippingCost.resx">
       <DependentUpon>202310180541291_ShippingCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310181701380_AddRepCommission.resx">
+      <DependentUpon>202310181701380_AddRepCommission.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

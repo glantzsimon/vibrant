@@ -1879,6 +1879,12 @@
   <data name="AllOrdersOverview" xml:space="preserve">
     <value>All Orders Overview</value>
   </data>
+  <data name="AmountRedeemableLabel" xml:space="preserve">
+    <value>Amount Redeemable</value>
+  </data>
+  <data name="AmountRedeemedLabel" xml:space="preserve">
+    <value>Amount Redeemed</value>
+  </data>
   <data name="DownloadIngredientsCsv" xml:space="preserve">
     <value>Download Ingredients as CSV</value>
   </data>
@@ -1894,10 +1900,25 @@
   <data name="RecordUpdateFailed" xml:space="preserve">
     <value>Record Update Failed</value>
   </data>
+  <data name="RedeemedOnLabel" xml:space="preserve">
+    <value>Redeemed On</value>
+  </data>
+  <data name="RepCommission" xml:space="preserve">
+    <value>Rep Commission</value>
+  </data>
+  <data name="RepCommissions" xml:space="preserve">
+    <value>Rep Commissions</value>
+  </data>
   <data name="RunMaintenanceScript" xml:space="preserve">
     <value>Run Maintenance Script</value>
   </data>
   <data name="ShippingLabel" xml:space="preserve">
     <value>Shipping</value>
+  </data>
+  <data name="Redeem" xml:space="preserve">
+    <value>Redeem</value>
+  </data>
+  <data name="ReviewRepCommissions" xml:space="preserve">
+    <value>Review Rep Commission</value>
   </data>
 </root>

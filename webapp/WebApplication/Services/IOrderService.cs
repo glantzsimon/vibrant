@@ -1,6 +1,7 @@
 ﻿using K9.DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
+using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Services
 {
@@ -15,6 +16,7 @@ namespace K9.WebApplication.Services
         Order FillZeroQuantities(Order order);
         Order UpdatePricesForContact(Order order);
         Order Duplicate(int id);
+        RepCommissionViewModel CalculateRepCommission(int repId);
         void DeleteChildRecords(int id);
 
         List<Order> List(bool retrieveFullOrder = false);

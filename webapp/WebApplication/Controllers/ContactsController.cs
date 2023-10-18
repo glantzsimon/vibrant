@@ -115,5 +115,10 @@ namespace K9.WebApplication.Controllers
         {
             return View();
         }
+
+        public ActionResult ReviewCommission(int id)
+        {
+            return RedirectToAction("Review", "RepCommissions", new { repId = id });
+        }
     }
 }
