@@ -61,6 +61,8 @@ namespace K9.WebApplication.Controllers
                 Repository.Update(item);
             }
 
+            _ingredientService.ClearCache();
+
             return RedirectToAction("EditList");
         }
 
@@ -116,6 +118,8 @@ namespace K9.WebApplication.Controllers
                 item.Priority = substitute.Priority;
                 _ingredientSubstituteRepository.Update(item);
             }
+
+            _ingredientService.ClearCache();
 
             return RedirectToAction("Index");
         }

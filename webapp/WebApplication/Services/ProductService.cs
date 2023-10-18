@@ -275,7 +275,7 @@ namespace K9.WebApplication.Services
         {
             return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
             {
-                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TwoHours));
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 
                 var products = _productsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
 
@@ -303,7 +303,7 @@ namespace K9.WebApplication.Services
         {
             return MemoryCache.GetOrCreate(GetCacheKey<ProductPack>(), entry =>
             {
-                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TwoHours));
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 
                 var productPacks = _productPackRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
 
@@ -368,6 +368,8 @@ namespace K9.WebApplication.Services
                 productIngredientRecord.NumberOfSubstitutesToUse = productIngredient.NumberOfSubstitutesToUse;
                 _productIngredientsRepository.Update(productIngredientRecord);
             }
+
+            ClearCache();
         }
 
         public void EditIngredients(Product product)
@@ -392,12 +394,6 @@ namespace K9.WebApplication.Services
 
         public void UpdateProductCategories()
         {
-            //foreach (var product in _productsRepository.List())
-            //{
-            //    product.Category = ECategory.DietarySupplement;
-            //    _productsRepository.Update(product);
-            //}
-
             var itemCode = (int)ECategory.DietarySupplement + Constants.Constants.ItemCodeGap;
 
             foreach (var product in _productsRepository.List().OrderBy(e => e.Name).ToList())
@@ -406,6 +402,8 @@ namespace K9.WebApplication.Services
                 _productsRepository.Update(product);
                 itemCode += Constants.Constants.ItemCodeGap;
             }
+
+            ClearCache();
         }
     }
 }

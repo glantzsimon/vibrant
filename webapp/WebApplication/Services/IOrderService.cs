@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
 {
-    public interface IOrderService
+    public interface IOrderService : ICacheableService
     {
         Order Find(int id);
         Order FindPrevious(int id);

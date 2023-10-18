@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
 {
-    public interface IProductService : ICategorisableService
+    public interface IProductService : ICategorisableService, ICacheableService
     {
         Product Find(int id);
         Product FindPrevious(int id);

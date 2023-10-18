@@ -23,7 +23,10 @@ namespace K9.WebApplication.Controllers
                         original.PaidOn = null;
                     }
                 }
+
                 Repository.Update(original);
+                _orderService.ClearCache();
+
                 return Json(new { success = true });
             }
             catch (Exception ex)
@@ -51,7 +54,7 @@ namespace K9.WebApplication.Controllers
                     }
 
                     Repository.Update(original);
-
+                    
                     if (value)
                     {
                         // Update children
@@ -62,8 +65,10 @@ namespace K9.WebApplication.Controllers
                             _orderProductsRepository.Update(orderProduct);
                         }
                     }
-                }
 
+                    _orderService.ClearCache();
+                }
+                
                 return Json(new { success = true });
             }
             catch (Exception ex)

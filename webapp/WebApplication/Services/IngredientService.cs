@@ -123,7 +123,7 @@ namespace K9.WebApplication.Services
         {
             return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
             {
-                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TwoHours));
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 
                 var ingredients = _ingredientsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
 
@@ -165,7 +165,7 @@ namespace K9.WebApplication.Services
                 var substitute = _ingredientSubstituesRepository.Find(sortableItem.Id);
                 substitute.Priority = sortableItem.DisplayIndex;
                 _ingredientSubstituesRepository.Update(substitute);
-                MemoryCache.Remove(GetCacheKey(substitute.IngredientId));
+                ClearCache();
             }
         }
 
@@ -174,6 +174,7 @@ namespace K9.WebApplication.Services
             var ingredient = _ingredientsRepository.Find(id);
             ingredient.QuantityInStock = 0;
             _ingredientsRepository.Update(ingredient);
+            ClearCache();
         }
 
         public void EditIngredientSubstitutes(Ingredient ingredient)
@@ -261,6 +262,8 @@ namespace K9.WebApplication.Services
                 _ingredientsRepository.Update(ingredient);
                 itemCode += Constants.Constants.ItemCodeGap;
             }
+
+            ClearCache();
         }
     }
 }

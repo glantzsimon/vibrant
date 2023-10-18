@@ -40,6 +40,25 @@ namespace K9.WebApplication.Controllers
             RecordBeforeUpdated += ProductsController_RecordBeforeUpdated;
             RecordBeforeDetails += ProductsController_RecordBeforeDetails;
             RecordBeforeDeleted += ProductsController_RecordBeforeDeleted;
+
+            RecordCreated += ProductsController_RecordCreated;
+            RecordUpdated += ProductsController_RecordUpdated;
+            RecordDeleted += ProductsController_RecordDeleted;
+        }
+
+        private void ProductsController_RecordDeleted(object sender, CrudEventArgs e)
+        {
+            _productService.ClearCache();
+        }
+
+        private void ProductsController_RecordUpdated(object sender, CrudEventArgs e)
+        {
+            _productService.ClearCache();
+        }
+
+        private void ProductsController_RecordCreated(object sender, CrudEventArgs e)
+        {
+            _productService.ClearCache();
         }
 
         [RequirePermissions(Permission = Permissions.Edit)]
@@ -118,6 +137,8 @@ namespace K9.WebApplication.Controllers
                 item.Amount = productIngredient.Amount;
                 _productIngredientsRepository.Update(item);
             }
+
+            _productService.ClearCache();
 
             return RedirectToAction("Index");
         }
@@ -220,6 +241,8 @@ namespace K9.WebApplication.Controllers
                 HtmlParser.ParseHtml(item);
 
                 Repository.Update(item);
+
+                _productService.ClearCache();
             }
 
             return RedirectToAction("EditList");

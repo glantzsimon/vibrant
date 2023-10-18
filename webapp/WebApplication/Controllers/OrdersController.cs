@@ -26,13 +26,15 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<OrderProduct> _orderProductsRepository;
         private readonly IRepository<OrderProductPack> _orderProductPackRepository;
         private readonly IOrderService _orderService;
+        private readonly IProductService _productService;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public OrdersController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPackRepository, IOrderService orderService) : base(controllerPackage)
+        public OrdersController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPackRepository, IOrderService orderService, IProductService productService) : base(controllerPackage)
         {
             _orderProductsRepository = orderProductsRepository;
             _orderProductPackRepository = orderProductPackRepository;
             _orderService = orderService;
+            _productService = productService;
             _defaultValues = defaultValues.Value;
             RecordBeforeCreate += OrdersController_RecordBeforeCreate;
             RecordBeforeCreated += OrdersController_RecordBeforeCreated;
@@ -41,8 +43,12 @@ namespace K9.WebApplication.Controllers
             RecordBeforeUpdated += OrdersController_RecordBeforeUpdated;
             RecordBeforeDelete += OrdersController_RecordBeforeDelete;
             RecordBeforeDeleted += OrdersController_RecordBeforeDeleted;
+            
+            RecordUpdated += OrdersController_RecordUpdated;
+            RecordCreated += OrdersController_RecordCreated;
+            RecordDeleted += OrdersController_RecordDeleted;
         }
-
+        
         public ActionResult EditProducts(int id = 0)
         {
             return RedirectToAction("EditProductsForOrder", "OrderProducts", new { id });
@@ -69,7 +75,9 @@ namespace K9.WebApplication.Controllers
                 _orderProductsRepository.Update(item);
             }
 
-            return RedirectToAction("Details", new { id = model.Id });
+            _orderService.ClearCache();
+
+            return RedirectToAction("Index");
         }
 
         public ActionResult EditProductPacks(int id = 0)
@@ -97,7 +105,9 @@ namespace K9.WebApplication.Controllers
                 _orderProductPackRepository.Update(item);
             }
 
-            return RedirectToAction("Details", new { id = model.Id });
+            _orderService.ClearCache();
+
+            return RedirectToAction("List");
         }
 
         public ActionResult View(int orderId)
@@ -160,6 +170,8 @@ namespace K9.WebApplication.Controllers
                 item.MadeOn = DateTime.Today;
                 Repository.Update(item);
             }
+
+            _orderService.ClearCache();
 
             return RedirectToAction("OrderReview", new { orderId = order.Id });
         }
@@ -265,6 +277,21 @@ namespace K9.WebApplication.Controllers
         private void OrdersController_RecordBeforeDeleted(object sender, CrudEventArgs e)
         {
             _orderService.DeleteChildRecords(e.Item.Id);
+        }
+
+        private void OrdersController_RecordDeleted(object sender, CrudEventArgs e)
+        {
+            _orderService.ClearCache();
+        }
+
+        private void OrdersController_RecordCreated(object sender, CrudEventArgs e)
+        {
+            _orderService.ClearCache();
+        }
+
+        private void OrdersController_RecordUpdated(object sender, CrudEventArgs e)
+        {
+            _orderService.ClearCache();
         }
     }
 }

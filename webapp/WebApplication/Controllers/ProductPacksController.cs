@@ -53,6 +53,8 @@ namespace K9.WebApplication.Controllers
                 _productPackProductRepository.Update(item);
             }
 
+            _productService.ClearCache();
+
             return RedirectToAction("Index");
         }
 
@@ -97,6 +99,8 @@ namespace K9.WebApplication.Controllers
 
                 Repository.Update(item);
             }
+
+            _productService.ClearCache();
 
             return RedirectToAction("EditList");
         }

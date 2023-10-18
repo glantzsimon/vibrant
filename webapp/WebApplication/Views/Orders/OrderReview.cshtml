@@ -84,9 +84,7 @@
                     value: value
                 }, "POST").done(
                 function(result) {
-                    $.fn.processResultAndShowPopup(result, function() {
-                        $("#SelectedOrderId").closest("form").submit();
-                    });
+                    $.fn.processResultAndShowPopup(result);
                 });
         });
 
@@ -114,9 +112,7 @@
                     value: value
                 }, "POST").done(
                 function(result) {
-                    $.fn.processResultAndShowPopup(result, function() {
-                        $("#SelectedOrderId").closest("form").submit();
-                    });
+                    $.fn.processResultAndShowPopup(result);
                 });
         });
 

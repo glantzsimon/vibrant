@@ -353,6 +353,7 @@
     <Compile Include="Options\SearchBoxOptions.cs" />
     <Compile Include="Options\PaymentsOptions.cs" />
     <Compile Include="Services\CacheableServiceBase.cs" />
+    <Compile Include="Services\%28CacheableService.cs" />
     <Compile Include="Services\ICategorisableService.cs" />
     <Compile Include="Services\IIngredientService.cs" />
     <Compile Include="Services\IngredientService.cs" />
