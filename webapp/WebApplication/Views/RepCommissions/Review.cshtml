@@ -18,43 +18,45 @@
                 @Html.BootstrapEditorFor(model => Model.RepId)
             </div>
         </div>
+    }
+}
 
+@using (Html.BeginForm("Redeem", "RepCommissions"))
+{
+    using (Html.BeginBootstrapForm())
+    {
         <ul class="nav nav-pills">
             <li class="active"><a data-toggle="pill" href="#redeemable">@Dictionary.RepCommission @Dictionary.AmountRedeemableLabel</a></li>
             <li><a data-toggle="pill" href="#redeemed">@Dictionary.RepCommission @Dictionary.AmountRedeemedLabel</a></li>
         </ul>
-    }
-}
 
-<div class="tab-content">
-    <div id="redeemable" class="tab-pane fade in active padding-top-15">
-        <div class="row">
-            <div class="col-xs-6">
-                @Html.BootstrapDisplayFor(e => e.FormattedAmountRedeemable)
-            </div>
-            <div class="col-xs-6">
-                @Html.BootstrapDisplayFor(e => e.IsRedeemable)
-            </div>
-        </div>
+        <div class="tab-content">
+            <div id="redeemable" class="tab-pane fade in active padding-top-15">
 
-        @using (Html.BeginForm("Redeem", "RepCommissions"))
-        {
-            using (Html.BeginBootstrapForm())
-            {
                 @Html.HiddenFor(e => Model.RepId)
                 @Html.HiddenFor(e => Model.AmountRedeemable)
                 @Html.HiddenFor(e => Model.IsRedeemable)
 
+                <div class="row">
+                    <div class="col-xs-6">
+                        @Html.BootstrapDisplayFor(e => e.FormattedAmountRedeemable)
+                    </div>
+                    <div class="col-xs-6">
+                        @Html.BootstrapDisplayFor(e => e.IsRedeemable)
+                    </div>
+                </div>
+
                 <hr />
                 @Html.BootstrapButton(Dictionary.Redeem, EButtonType.Submit, "fa-save")
                 @Html.BootstrapBackToListButton()
-            }
-        }
-    </div>
-    <div id="redeemed" class="tab-pane fade padding-top-15">
-        @Html.Partial("_Redeemed")
-    </div>
-</div>
+
+            </div>
+            <div id="redeemed" class="tab-pane fade padding-top-15">
+                @Html.Partial("_Redeemed")
+            </div>
+        </div>
+    }
+}
 
 <script type="text/javascript">
     $(function () {

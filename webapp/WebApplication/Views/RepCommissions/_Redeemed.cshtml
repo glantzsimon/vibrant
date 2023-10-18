@@ -1,5 +1,31 @@
-﻿@using K9.Base.WebApplication.Extensions
+﻿@using System.Activities.Statements
+@using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.ViewModels
 @model RepCommissionViewModel
 
+@using (Html.BeginForm())
+{
+    using (Html.BeginBootstrapForm())
+    {
+
+        <div class="row">
+            <div class="col-xs-12">
+                @Html.BootstrapEditorFor(model => Model.AmountRedeemed)
+            </div>
+        </div>
+
+        foreach (var modelRepCommission in Model.RepCommissions)
+        {
+            <div class="row">
+                <div class="col-xs-4">
+                    @Html.BootstrapDisplayFor(e => modelRepCommission.FormattedAmountRedeemed)
+                </div>
+                <div class="col-xs-4">
+                    @Html.BootstrapDisplayFor(e => modelRepCommission.RedeemedOn)
+                </div>
+            </div>
+        }
+
+    }
+}
