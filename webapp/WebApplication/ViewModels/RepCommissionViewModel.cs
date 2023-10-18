@@ -27,7 +27,7 @@ namespace K9.WebApplication.ViewModels
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         public string FormattedAmountRedeemable => double.Parse(AmountRedeemable.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountRedeemedLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalAmountRedeemedLabel)]
         [DataType(DataType.Currency)]
         public double AmountRedeemed { get; set; }
 
