@@ -21,6 +21,8 @@ namespace K9.DataAccessLayer.Models
 
         public virtual Contact Rep { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.RepLabel)]
         [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
         public string RepName { get; set; }
         
