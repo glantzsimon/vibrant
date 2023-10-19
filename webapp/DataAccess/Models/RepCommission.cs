@@ -23,7 +23,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.RepLabel)]
-        [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
+        [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName", ForeignKey = "RepId")]
         public string RepName { get; set; }
         
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountRedeemedLabel)]
