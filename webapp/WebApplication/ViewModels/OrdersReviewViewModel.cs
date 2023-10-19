@@ -47,7 +47,12 @@ namespace K9.WebApplication.ViewModels
                     Product = AllProducts.FirstOrDefault(e => e.Id == group.Key),
                     Count = group.Count(),
                     CompleteCount = AllOrderProducts.Where(e => e.ProductId == group.Key).Sum(e => e.AmountCompleted) +
-                               AllOrderProductPacks.Where(e => e.ProductPack.Products.Select(j => j.Id).Contains(group.Key)).Sum(i => i.AmountCompleted)
+                               AllOrderProductPacks.Select(o => new
+                                   {
+                                       OrderProductPack = o,
+                                       Products = o.ProductPack.Products.Where(e => e.ProductId == group.Key)
+                                   })
+                                   .Sum(e => e.OrderProductPack.AmountCompleted * (e.Products.Sum(p => p.Amount)))
                 })
                 .ToList();
 
