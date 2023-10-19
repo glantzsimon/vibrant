@@ -271,7 +271,7 @@
             public const string OrderProduct = "OrderProduct";
             public const string OrderProducts = "OrderProducts";
             public const string RepCommission = "RepCommission";
-            public const string RepCommissions = "RepCommissios";
+            public const string RepCommissions = "RepCommissions";
             public const string OrderProductPack = "OrderProductPack";
             public const string OrderProductPacks = "OrderProductPacks";
             public const string Trial = "Trial";

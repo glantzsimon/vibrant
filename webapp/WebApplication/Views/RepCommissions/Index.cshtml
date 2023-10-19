@@ -10,7 +10,7 @@
 {
     AllowCreate = true,
     AllowEdit = true,
-    AllowDelete = ((BaseController<Protocol>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    AllowDelete = ((BaseController<RepCommission>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     VisibleColumns = new List<string>
     {
         "RepName",

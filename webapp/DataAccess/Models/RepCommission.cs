@@ -4,6 +4,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
+using K9.SharedLibrary.Attributes;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -19,6 +20,9 @@ namespace K9.DataAccessLayer.Models
         public int RepId { get; set; }
 
         public virtual Contact Rep { get; set; }
+
+        [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
+        public string RepName { get; set; }
         
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountRedeemedLabel)]
         [DataType(DataType.Currency)]

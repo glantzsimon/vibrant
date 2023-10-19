@@ -42,18 +42,28 @@ namespace K9.WebApplication.ViewModels
 
             var combinedProductsGrouped =
                 combinedProducts.GroupBy(e => e.Id)
-                .Select(group => new
-                {
-                    Product = AllProducts.FirstOrDefault(e => e.Id == group.Key),
-                    Count = group.Count(),
-                    CompleteCount = AllOrderProducts.Where(e => e.ProductId == group.Key).Sum(e => e.AmountCompleted) +
-                               AllOrderProductPacks.Select(o => new
-                                   {
-                                       OrderProductPack = o,
-                                       Products = o.ProductPack.Products.Where(e => e.ProductId == group.Key)
-                                   })
-                                   .Sum(e => e.OrderProductPack.AmountCompleted * (e.Products.Sum(p => p.Amount)))
-                })
+                .Select(group =>
+                    {
+                        var groupOrderProducts = AllOrderProducts.Where(e => e.ProductId == group.Key).ToList();
+                        var groupOrderProductPacks = AllOrderProductPacks.Select(o => new
+                        {
+                            OrderProductPack = o,
+                            Products = o.ProductPack.Products.Where(e => e.ProductId == group.Key)
+                        }).ToList();
+
+                        var groupItem = new
+                        {
+                            Product = AllProducts.FirstOrDefault(e => e.Id == group.Key),
+                            
+                            Count = groupOrderProducts.Sum(e => e.Amount) + 
+                                    groupOrderProductPacks.Sum(e => e.OrderProductPack.Amount * e.Products.Sum(p => p.Amount)),
+
+                            CompleteCount = groupOrderProducts.Sum(e => e.AmountCompleted) + 
+                                            groupOrderProductPacks.Sum(e => e.OrderProductPack.AmountCompleted * e.Products.Sum(p => p.Amount)),
+                        };
+
+                        return groupItem;
+                    })
                 .ToList();
 
             var results = new List<OrderProduct>();
