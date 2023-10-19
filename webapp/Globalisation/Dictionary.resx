@@ -1915,6 +1915,9 @@
   <data name="ShippingLabel" xml:space="preserve">
     <value>Shipping</value>
   </data>
+  <data name="ContactAddressLabels" xml:space="preserve">
+    <value>Contact Address Label</value>
+  </data>
   <data name="Redeem" xml:space="preserve">
     <value>Redeem</value>
   </data>

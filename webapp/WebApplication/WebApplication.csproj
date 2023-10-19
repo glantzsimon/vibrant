@@ -1394,7 +1394,7 @@
     <Content Include="Views\Shared\EditorTemplates\ProductRecommendations.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Country.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Country.cshtml" />
-    <Content Include="Views\Contacts\ViewContactAddressLabel.cshtml" />
+    <Content Include="Views\Contacts\ViewContactAddressLabels.cshtml" />
     <Content Include="Views\Contacts\_AddressLabel.cshtml" />
     <Content Include="Views\Shared\_LayoutPrint.cshtml" />
     <Content Include="Views\Contacts\_AddressPrintPage.cshtml" />

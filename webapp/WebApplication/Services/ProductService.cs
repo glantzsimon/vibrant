@@ -149,6 +149,7 @@ namespace K9.WebApplication.Services
 
                 var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id).ToList();
                 var productIngredientsWithSubstitutes = new List<ProductIngredient>();
+                var groupedProductIngredients = new List<ProductIngredient>();
 
                 foreach (var productIngredient in productIngredients)
                 {
@@ -184,23 +185,44 @@ namespace K9.WebApplication.Services
                             .Take(productIngredient.NumberOfSubstitutesToUse)
                             .OrderBy(e => e.Priority).ToList();
 
-                        var splitAmount = productIngredient.Amount / substitutes.Count;
-
-                        productIngredientsWithSubstitutes.AddRange(substitutes.Select(e => new ProductIngredient
+                        if (substitutes.Any())
                         {
-                            BatchSize = productIngredient.BatchSize,
-                            Ingredient = e.SubstituteIngredient,
-                            Amount = splitAmount
-                        }));
+                            var splitAmount = productIngredient.Amount / substitutes.Count;
+
+                            productIngredientsWithSubstitutes.AddRange(substitutes.Select(e => new ProductIngredient
+                            {
+                                BatchSize = productIngredient.BatchSize,
+                                Ingredient = e.SubstituteIngredient,
+                                Amount = splitAmount
+                            }));
+                        }
+                        else
+                        {
+                            productIngredientsWithSubstitutes.Add(productIngredient);
+                        }
                     }
                 }
+
+                groupedProductIngredients = productIngredientsWithSubstitutes
+                    .GroupBy(e => e.IngredientId)
+                    .Select(i =>
+                    {
+                        var productIngredient = productIngredientsWithSubstitutes.First(e => e.IngredientId == i.Key);
+                        var item = new ProductIngredient
+                        {
+                            BatchSize = productIngredient.BatchSize,
+                            Ingredient = productIngredient.Ingredient,
+                            Amount = i.Sum(e => e.Amount)
+                        };
+                        return item;
+                    }).ToList();
 
                 product.ProductIngredients = productIngredients.OrderByDescending(e => e.Amount)
                                 .ThenBy(e => e.Ingredient.Name);
 
                 product.Ingredients = product.ProductIngredients.ToList();
 
-                product.IngredientsWithSubstitutes = productIngredientsWithSubstitutes.OrderBy(e => e.Ingredient.Category).ThenByDescending(e => e.Amount)
+                product.IngredientsWithSubstitutes = groupedProductIngredients.OrderBy(e => e.Ingredient.Category).ThenByDescending(e => e.Amount)
                     .ThenBy(e => e.Ingredient.Name).ToList();
 
                 return product;
@@ -380,7 +402,7 @@ namespace K9.WebApplication.Services
             var itemsToDelete = existingIngredients.Where(i => !product.IngredientsSelectList.Where(e => e.IsSelected).Select(e => e.Id).Contains(i.IngredientId)).Select(e => e.Id).ToList();
 
             _productIngredientsRepository.DeleteBatch(itemsToDelete);
-            
+
             foreach (var item in newItems)
             {
                 var newItem = new ProductIngredient

@@ -924,6 +924,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact Address Label.
+        /// </summary>
+        public static string ContactAddressLabels {
+            get {
+                return ResourceManager.GetString("ContactAddressLabels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
         public static string ContactLabel {

@@ -37,40 +37,49 @@
 
 @for (int i = 0; i < Model.IngredientsWithSubstitutes.Count; i++)
 {
-    var completeClass = Model.IngredientsWithSubstitutes[i].IsSelected ? "complete-rows" : "";
-    var ingredientCategory = Model.IngredientsWithSubstitutes[i].Ingredient.Category;
+    var productIngredient = Model.IngredientsWithSubstitutes[i];
+    var completeClass = productIngredient.IsSelected ? "complete-rows" : "";
+    var ingredientIsInStock = productIngredient.Ingredient.IsInStock;
+    var isInStockClass = ingredientIsInStock ? "" : "out-of-stock";
+    var ingredientCategory = productIngredient.Ingredient.Category;
 
-    @Html.HiddenFor(e => Model.IngredientsWithSubstitutes[i].IngredientId)
-    
-    if (lastCategory != Model.IngredientsWithSubstitutes[i].Ingredient.Category)
+    @Html.HiddenFor(e => productIngredient.IngredientId)
+
+    if (lastCategory != productIngredient.Ingredient.Category)
     {
         lastCategory = ingredientCategory;
 
         <div class="row table-row">
             <div class="col-xs-12">
-                <h4>@Model.IngredientsWithSubstitutes[i].Ingredient.CategoryText</h4>
+                <h4>@productIngredient.Ingredient.CategoryText</h4>
             </div>
         </div>
     }
 
-    <div class="row table-row @completeClass">
+    <div class="row table-row @completeClass @isInStockClass">
         <div class="col-xs-5">
-            <div><span class="bold">@Model.IngredientsWithSubstitutes[i].Ingredient.ItemCode</span> - @Model.IngredientsWithSubstitutes[i].Ingredient.Name</div>
-            @if (!Model.IngredientsWithSubstitutes[i].Ingredient.IsInStock)
+            <div><span class="bold">@productIngredient.Ingredient.ItemCode</span> - @productIngredient.Ingredient.Name</div>
+            @if (!ingredientIsInStock)
             {
                 <span class="field-validation-error">@Dictionary.OutOfStock</span>
             }
         </div>
         <div class="col-xs-3">
-            @Html.DisplayFor(e => Model.IngredientsWithSubstitutes[i].FormattedLargeAmountPer100Capsules)
+            @Html.DisplayFor(e => productIngredient.FormattedLargeAmountPer100Capsules)
         </div>
         <div class="col-xs-1">
-            @Html.CheckBoxFor(e => Model.IngredientsWithSubstitutes[i].IsSelected)
+            @if (ingredientIsInStock)
+            {
+                @Html.CheckBoxFor(e => productIngredient.IsSelected)
+            }
         </div>
         <div class="col-xs-3">
-            @if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
+            @if (ingredientIsInStock)
             {
-                <a data-id="@Model.IngredientsWithSubstitutes[i].Ingredient.Id" href="#" class="btn btn-info out-of-stock">@Dictionary.MarkOutOfStock</a>
+                if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
+                {
+                    <a data-id="@productIngredient.Ingredient.Id" href="#" class="btn btn-info out-of-stock">@Dictionary.MarkOutOfStock</a>
+                }
             }
         </div>
     </div>

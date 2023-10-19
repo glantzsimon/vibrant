@@ -13,6 +13,7 @@ using System.Linq;
 using System.Web.Mvc;
 using K9.Base.DataAccessLayer.Models;
 using K9.WebApplication.Models;
+using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
@@ -58,15 +59,23 @@ namespace K9.WebApplication.Controllers
         [OutputCache(NoStore = true, Duration = 0)]
         public ActionResult ViewContactAddressLabel(int id)
         {
-            var recipient = Repository.Find(id);
-            var sender = Repository.Find(1);
+            return ViewContactsAddressLabels(id);
+        }
 
-            recipient.Country = _countriesRepository.Find(recipient.CountryId ?? 0);
+        [OutputCache(NoStore = true, Duration = 0)]
+        public ActionResult ViewContactsAddressLabels(params int[] ids)
+        {
+            var recipients = Repository.Find(e => ids.Contains(e.Id)).ToList();
+            foreach (var contact in recipients)
+            {
+                contact.Country = _countriesRepository.Find(contact.CountryId ?? 0);
+            }
+
+            var sender = Repository.Find(1);
             sender.Country = _countriesRepository.Find(sender.CountryId ?? 0);
 
-            return View(new AddressLabelViewModel
+            return View("ViewContactAddressLabels", new AddressLabelViewModel(recipients)
             {
-                Recipient = recipient,
                 Sender = sender
             });
         }
