@@ -151,8 +151,12 @@ namespace K9.WebApplication.Controllers
         public ActionResult DownloadIngredientCategoriesCsv()
         {
             var ingredients = _ingredientService.List();
-            
-            var data = ingredients.Select(e => e.CategoryText).Distinct().ToCsv();
+
+            var data = ingredients.Select(e => e.CategoryText).Distinct()
+                .Select(e => new CategoryItem
+                {
+                    Name = e.ToUpper()
+                }).ToCsv();
 
             Response.Clear();
             Response.ContentType = "application/CSV";

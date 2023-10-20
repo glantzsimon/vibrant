@@ -338,6 +338,7 @@
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Models\AddressLabelViewModel.cs" />
+    <Compile Include="Models\CategoryItem.cs" />
     <Compile Include="Models\IngredientViewModel.cs" />
     <Compile Include="Models\IngredientItem.cs" />
     <Compile Include="Models\SortableItemsViewModel.cs" />
