@@ -150,7 +150,7 @@ namespace K9.WebApplication.Controllers
         [Route("ingredients/categories/export/csv")]
         public ActionResult DownloadIngredientCategoriesCsv()
         {
-            var ingredients = _ingredientService.List(true);
+            var ingredients = _ingredientService.List();
             
             var data = ingredients.Select(e => e.CategoryText).Distinct().ToCsv();
 
