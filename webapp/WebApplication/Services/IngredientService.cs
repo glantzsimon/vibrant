@@ -75,7 +75,7 @@ namespace K9.WebApplication.Services
             return MemoryCache.GetOrCreate(GetCacheKey(ingredient.Id), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
-
+                
                 var ingredientSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == ingredient.Id)
                     .OrderBy(e => e.Priority).ToList();
 
