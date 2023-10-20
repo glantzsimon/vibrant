@@ -1927,4 +1927,7 @@
   <data name="TotalAmountRedeemedLabel" xml:space="preserve">
     <value>Total Amount Redeemed To Date</value>
   </data>
+  <data name="DownloadIngredientCategoriesCsv" xml:space="preserve">
+    <value>Download Ingredient Categories as CSV</value>
+  </data>
 </root>

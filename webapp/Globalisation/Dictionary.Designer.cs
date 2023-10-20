@@ -1558,6 +1558,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download Ingredient Categories as CSV.
+        /// </summary>
+        public static string DownloadIngredientCategoriesCsv {
+            get {
+                return ResourceManager.GetString("DownloadIngredientCategoriesCsv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Download Ingredients as CSV.
         /// </summary>
         public static string DownloadIngredientsCsv {

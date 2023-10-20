@@ -147,6 +147,22 @@ namespace K9.WebApplication.Controllers
             return new EmptyResult();
         }
 
+        [Route("ingredients/categories/export/csv")]
+        public ActionResult DownloadIngredientCategoriesCsv()
+        {
+            var ingredients = _ingredientService.List(true);
+            
+            var data = ingredients.Select(e => e.CategoryText).Distinct().ToCsv();
+
+            Response.Clear();
+            Response.ContentType = "application/CSV";
+            Response.AddHeader("content-disposition", $"attachment; filename=\"IngredientCategories.csv\"");
+            Response.Write(data);
+            Response.End();
+
+            return new EmptyResult();
+        }
+
         private void IngredientsController_RecordBeforeDetails(object sender, CrudEventArgs e)
         {
             var ingredient = e.Item as Ingredient;
