@@ -32,7 +32,7 @@ namespace K9.WebApplication.Services
 
         public ProtocolService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Contact> contactsRepository, IRepository<User> usersRepository, IRepository<Protocol> protocolsRepository, IRepository<ProtocolProduct> protocolProductsRepository, IRepository<ProtocolProductPack> protocolProductPackRepository, IRepository<ProtocolSection> protocolProtocolSectionRepository, IRepository<Section> protocolSectionRepository, IRepository<ProtocolSectionProduct> protocolProtocolSectionProductsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProtocolActivity> protocolActivitiesRepository, IRepository<Activity> activitiesRepository, IRepository<ProtocolDietaryRecommendation> protocolDietaryRecommendationRepository, IRepository<DietaryRecommendation> dietaryRecommendationRepository)
         {
-            
+
             _logger = logger;
             _productsRepository = productsRepository;
             _productPackRepository = productPackRepository;
@@ -130,7 +130,7 @@ namespace K9.WebApplication.Services
                 }
             }
 
-            protocol.ProtocolSections = _protocolProtocolSectionRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
+            protocol.ProtocolSections = _protocolProtocolSectionRepository.Find(e => e.ProtocolId == protocol.Id).OrderBy(e => e.Section.DisplayOrder).ToList();
             foreach (var section in protocol.ProtocolSections)
             {
                 section.Section = _protocolSectionRepository.Find(section.SectionId);
@@ -337,6 +337,11 @@ namespace K9.WebApplication.Services
 
             foreach (var section in protocol.ProtocolSections)
             {
+                foreach (var sectionProtocolSectionProduct in section.ProtocolSectionProducts)
+                {
+                    _protocolProtocolSectionProductsRepository.Delete(sectionProtocolSectionProduct.Id);
+                }
+
                 _protocolProtocolSectionRepository.Delete(section.Id);
             }
         }
