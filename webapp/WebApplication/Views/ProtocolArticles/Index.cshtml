@@ -53,7 +53,7 @@
                             {
                                 foreach (var protocolProtocolProductPack in protocol.ProductPacks)
                                 {
-                                    @Html.BootstrapActionLinkButton($"{Dictionary.View} {protocolProtocolProductPack.ProductPack.Name}", "Link", "ProductPacks", new { ExternalId = protocolProtocolProductPack.ProductPack.ExternalId })
+                                    @Html.BootstrapActionLinkButton($"{Dictionary.View} {protocolProtocolProductPack.ProductPack.Name}", "Link", "ProductPack", new { id = protocolProtocolProductPack.ProductPack.ExternalId })
                                 }
                             }
                         </div>
