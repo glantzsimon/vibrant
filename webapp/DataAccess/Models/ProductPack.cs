@@ -24,7 +24,7 @@ namespace K9.DataAccessLayer.Models
         [UIHint("ProductPack")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductLabel)]
         public int ProductPackId => Id;
-        
+
         [UIHint("Contact")]
         [ForeignKey("Contact")]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
@@ -81,23 +81,23 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         public string FormattedPrice => double.Parse(Price.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
         [DataType(DataType.Currency)]
         public double SuggestedRetailPrice => Methods.RoundToInteger(TotalProductsPrice > 0 ? TotalProductsPrice - 300 : 0, 100);
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
         [DataType(DataType.Currency)] public double PriceDiscount1 => Methods.RoundToInteger(Price * 0.80, 100);
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
         public string FormattedPriceDiscount1 => double.Parse(PriceDiscount1.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount2Label)]
         [DataType(DataType.Currency)] public double PriceDiscount2 => Methods.RoundToInteger(Price * 0.66, 100);
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount2Label)]
         public string FormattedPriceDiscount2 => double.Parse(PriceDiscount2.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
-        
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SeoFriendlyIdLabel)]
         public string SeoFriendlyId { get; set; }
 
@@ -109,6 +109,6 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadVideo)]
         public FileSource VideoFileSource { get; set; }
 
-        private double TotalProductsPrice => Products?.Sum(e => e.Product.Price) ?? 0;
+        private double TotalProductsPrice => Products?.Sum(e => e.Product.Price * e.Amount) ?? 0;
     }
 }

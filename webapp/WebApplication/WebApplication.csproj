@@ -1359,14 +1359,7 @@
     <Content Include="Views\SelfCare\RawOrCooked.cshtml" />
     <Content Include="Views\SelfCare\VeganOrOmni.cshtml" />
     <Content Include="Views\Products\DuplicateProduct.cshtml" />
-    <Content Include="Views\ProtocolArticles\CbsUpregulation.cshtml" />
     <Content Include="Views\ProtocolArticles\Index.cshtml" />
-    <Content Include="Views\ProtocolArticles\Questionnaire.cshtml" />
-    <Content Include="Views\ProtocolArticles\MethylationSupport.cshtml" />
-    <Content Include="Views\ProtocolArticles\SulfurDetox.cshtml" />
-    <Content Include="Views\ProtocolArticles\AmmoniaDetox.cshtml" />
-    <Content Include="Views\ProtocolArticles\GeneralWellbeing.cshtml" />
-    <Content Include="Views\ProtocolArticles\HeavyMetalDetox.cshtml" />
     <Content Include="Views\Ingredients\EditList.cshtml" />
     <Content Include="Views\Ingredients\_EditIngredientsFields.cshtml" />
     <Content Include="Views\Products\EditList.cshtml" />
