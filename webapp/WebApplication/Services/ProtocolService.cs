@@ -190,6 +190,33 @@ namespace K9.WebApplication.Services
                         protocolProtocolSection.ProtocolSectionProducts.Add(protocolSectionProduct);
                     }
                 }
+
+                foreach (var protocolProductPack in protocol.ProductPacks)
+                {
+                    foreach (var productPackProduct in protocolProductPack.ProductPack.Products)
+                    {
+                        var existing = protocolProtocolSection.ProtocolSectionProducts.FirstOrDefault(e =>
+                            e.ProductId == productPackProduct.ProductId);
+
+                        if (existing != null)
+                        {
+                            existing.IsVisible =
+                                productPackProduct.Product.CheckRecommendations(
+                                    protocolProtocolSection.Section.Recommendations);
+                        }
+                        else
+                        {
+                            var protocolSectionProduct = new ProtocolSectionProduct
+                            {
+                                ProtocolSectionId = protocolProtocolSection.Id,
+                                ProductId = productPackProduct.ProductId,
+                                Product = productPackProduct.Product,
+                                IsVisible = productPackProduct.Product.CheckRecommendations(protocolProtocolSection.Section.Recommendations)
+                            };
+                            protocolProtocolSection.ProtocolSectionProducts.Add(protocolSectionProduct);
+                        }
+                    }
+                }
             }
 
             return protocol;
