@@ -11,17 +11,19 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IRepository<Product> _productsRepository;
         private readonly IProductService _productService;
+        private readonly IProtocolService _protocolService;
 
-        public ProtocolArticlesController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Product> productsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProductService productService)
+        public ProtocolArticlesController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Product> productsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProductService productService, IProtocolService protocolService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _productsRepository = productsRepository;
             _productService = productService;
+            _protocolService = protocolService;
         }
 
         public ActionResult Index()
         {
-            return View(); ;
+            return View(_protocolService.List());
         }
 
         [Route("health-questionnaire")]
