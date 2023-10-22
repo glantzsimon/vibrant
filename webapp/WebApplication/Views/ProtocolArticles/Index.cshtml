@@ -40,18 +40,20 @@
                 @foreach (var protocol in Model)
                 {
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-12">
                             <h5>@protocol.Name</h5>
                         </div>
-                        <div class="col-sm-6">
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7">
                             @Html.Raw(protocol.ShortDescription)
                         </div>
-                        <div class="col-sm-2">
-                            @if (protocol.ProtocolProductPacks != null && protocol.ProtocolProductPacks.Any())
+                        <div class="col-sm-5">
+                            @if (protocol.ProductPacks != null && protocol.ProductPacks.Any())
                             {
-                                foreach (var protocolProtocolProductPack in protocol.ProtocolProductPacks)
+                                foreach (var protocolProtocolProductPack in protocol.ProductPacks)
                                 {
-                                    @Html.BootstrapActionLinkButton($"{Dictionary.View} {protocolProtocolProductPack.Name}", "Link", "ProductPacks", new { ExternalId = protocolProtocolProductPack.ProductPack.ExternalId })
+                                    @Html.BootstrapActionLinkButton($"{Dictionary.View} {protocolProtocolProductPack.ProductPack.Name}", "Link", "ProductPacks", new { ExternalId = protocolProtocolProductPack.ProductPack.ExternalId })
                                 }
                             }
                         </div>
