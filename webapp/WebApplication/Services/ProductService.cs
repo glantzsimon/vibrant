@@ -152,7 +152,7 @@ namespace K9.WebApplication.Services
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
 
                 product.Url = _urlHelper.Action("Details", "Product", new { seoFriendlyId = product.SeoFriendlyId });
-                product.QrCodeUrl = _urlHelper.Action("GetQrCode", "Shared", new { code = product.Url, size = 111 });
+                product.QrCodeUrl = _urlHelper.AbsoluteAction("GetQrCode", "Shared", new { code = product.Url, size = 111 });
 
                 var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id).ToList();
                 var productIngredientsWithSubstitutes = new List<ProductIngredient>();
