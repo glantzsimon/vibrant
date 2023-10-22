@@ -370,6 +370,48 @@ namespace K9.WebApplication.Services
             });
         }
 
+        public ProductPack DuplicateProductPack(int id)
+        {
+            var productPack = FindPack(id);
+            if (productPack == null)
+            {
+                return null;
+            }
+
+            var newProductPack = new ProductPack();
+            var newExternalId = Guid.NewGuid();
+
+            productPack.MapTo(newProductPack);
+            newProductPack.Id = 0;
+            newProductPack.Name = $"{newProductPack.Name} (Copy)";
+            newProductPack.ExternalId = newExternalId;
+
+            _productPackRepository.Create(newProductPack);
+
+            // Get new Id
+            newProductPack = FindPack(newExternalId);
+
+            if (newProductPack == null)
+            {
+                throw new Exception("Error duplicating product pack");
+            }
+
+            // Copy Products
+            foreach (var product in productPack.Products)
+            {
+                var newProduct = new ProductPackProduct
+                {
+                    ProductId = product.Id,
+                    ProductPackId = newProductPack.Id,
+                    Amount = product.Amount
+                };
+
+                _productPackProductRepository.Create(newProduct);
+            }
+
+            return newProductPack;
+        }
+
         public void EditIngredientSubstitutes(Product product)
         {
             foreach (var productIngredient in product.Ingredients.Where(e => e.Ingredient.Substitutes != null && e.Ingredient.Substitutes.Any()))

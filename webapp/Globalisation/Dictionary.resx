@@ -1945,4 +1945,10 @@
   <data name="ViewProductQrCodes" xml:space="preserve">
     <value>View Product QR Codes</value>
   </data>
+  <data name="ProductPackProduct" xml:space="preserve">
+    <value>Product Pack Product</value>
+  </data>
+  <data name="ProductPackProducts" xml:space="preserve">
+    <value>Product Pack Products</value>
+  </data>
 </root>

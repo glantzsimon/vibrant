@@ -3799,6 +3799,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Product Pack Product.
+        /// </summary>
+        public static string ProductPackProduct {
+            get {
+                return ResourceManager.GetString("ProductPackProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Pack Products.
+        /// </summary>
+        public static string ProductPackProducts {
+            get {
+                return ResourceManager.GetString("ProductPackProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Product Packs.
         /// </summary>
         public static string ProductPacks {

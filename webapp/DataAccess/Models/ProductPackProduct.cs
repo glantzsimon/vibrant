@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
-    [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.ProductIngredients, PluralName = Globalisation.Strings.Names.ProductIngredients, Name = Globalisation.Strings.Names.ProductIngredient)]
+    [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.ProductPackProducts, PluralName = Globalisation.Strings.Names.ProductPackProducts, Name = Globalisation.Strings.Names.ProductPackProduct)]
     public class ProductPackProduct : ObjectBase
 	{
         [UIHint("Product")]

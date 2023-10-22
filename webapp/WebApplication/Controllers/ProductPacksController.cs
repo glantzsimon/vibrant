@@ -33,6 +33,7 @@ namespace K9.WebApplication.Controllers
             RecordBeforeUpdated += ProductPacksController_RecordBeforeUpdated;
             RecordBeforeEditMultiple += ProductPacksController_RecordBeforeEditMultiple;
             RecordBeforeDetails += ProductPacksController_RecordBeforeDetails;
+            RecordBeforeUpdate += ProductPacksController_RecordBeforeUpdate;
         }
         
         public ActionResult EditProductQuantities(int id)
@@ -103,6 +104,12 @@ namespace K9.WebApplication.Controllers
             _productService.ClearCache();
 
             return RedirectToAction("EditList");
+        }
+
+        private void ProductPacksController_RecordBeforeUpdate(object sender, CrudEventArgs e)
+        {
+            var pack = e.Item as ProductPack;
+            pack = _productService.GetFullProductPack(pack);
         }
 
         private void ProductPacksController_RecordBeforeUpdated(object sender, CrudEventArgs e)

@@ -245,6 +245,8 @@
             public const string ProtocolProtocolSectionProduct = "ProtocolProtocolSectionProduct";
             public const string ProtocolProtocolSectionProducts = "ProtocolProtocolSectionProducts";
             public const string ProductPacks = "ProductPacks";
+            public const string ProductPackProduct = "ProductPackProduct";
+            public const string ProductPackProducts = "ProductPackProduct";
             public const string ProductIngredient = "ProductIngredient";
             public const string ProductIngredients = "ProductIngredients";
             public const string IngredientSubstitute = "IngredientSubstitute";

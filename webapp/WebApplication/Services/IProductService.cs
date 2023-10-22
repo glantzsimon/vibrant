@@ -26,5 +26,6 @@ namespace K9.WebApplication.Services
         ProductPack FindPack(int id);
         ProductPack FindPack(string seoFriendlyId);
         ProductPack GetFullProductPack(ProductPack productPack);
+        ProductPack DuplicateProductPack(int id);
     }
 }
