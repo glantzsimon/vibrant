@@ -84,7 +84,11 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
         [DataType(DataType.Currency)]
-        public double SuggestedRetailPrice => Methods.RoundToInteger(TotalProductsPrice > 0 ? TotalProductsPrice - 300 : 0, 100);
+        public double SuggestedRetailPrice => Methods.RoundToInteger(TotalProductsPrice > 0 ? (TotalProductsPrice * 0.93) : 0, 100);
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalSavingsLabel)]
+        [DataType(DataType.Currency)]
+        public double ProductsDiscount => TotalProductsPrice - Price;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
         [DataType(DataType.Currency)] public double PriceDiscount1 => Methods.RoundToInteger(Price * 0.80, 100);

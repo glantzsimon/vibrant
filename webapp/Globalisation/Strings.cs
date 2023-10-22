@@ -42,6 +42,7 @@
             public const string TotalCostLabel = "TotalCostLabel";
             public const string CostOfIngredientsLabel = "CostOfIngredientsLabel";
             public const string SuggestedRetailPriceLabel = "SuggestedRetailPriceLabel";
+            public const string TotalSavingsLabel = "TotalSavingsLabel";
             public const string ProfitMarginLabel = "ProfitMarginLabel";
             public const string ProfitMarginSmallPackLabel = "ProfitMarginSmallPackLabel";
             public const string ProfitMarginDiscount1Label = "ProfitMarginDiscount1Label";

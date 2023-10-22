@@ -5278,6 +5278,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total Savings.
+        /// </summary>
+        public static string TotalSavingsLabel {
+            get {
+                return ResourceManager.GetString("TotalSavingsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Totals.
         /// </summary>
         public static string TotalsLabel {

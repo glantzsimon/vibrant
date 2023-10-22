@@ -47,6 +47,14 @@
 
     <hr />
 
+    <div class="row">
+        <div class="col-xs-12 text-align-right">
+            @Html.BootstrapDisplayFor(e => e.ProductsDiscount)
+        </div>
+    </div>
+
+    <hr />
+
     <div class="buttons-container">
         @Html.BootstrapActionLinkButton(Dictionary.SeeAllProductPacks, "Index", "ProductPack", null, "", EButtonClass.Info, EButtonClass.Large)
     </div>
