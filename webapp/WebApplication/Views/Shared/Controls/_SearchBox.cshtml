@@ -23,10 +23,11 @@
             {
                 $("@Model.CssSelector").show();
             }
-            else
-            {
+            else {
                 $("@Model.CssSelector").hide();
                 $("@Model.CssSelector:contains('" + searchText + "')").show();
+                $("@(Model.CssSelector)[data-category*=" + searchText + "]").show();
+                $("@(Model.CssSelector)[data-itemcode*=" + searchText + "]").show();
             }
             window.clearTimeout(searchTimeout);
         }

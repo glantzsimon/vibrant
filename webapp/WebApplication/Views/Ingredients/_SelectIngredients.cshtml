@@ -48,7 +48,10 @@
         </div>
     }
 
-    <div class="checkbox">
-        <label>@Html.CheckBoxFor(model => Model.Ingredients[i].IsSelected)@Model.Ingredients[i].Name</label>
+    <div class="checkbox" data-category="@Model.Ingredients[i].CategoryText" data-itemcode="@Model.Ingredients[i].ItemCode">
+        <label>
+            @Html.CheckBoxFor(model => Model.Ingredients[i].IsSelected)
+            @Model.Ingredients[i].Name
+        </label>
     </div>
 }
