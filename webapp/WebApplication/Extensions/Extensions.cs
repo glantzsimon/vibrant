@@ -2,10 +2,10 @@
 using K9.WebApplication.Controllers;
 using K9.WebApplication.Models;
 using System;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
-using HtmlAgilityPack;
 
 namespace K9.WebApplication.Extensions
 {
@@ -51,6 +51,13 @@ namespace K9.WebApplication.Extensions
                         Name = e.Name,
                         Definition = e.GetValue(null, null).ToString()
                     }).ToArray();
+        }
+
+        public static byte[] ToByteArray(this System.Drawing.Image img) {
+            using (MemoryStream mStream = new MemoryStream()) {
+                img.Save(mStream, img.RawFormat);
+                return mStream.ToArray();
+            }
         }
     }
 }

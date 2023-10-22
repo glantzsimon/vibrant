@@ -9,6 +9,8 @@
             public const string ConcentrationLabel = "ConcentrationLabel";
             public const string IsHiddenLabel = "IsHiddenLabel";
             public const string PurchaseUrlsLabel = "PurchaseUrlsLabel";
+            public const string QrCodeUrlsLabel = "QrCodeUrlsLabel";
+            public const string UrlLabel = "UrlLabel";
             public const string NotesLabel = "NotesLabel";
             public const string NumberToCreateLabel = "NumberToCreateLabel";
             public const string DonationAmountLabel = "DonationAmountLabel";

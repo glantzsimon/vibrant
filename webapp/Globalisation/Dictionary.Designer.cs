@@ -4245,6 +4245,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to QR Code Url.
+        /// </summary>
+        public static string QrCodeUrlsLabel {
+            get {
+                return ResourceManager.GetString("QrCodeUrlsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quantities.
         /// </summary>
         public static string QuantitiesLabel {
@@ -5562,6 +5571,15 @@ namespace K9.Globalisation {
         public static string ViewPrintableVersion {
             get {
                 return ResourceManager.GetString("ViewPrintableVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Product QR Codes.
+        /// </summary>
+        public static string ViewProductQrCodes {
+            get {
+                return ResourceManager.GetString("ViewProductQrCodes", resourceCulture);
             }
         }
         

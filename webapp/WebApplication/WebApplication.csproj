@@ -167,6 +167,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.183\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Linq" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.183\lib\net461\System.Memory.dll</HintPath>
@@ -371,7 +372,9 @@
     <Compile Include="Services\ILogService.cs" />
     <Compile Include="Services\IRecaptchaService.cs" />
     <Compile Include="Services\LogService.cs" />
+    <Compile Include="Services\IQrCodeService.cs" />
     <Compile Include="Services\RecaptchaService.cs" />
+    <Compile Include="Services\QrCodeService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\IUserService.cs" />
     <Compile Include="ViewModels\RepCommissionViewModel.cs" />
@@ -1521,6 +1524,8 @@
     <Content Include="Views\Ingredients\ViewIngredientsLabels.cshtml" />
     <Content Include="Views\Ingredients\SelectIngredientsLabels.cshtml" />
     <Content Include="Views\Ingredients\_SelectIngredients.cshtml" />
+    <Content Include="Views\Products\ViewProductQrCodes.cshtml" />
+    <Content Include="Views\Products\_ViewQrCodes.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

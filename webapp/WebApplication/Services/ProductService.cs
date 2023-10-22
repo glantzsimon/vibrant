@@ -6,6 +6,8 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
+using System.Web.Mvc;
 using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Services
@@ -20,6 +22,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<ProductPack> _productPackRepository;
         private readonly IRepository<ProductIngredientSubstitute> _productIngredientSubstituteRepository;
         private readonly IIngredientService _ingredientService;
+        private readonly UrlHelper _urlHelper;
 
         public ProductService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProductPack> productPackRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstituteRepository, IIngredientService ingredientService)
         {
@@ -31,6 +34,7 @@ namespace K9.WebApplication.Services
             _productPackRepository = productPackRepository;
             _productIngredientSubstituteRepository = productIngredientSubstituteRepository;
             _ingredientService = ingredientService;
+            _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
 
         public Product Find(int id)
@@ -146,6 +150,9 @@ namespace K9.WebApplication.Services
             return MemoryCache.GetOrCreate(GetCacheKey(product.Id), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
+
+                product.Url = _urlHelper.Action("Details", "Product", new { seoFriendlyId = product.SeoFriendlyId });
+                product.QrCodeUrl = _urlHelper.Action("GetQrCode", "Shared", new { code = product.Url, size = 111 });
 
                 var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id).ToList();
                 var productIngredientsWithSubstitutes = new List<ProductIngredient>();

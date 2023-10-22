@@ -5,6 +5,8 @@ using NLog;
 using System.Web.Mvc;
 using K9.Base.WebApplication.Filters;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Constants;
+using K9.WebApplication.Extensions;
 
 namespace K9.WebApplication.Controllers
 {
@@ -14,14 +16,16 @@ namespace K9.WebApplication.Controllers
         private readonly IProductService _productService;
         private readonly IIngredientService _ingredientService;
         private readonly IOrderService _orderService;
+        private readonly IQrCodeService _qrCodeService;
 
-        public SharedController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProductService productService, IIngredientService ingredientService, IOrderService orderService)
+        public SharedController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProductService productService, IIngredientService ingredientService, IOrderService orderService, IQrCodeService qrCodeService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _authentication = authentication;
             _productService = productService;
             _ingredientService = ingredientService;
             _orderService = orderService;
+            _qrCodeService = qrCodeService;
         }
 
         public override string GetObjectName()
@@ -44,6 +48,19 @@ namespace K9.WebApplication.Controllers
         public ActionResult MaintenanceComplete()
         {
             return View();
+        }
+
+        [OutputCache(VaryByParam = "*", Duration = int.MaxValue)]
+        public ActionResult GetQrCode(string code, int size = 111)
+        {
+            var image = _qrCodeService.GetQrCode(code, size).ToByteArray();
+
+            Response.Clear();
+            Response.ContentType = "image/gif";
+            Response.BinaryWrite(image);
+            Response.End();
+
+            return new EmptyResult();
         }
     }
 }

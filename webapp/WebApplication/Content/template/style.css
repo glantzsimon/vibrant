@@ -997,9 +997,9 @@ ul.sortable {
     padding-right: 0 !important;
 }
 
-ul.sortable li {
-    cursor: move;
-}
+    ul.sortable li {
+        cursor: move;
+    }
 
 .pagebreak {
     clear: both;
@@ -1026,3 +1026,8 @@ ul.sortable li {
     .ingredient-label p {
         font-family: ''candara'';
     }
+
+.qr-code {
+    width: 100%;
+    height: 100%;
+}

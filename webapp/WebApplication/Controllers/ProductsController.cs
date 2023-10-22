@@ -61,6 +61,11 @@ namespace K9.WebApplication.Controllers
             _productService.ClearCache();
         }
 
+        public ActionResult ViewProductQrCodes()
+        {
+            return View(_productService.List(true));
+        }
+
         [RequirePermissions(Permission = Permissions.Edit)]
         public ActionResult DuplicateProduct(int id)
         {

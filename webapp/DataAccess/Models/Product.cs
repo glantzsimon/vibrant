@@ -24,9 +24,9 @@ namespace K9.DataAccessLayer.Models
     public class Product : ObjectBase, ICategorisable
     {
         public const int ProductLabelBenefitsCount = 9;
-       
+
         public Guid ExternalId { get; set; }
-        
+
         [UIHint("ProductCategory")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CategoryLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
@@ -48,11 +48,19 @@ namespace K9.DataAccessLayer.Models
 
         [NotMapped]
         public int ExpectedItemCode { get; set; }
-        
+
         [NotMapped]
         [UIHint("Product")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductLabel)]
         public int ProductId => Id;
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PurchaseUrlsLabel)]
+        public string Url { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QrCodeUrlsLabel)]
+        public string QrCodeUrl { get; set; }
 
         [NotMapped]
         public List<Ingredient> IngredientsSelectList { get; set; }
@@ -90,7 +98,7 @@ namespace K9.DataAccessLayer.Models
 
         public List<ECategory> IngredientsCategories =>
             IngredientsWithSubstitutes?.Select(e => e.Ingredient.Category).Distinct().OrderBy(e => e).ToList();
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsMainLabel)]
         public bool IsMain { get; set; }
 

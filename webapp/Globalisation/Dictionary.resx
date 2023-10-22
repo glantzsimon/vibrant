@@ -1930,6 +1930,9 @@
   <data name="DownloadIngredientCategoriesCsv" xml:space="preserve">
     <value>Download Ingredient Categories as CSV</value>
   </data>
+  <data name="QrCodeUrlsLabel" xml:space="preserve">
+    <value>QR Code Url</value>
+  </data>
   <data name="SelectIngredientLabels" xml:space="preserve">
     <value>Select Ingredient Labels</value>
   </data>
@@ -1938,5 +1941,8 @@
   </data>
   <data name="ViewLabels" xml:space="preserve">
     <value>View Labels</value>
+  </data>
+  <data name="ViewProductQrCodes" xml:space="preserve">
+    <value>View Product QR Codes</value>
   </data>
 </root>
