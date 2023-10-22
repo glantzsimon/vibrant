@@ -35,7 +35,7 @@ namespace K9.WebApplication.Controllers
             RecordBeforeUpdated += IngredientsController_RecordBeforeUpdated;
             RecordBeforeDetails += IngredientsController_RecordBeforeDetails;
         }
-        
+
         public ActionResult EditList()
         {
             return View(Repository.List().OrderBy(e => e.Name).ToList());
@@ -83,6 +83,17 @@ namespace K9.WebApplication.Controllers
             }).OrderByDescending(e => e.TotalOrdersUsedIn).ThenByDescending(e => e.TotalProductsUsedIn).ThenBy(e => e.Ingredient.Name).ToList();
 
             return View(list);
+        }
+
+        public ActionResult SelectIngredientsLabels()
+        {
+            return View(new IngredientsLabelsViewModel(_ingredientService.List(false, true)));
+        }
+
+        [HttpPost]
+        public ActionResult ViewIngredientsLabels(IngredientsLabelsViewModel model)
+        {
+            return View("ViewIngredientsLabels", model);
         }
 
         public ActionResult EditIngredientSubstitutes(int id)

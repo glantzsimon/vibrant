@@ -1,0 +1,12 @@
+@media(max-width:1430px) {
+
+    .ingredient-label {
+        padding-top: 21px;
+    }
+
+
+    .ingredient-label h4 {
+        font-size: 2.2em;
+    }
+
+}

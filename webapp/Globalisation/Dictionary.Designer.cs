@@ -4578,6 +4578,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select Ingredient Labels.
+        /// </summary>
+        public static string SelectIngredientLabels {
+            get {
+                return ResourceManager.GetString("SelectIngredientLabels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Self-Care.
         /// </summary>
         public static string SelfCareAndNutrition {
@@ -5517,6 +5526,24 @@ namespace K9.Globalisation {
         public static string ViewContactAddressLabel {
             get {
                 return ResourceManager.GetString("ViewContactAddressLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Ingredient Labels.
+        /// </summary>
+        public static string ViewIngredientLabels {
+            get {
+                return ResourceManager.GetString("ViewIngredientLabels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Labels.
+        /// </summary>
+        public static string ViewLabels {
+            get {
+                return ResourceManager.GetString("ViewLabels", resourceCulture);
             }
         }
         

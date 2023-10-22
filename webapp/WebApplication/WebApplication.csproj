@@ -337,6 +337,7 @@
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
+    <Compile Include="Models\IngredientsLabelsViewModel.cs" />
     <Compile Include="Models\AddressLabelViewModel.cs" />
     <Compile Include="Models\CategoryItem.cs" />
     <Compile Include="Models\IngredientViewModel.cs" />
@@ -437,6 +438,7 @@
     <Content Include="Content\template\style-md.css" />
     <Content Include="Content\template\style-xs.css" />
     <Content Include="Content\template\style-sm.css" />
+    <Content Include="Content\template\style.1430.css" />
     <Content Include="Content\template\style.1200.css" />
     <Content Include="Content\template\style.610.css" />
     <Content Include="Content\template\style.525.css" />
@@ -786,6 +788,7 @@
     <Content Include="Images\ui\document.jpg" />
     <Content Include="Images\ui\fade-out.png" />
     <Content Include="Images\ui\fail.png" />
+    <Content Include="Images\ui\label.png" />
     <Content Include="Images\ui\notfound.png" />
     <Content Include="Images\ui\locked.png" />
     <Content Include="Images\ui\question-mark.jpg" />
@@ -1513,6 +1516,11 @@
     <Content Include="Views\RepCommissions\Index.cshtml" />
     <Content Include="Views\RepCommissions\Review.cshtml" />
     <Content Include="Views\RepCommissions\_Redeemed.cshtml" />
+    <Content Include="Views\Ingredients\_IngredientsPrintPage.cshtml" />
+    <Content Include="Views\Ingredients\_IngredientLabel.cshtml" />
+    <Content Include="Views\Ingredients\ViewIngredientsLabels.cshtml" />
+    <Content Include="Views\Ingredients\SelectIngredientsLabels.cshtml" />
+    <Content Include="Views\Ingredients\_SelectIngredients.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

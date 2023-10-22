@@ -910,7 +910,7 @@ div.row + hr {
 }
 
 .small-text {
-    font-size: 0.8em;
+    font-size: 0.8em !important;
 }
 
 .benefits p:before {
@@ -945,6 +945,8 @@ div.row + hr {
     right: 0;
     bottom: 0;
     z-index: 111111;
+    clear: both;
+    page-break-after: always;
 }
 
 .print-container {
@@ -998,3 +1000,29 @@ ul.sortable {
 ul.sortable li {
     cursor: move;
 }
+
+.pagebreak {
+    clear: both;
+    page-break-after: always;
+}
+
+.ingredient-label {
+    width: 100%;
+    height: 111px;
+    text-align: center;
+    padding-top: 14px;
+    background-image: url(../../Images/ui/label.png) !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+}
+
+    .ingredient-label h4 {
+        font-family: valent;
+        text-align: center;
+        font-size: 2.8em;
+    }
+
+    .ingredient-label p {
+        font-family: ''candara'';
+    }

@@ -14,4 +14,8 @@
     #bs-navbar-collapse-1 {
         font-size: 0.8em;
     }
+
+    .ingredient-label h4 {
+        font-size: 2em;
+    }
 }

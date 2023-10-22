@@ -1930,4 +1930,13 @@
   <data name="DownloadIngredientCategoriesCsv" xml:space="preserve">
     <value>Download Ingredient Categories as CSV</value>
   </data>
+  <data name="SelectIngredientLabels" xml:space="preserve">
+    <value>Select Ingredient Labels</value>
+  </data>
+  <data name="ViewIngredientLabels" xml:space="preserve">
+    <value>View Ingredient Labels</value>
+  </data>
+  <data name="ViewLabels" xml:space="preserve">
+    <value>View Labels</value>
+  </data>
 </root>

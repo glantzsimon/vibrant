@@ -119,13 +119,21 @@ namespace K9.WebApplication.Services
             return ingredient;
         }
 
-        public List<Ingredient> List(bool retrieveFullIngredient = false)
+        public List<Ingredient> List(bool retrieveFullIngredient = false, bool usedOnly = false)
         {
             return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 
                 var ingredients = _ingredientsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+
+                if (usedOnly)
+                {
+                    var usedIngredientIds = _ingredientsRepository.CustomQuery<SortableItem>(
+                        $"SELECT [{nameof(ProductIngredient.IngredientId)}] AS [{nameof(Ingredient.Id)}] FROM [{nameof(ProductIngredient)}] WHERE [{nameof(ProductIngredient.IsDeleted)}] = 0");
+
+                    ingredients = ingredients.Where(e => usedIngredientIds.Select(s => s.Id).Contains(e.Id)).ToList();
+                }
 
                 if (retrieveFullIngredient)
                 {
@@ -141,7 +149,7 @@ namespace K9.WebApplication.Services
                 return ingredients;
             });
         }
-
+        
         public Ingredient FindWithSubstitutesSelectList(int id)
         {
             var model = Find(id);
