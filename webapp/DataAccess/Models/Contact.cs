@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Web.Mvc;
 using K9.DataAccessLayer.Enums;
 
 namespace K9.DataAccessLayer.Models
@@ -73,6 +74,12 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(K9.Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.CompanyLabel)]
         [StringLength(255)]
         public string CompanyName { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NotesLabel)]
+        [StringLength(243)]
+        [DataType(DataType.Html)]
+        [AllowHtml]
+        public string Notes { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsUnsubscribedLabel)]
         public bool IsUnsubscribed { get; set; }

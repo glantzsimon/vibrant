@@ -42,6 +42,7 @@
             public const string TotalCostLabel = "TotalCostLabel";
             public const string CostOfIngredientsLabel = "CostOfIngredientsLabel";
             public const string SuggestedRetailPriceLabel = "SuggestedRetailPriceLabel";
+            public const string SuggestedBulkDiscountLabel = "SuggestedBulkDiscountLabel";
             public const string TotalSavingsLabel = "TotalSavingsLabel";
             public const string ProfitMarginLabel = "ProfitMarginLabel";
             public const string ProfitMarginSmallPackLabel = "ProfitMarginSmallPackLabel";
@@ -87,6 +88,7 @@
             public const string AddressLabel = "AddressLabel";
             public const string CountryLabel = "CountryLabel";
             public const string ConsultationDurationLabel = "ConsultationDurationLabel";
+            public const string CustomDurationLabel = "CustomDurationLabel";
             public const string DurationLabel = "Duration";
             public const string DonatedOnLabel = "DonatedOnLabel";
             public const string CompletedOnLabel = "CompletedOnLabel";
@@ -302,6 +304,10 @@
             public const string AnnualPlatinumMembership = "AnnualPlatinumMembership";
             public const string OneHour = "OneHour";
             public const string TwoHours = "TwoHours";
+            public const string OneMonth = "OneMonth";
+            public const string TwoMonths = "TwoMonths";
+            public const string ThreeMonths = "ThreeMonths";
+            public const string SixMonths = "SixMonths";
 
             public const string Capsules = "Capsules";
             public const string Powder = "Powder";

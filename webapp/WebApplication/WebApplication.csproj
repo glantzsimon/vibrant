@@ -1519,6 +1519,7 @@
     <Content Include="Views\Ingredients\_SelectIngredients.cshtml" />
     <Content Include="Views\Products\ViewProductQrCodes.cshtml" />
     <Content Include="Views\Products\_ViewQrCodes.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ProtocolDuration.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

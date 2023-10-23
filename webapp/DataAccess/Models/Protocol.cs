@@ -56,6 +56,15 @@ namespace K9.DataAccessLayer.Models
         [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
         public string ContactName { get; set; }
 
+        [UIHint("ProtocolDuration")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DurationLabel)]
+        public EProtocolDuration Duration { get; set; } = EProtocolDuration.ThreeMonths;
+
+        public int DaysDuration => GetDaysDuration();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CustomDurationLabel)]
+        public int CustomDaysDuration { get; set; }
+
         public virtual IEnumerable<ProtocolActivity> ProtocolActivities { get; set; }
 
         [NotMapped]
@@ -122,6 +131,18 @@ namespace K9.DataAccessLayer.Models
             }
 
             return 0;
+        }
+
+        private int GetDaysDuration()
+        {
+            switch (Duration)
+            {
+                case EProtocolDuration.Custom:
+                    return CustomDaysDuration;
+
+                default:
+                    return (int)Duration;
+            }
         }
     }
 }

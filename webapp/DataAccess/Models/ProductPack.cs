@@ -66,14 +66,7 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Html)]
         [AllowHtml]
         public string Benefits { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DosageLabel)]
-        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-        [StringLength(int.MaxValue)]
-        [DataType(DataType.Html)]
-        [AllowHtml]
-        public string Dosage { get; set; }
-
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [DataType(DataType.Currency)]
@@ -82,22 +75,31 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         public string FormattedPrice => double.Parse(Price.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalProductsPrice => Products?.Sum(e => e.Product.Price * e.Amount) ?? 0;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
+        public string FormattedTotalProductsPrice => double.Parse(TotalProductsPrice.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
         [DataType(DataType.Currency)]
-        public double SuggestedRetailPrice => Methods.RoundToInteger(TotalProductsPrice > 0 ? (TotalProductsPrice * 0.93) : 0, 100);
-
+        public double SuggestedRetailPrice => Methods.RoundToInteger(TotalProductsPrice > 0 ? TotalProductsPrice.GetSuggestedBulkDiscountPrice() : 0, 100);
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalSavingsLabel)]
         [DataType(DataType.Currency)]
         public double ProductsDiscount => TotalProductsPrice - Price;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
-        [DataType(DataType.Currency)] public double PriceDiscount1 => Methods.RoundToInteger(Price * 0.80, 100);
+        [DataType(DataType.Currency)] 
+        public double PriceDiscount1 => Methods.RoundToInteger(Price * 0.80, 100);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
         public string FormattedPriceDiscount1 => double.Parse(PriceDiscount1.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount2Label)]
-        [DataType(DataType.Currency)] public double PriceDiscount2 => Methods.RoundToInteger(Price * 0.66, 100);
+        [DataType(DataType.Currency)] 
+        public double PriceDiscount2 => Methods.RoundToInteger(Price * 0.66, 100);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount2Label)]
         public string FormattedPriceDiscount2 => double.Parse(PriceDiscount2.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
@@ -112,7 +114,5 @@ namespace K9.DataAccessLayer.Models
         [FileSourceInfo("upload/productpacks", Filter = EFilesSourceFilter.Videos)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadVideo)]
         public FileSource VideoFileSource { get; set; }
-
-        private double TotalProductsPrice => Products?.Sum(e => e.Product.Price * e.Amount) ?? 0;
     }
 }

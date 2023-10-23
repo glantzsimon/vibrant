@@ -1945,13 +1945,31 @@
   <data name="ViewProductQrCodes" xml:space="preserve">
     <value>View Product QR Codes</value>
   </data>
+  <data name="CustomDurationLabel" xml:space="preserve">
+    <value>Custom Duration (Days)</value>
+  </data>
+  <data name="OneMonth" xml:space="preserve">
+    <value>One Month</value>
+  </data>
   <data name="ProductPackProduct" xml:space="preserve">
     <value>Product Pack Product</value>
   </data>
   <data name="ProductPackProducts" xml:space="preserve">
     <value>Product Pack Products</value>
   </data>
+  <data name="SixMonths" xml:space="preserve">
+    <value>Six Months</value>
+  </data>
+  <data name="SuggestedBulkDiscountLabel" xml:space="preserve">
+    <value>Suggested Bulk Discount</value>
+  </data>
+  <data name="ThreeMonths" xml:space="preserve">
+    <value>Three Months</value>
+  </data>
   <data name="TotalSavingsLabel" xml:space="preserve">
     <value>Total Savings</value>
+  </data>
+  <data name="TwoMonths" xml:space="preserve">
+    <value>Two Months</value>
   </data>
 </root>

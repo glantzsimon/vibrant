@@ -1180,6 +1180,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Custom Duration (Days).
+        /// </summary>
+        public static string CustomDurationLabel {
+            get {
+                return ResourceManager.GetString("CustomDurationLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Customer Email Address.
         /// </summary>
         public static string CustomerEmailLabel {
@@ -3166,6 +3175,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to One Month.
+        /// </summary>
+        public static string OneMonth {
+            get {
+                return ResourceManager.GetString("OneMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to On an empty stomach.
         /// </summary>
         public static string OnEmptyStomach {
@@ -4722,6 +4740,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Six Months.
+        /// </summary>
+        public static string SixMonths {
+            get {
+                return ResourceManager.GetString("SixMonths", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Skip.
         /// </summary>
         public static string Skip {
@@ -4944,6 +4971,15 @@ namespace K9.Globalisation {
         public static string SubTotalLabel {
             get {
                 return ResourceManager.GetString("SubTotalLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suggested Bulk Discount.
+        /// </summary>
+        public static string SuggestedBulkDiscountLabel {
+            get {
+                return ResourceManager.GetString("SuggestedBulkDiscountLabel", resourceCulture);
             }
         }
         
@@ -5215,6 +5251,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Three Months.
+        /// </summary>
+        public static string ThreeMonths {
+            get {
+                return ResourceManager.GetString("ThreeMonths", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thursday.
         /// </summary>
         public static string Thursday {
@@ -5328,6 +5373,15 @@ namespace K9.Globalisation {
         public static string TwoHours {
             get {
                 return ResourceManager.GetString("TwoHours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Two Months.
+        /// </summary>
+        public static string TwoMonths {
+            get {
+                return ResourceManager.GetString("TwoMonths", resourceCulture);
             }
         }
         

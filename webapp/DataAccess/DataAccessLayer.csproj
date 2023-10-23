@@ -196,6 +196,7 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\EProtocolDuration.cs" />
     <Compile Include="Enums\ECategory.cs" />
     <Compile Include="Enums\EProtocolType.cs" />
     <Compile Include="Enums\EPeriod.cs" />
@@ -421,6 +422,18 @@
     <Compile Include="Migrations\202310181701380_AddRepCommission.Designer.cs">
       <DependentUpon>202310181701380_AddRepCommission.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310230554145_ContactNotes.cs" />
+    <Compile Include="Migrations\202310230554145_ContactNotes.Designer.cs">
+      <DependentUpon>202310230554145_ContactNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310230629332_ProtocolDuration.cs" />
+    <Compile Include="Migrations\202310230629332_ProtocolDuration.Designer.cs">
+      <DependentUpon>202310230629332_ProtocolDuration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310230655363_RemoveDosageFromProductPack.cs" />
+    <Compile Include="Migrations\202310230655363_RemoveDosageFromProductPack.Designer.cs">
+      <DependentUpon>202310230655363_RemoveDosageFromProductPack.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DietaryRecommendation.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ContactProduct.cs" />
@@ -630,6 +643,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310181701380_AddRepCommission.resx">
       <DependentUpon>202310181701380_AddRepCommission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310230554145_ContactNotes.resx">
+      <DependentUpon>202310230554145_ContactNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310230629332_ProtocolDuration.resx">
+      <DependentUpon>202310230629332_ProtocolDuration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310230655363_RemoveDosageFromProductPack.resx">
+      <DependentUpon>202310230655363_RemoveDosageFromProductPack.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

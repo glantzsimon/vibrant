@@ -153,6 +153,16 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double TotalProductPacksPrice => ProductPacks?.Sum(e => e.TotalPrice) ?? 0;
         
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
+        [UIHint("Percentage")]
+        public double SuggestedDiscount => Methods.RoundToInteger(TotalPrice > 0 ? TotalPrice.GetSuggestedBulkDiscount() : 0, 100);
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
+        public string FormattedSuggestedDiscountAsPercent => (SuggestedDiscount / 100).ToString("P0", CultureInfo.InvariantCulture);
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
+        public double SuggestedDiscountAmount => TotalPrice * (SuggestedDiscount / 100);
+
         [UIHint("Percentage")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public double? Discount { get; set; }

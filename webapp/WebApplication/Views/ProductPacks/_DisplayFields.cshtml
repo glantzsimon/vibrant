@@ -43,6 +43,9 @@
 
 <div class="row">
     <div class="col-sm-4">
+        @Html.BootstrapDisplayFor(model => model.TotalProductsPrice)
+    </div>
+    <div class="col-sm-4">
         @Html.BootstrapDisplayFor(model => model.SuggestedRetailPrice)
     </div>
 </div>
@@ -71,9 +74,6 @@
 
 <div class="row">
     @Html.BootstrapDisplayFor(model => model.Benefits)
-</div>
-<div class="row">
-    @Html.BootstrapDisplayFor(model => model.Dosage)
 </div>
 
 <hr />
