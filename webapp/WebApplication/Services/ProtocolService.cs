@@ -372,6 +372,7 @@ namespace K9.WebApplication.Services
                     if (numberPerDuration > 0)
                     {
                         protocolProduct.AmountRequired = (int)Math.Ceiling((decimal)numberPerDuration / (decimal)protocolProduct.Product.Amount);
+                        protocolProduct.Amount = protocolProduct.AmountRequired;
                     }
                 }
             }
