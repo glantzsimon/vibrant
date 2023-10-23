@@ -364,7 +364,7 @@ namespace K9.WebApplication.Services
                 {
                     var productSectionProducts = protocol.ProtocolSections
                         .SelectMany(s => s.ProtocolSectionProducts)
-                        .Where(e => e.ProductId == protocolProduct.Id).ToList();
+                        .Where(e => e.ProductId == protocolProduct.ProductId).ToList();
 
                     var numberOfProductDosesRequiredPerDay = productSectionProducts.Sum(e => e.Amount);
                     var numberPerDuration = protocol.GetNumberOfDaysOnPerDuration() * numberOfProductDosesRequiredPerDay;
