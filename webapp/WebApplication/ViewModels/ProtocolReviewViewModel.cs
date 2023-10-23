@@ -17,6 +17,8 @@ namespace K9.WebApplication.ViewModels
         
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ActualAmountLabel)]
         public int ActualAmount => (ProtocolProduct?.Amount ?? 0) + (ProductPackProduct?.Amount ?? 0);
+
+        public bool GetAmountsAreEqual() => AmountRequired == ActualAmount;
     }
 
     public class ProtocolReviewViewModel

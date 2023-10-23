@@ -90,6 +90,10 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <h4>@item.Product.Name</h4>
+                        @if (!item.GetAmountsAreEqual())
+                        {
+                            <span class="field-validation-error">@Dictionary.ProductAmountsAreNotEqualError</span>
+                        }
                     </div>
                 </div>
                 <div class="row">

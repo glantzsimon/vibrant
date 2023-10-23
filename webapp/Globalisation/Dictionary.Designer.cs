@@ -3772,6 +3772,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The number of products required do not match the actual number..
+        /// </summary>
+        public static string ProductAmountsAreNotEqualError {
+            get {
+                return ResourceManager.GetString("ProductAmountsAreNotEqualError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingredient substitutes are not allowed for this product..
         /// </summary>
         public static string ProductDoesNotAllowSubstitutes {

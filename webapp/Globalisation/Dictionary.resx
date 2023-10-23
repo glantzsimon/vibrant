@@ -1963,6 +1963,9 @@
   <data name="OneMonth" xml:space="preserve">
     <value>One Month</value>
   </data>
+  <data name="ProductAmountsAreNotEqualError" xml:space="preserve">
+    <value>The number of products required do not match the actual number.</value>
+  </data>
   <data name="ProductPackProduct" xml:space="preserve">
     <value>Product Pack Product</value>
   </data>
