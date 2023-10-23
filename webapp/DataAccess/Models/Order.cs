@@ -96,8 +96,7 @@ namespace K9.DataAccessLayer.Models
         public DateTime? DueBy { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.IsCompleteLabel)]
-        public bool GetIsOverdue() => DueBy != null && DateTime.Today > DueBy;
+            Name = Globalisation.Strings.Labels.IsCompleteLabel)] public bool IsOverdue => DueBy != null && DateTime.Today > DueBy;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.MadeOnLabel)]
