@@ -72,32 +72,35 @@
     <hr />
 }
 
-<div class="row">
-    <div class="col-sm-2">
-        <h4>@Dictionary.SummaryLabel</h4>
-    </div>
-    <div class="col-sm-4">
-    </div>
-    <div class="col-sm-6">
+@if (Model.Protocol.ProductPacks.Any())
+{
+    <div class="row">
+        <div class="col-sm-2">
+            <h4>@Dictionary.SummaryLabel</h4>
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-6">
 
         
-        @for (int j = 0; j < protocolReviewItems.Count; j++)
-        {
-            var item = protocolReviewItems[j];
+            @for (int j = 0; j < protocolReviewItems.Count; j++)
+            {
+                var item = protocolReviewItems[j];
             
-            <div class="row">
-                <div class="col-xs-12">
-                    <h4>@item.Product.Name</h4>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4>@item.Product.Name</h4>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    @Html.BootstrapDisplayFor(e => item.AmountRequired)
+                <div class="row">
+                    <div class="col-xs-6">
+                        @Html.BootstrapDisplayFor(e => item.AmountRequired)
+                    </div>
+                    <div class="col-xs-6">
+                        @Html.BootstrapDisplayFor(e => item.ActualAmount)
+                    </div>
                 </div>
-                <div class="col-xs-6">
-                    @Html.BootstrapDisplayFor(e => item.ActualAmount)
-                </div>
-            </div>
-        }
+            }
+        </div>
     </div>
-</div>
+}

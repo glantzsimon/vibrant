@@ -205,6 +205,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount per Product Pack.
+        /// </summary>
+        public static string AmountInProductPackLabel {
+            get {
+                return ResourceManager.GetString("AmountInProductPackLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount.
         /// </summary>
         public static string AmountLabel {

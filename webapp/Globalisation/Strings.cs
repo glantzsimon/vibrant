@@ -22,6 +22,7 @@
             public const string AmountRequiredLabel = "AmountRequiredLabel";
             public const string ProtocolRequiresLabel = "ProtocolRequiresLabel";
             public const string ActualAmountLabel = "ActualAmountLabel";
+            public const string AmountInProductPackLabel = "AmountInProductPackLabel";
             public const string IsAddedLabel = "IsAddedLabel";
             public const string PriorityLabel = "PriorityLabel";
             public const string NumberOfSubstitutesToUseLabel = "NumberOfSubstitutesToUseLabel";
