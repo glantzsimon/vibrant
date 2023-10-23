@@ -84,8 +84,8 @@
             var product = allProducts[j];
             var protocolProduct = Model.GetProtocolProductByProductId(product.Id);
             var protocolProductPackProduct = Model.GetProtocolProductPackProductByProductId(product.Id);
-            var totalAmountRequired = protocolProduct?.AmountRequired + protocolProductPackProduct?.AmountRequired ?? 0;
-            var actualAmount = protocolProduct?.Amount + protocolProductPackProduct?.Amount ?? 0;
+            var totalAmountRequired = (protocolProduct?.AmountRequired ?? 0) + (protocolProductPackProduct?.AmountRequired ?? 0);
+            var actualAmount = (protocolProduct?.Amount ?? 0) + (protocolProductPackProduct?.Amount ?? 0);
 
             <div class="row">
                 <div class="col-sm-7">
