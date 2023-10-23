@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace K9.DataAccessLayer.Models
@@ -78,10 +79,24 @@ namespace K9.DataAccessLayer.Models
 
         public virtual IEnumerable<ProtocolProduct> ProtocolProducts { get; set; }
 
+        public ProtocolProduct GetProtocolProductByProductId(int productId) =>
+            ProtocolProducts.FirstOrDefault(e => e.ProductId == productId);
+
+        public ProtocolProductPack GetProtocolProductPackByProductId(int productId) =>
+            ProtocolProductPacks.FirstOrDefault(e => e.ProductPack.Products.Select(p => p.Id).Contains(productId));
+
+        public ProductPackProduct GetProtocolProductPackProductByProductId(int productId) =>
+            GetProtocolProductPackByProductId(productId).ProductPack.Products.FirstOrDefault(e => e.ProductId == productId);
+
         [NotMapped]
         public List<ProtocolProduct> Products { get; set; }
 
         public virtual IEnumerable<ProtocolProductPack> ProtocolProductPacks { get; set; }
+
+        public List<Product> GetAllProducts() => Products?.Select(e => e.Product).ToList() ?? new List<Product>()
+                                                .Concat(ProtocolProductPacks?
+                                                .SelectMany(e => e.ProductPack?.Products?.Select(p => p.Product)))
+                                                .Distinct().ToList();
 
         [NotMapped]
         public List<ProtocolProductPack> ProductPacks { get; set; }
@@ -129,9 +144,39 @@ namespace K9.DataAccessLayer.Models
 
                 case EFrequency.Monthly:
                     return 28;
+
+                case EFrequency.Daily:
+                    return 7;
             }
 
             return 0;
+        }
+
+        public int GetNumberOfPeriodsPerDuration()
+        {
+            var numberOfPeriodsPerDuration = DaysDuration / GetPeriodLength();
+            if (numberOfPeriodsPerDuration <= 0)
+            {
+                throw new Exception(Globalisation.Dictionary.ProtocolDurationIsTooShort);
+            }
+            return numberOfPeriodsPerDuration;
+        }
+
+        public int GetNumberOfDaysOnPerDuration()
+        {
+            var numberOfPeriodsPerDuration = GetNumberOfPeriodsPerDuration();
+            switch (Frequency)
+            {
+                case EFrequency.Daily:
+                    return numberOfPeriodsPerDuration * (GetPeriodLength() - NumberOfPeriodsOff);
+
+                case EFrequency.Fortnightly:
+                case EFrequency.Monthly:
+                    return numberOfPeriodsPerDuration * (NumberOfPeriodsOn);
+
+                default:
+                    return 0;
+            }
         }
 
         private int GetDaysDuration()

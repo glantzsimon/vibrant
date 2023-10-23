@@ -77,6 +77,12 @@ namespace K9.WebApplication.Controllers
             return View(protocol);
         }
 
+        public ActionResult ReviewSectionDetails(int id = 0)
+        {
+            var protocol = _protocolService.GetProtocolWithProtocolSections(id);
+            return View(protocol);
+        }
+
         public ActionResult EditSectionDetails(int id = 0)
         {
             var protocol = _protocolService.GetProtocolWithProtocolSections(id);
@@ -119,13 +125,15 @@ namespace K9.WebApplication.Controllers
         private void ProtocolsController_RecordBeforeUpdate(object sender, CrudEventArgs e)
         {
             var protocol = e.Item as Protocol;
-            _protocolService.GetFullProtocol(protocol);
+            protocol = _protocolService.GetFullProtocol(protocol);
+            _protocolService.CheckProductsAndProductPacksDoNotOverlap(protocol);
         }
 
         private void ProtocolsController_RecordBeforeDetails(object sender, CrudEventArgs e)
         {
             var protocol = e.Item as Protocol;
             _protocolService.GetFullProtocol(protocol);
+            _protocolService.CheckProductsAndProductPacksDoNotOverlap(protocol);
         }
 
         private void ProtocolsController_RecordBeforeCreated(object sender, CrudEventArgs e)

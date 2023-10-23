@@ -28,7 +28,7 @@ namespace K9.DataAccessLayer.Models
         public double TotalPrice { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
-        public string FormattedPrice => TotalPrice.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
+        public string GetFormattedPrice() => TotalPrice.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
 
         public virtual User User { get; set; }
 

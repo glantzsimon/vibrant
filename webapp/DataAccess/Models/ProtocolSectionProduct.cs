@@ -32,7 +32,7 @@ namespace K9.DataAccessLayer.Models
         public int Amount { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
-        public string FormattedAmount => $"{Amount} {GetMeasuredInText(Product)}";
+        public string GetFormattedAmount() => $"{Amount} {GetMeasuredInText(Product)}";
 
         private string GetMeasuredInText(Product product)
         {

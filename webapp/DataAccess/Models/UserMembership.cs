@@ -55,12 +55,15 @@ namespace K9.DataAccessLayer.Models
         [LinkedColumn(LinkedTableName = "MembershipOption", LinkedColumnName = "Description")]
         public string MembershipOptionName { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfConsultationsLabel)]
-        public int NumberOfConsultationsLeft => MembershipOption.NumberOfConsultations - UserConsultations.Where(e => e.UserMembershipId.HasValue && e.UserMembershipId == Id)?.Count() ?? 0;
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.NumberOfConsultationsLabel)]
+        public int NumberOfConsultationsLeft => MembershipOption.NumberOfConsultations -
+                                                UserConsultations.Where(e =>
+                                                    e.UserMembershipId.HasValue && e.UserMembershipId == Id)?.Count() ?? 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.NumberOfConsultationsLabel)]
-        public string NumberOfConsultationsLeftText => NumberOfConsultationsLeft.ToString();
+        public string GetNumberOfConsultationsLeftText() => NumberOfConsultationsLeft.ToString();
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfCreditsLeft)]
@@ -68,14 +71,14 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsActive => DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date) && !IsDeactivated;
 
-        public TimeSpan Duration => EndsOn.Subtract(StartsOn);
+        public TimeSpan GetDuration() => EndsOn.Subtract(StartsOn);
 
-        public double CostOfRemainingActiveSubscription => GetCostOfRemainingActiveSubscription();
+        public double GetCostOfRemainingActiveSubscription() => GetCostOfActiveSubscriptionRemaining();
 
-        private double GetCostOfRemainingActiveSubscription()
+        private double GetCostOfActiveSubscriptionRemaining()
         {
             var timeRemaining = EndsOn.Subtract(DateTime.Today);
-            var percentageRemaining = (double)timeRemaining.Ticks / (double)Duration.Ticks;
+            var percentageRemaining = (double)timeRemaining.Ticks / (double)GetDuration().Ticks;
             return MembershipOption?.Price * percentageRemaining ?? 0;
         }
     }

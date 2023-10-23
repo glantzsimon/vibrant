@@ -17,6 +17,8 @@ namespace K9.WebApplication.Services
         void DeleteChildRecords(int id);
         void AddDefaultSections(int id);
         void UpdateSectionDetails(Protocol protocol);
+        void UpdateProtocolProductsAndProductPackQuantities(Protocol protocol);
+        void CheckProductsAndProductPacksDoNotOverlap(Protocol protocol);
 
         List<Protocol> List(bool retrieveFullProtocol = false);
     }

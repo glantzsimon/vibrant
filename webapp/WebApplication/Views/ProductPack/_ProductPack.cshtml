@@ -27,7 +27,7 @@
     <br />
 
     <h5>@Dictionary.PriceLabel</h5>
-    @Model.FormattedPrice
+    @Model.GetFormattedPrice()
     
     <br />
 
@@ -44,7 +44,7 @@
 
     <div class="row">
         <div class="col-xs-12 large-text">
-            @Html.BootstrapDisplayFor(e => e.ProductsDiscount)
+            @Html.BootstrapDisplayFor(e => e.GetProductsDiscount())
         </div>
     </div>
 

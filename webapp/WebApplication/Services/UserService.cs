@@ -113,7 +113,7 @@ namespace K9.WebApplication.Services
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                 UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
                 PromoLink = _urlHelper.AbsoluteAction("Register", "Account", new { promoCode = model.PromoCode.Code }),
-                PromoDetails = model.PromoCode.Details,
+                PromoDetails = model.PromoCode.GetDetails(),
                 DateTime.Now.Year
             }), model.EmailAddress, model.Name, _config.SupportEmailAddress, _config.CompanyName);
 

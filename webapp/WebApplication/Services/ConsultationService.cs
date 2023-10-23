@@ -80,7 +80,7 @@ namespace K9.WebApplication.Services
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
-                contact.FirstName,
+                FirstName = contact.GetFirstName(),
                 Duration = consultation.DurationDescription,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),

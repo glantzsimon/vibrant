@@ -153,7 +153,7 @@ namespace K9.WebApplication.Services
 
                 product.Url = _urlHelper.AbsoluteAction("Details", "Product", new { seoFriendlyId = product.SeoFriendlyId });
                 product.QrCodeUrl = _urlHelper.Action("GetQrCode", "Shared", new { code = product.Url, size = 111 });
-
+                
                 var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id).ToList();
                 var productIngredientsWithSubstitutes = new List<ProductIngredient>();
                 var groupedProductIngredients = new List<ProductIngredient>();
@@ -181,14 +181,14 @@ namespace K9.WebApplication.Services
                         .OrderByDescending(e => e.IsSelected)
                         .ThenBy(e => e.Priority).ToList();
 
-                    if (productIngredient.Ingredient.IsInStock)
+                    if (productIngredient.Ingredient.GetIsInStock())
                     {
                         productIngredientsWithSubstitutes.Add(productIngredient);
                     }
                     else
                     {
                         var substitutes = productIngredient.IngredientSubstitutes
-                            .Where(e => e.SubstituteIngredient.IsInStock)
+                            .Where(e => e.SubstituteIngredient.GetIsInStock())
                             .Take(productIngredient.NumberOfSubstitutesToUse)
                             .OrderBy(e => e.Priority).ToList();
 
@@ -231,6 +231,18 @@ namespace K9.WebApplication.Services
 
                 product.IngredientsWithSubstitutes = groupedProductIngredients.OrderBy(e => e.Ingredient.Category).ThenByDescending(e => e.Amount)
                     .ThenBy(e => e.Ingredient.Name).ToList();
+
+                product.FormattedAmount = product.GetFormattedAmount();
+                product.FormattedAmountPerServing = product.GetFormattedAmountPerServing();
+                product.ProfitMargin = product.GetProfitMargin();
+                product.ProfitMarginDiscount1 = product.GetProfitMarginDiscount1();
+                product.ProfitMarginDiscount2 = product.GetProfitMarginDiscount2();
+                product.SuggestedRetailPrice = product.GetSuggestedRetailPrice();
+                product.ProfitMarginSmallPack = product.GetProfitMarginSmallPack();
+                product.ProfitMarginSmallPackDiscount1 = product.GetProfitMarginSmallPackDiscount1();
+                product.ProfitMarginSmallPackDiscount2 = product.GetProfitMarginSmallPackDiscount2();
+                product.CostOfIngredients = product.GetCostOfIngredients();
+                product.TotalCost = product.GetTotalCost();
 
                 return product;
             });
@@ -365,6 +377,9 @@ namespace K9.WebApplication.Services
                 }
 
                 productPack.Products = products.OrderBy(e => e.Product.Name).ToList();
+
+                productPack.FormattedTotalProductsPrice = productPack.GetFormattedTotalProductsPrice();
+                productPack.TotalProductsPrice = productPack.GetTotalProductsPrice();
 
                 return productPack;
             });

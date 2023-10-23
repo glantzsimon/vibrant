@@ -1,7 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-using K9.Base.Globalisation;
+﻿using K9.Base.Globalisation;
 using K9.DataAccessLayer.Attributes;
-using K9.DataAccessLayer.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace K9.WebApplication.Models
 {

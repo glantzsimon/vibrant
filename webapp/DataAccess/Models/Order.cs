@@ -97,7 +97,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.IsCompleteLabel)]
-        public bool IsOverdue => DueBy != null && DateTime.Today > DueBy;
+        public bool GetIsOverdue() => DueBy != null && DateTime.Today > DueBy;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.MadeOnLabel)]
@@ -105,7 +105,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.IsMadeLabel)]
-        public bool IsMade => MadeOn != null && MadeOn >= DateTime.Today;
+        public bool GetIsMade() => MadeOn != null && MadeOn >= DateTime.Today;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.CompletedOnLabel)]
@@ -113,90 +113,162 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.IsCompleteLabel)]
-        public bool IsComplete => CompletedOn != null && CompletedOn <= DateTime.Today;
+        public bool GetIsComplete() => CompletedOn != null && CompletedOn <= DateTime.Today;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.PaidOnLabel)]
         public DateTime? PaidOn { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.IsPaidLabel)]
-        public bool IsPaid => PaidOn != null && PaidOn <= DateTime.Today;
+            Name = Globalisation.Strings.Labels.IsPaidLabel)] public bool IsPaid => PaidOn != null && PaidOn <= DateTime.Today;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.OrderStatusLabel)]
-        public EOrderStatus OrderStatus => GetOrderStatus();
+        public EOrderStatus GetOrderStatus() => CalculateOrderStatus();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.OrderStatusLabel)]
-        public string OrderStatusText => OrderStatus.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+            Name = Globalisation.Strings.Labels.OrderStatusLabel)] public string OrderStatusText => GetOrderStatus().GetAttribute<EnumDescriptionAttribute>().GetDescription();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShippingLabel)]
         [DataType(DataType.Currency)]
         public double ShippingCost { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShippingLabel)]
-        public string FormattedShippingCost => double.Parse(ShippingCost.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedShippingCost() =>
+            double.Parse(ShippingCost.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalPrice { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [DataType(DataType.Currency)]
-        public double TotalPrice => TotalProductsPrice + TotalProductPacksPrice + ShippingCost;
+        public double GetTotalPrice() => GetTotalProductsPrice() + GetTotalProductPacksPrice() + ShippingCost;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
-        public string FormattedTotalPrice => double.Parse(TotalPrice.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedTotalPrice() =>
+            double.Parse(GetTotalPrice().ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalProductsPrice { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
-        public double TotalProductsPrice => Products?.Sum(e => e.TotalPrice) ?? 0;
+        public double GetTotalProductsPrice() => Products?.Sum(e => e.GetTotalPrice()) ?? 0;
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductPacksPriceLabel)]
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.TotalProductPacksPriceLabel)]
         [DataType(DataType.Currency)]
-        public double TotalProductPacksPrice => ProductPacks?.Sum(e => e.TotalPrice) ?? 0;
-        
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
-        [UIHint("Percentage")]
-        public double SuggestedDiscount => Methods.RoundToInteger(TotalPrice > 0 ? TotalPrice.GetSuggestedBulkDiscount() : 0, 100);
+        public double TotalProductPacksPrice { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
-        public string FormattedSuggestedDiscountAsPercent => (SuggestedDiscount / 100).ToString("P0", CultureInfo.InvariantCulture);
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.TotalProductPacksPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double GetTotalProductPacksPrice() => ProductPacks?.Sum(e => e.GetTotalPrice()) ?? 0;
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
-        public double SuggestedDiscountAmount => TotalPrice * (SuggestedDiscount / 100);
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
+        public double GetSuggestedDiscount() =>
+            Methods.RoundToInteger(GetTotalPrice() > 0 ? GetTotalPrice().GetSuggestedBulkDiscount() : 0, 100);
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
+        public string FormattedSuggestedDiscountAsPercent {get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
+        public string GetFormattedSuggestedDiscountAsPercent() =>
+            (GetSuggestedDiscount() / 100).ToString("P0", CultureInfo.InvariantCulture);
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
+        public double GetSuggestedDiscountAmount() => GetTotalPrice() * (GetSuggestedDiscount() / 100);
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
+        public string FormattedSuggestedDiscountAmount { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
+        public string GetFormattedSuggestedDiscountAmount() => double.Parse(GetSuggestedDiscount().ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [UIHint("Percentage")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public double? Discount { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
-        public string FormattedDiscountAsPercent => (Discount / 100)?.ToString("P0", CultureInfo.InvariantCulture);
+        public string GetFormattedDiscountAsPercent() => (Discount / 100)?.ToString("P0", CultureInfo.InvariantCulture);
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
+        [DataType(DataType.Currency)]
+        public double DiscountAmount { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         [DataType(DataType.Currency)]
-        public double DiscountAmount => TotalPrice * (Discount / 100 ?? 0);
+        public double GetDiscountAmount() => GetTotalPrice() * (Discount / 100 ?? 0);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
-        public string FormattedDiscountAmount => double.Parse(DiscountAmount.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedDiscountAmount() =>
+            double.Parse(GetDiscountAmount().ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
+        [DataType(DataType.Currency)]
+        public double GrandTotal {get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         [DataType(DataType.Currency)]
-        public double GrandTotal => TotalPrice - DiscountAmount;
+        public double GetGrandTotal() => GetTotalPrice() - GetDiscountAmount();
 
-        public int TotalProducts => Products?.Sum(e => e.Amount) ?? 0;
+        public int GetTotalProducts() => Products?.Sum(e => e.Amount) ?? 0;
 
-        public int TotalProductPacks => ProductPacks?.Sum(e => e.Amount) ?? 0;
+        public int GetTotalProductPacks() => ProductPacks?.Sum(e => e.Amount) ?? 0;
 
         public virtual IEnumerable<OrderProduct> OrderProducts { get; set; }
 
         #region Invoice
 
-        private int TotalItems => Products?.Count ?? 0 + ProductPacks?.Count ?? 0;
+        public string GetInvoiceNumbersText() => GetAllInvoiceNumbersText();
 
-        public string InvoiceNumbersText => GetInvoiceNumbersText();
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductsLabel)]
+        public string GetProductsList() =>
+            GetOrderedProducts().Select(e => GetMaxProductNameLength(e.Product.Name)).ToDisplayList();
 
-        private string GetInvoiceNumbersText()
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantitiesLabel)]
+        public string GetQuantitiesList() => GetOrderedProducts().Select(e => e.Amount.ToString()).ToDisplayList();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PricesListLabel)]
+        public string GetPricesList() => GetOrderedProducts().Select(e => e.GetPrice().ToCurrency()).ToDisplayList();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalsLabel)]
+        public string GetTotalsList() => GetOrderedProducts().Select(e => e.GetTotalPrice().ToCurrency()).ToDisplayList();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTotalLabel)]
+        public string GetFormattedSubTotal() => GetTotalPrice().ToCurrency();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
+        public string GetFormattedDiscount() => GetDiscountAmount().ToCurrency();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
+        public string GetFormattedGrandTotal() => GetGrandTotal().ToCurrency();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ContactLabel)]
+        public string GetBulkDiscountText() =>
+            $"{GetFormattedDiscountAsPercent()} {Globalisation.Dictionary.BulkDiscountLabel}";
+
+        private int GetTotalItems() => Products?.Count ?? 0 + ProductPacks?.Count ?? 0;
+
+        private string GetAllInvoiceNumbersText()
         {
             var sb = new StringBuilder();
-            for (int i = 1; i <= TotalItems; i++)
+            for (int i = 1; i <= GetTotalItems(); i++)
             {
                 sb.AppendLine(i.ToString().Trim());
             }
@@ -217,30 +289,6 @@ namespace K9.DataAccessLayer.Models
             return value.Substring(0, maxLength);
         }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductsLabel)]
-        public string ProductsList => GetOrderedProducts().Select(e => GetMaxProductNameLength(e.Product.Name)).ToDisplayList();
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantitiesLabel)]
-        public string QuantitiesList => GetOrderedProducts().Select(e => e.Amount.ToString()).ToDisplayList();
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PricesListLabel)]
-        public string PricesList => GetOrderedProducts().Select(e => e.Price.ToCurrency()).ToDisplayList();
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalsLabel)]
-        public string TotalsList => GetOrderedProducts().Select(e => e.TotalPrice.ToCurrency()).ToDisplayList();
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTotalLabel)]
-        public string FormattedSubTotal => TotalPrice.ToCurrency();
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
-        public string FormattedDiscount => DiscountAmount.ToCurrency();
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
-        public string FormattedGrandTotal => GrandTotal.ToCurrency();
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ContactLabel)]
-        public string BulkDiscountText => $"{FormattedDiscountAsPercent} {Globalisation.Dictionary.BulkDiscountLabel}";
-
         #endregion
 
         [NotMapped]
@@ -255,13 +303,13 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         public List<OrderProductPack> ProductPacks { get; set; }
 
-        public bool AreProductsReady() => !Products?.Any(e => e.AmountRemaining > 0) ?? true;
+        public bool AreProductsReady() => !Products?.Any(e => e.GetAmountRemaining() > 0) ?? true;
 
-        public bool AreProductPacksReady() => !ProductPacks?.Any(e => e.AmountRemaining > 0) ?? true;
+        public bool AreProductPacksReady() => !ProductPacks?.Any(e => e.GetAmountRemaining() > 0) ?? true;
 
         public bool AreAllItemsReady() => AreProductsReady() && AreProductPacksReady();
 
-        private EOrderStatus GetOrderStatus()
+        private EOrderStatus CalculateOrderStatus()
         {
             if (!StartedOn.HasValue)
             {

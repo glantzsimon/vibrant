@@ -7,10 +7,11 @@
 }
 
 
+
 @Html.Partial("_PaymentsForm", new PaymentsOptions(
     0,
     (int)Model.ConsultationDuration,
-    Model.Price,
+    Model.GetPrice(),
     Dictionary.PureAlchemyConsultation,
     Dictionary.ConsultationDurationDescription,
     "BookConsultationStart", "Consultation",

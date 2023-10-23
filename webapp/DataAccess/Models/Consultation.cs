@@ -39,19 +39,16 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
-        public double Price => GetPrice();
+        public double GetPrice() => GetPricePerDuration();
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TotalPriceLabel)]
-        public string FormattedPrice => Price.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DurationLabel)]
-        public TimeSpan Duration => new TimeSpan((int)ConsultationDuration, 0, 0);
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TotalPriceLabel)] public string FormattedPrice => GetPrice().ToString("C0", CultureInfo.GetCultureInfo("en-US"));
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DurationLabel)]
-        public string DurationDescription =>
-            ConsultationDuration.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+        public TimeSpan GetDuration() => new TimeSpan((int) ConsultationDuration, 0, 0);
 
-        private double GetPrice()
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DurationLabel)] public string DurationDescription => ConsultationDuration.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+
+        private double GetPricePerDuration()
         {
             if (ConsultationDuration == EConsultationDuration.OneHour)
             {

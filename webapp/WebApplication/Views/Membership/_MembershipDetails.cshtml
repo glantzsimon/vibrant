@@ -2,14 +2,14 @@
 
 @{
     ViewBag.Title = Dictionary.MembershipLabel;
-    var buttonText = Model.MembershipOption.IsUpgradable
+    var buttonText = Model.MembershipOption.GetIsUpgradable()
         ? Dictionary.Upgrade
         : Dictionary.Switch;
 }
 
 <div class="shadow-light membership-option-container">
     <div class="membership-option-title">
-        <h5><strong>@Model.MembershipOption.SubscriptionTypeNameLocal</strong></h5>
+        <h5><strong>@Model.MembershipOption.GetSubscriptionTypeNameLocal()</strong></h5>
     </div>
     <div class="membership-option">
         @Html.Partial("../Membership/_MembershipMedal", Model.MembershipOption)

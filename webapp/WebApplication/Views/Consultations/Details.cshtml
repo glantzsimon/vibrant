@@ -5,7 +5,7 @@
     Layout = "../Shared/_LayoutFormSmall.cshtml";
     var body = TemplateProcessor.PopulateTemplate(Dictionary.consultation_email, new
     {
-        Model.Contact.FirstName,
+        FirstName = Model.Contact.GetFirstName(),
         Duration = Model.DurationDescription.ToLower(),
         LineFeed = "%0D%0A"
     });

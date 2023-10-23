@@ -38,14 +38,13 @@ namespace K9.DataAccessLayer.Models
         public ESubscriptionType SubscriptionType { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MembershipLabel)]
-        public string SubscriptionTypeNameLocal => SubscriptionType > 0 ? SubscriptionType.GetLocalisedLanguageName() : "";
+        public string GetSubscriptionTypeNameLocal() => SubscriptionType > 0 ? SubscriptionType.GetLocalisedLanguageName() : "";
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionDetailsLabel)]
         [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary), ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
         public string SubscriptionDetails { get; set; }
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionDetailsLabel)]
-        public string SubscriptionDetailsLocal => GetLocalisedPropertyValue(nameof(SubscriptionDetails));
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionDetailsLabel)] public string SubscriptionDetailsLocal => GetLocalisedPropertyValue(nameof(SubscriptionDetails));
 
         [Required]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
@@ -62,29 +61,30 @@ namespace K9.DataAccessLayer.Models
         public int NumberOfConsultations { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
-        public string FormattedPrice => Price.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
+        public string GetFormattedPrice() => Price.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
 
-        public string CssClassName => GetCssClassName();
+        public string GetCssClassName() => GetCssClass();
 
-        public string MembershipMedalElement => GetMembershipMedalElement();
+        public string GetMembershipMedalElement() => GetMembershipMedalElementName();
 
-        public string MembershipMedalElementLocal => GetLocalisedPropertyValue(nameof(MembershipMedalElement));
+        public string GetMembershipMedalElementLocal() => GetLocalisedPropertyValue("MembershipMedalElement");
 
-        public string MembershipPeriod => GetMembershipPeriod();
+        public string GetMembershipPeriod() => GetMembershipPeriodText();
 
-        public string MembershipPeriodLocal => GetLocalisedPropertyValue(nameof(MembershipPeriod));
+        public string GetMembershipPeriodLocal() => GetLocalisedPropertyValue("MembershipPeriod");
 
-        public bool IsFree => SubscriptionType == ESubscriptionType.Free;
+        public bool GetIsFree() => SubscriptionType == ESubscriptionType.Free;
 
-        public bool IsMonthly =>
-            new[] { ESubscriptionType.MonthlyPlatinum, ESubscriptionType.MonthlyStandard }.Contains(SubscriptionType);
+        public bool GetIsMonthly() =>
+            new[] {ESubscriptionType.MonthlyPlatinum, ESubscriptionType.MonthlyStandard}.Contains(SubscriptionType);
 
-        public bool IsAnnual =>
-            new[] { ESubscriptionType.AnnualPlatinum, ESubscriptionType.AnnualStandard }.Contains(SubscriptionType);
+        public bool GetIsAnnual() =>
+            new[] {ESubscriptionType.AnnualPlatinum, ESubscriptionType.AnnualStandard}.Contains(SubscriptionType);
 
-        public bool IsUpgradable => SubscriptionType < ESubscriptionType.AnnualPlatinum;
+        public bool GetIsUpgradable() => SubscriptionType < ESubscriptionType.AnnualPlatinum;
 
-        public bool IsUnlimited => SubscriptionType == ESubscriptionType.AnnualPlatinum || SubscriptionType == ESubscriptionType.MonthlyPlatinum;
+        public bool GetIsUnlimited() => SubscriptionType == ESubscriptionType.AnnualPlatinum ||
+                                        SubscriptionType == ESubscriptionType.MonthlyPlatinum;
 
         public bool CanUpgradeTo(MembershipOption membershipOption)
         {
@@ -100,7 +100,7 @@ namespace K9.DataAccessLayer.Models
             return false;
         }
 
-        private string GetCssClassName()
+        private string GetCssClass()
         {
             if (SubscriptionType == ESubscriptionType.AnnualPlatinum ||
                 SubscriptionType == ESubscriptionType.MonthlyPlatinum)
@@ -117,7 +117,7 @@ namespace K9.DataAccessLayer.Models
             return "free";
         }
 
-        private string GetMembershipMedalElement()
+        private string GetMembershipMedalElementName()
         {
             if (SubscriptionType == ESubscriptionType.AnnualPlatinum ||
                 SubscriptionType == ESubscriptionType.MonthlyPlatinum)
@@ -134,7 +134,7 @@ namespace K9.DataAccessLayer.Models
             return "FreeMembership";
         }
 
-        private string GetMembershipPeriod()
+        private string GetMembershipPeriodText()
         {
             if (SubscriptionType == ESubscriptionType.AnnualPlatinum ||
                 SubscriptionType == ESubscriptionType.AnnualStandard)

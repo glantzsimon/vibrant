@@ -45,19 +45,21 @@ namespace K9.DataAccessLayer.Models
         public double TotalPrice { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
-        public string FormattedPrice => TotalPrice == 0 ? Globalisation.Dictionary.Free : TotalPrice.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
+        public string GetFormattedPrice() => TotalPrice == 0
+            ? Globalisation.Dictionary.Free
+            : TotalPrice.ToString("C0", CultureInfo.GetCultureInfo("en-US"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.SubscriptionTypeLabel)]
         public string SubscriptionTypeName => SubscriptionType > 0 ? SubscriptionType.GetLocalisedLanguageName() : "";
 
-        public string Details => GetDetails();
+        public string GetDetails() => GetDetailsPerSubscriptionType();
 
         public PromoCode()
         {
             Code = $"VIBRANT{GetCode(5)}";
         }
 
-        private string GetDetails()
+        private string GetDetailsPerSubscriptionType()
         {
             var sb = new StringBuilder();
             if (SubscriptionType > MembershipOption.ESubscriptionType.Free)

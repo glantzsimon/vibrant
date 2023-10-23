@@ -1945,6 +1945,9 @@
   <data name="ViewProductQrCodes" xml:space="preserve">
     <value>View Product QR Codes</value>
   </data>
+  <data name="AmountRequiredLabel" xml:space="preserve">
+    <value>Amount Required</value>
+  </data>
   <data name="CustomDurationLabel" xml:space="preserve">
     <value>Custom Duration (Days)</value>
   </data>
@@ -1959,6 +1962,15 @@
   </data>
   <data name="ProductPackProducts" xml:space="preserve">
     <value>Product Pack Products</value>
+  </data>
+  <data name="ProtocolDurationIsTooShort" xml:space="preserve">
+    <value>Protocol duration is shorter than the period length.</value>
+  </data>
+  <data name="ProtocolProductsAndProductPacksOverlap" xml:space="preserve">
+    <value>Protocol products and product packs overlap. </value>
+  </data>
+  <data name="ReviewSectionDetails" xml:space="preserve">
+    <value>Review Section Details</value>
   </data>
   <data name="SixMonths" xml:space="preserve">
     <value>Six Months</value>

@@ -41,7 +41,7 @@ namespace K9.WebApplication.Controllers
             var contactsToImport = _donationRepository.Find(c => !string.IsNullOrEmpty(c.CustomerEmail) && existing.All(e => e.EmailAddress != c.CustomerEmail))
                 .Select(e => new Contact
                 {
-                    FullName = e.CustomerName,
+                    FullName = e.GetCustomerName(),
                     EmailAddress = e.CustomerEmail
                 }).ToList();
 

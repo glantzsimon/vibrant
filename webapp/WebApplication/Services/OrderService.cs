@@ -121,6 +121,13 @@ namespace K9.WebApplication.Services
 
                 order.User = _usersRepository.Find(order.UserId);
                 order.UserName = order.User.Name;
+                order.TotalPrice = order.GetTotalPrice();
+                order.TotalProductsPrice = order.GetTotalProductsPrice();
+                order.TotalProductPacksPrice = order.GetTotalProductPacksPrice();
+                order.FormattedSuggestedDiscountAsPercent = order.GetFormattedSuggestedDiscountAsPercent();
+                order.FormattedSuggestedDiscountAmount = order.GetFormattedSuggestedDiscountAmount();
+                order.DiscountAmount = order.GetDiscountAmount();
+                order.GrandTotal = order.GetGrandTotal();
 
                 return order;
             });
@@ -270,8 +277,8 @@ namespace K9.WebApplication.Services
             var repOrders = List(true).Where(e => e.RepId == repId || e.ContactId == repId).ToList();
 
             var totalRedeemed = redeemedCommissions.Sum(e => e.AmountRedeemed);
-            var totalPrice = repOrders.SelectMany(e => e.Products).Sum(e => e.TotalPrice) +
-                             repOrders.SelectMany(e => e.ProductPacks).Sum(e => e.TotalPrice);
+            var totalPrice = repOrders.SelectMany(e => e.Products).Sum(e => e.GetTotalPrice()) +
+                             repOrders.SelectMany(e => e.ProductPacks).Sum(e => e.GetTotalPrice());
             
             var totalRedeemable = (totalPrice / 10) - totalRedeemed;
 

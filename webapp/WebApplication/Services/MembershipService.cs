@@ -229,7 +229,7 @@ namespace K9.WebApplication.Services
                     UserId = userId ?? _authentication.CurrentUserId,
                     MembershipOptionId = membershipOptionId,
                     StartsOn = DateTime.Today,
-                    EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
+                    EndsOn = membershipOption.GetIsAnnual() ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
                     IsAutoRenew = true
                 };
 
@@ -299,7 +299,7 @@ namespace K9.WebApplication.Services
                     UserId = _authentication.CurrentUserId,
                     MembershipOptionId = membershipOptionId,
                     StartsOn = DateTime.Today,
-                    EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
+                    EndsOn = membershipOption.GetIsAnnual() ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
                     IsAutoRenew = true
                 });
                 TerminateExistingMemberships(membershipOptionId);
@@ -366,8 +366,8 @@ namespace K9.WebApplication.Services
                 Title = title,
                 Customer = userMembership.User.FullName,
                 CustomerEmail = userMembership.User.EmailAddress,
-                SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
-                TotalPrice = promoCode?.FormattedPrice ?? userMembership.MembershipOption.FormattedPrice,
+                SubscriptionType = userMembership.MembershipOption.GetSubscriptionTypeNameLocal(),
+                TotalPrice = promoCode.GetFormattedPrice() ?? userMembership.MembershipOption.GetFormattedPrice(),
                 LinkToSummary = _urlHelper.AbsoluteAction("Index", "UserMemberships"),
                 Company = _config.CompanyName,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
@@ -379,7 +379,7 @@ namespace K9.WebApplication.Services
             var template = Dictionary.NewMembershipThankYouEmail;
             var title = TemplateProcessor.PopulateTemplate(Dictionary.ThankyouForSubscriptionEmailTitle, new
             {
-                SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal
+                SubscriptionType = userMembership.MembershipOption.GetSubscriptionTypeNameLocal()
             });
             if (contact != null && !contact.IsUnsubscribed)
             {
@@ -387,8 +387,8 @@ namespace K9.WebApplication.Services
                 {
                     Title = title,
                     CustomerName = userMembership.User.FirstName,
-                    SubscriptionType = userMembership.MembershipOption.SubscriptionTypeNameLocal,
-                    TotalPrice = promoCode.FormattedPrice ?? userMembership.MembershipOption.FormattedPrice,
+                    SubscriptionType = userMembership.MembershipOption.GetSubscriptionTypeNameLocal(),
+                    TotalPrice = promoCode.GetFormattedPrice() ?? userMembership.MembershipOption.GetFormattedPrice(),
                     EndsOn = userMembership.EndsOn.ToLongDateString(),
                     NumberOfConsultations = userMembership.MembershipOption.NumberOfConsultations,
                     ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
@@ -410,7 +410,7 @@ namespace K9.WebApplication.Services
                 Customer = userCreditPack.User.FullName,
                 CustomerEmail = userCreditPack.User.EmailAddress,
                 userCreditPack.NumberOfCredits,
-                TotalPrice = promoCode?.FormattedPrice ?? userCreditPack.FormattedPrice,
+                TotalPrice = promoCode.GetFormattedPrice() ?? userCreditPack.GetFormattedPrice(),
                 LinkToCreditPacks = _urlHelper.AbsoluteAction("Index", "UserCreditPacks"),
                 Company = _config.CompanyName,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
@@ -428,7 +428,7 @@ namespace K9.WebApplication.Services
                     Title = title,
                     CustomerName = userCreditPack.User.FirstName,
                     NumberOfCreditsPurchased = userCreditPack.NumberOfCredits,
-                    TotalPrice = promoCode?.FormattedPrice ?? userCreditPack.FormattedPrice,
+                    TotalPrice = promoCode.GetFormattedPrice() ?? userCreditPack.GetFormattedPrice(),
                     ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                     PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                     UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),

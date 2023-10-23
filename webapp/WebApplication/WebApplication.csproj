@@ -1520,6 +1520,8 @@
     <Content Include="Views\Products\ViewProductQrCodes.cshtml" />
     <Content Include="Views\Products\_ViewQrCodes.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ProtocolDuration.cshtml" />
+    <Content Include="Views\Protocols\ReviewSectionDetails.cshtml" />
+    <Content Include="Views\Protocols\_ReviewSectionDetailsFields.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

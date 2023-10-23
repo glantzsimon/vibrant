@@ -3,7 +3,7 @@
 
 <div class="address-label">
     <h4 class><strong>@Html.ValueFor(model => model.FullName)</strong></h4>
-    <p>@Html.Raw(Model.AddressHtmlString)</p>
+    <p>@Html.Raw(Model.GetAddressHtmlString())</p>
     <p class="text-uppercase"><strong>@Html.ValueFor(model => model.Country.Name)</strong></p>
     <h4 class="margin-top-0">@Html.ValueFor(model => model.PhoneNumber)</h4>
 </div>

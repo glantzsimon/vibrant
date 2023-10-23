@@ -58,8 +58,10 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.MultilineText)]
         public string Address { get; set; }
 
-        public string AddressHtmlString => string.IsNullOrEmpty(Address) ? string.Empty : string.Join(Environment.NewLine, Regex.Split(Address, Environment.NewLine).Select(e => e.Trim())
-            .Where(e => !string.IsNullOrEmpty(e)).Select(e => $"<p>{e}</p>"));
+        public string GetAddressHtmlString() => string.IsNullOrEmpty(Address)
+            ? string.Empty
+            : string.Join(Environment.NewLine, Regex.Split(Address, Environment.NewLine).Select(e => e.Trim())
+                .Where(e => !string.IsNullOrEmpty(e)).Select(e => $"<p>{e}</p>"));
 
         [UIHint("Country")]
         [ForeignKey("Country")]
@@ -84,7 +86,6 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsUnsubscribedLabel)]
         public bool IsUnsubscribed { get; set; }
 
-        public string FirstName => FullName.Split(' ').FirstOrDefault();
-
+        public string GetFirstName() => FullName.Split(' ').FirstOrDefault();
     }
 }

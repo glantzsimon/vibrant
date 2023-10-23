@@ -38,19 +38,18 @@ namespace K9.DataAccessLayer.Models
         public string UserName { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.ConsultationDurationLabel)]
-        public TimeSpan? Duration => Consultation?.Duration;
+            Name = Globalisation.Strings.Labels.ConsultationDurationLabel)] public TimeSpan? Duration => Consultation.GetDuration();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.ConsultationDurationLabel)]
-        public string DurationDescription => Consultation?.DurationDescription;
+        public string GetDurationDescription() => Consultation.DurationDescription;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
-        public double? Price => Consultation?.Price;
+        public double? Price => Consultation.GetPrice();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
-        public string FormattedPrice => Consultation?.FormattedPrice;
+        public string GetFormattedPrice() => Consultation.FormattedPrice;
     }
 }

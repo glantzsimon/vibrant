@@ -148,6 +148,8 @@ namespace K9.WebApplication.Services
             protocol.Contact = _contactsRepository.Find(protocol.ContactId ?? 0);
             protocol.ContactName = protocol.Contact?.FullName;
 
+            UpdateProtocolProductsAndProductPackQuantities(protocol);
+
             return protocol;
         }
 
@@ -352,6 +354,50 @@ namespace K9.WebApplication.Services
             AddDefaultSections(protocol);
         }
 
+        public void UpdateProtocolProductsAndProductPackQuantities(Protocol protocol)
+        {
+            if (protocol.Products.Any())
+            {
+                foreach (var protocolProduct in protocol.Products)
+                {
+                    var productSectionProducts = protocol.ProtocolSections
+                        .SelectMany(s => s.ProtocolSectionProducts)
+                        .Where(e => e.ProductId == protocolProduct.Id).ToList();
+
+                    var numberOfProductDosesRequiredPerDay = productSectionProducts.Sum(e => e.Amount);
+                    var numberPerDuration = protocol.GetNumberOfDaysOnPerDuration() * numberOfProductDosesRequiredPerDay;
+
+                    if (numberPerDuration > 0)
+                    {
+                        protocolProduct.AmountRequired = (int)Math.Round(numberPerDuration / protocolProduct.Product.Amount,
+                            MidpointRounding.AwayFromZero);
+                    }
+                }
+            }
+
+            if (protocol.ProductPacks.Any())
+            {
+                foreach (var protocolProductPack in protocol.ProductPacks)
+                {
+                    foreach (var productPackProduct in protocolProductPack.ProductPack.Products)
+                    {
+                        var productSectionProducts = protocol.ProtocolSections
+                            .SelectMany(s => s.ProtocolSectionProducts)
+                            .Where(e => e.ProductId == productPackProduct.ProductId).ToList();
+
+                        var numberOfProductDosesRequiredPerDay = productSectionProducts.Sum(e => e.Amount);
+                        var numberPerDuration = protocol.GetNumberOfDaysOnPerDuration() * numberOfProductDosesRequiredPerDay;
+
+                        if (numberPerDuration > 0)
+                        {
+                            productPackProduct.AmountRequired = (int)Math.Round(numberPerDuration / productPackProduct.Product.Amount,
+                                MidpointRounding.AwayFromZero);
+                        }
+                    }
+                }
+            }
+        }
+
         public void UpdateSectionDetails(Protocol protocol)
         {
             foreach (var protocolProtocolSection in protocol.ProtocolSections)
@@ -378,7 +424,7 @@ namespace K9.WebApplication.Services
                         };
 
                         var sectionMessage =
-                            $"{nameof(Product.ProductName)}: {product.Name}, {nameof(ProtocolSection.SectionName)}: {protocolProtocolSection.Section.Name}";
+                            $"ProductName: {product.Name}, {nameof(ProtocolSection.SectionName)}: {protocolProtocolSection.Section.Name}";
                         var acceptableMessage = string.Format(Globalisation.Dictionary.AcceptableValuesMessage,
                         product.MinDosage, product.MaxDosage);
 
@@ -463,6 +509,19 @@ namespace K9.WebApplication.Services
             }
 
             return null;
+        }
+
+        public void CheckProductsAndProductPacksDoNotOverlap(Protocol protocol)
+        {
+            if (protocol.ProtocolProductPacks.Any() && protocol.ProtocolProducts.Any())
+            {
+                // Check that the products in the product packs don't duplicate the products and raise an error if so!
+                if (protocol.ProtocolProductPacks.SelectMany(e => e.ProductPack.Products).Select(e => e.ProductId)
+                    .Any(pid => protocol.ProtocolProducts.Select(pp => pp.ProductId).Contains(pid)))
+                {
+                    throw new Exception(Globalisation.Dictionary.ProtocolProductsAndProductPacksOverlap);
+                }
+            }
         }
 
         private void AddDefaultSections(Protocol protocol)

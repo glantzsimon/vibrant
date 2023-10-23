@@ -19,6 +19,7 @@
             public const string BulkDiscountLabel = "BulkDiscountLabel";
             public const string AmountDonatedLabel = "AmountDonatedLabel";
             public const string AmountLabel = "AmountLabel";
+            public const string AmountRequiredLabel = "AmountRequiredLabel";
             public const string IsAddedLabel = "IsAddedLabel";
             public const string PriorityLabel = "PriorityLabel";
             public const string NumberOfSubstitutesToUseLabel = "NumberOfSubstitutesToUseLabel";

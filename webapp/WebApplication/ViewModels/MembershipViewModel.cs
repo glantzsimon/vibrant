@@ -9,10 +9,10 @@ namespace K9.WebApplication.ViewModels
         public List<MembershipModel> MembershipModels { get; set; }
 
         public MembershipModel MonthlyMembershipModel =>
-            MembershipModels.FirstOrDefault(e => e.MembershipOption.IsMonthly);
+            MembershipModels.FirstOrDefault(e => e.MembershipOption.GetIsMonthly());
 
         public MembershipModel FreeMembershipModel =>
-            MembershipModels.FirstOrDefault(e => e.MembershipOption.IsFree);
+            MembershipModels.FirstOrDefault(e => e.MembershipOption.GetIsFree());
 
         public int MonthlyMaxNumberOfConsultations =>
             MonthlyMembershipModel?.MembershipOption?.NumberOfConsultations ?? 3;

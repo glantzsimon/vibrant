@@ -32,7 +32,7 @@ namespace K9.DataAccessLayer.Models
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public ECategory Category { get; set; }
 
-        public string CategoryText => Category.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+        public string GetCategoryText() => Category.GetAttribute<EnumDescriptionAttribute>().GetDescription();
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountCompletedLabel)]
@@ -71,11 +71,11 @@ namespace K9.DataAccessLayer.Models
             Name = Globalisation.Strings.Labels.ProductTypeLabel)]
         public EProductType ProductType { get; set; }
 
-        public string MeasuredIn => GetMeasuredInText();
+        public string GetMeasuredIn() => GetMeasuredInText();
 
-        public string ServingMeasuredIn => GetServingMeasuredInText();
+        public string GetServingMeasuredIn() => GetServingMeasuredInText();
 
-        public string MeasuredInForLargeQuantity => GetMeasuredInForLargeQuantityText();
+        public string GetMeasuredInForLargeQuantity() => GetMeasuredInForLargeQuantityText();
 
         [UIHint("Contact")]
         [ForeignKey("Contact")]
@@ -108,19 +108,26 @@ namespace K9.DataAccessLayer.Models
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public float Amount { get; set; }
 
+        [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
-        public string FormattedAmount => $"{Amount} {MeasuredIn}";
+        public string FormattedAmount { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
-        public string FormattedSmallPackAmount => $"{Amount / 2} {MeasuredIn}";
+        public string GetFormattedAmount() => $"{Amount} {GetMeasuredIn()}";
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)] public string FormattedSmallPackAmount => $"{Amount / 2} {GetMeasuredIn()}";
 
         [UIHint("Quantity")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerServingLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public float AmountPerServing { get; set; }
 
+        [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerServingLabel)]
-        public string FormattedAmountPerServing => $"{AmountPerServing} {ServingMeasuredIn}";
+        public string FormattedAmountPerServing { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerServingLabel)]
+        public string GetFormattedAmountPerServing() => $"{AmountPerServing} {GetServingMeasuredIn()}";
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
@@ -164,81 +171,148 @@ namespace K9.DataAccessLayer.Models
         public double Price { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
-        public string FormattedPrice => double.Parse(Price.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedPrice() => double.Parse(Price.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceSmallPackLabel)]
-        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [DataType(DataType.Currency)]
         public double PriceSmallPack => Methods.RoundToInteger(Price * 0.60, 100);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
-        public string FormattedPriceSmallPack => double.Parse(PriceSmallPack.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedPriceSmallPack() =>
+            double.Parse(PriceSmallPack.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostOfMaterialsLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [DataType(DataType.Currency)]
         public double CostOfMaterials { get; set; }
 
+        [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostOfIngredientsLabel)]
         [DataType(DataType.Currency)]
-        public double CostOfIngredients => ((ProductIngredients?.Sum(e => e.Cost) ?? 0) * Amount);
+        public double CostOfIngredients { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostOfIngredientsLabel)]
+        [DataType(DataType.Currency)]
+        public double GetCostOfIngredients() => ((ProductIngredients?.Sum(e => e.GetCost()) ?? 0) * Amount);
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalCostLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalCost { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalCostLabel)]
         [DataType(DataType.Currency)]
-        public double TotalCost => CostOfIngredients + CostOfMaterials;
+        public double GetTotalCost() => GetCostOfIngredients() + CostOfMaterials;
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
         [DataType(DataType.Currency)]
-        public double SuggestedRetailPrice => Methods.RoundToInteger(TotalCost * 2 + 900, 100);
+        public double SuggestedRetailPrice { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
-        public string FormattedSuggestedRetailPrice => double.Parse(SuggestedRetailPrice.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double GetSuggestedRetailPrice() => Methods.RoundToInteger(GetTotalCost() * 2 + 900, 100);
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
+        public string GetFormattedSuggestedRetailPrice() => double.Parse(GetSuggestedRetailPrice().ToString())
+            .ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginLabel)]
         [DataType(DataType.Currency)]
-        public double ProfitMargin => Price - TotalCost;
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginSmallPackLabel)]
-        [DataType(DataType.Currency)]
-        public double ProfitMarginSmallPack => PriceSmallPack - (TotalCost / 2);
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginDiscount1Label)]
-        [DataType(DataType.Currency)]
-        public double ProfitMarginDiscount1 => PriceDiscount1 - TotalCost;
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginSmallPackDiscount1Label)]
-        [DataType(DataType.Currency)]
-        public double ProfitMarginSmallPackDiscount1 => PriceSmallPackDiscount1 - (TotalCost / 2);
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginDiscount2Label)]
-        [DataType(DataType.Currency)]
-        public double ProfitMarginDiscount2 => PriceDiscount2 - TotalCost;
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginSmallPackDiscount2Label)]
-        [DataType(DataType.Currency)]
-        public double ProfitMarginSmallPackDiscount2 => PriceSmallPackDiscount2 - (TotalCost / 2);
+        public double ProfitMargin { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginLabel)]
-        public string FormattedProfitMargin => double.Parse(ProfitMargin.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        [DataType(DataType.Currency)]
+        public double GetProfitMargin() => Price - GetTotalCost();
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.ProfitMarginSmallPackLabel)]
+        [DataType(DataType.Currency)]
+        public double ProfitMarginSmallPack { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.ProfitMarginSmallPackLabel)]
+        [DataType(DataType.Currency)]
+        public double GetProfitMarginSmallPack() => PriceSmallPack - (GetTotalCost() / 2);
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.ProfitMarginDiscount1Label)]
+        [DataType(DataType.Currency)]
+        public double ProfitMarginDiscount1 { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.ProfitMarginDiscount1Label)]
+        [DataType(DataType.Currency)]
+        public double GetProfitMarginDiscount1() => PriceDiscount1 - GetTotalCost();
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.ProfitMarginSmallPackDiscount1Label)]
+        [DataType(DataType.Currency)]
+        public double ProfitMarginSmallPackDiscount1 { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.ProfitMarginSmallPackDiscount1Label)]
+        [DataType(DataType.Currency)]
+        public double GetProfitMarginSmallPackDiscount1() => PriceSmallPackDiscount1 - (GetTotalCost() / 2);
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.ProfitMarginDiscount2Label)]
+        [DataType(DataType.Currency)]
+        public double ProfitMarginDiscount2 { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.ProfitMarginDiscount2Label)]
+        [DataType(DataType.Currency)]
+        public double GetProfitMarginDiscount2() => PriceDiscount2 - GetTotalCost();
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.ProfitMarginSmallPackDiscount2Label)]
+        [DataType(DataType.Currency)]
+        public double ProfitMarginSmallPackDiscount2 { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.ProfitMarginSmallPackDiscount2Label)]
+        [DataType(DataType.Currency)]
+        public double GetProfitMarginSmallPackDiscount2() => PriceSmallPackDiscount2 - (GetTotalCost() / 2);
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProfitMarginLabel)]
+        public string GetFormattedProfitMargin() =>
+            double.Parse(GetProfitMargin().ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
-        [DataType(DataType.Currency)] public double PriceDiscount1 => Methods.RoundToInteger(Price * 0.80, 100);
+        [DataType(DataType.Currency)]
+        public double PriceDiscount1 => Methods.RoundToInteger(Price * 0.80, 100);
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceSmallPackDiscount1Label)]
-        [DataType(DataType.Currency)] public double PriceSmallPackDiscount1 => Methods.RoundToInteger(PriceSmallPack * 0.80, 100);
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.PriceSmallPackDiscount1Label)]
+        [DataType(DataType.Currency)]
+        public double PriceSmallPackDiscount1 => Methods.RoundToInteger(PriceSmallPack * 0.80, 100);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
-        public string FormattedPriceDiscount1 => double.Parse(PriceDiscount1.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedPriceDiscount1() =>
+            double.Parse(PriceDiscount1.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount2Label)]
-        [DataType(DataType.Currency)] public double PriceDiscount2 => Methods.RoundToInteger(Price * 0.66, 100);
+        [DataType(DataType.Currency)]
+        public double PriceDiscount2 => Methods.RoundToInteger(Price * 0.66, 100);
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceSmallPackDiscount2Label)]
-        [DataType(DataType.Currency)] public double PriceSmallPackDiscount2 => Methods.RoundToInteger(PriceSmallPack * 0.66, 100);
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.PriceSmallPackDiscount2Label)]
+        [DataType(DataType.Currency)]
+        public double PriceSmallPackDiscount2 => Methods.RoundToInteger(PriceSmallPack * 0.66, 100);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount2Label)]
-        public string FormattedPriceDiscount2 => double.Parse(PriceDiscount2.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedPriceDiscount2() =>
+            double.Parse(PriceDiscount2.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
         public bool IsHydroscopic() => Ingredients?.Any(e => e.Ingredient.IsHydroscopic) ?? false;
@@ -247,14 +321,14 @@ namespace K9.DataAccessLayer.Models
         public int QuantityInStock { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
-        public bool IsInStock => QuantityInStock > 0;
+        public bool GetIsInStock() => QuantityInStock > 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.StockLowWarningLevelLabel)]
         public int StockLowWarningLevel { get; set; } = 10;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.StockLowWarningLabel)]
-        public bool IsStockLowWarning => QuantityInStock < StockLowWarningLevel;
+        public bool GetIsStockLowWarning() => QuantityInStock < StockLowWarningLevel;
 
         [FileSourceInfo("upload/products", Filter = EFilesSourceFilter.Images)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]
@@ -284,9 +358,8 @@ namespace K9.DataAccessLayer.Models
 
         #region Product Label
 
-        [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductLabel)]
-        public string ProductName => Name.ToUpper();
+        public string GetProductName() => Name.ToUpper();
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTitleLabel)]
@@ -294,11 +367,8 @@ namespace K9.DataAccessLayer.Models
             ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public string SubTitleLabelText { get; set; }
 
-        [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTitleLabel)]
-        [Required(ErrorMessageResourceType = typeof(Dictionary),
-            ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-        public string ProductSubTitle => SubTitleLabelText?.ToUpper();
+        public string GetProductSubTitle() => SubTitleLabelText?.ToUpper();
 
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.MaxDosageLabel)]
@@ -311,44 +381,38 @@ namespace K9.DataAccessLayer.Models
             ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public int MinDosage { get; set; } = 1;
 
-        [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CapsulesDosageLabel)]
-        public string CapsulesDosageLabelText => MaxDosage > 1 ? $"{MinDosage} - {MaxDosage}" : MaxDosage.ToString();
+        public string GetCapsulesDosageLabelText() => MaxDosage > 1 ? $"{MinDosage} - {MaxDosage}" : MaxDosage.ToString();
 
-        [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CapsulesLabel)]
-        public string CapsulesLabellext => MaxDosage > 1 ? Globalisation.Dictionary.Capsules : Globalisation.Dictionary.Capsule;
+        public string GetCapsulesLabellext() =>
+            MaxDosage > 1 ? Globalisation.Dictionary.Capsules : Globalisation.Dictionary.Capsule;
 
-        [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.CapsulesDailyText)]
-        public string CapsulesDailyLabellext => $"{CapsulesLabellext} Daily";
+        public string GetCapsulesDailyLabellext() => $"{GetCapsulesLabellext()} Daily";
 
-        [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.FullDosageText)]
-        public string FullDosageLabellext => $"{CapsulesDosageLabelText} {CapsulesDailyLabellext.ToLower()}";
+        public string GetFullDosageLabellext() => $"{GetCapsulesDosageLabelText()} {GetCapsulesDailyLabellext().ToLower()}";
 
-        [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BenefitsLabel)]
-        public string BenefitsLabelText => Benefits.HtmlToText().SelectLines(ProductLabelBenefitsCount);
+        public string GetBenefitsLabelText() => Benefits.HtmlToText().SelectLines(ProductLabelBenefitsCount);
 
-        [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IngredientLabel)]
-        public string IngredientsList => Ingredients?.Select(e => e.Ingredient.Name).ToArray().ToDisplayList();
+        public string GetIngredientsList() => Ingredients?.Select(e => e.Ingredient.Name).ToArray().ToDisplayList();
 
-        [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantitiesLabel)]
-        public string QuantitiesList => Ingredients?.Select(e => e.FormattedLabelAmount).ToArray().ToDisplayList();
+        public string GetQuantitiesList() => Ingredients?.Select(e => e.GetFormattedLabelAmount()).ToArray().ToDisplayList();
 
-        [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DailyValuesLabel)]
-        public string DailyValues => Ingredients?.Select(e => e.FormattedPercentageOfDailyAllowance).ToArray().ToDisplayList();
+        public string GetDailyValues() =>
+            Ingredients?.Select(e => e.GetFormattedPercentageOfDailyAllowance()).ToArray().ToDisplayList();
 
-        [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.RecommendationsLabel)]
-        public string RecommendationsText => $"Take {FullDosageLabellext} {Recommendations.GetAttribute<EnumDescriptionAttribute>().GetDescription().ToLower()}";
+        public string GetRecommendationsText() =>
+            $"Take {GetFullDosageLabellext()} {Recommendations.GetAttribute<EnumDescriptionAttribute>().GetDescription().ToLower()}";
 
         #endregion
 
@@ -383,7 +447,7 @@ namespace K9.DataAccessLayer.Models
 
         public string GetFormattedTotalIngredientsAmount()
         {
-            return $"{GetTotalIngredientsAmount()} {ServingMeasuredIn}";
+            return $"{GetTotalIngredientsAmount()} {GetServingMeasuredIn()}";
         }
 
         public bool IngredientAmountsAreCorrect()
@@ -393,7 +457,7 @@ namespace K9.DataAccessLayer.Models
 
         public string GetIngredientAmountIncorrectError()
         {
-            return $"Total ingredients per serving must equal {AmountPerServing} {ServingMeasuredIn}. The current value is {GetFormattedTotalIngredientsAmount()}";
+            return $"Total ingredients per serving must equal {AmountPerServing} {GetServingMeasuredIn()}. The current value is {GetFormattedTotalIngredientsAmount()}";
         }
 
         private string GetMeasuredInText()

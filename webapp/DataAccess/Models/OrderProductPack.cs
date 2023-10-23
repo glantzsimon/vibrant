@@ -39,21 +39,21 @@ namespace K9.DataAccessLayer.Models
         public int AmountCompleted { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountCompletedLabel)]
-        public int AmountRemaining => Amount - AmountCompleted;
+        public int GetAmountRemaining() => Amount - AmountCompleted;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [DataType(DataType.Currency)]
-        public double Price => GetPrice();
+        public double GetPrice() => GetPriceWithDiscount();
 
-        private double GetPrice()
+        private double GetPriceWithDiscount()
         {
             switch (PriceTier)
             {
                 case EPriceTier.Discount1:
-                    return ProductPack?.PriceDiscount1 ?? 0;
+                    return ProductPack.PriceDiscount1;
 
                 case EPriceTier.Discount2:
-                    return ProductPack?.PriceDiscount2 ?? 0;
+                    return ProductPack.PriceDiscount2;
 
                 default:
                     return ProductPack?.Price ?? 0;
@@ -62,14 +62,13 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [DataType(DataType.Currency)]
-        public double TotalPrice => Amount * ProductPack?.Price ?? 0;
+        public double GetTotalPrice() => Amount * ProductPack?.Price ?? 0;
 
-        public string FormattedAmount =>
-            $"{Amount} {PackageType}";
+        public string GetFormattedAmount() => $"{Amount} {GetPackageType()}";
 
-        private string PackageType => GetPackageType();
+        private string GetPackageType() => GetPackageTypeText();
 
-        private string GetPackageType()
+        private string GetPackageTypeText()
         {
             return Amount == 1 ? Globalisation.Dictionary.Pack : Globalisation.Dictionary.Packs;
         }

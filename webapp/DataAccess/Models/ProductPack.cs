@@ -73,36 +73,48 @@ namespace K9.DataAccessLayer.Models
         public double Price { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
-        public string FormattedPrice => double.Parse(Price.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedPrice() => double.Parse(Price.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalProductsPrice { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
-        public double TotalProductsPrice => Products?.Sum(e => e.Product.Price * e.Amount) ?? 0;
+        public double GetTotalProductsPrice() => Products?.Sum(e => e.Product.Price * e.Amount) ?? 0;
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
+        public string FormattedTotalProductsPrice { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
-        public string FormattedTotalProductsPrice => double.Parse(TotalProductsPrice.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedTotalProductsPrice() => double.Parse(GetTotalProductsPrice().ToString())
+            .ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
         [DataType(DataType.Currency)]
-        public double SuggestedRetailPrice => Methods.RoundToInteger(TotalProductsPrice > 0 ? TotalProductsPrice.GetSuggestedBulkDiscountPrice() : 0, 100);
-        
+        public double SuggestedRetailPrice => Methods.RoundToInteger(GetTotalProductsPrice() > 0 ? GetTotalProductsPrice().GetSuggestedBulkDiscountPrice() : 0, 100);
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalSavingsLabel)]
         [DataType(DataType.Currency)]
-        public double ProductsDiscount => TotalProductsPrice - Price;
+        public double GetProductsDiscount() => GetTotalProductsPrice() - Price;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
-        [DataType(DataType.Currency)] 
+        [DataType(DataType.Currency)]
         public double PriceDiscount1 => Methods.RoundToInteger(Price * 0.80, 100);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
-        public string FormattedPriceDiscount1 => double.Parse(PriceDiscount1.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedPriceDiscount1() =>
+            double.Parse(PriceDiscount1.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount2Label)]
-        [DataType(DataType.Currency)] 
+        [DataType(DataType.Currency)]
         public double PriceDiscount2 => Methods.RoundToInteger(Price * 0.66, 100);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount2Label)]
-        public string FormattedPriceDiscount2 => double.Parse(PriceDiscount2.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedPriceDiscount2() =>
+            double.Parse(PriceDiscount2.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SeoFriendlyIdLabel)]
         public string SeoFriendlyId { get; set; }

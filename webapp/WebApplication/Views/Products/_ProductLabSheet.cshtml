@@ -28,7 +28,7 @@
         @Html.LabelFor(e => Model.Ingredients[0].Name)
     </div>
     <div class="col-xs-3">
-        @Html.LabelFor(e => Model.Ingredients[0].AmountPer100Capsules)
+        @Html.LabelFor(e => Model.Ingredients[0].GetAmountPer100Capsules())
     </div>
     <div class="col-xs-4">
         @Html.LabelFor(e => Model.Ingredients[0].IsAdded)
@@ -39,7 +39,7 @@
 {
     var productIngredient = Model.IngredientsWithSubstitutes[i];
     var completeClass = productIngredient.IsSelected ? "complete-rows" : "";
-    var ingredientIsInStock = productIngredient.Ingredient.IsInStock;
+    var ingredientIsInStock = productIngredient.Ingredient.GetIsInStock();
     var isInStockClass = ingredientIsInStock ? "" : "out-of-stock";
     var ingredientCategory = productIngredient.Ingredient.Category;
 
@@ -51,7 +51,7 @@
 
         <div class="row table-row">
             <div class="col-xs-12">
-                <h4>@productIngredient.Ingredient.CategoryText</h4>
+                <h4>@productIngredient.Ingredient.GetCategoryText()</h4>
             </div>
         </div>
     }
@@ -65,7 +65,7 @@
             }
         </div>
         <div class="col-xs-3">
-            @Html.DisplayFor(e => productIngredient.FormattedLargeAmountPer100Capsules)
+            @Html.DisplayFor(e => productIngredient.GetFormattedLargeAmountPer100Capsules())
         </div>
         <div class="col-xs-1">
             @if (ingredientIsInStock)

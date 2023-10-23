@@ -33,5 +33,9 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
         public int Amount { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountRequiredLabel)]
+        public int AmountRequired { get; set; }
     }
 }

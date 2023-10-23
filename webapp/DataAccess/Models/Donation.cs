@@ -18,7 +18,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CustomerLabel)]
         public string Customer { get; set; }
 
-        public string CustomerName => Customer.Split(' ').FirstOrDefault();
+        public string GetCustomerName() => Customer.Split(' ').FirstOrDefault();
 
         [Required]
         [Range(1, Int32.MaxValue, ErrorMessage = "The value must be greater than zero.")]
@@ -45,7 +45,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountToDonateLabel)]
         [DataType(DataType.Currency)]
-        public double AmountToDonate => DonationAmount;
+        public double GetAmountToDonate() => DonationAmount;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.StatusLabel)]
         public string Status { get; set; }

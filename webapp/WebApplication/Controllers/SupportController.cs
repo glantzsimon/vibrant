@@ -155,11 +155,11 @@ namespace K9.WebApplication.Controllers
                 _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
                 {
                     Title = title,
-                    contact.FirstName,
+                    FirstName = contact.GetFirstName(),
                     PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
                     UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
                     DateTime.Now.Year
-                }), contact.EmailAddress, contact.FirstName, _config.SupportEmailAddress,
+                }), contact.EmailAddress, contact.GetFirstName(), _config.SupportEmailAddress,
                     _config.CompanyName);
             }
         }

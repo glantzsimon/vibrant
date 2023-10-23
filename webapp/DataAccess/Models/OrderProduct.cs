@@ -41,33 +41,34 @@ namespace K9.DataAccessLayer.Models
         public int AmountCompleted { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountRemainingLabel)]
-        public int AmountRemaining => Amount - AmountCompleted;
+        public int GetAmountRemaining() => Amount - AmountCompleted;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [DataType(DataType.Currency)]
-        public double Price => GetPrice();
+        public double GetPrice() => GetPriceWithDiscount();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
-        public string FormattedPrice => double.Parse(Price.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
-       
-        private double GetPrice()
+        public string GetFormattedPrice() =>
+            double.Parse(GetPrice().ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
+        private double GetPriceWithDiscount()
         {
             switch (PriceTier)
             {
                 case EPriceTier.Discount1:
-                    return Product?.PriceDiscount1 ?? 0;
+                    return Product.PriceDiscount1;
 
                 case EPriceTier.Discount2:
-                    return Product?.PriceDiscount2 ?? 0;
+                    return Product.PriceDiscount2;
 
                 case EPriceTier.SmallPack:
-                    return Product?.PriceSmallPack ?? 0;
+                    return Product.PriceSmallPack;
 
                 case EPriceTier.SmallPackDiscount1:
-                    return Product?.PriceSmallPackDiscount1 ?? 0;
+                    return Product.PriceSmallPackDiscount1;
 
                 case EPriceTier.SmallPackDiscount2:
-                    return Product?.PriceSmallPackDiscount2 ?? 0;
+                    return Product.PriceSmallPackDiscount2;
 
                 default:
                     return Product?.Price ?? 0;
@@ -76,17 +77,17 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
-        public double TotalPrice => Amount * Price;
+        public double GetTotalPrice() => Amount * GetPrice();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
-        public string FormattedTotalPrice => double.Parse(TotalPrice.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedTotalPrice() =>
+            double.Parse(GetTotalPrice().ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
-        public string FormattedAmount =>
-            $"{Amount} {PackageType}";
+        public string GetFormattedAmount() => $"{Amount} {GetPackageType()}";
 
-        private string PackageType => GetPackageType();
+        private string GetPackageType() => GetPackageTypeText();
 
-        private string GetPackageType()
+        private string GetPackageTypeText()
         {
             switch (Product.ProductType)
             {

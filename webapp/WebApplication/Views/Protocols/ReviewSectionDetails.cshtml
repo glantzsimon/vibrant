@@ -1,0 +1,17 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model Protocol
+@{
+    Layout = "../Shared/_LayoutForm.cshtml";
+    ViewBag.SubTitle = $"{Dictionary.ReviewSectionDetails} for {Model.Name}";
+}
+@using (Html.BeginForm())
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.Partial("_ReviewSectionDetailsFields")
+        
+        <hr />
+        @Html.BootstrapBackToListButton()
+
+    }
+}

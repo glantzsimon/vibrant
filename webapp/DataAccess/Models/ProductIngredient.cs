@@ -59,48 +59,46 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
         public float AmountPerConcentrationPerBatch => AmountPerBatch * (1 / (Ingredient?.Concentration ?? 1));
 
-        public string FormattedAmount =>
-            $"{Amount} {Globalisation.Strings.Constants.Measures.Milligrams}";
+        public string GetFormattedAmount() => $"{Amount} {Globalisation.Strings.Constants.Measures.Milligrams}";
 
-        public string FormattedLabelAmount => GetFormattedLabelAmount();
+        public string GetFormattedLabelAmount() => GetFormattedLabelAmountText();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
-
-        public float AmountPer100Capsules => AmountPerConcentrationPerBatch * 100;
+        public float GetAmountPer100Capsules() => AmountPerConcentrationPerBatch * 100;
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsAddedLabel)]
         public bool IsAdded { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
-        public string FormattedAmountPer100Capsules =>
-            $"{AmountPer100Capsules} {Ingredient?.MeasuredIn}";
+        public string GetFormattedAmountPer100Capsules() => $"{GetAmountPer100Capsules()} {Ingredient.GetMeasuredIn()}";
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
-        public string FormattedLargeAmountPer100Capsules =>
-            $"{Math.Round(AmountPerConcentrationPerBatch / 10, 3, MidpointRounding.AwayFromZero)} {Ingredient?.MeasuredInForLargeQuantity}";
+        public string GetFormattedLargeAmountPer100Capsules() =>
+            $"{Math.Round(AmountPerConcentrationPerBatch / 10, 3, MidpointRounding.AwayFromZero)} {Ingredient.GetMeasuredInForLargeQuantity()}";
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostLabel)]
         [DataType(DataType.Currency)]
-        public double Cost => Amount * Ingredient?.CostPerMilligram ?? 0;
+        public double GetCost() => Amount * Ingredient?.CostPerMilligram ?? 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostLabel)]
         [DataType(DataType.Currency)]
-        public double CostPer100Capsules => Cost * 100;
+        public double GetCostPer100Capsules() => GetCost() * 100;
 
-        private float RDA => Ingredient?.RecommendedDailyAllownace ?? 0;
+        private float GetRDA() => Ingredient?.RecommendedDailyAllownace ?? 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PercentageOfRDALabel)]
-        public float? PercentageOfDailyAllowance => RDA > 0 ? Amount / Ingredient?.RecommendedDailyAllownace : 0;
+        public float? GetPercentageOfDailyAllowance() => GetRDA() > 0 ? Amount / Ingredient?.RecommendedDailyAllownace : 0;
 
-        public string FormattedPercentageOfDailyAllowance => PercentageOfDailyAllowance > 0 ? PercentageOfDailyAllowance?.ToString("P0") : "*";
+        public string GetFormattedPercentageOfDailyAllowance() =>
+            GetPercentageOfDailyAllowance() > 0 ? GetPercentageOfDailyAllowance()?.ToString("P0") : "*";
 
         public virtual IEnumerable<ProductIngredientSubstitute> ProductIngredientSubstitutes { get; set; }
 
         [NotMapped]
         public List<ProductIngredientSubstitute> IngredientSubstitutes { get; set; }
 
-        private string GetFormattedLabelAmount()
+        private string GetFormattedLabelAmountText()
         {
             var roundedMiligrams = Math.Round(Amount, 0, MidpointRounding.AwayFromZero);
             var roundedMicrograms = Math.Round(Amount * 1000, 0, MidpointRounding.AwayFromZero);

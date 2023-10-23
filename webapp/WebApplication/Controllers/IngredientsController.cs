@@ -163,7 +163,7 @@ namespace K9.WebApplication.Controllers
         {
             var ingredients = _ingredientService.List();
 
-            var data = ingredients.Select(e => e.CategoryText).Distinct()
+            var data = ingredients.Select(e => e.GetCategoryText()).Distinct()
                 .Select(e => new CategoryItem
                 {
                     Name = e.ToUpper()

@@ -6,7 +6,7 @@
 @{
     var firstItem = Model.IngredientsSelectList.First();
     var category = firstItem.Category;
-    var categoryText = firstItem.CategoryText;
+    var categoryText = firstItem.GetCategoryText();
 }
 
 <div class="row">
@@ -41,7 +41,7 @@
         <hr />
         <div class="row">
             <div class="col-xs-12">
-                <h4>@Model.IngredientsSelectList[i].CategoryText</h4>
+                <h4>@Model.IngredientsSelectList[i].GetCategoryText()</h4>
             </div>
         </div>
     }

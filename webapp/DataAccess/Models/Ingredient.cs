@@ -23,8 +23,8 @@ namespace K9.DataAccessLayer.Models
 	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 	    public ECategory Category { get; set; }
 
-	    public string CategoryText => Category.GetAttribute<EnumDescriptionAttribute>().GetDescription().Pluralise();
-        
+	    public string GetCategoryText() => Category.GetAttribute<EnumDescriptionAttribute>().GetDescription().Pluralise();
+
 	    /// <summary>
 	    /// Used for labels in production
 	    /// </summary>
@@ -48,12 +48,12 @@ namespace K9.DataAccessLayer.Models
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary),
 	        Name = Globalisation.Strings.Labels.IngredientTypeLabel)]
-	    public string IngredientTypeText => IngredientType.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+	    public string GetIngredientTypeText() => IngredientType.GetAttribute<EnumDescriptionAttribute>().GetDescription();
 
-	    public string MeasuredIn => GetMeasuredInText();
-	    
-	    public string MeasuredInForLargeQuantity => GetMeasuredInForLargeQuantityText();
-		
+	    public string GetMeasuredIn() => GetMeasuredInText();
+
+	    public string GetMeasuredInForLargeQuantity() => GetMeasuredInForLargeQuantityText();
+
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SummaryLabel)]
 	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 	    [StringLength(int.MaxValue)]
@@ -110,16 +110,15 @@ namespace K9.DataAccessLayer.Models
 	    public int Quantity { get; set; }
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary),
-	        Name = Globalisation.Strings.Labels.QuantityLabel)]
-	    public string FormattedQuantity => $"{Quantity} {MeasuredIn}";
+	        Name = Globalisation.Strings.Labels.QuantityLabel)] public string FormattedQuantity => $"{Quantity} {GetMeasuredIn()}";
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostPer100GramsLabel)]
 	    [DataType(DataType.Currency)]
-	    public double CostPerGram => (1000f / Quantity) * Cost;
+	    public double GetCostPerGram() => (1000f / Quantity) * Cost;
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostPerMilligramLabel)]
 	    [DataType(DataType.Currency)]
-	    public double CostPerMilligram => CostPerGram / 1000;
+	    public double CostPerMilligram => GetCostPerGram() / 1000;
         
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHydroscopicLabel)]
 	    public bool IsHydroscopic { get; set; } = false;
@@ -129,20 +128,18 @@ namespace K9.DataAccessLayer.Models
 	    public int QuantityInStock { get; set; }
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary),
-	        Name = Globalisation.Strings.Labels.QuantityInStockLabel)]
-	    public string FormattedQuantityInStock => $"{QuantityInStock} {MeasuredIn}";
-        
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
-	    public bool IsInStock => QuantityInStock > 0;
+	        Name = Globalisation.Strings.Labels.QuantityInStockLabel)] public string FormattedQuantityInStock => $"{QuantityInStock} {GetMeasuredIn()}";
 
-	    public float GetLowStockFactor => QuantityInStock / StockLowWarningLevel;
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
+	    public bool GetIsInStock() => QuantityInStock > 0;
+
+	    public float GetLowStockFactor() => QuantityInStock / StockLowWarningLevel;
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary),
 	        Name = Globalisation.Strings.Labels.StockLowWarningLevelLabel)]
 	    public int StockLowWarningLevel { get; set; } = 100000;
 
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)]
-	    public bool IsStockLowWarning => QuantityInStock < StockLowWarningLevel;
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InStockLabel)] public bool IsStockLowWarning => QuantityInStock < StockLowWarningLevel;
 
 	    [FileSourceInfo("upload/ingredients", Filter = EFilesSourceFilter.Images)]
 		[Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]
@@ -180,11 +177,11 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RDALabel)]
         [UIHint("Quantity")]
 	    public float RecommendedDailyAllownace { get; set; }
-        
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RDALabel)]
-	    public string FormattedRDA => GetFormattedRDA();
 
-	    private string GetFormattedRDA()
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RDALabel)]
+	    public string GetFormattedRDA() => GetFormattedRDAText();
+
+	    private string GetFormattedRDAText()
 	    {
 	        var amountIndMiligrams = RecommendedDailyAllownace;
 	        var amountInMicrograms = RecommendedDailyAllownace * 1000;

@@ -6,14 +6,16 @@
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
+
+
 @Html.Partial("_PaymentsForm", new PaymentsOptions(
-        0,
-        0,
-        Model.Amount,
-        Model.DonationDescription,
-        "",
-        "DonateStart", "Support",
-        Url.Action("DonationSuccess"),
-        Url.Action("Index", "Error"),
-        Url.Action("ProcessDonation", "Support")
-))
+    0,
+    0,
+    Model.Amount,
+    Model.DonationDescription,
+    "",
+    "DonateStart", "Support",
+    Url.Action("DonationSuccess"),
+    Url.Action("Index", "Error"),
+    Url.Action("ProcessDonation", "Support")
+    ))

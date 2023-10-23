@@ -268,6 +268,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount Required.
+        /// </summary>
+        public static string AmountRequiredLabel {
+            get {
+                return ResourceManager.GetString("AmountRequiredLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You would like to donate:.
         /// </summary>
         public static string AmountToDonateLabel {
@@ -4092,6 +4101,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Protocol duration is shorter than the period length..
+        /// </summary>
+        public static string ProtocolDurationIsTooShort {
+            get {
+                return ResourceManager.GetString("ProtocolDurationIsTooShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Protocol Product.
         /// </summary>
         public static string ProtocolProduct {
@@ -4124,6 +4142,15 @@ namespace K9.Globalisation {
         public static string ProtocolProducts {
             get {
                 return ResourceManager.GetString("ProtocolProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol products and product packs overlap. .
+        /// </summary>
+        public static string ProtocolProductsAndProductPacksOverlap {
+            get {
+                return ResourceManager.GetString("ProtocolProductsAndProductPacksOverlap", resourceCulture);
             }
         }
         
@@ -4502,6 +4529,15 @@ namespace K9.Globalisation {
         public static string ReviewRepCommissions {
             get {
                 return ResourceManager.GetString("ReviewRepCommissions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Review Section Details.
+        /// </summary>
+        public static string ReviewSectionDetails {
+            get {
+                return ResourceManager.GetString("ReviewSectionDetails", resourceCulture);
             }
         }
         
