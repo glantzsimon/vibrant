@@ -15,7 +15,7 @@ namespace K9.WebApplication.Models
 
         public IngredientsLabelsViewModel(List<Ingredient> ingredients)
         {
-            Ingredients = ingredients.OrderBy(e => e.GetCategoryText()).ThenBy(e => e.Name).ToList();
+            Ingredients = ingredients.OrderBy(e => e.CategoryText).ThenBy(e => e.Name).ToList();
         }
     }
 }

@@ -142,6 +142,8 @@ namespace K9.WebApplication.Services
                 {
                     protocolProtocolSectionProduct.Product =
                         _productsRepository.Find(protocolProtocolSectionProduct.ProductId);
+                    protocolProtocolSectionProduct.FormattedAmount =
+                        protocolProtocolSectionProduct.GetFormattedAmount();
                 }
             }
 

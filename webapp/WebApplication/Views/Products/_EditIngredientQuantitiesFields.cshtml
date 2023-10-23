@@ -19,7 +19,7 @@
         @Html.BootstrapDisplayFor(e => Model.Ingredients[i].Ingredient.Name)
     </div>
     <div class="col-sm-4">
-        @Html.BootstrapDisplayFor(e => Model.Ingredients[i].Ingredient.GetFormattedRDA())
+        @Html.BootstrapDisplayFor(e => Model.Ingredients[i].Ingredient.FormattedRDA)
     </div>
     <div class="col-sm-4">
         @Html.BootstrapEditorFor(e => Model.Ingredients[i].Amount)

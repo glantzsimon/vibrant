@@ -193,7 +193,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostOfIngredientsLabel)]
         [DataType(DataType.Currency)]
-        public double GetCostOfIngredients() => ((ProductIngredients?.Sum(e => e.GetCost()) ?? 0) * Amount);
+        public double GetCostOfIngredients() => ((ProductIngredients?.Sum(e => e.Cost) ?? 0) * Amount);
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalCostLabel)]
@@ -217,7 +217,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.SuggestedRetailPriceLabel)]
-        public string GetFormattedSuggestedRetailPrice() => double.Parse(GetSuggestedRetailPrice().ToString())
+        public string FormattedSuggestedRetailPrice => double.Parse(SuggestedRetailPrice.ToString())
             .ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [NotMapped]

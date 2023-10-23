@@ -40,8 +40,7 @@ namespace K9.DataAccessLayer.Models
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public int AmountCompleted { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountRemainingLabel)]
-        public int GetAmountRemaining() => Amount - AmountCompleted;
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountRemainingLabel)] public int AmountRemaining => Amount - AmountCompleted;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [DataType(DataType.Currency)]
@@ -74,6 +73,11 @@ namespace K9.DataAccessLayer.Models
                     return Product?.Price ?? 0;
             }
         }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalPrice { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]

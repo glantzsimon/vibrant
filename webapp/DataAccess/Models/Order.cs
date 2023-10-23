@@ -104,16 +104,14 @@ namespace K9.DataAccessLayer.Models
         public DateTime? MadeOn { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.IsMadeLabel)]
-        public bool GetIsMade() => MadeOn != null && MadeOn >= DateTime.Today;
+            Name = Globalisation.Strings.Labels.IsMadeLabel)] public bool IsMade => MadeOn != null && MadeOn >= DateTime.Today;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.CompletedOnLabel)]
         public DateTime? CompletedOn { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.IsCompleteLabel)]
-        public bool GetIsComplete() => CompletedOn != null && CompletedOn <= DateTime.Today;
+            Name = Globalisation.Strings.Labels.IsCompleteLabel)] public bool IsComplete => CompletedOn != null && CompletedOn <= DateTime.Today;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.PaidOnLabel)]
@@ -168,7 +166,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.TotalProductPacksPriceLabel)]
         [DataType(DataType.Currency)]
-        public double GetTotalProductPacksPrice() => ProductPacks?.Sum(e => e.GetTotalPrice()) ?? 0;
+        public double GetTotalProductPacksPrice() => ProductPacks?.Sum(e => e.TotalPrice) ?? 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
@@ -303,9 +301,9 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         public List<OrderProductPack> ProductPacks { get; set; }
 
-        public bool AreProductsReady() => !Products?.Any(e => e.GetAmountRemaining() > 0) ?? true;
+        public bool AreProductsReady() => !Products?.Any(e => e.AmountRemaining > 0) ?? true;
 
-        public bool AreProductPacksReady() => !ProductPacks?.Any(e => e.GetAmountRemaining() > 0) ?? true;
+        public bool AreProductPacksReady() => !ProductPacks?.Any(e => e.AmountRemaining > 0) ?? true;
 
         public bool AreAllItemsReady() => AreProductsReady() && AreProductPacksReady();
 

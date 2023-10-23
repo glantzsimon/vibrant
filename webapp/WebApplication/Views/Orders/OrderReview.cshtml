@@ -36,8 +36,8 @@
                     <div class="col-xs-12">
                         <div class="inline-checkbox">
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsPaid)
-                            @Html.BootstrapEditorFor(e => e.SelectedOrder.GetIsMade())
-                            @Html.BootstrapEditorFor(e => e.SelectedOrder.GetIsComplete())
+                            @Html.BootstrapEditorFor(e => e.SelectedOrder.IsMade)
+                            @Html.BootstrapEditorFor(e => e.SelectedOrder.IsComplete)
                         </div>
 
                         @Html.Partial("_AjaxPopup")
@@ -88,7 +88,7 @@
                 });
         });
 
-        $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.GetIsMade())}")").click(function() {
+        $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.IsMade)}")").click(function() {
             $("#pageSpinner").show();
             var value = $(this).is(":checked");
             ajaxcontroller().send("@Url.Action("UpdateOrderIsMade")",
@@ -103,7 +103,7 @@
                 });
         });
 
-        $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.GetIsComplete())}")").click(function() {
+        $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.IsComplete)}")").click(function() {
             $("#pageSpinner").show();
             var value = $(this).is(":checked");
             ajaxcontroller().send("@Url.Action("UpdateOrderIsComplete")",

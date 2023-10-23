@@ -11,7 +11,7 @@
         @Html.LabelFor(e => Model.Products[0].Amount)
     </div>
     <div class="col-sm-4">
-        @Html.LabelFor(e => Model.Products[0].GetTotalPrice())
+        @Html.LabelFor(e => Model.Products[0].TotalPrice)
     </div>
 </div>
 <hr />
@@ -42,7 +42,7 @@
             @Html.DisplayFor(e => Model.Products[i].Amount)
         </div>
         <div class="col-sm-4">
-            @Html.DisplayFor(e => Model.Products[i].GetTotalPrice())
+            @Html.DisplayFor(e => Model.Products[i].TotalPrice)
         </div>
     </div>
     if (i < Model.Products.Count - 1)

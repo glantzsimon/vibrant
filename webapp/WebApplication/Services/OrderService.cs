@@ -108,6 +108,7 @@ namespace K9.WebApplication.Services
                 foreach (var orderProduct in order.Products)
                 {
                     orderProduct.Product = _productsRepository.Find(orderProduct.ProductId);
+                    orderProduct.TotalPrice = orderProduct.GetTotalPrice();
                 }
 
                 order.ProductPacks = _orderProductPacksRepository.Find(e => e.OrderId == order.Id).ToList();
@@ -278,7 +279,7 @@ namespace K9.WebApplication.Services
 
             var totalRedeemed = redeemedCommissions.Sum(e => e.AmountRedeemed);
             var totalPrice = repOrders.SelectMany(e => e.Products).Sum(e => e.GetTotalPrice()) +
-                             repOrders.SelectMany(e => e.ProductPacks).Sum(e => e.GetTotalPrice());
+                             repOrders.SelectMany(e => e.ProductPacks).Sum(e => e.TotalPrice);
             
             var totalRedeemable = (totalPrice / 10) - totalRedeemed;
 

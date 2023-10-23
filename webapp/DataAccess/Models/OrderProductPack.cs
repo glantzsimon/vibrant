@@ -38,8 +38,7 @@ namespace K9.DataAccessLayer.Models
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public int AmountCompleted { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountCompletedLabel)]
-        public int GetAmountRemaining() => Amount - AmountCompleted;
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountCompletedLabel)] public int AmountRemaining => Amount - AmountCompleted;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [DataType(DataType.Currency)]
@@ -62,7 +61,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [DataType(DataType.Currency)]
-        public double GetTotalPrice() => Amount * ProductPack?.Price ?? 0;
+        public double TotalPrice => Amount * ProductPack?.Price ?? 0;
 
         public string GetFormattedAmount() => $"{Amount} {GetPackageType()}";
 

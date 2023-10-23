@@ -164,6 +164,8 @@ namespace K9.WebApplication.Services
                     productIngredient.IngredientName = productIngredient.Ingredient.Name;
                     productIngredient.IngredientSubstitutes =
                         _productIngredientSubstituteRepository.Find(e => e.ProductIngredientId == productIngredient.Id).ToList();
+                    productIngredient.FormattedLargeAmountPer100Capsules =
+                        productIngredient.GetFormattedLargeAmountPer100Capsules();
 
                     foreach (var ingredientSubstitute in productIngredient.Ingredient.Substitutes)
                     {

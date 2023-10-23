@@ -63,15 +63,18 @@ namespace K9.DataAccessLayer.Models
 
         public string GetFormattedLabelAmount() => GetFormattedLabelAmountText();
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
-        public float GetAmountPer100Capsules() => AmountPerConcentrationPerBatch * 100;
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)] public float AmountPer100Capsules => AmountPerConcentrationPerBatch * 100;
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsAddedLabel)]
         public bool IsAdded { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
-        public string GetFormattedAmountPer100Capsules() => $"{GetAmountPer100Capsules()} {Ingredient.GetMeasuredIn()}";
+        public string GetFormattedAmountPer100Capsules() => $"{AmountPer100Capsules} {Ingredient.GetMeasuredIn()}";
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
+        public string FormattedLargeAmountPer100Capsules { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
         public string GetFormattedLargeAmountPer100Capsules() =>
@@ -79,11 +82,11 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostLabel)]
         [DataType(DataType.Currency)]
-        public double GetCost() => Amount * Ingredient?.CostPerMilligram ?? 0;
+        public double Cost => Amount * Ingredient?.CostPerMilligram ?? 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostLabel)]
         [DataType(DataType.Currency)]
-        public double GetCostPer100Capsules() => GetCost() * 100;
+        public double CostPer100Capsules => Cost * 100;
 
         private float GetRDA() => Ingredient?.RecommendedDailyAllownace ?? 0;
 

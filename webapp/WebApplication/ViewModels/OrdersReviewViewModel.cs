@@ -20,9 +20,9 @@ namespace K9.WebApplication.ViewModels
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
         public int SelectedOrderId => SelectedOrder?.Id ?? 0;
 
-        public List<Order> OrdersToMake => _allOrders.Where(e => !e.GetIsMade()).ToList();
+        public List<Order> OrdersToMake => _allOrders.Where(e => !e.IsMade).ToList();
 
-        public List<Order> OrdersToSend => _allOrders.Where(e => e.GetIsMade() && !e.GetIsComplete()).ToList();
+        public List<Order> OrdersToSend => _allOrders.Where(e => e.IsMade && !e.IsComplete).ToList();
 
         public List<OrderProduct> CombinedOrderProducts => GetAllOrderProducts();
 

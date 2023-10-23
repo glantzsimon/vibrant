@@ -9,10 +9,10 @@
         @Html.LabelFor(e => Model.Ingredients[0].Name)
     </div>
     <div class="col-sm-4">
-        @Html.LabelFor(e => Model.Ingredients[0].GetAmountPer100Capsules())
+        @Html.LabelFor(e => Model.Ingredients[0].AmountPer100Capsules)
     </div>
     <div class="col-sm-3">
-        @Html.LabelFor(e => Model.Ingredients[0].GetCost())
+        @Html.LabelFor(e => Model.Ingredients[0].Cost)
     </div>
 </div>
 <hr />
@@ -32,10 +32,10 @@
             }
         </div>
         <div class="col-sm-4">
-            @Html.DisplayFor(e => Model.Ingredients[i].GetFormattedLargeAmountPer100Capsules())
+            @Html.DisplayFor(e => Model.Ingredients[i].FormattedLargeAmountPer100Capsules)
         </div>
         <div class="col-sm-3">
-            @Html.DisplayFor(e => Model.Ingredients[i].GetCostPer100Capsules())
+            @Html.DisplayFor(e => Model.Ingredients[i].CostPer100Capsules)
         </div>
     </div>
     if (i < Model.Ingredients.Count - 1)

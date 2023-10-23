@@ -98,7 +98,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalSavingsLabel)]
         [DataType(DataType.Currency)]
-        public double GetProductsDiscount() => GetTotalProductsPrice() - Price;
+        public double ProductsDiscount => GetTotalProductsPrice() - Price;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
         [DataType(DataType.Currency)]

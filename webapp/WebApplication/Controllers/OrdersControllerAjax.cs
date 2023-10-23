@@ -40,7 +40,7 @@ namespace K9.WebApplication.Controllers
             try
             {
                 var original = Repository.Find(id);
-                var valueHasChanged = original.GetIsMade() != value;
+                var valueHasChanged = original.IsMade != value;
 
                 if (valueHasChanged)
                 {
@@ -83,7 +83,7 @@ namespace K9.WebApplication.Controllers
             {
                 var original = Repository.Find(id);
 
-                if (original.GetIsComplete() != value)
+                if (original.IsComplete != value)
                 {
                     if (value)
                     {

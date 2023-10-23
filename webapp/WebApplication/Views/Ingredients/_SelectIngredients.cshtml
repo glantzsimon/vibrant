@@ -6,7 +6,7 @@
 @{
     var firstItem = Model.Ingredients.First();
     var category = firstItem.Category;
-    var categoryText = firstItem.GetCategoryText();
+    var categoryText = firstItem.CategoryText;
 }
 
 <div class="row">
@@ -32,7 +32,7 @@
 {
     @Html.HiddenFor(e => Model.Ingredients[i].Id)
     @Html.HiddenFor(e => Model.Ingredients[i].Name)
-    @Html.HiddenFor(e => Model.Ingredients[i].GetCategoryText())
+    @Html.HiddenFor(e => Model.Ingredients[i].CategoryText)
     @Html.HiddenFor(e => Model.Ingredients[i].ItemCode)
 
     var itemCategory = Model.Ingredients[i].Category;
@@ -43,12 +43,12 @@
         <hr />
         <div class="row">
             <div class="col-xs-12">
-                <h4>@Model.Ingredients[i].GetCategoryText()</h4>
+                <h4>@Model.Ingredients[i].CategoryText</h4>
             </div>
         </div>
     }
 
-    <div class="checkbox" data-category="@Model.Ingredients[i].GetCategoryText()" data-itemcode="@Model.Ingredients[i].ItemCode">
+    <div class="checkbox" data-category="@Model.Ingredients[i].CategoryText" data-itemcode="@Model.Ingredients[i].ItemCode">
         <label>
             @Html.CheckBoxFor(model => Model.Ingredients[i].IsSelected)
             @Model.Ingredients[i].Name

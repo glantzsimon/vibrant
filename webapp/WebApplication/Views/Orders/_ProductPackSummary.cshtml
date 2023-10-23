@@ -14,7 +14,7 @@
         @Html.LabelFor(e => Model.ProductPacks[0].PriceTier)
     </div>
     <div class="col-sm-3">
-        @Html.LabelFor(e => Model.ProductPacks[0].GetTotalPrice())
+        @Html.LabelFor(e => Model.ProductPacks[0].TotalPrice)
     </div>
 </div>
 <hr />
@@ -46,7 +46,7 @@
             @Html.DisplayFor(e => Model.ProductPacks[i].PriceTier)
         </div>
         <div class="col-sm-3">
-            @Html.DisplayFor(e => Model.ProductPacks[i].GetTotalPrice())
+            @Html.DisplayFor(e => Model.ProductPacks[i].TotalPrice)
         </div>
     </div>
 
