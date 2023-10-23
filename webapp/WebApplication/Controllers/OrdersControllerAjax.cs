@@ -94,6 +94,19 @@ namespace K9.WebApplication.Controllers
                         original.CompletedOn = null;
                     }
                 }
+
+                if (original.IsMade != value)
+                {
+                    if (value)
+                    {
+                        original.MadeOn = DateTime.Today;
+                    }
+                    else
+                    {
+                        original.MadeOn = null;
+                    }
+                }
+
                 Repository.Update(original);
                 return Json(new { success = true });
             }
