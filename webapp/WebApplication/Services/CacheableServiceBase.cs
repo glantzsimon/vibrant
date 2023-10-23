@@ -32,28 +32,28 @@ namespace K9.WebApplication.Services
         {
             StackTrace stackTrace = new StackTrace();
             var callingMethod = stackTrace.GetFrame(1).GetMethod().Name;
-            return $"{callingMethod}-{nameof(T)}-{id}";
+            return $"{callingMethod}-{typeof(T).Name}-{id}";
         }
 
         public string GetCacheKey()
         {
             StackTrace stackTrace = new StackTrace();
             var callingMethod = stackTrace.GetFrame(1).GetMethod().Name;
-            return $"{callingMethod}-{nameof(T)}";
+            return $"{callingMethod}-{typeof(T).Name}";
         }
 
         public string GetCacheKey<T2>() where T2 : class, IObjectBase
         {
             StackTrace stackTrace = new StackTrace();
             var callingMethod = stackTrace.GetFrame(1).GetMethod().Name;
-            return $"{callingMethod}-{nameof(T2)}";
+            return $"{callingMethod}-{typeof(T2).Name}";
         }
 
         public string GetCacheKey<T2>(int id) where T2 : class, IObjectBase
         {
             StackTrace stackTrace = new StackTrace();
             var callingMethod = stackTrace.GetFrame(1).GetMethod().Name;
-            return $"{callingMethod}-{nameof(T2)}-{id}";
+            return $"{callingMethod}-{typeof(T2).Name}-{id}";
         }
 
         public int GetItemCode(ICategorisable model, List<ICategorisable> items)

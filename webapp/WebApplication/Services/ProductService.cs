@@ -164,8 +164,7 @@ namespace K9.WebApplication.Services
                     productIngredient.IngredientName = productIngredient.Ingredient.Name;
                     productIngredient.IngredientSubstitutes =
                         _productIngredientSubstituteRepository.Find(e => e.ProductIngredientId == productIngredient.Id).ToList();
-                    productIngredient.FormattedLargeAmountPer100Capsules =
-                        productIngredient.GetFormattedLargeAmountPer100Capsules();
+                    productIngredient.FormattedLargeAmountPer100Capsules = productIngredient.GetFormattedLargeAmountPer100Capsules();
 
                     foreach (var ingredientSubstitute in productIngredient.Ingredient.Substitutes)
                     {
@@ -221,7 +220,8 @@ namespace K9.WebApplication.Services
                         {
                             BatchSize = productIngredient.BatchSize,
                             Ingredient = productIngredient.Ingredient,
-                            Amount = i.Sum(e => e.Amount)
+                            Amount = i.Sum(e => e.Amount),
+                            FormattedLargeAmountPer100Capsules = productIngredient.GetFormattedLargeAmountPer100Capsules()
                         };
                         return item;
                     }).ToList();

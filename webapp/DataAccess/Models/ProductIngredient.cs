@@ -63,7 +63,8 @@ namespace K9.DataAccessLayer.Models
 
         public string GetFormattedLabelAmount() => GetFormattedLabelAmountText();
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)] public float AmountPer100Capsules => AmountPerConcentrationPerBatch * 100;
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)] 
+        public float AmountPer100Capsules => AmountPerConcentrationPerBatch * 100;
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsAddedLabel)]
