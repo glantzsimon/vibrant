@@ -89,6 +89,7 @@
             public const string CountryLabel = "CountryLabel";
             public const string ConsultationDurationLabel = "ConsultationDurationLabel";
             public const string CustomDurationLabel = "CustomDurationLabel";
+            public const string DaysDurationLabel = "DaysDuration";
             public const string DurationLabel = "Duration";
             public const string DonatedOnLabel = "DonatedOnLabel";
             public const string CompletedOnLabel = "CompletedOnLabel";

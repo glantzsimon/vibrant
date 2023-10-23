@@ -1252,6 +1252,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Days Long.
+        /// </summary>
+        public static string DaysDuration {
+            get {
+                return ResourceManager.GetString("DaysDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deactivated.
         /// </summary>
         public static string DeactivatedLabel {

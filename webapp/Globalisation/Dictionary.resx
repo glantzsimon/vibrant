@@ -1948,6 +1948,9 @@
   <data name="CustomDurationLabel" xml:space="preserve">
     <value>Custom Duration (Days)</value>
   </data>
+  <data name="DaysDuration" xml:space="preserve">
+    <value>Days Long</value>
+  </data>
   <data name="OneMonth" xml:space="preserve">
     <value>One Month</value>
   </data>

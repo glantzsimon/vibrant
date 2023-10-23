@@ -60,6 +60,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DurationLabel)]
         public EProtocolDuration Duration { get; set; } = EProtocolDuration.ThreeMonths;
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DaysDurationLabel)]
         public int DaysDuration => GetDaysDuration();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CustomDurationLabel)]
