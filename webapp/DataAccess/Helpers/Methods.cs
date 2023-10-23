@@ -55,7 +55,7 @@ namespace K9.DataAccessLayer.Helpers
 
         public static double GetSuggestedBulkDiscount(this double price)
         {
-            return price <= 10000 ? 0 : 1 - (10000 / price) * 0.1;
+            return price <= 10000 ? 0 : (1 - (10000 / price)) * 0.1;
         }
 
         public static double GetSuggestedBulkDiscountPrice(this double price)
