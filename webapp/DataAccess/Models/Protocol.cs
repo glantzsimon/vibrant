@@ -80,22 +80,22 @@ namespace K9.DataAccessLayer.Models
         public virtual IEnumerable<ProtocolProduct> ProtocolProducts { get; set; }
 
         public ProtocolProduct GetProtocolProductByProductId(int productId) =>
-            ProtocolProducts.FirstOrDefault(e => e.ProductId == productId);
+            Products?.FirstOrDefault(e => e.ProductId == productId);
 
         public ProtocolProductPack GetProtocolProductPackByProductId(int productId) =>
-            ProtocolProductPacks.FirstOrDefault(e => e.ProductPack.Products.Select(p => p.Id).Contains(productId));
+            ProductPacks?.FirstOrDefault(e => e.ProductPack.Products.Select(p => p.ProductId).Contains(productId));
 
         public ProductPackProduct GetProtocolProductPackProductByProductId(int productId) =>
-            GetProtocolProductPackByProductId(productId).ProductPack.Products.FirstOrDefault(e => e.ProductId == productId);
+            GetProtocolProductPackByProductId(productId)?.ProductPack.Products.FirstOrDefault(e => e.ProductId == productId);
 
         [NotMapped]
         public List<ProtocolProduct> Products { get; set; }
 
         public virtual IEnumerable<ProtocolProductPack> ProtocolProductPacks { get; set; }
 
-        public List<Product> GetAllProducts() => Products?.Select(e => e.Product).ToList() ?? new List<Product>()
-                                                .Concat(ProtocolProductPacks?
-                                                .SelectMany(e => e.ProductPack?.Products?.Select(p => p.Product)))
+        public List<Product> GetAllProducts() => Products?.Select(e => e?.Product).ToList()
+                                                .Concat(ProductPacks?
+                                                .SelectMany(e => e.ProductPack.Products.Select(p => p.Product)))
                                                 .Distinct().ToList();
 
         [NotMapped]
