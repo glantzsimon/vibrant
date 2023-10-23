@@ -1,8 +1,8 @@
 ﻿@using K9.Base.WebApplication.Helpers
-@model Protocol
+@model K9.WebApplication.ViewModels.ProtocolReviewViewModel
 @{
     Layout = "../Shared/_LayoutForm.cshtml";
-    ViewBag.SubTitle = $"{Dictionary.ReviewSectionDetails} for {Model.Name}";
+    ViewBag.SubTitle = $"{Dictionary.ReviewSectionDetails} for {Model.Protocol.Name}";
 }
 @using (Html.BeginForm())
 {

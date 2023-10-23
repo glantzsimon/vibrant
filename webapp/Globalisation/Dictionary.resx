@@ -1945,6 +1945,9 @@
   <data name="ViewProductQrCodes" xml:space="preserve">
     <value>View Product QR Codes</value>
   </data>
+  <data name="ActualAmountLabel" xml:space="preserve">
+    <value>Actual Amount</value>
+  </data>
   <data name="AmountRequiredLabel" xml:space="preserve">
     <value>Amount Required</value>
   </data>
@@ -1968,6 +1971,9 @@
   </data>
   <data name="ProtocolProductsAndProductPacksOverlap" xml:space="preserve">
     <value>Protocol products and product packs overlap. </value>
+  </data>
+  <data name="ProtocolRequiresLabel" xml:space="preserve">
+    <value>Protocol Requirement</value>
   </data>
   <data name="ReviewSectionDetails" xml:space="preserve">
     <value>Review Section Details</value>

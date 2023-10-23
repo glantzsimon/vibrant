@@ -377,6 +377,7 @@
     <Compile Include="Services\QrCodeService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\IUserService.cs" />
+    <Compile Include="ViewModels\ProtocolReviewViewModel.cs" />
     <Compile Include="ViewModels\RepCommissionViewModel.cs" />
     <Compile Include="ViewModels\OrdersReviewViewModel.cs" />
     <Compile Include="ViewModels\EmailPromoCodeViewModel.cs" />

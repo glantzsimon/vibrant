@@ -13,22 +13,29 @@ else if (Model.Type == EProtocolType.ParasiteCleanseMaintenance)
 }
 else
 {
-    switch (Model.Frequency)
-    {
-        case EFrequency.Daily:
-            @Html.Partial("../Protocols/_DailySchedule")
-            break;
+    <div class="daily-schedule-container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>@Dictionary.SupplementSchedule (@Model.DaysDurationTitle)</h3>
+            </div>
+        </div>
+        @switch (Model.Frequency)
+        {
+            case EFrequency.Daily:
+                @Html.Partial("../Protocols/_DailySchedule")
+                break;
 
-        case EFrequency.Monthly:
-            @Html.Partial("../Protocols/_MonthlySchedule")
-            break;
+            case EFrequency.Monthly:
+                @Html.Partial("../Protocols/_MonthlySchedule")
+                break;
 
-        case EFrequency.Fortnightly:
-            @Html.Partial("../Protocols/_FortnightlySchedule")
-            break;
+            case EFrequency.Fortnightly:
+                @Html.Partial("../Protocols/_FortnightlySchedule")
+                break;
 
-        default:
-            @Html.Partial("../Protocols/_CustomSchedule")
-            break;
-    }
+            default:
+                @Html.Partial("../Protocols/_CustomSchedule")
+                break;
+        }
+    </div>
 }

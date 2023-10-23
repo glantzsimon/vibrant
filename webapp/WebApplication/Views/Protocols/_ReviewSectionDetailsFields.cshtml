@@ -1,39 +1,39 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Helpers
-@model Protocol
+@model K9.WebApplication.ViewModels.ProtocolReviewViewModel
 
 @{
-    var allProducts = Model.GetAllProducts();
+    var protocolReviewItems = Model.GetAllProducts();
 }
 
-@Html.HiddenFor(e => Model.Id)
+@Html.HiddenFor(e => Model.Protocol.Id)
 
 <div class="row">
     <div class="col-sm-2">
-        @Html.LabelFor(e => Model.ProtocolSections[0].Section.Name)
+        @Html.LabelFor(e => Model.Protocol.ProtocolSections[0].Section.Name)
     </div>
     <div class="col-sm-4">
-        @Html.LabelFor(e => Model.ProtocolSections[0].Section.ShortDescription)
+        @Html.LabelFor(e => Model.Protocol.ProtocolSections[0].Section.ShortDescription)
     </div>
     <div class="col-sm-6">
         <div class="row">
             <div class="col-sm-7">
-                @Html.LabelFor(e => Model.ProtocolSections[0].ProtocolSectionProducts[0].ProductName)
+                @Html.LabelFor(e => Model.Protocol.ProtocolSections[0].ProtocolSectionProducts[0].ProductName)
             </div>
             <div class="col-sm-5">
-                @Html.LabelFor(e => Model.ProtocolSections[0].ProtocolSectionProducts[0].Product.Dosage)
+                @Html.LabelFor(e => Model.Protocol.ProtocolSections[0].ProtocolSectionProducts[0].Product.Dosage)
             </div>
         </div>
     </div>
 </div>
 <hr />
 
-@for (int i = 0; i < Model.ProtocolSections.Count; i++)
+@for (int i = 0; i < Model.Protocol.ProtocolSections.Count; i++)
 {
-    @Html.HiddenFor(e => Model.ProtocolSections[i].Id)
-    @Html.HiddenFor(e => Model.ProtocolSections[i].SectionId)
-    @Html.HiddenFor(e => Model.ProtocolSections[i].Section.Name)
-    var section = Model.ProtocolSections[i];
+    @Html.HiddenFor(e => Model.Protocol.ProtocolSections[i].Id)
+    @Html.HiddenFor(e => Model.Protocol.ProtocolSections[i].SectionId)
+    @Html.HiddenFor(e => Model.Protocol.ProtocolSections[i].Section.Name)
+    var section = Model.Protocol.ProtocolSections[i];
 
     <div class="row">
         <div class="col-sm-2">
@@ -43,14 +43,14 @@
             @Html.DisplayFor(e => section.Section.ShortDescription)
         </div>
         <div class="col-sm-6">
-            @for (int j = 0; j < Model.ProtocolSections[i].ProtocolSectionProducts.Count; j++)
+            @for (int j = 0; j < Model.Protocol.ProtocolSections[i].ProtocolSectionProducts.Count; j++)
             {
-                var product = Model.ProtocolSections[i].ProtocolSectionProducts[j];
+                var product = Model.Protocol.ProtocolSections[i].ProtocolSectionProducts[j];
 
-                @Html.HiddenFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].Id)
-                @Html.HiddenFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].Product.Id)
-                @Html.HiddenFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].Product.ProductType)
-                @Html.HiddenFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].Product.Amount)
+                @Html.HiddenFor(e => Model.Protocol.ProtocolSections[i].ProtocolSectionProducts[j].Id)
+                @Html.HiddenFor(e => Model.Protocol.ProtocolSections[i].ProtocolSectionProducts[j].Product.Id)
+                @Html.HiddenFor(e => Model.Protocol.ProtocolSections[i].ProtocolSectionProducts[j].Product.ProductType)
+                @Html.HiddenFor(e => Model.Protocol.ProtocolSections[i].ProtocolSectionProducts[j].Product.Amount)
 
                 if (product.IsVisible && product.Amount > 0)
                 {
@@ -59,7 +59,7 @@
                             @Html.Label(product.Product.Name)
                         </div>
                         <div class="col-sm-5">
-                            @Html.BootstrapDisplayFor(e => Model.ProtocolSections[i].ProtocolSectionProducts[j].Amount, new EditorOptions
+                            @Html.BootstrapDisplayFor(e => Model.Protocol.ProtocolSections[i].ProtocolSectionProducts[j].Amount, new EditorOptions
                             {
                                 Label = ""
                             })
@@ -79,27 +79,23 @@
     <div class="col-sm-4">
     </div>
     <div class="col-sm-6">
-        @for (int j = 0; j < allProducts.Count; j++)
-        {
-            var product = allProducts[j];
-            var protocolProduct = Model.GetProtocolProductByProductId(product.Id);
-            var protocolProductPackProduct = Model.GetProtocolProductPackProductByProductId(product.Id);
-            var totalAmountRequired = (protocolProduct?.AmountRequired ?? 0) + (protocolProductPackProduct?.AmountRequired ?? 0);
-            var actualAmount = (protocolProduct?.Amount ?? 0) + (protocolProductPackProduct?.Amount ?? 0);
 
+        
+        @for (int j = 0; j < protocolReviewItems.Count; j++)
+        {
+            var item = protocolReviewItems[j];
+            
             <div class="row">
-                <div class="col-sm-7">
-                    @Html.Label(product.Name)
+                <div class="col-xs-12">
+                    <h4>@item.Product.Name</h4>
                 </div>
-                <div class="col-sm-5">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <span>Required: @totalAmountRequired</span>
-                        </div>
-                        <div class="col-xs-6">
-                            <span>Actual: @actualAmount</span>
-                        </div>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    @Html.BootstrapDisplayFor(e => item.AmountRequired)
+                </div>
+                <div class="col-xs-6">
+                    @Html.BootstrapDisplayFor(e => item.ActualAmount)
                 </div>
             </div>
         }

@@ -64,6 +64,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DaysDurationLabel)]
         public int DaysDuration => GetDaysDuration();
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DaysDurationLabel)]
+        public string DaysDurationTitle => $"{DaysDuration} {Dictionary.Days}";
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CustomDurationLabel)]
         public int CustomDaysDuration { get; set; }
 
@@ -154,12 +157,12 @@ namespace K9.DataAccessLayer.Models
 
         public int GetNumberOfPeriodsPerDuration()
         {
-            var numberOfPeriodsPerDuration = DaysDuration / GetPeriodLength();
+            var numberOfPeriodsPerDuration = (float)DaysDuration / (float)GetPeriodLength();
             if (numberOfPeriodsPerDuration <= 0)
             {
                 throw new Exception(Globalisation.Dictionary.ProtocolDurationIsTooShort);
             }
-            return numberOfPeriodsPerDuration;
+            return (int)Math.Round(numberOfPeriodsPerDuration, 0, MidpointRounding.AwayFromZero);
         }
 
         public int GetNumberOfDaysOnPerDuration()

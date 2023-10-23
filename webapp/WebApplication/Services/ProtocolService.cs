@@ -371,8 +371,7 @@ namespace K9.WebApplication.Services
 
                     if (numberPerDuration > 0)
                     {
-                        protocolProduct.AmountRequired = (int)Math.Round(numberPerDuration / protocolProduct.Product.Amount,
-                            MidpointRounding.AwayFromZero);
+                        protocolProduct.AmountRequired = (int)Math.Ceiling((decimal)numberPerDuration / (decimal)protocolProduct.Product.Amount);
                     }
                 }
             }
@@ -392,8 +391,7 @@ namespace K9.WebApplication.Services
 
                         if (numberPerDuration > 0)
                         {
-                            productPackProduct.AmountRequired = (int)Math.Round(numberPerDuration / productPackProduct.Product.Amount,
-                                MidpointRounding.AwayFromZero);
+                            productPackProduct.AmountRequired = (int)Math.Ceiling((decimal)numberPerDuration / (decimal)productPackProduct.Product.Amount);
                         }
                     }
                 }

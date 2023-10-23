@@ -6,6 +6,7 @@ using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Services;
 using System;
 using System.Web.Mvc;
+using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {
@@ -80,7 +81,10 @@ namespace K9.WebApplication.Controllers
         public ActionResult ReviewSectionDetails(int id = 0)
         {
             var protocol = _protocolService.GetProtocolWithProtocolSections(id);
-            return View(protocol);
+            return View(new ProtocolReviewViewModel
+            {
+                Protocol = protocol
+            });
         }
 
         public ActionResult EditSectionDetails(int id = 0)

@@ -106,6 +106,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Actual Amount.
+        /// </summary>
+        public static string ActualAmountLabel {
+            get {
+                return ResourceManager.GetString("ActualAmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Additional Comments.
         /// </summary>
         public static string AdditionalComments {
@@ -4187,6 +4196,15 @@ namespace K9.Globalisation {
         public static string ProtocolProtocolSections {
             get {
                 return ResourceManager.GetString("ProtocolProtocolSections", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protocol Requirement.
+        /// </summary>
+        public static string ProtocolRequiresLabel {
+            get {
+                return ResourceManager.GetString("ProtocolRequiresLabel", resourceCulture);
             }
         }
         
