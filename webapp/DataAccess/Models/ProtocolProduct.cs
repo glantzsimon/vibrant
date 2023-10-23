@@ -29,10 +29,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductLabel)]
         [LinkedColumn(LinkedTableName = "Product", LinkedColumnName = "Title")]
         public string ProductName { get; set; }
-        
+
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
-        public int Amount { get; set; }
+        public int Amount { get; set; } = 1;
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountRequiredLabel)]
