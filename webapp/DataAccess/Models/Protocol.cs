@@ -157,12 +157,18 @@ namespace K9.DataAccessLayer.Models
 
         public int GetNumberOfPeriodsPerDuration()
         {
-            var numberOfPeriodsPerDuration = (float)DaysDuration / (float)GetPeriodLength();
-            if (numberOfPeriodsPerDuration <= 0)
+            if (Type == EProtocolType.Default)
             {
-                throw new Exception(Globalisation.Dictionary.ProtocolDurationIsTooShort);
+                var numberOfPeriodsPerDuration = (float)DaysDuration / (float)GetPeriodLength();
+                if (numberOfPeriodsPerDuration <= 0)
+                {
+                    throw new Exception(Globalisation.Dictionary.ProtocolDurationIsTooShort);
+                }
+
+                return (int)Math.Round(numberOfPeriodsPerDuration, 0, MidpointRounding.AwayFromZero);
             }
-            return (int)Math.Round(numberOfPeriodsPerDuration, 0, MidpointRounding.AwayFromZero);
+
+            return 0;
         }
 
         public int GetNumberOfDaysOnPerDuration()
