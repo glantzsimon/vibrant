@@ -173,6 +173,12 @@ namespace K9.DataAccessLayer.Models
 
         public int GetNumberOfDaysOnPerDuration()
         {
+            if (Type != EProtocolType.Default)
+            {
+                // Presume every day (for now)
+                return DaysDuration;
+            }
+
             var numberOfPeriodsPerDuration = GetNumberOfPeriodsPerDuration();
             switch (Frequency)
             {
@@ -182,10 +188,17 @@ namespace K9.DataAccessLayer.Models
                 case EFrequency.Fortnightly:
                 case EFrequency.Monthly:
                     return numberOfPeriodsPerDuration * (NumberOfPeriodsOn);
-
+                    
                 default:
                     return 0;
             }
+        }
+
+        public Product GetProduct(int productId)
+        {
+            return Products?.Select(e => e.Product).FirstOrDefault(e => e.Id == 35) ?? ProductPacks
+                       ?.SelectMany(e => e.ProductPack.Products.Select(p => p.Product))
+                       .FirstOrDefault(e => e.ProductId == 35);
         }
 
         private int GetDaysDuration()

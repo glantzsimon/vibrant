@@ -713,6 +713,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Click on an item to view more information..
+        /// </summary>
+        public static string ClickOnAnItemForMoreInfo {
+            get {
+                return ResourceManager.GetString("ClickOnAnItemForMoreInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Client.
         /// </summary>
         public static string Client {

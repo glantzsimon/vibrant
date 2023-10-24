@@ -75,19 +75,10 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("EditProductPacksForProtocol", "ProtocolProductPacks", new { id });
         }
 
-        public ActionResult Summary(int id)
+        public ActionResult Summary(int id, int? protocolId)
         {
-            var protocol = _protocolService.GetProtocolWithProtocolSections(id);
+            var protocol = _protocolService.GetProtocolWithProtocolSections(protocolId ?? id);
             return View(protocol);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [RequirePermissions(Permission = Permissions.Edit)]
-        public ActionResult ViewSummary(Protocol model)
-        {
-            var protocol = _protocolService.GetProtocolWithProtocolSections(model.Id);
-            return View("Summary", protocol);
         }
 
         public ActionResult ReviewSectionDetails(int id = 0)
@@ -125,7 +116,7 @@ namespace K9.WebApplication.Controllers
                 throw;
             }
             _protocolService.ClearCache();
-            return RedirectToAction("EditSectionDetails", new { id = model.Id });
+            return RedirectToAction("ReviewSectionDetails", new { id = model.Id });
         }
 
         private void ProtocolsController_RecordBeforeDeleted(object sender, CrudEventArgs e)

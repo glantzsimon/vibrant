@@ -1957,6 +1957,9 @@
   <data name="AmountRequiredLabel" xml:space="preserve">
     <value>Amount Required</value>
   </data>
+  <data name="ClickOnAnItemForMoreInfo" xml:space="preserve">
+    <value>Click on an item to view more information.</value>
+  </data>
   <data name="CustomDurationLabel" xml:space="preserve">
     <value>Custom Duration (Days)</value>
   </data>

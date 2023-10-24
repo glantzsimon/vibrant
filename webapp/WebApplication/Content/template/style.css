@@ -1056,3 +1056,10 @@ ul.sortable {
     background-color: #55acee;
     color: #0a4070 !important;
 }
+
+.summary-info-item {
+    color: #0a4070 !important;
+    font-style: italic;
+    margin-top: 0 !important;
+    margin-bottom: 14px;
+}
