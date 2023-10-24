@@ -323,25 +323,6 @@ namespace K9.WebApplication.Services
                 };
 
                 _protocolProtocolSectionRepository.Create(newProtocolSection);
-
-                // Copy products and product packs
-                var protocolSection =
-                    _protocolProtocolSectionRepository.Find(e => e.SectionId == section.SectionId).FirstOrDefault();
-
-                var sectionProducts = _protocolProtocolSectionProductsRepository.Find(e =>
-                    e.ProtocolSectionId == protocolSection.SectionId);
-
-                foreach (var product in sectionProducts)
-                {
-                    // ProtocolId = newProtocol.Id,
-                    var newProtocolSectionProduct = new ProtocolSectionProduct
-                    {
-                        ProtocolSectionId = protocolSection.SectionId,
-                        ProductId = product.ProductId
-                    };
-
-                    _protocolProtocolSectionProductsRepository.Create(newProtocolSectionProduct);
-                }
             }
 
             return newProtocol;
