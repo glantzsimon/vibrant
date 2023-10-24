@@ -103,7 +103,7 @@ namespace K9.DataAccessLayer.Models
         public DateTime? MadeOn { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
-            Name = Globalisation.Strings.Labels.IsMadeLabel)] public bool IsMade => MadeOn != null && MadeOn >= DateTime.Today;
+            Name = Globalisation.Strings.Labels.IsMadeLabel)] public bool IsMade => MadeOn != null && MadeOn <= DateTime.Today;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.CompletedOnLabel)]
