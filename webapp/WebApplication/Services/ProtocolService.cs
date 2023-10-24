@@ -307,7 +307,7 @@ namespace K9.WebApplication.Services
                 var newProductPack = new ProtocolProductPack
                 {
                     ProtocolId = newProtocol.Id,
-                    ProductPackId = protocolProductPack.Id
+                    ProductPackId = protocolProductPack.ProductPackId
                 };
 
                 _protocolProductPackRepository.Create(newProductPack);

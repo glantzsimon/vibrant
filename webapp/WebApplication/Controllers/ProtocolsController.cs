@@ -84,10 +84,10 @@ namespace K9.WebApplication.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [RequirePermissions(Permission = Permissions.Edit)]
-        public ActionResult Summary(Protocol model)
+        public ActionResult ViewSummary(Protocol model)
         {
             var protocol = _protocolService.GetProtocolWithProtocolSections(model.Id);
-            return View(protocol);
+            return View("Summary", protocol);
         }
 
         public ActionResult ReviewSectionDetails(int id = 0)

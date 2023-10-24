@@ -9,7 +9,7 @@
     ViewBag.SubTitle = Model.Name;
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("ViewSummary", "Protocols", FormMethod.Post))
 {
     using (Html.BeginBootstrapForm())
     {
