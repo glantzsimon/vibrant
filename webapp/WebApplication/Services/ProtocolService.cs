@@ -358,7 +358,7 @@ namespace K9.WebApplication.Services
 
         public void UpdateProtocolProductsAndProductPackQuantities(Protocol protocol)
         {
-            if (protocol.Products.Any())
+            if (protocol.Products != null && protocol.Products.Any())
             {
                 foreach (var protocolProduct in protocol.Products)
                 {
@@ -377,7 +377,7 @@ namespace K9.WebApplication.Services
                 }
             }
 
-            if (protocol.ProductPacks.Any())
+            if (protocol.ProductPacks != null && protocol.ProductPacks.Any())
             {
                 foreach (var protocolProductPack in protocol.ProductPacks)
                 {
@@ -514,7 +514,7 @@ namespace K9.WebApplication.Services
 
         public void CheckProductsAndProductPacksDoNotOverlap(Protocol protocol)
         {
-            if (protocol.ProtocolProductPacks.Any() && protocol.ProtocolProducts.Any())
+            if (protocol.ProtocolProductPacks != null&& protocol.ProtocolProductPacks.Any() && protocol.ProtocolProducts != null && protocol.ProtocolProducts.Any())
             {
                 // Check that the products in the product packs don't duplicate the products and raise an error if so!
                 if (protocol.ProtocolProductPacks.SelectMany(e => e.ProductPack.Products).Select(e => e.ProductId)
