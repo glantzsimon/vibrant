@@ -9,11 +9,16 @@ using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Services
 {
-    public abstract class CacheableServiceBase<T> : ICacheableService, ICategorisableService where T : class, IObjectBase
+    public abstract class CacheableServiceBase<T> : ICacheableService, ICategorisableService
+        where T : class, IObjectBase
     {
+#if DEBUG
+        protected MemoryCache MemoryCache = new MemoryCache(new MemoryCacheOptions());
+#else
         protected static MemoryCache MemoryCache = new MemoryCache(new MemoryCacheOptions());
+#endif
 
-        public MemoryCacheEntryOptions GetMemoryCacheEntryOptions(int duration)
+    public MemoryCacheEntryOptions GetMemoryCacheEntryOptions(int duration)
         {
             return new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromSeconds(duration));
         }

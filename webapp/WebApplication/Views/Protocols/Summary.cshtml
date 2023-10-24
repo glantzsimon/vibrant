@@ -13,15 +13,32 @@
 {
     using (Html.BeginBootstrapForm())
     {
+        @Html.HiddenFor(e => Model.Id)
+
         <div class="row margin-bottom-15">
             <div class="col-xs-12">
-                @Html.BootstrapActionLinkButton(Dictionary.ViewPrintableVersion, "PrintableSummary", "Protocol", new { id = Model.ExternalId }, "", EButtonClass.Info)
+                @Html.BootstrapActionLinkButton(Dictionary.ViewPrintableVersion, "PrintableSummary", "Protocol", new { id = Model.ExternalId }, "fa fa-eye", EButtonClass.Success)
+
+                @if (Model.ProductPacks != null && Model.ProductPacks.Any())
+                {
+                    @Html.BootstrapActionLinkButton(Dictionary.ViewProductPack, "Details", "ProductPack", new { seoFriendlyId = Model.SeoFriendlyId}, "", EButtonClass.Success)
+                }
+
                 @if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
                 {
                     @Html.BootstrapBackToListButton()
                 }
             </div>
         </div>
+
+        if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
+        {
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.BootstrapEditorFor(model => Model.ProtocolId)
+                </div>
+            </div>
+        }
 
         @Html.Partial("../Protocols/_Schedule")
 
@@ -107,3 +124,11 @@
         }
     }
 }
+
+<script type="text/javascript">
+    $(function () {
+        $("#ProtocolId").change(function () {
+            $("#ProtocolId").closest("form").submit();
+        });
+    })
+</script>

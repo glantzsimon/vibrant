@@ -2014,4 +2014,7 @@
   <data name="TwoMonths" xml:space="preserve">
     <value>Two Months</value>
   </data>
+  <data name="ViewProductPack" xml:space="preserve">
+    <value>View Product Pack</value>
+  </data>
 </root>

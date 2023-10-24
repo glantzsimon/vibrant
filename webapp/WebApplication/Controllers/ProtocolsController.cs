@@ -81,6 +81,15 @@ namespace K9.WebApplication.Controllers
             return View(protocol);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult Summary(Protocol model)
+        {
+            var protocol = _protocolService.GetProtocolWithProtocolSections(model.Id);
+            return View(protocol);
+        }
+
         public ActionResult ReviewSectionDetails(int id = 0)
         {
             var protocol = _protocolService.GetProtocolWithProtocolSections(id);

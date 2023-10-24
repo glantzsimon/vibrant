@@ -5782,6 +5782,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View Product Pack.
+        /// </summary>
+        public static string ViewProductPack {
+            get {
+                return ResourceManager.GetString("ViewProductPack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View Product QR Codes.
         /// </summary>
         public static string ViewProductQrCodes {
