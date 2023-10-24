@@ -189,7 +189,7 @@ namespace K9.WebApplication.Services
                     else
                     {
                         var substitutes = productIngredient.IngredientSubstitutes
-                            .Where(e => e.SubstituteIngredient.GetIsInStock())
+                            .Where(e => e.SubstituteIngredient != null && e.SubstituteIngredient.GetIsInStock())
                             .Take(productIngredient.NumberOfSubstitutesToUse)
                             .OrderBy(e => e.Priority).ToList();
 

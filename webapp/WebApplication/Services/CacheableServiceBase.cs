@@ -13,7 +13,7 @@ namespace K9.WebApplication.Services
         where T : class, IObjectBase
     {
 #if DEBUG
-        protected MemoryCache MemoryCache = new MemoryCache(new MemoryCacheOptions());
+        protected static MemoryCache MemoryCache = new MemoryCache(new MemoryCacheOptions());
 #else
         protected static MemoryCache MemoryCache = new MemoryCache(new MemoryCacheOptions());
 #endif
