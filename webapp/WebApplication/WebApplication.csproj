@@ -348,7 +348,7 @@
     <Compile Include="Models\ParasiteCleanseViewModel.cs" />
     <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\ProductItem.cs" />
-    <Compile Include="Models\GlossaryItem.cs" />
+    <Compile Include="Models\DictionaryItem.cs" />
     <Compile Include="Models\RegisterPromoCodeModel.cs" />
     <Compile Include="Models\Recaptcha.cs" />
     <Compile Include="Models\PurchaseModel.cs" />
@@ -1523,6 +1523,11 @@
     <Content Include="Views\Shared\EditorTemplates\ProtocolDuration.cshtml" />
     <Content Include="Views\Protocols\ReviewSectionDetails.cshtml" />
     <Content Include="Views\Protocols\_ReviewSectionDetailsFields.cshtml" />
+    <Content Include="Views\ProtocolArticles\_ProtocolSummary.cshtml" />
+    <Content Include="Views\Shared\Controls\_CollapsibleDiv.cshtml" />
+    <Content Include="Views\Protocols\_DietaryRecommendationsSummary.cshtml" />
+    <Content Include="Views\Protocols\_ActivitiesSummary.cshtml" />
+    <Content Include="Views\Account\AccountDeactivated.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

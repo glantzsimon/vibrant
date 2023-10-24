@@ -42,7 +42,7 @@ namespace K9.WebApplication.Services
         {
             return MemoryCache.GetOrCreate(GetCacheKey(id), entry =>
             {
-                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
+                entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
 
                 var order = _ordersRepository.Find(id);
                 if (order != null)
@@ -102,7 +102,7 @@ namespace K9.WebApplication.Services
         {
             return MemoryCache.GetOrCreate(GetCacheKey(order.Id), entry =>
             {
-                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
+                entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
 
                 order.Products = _orderProductsRepository.Find(e => e.OrderId == order.Id).ToList();
                 foreach (var orderProduct in order.Products)

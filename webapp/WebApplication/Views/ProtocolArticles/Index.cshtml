@@ -33,36 +33,13 @@
             <hr />
 
             <h4>
-                Protocols
+                @Dictionary.Protocols
             </h4>
 
             <div class="content-table">
                 @foreach (var protocol in Model)
                 {
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h5>@protocol.Name</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-8">
-                            @Html.Raw(protocol.ShortDescription)
-                        </div>
-                        <div class="col-sm-4">
-                            @if (protocol.ProductPacks != null && protocol.ProductPacks.Any())
-                            {
-                                foreach (var protocolProtocolProductPack in protocol.ProductPacks)
-                                {
-                                    @Html.BootstrapActionLinkButton($"{Dictionary.View} {protocolProtocolProductPack.ProductPack.Name}", "Details", "ProductPack", new { protocolProtocolProductPack.ProductPack.SeoFriendlyId })
-                                }
-                            }
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            @Html.CollapsiblePanel(Dictionary.FindOutMore, protocol.Body)
-                        </div>
-                    </div>
+                    @Html.Panel(protocol.Name, Html.Partial("_ProtocolSummary", protocol).ToString())
                 }
             </div>
         </article>

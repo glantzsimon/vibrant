@@ -76,8 +76,8 @@ namespace K9.WebApplication.Helpers
                 ImageLayout = imageLayout
             });
         }
-        
-        public static IDisposable PaidContent(this HtmlHelper html, MembershipOption.ESubscriptionType subscriptionType = MembershipOption.ESubscriptionType.MonthlyStandard,  bool silent = false)
+
+        public static IDisposable PaidContent(this HtmlHelper html, MembershipOption.ESubscriptionType subscriptionType = MembershipOption.ESubscriptionType.MonthlyStandard, bool silent = false)
         {
             var baseController = html.ViewContext.Controller as BasePureController;
             var activeUserMembership = baseController?.GetActiveUserMembership();
@@ -138,6 +138,11 @@ namespace K9.WebApplication.Helpers
 
             html.ViewContext.Writer.WriteLine(div.ToString(TagRenderMode.StartTag));
             return new TagCloser(html, Tags.Div);
+        }
+
+        public static MvcHtmlString CollapsibleDiv(this HtmlHelper html, string body)
+        {
+            return html.Partial("Controls/_CollapsibleDiv", body);
         }
     }
 }

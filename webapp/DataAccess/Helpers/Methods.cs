@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using K9.SharedLibrary.Models;
 using Microsoft.Ajax.Utilities;
 
 namespace K9.DataAccessLayer.Helpers
@@ -61,6 +62,11 @@ namespace K9.DataAccessLayer.Helpers
         public static double GetSuggestedBulkDiscountPrice(this double price)
         {
             return price - (price * price.GetSuggestedBulkDiscount());
+        }
+
+        public static string GetBookMark(this IObjectBase model)
+        {
+            return $"{model.GetType().Name}-{model.Id}";
         }
     }
 }

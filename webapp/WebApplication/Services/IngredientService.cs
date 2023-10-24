@@ -28,7 +28,7 @@ namespace K9.WebApplication.Services
         {
             return MemoryCache.GetOrCreate(GetCacheKey(id), entry =>
             {
-                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
+                entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
 
                 var ingredient = _ingredientsRepository.Find(id);
                 if (ingredient != null)
@@ -74,7 +74,7 @@ namespace K9.WebApplication.Services
         {
             return MemoryCache.GetOrCreate(GetCacheKey(ingredient.Id), entry =>
             {
-                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
+                entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
                 
                 var ingredientSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == ingredient.Id)
                     .OrderBy(e => e.Priority).ToList();

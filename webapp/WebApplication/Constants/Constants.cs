@@ -11,6 +11,7 @@ namespace K9.WebApplication.Constants
 
         public const int CategoryGap = 100000;
         public const int ItemCodeGap = 222;
+        public const int OneWeek = 604800;
 
         public static List<ECategory> IngredientCategories = new List<ECategory>
         {

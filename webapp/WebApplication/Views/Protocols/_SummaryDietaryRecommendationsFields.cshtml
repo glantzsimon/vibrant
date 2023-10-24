@@ -1,49 +1,47 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@using K9.DataAccessLayer.Helpers
 @using K9.WebApplication.Helpers
 @model Protocol
 
 @if (Model.DietaryRecommendations.Any())
 {
-    <div class="row">
-        <div class="col-xs-12">
-            <h3>@Dictionary.DietaryRecommendations</h3>
-        </div>
-    </div>
-
     for (int i = 0; i < Model.DietaryRecommendations.Count; i++)
     {
         var dietaryRecommendation = Model.DietaryRecommendations[i].DietaryRecommendation;
         var isLast = i == Model.DietaryRecommendations.Count - 1;
+        var bookmark = Model.DietaryRecommendations[i].DietaryRecommendation.GetBookMark();
 
-        <div class="row">
-            <div class="col-xs-12">
-                <h4>@dietaryRecommendation.Name</h4>
+        <div id="@bookmark">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>@dietaryRecommendation.Name</h4>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.Recommendations), dietaryRecommendation.Recommendations, true)
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.Recommendations), dietaryRecommendation.Recommendations, true)
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.Benefits), dietaryRecommendation.Benefits)
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.Benefits), dietaryRecommendation.Benefits)
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.ShortDescription), dietaryRecommendation.ShortDescription)
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.ShortDescription), dietaryRecommendation.ShortDescription)
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.Body), dietaryRecommendation.Body)
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.Body), dietaryRecommendation.Body)
+                </div>
             </div>
-        </div>
 
-        if (!isLast)
-        {
-            <hr />
-        }
+            @if (!isLast)
+            {
+                <hr />
+            }
+        </div>
     }
 }

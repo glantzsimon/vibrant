@@ -79,6 +79,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account Successfully Deactivated.
+        /// </summary>
+        public static string AccountDectivatedSuccessfully {
+            get {
+                return ResourceManager.GetString("AccountDectivatedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Acid Alkaline.
         /// </summary>
         public static string AcidAlkaline {
@@ -1288,6 +1297,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deactivate Account.
+        /// </summary>
+        public static string DeactivateAccount {
+            get {
+                return ResourceManager.GetString("DeactivateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deactivated.
         /// </summary>
         public static string DeactivatedLabel {
@@ -1347,6 +1365,15 @@ namespace K9.Globalisation {
         public static string Detoxification {
             get {
                 return ResourceManager.GetString("Detoxification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dietary Advice.
+        /// </summary>
+        public static string DietaryAdvice {
+            get {
+                return ResourceManager.GetString("DietaryAdvice", resourceCulture);
             }
         }
         
@@ -4412,6 +4439,24 @@ namespace K9.Globalisation {
         public static string RDALabel {
             get {
                 return ResourceManager.GetString("RDALabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Read Less.
+        /// </summary>
+        public static string ReadLess {
+            get {
+                return ResourceManager.GetString("ReadLess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Read More.
+        /// </summary>
+        public static string ReadMore {
+            get {
+                return ResourceManager.GetString("ReadMore", resourceCulture);
             }
         }
         

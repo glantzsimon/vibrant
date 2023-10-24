@@ -93,6 +93,14 @@ namespace K9.WebApplication.Controllers
                             CookieService.SetUsernameCookie(model.UserName, model.Password);
                         }
 
+                        var user = _userRepository.Find(e => e.Username == model.UserName).First();
+                        if (!user.IsActivated)
+                        {
+                            _accountService.Logout();
+                            ModelState.AddModelError("", Dictionary.AccountNotActivatedError);
+                            break;
+                        }
+
                         if (TempData["ReturnUrl"] != null)
                         {
                             return Redirect(TempData["ReturnUrl"].ToString());
@@ -614,6 +622,12 @@ namespace K9.WebApplication.Controllers
         }
 
         [AllowAnonymous]
+        public ActionResult AccountDeactivated()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
         public ActionResult ActivateAccount(string userName, string token)
         {
             var result = _accountService.ActivateAccount(userName, token);
@@ -649,6 +663,15 @@ namespace K9.WebApplication.Controllers
                 default:
                     return RedirectToAction("AccountActivationFailed", "Account");
             }
+        }
+
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult DeactivateUserAccount(int userId)
+        {
+            var user = _userRepository.Find(userId);
+            user.IsDeleted = true;
+            _userRepository.Update(user);
+            return RedirectToAction("AccountAlreadyActivated", "Account");
         }
 
         [Route("unsubscribe")]

@@ -1945,6 +1945,9 @@
   <data name="ViewProductQrCodes" xml:space="preserve">
     <value>View Product QR Codes</value>
   </data>
+  <data name="AccountDectivatedSuccessfully" xml:space="preserve">
+    <value>Account Successfully Deactivated</value>
+  </data>
   <data name="ActualAmountLabel" xml:space="preserve">
     <value>Actual Amount</value>
   </data>
@@ -1959,6 +1962,12 @@
   </data>
   <data name="DaysDuration" xml:space="preserve">
     <value>Days Long</value>
+  </data>
+  <data name="DeactivateAccount" xml:space="preserve">
+    <value>Deactivate Account</value>
+  </data>
+  <data name="DietaryAdvice" xml:space="preserve">
+    <value>Dietary Advice</value>
   </data>
   <data name="OneMonth" xml:space="preserve">
     <value>One Month</value>
@@ -1980,6 +1989,12 @@
   </data>
   <data name="ProtocolRequiresLabel" xml:space="preserve">
     <value>Protocol Requirement</value>
+  </data>
+  <data name="ReadLess" xml:space="preserve">
+    <value>Read Less</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Read More</value>
   </data>
   <data name="ReviewSectionDetails" xml:space="preserve">
     <value>Review Section Details</value>

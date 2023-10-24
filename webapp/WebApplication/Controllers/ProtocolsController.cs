@@ -4,9 +4,9 @@ using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Services;
+using K9.WebApplication.ViewModels;
 using System;
 using System.Web.Mvc;
-using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {
@@ -20,13 +20,15 @@ namespace K9.WebApplication.Controllers
         {
             _protocolService = protocolService;
             RecordCreated += ProtocolsController_RecordCreated;
+            RecordDeleted += ProtocolsController_RecordDeleted;
+            RecordUpdated += ProtocolsController_RecordUpdated;
             RecordBeforeCreated += ProtocolsController_RecordBeforeCreated;
             RecordBeforeDetails += ProtocolsController_RecordBeforeDetails;
             RecordBeforeUpdate += ProtocolsController_RecordBeforeUpdate;
             RecordBeforeDelete += ProtocolsController_RecordBeforeDelete;
             RecordBeforeDeleted += ProtocolsController_RecordBeforeDeleted;
         }
-
+        
         public ActionResult View(int protocolId)
         {
             return RedirectToAction("Details", null, new { id = protocolId });
@@ -44,6 +46,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult DuplicateProtocol(Protocol protocol)
         {
             var duplicate = _protocolService.Duplicate(protocol.Id);
+            _protocolService.ClearCache();
             return RedirectToAction("Edit", new { id = duplicate.Id });
         }
 
@@ -112,6 +115,7 @@ namespace K9.WebApplication.Controllers
                 Console.WriteLine(e);
                 throw;
             }
+            _protocolService.ClearCache();
             return RedirectToAction("EditSectionDetails", new { id = model.Id });
         }
 
@@ -149,6 +153,17 @@ namespace K9.WebApplication.Controllers
         private void ProtocolsController_RecordCreated(object sender, CrudEventArgs e)
         {
             _protocolService.AddDefaultSections(e.Item.Id);
+            _protocolService.ClearCache();
+        }
+
+        private void ProtocolsController_RecordDeleted(object sender, CrudEventArgs e)
+        {
+            _protocolService.ClearCache();
+        }
+
+        private void ProtocolsController_RecordUpdated(object sender, CrudEventArgs e)
+        {
+            _protocolService.ClearCache();
         }
     }
 }

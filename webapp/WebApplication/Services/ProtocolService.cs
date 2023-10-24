@@ -1,16 +1,17 @@
 ﻿using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using Microsoft.Extensions.Caching.Memory;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Services
 {
-    public class ProtocolService : IProtocolService
+    public class ProtocolService : CacheableServiceBase<Protocol>, IProtocolService
     {
         private readonly ILogger _logger;
         private readonly IRepository<Product> _productsRepository;
@@ -54,13 +55,18 @@ namespace K9.WebApplication.Services
 
         public Protocol Find(int id)
         {
-            var protocol = _protocolsRepository.Find(id);
-            if (protocol != null)
+            return MemoryCache.GetOrCreate(GetCacheKey(id), entry =>
             {
-                protocol = GetFullProtocol(protocol);
-            }
+                entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
 
-            return protocol;
+                var protocol = _protocolsRepository.Find(id);
+                if (protocol != null)
+                {
+                    protocol = GetFullProtocol(protocol);
+                }
+
+                return protocol;
+            });
         }
 
         public Protocol FindNext(int id)
@@ -98,61 +104,72 @@ namespace K9.WebApplication.Services
 
         public Protocol GetFullProtocol(Protocol protocol)
         {
-            protocol.Activities = _protocolActivitiesRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
-            foreach (var protocolActivity in protocol.Activities)
+            return MemoryCache.GetOrCreate(GetCacheKey(protocol.Id), entry =>
             {
-                protocolActivity.Activity = _activitiesRepository.Find(protocolActivity.ActivityId);
-            }
+                entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
 
-            protocol.DietaryRecommendations = _protocolDietaryRecommendationRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
-            foreach (var protocolActivity in protocol.DietaryRecommendations)
-            {
-                protocolActivity.DietaryRecommendation = _dietaryRecommendationRepository.Find(protocolActivity.DietaryRecommendationId);
-            }
-
-            protocol.Products = _protocolProductsRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
-            foreach (var protocolProduct in protocol.Products)
-            {
-                protocolProduct.Product = _productsRepository.Find(protocolProduct.ProductId);
-            }
-
-            protocol.ProductPacks = _protocolProductPackRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
-            foreach (var protocolProductPack in protocol.ProductPacks)
-            {
-                protocolProductPack.ProductPack = _productPackRepository.Find(protocolProductPack.ProductPackId);
-
-                protocolProductPack.ProductPack.Products =
-                    _productPackProductRepository.Find(e => e.ProductPackId == protocolProductPack.ProductPack.Id).ToList();
-
-                foreach (var productPackProduct in protocolProductPack.ProductPack.Products)
+                protocol.Activities = _protocolActivitiesRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
+                foreach (var protocolActivity in protocol.Activities)
                 {
-                    productPackProduct.Product = _productsRepository.Find(productPackProduct.ProductId);
+                    protocolActivity.Activity = _activitiesRepository.Find(protocolActivity.ActivityId);
                 }
-            }
 
-            protocol.ProtocolSections = _protocolProtocolSectionRepository.Find(e => e.ProtocolId == protocol.Id).OrderBy(e => e.Section.DisplayOrder).ToList();
-            foreach (var section in protocol.ProtocolSections)
-            {
-                section.Section = _protocolSectionRepository.Find(section.SectionId);
-
-                section.ProtocolSectionProducts =
-                    _protocolProtocolSectionProductsRepository.Find(e => e.ProtocolSectionId == section.Id).ToList();
-
-                foreach (var protocolProtocolSectionProduct in section.ProtocolSectionProducts)
+                protocol.DietaryRecommendations = _protocolDietaryRecommendationRepository
+                    .Find(e => e.ProtocolId == protocol.Id).ToList();
+                foreach (var protocolActivity in protocol.DietaryRecommendations)
                 {
-                    protocolProtocolSectionProduct.Product =
-                        _productsRepository.Find(protocolProtocolSectionProduct.ProductId);
-                    protocolProtocolSectionProduct.FormattedAmount =
-                        protocolProtocolSectionProduct.GetFormattedAmount();
+                    protocolActivity.DietaryRecommendation =
+                        _dietaryRecommendationRepository.Find(protocolActivity.DietaryRecommendationId);
                 }
-            }
 
-            protocol.Contact = _contactsRepository.Find(protocol.ContactId ?? 0);
-            protocol.ContactName = protocol.Contact?.FullName;
+                protocol.Products = _protocolProductsRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
+                foreach (var protocolProduct in protocol.Products)
+                {
+                    protocolProduct.Product = _productsRepository.Find(protocolProduct.ProductId);
+                }
 
-            UpdateProtocolProductsAndProductPackQuantities(protocol);
+                protocol.ProductPacks = _protocolProductPackRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
+                foreach (var protocolProductPack in protocol.ProductPacks)
+                {
+                    protocolProductPack.ProductPack = _productPackRepository.Find(protocolProductPack.ProductPackId);
 
-            return protocol;
+                    protocolProductPack.ProductPack.Products =
+                        _productPackProductRepository.Find(e => e.ProductPackId == protocolProductPack.ProductPack.Id)
+                            .ToList();
+
+                    foreach (var productPackProduct in protocolProductPack.ProductPack.Products)
+                    {
+                        productPackProduct.Product = _productsRepository.Find(productPackProduct.ProductId);
+                    }
+                }
+
+                protocol.ProtocolSections = _protocolProtocolSectionRepository.Find(e => e.ProtocolId == protocol.Id)
+                    .OrderBy(e => e.Section.DisplayOrder).ToList();
+                foreach (var section in protocol.ProtocolSections)
+                {
+                    section.Section = _protocolSectionRepository.Find(section.SectionId);
+
+                    section.ProtocolSectionProducts =
+                        _protocolProtocolSectionProductsRepository.Find(e => e.ProtocolSectionId == section.Id)
+                            .ToList();
+
+                    foreach (var protocolProtocolSectionProduct in section.ProtocolSectionProducts)
+                    {
+                        protocolProtocolSectionProduct.Product =
+                            _productsRepository.Find(protocolProtocolSectionProduct.ProductId);
+                        protocolProtocolSectionProduct.FormattedAmount =
+                            protocolProtocolSectionProduct.GetFormattedAmount();
+                    }
+                }
+
+                protocol.Contact = _contactsRepository.Find(protocol.ContactId ?? 0);
+                protocol.ContactName = protocol.Contact?.FullName;
+
+                UpdateProtocolProductsAndProductPackQuantities(protocol);
+
+                return protocol;
+
+            });
         }
 
         public Protocol GetProtocolWithProtocolSections(Guid id)
@@ -228,20 +245,25 @@ namespace K9.WebApplication.Services
 
         public List<Protocol> List(bool retrieveFullProtocol = false)
         {
-            var protocols = _protocolsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
-
-            if (retrieveFullProtocol)
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
             {
-                var fullProtocols = new List<Protocol>();
-                foreach (var protocol in protocols)
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
+
+                var protocols = _protocolsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+
+                if (retrieveFullProtocol)
                 {
-                    fullProtocols.Add(GetFullProtocol(protocol));
+                    var fullProtocols = new List<Protocol>();
+                    foreach (var protocol in protocols)
+                    {
+                        fullProtocols.Add(GetFullProtocol(protocol));
+                    }
+
+                    return fullProtocols;
                 }
 
-                return fullProtocols;
-            }
-
-            return protocols;
+                return protocols;
+            });
         }
 
         public Protocol Duplicate(int id)

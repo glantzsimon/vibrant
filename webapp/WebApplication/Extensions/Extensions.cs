@@ -41,15 +41,15 @@ namespace K9.WebApplication.Extensions
             }
         }
 
-        public static GlossaryItem[] ToGlossaryItems(this Type type)
+        public static DictionaryItem[] ToDictionaryItems(this Type type)
         {
             return type.GetProperties()
                 .Where(e => Type.GetTypeCode(e.PropertyType) == TypeCode.String)
                 .Select(e =>
-                    new GlossaryItem
+                    new DictionaryItem
                     {
                         Name = e.Name,
-                        Definition = e.GetValue(null, null).ToString()
+                        Description = e.GetValue(null, null).ToString()
                     }).ToArray();
         }
 

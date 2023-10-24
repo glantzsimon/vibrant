@@ -27,6 +27,22 @@
         });
     }
 
+    function initCollapsibleDivs() {
+        $("div.inline-collapsible-panel-link").click(function () {
+            var $el = $(this);
+            var $container = $el.parent();
+            var $hiddenPanel = $container.find("div.panel-container");
+
+            if ($hiddenPanel.is(":visible")) {
+                $hiddenPanel.hide();
+                $el.html(getDictionaryItem("ReadMore"));
+            } else {
+                $hiddenPanel.show();
+                $el.html(getDictionaryItem("ReadLess"));
+            }
+        });
+    }
+
     function initBootstrapSortable() {
         $("ul.sortable").each(function () {
             var $sortableList = $(this);
@@ -142,10 +158,18 @@
 
             if (glossaryItem) {
                 $el.tooltip({
-                    title: glossaryItem.Definition
+                    title: glossaryItem.Description
                 });
             }
         });
+    }
+
+    function getDictionaryItem(key) {
+        var dictionaryItem = config.dictionaryItems.find(e => e.Name.toLowerCase() === key.toLowerCase());
+
+        if (dictionaryItem) {
+            return dictionaryItem.Description;
+        }
     }
 
     function initGauges(maxValue) {
@@ -207,6 +231,7 @@
         initGauges();
         initDataTables();
         initBootstrapSortable();
+        initCollapsibleDivs();
     };
 
     return {

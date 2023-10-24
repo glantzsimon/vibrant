@@ -23,7 +23,7 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult Index()
         {
-            return View(_protocolService.List(true));
+            return View(_protocolService.List());
         }
         
     }

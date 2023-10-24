@@ -1,4 +1,5 @@
-﻿using K9.DataAccessLayer.Models;
+﻿using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using Microsoft.Extensions.Caching.Memory;
@@ -8,7 +9,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Services
 {
@@ -41,7 +41,7 @@ namespace K9.WebApplication.Services
         {
             return MemoryCache.GetOrCreate(GetCacheKey(id), entry =>
             {
-                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
+                entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
 
                 var product = _productsRepository.Find(id);
                 if (product != null)
@@ -149,7 +149,7 @@ namespace K9.WebApplication.Services
         {
             return MemoryCache.GetOrCreate(GetCacheKey(product.Id), entry =>
             {
-                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
+                entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
 
                 product.Url = _urlHelper.AbsoluteAction("Details", "Product", new { seoFriendlyId = product.SeoFriendlyId });
                 product.QrCodeUrl = _urlHelper.Action("GetQrCode", "Shared", new { code = product.Url, size = 111 });
@@ -369,7 +369,7 @@ namespace K9.WebApplication.Services
         {
             return MemoryCache.GetOrCreate(GetCacheKey<ProductPack>(productPack.Id), entry =>
             {
-                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.QuarterHour));
+                entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
 
                 var products = _productPackProductRepository.Find(e => e.ProductPackId == productPack.Id).ToList();
 

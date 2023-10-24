@@ -11,7 +11,12 @@
 		@Html.Partial("_DisplayFields")
 		@Html.AuditFieldsForModel(Model)
 
-		<hr/>
+	    <hr/>
+
+	    if (!WebSecurity.IsConfirmed(Model.Username))
+	    {
+	        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.ActivateAccount, "ActivateUserAccount", "Account", new { userId = Model.Id })
+	    }
 		@Html.BootstrapBackToListButton()
 		@Html.CrudButtonsForModel(Model)
 

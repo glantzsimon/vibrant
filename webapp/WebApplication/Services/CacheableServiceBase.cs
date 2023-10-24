@@ -11,12 +11,7 @@ namespace K9.WebApplication.Services
 {
     public abstract class CacheableServiceBase<T> : ICacheableService, ICategorisableService where T : class, IObjectBase
     {
-        protected MemoryCache MemoryCache { get; }
-
-        public CacheableServiceBase()
-        {
-            MemoryCache = new MemoryCache(new MemoryCacheOptions());
-        }
+        protected static MemoryCache MemoryCache = new MemoryCache(new MemoryCacheOptions());
 
         public MemoryCacheEntryOptions GetMemoryCacheEntryOptions(int duration)
         {
@@ -66,7 +61,7 @@ namespace K9.WebApplication.Services
                 Name = e.Name,
                 DisplayIndex = e.ItemCode
             }).ToList();
-            
+
             itemsInCategory.Add(new SortableItem
             {
                 Id = model.Id,

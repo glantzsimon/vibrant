@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace K9.WebApplication.Services
 {
-    public interface IProtocolService
+    public interface IProtocolService : ICacheableService
     {
         Protocol Find(int id);
         Protocol FindPrevious(int id);

@@ -3,7 +3,8 @@
 @using K9.SharedLibrary.Helpers
 @using K9.WebApplication.Extensions
 @{
-    var glossaryJson = Json.Encode(typeof(Glossary).ToGlossaryItems());
+    var glossaryJson = Json.Encode(typeof(Glossary).ToDictionaryItems());
+    var dictionaryJson = Json.Encode(typeof(Dictionary).ToDictionaryItems());
 }
 <script type="text/javascript">
 
@@ -153,7 +154,8 @@
 	    bootstrapControls({
 			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
             dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()",
-            glossaryItems: @(Html.Raw(glossaryJson))
+            glossaryItems: @(Html.Raw(glossaryJson)),
+            dictionaryItems: @(Html.Raw(dictionaryJson))
 		}).init();
 
 		buttonBehaviours().init();
