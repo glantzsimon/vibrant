@@ -21,7 +21,10 @@
 
                 @if (Model.ProductPacks != null && Model.ProductPacks.Any())
                 {
-                    @Html.BootstrapActionLinkButton(Dictionary.ViewProductPack, "Details", "ProductPack", new { seoFriendlyId = Model.SeoFriendlyId}, "", EButtonClass.Success)
+                    foreach (var protocolProductPack in Model.ProductPacks)
+                    {
+                        @Html.BootstrapActionLinkButton(Dictionary.ViewProductPack, "Details", "ProductPack", new { seoFriendlyId = protocolProductPack.ProductPack.SeoFriendlyId }, "", EButtonClass.Success)    
+                    }
                 }
 
                 @if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
