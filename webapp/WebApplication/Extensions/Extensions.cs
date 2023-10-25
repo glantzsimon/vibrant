@@ -16,7 +16,10 @@ namespace K9.WebApplication.Extensions
             var regex = new Regex("[^a-zA-Z0-9 -]");
             var alphaNumericString = regex.Replace(value, "");
 
-            return string.Join("-", alphaNumericString.ToLower().Split(' '));
+            return string.Join("-", alphaNumericString.ToLower().Split(' '))
+                .Replace("---", "-")
+                .Replace("--", "-")
+                .Replace("--", "-");
         }
 
         public static string ToPreviewText(this string value, int length = 100)
@@ -53,8 +56,10 @@ namespace K9.WebApplication.Extensions
                     }).ToArray();
         }
 
-        public static byte[] ToByteArray(this System.Drawing.Image img) {
-            using (MemoryStream mStream = new MemoryStream()) {
+        public static byte[] ToByteArray(this System.Drawing.Image img)
+        {
+            using (MemoryStream mStream = new MemoryStream())
+            {
                 img.Save(mStream, img.RawFormat);
                 return mStream.ToArray();
             }
