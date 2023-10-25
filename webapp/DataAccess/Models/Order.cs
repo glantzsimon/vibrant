@@ -80,7 +80,7 @@ namespace K9.DataAccessLayer.Models
         [Required]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.OrderTypeLabel)]
-        public EOrderType OrderType { get; set; }
+        public EOrderType OrderType { get; set; } = EOrderType.Sale;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.RequestedOnLabel)]

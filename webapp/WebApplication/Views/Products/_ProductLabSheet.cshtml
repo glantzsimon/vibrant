@@ -37,13 +37,14 @@
 
 @for (int i = 0; i < Model.IngredientsWithSubstitutes.Count; i++)
 {
+    @Html.HiddenFor(e => Model.IngredientsWithSubstitutes[i].Id)
+    @Html.HiddenFor(e => Model.IngredientsWithSubstitutes[i].IngredientId)
+
     var productIngredient = Model.IngredientsWithSubstitutes[i];
     var completeClass = productIngredient.IsSelected ? "complete-rows" : "";
     var ingredientIsInStock = productIngredient.Ingredient.GetIsInStock();
     var isInStockClass = ingredientIsInStock ? "" : "out-of-stock";
     var ingredientCategory = productIngredient.Ingredient.Category;
-
-    @Html.HiddenFor(e => productIngredient.IngredientId)
 
     if (lastCategory != productIngredient.Ingredient.Category)
     {

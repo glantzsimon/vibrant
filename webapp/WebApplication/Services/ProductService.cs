@@ -22,9 +22,11 @@ namespace K9.WebApplication.Services
         private readonly IRepository<ProductPack> _productPackRepository;
         private readonly IRepository<ProductIngredientSubstitute> _productIngredientSubstituteRepository;
         private readonly IIngredientService _ingredientService;
+        private readonly IRepository<Activity> _activitiesRepository;
+        private readonly IRepository<DietaryRecommendation> _dietaryRecommendationsRepository;
         private readonly UrlHelper _urlHelper;
 
-        public ProductService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProductPack> productPackRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstituteRepository, IIngredientService ingredientService)
+        public ProductService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProductPack> productPackRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstituteRepository, IIngredientService ingredientService, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstituteRepository, activitiesRepository, dietaryRecommendationsRepository)
         {
             _logger = logger;
             _productsRepository = productsRepository;
@@ -34,6 +36,8 @@ namespace K9.WebApplication.Services
             _productPackRepository = productPackRepository;
             _productIngredientSubstituteRepository = productIngredientSubstituteRepository;
             _ingredientService = ingredientService;
+            _activitiesRepository = activitiesRepository;
+            _dietaryRecommendationsRepository = dietaryRecommendationsRepository;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
 
@@ -154,16 +158,16 @@ namespace K9.WebApplication.Services
                 product.Url = _urlHelper.AbsoluteAction("Details", "Product", new { seoFriendlyId = product.SeoFriendlyId });
                 product.QrCodeUrl = _urlHelper.Action("GetQrCode", "Shared", new { code = product.Url, size = 111 });
                 
-                var productIngredients = _productIngredientsRepository.Find(e => e.ProductId == product.Id).ToList();
+                var productIngredients = GetProductIngredients().Where(e => e.ProductId == product.Id).ToList();
                 var productIngredientsWithSubstitutes = new List<ProductIngredient>();
                 var groupedProductIngredients = new List<ProductIngredient>();
-
+                
                 foreach (var productIngredient in productIngredients)
                 {
                     productIngredient.Ingredient = _ingredientService.Find(productIngredient.IngredientId);
                     productIngredient.IngredientName = productIngredient.Ingredient.Name;
                     productIngredient.IngredientSubstitutes =
-                        _productIngredientSubstituteRepository.Find(e => e.ProductIngredientId == productIngredient.Id).ToList();
+                        GetProductIngredientSubstitutes().Where(e => e.ProductIngredientId == productIngredient.Id).ToList();
                     productIngredient.FormattedLargeAmountPer100Capsules = productIngredient.GetFormattedLargeAmountPer100Capsules();
 
                     foreach (var ingredientSubstitute in productIngredient.Ingredient.Substitutes)
@@ -176,6 +180,12 @@ namespace K9.WebApplication.Services
                             ingredientSubstitute.IsSelected = true;
                             ingredientSubstitute.Priority = productIngredientSubstitute.Priority;
                         }
+                    }
+
+                    foreach (var productIngredientIngredientSubstitute in productIngredient.IngredientSubstitutes)
+                    {
+                        productIngredientIngredientSubstitute.SubstituteIngredient =
+                            GetIngredients().FirstOrDefault(e => e.Id == productIngredientIngredientSubstitute.SubstituteIngredientId);
                     }
 
                     productIngredient.Ingredient.Substitutes = productIngredient.Ingredient.Substitutes
@@ -201,6 +211,7 @@ namespace K9.WebApplication.Services
                             {
                                 BatchSize = productIngredient.BatchSize,
                                 Ingredient = e.SubstituteIngredient,
+                                IngredientId = e.SubstituteIngredientId,
                                 Amount = splitAmount
                             }));
                         }
@@ -375,7 +386,7 @@ namespace K9.WebApplication.Services
 
                 foreach (var product in products)
                 {
-                    product.Product = _productsRepository.Find(e => e.Id == product.ProductId).FirstOrDefault();
+                    product.Product = GetProducts().Where(e => e.Id == product.ProductId).FirstOrDefault();
                 }
 
                 productPack.Products = products.OrderBy(e => e.Product.Name).ToList();

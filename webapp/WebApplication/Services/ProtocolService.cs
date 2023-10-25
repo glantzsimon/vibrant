@@ -31,7 +31,8 @@ namespace K9.WebApplication.Services
         private readonly IRepository<DietaryRecommendation> _dietaryRecommendationRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public ProtocolService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Contact> contactsRepository, IRepository<User> usersRepository, IRepository<Protocol> protocolsRepository, IRepository<ProtocolProduct> protocolProductsRepository, IRepository<ProtocolProductPack> protocolProductPackRepository, IRepository<ProtocolSection> protocolProtocolSectionRepository, IRepository<Section> protocolSectionRepository, IRepository<ProtocolSectionProduct> protocolProtocolSectionProductsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProtocolActivity> protocolActivitiesRepository, IRepository<Activity> activitiesRepository, IRepository<ProtocolDietaryRecommendation> protocolDietaryRecommendationRepository, IRepository<DietaryRecommendation> dietaryRecommendationRepository)
+        public ProtocolService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Contact> contactsRepository, IRepository<User> usersRepository, IRepository<Protocol> protocolsRepository, IRepository<ProtocolProduct> protocolProductsRepository, IRepository<ProtocolProductPack> protocolProductPackRepository, IRepository<ProtocolSection> protocolProtocolSectionRepository, IRepository<Section> protocolSectionRepository, IRepository<ProtocolSectionProduct> protocolProtocolSectionProductsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProtocolActivity> protocolActivitiesRepository, IRepository<ProtocolDietaryRecommendation> protocolDietaryRecommendationRepository, IRepository<DietaryRecommendation> dietaryRecommendationRepository, IRepository<Ingredient> ingredientsRepository,
+            IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository)
         {
 
             _logger = logger;
@@ -109,7 +110,6 @@ namespace K9.WebApplication.Services
                 entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
                 
                 return GetFullProtocolNoCache(protocol);
-
             });
         }
 
@@ -118,7 +118,7 @@ namespace K9.WebApplication.Services
             protocol.Activities = _protocolActivitiesRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
             foreach (var protocolActivity in protocol.Activities)
             {
-                protocolActivity.Activity = _activitiesRepository.Find(protocolActivity.ActivityId);
+                protocolActivity.Activity = GetActivities().FirstOrDefault(e => e.Id == protocolActivity.ActivityId);
             }
 
             protocol.DietaryRecommendations = _protocolDietaryRecommendationRepository
@@ -126,19 +126,19 @@ namespace K9.WebApplication.Services
             foreach (var protocolActivity in protocol.DietaryRecommendations)
             {
                 protocolActivity.DietaryRecommendation =
-                    _dietaryRecommendationRepository.Find(protocolActivity.DietaryRecommendationId);
+                    GetDietaryRecommendations().FirstOrDefault(e => e.Id == protocolActivity.DietaryRecommendationId);
             }
 
             protocol.Products = _protocolProductsRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
             foreach (var protocolProduct in protocol.Products)
             {
-                protocolProduct.Product = _productsRepository.Find(protocolProduct.ProductId);
+                protocolProduct.Product = GetProducts().FirstOrDefault(e => e.Id == protocolProduct.ProductId);
             }
 
             protocol.ProductPacks = _protocolProductPackRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
             foreach (var protocolProductPack in protocol.ProductPacks)
             {
-                protocolProductPack.ProductPack = _productPackRepository.Find(protocolProductPack.ProductPackId);
+                protocolProductPack.ProductPack = GetProductPacks().FirstOrDefault(e => e.Id == protocolProductPack.ProductPackId);
 
                 protocolProductPack.ProductPack.Products =
                     _productPackProductRepository.Find(e => e.ProductPackId == protocolProductPack.ProductPack.Id)
@@ -146,7 +146,7 @@ namespace K9.WebApplication.Services
 
                 foreach (var productPackProduct in protocolProductPack.ProductPack.Products)
                 {
-                    productPackProduct.Product = _productsRepository.Find(productPackProduct.ProductId);
+                    productPackProduct.Product = GetProducts().FirstOrDefault(e => e.Id == productPackProduct.ProductId);
                 }
             }
 
@@ -163,7 +163,7 @@ namespace K9.WebApplication.Services
                 foreach (var protocolProtocolSectionProduct in section.ProtocolSectionProducts)
                 {
                     protocolProtocolSectionProduct.Product =
-                        _productsRepository.Find(protocolProtocolSectionProduct.ProductId);
+                        GetProducts().FirstOrDefault(e => e.Id == protocolProtocolSectionProduct.ProductId);
                     protocolProtocolSectionProduct.FormattedAmount =
                         protocolProtocolSectionProduct.GetFormattedAmount();
                 }

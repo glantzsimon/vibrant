@@ -24,7 +24,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<RepCommission> _repCommissionsRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Contact> contactsRepository, IRepository<User> usersRepository, IRepository<RepCommission> repCommissionsRepository)
+        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Contact> contactsRepository, IRepository<User> usersRepository, IRepository<RepCommission> repCommissionsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository)
         {
             _logger = logger;
             _ordersRepository = ordersRepository;
@@ -97,14 +97,13 @@ namespace K9.WebApplication.Services
         {
             order.Contact = _contactsRepository.Find(order.ContactId ?? 0);
             order.ContactName = order.Contact?.FullName;
-
             order.User = _usersRepository.Find(order.UserId);
             order.UserName = order.User.Name;
 
             order.Products = _orderProductsRepository.Find(e => e.OrderId == order.Id).ToList();
             foreach (var orderProduct in order.Products)
             {
-                orderProduct.Product = _productsRepository.Find(orderProduct.ProductId);
+                orderProduct.Product = GetProducts().FirstOrDefault(e => e.Id == orderProduct.ProductId);
                 orderProduct.PriceTier = order.Contact.PriceTier;
                 orderProduct.TotalPrice = orderProduct.GetTotalPrice();
             }
@@ -112,10 +111,10 @@ namespace K9.WebApplication.Services
             order.ProductPacks = _orderProductPacksRepository.Find(e => e.OrderId == order.Id).ToList();
             foreach (var orderProductPack in order.ProductPacks)
             {
-                orderProductPack.ProductPack = _productPackRepository.Find(orderProductPack.ProductPackId);
+                orderProductPack.ProductPack = GetProductPacks().FirstOrDefault(e => e.Id == orderProductPack.ProductPackId);
                 orderProductPack.PriceTier = order.Contact.PriceTier;
             }
-            
+
             order.TotalPrice = order.GetTotalPrice();
             order.TotalProductsPrice = order.GetTotalProductsPrice();
             order.TotalProductPacksPrice = order.GetTotalProductPacksPrice();

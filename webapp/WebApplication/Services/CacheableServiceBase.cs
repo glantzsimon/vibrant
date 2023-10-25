@@ -5,22 +5,128 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using K9.DataAccessLayer.Models;
 using K9.WebApplication.Models;
+using Activity = K9.DataAccessLayer.Models.Activity;
 
 namespace K9.WebApplication.Services
 {
     public abstract class CacheableServiceBase<T> : ICacheableService, ICategorisableService
         where T : class, IObjectBase
     {
+        private readonly IRepository<Product> _productsRepository;
+        private readonly IRepository<ProductPack> _productPacksRepository;
+        private readonly IRepository<Ingredient> _ingredientsRepository;
+        private readonly IRepository<Protocol> _protocolsRepository;
+        private readonly IRepository<IngredientSubstitute> _ingredientSubstitutesRepository;
+        private readonly IRepository<ProductIngredient> _productIngredientsRepository;
+        private readonly IRepository<ProductIngredientSubstitute> _productIngredientSubstitutesRepository;
+        private readonly IRepository<Activity> _activitiesRepository;
+        private readonly IRepository<DietaryRecommendation> _dietaryRecommendationsRepository;
+
+        public CacheableServiceBase(IRepository<Product> productsRepository, IRepository<ProductPack> productPacksRepository, IRepository<Ingredient> ingredientsRepository, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository)
+        {
+            _productsRepository = productsRepository;
+            _productPacksRepository = productPacksRepository;
+            _ingredientsRepository = ingredientsRepository;
+            _protocolsRepository = protocolsRepository;
+            _ingredientSubstitutesRepository = ingredientSubstitutesRepository;
+            _productIngredientsRepository = productIngredientsRepository;
+            _productIngredientSubstitutesRepository = productIngredientSubstitutesRepository;
+            _activitiesRepository = activitiesRepository;
+            _dietaryRecommendationsRepository = dietaryRecommendationsRepository;
+        }
+
 #if DEBUG
         protected MemoryCache MemoryCache = new MemoryCache(new MemoryCacheOptions());
 #else
         protected static MemoryCache MemoryCache = new MemoryCache(new MemoryCacheOptions());
 #endif
 
-    public MemoryCacheEntryOptions GetMemoryCacheEntryOptions(int duration)
+        public MemoryCacheEntryOptions GetMemoryCacheEntryOptions(int duration)
         {
             return new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromSeconds(duration));
+        }
+
+        public List<Activity> GetActivities()
+        {
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            {
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
+                return _activitiesRepository.List();
+            });
+        }
+
+        public List<DietaryRecommendation> GetDietaryRecommendations()
+        {
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            {
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
+                return _dietaryRecommendationsRepository.List();
+            });
+        }
+
+        public List<Product> GetProducts()
+        {
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            {
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
+                return _productsRepository.List();
+            });
+        }
+
+        public List<ProductPack> GetProductPacks()
+        {
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            {
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
+                return _productPacksRepository.List();
+            });
+        }
+
+        public List<Ingredient> GetIngredients()
+        {
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            {
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
+                return _ingredientsRepository.List();
+            });
+        }
+
+        public List<IngredientSubstitute> GetIngredientSubstitutes()
+        {
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            {
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
+                return _ingredientSubstitutesRepository.List();
+            });
+        }
+
+        public List<ProductIngredient> GetProductIngredients()
+        {
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            {
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
+                return _productIngredientsRepository.List();
+            });
+        }
+
+        public List<ProductIngredientSubstitute> GetProductIngredientSubstitutes()
+        {
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            {
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
+                return _productIngredientSubstitutesRepository.List();
+            });
+        }
+
+        public List<Protocol> GetProtocols()
+        {
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            {
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
+                return _protocolsRepository.List();
+            });
         }
 
         public void ClearCache()

@@ -17,12 +17,17 @@ namespace K9.WebApplication.Tests.Unit.Services
 
     public class ProductServiceTests
     {
+        private readonly Mock<IRepository<Activity>> _activitiesRepository = new Mock<IRepository<Activity>>();
+        private readonly Mock<IRepository<DietaryRecommendation>> _dietaryRecommendationsRepository = new Mock<IRepository<DietaryRecommendation>>();
         private readonly Mock<IRepository<Product>> _productsRepository = new Mock<IRepository<Product>>();
         private readonly Mock<IRepository<ProductIngredient>> _productIngredientsRepository = new Mock<IRepository<ProductIngredient>>();
         private readonly Mock<IRepository<Ingredient>> _ingredientsRepository = new Mock<IRepository<Ingredient>>();
         private readonly Mock<IRepository<ProductPackProduct>> _productPackProductRepository = new Mock<IRepository<ProductPackProduct>>();
         private readonly Mock<IRepository<ProductPack>> _productPackRepository = new Mock<IRepository<ProductPack>>();
         private readonly Mock<IRepository<ProductIngredientSubstitute>> _productIngredientSubstitutesRepository = new Mock<IRepository<ProductIngredientSubstitute>>();
+        private readonly Mock<IRepository<Protocol>> _protocolsRepository = new Mock<IRepository<Protocol>>();
+        private readonly Mock<IRepository<IngredientSubstitute>> _ingredientSubstitutesRepository = new Mock<IRepository<IngredientSubstitute>>();
+
         private readonly Mock<IIngredientService> _ingredientService = new Mock<IIngredientService>();
 
         private readonly Mock<ILogger> _logger = new Mock<ILogger>();
@@ -132,7 +137,11 @@ namespace K9.WebApplication.Tests.Unit.Services
                 _productPackProductRepository.Object,
                 _productPackRepository.Object,
                 _productIngredientSubstitutesRepository.Object,
-                _ingredientService.Object);
+                _ingredientService.Object,
+                _protocolsRepository.Object,
+                _ingredientSubstitutesRepository.Object,
+                _activitiesRepository.Object,
+                _dietaryRecommendationsRepository.Object);
 
             _products = new List<Product>
             {

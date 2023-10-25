@@ -5,7 +5,7 @@
     Layout = "../Shared/_LayoutForm.cshtml";
     ViewBag.SubTitle = $"{Model.Name} {Dictionary.LabSheet}";
 }
-@using (Html.BeginForm())
+@using (Html.BeginForm("LabSheet", "Products", FormMethod.Get))
 {
     using (Html.BeginBootstrapForm())
     {
@@ -20,6 +20,13 @@
                 @Html.BootstrapEditorFor(model => Model.BatchSize)
             </div>
         </div>
+    }
+}
+
+@using (Html.BeginForm("LabSheet", "Products", FormMethod.Post))
+{
+    using (Html.BeginBootstrapForm())
+    {
 
         <hr />
         @Html.Partial("_ProductLabSheet")

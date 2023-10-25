@@ -17,7 +17,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Ingredient> _ingredientsRepository;
         private readonly IRepository<IngredientSubstitute> _ingredientSubstituesRepository;
 
-        public IngredientService(ILogger logger, IRepository<Ingredient> ingredientsRepository, IRepository<IngredientSubstitute> ingredientSubstituesRepository)
+        public IngredientService(ILogger logger, IRepository<Ingredient> ingredientsRepository, IRepository<IngredientSubstitute> ingredientSubstituesRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository)
         {
             _logger = logger;
             _ingredientsRepository = ingredientsRepository;
@@ -75,7 +75,7 @@ namespace K9.WebApplication.Services
             return MemoryCache.GetOrCreate(GetCacheKey(ingredient.Id), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
-                
+
                 var ingredientSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == ingredient.Id)
                     .OrderBy(e => e.Priority).ToList();
 
@@ -84,8 +84,7 @@ namespace K9.WebApplication.Services
                 foreach (var ingredientSubstitute in ingredientSubstitutes)
                 {
                     ingredientSubstitute.Ingredient = ingredient;
-                    ingredientSubstitute.SubstituteIngredient = _ingredientsRepository
-                        .Find(e => e.Id == ingredientSubstitute.SubstituteIngredientId).FirstOrDefault();
+                    ingredientSubstitute.SubstituteIngredient = GetIngredients().FirstOrDefault(e => e.Id == ingredientSubstitute.SubstituteIngredientId);
                 }
 
                 ingredient.IngredientSubstitutes = ingredientSubstitutes;
