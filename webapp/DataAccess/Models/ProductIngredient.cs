@@ -70,15 +70,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsAddedLabel)]
         public bool IsAdded { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
-        public string GetFormattedAmountPer100Capsules() => $"{AmountPer100Capsules} {Ingredient.GetMeasuredIn()}";
-
-        [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
-        public string FormattedLargeAmountPer100Capsules { get; set; }
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)] public string FormattedAmountPer100Capsules => $"{AmountPer100Capsules} {Ingredient.GetMeasuredIn()}";
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountPerBatchLabel)]
-        public string GetFormattedLargeAmountPer100Capsules() =>
+        public string FormattedLargeAmountPer100Capsules =>
             $"{Math.Round(AmountPerConcentrationPerBatch / 10, 3, MidpointRounding.AwayFromZero)} {Ingredient.GetMeasuredInForLargeQuantity()}";
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CostLabel)]
