@@ -420,7 +420,7 @@ namespace K9.WebApplication.Services
             {
                 var newProduct = new ProductPackProduct
                 {
-                    ProductId = product.Id,
+                    ProductId = product.ProductId,
                     ProductPackId = newProductPack.Id,
                     Amount = product.Amount
                 };
