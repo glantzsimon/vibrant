@@ -107,69 +107,74 @@ namespace K9.WebApplication.Services
             return MemoryCache.GetOrCreate(GetCacheKey(protocol.Id), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
-
-                protocol.Activities = _protocolActivitiesRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
-                foreach (var protocolActivity in protocol.Activities)
-                {
-                    protocolActivity.Activity = _activitiesRepository.Find(protocolActivity.ActivityId);
-                }
-
-                protocol.DietaryRecommendations = _protocolDietaryRecommendationRepository
-                    .Find(e => e.ProtocolId == protocol.Id).ToList();
-                foreach (var protocolActivity in protocol.DietaryRecommendations)
-                {
-                    protocolActivity.DietaryRecommendation =
-                        _dietaryRecommendationRepository.Find(protocolActivity.DietaryRecommendationId);
-                }
-
-                protocol.Products = _protocolProductsRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
-                foreach (var protocolProduct in protocol.Products)
-                {
-                    protocolProduct.Product = _productsRepository.Find(protocolProduct.ProductId);
-                }
-
-                protocol.ProductPacks = _protocolProductPackRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
-                foreach (var protocolProductPack in protocol.ProductPacks)
-                {
-                    protocolProductPack.ProductPack = _productPackRepository.Find(protocolProductPack.ProductPackId);
-
-                    protocolProductPack.ProductPack.Products =
-                        _productPackProductRepository.Find(e => e.ProductPackId == protocolProductPack.ProductPack.Id)
-                            .ToList();
-
-                    foreach (var productPackProduct in protocolProductPack.ProductPack.Products)
-                    {
-                        productPackProduct.Product = _productsRepository.Find(productPackProduct.ProductId);
-                    }
-                }
-
-                protocol.ProtocolSections = _protocolProtocolSectionRepository.Find(e => e.ProtocolId == protocol.Id)
-                    .OrderBy(e => e.Section.DisplayOrder).ToList();
-                foreach (var section in protocol.ProtocolSections)
-                {
-                    section.Section = _protocolSectionRepository.Find(section.SectionId);
-
-                    section.ProtocolSectionProducts =
-                        _protocolProtocolSectionProductsRepository.Find(e => e.ProtocolSectionId == section.Id)
-                            .ToList();
-
-                    foreach (var protocolProtocolSectionProduct in section.ProtocolSectionProducts)
-                    {
-                        protocolProtocolSectionProduct.Product =
-                            _productsRepository.Find(protocolProtocolSectionProduct.ProductId);
-                        protocolProtocolSectionProduct.FormattedAmount =
-                            protocolProtocolSectionProduct.GetFormattedAmount();
-                    }
-                }
-
-                protocol.Contact = _contactsRepository.Find(protocol.ContactId ?? 0);
-                protocol.ContactName = protocol.Contact?.FullName;
-
-                UpdateProtocolProductsAndProductPackQuantities(protocol);
-
-                return protocol;
+                
+                return GetFullProtocolNoCache(protocol);
 
             });
+        }
+
+        public Protocol GetFullProtocolNoCache(Protocol protocol)
+        {
+            protocol.Activities = _protocolActivitiesRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
+            foreach (var protocolActivity in protocol.Activities)
+            {
+                protocolActivity.Activity = _activitiesRepository.Find(protocolActivity.ActivityId);
+            }
+
+            protocol.DietaryRecommendations = _protocolDietaryRecommendationRepository
+                .Find(e => e.ProtocolId == protocol.Id).ToList();
+            foreach (var protocolActivity in protocol.DietaryRecommendations)
+            {
+                protocolActivity.DietaryRecommendation =
+                    _dietaryRecommendationRepository.Find(protocolActivity.DietaryRecommendationId);
+            }
+
+            protocol.Products = _protocolProductsRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
+            foreach (var protocolProduct in protocol.Products)
+            {
+                protocolProduct.Product = _productsRepository.Find(protocolProduct.ProductId);
+            }
+
+            protocol.ProductPacks = _protocolProductPackRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
+            foreach (var protocolProductPack in protocol.ProductPacks)
+            {
+                protocolProductPack.ProductPack = _productPackRepository.Find(protocolProductPack.ProductPackId);
+
+                protocolProductPack.ProductPack.Products =
+                    _productPackProductRepository.Find(e => e.ProductPackId == protocolProductPack.ProductPack.Id)
+                        .ToList();
+
+                foreach (var productPackProduct in protocolProductPack.ProductPack.Products)
+                {
+                    productPackProduct.Product = _productsRepository.Find(productPackProduct.ProductId);
+                }
+            }
+
+            protocol.ProtocolSections = _protocolProtocolSectionRepository.Find(e => e.ProtocolId == protocol.Id)
+                .OrderBy(e => e.Section.DisplayOrder).ToList();
+            foreach (var section in protocol.ProtocolSections)
+            {
+                section.Section = _protocolSectionRepository.Find(section.SectionId);
+
+                section.ProtocolSectionProducts =
+                    _protocolProtocolSectionProductsRepository.Find(e => e.ProtocolSectionId == section.Id)
+                        .ToList();
+
+                foreach (var protocolProtocolSectionProduct in section.ProtocolSectionProducts)
+                {
+                    protocolProtocolSectionProduct.Product =
+                        _productsRepository.Find(protocolProtocolSectionProduct.ProductId);
+                    protocolProtocolSectionProduct.FormattedAmount =
+                        protocolProtocolSectionProduct.GetFormattedAmount();
+                }
+            }
+
+            protocol.Contact = _contactsRepository.Find(protocol.ContactId ?? 0);
+            protocol.ContactName = protocol.Contact?.FullName;
+
+            UpdateProtocolProductsAndProductPackQuantities(protocol);
+
+            return protocol;
         }
 
         public Protocol GetProtocolWithProtocolSections(Guid id)
@@ -271,7 +276,7 @@ namespace K9.WebApplication.Services
             var protocol = _protocolsRepository.Find(id);
             if (protocol != null)
             {
-                protocol = GetFullProtocol(protocol);
+                protocol = GetFullProtocolNoCache(protocol);
             }
             var newProtocolExternalId = Guid.NewGuid();
 
@@ -323,6 +328,25 @@ namespace K9.WebApplication.Services
                 };
 
                 _protocolProtocolSectionRepository.Create(newProtocolSection);
+
+                // Copy products and product packs
+                var protocolSection =
+                    _protocolProtocolSectionRepository.Find(e => e.SectionId == section.SectionId).FirstOrDefault();
+
+                var sectionProducts = _protocolProtocolSectionProductsRepository.Find(e =>
+                    e.ProtocolSectionId == protocolSection.SectionId);
+
+                foreach (var product in sectionProducts)
+                {
+                    // ProtocolId = newProtocol.Id,
+                    var newProtocolSectionProduct = new ProtocolSectionProduct
+                    {
+                        ProtocolSectionId = protocolSection.SectionId,
+                        ProductId = product.ProductId
+                    };
+
+                    _protocolProtocolSectionProductsRepository.Create(newProtocolSectionProduct);
+                }
             }
 
             return newProtocol;
@@ -517,7 +541,7 @@ namespace K9.WebApplication.Services
 
         public void CheckProductsAndProductPacksDoNotOverlap(Protocol protocol)
         {
-            if (protocol.ProtocolProductPacks != null&& protocol.ProtocolProductPacks.Any() && protocol.ProtocolProducts != null && protocol.ProtocolProducts.Any())
+            if (protocol.ProtocolProductPacks != null && protocol.ProtocolProductPacks.Any() && protocol.ProtocolProducts != null && protocol.ProtocolProducts.Any())
             {
                 // Check that the products in the product packs don't duplicate the products and raise an error if so!
                 if (protocol.ProtocolProductPacks.SelectMany(e => e.ProductPack.Products).Select(e => e.ProductId)

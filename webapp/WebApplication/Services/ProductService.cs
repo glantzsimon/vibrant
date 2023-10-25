@@ -389,6 +389,8 @@ namespace K9.WebApplication.Services
 
         public ProductPack DuplicateProductPack(int id)
         {
+            MemoryCache.Clear();
+
             var productPack = FindPack(id);
             if (productPack == null)
             {

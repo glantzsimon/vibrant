@@ -1972,6 +1972,9 @@
   <data name="DietaryAdvice" xml:space="preserve">
     <value>Dietary Advice</value>
   </data>
+  <data name="DuplicateProductPack" xml:space="preserve">
+    <value>Duplicate Product Pack</value>
+  </data>
   <data name="OneMonth" xml:space="preserve">
     <value>One Month</value>
   </data>

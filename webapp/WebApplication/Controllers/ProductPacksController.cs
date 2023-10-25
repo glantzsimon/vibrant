@@ -106,6 +106,21 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("EditList");
         }
 
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult DuplicateProductPack(int id)
+        {
+            return View(Repository.Find(id));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [RequirePermissions(Permission = Permissions.Create)]
+        public ActionResult DuplicateProductPack(ProductPack productPack)
+        {
+            var duplicate = _productService.DuplicateProductPack(productPack.Id);
+            return RedirectToAction("Edit", new { id = duplicate.Id });
+        }
+
         private void ProductPacksController_RecordBeforeUpdate(object sender, CrudEventArgs e)
         {
             var pack = e.Item as ProductPack;

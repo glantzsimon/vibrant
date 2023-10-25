@@ -61,7 +61,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [DataType(DataType.Currency)]
-        public double TotalPrice => Amount * ProductPack?.Price ?? 0;
+        public double TotalPrice => Amount * GetPrice();
 
         public string GetFormattedAmount() => $"{Amount} {GetPackageType()}";
 

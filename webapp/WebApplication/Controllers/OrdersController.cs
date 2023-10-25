@@ -74,9 +74,7 @@ namespace K9.WebApplication.Controllers
                 item.PriceTier = product.PriceTier;
                 _orderProductsRepository.Update(item);
             }
-
-            _orderService.ClearCache();
-
+            
             return RedirectToAction("Index");
         }
 
@@ -88,6 +86,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult EditProductPackQuantities(int id)
         {
             var order = _orderService.Find(id);
+            order = _orderService.UpdatePricesForContact(order);
             order = _orderService.FillZeroQuantities(order);
             return View(order);
         }
@@ -104,10 +103,8 @@ namespace K9.WebApplication.Controllers
                 item.PriceTier = pack.PriceTier;
                 _orderProductPackRepository.Update(item);
             }
-
-            _orderService.ClearCache();
-
-            return RedirectToAction("List");
+            
+            return RedirectToAction("Index");
         }
 
         public ActionResult View(int orderId)
@@ -170,9 +167,7 @@ namespace K9.WebApplication.Controllers
                 item.MadeOn = DateTime.Today;
                 Repository.Update(item);
             }
-
-            _orderService.ClearCache();
-
+            
             return RedirectToAction("OrderReview", new { orderId = order.Id });
         }
 
@@ -281,17 +276,14 @@ namespace K9.WebApplication.Controllers
 
         private void OrdersController_RecordDeleted(object sender, CrudEventArgs e)
         {
-            _orderService.ClearCache();
         }
 
         private void OrdersController_RecordCreated(object sender, CrudEventArgs e)
         {
-            _orderService.ClearCache();
         }
 
         private void OrdersController_RecordUpdated(object sender, CrudEventArgs e)
         {
-            _orderService.ClearCache();
         }
     }
 }

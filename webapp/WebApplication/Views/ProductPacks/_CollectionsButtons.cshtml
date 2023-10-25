@@ -4,10 +4,12 @@
 
 @if (Model.Id > 0)
 {
-    @Html.BootstrapActionLinkButton(Dictionary.EditProducts, "EditProducts", "ProductPacks", new { id = Model.Id }, "", EButtonClass.Info)
+    @Html.BootstrapActionLinkButton(Dictionary.EditProducts, "EditProducts", "ProductPacks", new { id = Model.Id }, "fa fa-pencil", EButtonClass.Primary)
     
     if (Model.Products != null && Model.Products.Any())
     {
-        @Html.BootstrapActionLinkButton(Dictionary.EditProductQuantities, "EditProductQuantities", "ProductPacks", new { id = Model.Id }, "", EButtonClass.Info)
+        @Html.BootstrapActionLinkButton(Dictionary.EditProductQuantities, "EditProductQuantities", "ProductPacks", new { id = Model.Id }, "fa fa-pencil", EButtonClass.Primary)
+
+        @Html.BootstrapActionLinkButton(Dictionary.DuplicateProductPack, "DuplicateProductPack", "ProductPacks", new { id = Model.Id }, "fa fa-copy", EButtonClass.Primary)
     }
 }

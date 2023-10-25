@@ -40,18 +40,13 @@ namespace K9.WebApplication.Services
 
         public Order Find(int id)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(id), entry =>
+            var order = _ordersRepository.Find(id);
+            if (order != null)
             {
-                entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
+                order = GetFullOrder(order);
+            }
 
-                var order = _ordersRepository.Find(id);
-                if (order != null)
-                {
-                    order = GetFullOrder(order);
-                }
-
-                return order;
-            });
+            return order;
         }
 
         public Order FindNext(int id)
@@ -100,38 +95,36 @@ namespace K9.WebApplication.Services
 
         public Order GetFullOrder(Order order)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(order.Id), entry =>
+            order.Contact = _contactsRepository.Find(order.ContactId ?? 0);
+            order.ContactName = order.Contact?.FullName;
+
+            order.User = _usersRepository.Find(order.UserId);
+            order.UserName = order.User.Name;
+
+            order.Products = _orderProductsRepository.Find(e => e.OrderId == order.Id).ToList();
+            foreach (var orderProduct in order.Products)
             {
-                entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
+                orderProduct.Product = _productsRepository.Find(orderProduct.ProductId);
+                orderProduct.PriceTier = order.Contact.PriceTier;
+                orderProduct.TotalPrice = orderProduct.GetTotalPrice();
+            }
 
-                order.Products = _orderProductsRepository.Find(e => e.OrderId == order.Id).ToList();
-                foreach (var orderProduct in order.Products)
-                {
-                    orderProduct.Product = _productsRepository.Find(orderProduct.ProductId);
-                    orderProduct.TotalPrice = orderProduct.GetTotalPrice();
-                }
+            order.ProductPacks = _orderProductPacksRepository.Find(e => e.OrderId == order.Id).ToList();
+            foreach (var orderProductPack in order.ProductPacks)
+            {
+                orderProductPack.ProductPack = _productPackRepository.Find(orderProductPack.ProductPackId);
+                orderProductPack.PriceTier = order.Contact.PriceTier;
+            }
+            
+            order.TotalPrice = order.GetTotalPrice();
+            order.TotalProductsPrice = order.GetTotalProductsPrice();
+            order.TotalProductPacksPrice = order.GetTotalProductPacksPrice();
+            order.FormattedSuggestedDiscountAsPercent = order.GetFormattedSuggestedDiscountAsPercent();
+            order.FormattedSuggestedDiscountAmount = order.GetFormattedSuggestedDiscountAmount();
+            order.DiscountAmount = order.GetDiscountAmount();
+            order.GrandTotal = order.GetGrandTotal();
 
-                order.ProductPacks = _orderProductPacksRepository.Find(e => e.OrderId == order.Id).ToList();
-                foreach (var orderProductPack in order.ProductPacks)
-                {
-                    orderProductPack.ProductPack = _productPackRepository.Find(orderProductPack.ProductPackId);
-                }
-
-                order.Contact = _contactsRepository.Find(order.ContactId ?? 0);
-                order.ContactName = order.Contact?.FullName;
-
-                order.User = _usersRepository.Find(order.UserId);
-                order.UserName = order.User.Name;
-                order.TotalPrice = order.GetTotalPrice();
-                order.TotalProductsPrice = order.GetTotalProductsPrice();
-                order.TotalProductPacksPrice = order.GetTotalProductPacksPrice();
-                order.FormattedSuggestedDiscountAsPercent = order.GetFormattedSuggestedDiscountAsPercent();
-                order.FormattedSuggestedDiscountAmount = order.GetFormattedSuggestedDiscountAmount();
-                order.DiscountAmount = order.GetDiscountAmount();
-                order.GrandTotal = order.GetGrandTotal();
-
-                return order;
-            });
+            return order;
         }
 
         public Order FillZeroQuantities(Order order)
@@ -175,7 +168,7 @@ namespace K9.WebApplication.Services
         {
             return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
             {
-                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TwoHours));
 
                 var orders = _ordersRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
 
@@ -280,7 +273,7 @@ namespace K9.WebApplication.Services
             var totalRedeemed = redeemedCommissions.Sum(e => e.AmountRedeemed);
             var totalPrice = repOrders.SelectMany(e => e.Products).Sum(e => e.GetTotalPrice()) +
                              repOrders.SelectMany(e => e.ProductPacks).Sum(e => e.TotalPrice);
-            
+
             var totalRedeemable = (totalPrice / 10) - totalRedeemed;
 
             return new RepCommissionViewModel

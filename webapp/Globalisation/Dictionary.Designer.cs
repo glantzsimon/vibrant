@@ -1729,6 +1729,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Duplicate Product Pack.
+        /// </summary>
+        public static string DuplicateProductPack {
+            get {
+                return ResourceManager.GetString("DuplicateProductPack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Duplicate Protocol.
         /// </summary>
         public static string DuplicateProtocol {

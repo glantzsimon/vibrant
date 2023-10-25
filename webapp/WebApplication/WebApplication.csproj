@@ -1528,6 +1528,7 @@
     <Content Include="Views\Protocols\_DietaryRecommendationsSummary.cshtml" />
     <Content Include="Views\Protocols\_ActivitiesSummary.cshtml" />
     <Content Include="Views\Account\AccountDeactivated.cshtml" />
+    <Content Include="Views\ProductPacks\DuplicateProductPack.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
