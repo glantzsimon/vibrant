@@ -452,7 +452,14 @@ namespace K9.DataAccessLayer.Models
 
         public bool IngredientAmountsAreCorrect()
         {
-            return GetTotalIngredientsAmount() == (AmountPerServing);
+            switch (ProductType)
+            {
+                case EProductType.Powder:
+                    return GetTotalIngredientsAmount() == Amount;
+
+                default:
+                    return GetTotalIngredientsAmount() == AmountPerServing;
+            }
         }
 
         public string GetIngredientAmountIncorrectError()

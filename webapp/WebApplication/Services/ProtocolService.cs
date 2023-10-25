@@ -334,7 +334,7 @@ namespace K9.WebApplication.Services
                     _protocolProtocolSectionRepository.Find(e => e.SectionId == section.SectionId).FirstOrDefault();
 
                 var sectionProducts = _protocolProtocolSectionProductsRepository.Find(e =>
-                    e.ProtocolSectionId == protocolSection.SectionId);
+                    e.ProtocolSectionId == protocolSection.SectionId).ToList();
 
                 foreach (var product in sectionProducts)
                 {
