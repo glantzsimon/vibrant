@@ -167,7 +167,7 @@ namespace K9.WebApplication.Services
         {
             return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
             {
-                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TwoHours));
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
 
                 var orders = _ordersRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
 
