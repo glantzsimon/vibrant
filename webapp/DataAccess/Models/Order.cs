@@ -55,26 +55,26 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(K9.Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.ConsultantLabel)]
         public string UserName { get; set; }
 
-        [UIHint("Contact")]
-        [ForeignKey("Contact")]
+        [UIHint("Client")]
+        [ForeignKey("Client")]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.CustomerLabel)]
-        public int? ContactId { get; set; }
+        public int? ClientId { get; set; }
 
-        public virtual Contact Contact { get; set; }
+        public virtual Client Client { get; set; }
 
-        [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName")]
+        [LinkedColumn(LinkedTableName = "Client", LinkedColumnName = "FullName")]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.CustomerLabel)]
-        public string ContactName { get; set; }
+        public string ClientName { get; set; }
 
-        [UIHint("Contact")]
+        [UIHint("Client")]
         [ForeignKey("Rep")]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.RepLabel)]
         public int? RepId { get; set; }
 
-        public virtual Contact Rep { get; set; }
+        public virtual Client Rep { get; set; }
 
         [UIHint("OrderType")]
         [Required]
@@ -256,7 +256,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         public string GetFormattedGrandTotal() => GetGrandTotal().ToCurrency();
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ContactLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ClientLabel)]
         public string GetBulkDiscountText() =>
             $"{GetFormattedDiscountAsPercent()} {Globalisation.Dictionary.BulkDiscountLabel}";
 

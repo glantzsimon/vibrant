@@ -12,21 +12,9 @@ using System.Globalization;
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
-    [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.Consultations, PluralName = Strings.Names.Consultations, Name = Strings.Names.Consultation)]
-    public class Consultation : ObjectBase
+    [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.HealthQuestionnaires, PluralName = Strings.Names.HealthQuestionnaires, Name = Strings.Names.HealthQuestionnaire)]
+    public class HealthQuestionnaire : ObjectBase
     {
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ClientLabel)]
-        [UIHint("Client")]
-        [Required]
-        [ForeignKey("Client")]
-        public int ClientId { get; set; }
-        
-        [UIHint("ConsultationDuration")]
-        [Required]
-        [Display(ResourceType = typeof(Dictionary),
-            Name = Strings.Labels.ConsultationDurationLabel)]
-        public EConsultationDuration ConsultationDuration { get; set; } = EConsultationDuration.OneHour;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CompletedOnLabel)]
         public DateTime? CompletedOn { get; set; }

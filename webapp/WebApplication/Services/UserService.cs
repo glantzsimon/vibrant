@@ -20,33 +20,33 @@ namespace K9.WebApplication.Services
         private readonly IRepository<UserPromoCode> _userPromoCodeRepository;
         private readonly IAuthentication _authentication;
         private readonly IMailer _mailer;
-        private readonly IContactService _contactService;
+        private readonly IClientService _clientService;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public UserService(IRepository<User> usersRepository, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IAuthentication authentication, IMailer mailer, IOptions<WebsiteConfiguration> config, IContactService contactService)
+        public UserService(IRepository<User> usersRepository, IRepository<PromoCode> promoCodesRepository, IRepository<UserPromoCode> userPromoCodeRepository, IAuthentication authentication, IMailer mailer, IOptions<WebsiteConfiguration> config, IClientService clientService)
         {
             _usersRepository = usersRepository;
             _promoCodesRepository = promoCodesRepository;
             _userPromoCodeRepository = userPromoCodeRepository;
             _authentication = authentication;
             _mailer = mailer;
-            _contactService = contactService;
+            _clientService = clientService;
             _config = config.Value;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
 
-        public void UpdateActiveUserEmailAddressIfFromFacebook(Contact contact)
+        public void UpdateActiveUserEmailAddressIfFromFacebook(Client client)
         {
             if (_authentication.IsAuthenticated)
             {
                 var activeUser = _usersRepository.Find(_authentication.CurrentUserId);
                 var defaultFacebookAddress = $"{activeUser.FirstName}.{activeUser.LastName}@facebook.com";
-                if (activeUser.IsOAuth && activeUser.EmailAddress == defaultFacebookAddress && activeUser.EmailAddress != contact.EmailAddress)
+                if (activeUser.IsOAuth && activeUser.EmailAddress == defaultFacebookAddress && activeUser.EmailAddress != client.EmailAddress)
                 {
-                    if (!_usersRepository.Find(e => e.EmailAddress == contact.EmailAddress).Any())
+                    if (!_usersRepository.Find(e => e.EmailAddress == client.EmailAddress).Any())
                     {
-                        activeUser.EmailAddress = contact.EmailAddress;
+                        activeUser.EmailAddress = client.EmailAddress;
                         _usersRepository.Update(activeUser);
                     }
                 }
@@ -102,7 +102,7 @@ namespace K9.WebApplication.Services
         {
             var template = Dictionary.PromoCodeEmail;
             var title = Dictionary.PromoCodeEmailTitle;
-            var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
+            var client = _clientService.GetOrCreateClient("", model.Name, model.EmailAddress);
 
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
@@ -111,7 +111,7 @@ namespace K9.WebApplication.Services
                 model.EmailAddress,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = client.Name }),
                 PromoLink = _urlHelper.AbsoluteAction("Register", "Account", new { promoCode = model.PromoCode.Code }),
                 PromoDetails = model.PromoCode.GetDetails(),
                 DateTime.Now.Year

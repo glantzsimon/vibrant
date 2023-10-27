@@ -15,7 +15,7 @@
             public const string NumberToCreateLabel = "NumberToCreateLabel";
             public const string DonationAmountLabel = "DonationAmountLabel";
             public const string CompanyLabel = "CompanyLabel";
-            public const string ContactLabel = "ContactLabel";
+            public const string ClientLabel = "ClientLabel";
             public const string BulkDiscountLabel = "BulkDiscountLabel";
             public const string AmountDonatedLabel = "AmountDonatedLabel";
             public const string AmountLabel = "AmountLabel";
@@ -211,8 +211,6 @@
             public const string ArticleCategory = "ArticleCategory";
             public const string UserData = "UserData";
             public const string UserDatas = "UserDatas";
-            public const string Contacts = "Contacts";
-            public const string Contact = "Contact";
             public const string Client = "Client";
             public const string Clients = "Clients";
             public const string PromoCodes = "PromoCodes";
@@ -221,6 +219,10 @@
             public const string UserPromoCode = "UserPromoCode";
             public const string UserPromoCodes = "UserPromoCodes";
             public const string Donations = "Donations";
+            public const string Question = "Question";
+            public const string Questions = "Questions";
+            public const string HealthQuestionnaire = "HealthQuestionnaire";
+            public const string HealthQuestionnaires = "HealthQuestionnaires";
             public const string Consultation = "Consultation";
             public const string Consultations = "Consultations";
             public const string UserProtocol = "UserProtocol";
@@ -269,8 +271,8 @@
             public const string ProtocolDietaryRecommendation = "ProtocolDietaryRecommendation";
             public const string ProtocolProductPack = "ProtocolProductPack";
             public const string ProtocolProductPacks = "ProtocolProductPacks";
-            public const string ContactProduct = "ContactProduct";
-            public const string ContactProducts = "ContactProducts";
+            public const string ClientProduct = "ClientProduct";
+            public const string ClientProducts = "ClientProducts";
             public const string ProductInventory = "ProductInventory";
             public const string ProductInventoryItem = "ProductInventoryItem";
             public const string IngredientInventory = "IngredientInventory";

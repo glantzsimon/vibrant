@@ -24,14 +24,14 @@ namespace K9.WebApplication.Services
         private readonly IRepository<UserMembership> _userMembershipRepository;
         private readonly IRepository<UserCreditPack> _userCreditPacksRepository;
         private readonly IRepository<User> _usersRepository;
-        private readonly IContactService _contactService;
+        private readonly IClientService _clientService;
         private readonly IMailer _mailer;
         private readonly IRepository<PromoCode> _promoCodesRepository;
         private readonly IRepository<UserConsultation> _userConsultationsRepository;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserCreditPack> userCreditPacksRepository, IRepository<User> usersRepository, IContactService contactService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository, IRepository<UserConsultation> userConsultationsRepository)
+        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IRepository<UserCreditPack> userCreditPacksRepository, IRepository<User> usersRepository, IClientService clientService, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<PromoCode> promoCodesRepository, IRepository<UserConsultation> userConsultationsRepository)
         {
             _logger = logger;
             _authentication = authentication;
@@ -39,7 +39,7 @@ namespace K9.WebApplication.Services
             _userMembershipRepository = userMembershipRepository;
             _userCreditPacksRepository = userCreditPacksRepository;
             _usersRepository = usersRepository;
-            _contactService = contactService;
+            _clientService = clientService;
             _mailer = mailer;
             _promoCodesRepository = promoCodesRepository;
             _userConsultationsRepository = userConsultationsRepository;
@@ -196,18 +196,18 @@ namespace K9.WebApplication.Services
 
             var credits = promoCode.Credits;
             var user = _usersRepository.Find(userId);
-            var contact = _contactService.GetOrCreateContact("", user.FullName, user.EmailAddress, user.PhoneNumber);
+            var client = _clientService.GetOrCreateClient("", user.FullName, user.EmailAddress, user.PhoneNumber);
 
             ProcessPurchase(new PurchaseModel
             {
                 ItemId = subscription.Id,
-                ContactId = contact.Id
+                ClientId = client.Id
             }, userId, promoCode);
 
             ProcessCreditsPurchase(new PurchaseModel
             {
                 ItemId = subscription.Id,
-                ContactId = contact.Id,
+                ClientId = client.Id,
                 Quantity = credits
             }, userId, promoCode);
         }
@@ -237,10 +237,10 @@ namespace K9.WebApplication.Services
                 userMembership.User = _usersRepository.Find(userId ?? _authentication.CurrentUserId);
                 TerminateExistingMemberships(membershipOptionId);
 
-                var contact = _contactService.Find(purchaseModel.ContactId);
+                var client = _clientService.Find(purchaseModel.ClientId);
 
                 SendEmailToPureAlchemy(userMembership, promoCode);
-                SendEmailToCustomer(userMembership, contact, promoCode);
+                SendEmailToCustomer(userMembership, client, promoCode);
             }
             catch (Exception ex)
             {
@@ -270,10 +270,10 @@ namespace K9.WebApplication.Services
                 _userCreditPacksRepository.Create(userCreditPack);
                 userCreditPack.User = _usersRepository.Find(_authentication.CurrentUserId);
 
-                var contact = _contactService.Find(purchaseModel.ContactId);
+                var client = _clientService.Find(purchaseModel.ClientId);
 
                 SendEmailToPureAlchemy(userCreditPack, promoCode);
-                SendEmailToCustomer(userCreditPack, contact, promoCode);
+                SendEmailToCustomer(userCreditPack, client, promoCode);
             }
             catch (Exception ex)
             {
@@ -374,14 +374,14 @@ namespace K9.WebApplication.Services
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToCustomer(UserMembership userMembership, Contact contact, PromoCode promoCode = null)
+        private void SendEmailToCustomer(UserMembership userMembership, Client client, PromoCode promoCode = null)
         {
             var template = Dictionary.NewMembershipThankYouEmail;
             var title = TemplateProcessor.PopulateTemplate(Dictionary.ThankyouForSubscriptionEmailTitle, new
             {
                 SubscriptionType = userMembership.MembershipOption.GetSubscriptionTypeNameLocal()
             });
-            if (contact != null && !contact.IsUnsubscribed)
+            if (client != null && !client.IsUnsubscribed)
             {
                 _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
                 {
@@ -393,7 +393,7 @@ namespace K9.WebApplication.Services
                     NumberOfConsultations = userMembership.MembershipOption.NumberOfConsultations,
                     ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                     PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { id = contact.Id }),
+                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { id = client.Id }),
                     DateTime.Now.Year
                 }), userMembership.User.EmailAddress, userMembership.User.FirstName, _config.SupportEmailAddress,
                     _config.CompanyName);
@@ -417,11 +417,11 @@ namespace K9.WebApplication.Services
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToCustomer(UserCreditPack userCreditPack, Contact contact, PromoCode promoCode = null)
+        private void SendEmailToCustomer(UserCreditPack userCreditPack, Client client, PromoCode promoCode = null)
         {
             var template = Dictionary.NewCreditPackThankYouEmail;
             var title = Dictionary.ThankyouForCreditPackPurchaseEmailTitle;
-            if (contact != null && !contact.IsUnsubscribed)
+            if (client != null && !client.IsUnsubscribed)
             {
                 _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
                 {
@@ -431,7 +431,7 @@ namespace K9.WebApplication.Services
                     TotalPrice = promoCode.GetFormattedPrice() ?? userCreditPack.GetFormattedPrice(),
                     ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                     PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
+                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = client.Name }),
                     DateTime.Now.Year
                 }), userCreditPack.User.EmailAddress, userCreditPack.User.FirstName, _config.SupportEmailAddress,
                     _config.CompanyName);

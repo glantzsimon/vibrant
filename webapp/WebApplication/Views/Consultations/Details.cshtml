@@ -5,7 +5,7 @@
     Layout = "../Shared/_LayoutFormSmall.cshtml";
     var body = TemplateProcessor.PopulateTemplate(Dictionary.consultation_email, new
     {
-        FirstName = Model.Contact.GetFirstName(),
+        FirstName = Model.Client.GetFirstName(),
         Duration = Model.DurationDescription.ToLower(),
         LineFeed = "%0D%0A"
     });
@@ -21,7 +21,7 @@
         <hr />
         @Html.BootstrapBackToListButton()
         @Html.CrudButtonsForModel(Model)
-        <a class="pull-right float-none-sm" href="mailto:@(Model.Contact.EmailAddress)?subject=@(Dictionary.PureAlchemyConsultation)&body=@body">@Html.BootstrapButton(Dictionary.EmailCustomer, EButtonType.Button, "fa fa-envelope", EButtonClass.Success)</a>
+        <a class="pull-right float-none-sm" href="mailto:@(Model.Client.EmailAddress)?subject=@(Dictionary.PureAlchemyConsultation)&body=@body">@Html.BootstrapButton(Dictionary.EmailCustomer, EButtonType.Button, "fa fa-envelope", EButtonClass.Success)</a>
 
     }
 }

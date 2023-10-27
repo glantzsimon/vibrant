@@ -333,7 +333,7 @@ namespace K9.WebApplication.Services
 
                 if (!includeCustomProducts)
                 {
-                    products = products.Where(e => e.ContactId <= 0 || !e.ContactId.HasValue).ToList();
+                    products = products.Where(e => e.ClientId <= 0 || !e.ClientId.HasValue).ToList();
                 }
 
                 if (retrieveFullProduct)

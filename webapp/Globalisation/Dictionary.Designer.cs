@@ -731,6 +731,42 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact Address Label.
+        /// </summary>
+        public static string ClientAddressLabels {
+            get {
+                return ResourceManager.GetString("ClientAddressLabels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string ClientLabel {
+            get {
+                return ResourceManager.GetString("ClientLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer Product.
+        /// </summary>
+        public static string ClientProduct {
+            get {
+                return ResourceManager.GetString("ClientProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer Products.
+        /// </summary>
+        public static string ClientProducts {
+            get {
+                return ResourceManager.GetString("ClientProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clients.
         /// </summary>
         public static string Clients {
@@ -965,42 +1001,6 @@ namespace K9.Globalisation {
         public static string Contact {
             get {
                 return ResourceManager.GetString("Contact", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Contact Address Label.
-        /// </summary>
-        public static string ContactAddressLabels {
-            get {
-                return ResourceManager.GetString("ContactAddressLabels", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Contact.
-        /// </summary>
-        public static string ContactLabel {
-            get {
-                return ResourceManager.GetString("ContactLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Customer Product.
-        /// </summary>
-        public static string ContactProduct {
-            get {
-                return ResourceManager.GetString("ContactProduct", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Customer Products.
-        /// </summary>
-        public static string ContactProducts {
-            get {
-                return ResourceManager.GetString("ContactProducts", resourceCulture);
             }
         }
         
@@ -1693,20 +1693,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sorry, a client with that email address already exists..
+        /// </summary>
+        public static string DuplicateClientError {
+            get {
+                return ResourceManager.GetString("DuplicateClientError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you wish to duplicate the selected item?.
         /// </summary>
         public static string DuplicateConfirm {
             get {
                 return ResourceManager.GetString("DuplicateConfirm", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sorry, a contact with that email address already exists..
-        /// </summary>
-        public static string DuplicateContactError {
-            get {
-                return ResourceManager.GetString("DuplicateContactError", resourceCulture);
             }
         }
         
@@ -2350,6 +2350,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Health Questionnaires.
+        /// </summary>
+        public static string HealthQuestionnaires {
+            get {
+                return ResourceManager.GetString("HealthQuestionnaires", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Heaven.
         /// </summary>
         public static string Heaven {
@@ -2783,7 +2792,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your contacts were successfully imported into MailChimp.
+        ///   Looks up a localized string similar to Your clients were successfully imported into MailChimp.
         /// </summary>
         public static string MailChimpImportSuccess {
             get {
@@ -4443,6 +4452,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        public static string Question {
+            get {
+                return ResourceManager.GetString("Question", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Questons.
+        /// </summary>
+        public static string Questions {
+            get {
+                return ResourceManager.GetString("Questions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Raw or Cooked.
         /// </summary>
         public static string RawOrCooked {
@@ -5757,9 +5784,9 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to View Address Label.
         /// </summary>
-        public static string ViewContactAddressLabel {
+        public static string ViewClientAddressLabel {
             get {
-                return ResourceManager.GetString("ViewContactAddressLabel", resourceCulture);
+                return ResourceManager.GetString("ViewClientAddressLabel", resourceCulture);
             }
         }
         

@@ -30,7 +30,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         private readonly Mock<IAuthentication> _authentication = new Mock<IAuthentication>();
         private readonly Mock<IOptions<StripeConfiguration>> _stripeConfig = new Mock<IOptions<StripeConfiguration>>();
         private readonly Mock<IStripeService> _stripeService = new Mock<IStripeService>();
-        private readonly Mock<IContactService> _contactService = new Mock<IContactService>();
+        private readonly Mock<IClientService> _clientService = new Mock<IClientService>();
         private MembershipService _Membershipservice;
 
         private readonly int _userId = 1;
@@ -108,7 +108,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 _userMembershipRepository.Object,
                 _userCreditPackRepository.Object,
                 _usersRepository.Object,
-                _contactService.Object,
+                _clientService.Object,
                 _mailer.Object,
                 _config.Object,
                 new Mock<IRepository<PromoCode>>().Object,

@@ -175,7 +175,7 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        ContactId = c.Int(nullable: false),
+                        ClientId = c.Int(nullable: false),
                         ConsultationDuration = c.Int(nullable: false),
                         CompletedOn = c.DateTime(),
                         Name = c.String(maxLength: 128),
@@ -187,8 +187,8 @@
                         LastUpdatedOn = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Contact", t => t.ContactId)
-                .Index(t => t.ContactId)
+                .ForeignKey("dbo.Contact", t => t.ClientId)
+                .Index(t => t.ClientId)
                 .Index(t => t.Name, unique: true);
             
             CreateTable(
@@ -223,7 +223,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         ProductId = c.Int(nullable: false),
-                        ContactId = c.Int(nullable: false),
+                        ClientId = c.Int(nullable: false),
                         Price = c.Double(nullable: false),
                         Name = c.String(maxLength: 128),
                         IsSystemStandard = c.Boolean(nullable: false),
@@ -234,10 +234,10 @@
                         LastUpdatedOn = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Contact", t => t.ContactId)
+                .ForeignKey("dbo.Contact", t => t.ClientId)
                 .ForeignKey("dbo.Product", t => t.ProductId)
                 .Index(t => t.ProductId)
-                .Index(t => t.ContactId)
+                .Index(t => t.ClientId)
                 .Index(t => t.Name, unique: true);
             
             CreateTable(
@@ -246,7 +246,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         ProductType = c.Int(nullable: false),
-                        ContactId = c.Int(),
+                        ClientId = c.Int(),
                         IsLiveOn = c.DateTime(nullable: false),
                         Title = c.String(nullable: false, maxLength: 256),
                         ShortDescription = c.String(nullable: false),
@@ -267,8 +267,8 @@
                         LastUpdatedOn = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Contact", t => t.ContactId)
-                .Index(t => t.ContactId)
+                .ForeignKey("dbo.Contact", t => t.ClientId)
+                .Index(t => t.ClientId)
                 .Index(t => t.Name, unique: true);
             
             CreateTable(
@@ -597,7 +597,7 @@
                         Id = c.Int(nullable: false, identity: true),
                         UserId = c.Int(nullable: false),
                         SaleType = c.Int(nullable: false),
-                        ContactId = c.Int(nullable: false),
+                        ClientId = c.Int(nullable: false),
                         Name = c.String(maxLength: 128),
                         IsSystemStandard = c.Boolean(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
@@ -607,10 +607,10 @@
                         LastUpdatedOn = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Contact", t => t.ContactId)
+                .ForeignKey("dbo.Contact", t => t.ClientId)
                 .ForeignKey("dbo.User", t => t.UserId)
                 .Index(t => t.UserId)
-                .Index(t => t.ContactId)
+                .Index(t => t.ClientId)
                 .Index(t => t.Name, unique: true);
             
             CreateTable(
@@ -746,7 +746,7 @@
             DropForeignKey("dbo.SaleItem", "UserId", "dbo.User");
             DropForeignKey("dbo.SaleItem", "SaleId", "dbo.Sale");
             DropForeignKey("dbo.Sale", "UserId", "dbo.User");
-            DropForeignKey("dbo.Sale", "ContactId", "dbo.Contact");
+            DropForeignKey("dbo.Sale", "ClientId", "dbo.Contact");
             DropForeignKey("dbo.SaleItem", "ProductId", "dbo.Product");
             DropForeignKey("dbo.RolePermission", "RoleId", "dbo.Role");
             DropForeignKey("dbo.RolePermission", "PermissionId", "dbo.Permission");
@@ -758,9 +758,9 @@
             DropForeignKey("dbo.Message", "SentByUserId", "dbo.User");
             DropForeignKey("dbo.IngredientInventory", "IngredientId", "dbo.Ingredient");
             DropForeignKey("dbo.ContactProduct", "ProductId", "dbo.Product");
-            DropForeignKey("dbo.Product", "ContactId", "dbo.Contact");
-            DropForeignKey("dbo.ContactProduct", "ContactId", "dbo.Contact");
-            DropForeignKey("dbo.Consultation", "ContactId", "dbo.Contact");
+            DropForeignKey("dbo.Product", "ClientId", "dbo.Contact");
+            DropForeignKey("dbo.ContactProduct", "ClientId", "dbo.Contact");
+            DropForeignKey("dbo.Consultation", "ClientId", "dbo.Contact");
             DropForeignKey("dbo.Contact", "UserId", "dbo.User");
             DropForeignKey("dbo.ArticleSection", "ArticleId", "dbo.Article");
             DropForeignKey("dbo.Article", "UserId", "dbo.User");
@@ -783,7 +783,7 @@
             DropIndex("dbo.UserConsultation", new[] { "ConsultationId" });
             DropIndex("dbo.UserConsultation", new[] { "UserId" });
             DropIndex("dbo.Sale", new[] { "Name" });
-            DropIndex("dbo.Sale", new[] { "ContactId" });
+            DropIndex("dbo.Sale", new[] { "ClientId" });
             DropIndex("dbo.Sale", new[] { "UserId" });
             DropIndex("dbo.SaleItem", new[] { "Name" });
             DropIndex("dbo.SaleItem", new[] { "ProductId" });
@@ -815,15 +815,15 @@
             DropIndex("dbo.Country", new[] { "ThreeLetterCountryCode" });
             DropIndex("dbo.Country", new[] { "TwoLetterCountryCode" });
             DropIndex("dbo.Product", new[] { "Name" });
-            DropIndex("dbo.Product", new[] { "ContactId" });
+            DropIndex("dbo.Product", new[] { "ClientId" });
             DropIndex("dbo.ContactProduct", new[] { "Name" });
-            DropIndex("dbo.ContactProduct", new[] { "ContactId" });
+            DropIndex("dbo.ContactProduct", new[] { "ClientId" });
             DropIndex("dbo.ContactProduct", new[] { "ProductId" });
             DropIndex("dbo.Contact", new[] { "Name" });
             DropIndex("dbo.Contact", new[] { "EmailAddress" });
             DropIndex("dbo.Contact", new[] { "UserId" });
             DropIndex("dbo.Consultation", new[] { "Name" });
-            DropIndex("dbo.Consultation", new[] { "ContactId" });
+            DropIndex("dbo.Consultation", new[] { "ClientId" });
             DropIndex("dbo.ArticleSection", new[] { "Name" });
             DropIndex("dbo.ArticleSection", new[] { "ArticleId" });
             DropIndex("dbo.User", new[] { "Name" });

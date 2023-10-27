@@ -9,10 +9,10 @@ namespace K9.WebApplication.Models
         public const int MaxRecipientsPerPage = 6;
         public const int MaxRecipientsPerSection = 3;
 
-        public List<Contact> Recipients { get; }
-        public Contact Sender { get; set; }
+        public List<Client> Recipients { get; }
+        public Client Sender { get; set; }
 
-        public AddressLabelViewModel(List<Contact> recipients)
+        public AddressLabelViewModel(List<Client> recipients)
         {
             if (recipients.Count >= 6)
             {
@@ -20,7 +20,7 @@ namespace K9.WebApplication.Models
                 return;
             }
 
-            var allRecipients = new List<Contact>(recipients);
+            var allRecipients = new List<Client>(recipients);
             switch (recipients.Count)
             {
                 case 5:

@@ -12,19 +12,19 @@ namespace K9.WebApplication.Controllers
     [RequirePermissions(Role = RoleNames.Administrators)]
     public class ConsultationsController : BaseController<Consultation>
     {
-        private readonly IRepository<Contact> _contactRepository;
+        private readonly IRepository<Client> _clientsRepository;
 
-        public ConsultationsController(IControllerPackage<Consultation> controllerPackage, IRepository<Contact> contactRepository)
+        public ConsultationsController(IControllerPackage<Consultation> controllerPackage, IRepository<Client> clientsRepository)
             : base(controllerPackage)
         {
-            _contactRepository = contactRepository;
+            _clientsRepository = clientsRepository;
             RecordBeforeDetails += ConsultationsController_RecordBeforeDetails;
         }
 
         private void ConsultationsController_RecordBeforeDetails(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
         {
             var consultation = e.Item as Consultation;
-            consultation.Contact = _contactRepository.Find(consultation.ContactId);
+            consultation.Client = _clientsRepository.Find(consultation.ClientId);
         }
     }
 }

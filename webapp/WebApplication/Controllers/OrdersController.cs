@@ -57,7 +57,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult EditProductQuantities(int id)
         {
             var order = _orderService.Find(id);
-            order = _orderService.UpdatePricesForContact(order);
+            order = _orderService.UpdatePricesForClient(order);
             order = _orderService.FillZeroQuantities(order);
             return View(order);
         }
@@ -86,7 +86,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult EditProductPackQuantities(int id)
         {
             var order = _orderService.Find(id);
-            order = _orderService.UpdatePricesForContact(order);
+            order = _orderService.UpdatePricesForClient(order);
             order = _orderService.FillZeroQuantities(order);
             return View(order);
         }

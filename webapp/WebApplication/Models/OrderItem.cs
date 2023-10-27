@@ -11,8 +11,8 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InvoiceLabel)]
         public string InvoiceNumber => $"{Globalisation.Dictionary.InvoiceLabel.ToUpper()} {OrderNumber}";
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ContactLabel)]
-        public string ContactName { get; set; }
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ClientLabel)]
+        public string ClientName { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InvoiceDateLabel)]
         public string InvoiceDate { get; set; }
@@ -20,7 +20,7 @@ namespace K9.WebApplication.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.InvoiceNumbersLabel)]
         public string InvoiceNumbersText { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ContactLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ClientLabel)]
         public string BulkDiscountText { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductsLabel)]

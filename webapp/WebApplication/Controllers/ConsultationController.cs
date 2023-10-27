@@ -15,14 +15,14 @@ namespace K9.WebApplication.Controllers
     {
         private readonly ILogger _logger;
         private readonly IConsultationService _consultationService;
-        private readonly IContactService _contactService;
+        private readonly IClientService _clientService;
 
-        public ConsultationController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService,  IConsultationService consultationService, IContactService contactService)
+        public ConsultationController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService,  IConsultationService consultationService, IClientService clientService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _logger = logger;
             _consultationService = consultationService;
-            _contactService = contactService;
+            _clientService = clientService;
         }
         
         [Route("book-consultation")]
@@ -47,13 +47,13 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                var contact = _contactService.Find(purchaseModel.ContactId);
+                var client = _clientService.Find(purchaseModel.ClientId);
 
                 _consultationService.CreateConsultation(new Consultation
                 {
                     ConsultationDuration = (EConsultationDuration)purchaseModel.Quantity,
-                    ContactId = purchaseModel.ContactId
-                }, contact);
+                    ClientId = purchaseModel.ClientId
+                }, client);
 
                 return Json(new { success = true });
             }

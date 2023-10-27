@@ -7,8 +7,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
-    [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.ContactProducts, PluralName = Globalisation.Strings.Names.ContactProducts, Name = Globalisation.Strings.Names.ContactProduct)]
-    public class ContactProduct : ObjectBase
+    [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.ClientProducts, PluralName = Globalisation.Strings.Names.ClientProducts, Name = Globalisation.Strings.Names.ClientProduct)]
+    public class ClientProduct : ObjectBase
 	{
         [UIHint("Product")]
         [ForeignKey("Product")]
@@ -16,11 +16,11 @@ namespace K9.DataAccessLayer.Models
 
         public virtual Product Product { get; set; }
 
-	    [UIHint("Contact")]
-	    [ForeignKey("Contact")]
-	    public int ContactId { get; set; }
+	    [UIHint("Client")]
+	    [ForeignKey("Client")]
+	    public int ClientId { get; set; }
 
-	    public virtual Contact Contact { get; set; }
+	    public virtual Client Client { get; set; }
         
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
 	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]

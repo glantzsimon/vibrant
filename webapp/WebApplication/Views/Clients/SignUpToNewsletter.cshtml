@@ -1,11 +1,11 @@
-﻿@model Contact
+﻿@model Client
 
 @{
     ViewBag.SubTitle = K9.Globalisation.Dictionary.SignUpToNewsLetter;
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
-@using (Html.BeginForm("SignUpToNewsLetter", "Contacts"))
+@using (Html.BeginForm("SignUpToNewsLetter", "Clients"))
 {
 	using (Html.BeginBootstrapForm())
 	{

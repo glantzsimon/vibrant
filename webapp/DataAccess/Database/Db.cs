@@ -10,7 +10,7 @@ namespace K9.DataAccessLayer.Database
         public DbSet<ArticleCategory> ArticleCategories { get; set; }
         public DbSet<ArticleSection> ArticleSections { get; set; }
         public DbSet<Consultation> Consultations { get; set; }
-        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Client> Clients { get; set; }
         public DbSet<DietaryRecommendation> DietaryRecommendations { get; set; }
         public DbSet<Donation> Donations { get; set; }
         public DbSet<MembershipOption> MembershipOptions { get; set; }
@@ -23,7 +23,7 @@ namespace K9.DataAccessLayer.Database
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderProduct> OrderProducts { get; set; }
         public DbSet<OrderProductPack> OrderProductPacks { get; set; }
-        public DbSet<ContactProduct> ContactProducts { get; set; }
+        public DbSet<ClientProduct> ClientProducts { get; set; }
         public DbSet<ProductPack> ProductPacks { get; set; }
         public DbSet<ProductPackProduct> ProductPackProducts { get; set; }
 

@@ -19,19 +19,19 @@ namespace K9.WebApplication.Controllers
         private readonly ILogger _logger;
         private readonly IMailer _mailer;
         private readonly IDonationService _donationService;
-        private readonly IContactService _contactService;
+        private readonly IClientService _clientService;
         private readonly IRecaptchaService _recaptchaService;
         private readonly RecaptchaConfiguration _recaptchaConfig;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IMembershipService membershipService, IContactService contactService, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService)
+        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IMembershipService membershipService, IClientService clientService, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _logger = logger;
             _mailer = mailer;
             _donationService = donationService;
-            _contactService = contactService;
+            _clientService = clientService;
             _recaptchaService = recaptchaService;
             _recaptchaConfig = recaptchaConfig.Value;
             _config = config.Value;
@@ -68,8 +68,8 @@ namespace K9.WebApplication.Controllers
                     model.EmailAddress,
                     model.Name);
 
-                var contact = _contactService.GetOrCreateContact("", model.Name, model.EmailAddress);
-                SendEmailToCustomer(contact);
+                var client = _clientService.GetOrCreateClient("", model.Name, model.EmailAddress);
+                SendEmailToClient(client);
 
                 return RedirectToAction("ContactUsSuccess");
             }
@@ -108,7 +108,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                var contact = _contactService.Find(purchaseModel.ContactId);
+                var client = _clientService.Find(purchaseModel.ClientId);
 
                 _donationService.CreateDonation(new Donation
                 {
@@ -118,7 +118,7 @@ namespace K9.WebApplication.Controllers
                     DonationDescription = purchaseModel.Description,
                     DonatedOn = DateTime.Now,
                     DonationAmount = purchaseModel.Amount
-                }, contact);
+                }, client);
 
                 return Json(new { success = true });
             }
@@ -146,20 +146,20 @@ namespace K9.WebApplication.Controllers
             throw new NotImplementedException();
         }
 
-        private void SendEmailToCustomer(Contact contact)
+        private void SendEmailToClient(Client client)
         {
             var template = Dictionary.SupportQuery;
             var title = Dictionary.EmailThankYouTitle;
-            if (contact != null && !contact.IsUnsubscribed)
+            if (client != null && !client.IsUnsubscribed)
             {
                 _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
                 {
                     Title = title,
-                    FirstName = contact.GetFirstName(),
+                    FirstName = client.GetFirstName(),
                     PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
+                    UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = client.Name }),
                     DateTime.Now.Year
-                }), contact.EmailAddress, contact.GetFirstName(), _config.SupportEmailAddress,
+                }), client.EmailAddress, client.GetFirstName(), _config.SupportEmailAddress,
                     _config.CompanyName);
             }
         }

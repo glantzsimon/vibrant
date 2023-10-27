@@ -35,7 +35,7 @@ namespace K9.WebApplication.Controllers
         private readonly IAuthentication _authentication;
         private readonly IFacebookService _facebookService;
         private readonly IMembershipService _membershipService;
-        private readonly IContactService _contactService;
+        private readonly IClientService _clientService;
         private readonly IUserService _userService;
         private readonly IRepository<PromoCode> _promoCodesRepository;
         private readonly IRecaptchaService _recaptchaService;
@@ -43,7 +43,7 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<Protocol> _protocolsRepository;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IContactService contactService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<UserProtocol> userProtocolsRepository, IRepository<Protocol> protocolsRepository)
+        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IClientService clientService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<UserProtocol> userProtocolsRepository, IRepository<Protocol> protocolsRepository)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _userRepository = userRepository;
@@ -52,7 +52,7 @@ namespace K9.WebApplication.Controllers
             _authentication = authentication;
             _facebookService = facebookService;
             _membershipService = membershipService;
-            _contactService = contactService;
+            _clientService = clientService;
             _userService = userService;
             _promoCodesRepository = promoCodesRepository;
             _recaptchaService = recaptchaService;
@@ -677,7 +677,7 @@ namespace K9.WebApplication.Controllers
         [Route("unsubscribe")]
         public ActionResult Unsubscribe(string code)
         {
-            if (_contactService.Unsubscribe(code))
+            if (_clientService.Unsubscribe(code))
             {
                 return View("UnsubscribeSuccess");
             }

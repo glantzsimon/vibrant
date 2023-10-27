@@ -8,13 +8,13 @@ namespace K9.WebApplication.ViewModels
 {
     public class RepCommissionViewModel
     {
-        [UIHint("Contact")]
+        [UIHint("Client")]
         [ForeignKey("Rep")]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.RepLabel)]
         public int RepId { get; set; }
 
-        public virtual Contact Rep { get; set; }
+        public virtual Client Rep { get; set; }
 
         public List<RepCommission> RepCommissions { get; set; }
 

@@ -15,7 +15,7 @@
             DropIndex("dbo.SaleItem", new[] { "UserId" });
             DropIndex("dbo.SaleItem", new[] { "ProductId" });
             DropIndex("dbo.SaleItem", new[] { "Name" });
-            DropIndex("dbo.Order", new[] { "ContactId" });
+            DropIndex("dbo.Order", new[] { "ClientId" });
             CreateTable(
                 "dbo.OrderItemProductPack",
                 c => new
@@ -86,8 +86,8 @@
                 .Index(t => t.Name, unique: true);
             
             AddColumn("dbo.Order", "ExternalId", c => c.Guid(nullable: false));
-            AlterColumn("dbo.Order", "ContactId", c => c.Int());
-            CreateIndex("dbo.Order", "ContactId");
+            AlterColumn("dbo.Order", "ClientId", c => c.Int());
+            CreateIndex("dbo.Order", "ClientId");
             DropTable("dbo.SaleItem");
         }
         
@@ -121,19 +121,19 @@
             DropIndex("dbo.OrderItemProduct", new[] { "Name" });
             DropIndex("dbo.OrderItemProduct", new[] { "OrderItemId" });
             DropIndex("dbo.OrderItemProduct", new[] { "ProductId" });
-            DropIndex("dbo.Order", new[] { "ContactId" });
+            DropIndex("dbo.Order", new[] { "ClientId" });
             DropIndex("dbo.OrderItem", new[] { "Name" });
             DropIndex("dbo.OrderItem", new[] { "UserId" });
             DropIndex("dbo.OrderItem", new[] { "OrderId" });
             DropIndex("dbo.OrderItemProductPack", new[] { "Name" });
             DropIndex("dbo.OrderItemProductPack", new[] { "OrderItemId" });
             DropIndex("dbo.OrderItemProductPack", new[] { "ProductPackId" });
-            AlterColumn("dbo.Order", "ContactId", c => c.Int(nullable: false));
+            AlterColumn("dbo.Order", "ClientId", c => c.Int(nullable: false));
             DropColumn("dbo.Order", "ExternalId");
             DropTable("dbo.OrderItemProduct");
             DropTable("dbo.OrderItem");
             DropTable("dbo.OrderItemProductPack");
-            CreateIndex("dbo.Order", "ContactId");
+            CreateIndex("dbo.Order", "ClientId");
             CreateIndex("dbo.SaleItem", "Name", unique: true);
             CreateIndex("dbo.SaleItem", "ProductId");
             CreateIndex("dbo.SaleItem", "UserId");

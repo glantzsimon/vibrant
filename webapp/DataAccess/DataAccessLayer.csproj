@@ -434,9 +434,15 @@
     <Compile Include="Migrations\202310230655363_RemoveDosageFromProductPack.Designer.cs">
       <DependentUpon>202310230655363_RemoveDosageFromProductPack.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310270352059_RenameContactToClient.cs" />
+    <Compile Include="Migrations\202310270352059_RenameContactToClient.Designer.cs">
+      <DependentUpon>202310270352059_RenameContactToClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\HealthQuestionnaire.cs" />
     <Compile Include="Models\DietaryRecommendation.cs" />
     <Compile Include="Models\Ingredient.cs" />
-    <Compile Include="Models\ContactProduct.cs" />
+    <Compile Include="Models\ClientProduct.cs" />
     <Compile Include="Models\RepCommission.cs" />
     <Compile Include="Models\ProductIngredientSubstitute.cs" />
     <Compile Include="Models\OrderProductPack.cs" />
@@ -461,7 +467,7 @@
     <Compile Include="Models\Consultation.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\PromoCode.cs" />
-    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Client.cs" />
     <Compile Include="Models\MembershipOption.cs" />
     <Compile Include="Models\UserProtocol.cs" />
     <Compile Include="Models\UserConsultation.cs" />
@@ -652,6 +658,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310230655363_RemoveDosageFromProductPack.resx">
       <DependentUpon>202310230655363_RemoveDosageFromProductPack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310270352059_RenameContactToClient.resx">
+      <DependentUpon>202310270352059_RenameContactToClient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

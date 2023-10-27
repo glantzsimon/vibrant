@@ -14,7 +14,7 @@ namespace K9.WebApplication.Services
         Order Find(string orderNumber);
         Order GetFullOrder(Order order);
         Order FillZeroQuantities(Order order);
-        Order UpdatePricesForContact(Order order);
+        Order UpdatePricesForClient(Order order);
         Order Duplicate(int id);
         RepCommissionViewModel CalculateRepCommission(int repId);
         void DeleteChildRecords(int id);

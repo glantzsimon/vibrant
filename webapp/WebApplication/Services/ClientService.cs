@@ -8,34 +8,34 @@ using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Services
 {
-    public class ContactService : IContactService
+    public class ClientService : IClientService
     {
-        private readonly IRepository<Contact> _contactsRepository;
+        private readonly IRepository<Client> _clientsRepository;
         private readonly ILogger _logger;
 
-        public ContactService(IRepository<Contact> contactsRepository, ILogger logger)
+        public ClientService(IRepository<Client> clientsRepository, ILogger logger)
         {
-            _contactsRepository = contactsRepository;
+            _clientsRepository = clientsRepository;
             _logger = logger;
         }
 
-        public Contact GetOrCreateContact(string stripeCustomerId, string fullName, string emailAddress, string phoneNumber = "")
+        public Client GetOrCreateClient(string stripeCustomerId, string fullName, string emailAddress, string phoneNumber = "")
         {
             if (!string.IsNullOrEmpty(emailAddress))
             {
                 try
                 {
-                    var existingCustomer = _contactsRepository.Find(_ => _.StripeCustomerId == stripeCustomerId || _.EmailAddress == emailAddress).FirstOrDefault();
+                    var existingCustomer = _clientsRepository.Find(_ => _.StripeCustomerId == stripeCustomerId || _.EmailAddress == emailAddress).FirstOrDefault();
                     if (existingCustomer == null)
                     {
-                        _contactsRepository.Create(new Contact
+                        _clientsRepository.Create(new Client
                         {
                             StripeCustomerId = stripeCustomerId,
                             FullName = string.IsNullOrEmpty(fullName) ? emailAddress : fullName,
                             EmailAddress = emailAddress,
                             PhoneNumber = phoneNumber
                         });
-                        return _contactsRepository.Find(e => e.StripeCustomerId == stripeCustomerId).FirstOrDefault();
+                        return _clientsRepository.Find(e => e.StripeCustomerId == stripeCustomerId).FirstOrDefault();
                     }
 
                     var isUpdated = false;
@@ -53,44 +53,44 @@ namespace K9.WebApplication.Services
 
                     if (isUpdated)
                     {
-                        _contactsRepository.Update(existingCustomer);
+                        _clientsRepository.Update(existingCustomer);
                     }
 
                     return existingCustomer;
                 }
                 catch (Exception e)
                 {
-                    _logger.Error($"ContactService => CreateCustomer => {e.GetFullErrorMessage()}");
+                    _logger.Error($"ClientService => CreateCustomer => {e.GetFullErrorMessage()}");
                     throw;
                 }
             }
 
-            _logger.Error($"ContactService => CreateCustomer => Email Address is Empty");
+            _logger.Error($"ClientService => CreateCustomer => Email Address is Empty");
             return null;
         }
 
-        public Contact Find(int id)
+        public Client Find(int id)
         {
-            return _contactsRepository.Find(id);
+            return _clientsRepository.Find(id);
         }
 
-        public Contact Find(string emailAddress)
+        public Client Find(string emailAddress)
         {
-            return _contactsRepository.Find(e => e.EmailAddress == emailAddress).FirstOrDefault();
+            return _clientsRepository.Find(e => e.EmailAddress == emailAddress).FirstOrDefault();
         }
 
-        public List<Contact> ListContacts()
+        public List<Client> ListClients()
         {
-            return _contactsRepository.List().OrderBy(e => e.FullName).ToList();
+            return _clientsRepository.List().OrderBy(e => e.FullName).ToList();
         }
 
         public bool Unsubscribe(string code)
         {
-            var contact = _contactsRepository.Find(e => e.Name == code).FirstOrDefault();
-            if (contact != null)
+            var client = _clientsRepository.Find(e => e.Name == code).FirstOrDefault();
+            if (client != null)
             {
-                contact.IsUnsubscribed = true;
-                _contactsRepository.Update(contact);
+                client.IsUnsubscribed = true;
+                _clientsRepository.Update(client);
                 return true;
             }
 

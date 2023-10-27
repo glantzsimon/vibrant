@@ -35,7 +35,7 @@ namespace K9.DataAccessLayer.Database
                     {
                         Id = c.Int(nullable: false, identity: true),
                         ExternalId = c.Guid(nullable: false),
-                        ContactId = c.Int(),
+                        ClientId = c.Int(),
                         ShortDescription = c.String(nullable: false),
                         Body = c.String(nullable: false),
                         SeoFriendlyId = c.String(),
@@ -49,8 +49,8 @@ namespace K9.DataAccessLayer.Database
                         LastUpdatedOn = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Contact", t => t.ContactId)
-                .Index(t => t.ContactId)
+                .ForeignKey("dbo.Contact", t => t.ClientId)
+                .Index(t => t.ClientId)
                 .Index(t => t.Name, unique: true);
             
             CreateTable(
@@ -150,7 +150,7 @@ namespace K9.DataAccessLayer.Database
             DropForeignKey("dbo.ProtocolProduct", "ProtocolId", "dbo.Protocol");
             DropForeignKey("dbo.ProtocolProduct", "ProductId", "dbo.Product");
             DropForeignKey("dbo.ProtocolProductPack", "ProtocolId", "dbo.Protocol");
-            DropForeignKey("dbo.Protocol", "ContactId", "dbo.Contact");
+            DropForeignKey("dbo.Protocol", "ClientId", "dbo.Contact");
             DropForeignKey("dbo.ProtocolProductPack", "ProductPackId", "dbo.ProductPack");
             DropIndex("dbo.ProtocolSection", new[] { "Name" });
             DropIndex("dbo.ProtocolSection", "IX_ProtocolSection_DisplayOrder");
@@ -164,7 +164,7 @@ namespace K9.DataAccessLayer.Database
             DropIndex("dbo.ProtocolProduct", new[] { "ProductId" });
             DropIndex("dbo.ProtocolProduct", new[] { "ProtocolId" });
             DropIndex("dbo.Protocol", new[] { "Name" });
-            DropIndex("dbo.Protocol", new[] { "ContactId" });
+            DropIndex("dbo.Protocol", new[] { "ClientId" });
             DropIndex("dbo.ProtocolProductPack", new[] { "Name" });
             DropIndex("dbo.ProtocolProductPack", new[] { "ProductPackId" });
             DropIndex("dbo.ProtocolProductPack", new[] { "ProtocolId" });

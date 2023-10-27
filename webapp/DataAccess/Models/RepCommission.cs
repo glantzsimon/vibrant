@@ -12,18 +12,18 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.RepCommissions, PluralName = Globalisation.Strings.Names.RepCommissions, Name = Globalisation.Strings.Names.RepCommission)]
     public class RepCommission : ObjectBase
     {
-        [UIHint("Contact")]
+        [UIHint("Client")]
         [Required]
         [ForeignKey("Rep")]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.RepLabel)]
         public int RepId { get; set; }
 
-        public virtual Contact Rep { get; set; }
+        public virtual Client Rep { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.RepLabel)]
-        [LinkedColumn(LinkedTableName = "Contact", LinkedColumnName = "FullName", ForeignKey = "RepId")]
+        [LinkedColumn(LinkedTableName = "Client", LinkedColumnName = "FullName", ForeignKey = "RepId")]
         public string RepName { get; set; }
         
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountRedeemedLabel)]

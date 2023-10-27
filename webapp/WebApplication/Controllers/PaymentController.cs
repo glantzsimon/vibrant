@@ -15,16 +15,16 @@ namespace K9.WebApplication.Controllers
     {
         private readonly ILogger _logger;
         private readonly IStripeService _stripeService;
-        private readonly IContactService _contactService;
+        private readonly IClientService _clientService;
         private readonly IUserService _userService;
         private readonly StripeConfiguration _stripeConfig;
 
-        public PaymentsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IMembershipService membershipService, IContactService contactService, IUserService userService)
+        public PaymentsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IMembershipService membershipService, IClientService clientService, IUserService userService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _logger = logger;
             _stripeService = stripeService;
-            _contactService = contactService;
+            _clientService = clientService;
             _userService = userService;
             _stripeConfig = stripeConfig.Value;
         }
@@ -53,8 +53,8 @@ namespace K9.WebApplication.Controllers
             try
             {
                 var result = _stripeService.GetPaymentIntentById(paymentIntentId);
-                var contact = _contactService.GetOrCreateContact("", fullName, emailAddress);
-                _userService.UpdateActiveUserEmailAddressIfFromFacebook(contact);
+                var client = _clientService.GetOrCreateClient("", fullName, emailAddress);
+                _userService.UpdateActiveUserEmailAddressIfFromFacebook(client);
 
                 return Json(new
                 {
@@ -63,7 +63,7 @@ namespace K9.WebApplication.Controllers
                     {
                         ItemId = id,
                         Quantity = quantity,
-                        ContactId = contact.Id,
+                        ClientId = client.Id,
                         CustomerName = fullName,
                         CustomerEmailAddress = emailAddress,
                         Amount = result.Amount > 0 ? (double)result.Amount / 100 : 0,

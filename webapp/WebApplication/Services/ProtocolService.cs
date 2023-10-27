@@ -16,7 +16,7 @@ namespace K9.WebApplication.Services
         private readonly ILogger _logger;
         private readonly IRepository<Product> _productsRepository;
         private readonly IRepository<ProductPack> _productPackRepository;
-        private readonly IRepository<Contact> _contactsRepository;
+        private readonly IRepository<Client> _clientsRepository;
         private readonly IRepository<User> _usersRepository;
         private readonly IRepository<Protocol> _protocolsRepository;
         private readonly IRepository<ProtocolProduct> _protocolProductsRepository;
@@ -31,14 +31,14 @@ namespace K9.WebApplication.Services
         private readonly IRepository<DietaryRecommendation> _dietaryRecommendationRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public ProtocolService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Contact> contactsRepository, IRepository<User> usersRepository, IRepository<Protocol> protocolsRepository, IRepository<ProtocolProduct> protocolProductsRepository, IRepository<ProtocolProductPack> protocolProductPackRepository, IRepository<ProtocolSection> protocolProtocolSectionRepository, IRepository<Section> protocolSectionRepository, IRepository<ProtocolSectionProduct> protocolProtocolSectionProductsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProtocolActivity> protocolActivitiesRepository, IRepository<ProtocolDietaryRecommendation> protocolDietaryRecommendationRepository, IRepository<DietaryRecommendation> dietaryRecommendationRepository, IRepository<Ingredient> ingredientsRepository,
+        public ProtocolService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Client> clientsRepository, IRepository<User> usersRepository, IRepository<Protocol> protocolsRepository, IRepository<ProtocolProduct> protocolProductsRepository, IRepository<ProtocolProductPack> protocolProductPackRepository, IRepository<ProtocolSection> protocolProtocolSectionRepository, IRepository<Section> protocolSectionRepository, IRepository<ProtocolSectionProduct> protocolProtocolSectionProductsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProtocolActivity> protocolActivitiesRepository, IRepository<ProtocolDietaryRecommendation> protocolDietaryRecommendationRepository, IRepository<DietaryRecommendation> dietaryRecommendationRepository, IRepository<Ingredient> ingredientsRepository,
             IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository)
         {
 
             _logger = logger;
             _productsRepository = productsRepository;
             _productPackRepository = productPackRepository;
-            _contactsRepository = contactsRepository;
+            _clientsRepository = clientsRepository;
             _usersRepository = usersRepository;
             _protocolsRepository = protocolsRepository;
             _protocolProductsRepository = protocolProductsRepository;
@@ -169,8 +169,8 @@ namespace K9.WebApplication.Services
                 }
             }
 
-            protocol.Contact = _contactsRepository.Find(protocol.ContactId ?? 0);
-            protocol.ContactName = protocol.Contact?.FullName;
+            protocol.Client = _clientsRepository.Find(protocol.ClientId ?? 0);
+            protocol.ClientName = protocol.Client?.FullName;
 
             UpdateProtocolProductsAndProductPackQuantities(protocol);
 
@@ -285,7 +285,7 @@ namespace K9.WebApplication.Services
                 Name = $"{protocol.Name} (Copy)",
                 ShortDescription = protocol.ShortDescription,
                 Body = protocol.Body,
-                ContactId = protocol.ContactId,
+                ClientId = protocol.ClientId,
                 ExternalId = newProtocolExternalId
             };
 

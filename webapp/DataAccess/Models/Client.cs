@@ -13,16 +13,16 @@ using K9.DataAccessLayer.Enums;
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
-    [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Contacts, PluralName = Globalisation.Strings.Names.Clients, Name = Globalisation.Strings.Names.Client)]
-    public class Contact : ObjectBase
+    [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Clients, PluralName = Globalisation.Strings.Names.Clients, Name = Globalisation.Strings.Names.Client)]
+    public class Client : ObjectBase
     {
         [UIHint("PriceTier")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceTierLabel)]
         public EPriceTier PriceTier { get; set; }
 
-        [UIHint("Contact")]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ContactLabel)]
-        public int ContactId => Id;
+        [UIHint("Client")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ClientLabel)]
+        public int ClientId => Id;
         
         [ForeignKey("User")]
         public int? UserId { get; set; }

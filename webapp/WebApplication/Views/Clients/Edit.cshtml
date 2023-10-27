@@ -1,13 +1,13 @@
 ﻿@using K9.Base.WebApplication.Helpers
-@model Contact
+@model Client
 @{
 	Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
-@using (Html.BeginForm("Edit", "Contacts"))
+@using (Html.BeginForm("Edit", "Clients"))
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.BootstrapEditorFor(model => model.ContactId)
+        @Html.BootstrapEditorFor(model => model.ClientId)
     }
 }
 @using (Html.BeginForm())
@@ -24,8 +24,8 @@
 
 <script type="text/javascript">
     $(function () {
-        $("#ContactId").change(function () {
-            $("#ContactId").closest("form").submit();
+        $("#ClientId").change(function () {
+            $("#ClientId").closest("form").submit();
         });
     })
 </script>

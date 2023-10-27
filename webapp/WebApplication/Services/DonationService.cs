@@ -30,15 +30,15 @@ namespace K9.WebApplication.Services
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
         
-        public void CreateDonation(Donation donation, Contact contact)
+        public void CreateDonation(Donation donation, Client client)
         {
             try
             {
                 _donationRepository.Create(donation);
                 SendEmailToPureAlchemy(donation);
-                if (contact != null && !contact.IsUnsubscribed)
+                if (client != null && !client.IsUnsubscribed)
                 {
-                    SendEmailToCustomer(donation, contact);
+                    SendEmailToCustomer(donation, client);
                 }
             }
             catch (Exception ex)    
@@ -74,7 +74,7 @@ namespace K9.WebApplication.Services
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToCustomer(Donation donation, Contact contact)
+        private void SendEmailToCustomer(Donation donation, Client client)
         {
             var template = Dictionary.DonationThankYouEmail;
             var title = Dictionary.ThankyouForDonationEmailTitle;
@@ -86,7 +86,7 @@ namespace K9.WebApplication.Services
                 donation.Currency,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = client.Name }),
                 DateTime.Now.Year
             }), donation.CustomerEmail, donation.Customer, _config.SupportEmailAddress, _config.CompanyName);
         }

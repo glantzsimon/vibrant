@@ -59,7 +59,7 @@ namespace K9.WebApplication
             builder.RegisterType<ConsultationService>().As<IConsultationService>().InstancePerRequest();
             builder.RegisterType<AccountMailerService>().As<IAccountMailerService>().InstancePerRequest();
             builder.RegisterType<MembershipService>().As<IMembershipService>().InstancePerRequest();
-            builder.RegisterType<ContactService>().As<IContactService>().InstancePerRequest();
+            builder.RegisterType<ClientService>().As<IClientService>().InstancePerRequest();
             builder.RegisterType<MailChimpService>().As<IMailChimpService>().InstancePerRequest();
             builder.RegisterType<UserService>().As<IUserService>().InstancePerRequest();
             builder.RegisterType<RecaptchaService>().As<IRecaptchaService>().InstancePerRequest();

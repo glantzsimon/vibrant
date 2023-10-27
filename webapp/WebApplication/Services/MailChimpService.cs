@@ -11,16 +11,16 @@ namespace K9.WebApplication.Services
 {
     public class MailChimpService : IMailChimpService
     {
-        private readonly IContactService _contactService;
+        private readonly IClientService _clientService;
         private readonly MailChimpConfiguration _mailChimpConfig;
 
-        public MailChimpService(IOptions<MailChimpConfiguration> mailChimpConfig, IContactService contactService)
+        public MailChimpService(IOptions<MailChimpConfiguration> mailChimpConfig, IClientService clientService)
         {
-            _contactService = contactService;
+            _clientService = clientService;
             _mailChimpConfig = mailChimpConfig.Value;
         }
 
-        public void AddContact(string firstName, string lastName, string emailAddress)
+        public void AddClient(string firstName, string lastName, string emailAddress)
         {
             if (string.IsNullOrEmpty(emailAddress))
             {
@@ -42,21 +42,21 @@ namespace K9.WebApplication.Services
             });
         }
 
-        public void AddContact(string name, string emailAddress)
+        public void AddClient(string name, string emailAddress)
         {
             var names = name.Split(' ');
             var firstName = names.FirstOrDefault().ToProperCase();
             var lastName = names.LastOrDefault().ToProperCase();
             lastName = lastName == firstName ? string.Empty : lastName;
 
-            AddContact(firstName, lastName, emailAddress);
+            AddClient(firstName, lastName, emailAddress);
         }
 
-        public void AddAllContacts()
+        public void AddAllClients()
         {
-            foreach (var contact in _contactService.ListContacts())
+            foreach (var client in _clientService.ListClients())
             {
-                AddContact(contact.FullName, contact.EmailAddress);
+                AddClient(client.FullName, client.EmailAddress);
             }
         }
     }

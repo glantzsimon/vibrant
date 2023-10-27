@@ -390,14 +390,14 @@
   <data name="CompanyLabel" xml:space="preserve">
     <value>Company Name</value>
   </data>
-  <data name="DuplicateContactError" xml:space="preserve">
-    <value>Sorry, a contact with that email address already exists.</value>
+  <data name="DuplicateClientError" xml:space="preserve">
+    <value>Sorry, a client with that email address already exists.</value>
   </data>
   <data name="MailChimpImport" xml:space="preserve">
     <value>MailChimp Contact Import</value>
   </data>
   <data name="MailChimpImportSuccess" xml:space="preserve">
-    <value>Your contacts were successfully imported into MailChimp</value>
+    <value>Your clients were successfully imported into MailChimp</value>
   </data>
   <data name="MembershipLabel" xml:space="preserve">
     <value>Subscription</value>
@@ -720,7 +720,7 @@
   <data name="BookAConsultationSuccess" xml:space="preserve">
     <value>Thank you. Your consultation has been booked.</value>
   </data>
-  <data name="ContactLabel" xml:space="preserve">
+  <data name="ClientLabel" xml:space="preserve">
     <value>Contact</value>
   </data>
   <data name="CompletedOnLabel" xml:space="preserve">
@@ -1060,10 +1060,10 @@
   <data name="Clients" xml:space="preserve">
     <value>Clients</value>
   </data>
-  <data name="ContactProduct" xml:space="preserve">
+  <data name="ClientProduct" xml:space="preserve">
     <value>Customer Product</value>
   </data>
-  <data name="ContactProducts" xml:space="preserve">
+  <data name="ClientProducts" xml:space="preserve">
     <value>Customer Products</value>
   </data>
   <data name="CostLabel" xml:space="preserve">
@@ -1483,7 +1483,7 @@
   <data name="Thailand" xml:space="preserve">
     <value>Thailand</value>
   </data>
-  <data name="ViewContactAddressLabel" xml:space="preserve">
+  <data name="ViewClientAddressLabel" xml:space="preserve">
     <value>View Address Label</value>
   </data>
   <data name="AwaitingPayment" xml:space="preserve">
@@ -1915,7 +1915,7 @@
   <data name="ShippingLabel" xml:space="preserve">
     <value>Shipping</value>
   </data>
-  <data name="ContactAddressLabels" xml:space="preserve">
+  <data name="ClientAddressLabels" xml:space="preserve">
     <value>Contact Address Label</value>
   </data>
   <data name="Redeem" xml:space="preserve">
@@ -2022,5 +2022,14 @@
   </data>
   <data name="ViewProductPack" xml:space="preserve">
     <value>View Product Pack</value>
+  </data>
+  <data name="HealthQuestionnaires" xml:space="preserve">
+    <value>Health Questionnaires</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="Questions" xml:space="preserve">
+    <value>Questons</value>
   </data>
 </root>

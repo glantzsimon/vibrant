@@ -32,7 +32,7 @@ namespace K9.WebApplication.Services
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
         
-        public void CreateConsultation(Consultation consultation, Contact contact)
+        public void CreateConsultation(Consultation consultation, Client client)
         {
             try
             {
@@ -47,8 +47,8 @@ namespace K9.WebApplication.Services
                     });
                 }
 
-                SendEmailToPureAlchemy(consultation, contact);
-                SendEmailToCustomer(consultation, contact);
+                SendEmailToPureAlchemy(consultation, client);
+                SendEmailToCustomer(consultation, client);
             }
             catch (Exception ex)    
             {
@@ -56,16 +56,16 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void SendEmailToPureAlchemy(Consultation consultation, Contact contact)
+        private void SendEmailToPureAlchemy(Consultation consultation, Client client)
         {
             var template = Dictionary.ConsultationBookedEmail;
             var title = "We have received a consultation booking!";
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
-                ContactName = contact.FullName,
-                CustomerEmail = contact.EmailAddress,
-                contact.PhoneNumber,
+                ClientName = client.FullName,
+                ClientEmail = client.EmailAddress,
+                client.PhoneNumber,
                 Duration = consultation.DurationDescription,
                 Price = consultation.FormattedPrice,
                 Company = _config.CompanyName,
@@ -73,20 +73,20 @@ namespace K9.WebApplication.Services
             }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
 
-        private void SendEmailToCustomer(Consultation consultation, Contact contact)
+        private void SendEmailToCustomer(Consultation consultation, Client client)
         {
             var template = Dictionary.ConsultationBookedThankYouEmail;
             var title = Dictionary.ThankyouForBookingConsultationEmailTitle;
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
-                FirstName = contact.GetFirstName(),
+                FirstName = client.GetFirstName(),
                 Duration = consultation.DurationDescription,
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
-                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = contact.Name }),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = client.Name }),
                 DateTime.Now.Year
-            }), contact.EmailAddress, contact.FullName, _config.SupportEmailAddress, _config.CompanyName);
+            }), client.EmailAddress, client.FullName, _config.SupportEmailAddress, _config.CompanyName);
         }
     }
 }

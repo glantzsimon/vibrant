@@ -36,7 +36,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         ExternalId = c.Guid(nullable: false),
-                        ContactId = c.Int(),
+                        ClientId = c.Int(),
                         ShortDescription = c.String(nullable: false),
                         Body = c.String(nullable: false),
                         Benefits = c.String(nullable: false),
@@ -52,8 +52,8 @@
                         LastUpdatedOn = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Contact", t => t.ContactId)
-                .Index(t => t.ContactId)
+                .ForeignKey("dbo.Contact", t => t.ClientId)
+                .Index(t => t.ClientId)
                 .Index(t => t.Name, unique: true);
             
         }
@@ -61,10 +61,10 @@
         public override void Down()
         {
             DropForeignKey("dbo.ProductPackProduct", "ProductPackId", "dbo.ProductPack");
-            DropForeignKey("dbo.ProductPack", "ContactId", "dbo.Contact");
+            DropForeignKey("dbo.ProductPack", "ClientId", "dbo.Contact");
             DropForeignKey("dbo.ProductPackProduct", "ProductId", "dbo.Product");
             DropIndex("dbo.ProductPack", new[] { "Name" });
-            DropIndex("dbo.ProductPack", new[] { "ContactId" });
+            DropIndex("dbo.ProductPack", new[] { "ClientId" });
             DropIndex("dbo.ProductPackProduct", new[] { "Name" });
             DropIndex("dbo.ProductPackProduct", new[] { "ProductPackId" });
             DropIndex("dbo.ProductPackProduct", new[] { "ProductId" });

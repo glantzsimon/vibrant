@@ -3,15 +3,15 @@
 @using K9.SharedLibrary.Authentication
 @using K9.SharedLibrary.Models
 @using EButtonType = K9.Base.WebApplication.Enums.EButtonType
-@model Contact
+@model Client
 @{
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
-@Html.BootstrapTable(new DataTableOptions<Contact>
+@Html.BootstrapTable(new DataTableOptions<Client>
 {
     AllowCreate = true,
     AllowEdit = true,
-    AllowDelete = ((BaseController<Contact>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    AllowDelete = ((BaseController<Client>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     VisibleColumns = new List<string>
     {
         "FullName",
@@ -23,8 +23,8 @@
     {
         new Button
         {
-            Action = "ViewContactAddressLabel",
-            Text = Dictionary.ViewContactAddressLabel,
+            Action = "ViewClientAddressLabel",
+            Text = Dictionary.ViewClientAddressLabel,
             ButtonType = K9.SharedLibrary.Models.EButtonType.Info,
             IconCssClass = "fa fa-address"
         },

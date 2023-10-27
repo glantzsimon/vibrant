@@ -4,6 +4,6 @@ namespace K9.WebApplication.Services
 {
     public interface IConsultationService
     {
-        void CreateConsultation(Consultation consultation, Contact contact);
+        void CreateConsultation(Consultation consultation, Client client);
     }
 }
