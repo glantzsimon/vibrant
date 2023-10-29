@@ -2,25 +2,15 @@
 using K9.Base.DataAccessLayer.Models;
 using K9.Globalisation;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
 
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
     [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.Questions, PluralName = Strings.Names.Questions, Name = Strings.Names.Question)]
-    public class Question : ObjectBase
+    public class QuestionPart : ObjectBase
     {
-
-
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TextLabel)]
         [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary), ErrorMessageResourceName = K9.Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
         public string Text { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NotesLabel)]
-        [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary), ErrorMessageResourceName = K9.Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
-        [StringLength(1111)]
-        [DataType(DataType.Html)]
-        [AllowHtml]
-        public string Notes { get; set; }
     }
 }

@@ -7,7 +7,12 @@
 @if (Model.Images.Count == 1)
 {
     <a href="~/@imageSrc" target="_blank">
-        @Html.ImagePanel("", $"~/{imageSrc}", EPanelImageSize.Medium)
+        @Html.ImagePanel(new PanelOptions
+        {
+            ImageLayout = EPanelImageLayout.Contain,
+            ImageSrc = imageSrc,
+            ImageSize = EPanelImageSize.Medium
+        })
     </a>
 }
 else if (Model.Images.Any())

@@ -196,6 +196,7 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\EQuestionType.cs" />
     <Compile Include="Enums\EProtocolDuration.cs" />
     <Compile Include="Enums\ECategory.cs" />
     <Compile Include="Enums\EProtocolType.cs" />
@@ -438,6 +439,7 @@
     <Compile Include="Migrations\202310270352059_RenameContactToClient.Designer.cs">
       <DependentUpon>202310270352059_RenameContactToClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\QuestionPart.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\HealthQuestionnaire.cs" />
     <Compile Include="Models\DietaryRecommendation.cs" />

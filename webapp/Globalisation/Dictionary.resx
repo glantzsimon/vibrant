@@ -2029,7 +2029,16 @@
   <data name="Question" xml:space="preserve">
     <value>Question</value>
   </data>
+  <data name="QuestionPart" xml:space="preserve">
+    <value>Question Part</value>
+  </data>
+  <data name="QuestionParts" xml:space="preserve">
+    <value>Question Parts</value>
+  </data>
   <data name="Questions" xml:space="preserve">
     <value>Questons</value>
+  </data>
+  <data name="TextLabel" xml:space="preserve">
+    <value>Text</value>
   </data>
 </root>

@@ -1,4 +1,5 @@
-﻿using K9.DataAccessLayer.Models;
+﻿using System.Linq;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Services;
@@ -23,7 +24,7 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult Index()
         {
-            return View(_protocolService.List());
+            return View(_protocolService.List().Where(e => !e.ClientId.HasValue).ToList());
         }
         
     }

@@ -145,6 +145,7 @@
             public const string SubjectiveEffectsLabel = "SubjectiveEffectsLabel";
             public const string SideEffectsLabel = "SideEffectsLabel";
             public const string ShortDescriptionLabel = "ShortDescriptionLabel";
+            public const string TextLabel = "TextLabel";
             public const string DisplayOrderLabel = "DisplayOrderLabel";
             public const string SubTitleLabel = "SubTitleLabel";
             public const string MaxDosageLabel = "MaxDosageLabel";
@@ -221,6 +222,8 @@
             public const string Donations = "Donations";
             public const string Question = "Question";
             public const string Questions = "Questions";
+            public const string QuestionPaty = "QuestionPart";
+            public const string QuestionParts = "QuestionParts";
             public const string HealthQuestionnaire = "HealthQuestionnaire";
             public const string HealthQuestionnaires = "HealthQuestionnaires";
             public const string Consultation = "Consultation";

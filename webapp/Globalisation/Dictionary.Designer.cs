@@ -4461,6 +4461,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Question Part.
+        /// </summary>
+        public static string QuestionPart {
+            get {
+                return ResourceManager.GetString("QuestionPart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question Parts.
+        /// </summary>
+        public static string QuestionParts {
+            get {
+                return ResourceManager.GetString("QuestionParts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Questons.
         /// </summary>
         public static string Questions {
@@ -5373,6 +5391,15 @@ namespace K9.Globalisation {
         public static string Tapping {
             get {
                 return ResourceManager.GetString("Tapping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text.
+        /// </summary>
+        public static string TextLabel {
+            get {
+                return ResourceManager.GetString("TextLabel", resourceCulture);
             }
         }
         
