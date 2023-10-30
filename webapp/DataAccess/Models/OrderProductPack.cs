@@ -12,6 +12,7 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.OrderProductPack, PluralName = Globalisation.Strings.Names.OrderProductPacks, Name = Globalisation.Strings.Names.OrderProductPack)]
     public class OrderProductPack : ObjectBase
     {
+        [UIHint("PriceTier")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceTierLabel)]
         public EPriceTier PriceTier { get; set; }
 

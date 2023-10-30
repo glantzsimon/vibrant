@@ -8,7 +8,7 @@ namespace K9.DataAccessLayer.Enums
         Text = 1,
         Numerical = 2,
         Date = 3,
-        Scale = 4,
+        Scale = 4,  
         MultipleChoice = 5
     }
 }

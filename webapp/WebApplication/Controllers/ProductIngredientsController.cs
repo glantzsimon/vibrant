@@ -7,6 +7,7 @@ using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Services;
 using System.Web.Mvc;
+using K9.Base.WebApplication.Extensions;
 
 namespace K9.WebApplication.Controllers
 {
@@ -22,6 +23,8 @@ namespace K9.WebApplication.Controllers
 	    {
 	        _productsRepository = productsRepository;
 	        _productService = productService;
+
+            RecordEditMultipleUpdated += ProductIngredientsController_RecordEditMultipleUpdated;
 	    }
 
 	    public override ActionResult Index()
@@ -29,13 +32,13 @@ namespace K9.WebApplication.Controllers
 	        return RedirectToAction("Index", "Products");
 	    }
 
-		[RequirePermissions(Permission = Permissions.Edit)]
+	    [RequirePermissions(Permission = Permissions.Edit)]
 		public ActionResult EditIngredientsForProduct(int id = 0)
 		{
 			return EditMultiple<Product, Ingredient>(_productsRepository.Find(id));
 		}
 
-		[HttpPost]
+	    [HttpPost]
 		[ValidateAntiForgeryToken]
 		[RequirePermissions(Permission = Permissions.Edit)]
 		public ActionResult EditIngredientsForProduct(MultiSelectViewModel model)
@@ -43,5 +46,12 @@ namespace K9.WebApplication.Controllers
 			return EditMultiple<Product, Ingredient>(model);
 		}
 
+	    private void ProductIngredientsController_RecordEditMultipleUpdated(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
+	    {
+	        e.IsRedirect = true;
+	        e.Controller = typeof(ProductsController).GetControllerName();
+	        e.Action = nameof(ProductsController.EditIngredientQuantities);
+	        e.RouteValues = new { id = e.Item.Id }; 
+	    }
 	}
 }

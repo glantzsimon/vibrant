@@ -20,8 +20,7 @@ namespace K9.WebApplication.Controllers
 	    {
 	        _protocolRepository = protocolRepository;
 	    }
-
-	    public override ActionResult Index()
+        public override ActionResult Index()
 	    {
 	        return RedirectToAction("Index", "Protocols");
 	    }

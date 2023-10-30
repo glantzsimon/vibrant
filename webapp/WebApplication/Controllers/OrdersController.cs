@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using K9.Base.WebApplication.Extensions;
 using K9.DataAccessLayer.Attributes;
 using K9.WebApplication.ViewModels;
 using ServiceStack.Text;
@@ -43,12 +44,12 @@ namespace K9.WebApplication.Controllers
             RecordBeforeUpdated += OrdersController_RecordBeforeUpdated;
             RecordBeforeDelete += OrdersController_RecordBeforeDelete;
             RecordBeforeDeleted += OrdersController_RecordBeforeDeleted;
-            
+
             RecordUpdated += OrdersController_RecordUpdated;
             RecordCreated += OrdersController_RecordCreated;
             RecordDeleted += OrdersController_RecordDeleted;
         }
-        
+
         public ActionResult EditProducts(int id = 0)
         {
             return RedirectToAction("EditProductsForOrder", "OrderProducts", new { id });
@@ -74,7 +75,7 @@ namespace K9.WebApplication.Controllers
                 item.PriceTier = product.PriceTier;
                 _orderProductsRepository.Update(item);
             }
-            
+
             return RedirectToAction("Index");
         }
 
@@ -103,7 +104,7 @@ namespace K9.WebApplication.Controllers
                 item.PriceTier = pack.PriceTier;
                 _orderProductPackRepository.Update(item);
             }
-            
+
             return RedirectToAction("Index");
         }
 
@@ -167,7 +168,7 @@ namespace K9.WebApplication.Controllers
                 item.MadeOn = DateTime.Today;
                 Repository.Update(item);
             }
-            
+
             return RedirectToAction("OrderReview", new { orderId = order.Id });
         }
 
@@ -280,6 +281,10 @@ namespace K9.WebApplication.Controllers
 
         private void OrdersController_RecordCreated(object sender, CrudEventArgs e)
         {
+            e.IsRedirect = true;
+            e.Controller = typeof(OrdersController).GetControllerName();
+            e.Action = nameof(EditProductPacks);
+            e.RouteValues = new {id = e.Item.Id};
         }
 
         private void OrdersController_RecordUpdated(object sender, CrudEventArgs e)

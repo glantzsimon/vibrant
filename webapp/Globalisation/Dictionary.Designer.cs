@@ -2710,7 +2710,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pure Alchemy nutrition health coach herbalism naturopathy detoxification superfoods superherbs biohacking lifestyle wellbeing electromedicine balance thrive
+        ///   Looks up a localized string similar to Pure Alchemy nutrition health coach herbalism naturopathy detoxification superfoods superherbs bioharmonising biohacking lifestyle wellbeing electromedicine balance thrive
         ///.
         /// </summary>
         public static string Keywords {
@@ -4398,7 +4398,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pure Alchemy is the best online resource to learn about the latest breakthroughs in nutrition, naturopathy, super foods and herbs, supplements, detoxification, biohacking and other amazing life-enhancing technologies and techniques to help you optimise your health and achieve unimaginable wellbeing in your life..
+        ///   Looks up a localized string similar to Pure Alchemy is the best online resource to learn about the latest breakthroughs in nutrition, naturopathy, super foods and herbs, supplements, detoxification, &quot;bioharmonising&quot; / biohacking and other amazing life-enhancing technologies and techniques to help you optimise your health and achieve unimaginable wellbeing in your life..
         /// </summary>
         public static string PureAlchemyMetaDescriptionMain {
             get {
@@ -5254,7 +5254,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Super foods + herbs, nutritional balancing, detox, biohacking.
+        ///   Looks up a localized string similar to Super foods + herbs, nutritional balancing, detox, &quot;bioharmonising&quot; / biohacking.
         /// </summary>
         public static string SuperFoodsHerbsNutritionBiohacking {
             get {

@@ -121,7 +121,7 @@
     <value>Pure Alchemy has been created to share the latest life and health enhancing information available in order to help you optimise your health and create unimaginable well-being in your life.</value>
   </data>
   <data name="PureAlchemyMetaDescriptionMain" xml:space="preserve">
-    <value>Pure Alchemy is the best online resource to learn about the latest breakthroughs in nutrition, naturopathy, super foods and herbs, supplements, detoxification, biohacking and other amazing life-enhancing technologies and techniques to help you optimise your health and achieve unimaginable wellbeing in your life.</value>
+    <value>Pure Alchemy is the best online resource to learn about the latest breakthroughs in nutrition, naturopathy, super foods and herbs, supplements, detoxification, "bioharmonising" / biohacking and other amazing life-enhancing technologies and techniques to help you optimise your health and achieve unimaginable wellbeing in your life.</value>
   </data>
   <data name="CompanyLegalDescription" xml:space="preserve">
     <value />
@@ -836,7 +836,7 @@
     <value>templates\en-gb\welcomeemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SuperFoodsHerbsNutritionBiohacking" xml:space="preserve">
-    <value>Super foods + herbs, nutritional balancing, detox, biohacking</value>
+    <value>Super foods + herbs, nutritional balancing, detox, "bioharmonising" / biohacking</value>
   </data>
   <data name="PureAlchemyConsultation" xml:space="preserve">
     <value>Pure Alchemy Consultation</value>
