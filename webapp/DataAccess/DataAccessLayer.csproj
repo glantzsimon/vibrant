@@ -439,6 +439,10 @@
     <Compile Include="Migrations\202310270352059_RenameContactToClient.Designer.cs">
       <DependentUpon>202310270352059_RenameContactToClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310310358168_OrderOnHold.cs" />
+    <Compile Include="Migrations\202310310358168_OrderOnHold.Designer.cs">
+      <DependentUpon>202310310358168_OrderOnHold.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\QuestionPart.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\HealthQuestionnaire.cs" />
@@ -663,6 +667,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310270352059_RenameContactToClient.resx">
       <DependentUpon>202310270352059_RenameContactToClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310310358168_OrderOnHold.resx">
+      <DependentUpon>202310310358168_OrderOnHold.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

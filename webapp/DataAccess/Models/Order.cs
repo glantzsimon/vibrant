@@ -31,6 +31,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
         public string OrderNumber { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsOnHoldLabel)]
+        public bool IsOnHold { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [StringLength(int.MaxValue)]

@@ -1,7 +1,7 @@
 ﻿using K9.DataAccessLayer.Models;
+using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
-using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Services
 {
@@ -18,6 +18,11 @@ namespace K9.WebApplication.Services
         Order Duplicate(int id);
         RepCommissionViewModel CalculateRepCommission(int repId);
         void DeleteChildRecords(int id);
+
+        /// <summary>
+        /// Update product pack amount and set to 1, if 0. This is the default behaviour when selecting product packs for the first time.
+        /// </summary>
+        void UpdateProductPacksSetDefaultAmountIfZero(int orderId);
 
         List<Order> List(bool retrieveFullOrder = false);
     }

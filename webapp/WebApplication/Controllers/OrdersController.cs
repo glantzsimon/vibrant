@@ -122,7 +122,7 @@ namespace K9.WebApplication.Controllers
 
             var order = index == 1 ? _orderService.FindNext(selectedOrderId) : index == -1 ? _orderService.FindPrevious(selectedOrderId) : _orderService.Find(selectedOrderId);
 
-            var allOrders = _orderService.List(true);
+            var allOrders = _orderService.List(true).Where(e => !e.IsOnHold).ToList();
             var ordersViewModel = new OrdersReviewViewModel(allOrders);
 
             order = order ?? ordersViewModel.OrdersToMake.FirstOrDefault();

@@ -2041,4 +2041,7 @@
   <data name="TextLabel" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="IsOnHoldLabel" xml:space="preserve">
+    <value>Is On Hold</value>
+  </data>
 </root>

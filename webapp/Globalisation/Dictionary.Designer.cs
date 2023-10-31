@@ -2638,6 +2638,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is On Hold.
+        /// </summary>
+        public static string IsOnHoldLabel {
+            get {
+                return ResourceManager.GetString("IsOnHoldLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is Overdue.
         /// </summary>
         public static string IsOverDueLabel {

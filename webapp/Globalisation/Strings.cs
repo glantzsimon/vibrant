@@ -32,6 +32,7 @@
             public const string AmountPerBatchLabel = "AmountPerBatchLabel";
             public const string SelectedProductLabel = "SelectedProductLabel";
             public const string IsSelectedLabel = "IsSelectedLabel";
+            public const string IsOnHoldLabel = "IsOnHoldLabel";
             public const string OrderLabel = "OrderLabel";
             public const string OrderNumberLabel = "OrderNumberLabel";
             public const string OrderItemLabel = "OrderItemLabel";

@@ -284,5 +284,20 @@ namespace K9.WebApplication.Services
                 RepCommissions = redeemedCommissions
             };
         }
+
+        /// <summary>
+        /// Update product pack amount and set to 1, if 0. This is the default behaviour when selecting product packs for the first time.
+        /// </summary>
+        public void UpdateProductPacksSetDefaultAmountIfZero(int orderId)
+        {
+            foreach (var orderProductPack in _orderProductPacksRepository.Find(e => e.OrderId == orderId).ToList())
+            {
+                if (orderProductPack.Amount == 0)
+                {
+                    orderProductPack.Amount = 1;
+                    _orderProductPacksRepository.Update(orderProductPack);
+                }
+            }
+        }
     }
 }
