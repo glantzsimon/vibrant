@@ -4,22 +4,32 @@
 @using K9.WebApplication.ViewModels
 @model OrdersReviewViewModel
 
-<ul class="nav nav-pills">
-    <li class="active"><a data-toggle="pill" href="#products">@Dictionary.Products</a></li>
-    <li><a data-toggle="pill" href="#productpacks">@Dictionary.ProductPacks</a></li>
-    <li>
-        <div class="padding-left-16 margin-bottom-10">
-            @Html.BootstrapEditorFor(e => Model.SelectedOrder.ShowCompleted)
-        </div>
-    </li>
-</ul>
-
-<div class="tab-content">
-    <div id="products" class="tab-pane fade in active padding-top-15">
-        @Html.Partial("_ProductsReview", Model.SelectedOrder)
+<div class="row">
+    <div class="col-xs-12">
+        <h3 class="margin-top-0">@Dictionary.Order @Model.SelectedOrder.OrderNumber - @Model.SelectedOrder.Name</h3>
     </div>
-    <div id="productpacks" class="tab-pane fade padding-top-15">
-        @Html.Partial("_ProductPacksReview", Model.SelectedOrder)
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="nav nav-pills">
+            <li class="active"><a data-toggle="pill" href="#products">@Dictionary.Products</a></li>
+            <li><a data-toggle="pill" href="#productpacks">@Dictionary.ProductPacks</a></li>
+            <li>
+                <div class="padding-left-16 margin-bottom-10">
+                    @Html.BootstrapEditorFor(e => Model.SelectedOrder.ShowCompleted)
+                </div>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="products" class="tab-pane fade in active padding-top-15">
+                @Html.Partial("_ProductsReview", Model.SelectedOrder)
+            </div>
+            <div id="productpacks" class="tab-pane fade padding-top-15">
+                @Html.Partial("_ProductPacksReview", Model.SelectedOrder)
+            </div>
+        </div>
     </div>
 </div>
 
