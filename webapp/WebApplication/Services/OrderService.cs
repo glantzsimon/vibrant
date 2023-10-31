@@ -23,9 +23,10 @@ namespace K9.WebApplication.Services
         private readonly IRepository<User> _usersRepository;
         private readonly IRepository<RepCommission> _repCommissionsRepository;
         private readonly IRepository<ProductPackProduct> _productPackProductsRepository;
+        private readonly IRepository<Country> _countriesRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Client> clientsRepository, IRepository<User> usersRepository, IRepository<RepCommission> repCommissionsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository, IRepository<ProductPackProduct> productPackProductsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository)
+        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Client> clientsRepository, IRepository<User> usersRepository, IRepository<RepCommission> repCommissionsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository, IRepository<ProductPackProduct> productPackProductsRepository, IRepository<Country> countriesRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository)
         {
             _logger = logger;
             _ordersRepository = ordersRepository;
@@ -37,6 +38,7 @@ namespace K9.WebApplication.Services
             _usersRepository = usersRepository;
             _repCommissionsRepository = repCommissionsRepository;
             _productPackProductsRepository = productPackProductsRepository;
+            _countriesRepository = countriesRepository;
             _defaultValues = defaultValues.Value;
         }
 
@@ -99,6 +101,7 @@ namespace K9.WebApplication.Services
         {
             order.Client = _clientsRepository.Find(order.ClientId ?? 0);
             order.ClientName = order.Client?.FullName;
+            order.Client.Country = _countriesRepository.Find(order.Client.CountryId ?? 0);
             order.User = _usersRepository.Find(order.UserId);
             order.UserName = order.User.Name;
 
