@@ -125,7 +125,7 @@ namespace K9.WebApplication.Controllers
             var allOrders = _orderService.List(true).Where(e => !e.IsOnHold).ToList();
             var ordersViewModel = new OrdersReviewViewModel(allOrders);
 
-            order = order ?? ordersViewModel.OrdersToMake.FirstOrDefault();
+            order = order ?? ordersViewModel.GetOrdersToMake().FirstOrDefault();
             ordersViewModel.SelectedOrder = order;
 
             return View(ordersViewModel);

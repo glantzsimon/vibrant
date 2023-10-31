@@ -20,28 +20,28 @@ namespace K9.WebApplication.ViewModels
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
         public int SelectedOrderId => SelectedOrder?.Id ?? 0;
 
-        public List<Order> OrdersToMake => _allOrders.Where(e => !e.IsMade).ToList();
+        public List<Order> GetOrdersToMake() => _allOrders.Where(e => !e.IsMade).ToList();
 
-        public List<Order> OrdersToSend => _allOrders.Where(e => e.IsMade && !e.IsComplete).ToList();
+        public List<Order> GetOrdersToSend() => _allOrders.Where(e => e.IsMade && !e.IsComplete).ToList();
 
-        public List<OrderProduct> CombinedOrderProducts => GetAllOrderProducts();
+        public List<OrderProduct> GetCombinedOrderProducts() => GetOrderProducts();
 
         public List<OrderProduct> GetOrderProductsForProduct(int productId) => AllOrderProducts.Where(e => e.ProductId == productId).ToList();
 
         public List<OrderProductPack> GetOrderProductPacksForProductPack(int productPackId) => AllOrderProductPacks.Where(e => e.ProductPackId == productPackId).ToList();
 
-        private List<OrderProduct> AllOrderProducts => OrdersToMake.SelectMany(e => e.Products).ToList();
-        private List<Product> AllProducts => AllOrderProducts?.Select(e => e.Product).ToList() ?? new List<Product>();
+        private List<OrderProduct> AllOrderProducts => GetOrdersToMake().SelectMany(e => e.Products).ToList();
+        private List<Product> GetAllProducts() => AllOrderProducts?.Select(e => e.Product).ToList() ?? new List<Product>();
+        private List<Product> GetAllProductPackProducts() => AllProductPacks.Where(e => e.Products != null && e.Products.Any()).SelectMany(e => e.Products.Select(p => p.Product)).ToList();    
+        private List<Product> GetCombinedProducts() => GetAllProducts().Concat(GetAllProductPackProducts()).ToList();  
 
-        private List<OrderProductPack> AllOrderProductPacks => OrdersToMake.SelectMany(e => e.ProductPacks).ToList();
+        private List<OrderProductPack> AllOrderProductPacks => GetOrdersToMake().SelectMany(e => e.ProductPacks).ToList();
         private List<ProductPack> AllProductPacks => AllOrderProductPacks?.Select(e => e.ProductPack).ToList() ?? new List<ProductPack>();
 
-        private List<OrderProduct> GetAllOrderProducts()
+        private List<OrderProduct> GetOrderProducts()
         {
-            var combinedProducts = AllProducts.Concat(AllProductPacks.SelectMany(e => e.Products?.Select(p => p?.Product))).ToList();
-
             var combinedProductsGrouped =
-                combinedProducts.GroupBy(e => e.Id)
+                GetCombinedProducts().GroupBy(e => e.Id)
                 .Select(group =>
                     {
                         var groupOrderProducts = AllOrderProducts.Where(e => e.ProductId == group.Key).ToList();
@@ -53,7 +53,7 @@ namespace K9.WebApplication.ViewModels
 
                         var groupItem = new
                         {
-                            Product = AllProducts.FirstOrDefault(e => e.Id == group.Key),
+                            Product = GetCombinedProducts().FirstOrDefault(e => e.Id == group.Key),
                             
                             Count = groupOrderProducts.Sum(e => e.Amount) + 
                                     groupOrderProductPacks.Sum(e => e.OrderProductPack.Amount * e.Products.Sum(p => p.Amount)),

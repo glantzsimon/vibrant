@@ -118,6 +118,11 @@ namespace K9.WebApplication.Services
 
                 orderProductPack.ProductPack.Products = GetProductPackProducts()
                     .Where(e => e.ProductPackId == orderProductPack.ProductPackId).ToList();
+
+                foreach (var productPackProduct in orderProductPack.ProductPack.Products)
+                {
+                    productPackProduct.Product = GetProducts().FirstOrDefault(e => e.ProductId == productPackProduct.ProductId);
+                }
             }
 
             order.TotalPrice = order.GetTotalPrice();
