@@ -309,6 +309,56 @@ namespace K9.DataAccessLayer.Models
 
         public bool AreAllItemsReady() => AreProductsReady() && AreProductPacksReady();
 
+        public List<OrderProduct> GetCombinedGroupedProducts()
+        {
+            var combinedProductsGrouped =
+                GetCombinedProducts().GroupBy(e => e.Id)
+                    .Select(group =>
+                    {
+                        var groupOrderProducts = Products.Where(e => e.ProductId == group.Key).ToList();
+                        var groupOrderProductPacks = ProductPacks.Select(o => new
+                        {
+                            OrderProductPack = o,
+                            Products = o.ProductPack.Products.Where(e => e.ProductId == group.Key)
+                        }).ToList();
+
+                        var groupItem = new
+                        {
+                            Product = GetCombinedProducts().FirstOrDefault(e => e.Id == group.Key),
+                            
+                            Count = groupOrderProducts.Sum(e => e.Amount) + 
+                                    groupOrderProductPacks.Sum(e => e.OrderProductPack.Amount * e.Products.Sum(p => p.Amount)),
+
+                            CompleteCount = groupOrderProducts.Sum(e => e.AmountCompleted) + 
+                                            groupOrderProductPacks.Sum(e => e.OrderProductPack.AmountCompleted * e.Products.Sum(p => p.Amount)),
+                        };
+
+                        return groupItem;
+                    })
+                    .ToList();
+
+            var results = new List<OrderProduct>();
+            foreach (var group in combinedProductsGrouped)
+            {
+                var newOrderProduct = new OrderProduct
+                {
+                    Product = group.Product,
+                    ProductId = group.Product.Id,
+                    Amount = group.Count,
+                    AmountCompleted = group.CompleteCount
+                };
+                results.Add(newOrderProduct);
+            }
+
+            return results;
+        }
+
+        private List<Product> GetCombinedProducts() => GetAllProducts().Concat(GetAllProductPackProducts()).ToList();
+
+        private List<Product> GetAllProducts() => Products?.Select(e => e.Product).ToList() ?? new List<Product>();
+        
+        private List<Product> GetAllProductPackProducts() => ProductPacks.Where(e => e.ProductPack.Products != null && e.ProductPack.Products.Any()).SelectMany(e => e.ProductPack.Products.Select(p => p.Product)).ToList();    
+        
         private EOrderStatus CalculateOrderStatus()
         {
             if (!StartedOn.HasValue)

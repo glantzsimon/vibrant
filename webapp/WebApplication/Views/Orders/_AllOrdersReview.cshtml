@@ -9,25 +9,26 @@
     {
         for (int i = 0; i < Model.GetCombinedOrderProducts().Count; i++)
         {
-            var isVisible = Model.GetCombinedOrderProducts()[i].AmountRemaining > 0;
+            var combinedOrderProducts = Model.GetCombinedOrderProducts();   
+            var isVisible = combinedOrderProducts[i].AmountRemaining > 0;
             var visible = isVisible ? "" : "none";
             var visibleClass = isVisible ? "" : "complete-rows";
 
             <div class="padding-5 padding-top-15 row @visibleClass" style="display: @visible">
                 <div class="col-sm-4">
-                    @Html.LabelFor(e => Model.GetCombinedOrderProducts()[i].Product.Name)
-                    <a tabindex="-1" target="_blank" href="@Url.Action("LabSheet", "Products", new {id = Model.GetCombinedOrderProducts()[i].ProductId, batchSize = Model.GetCombinedOrderProducts()[i].AmountRemaining})">
-                        @Html.DisplayFor(e => Model.GetCombinedOrderProducts()[i].Product.Name)
+                    @Html.LabelFor(e => combinedOrderProducts[i].Product.Name)
+                    <a tabindex="-1" target="_blank" href="@Url.Action("LabSheet", "Products", new {id = combinedOrderProducts[i].ProductId, batchSize = combinedOrderProducts[i].AmountRemaining})">
+                        @Html.DisplayFor(e => combinedOrderProducts[i].Product.Name)
                     </a>
                 </div>
                 <div class="col-sm-2">
-                    @Html.BootstrapDisplayFor(e => Model.GetCombinedOrderProducts()[i].Amount)
+                    @Html.BootstrapDisplayFor(e => combinedOrderProducts[i].Amount)
                 </div>
                 <div class="col-sm-3">
-                    @Html.BootstrapDisplayFor(e => Model.GetCombinedOrderProducts()[i].AmountCompleted)
+                    @Html.BootstrapDisplayFor(e => combinedOrderProducts[i].AmountCompleted)
                 </div>
                 <div class="col-sm-3">
-                    @Html.BootstrapDisplayFor(e => Model.GetCombinedOrderProducts()[i].AmountRemaining)
+                    @Html.BootstrapDisplayFor(e => combinedOrderProducts[i].AmountRemaining)
                 </div>
             </div>
         }

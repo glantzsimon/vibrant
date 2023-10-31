@@ -1,0 +1,44 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.ViewModels.OrdersReviewViewModel
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginBootstrapForm())
+    {
+        foreach (var order in Model.GetIncompleteOrders())
+        {
+            <div class="padding-5 padding-top-15 row">
+                <div class="col-sm-5 valign-top">
+                    <p><strong>@order.Client.FullName</strong></p>
+                    <p>@order.Client.Address</p>
+                </div>
+                <div class="col-sm-7">
+                    <div class="row">
+                        <div class="col-xs-7">
+                            @Html.LabelFor(e => order.Client.Name)
+                        </div>
+                        <div class="col-xs-5">
+                            @Html.LabelFor(e => order.Products[0].Amount)
+                        </div>
+                    </div>
+                    @foreach (var item in order.GetCombinedGroupedProducts())
+                    {
+                        <div class="row">
+                            <div class="col-xs-8">
+                                @Html.ValueFor(e => item.Product.Name)
+                            </div>
+                            <div class="col-xs-4">
+                                @Html.ValueFor(e => item.Amount)
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <hr />
+        }
+    }
+}
+
+

@@ -3391,6 +3391,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Orders Pick Slip.
+        /// </summary>
+        public static string OrdersPickSlip {
+            get {
+                return ResourceManager.GetString("OrdersPickSlip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Orders Review.
         /// </summary>
         public static string OrdersReview {
