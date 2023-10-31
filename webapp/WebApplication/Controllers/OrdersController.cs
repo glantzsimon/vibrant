@@ -234,7 +234,8 @@ namespace K9.WebApplication.Controllers
         {
             if (string.IsNullOrEmpty(order.OrderNumber))
             {
-                var orderNumberCount = order.Id + Order.OrderNumberRoot;
+                var lastOrder = Repository.CustomQuery<Order>($"SELECT TOP 1 * FROM [{nameof(Order)}] ORDER BY [Id] DESC").FirstOrDefault();
+                var orderNumberCount = lastOrder?.Id + 3 + Order.OrderNumberRoot;
                 order.OrderNumber = $"PA-{orderNumberCount}";
             }
         }
