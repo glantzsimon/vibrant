@@ -239,16 +239,16 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductsLabel)]
         public string GetProductsList() =>
-            GetOrderedProducts().Select(e => GetMaxProductNameLength(e.Product.Name)).ToDisplayList();
+            GetAllOrderedProducts().Select(e => GetMaxProductNameLength(e.Product.Name)).ToDisplayList();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.QuantitiesLabel)]
-        public string GetQuantitiesList() => GetOrderedProducts().Select(e => e.Amount.ToString()).ToDisplayList();
+        public string GetQuantitiesList() => GetAllOrderedProducts().Select(e => e.Amount.ToString()).ToDisplayList();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PricesListLabel)]
-        public string GetPricesList() => GetOrderedProducts().Select(e => e.GetPrice().ToCurrency()).ToDisplayList();
+        public string GetPricesList() => GetAllOrderedProducts().Select(e => e.GetPrice().ToCurrency()).ToDisplayList();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalsLabel)]
-        public string GetTotalsList() => GetOrderedProducts().Select(e => e.GetTotalPrice().ToCurrency()).ToDisplayList();
+        public string GetTotalsList() => GetAllOrderedProducts().Select(e => e.GetTotalPrice().ToCurrency()).ToDisplayList();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTotalLabel)]
         public string GetFormattedSubTotal() => GetTotalPrice().ToCurrency();
@@ -274,10 +274,10 @@ namespace K9.DataAccessLayer.Models
             }
             return sb.ToString().Trim();
         }
-
-        private List<OrderProduct> GetOrderedProducts()
+        
+        private List<OrderProduct> GetAllOrderedProducts()
         {
-            return Products?.OrderBy(e => e.Product.Name).ToList() ?? new List<OrderProduct>();
+            return GetCombinedGroupedProducts().OrderBy(e => e.Name).ToList() ?? new List<OrderProduct>();
         }
 
         private string GetMaxProductNameLength(string value)
