@@ -27,12 +27,13 @@ namespace K9.WebApplication.Services
         private readonly IRepository<ProductPackProduct> _productPackProductRepository;
         private readonly IRepository<ProtocolActivity> _protocolActivitiesRepository;
         private readonly IRepository<Activity> _activitiesRepository;
+        private readonly IRepository<ProductPackProduct> _productPackProductsRepository;
         private readonly IRepository<ProtocolDietaryRecommendation> _protocolDietaryRecommendationRepository;
         private readonly IRepository<DietaryRecommendation> _dietaryRecommendationRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
 
         public ProtocolService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Client> clientsRepository, IRepository<User> usersRepository, IRepository<Protocol> protocolsRepository, IRepository<ProtocolProduct> protocolProductsRepository, IRepository<ProtocolProductPack> protocolProductPackRepository, IRepository<ProtocolSection> protocolProtocolSectionRepository, IRepository<Section> protocolSectionRepository, IRepository<ProtocolSectionProduct> protocolProtocolSectionProductsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProtocolActivity> protocolActivitiesRepository, IRepository<ProtocolDietaryRecommendation> protocolDietaryRecommendationRepository, IRepository<DietaryRecommendation> dietaryRecommendationRepository, IRepository<Ingredient> ingredientsRepository,
-            IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository)
+            IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository, IRepository<ProductPackProduct> productPackProductsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository)
         {
 
             _logger = logger;
@@ -49,6 +50,7 @@ namespace K9.WebApplication.Services
             _productPackProductRepository = productPackProductRepository;
             _protocolActivitiesRepository = protocolActivitiesRepository;
             _activitiesRepository = activitiesRepository;
+            _productPackProductsRepository = productPackProductsRepository;
             _protocolDietaryRecommendationRepository = protocolDietaryRecommendationRepository;
             _dietaryRecommendationRepository = dietaryRecommendationRepository;
             _defaultValues = defaultValues.Value;
@@ -108,7 +110,7 @@ namespace K9.WebApplication.Services
             return MemoryCache.GetOrCreate(GetCacheKey(protocol.Id), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
-                
+
                 return GetFullProtocolNoCache(protocol);
             });
         }

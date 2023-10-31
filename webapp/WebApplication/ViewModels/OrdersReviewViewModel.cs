@@ -31,14 +31,14 @@ namespace K9.WebApplication.ViewModels
         public List<OrderProductPack> GetOrderProductPacksForProductPack(int productPackId) => AllOrderProductPacks.Where(e => e.ProductPackId == productPackId).ToList();
 
         private List<OrderProduct> AllOrderProducts => OrdersToMake.SelectMany(e => e.Products).ToList();
-        private List<Product> AllProducts => AllOrderProducts.Select(e => e.Product).ToList();
+        private List<Product> AllProducts => AllOrderProducts?.Select(e => e.Product).ToList() ?? new List<Product>();
 
         private List<OrderProductPack> AllOrderProductPacks => OrdersToMake.SelectMany(e => e.ProductPacks).ToList();
-        private List<ProductPack> AllProductPacks => AllOrderProductPacks.Select(e => e.ProductPack).ToList();
+        private List<ProductPack> AllProductPacks => AllOrderProductPacks?.Select(e => e.ProductPack).ToList() ?? new List<ProductPack>();
 
         private List<OrderProduct> GetAllOrderProducts()
         {
-            var combinedProducts = AllProducts.Concat(AllProductPacks.SelectMany(e => e.Products.Select(p => p.Product)));
+            var combinedProducts = AllProducts.Concat(AllProductPacks.SelectMany(e => e.Products?.Select(p => p?.Product))).ToList();
 
             var combinedProductsGrouped =
                 combinedProducts.GroupBy(e => e.Id)

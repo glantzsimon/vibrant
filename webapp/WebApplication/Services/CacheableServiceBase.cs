@@ -23,8 +23,9 @@ namespace K9.WebApplication.Services
         private readonly IRepository<ProductIngredientSubstitute> _productIngredientSubstitutesRepository;
         private readonly IRepository<Activity> _activitiesRepository;
         private readonly IRepository<DietaryRecommendation> _dietaryRecommendationsRepository;
+        private readonly IRepository<ProductPackProduct> _productPackProductsRepository;
 
-        public CacheableServiceBase(IRepository<Product> productsRepository, IRepository<ProductPack> productPacksRepository, IRepository<Ingredient> ingredientsRepository, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository)
+        public CacheableServiceBase(IRepository<Product> productsRepository, IRepository<ProductPack> productPacksRepository, IRepository<Ingredient> ingredientsRepository, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository, IRepository<ProductPackProduct> productPackProductsRepository)
         {
             _productsRepository = productsRepository;
             _productPacksRepository = productPacksRepository;
@@ -35,10 +36,11 @@ namespace K9.WebApplication.Services
             _productIngredientSubstitutesRepository = productIngredientSubstitutesRepository;
             _activitiesRepository = activitiesRepository;
             _dietaryRecommendationsRepository = dietaryRecommendationsRepository;
+            _productPackProductsRepository = productPackProductsRepository;
         }
 
 #if DEBUG
-        protected MemoryCache MemoryCache = new MemoryCache(new MemoryCacheOptions());
+        protected static MemoryCache MemoryCache = new MemoryCache(new MemoryCacheOptions());
 #else
         protected static MemoryCache MemoryCache = new MemoryCache(new MemoryCacheOptions());
 #endif
@@ -81,6 +83,15 @@ namespace K9.WebApplication.Services
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
                 return _productPacksRepository.List();
+            });
+        }
+
+        public List<ProductPackProduct> GetProductPackProducts()
+        {
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            {
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
+                return _productPackProductsRepository.List();
             });
         }
 

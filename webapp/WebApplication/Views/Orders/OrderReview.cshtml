@@ -116,5 +116,20 @@
                 });
         });
 
+        $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.IsOnHold)}")").click(function() {
+            $("#pageSpinner").show();
+            var value = $(this).is(":checked");
+            ajaxcontroller().send("@Url.Action("UpdateOrderIsOnHold")",
+                {
+                    id: @Model.SelectedOrder.Id,
+                    value: value
+                }, "POST").done(
+                function(result) {
+                    $.fn.processResultAndShowPopup(result, function() {
+                        $("#SelectedOrderId").closest("form").submit();
+                    });
+                });
+        });
+
     })
 </script>

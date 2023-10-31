@@ -24,9 +24,10 @@ namespace K9.WebApplication.Services
         private readonly IIngredientService _ingredientService;
         private readonly IRepository<Activity> _activitiesRepository;
         private readonly IRepository<DietaryRecommendation> _dietaryRecommendationsRepository;
+        private readonly IRepository<ProductPackProduct> _productPackProductsRepository;
         private readonly UrlHelper _urlHelper;
 
-        public ProductService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProductPack> productPackRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstituteRepository, IIngredientService ingredientService, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstituteRepository, activitiesRepository, dietaryRecommendationsRepository)
+        public ProductService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProductPack> productPackRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstituteRepository, IIngredientService ingredientService, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository, IRepository<ProductPackProduct> productPackProductsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstituteRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository)
         {
             _logger = logger;
             _productsRepository = productsRepository;
@@ -38,6 +39,7 @@ namespace K9.WebApplication.Services
             _ingredientService = ingredientService;
             _activitiesRepository = activitiesRepository;
             _dietaryRecommendationsRepository = dietaryRecommendationsRepository;
+            _productPackProductsRepository = productPackProductsRepository;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
 

@@ -22,9 +22,10 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Client> _clientsRepository;
         private readonly IRepository<User> _usersRepository;
         private readonly IRepository<RepCommission> _repCommissionsRepository;
+        private readonly IRepository<ProductPackProduct> _productPackProductsRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Client> clientsRepository, IRepository<User> usersRepository, IRepository<RepCommission> repCommissionsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository)
+        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Client> clientsRepository, IRepository<User> usersRepository, IRepository<RepCommission> repCommissionsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository, IRepository<ProductPackProduct> productPackProductsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository)
         {
             _logger = logger;
             _ordersRepository = ordersRepository;
@@ -35,6 +36,7 @@ namespace K9.WebApplication.Services
             _clientsRepository = clientsRepository;
             _usersRepository = usersRepository;
             _repCommissionsRepository = repCommissionsRepository;
+            _productPackProductsRepository = productPackProductsRepository;
             _defaultValues = defaultValues.Value;
         }
 
@@ -113,6 +115,9 @@ namespace K9.WebApplication.Services
             {
                 orderProductPack.ProductPack = GetProductPacks().FirstOrDefault(e => e.Id == orderProductPack.ProductPackId);
                 orderProductPack.PriceTier = order.Client.PriceTier;
+
+                orderProductPack.ProductPack.Products = GetProductPackProducts()
+                    .Where(e => e.ProductPackId == orderProductPack.ProductPackId).ToList();
             }
 
             order.TotalPrice = order.GetTotalPrice();
