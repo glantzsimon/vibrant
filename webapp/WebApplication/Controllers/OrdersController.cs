@@ -203,7 +203,18 @@ namespace K9.WebApplication.Controllers
         private OrderItem GetOrderItem(Order order)
         {
             var orderItem = order.MapTo<OrderItem>();
+
+            orderItem.FormattedDiscount = order.GetFormattedDiscount();
+            orderItem.BulkDiscountText = order.GetBulkDiscountText();
+            orderItem.FormattedGrandTotal = order.GetFormattedGrandTotal();
+            orderItem.FormattedSubTotal = order.GetFormattedSubTotal();
+            orderItem.InvoiceNumbersText = order.GetInvoiceNumbersText();
+            orderItem.PricesList = order.GetPricesList();
+            orderItem.ProductsList = order.GetProductsList();
+            orderItem.QuantitiesList = order.GetQuantitiesList();
+            orderItem.TotalsList = order.GetTotalsList();
             orderItem.InvoiceDate = DateTime.Today.ToShortDateString();
+
             return orderItem;
         }
 

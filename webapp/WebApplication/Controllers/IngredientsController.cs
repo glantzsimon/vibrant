@@ -144,6 +144,7 @@ namespace K9.WebApplication.Controllers
             foreach (var ingredient in ingredients)
             {
                 var ingredientItem = ingredient.MapTo<IngredientItem>();
+                ingredientItem.IngredientTypeText = ingredient.GetIngredientTypeText();
                 ingredientsItems.Add(ingredientItem);
             }
 
