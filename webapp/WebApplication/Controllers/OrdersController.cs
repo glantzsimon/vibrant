@@ -204,8 +204,8 @@ namespace K9.WebApplication.Controllers
         {
             var orderItem = order.MapTo<OrderItem>();
 
-            orderItem.FormattedDiscount = order.GetFormattedDiscount();
-            orderItem.BulkDiscountText = order.GetBulkDiscountText();
+            orderItem.FormattedDiscount = order.GetFormattedTotalDiscount();
+            orderItem.BulkDiscountText = order.DiscountAmount > 0 ? order.GetBulkDiscountText() : Globalisation.Dictionary.DiscountLabel;
             orderItem.FormattedGrandTotal = order.GetFormattedGrandTotal();
             orderItem.FormattedSubTotal = order.GetFormattedSubTotal();
             orderItem.InvoiceNumbersText = order.GetInvoiceNumbersText();
@@ -295,7 +295,7 @@ namespace K9.WebApplication.Controllers
             e.IsRedirect = true;
             e.Controller = typeof(OrdersController).GetControllerName();
             e.Action = nameof(EditProductPacks);
-            e.RouteValues = new {id = e.Item.Id};
+            e.RouteValues = new { id = e.Item.Id };
         }
 
         private void OrdersController_RecordUpdated(object sender, CrudEventArgs e)

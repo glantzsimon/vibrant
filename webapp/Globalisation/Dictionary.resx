@@ -2041,10 +2041,19 @@
   <data name="TextLabel" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="FullPriceLabel" xml:space="preserve">
+    <value>Full Price</value>
+  </data>
   <data name="IsOnHoldLabel" xml:space="preserve">
     <value>Is On Hold</value>
   </data>
   <data name="OrdersPickSlip" xml:space="preserve">
     <value>Orders Pick Slip</value>
+  </data>
+  <data name="TotalFullProductPacksPriceLabel" xml:space="preserve">
+    <value>Total Full Product Packs Price</value>
+  </data>
+  <data name="TotalFullProductsPriceLabel" xml:space="preserve">
+    <value>Total Full Products Price</value>
   </data>
 </root>

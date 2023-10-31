@@ -74,18 +74,17 @@ namespace K9.DataAccessLayer.Models
             }
         }
 
-        [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
-        public double TotalPrice { get; set; }
+        public double TotalPrice => Amount * GetPrice();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
-        public double GetTotalPrice() => Amount * GetPrice();
-
+        public double FullTotalPrice => Amount * Product?.Price ?? 0;
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         public string GetFormattedTotalPrice() =>
-            double.Parse(GetTotalPrice().ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+            double.Parse(TotalPrice.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         public string GetFormattedAmount() => $"{Amount} {GetPackageType()}";
 

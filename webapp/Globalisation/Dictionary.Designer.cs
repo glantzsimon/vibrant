@@ -2233,6 +2233,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Full Price.
+        /// </summary>
+        public static string FullPriceLabel {
+            get {
+                return ResourceManager.GetString("FullPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gadgets.
         /// </summary>
         public static string Gadgets {
@@ -5499,6 +5508,24 @@ namespace K9.Globalisation {
         public static string TotalCostLabel {
             get {
                 return ResourceManager.GetString("TotalCostLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Full Product Packs Price.
+        /// </summary>
+        public static string TotalFullProductPacksPriceLabel {
+            get {
+                return ResourceManager.GetString("TotalFullProductPacksPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Full Products Price.
+        /// </summary>
+        public static string TotalFullProductsPriceLabel {
+            get {
+                return ResourceManager.GetString("TotalFullProductsPriceLabel", resourceCulture);
             }
         }
         

@@ -42,7 +42,9 @@
             public const string TotalPriceLabel = "TotalPriceLabel";
             public const string ShowCompletedLabel = "ShowCompletedLabel";
             public const string GrandTotalLabel = "GrandTotalLabel";
+            public const string TotalFullProductsPriceLabel = "TotalFullProductsPriceLabel";
             public const string TotalProductsPriceLabel = "TotalProductsPriceLabel";
+            public const string TotalFullProductPacksPriceLabel = "TotalFullProductPacksPriceLabel";
             public const string TotalProductPacksPriceLabel = "TotalProductPacksPriceLabel";
             public const string TotalCostLabel = "TotalCostLabel";
             public const string CostOfIngredientsLabel = "CostOfIngredientsLabel";
@@ -61,6 +63,7 @@
             public const string PriceSmallPackDiscount1Label = "PriceSmallPackDiscount1Label";
             public const string PriceSmallPackDiscount2Label = "PriceSmallPackDiscount2Label";
             public const string PriceLabel = "PriceLabel";
+            public const string FullPriceLabel = "FullPriceLabel";
             public const string AmountRedeemableLabel = "AmountRedeemableLabel";
             public const string AmountRedeemedLabel = "AmountRedeemedLabel";
             public const string TotalAmountRedeemedLabel = "TotalAmountRedeemedLabel";
