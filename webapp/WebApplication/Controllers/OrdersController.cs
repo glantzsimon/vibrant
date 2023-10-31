@@ -181,7 +181,7 @@ namespace K9.WebApplication.Controllers
             orderItems.Add(GetOrderItem(order));
 
             var data = orderItems.ToCsv();
-            return ExportToCsv(data, "Order.csv");
+            return ExportToCsv(data, $"Order {order.OrderNumber} - {order.Name}.csv");
         }
 
         [NoCache]
