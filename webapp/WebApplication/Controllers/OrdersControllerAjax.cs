@@ -108,6 +108,7 @@ namespace K9.WebApplication.Controllers
                 }
 
                 Repository.Update(original);
+                _orderService.ClearCache();
                 return Json(new { success = true });
             }
             catch (Exception ex)
@@ -128,6 +129,7 @@ namespace K9.WebApplication.Controllers
                 }
 
                 Repository.Update(original);
+                _orderService.ClearCache();
                 return Json(new { success = true });
             }
             catch (Exception ex)
