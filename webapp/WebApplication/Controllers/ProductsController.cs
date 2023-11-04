@@ -46,21 +46,6 @@ namespace K9.WebApplication.Controllers
             RecordDeleted += ProductsController_RecordDeleted;
         }
 
-        private void ProductsController_RecordDeleted(object sender, CrudEventArgs e)
-        {
-            _productService.ClearCache();
-        }
-
-        private void ProductsController_RecordUpdated(object sender, CrudEventArgs e)
-        {
-            _productService.ClearCache();
-        }
-
-        private void ProductsController_RecordCreated(object sender, CrudEventArgs e)
-        {
-            _productService.ClearCache();
-        }
-
         public ActionResult ViewProductQrCodes()
         {
             return View(_productService.List(true));
@@ -307,6 +292,21 @@ namespace K9.WebApplication.Controllers
         private void ProductsController_RecordBeforeDeleted(object sender, CrudEventArgs e)
         {
             _productService.DeleteChildRecords(e.Item.Id);
+        }
+
+        private void ProductsController_RecordDeleted(object sender, CrudEventArgs e)
+        {
+            _productService.ClearCache();
+        }
+
+        private void ProductsController_RecordUpdated(object sender, CrudEventArgs e)
+        {
+            _productService.ClearCache();
+        }
+
+        private void ProductsController_RecordCreated(object sender, CrudEventArgs e)
+        {
+            _productService.ClearCache();
         }
     }
 }

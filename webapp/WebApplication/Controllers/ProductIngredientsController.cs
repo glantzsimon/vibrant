@@ -12,46 +12,48 @@ using K9.Base.WebApplication.Extensions;
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
-	[RequirePermissions(Role = RoleNames.Administrators)]
-	public partial class ProductIngredientsController : BaseController<ProductIngredient>
-	{
-		private readonly IRepository<Product> _productsRepository;
-	    private readonly IProductService _productService;
+    [RequirePermissions(Role = RoleNames.Administrators)]
+    public partial class ProductIngredientsController : BaseController<ProductIngredient>
+    {
+        private readonly IRepository<Product> _productsRepository;
+        private readonly IProductService _productService;
 
-	    public ProductIngredientsController(IControllerPackage<ProductIngredient> controllerPackage, IRepository<Product> productsRepository, IProductService productService)
-			: base(controllerPackage)
-	    {
-	        _productsRepository = productsRepository;
-	        _productService = productService;
+        public ProductIngredientsController(IControllerPackage<ProductIngredient> controllerPackage, IRepository<Product> productsRepository, IProductService productService)
+            : base(controllerPackage)
+        {
+            _productsRepository = productsRepository;
+            _productService = productService;
 
             RecordEditMultipleUpdated += ProductIngredientsController_RecordEditMultipleUpdated;
-	    }
+        }
 
-	    public override ActionResult Index()
-	    {
-	        return RedirectToAction("Index", "Products");
-	    }
+        public override ActionResult Index()
+        {
+            return RedirectToAction("Index", "Products");
+        }
 
-	    [RequirePermissions(Permission = Permissions.Edit)]
-		public ActionResult EditIngredientsForProduct(int id = 0)
-		{
-			return EditMultiple<Product, Ingredient>(_productsRepository.Find(id));
-		}
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult EditIngredientsForProduct(int id = 0)
+        {
+            return EditMultiple<Product, Ingredient>(_productsRepository.Find(id));
+        }
 
-	    [HttpPost]
-		[ValidateAntiForgeryToken]
-		[RequirePermissions(Permission = Permissions.Edit)]
-		public ActionResult EditIngredientsForProduct(MultiSelectViewModel model)
-		{
-			return EditMultiple<Product, Ingredient>(model);
-		}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [RequirePermissions(Permission = Permissions.Edit)]
+        public ActionResult EditIngredientsForProduct(MultiSelectViewModel model)
+        {
+            return EditMultiple<Product, Ingredient>(model);
+        }
 
-	    private void ProductIngredientsController_RecordEditMultipleUpdated(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
-	    {
-	        e.IsRedirect = true;
-	        e.Controller = typeof(ProductsController).GetControllerName();
-	        e.Action = nameof(ProductsController.EditIngredientQuantities);
-	        e.RouteValues = new { id = e.Item.Id }; 
-	    }
-	}
+        private void ProductIngredientsController_RecordEditMultipleUpdated(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
+        {
+            e.IsRedirect = true;
+            e.Controller = typeof(ProductsController).GetControllerName();
+            e.Action = nameof(ProductsController.EditIngredientQuantities);
+            e.RouteValues = new { id = e.Item.Id };
+
+            _productService.ClearCache();
+        }
+    }
 }
