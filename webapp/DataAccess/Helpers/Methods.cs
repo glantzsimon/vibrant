@@ -1,10 +1,9 @@
 ﻿using HtmlAgilityPack;
+using K9.SharedLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using K9.SharedLibrary.Models;
-using Microsoft.Ajax.Utilities;
 
 namespace K9.DataAccessLayer.Helpers
 {
@@ -67,6 +66,11 @@ namespace K9.DataAccessLayer.Helpers
         public static string GetBookMark(this IObjectBase model)
         {
             return $"{model.GetType().Name}-{model.Id}";
+        }
+
+        public static string ToDelimitedList(this object[] parameters)
+        {
+            return parameters != null && parameters.Any() ? string.Join("-", parameters) : string.Empty;
         }
     }
 }

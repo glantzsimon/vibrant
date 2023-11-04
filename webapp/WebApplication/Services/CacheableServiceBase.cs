@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using K9.DataAccessLayer.Helpers;
 using K9.DataAccessLayer.Models;
 using K9.WebApplication.Models;
 using Activity = K9.DataAccessLayer.Models.Activity;
@@ -159,11 +160,18 @@ namespace K9.WebApplication.Services
             return $"{callingMethod}-{typeof(T).Name}";
         }
 
-        public string GetCacheKey<T2>() where T2 : class, IObjectBase
+        public string GetCacheKey(params object[] parameters)
         {
             StackTrace stackTrace = new StackTrace();
             var callingMethod = stackTrace.GetFrame(1).GetMethod().Name;
-            return $"{callingMethod}-{typeof(T2).Name}";
+            return $"{callingMethod}-{typeof(T).Name}-{parameters.ToDelimitedList()}";
+        }
+
+        public string GetCacheKey<T2>(params object[] parameters) where T2 : class, IObjectBase
+        {
+            StackTrace stackTrace = new StackTrace();
+            var callingMethod = stackTrace.GetFrame(1).GetMethod().Name;
+            return $"{callingMethod}-{typeof(T2).Name}-{parameters.ToDelimitedList()}";
         }
 
         public string GetCacheKey<T2>(int id) where T2 : class, IObjectBase

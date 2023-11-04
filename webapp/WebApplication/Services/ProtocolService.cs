@@ -252,7 +252,7 @@ namespace K9.WebApplication.Services
 
         public List<Protocol> List(bool retrieveFullProtocol = false)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCache.GetOrCreate(GetCacheKey(retrieveFullProtocol), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 

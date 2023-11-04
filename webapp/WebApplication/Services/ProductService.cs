@@ -325,9 +325,9 @@ namespace K9.WebApplication.Services
             }
         }
 
-        public List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false)
+        public List<Product> List(bool retrieveFullProduct = true, bool includeCustomProducts = false)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCache.GetOrCreate(GetCacheKey(retrieveFullProduct, includeCustomProducts), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 
@@ -355,7 +355,7 @@ namespace K9.WebApplication.Services
 
         public List<ProductPack> ListProductPacks(bool retrieveFullProduct = false)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey<ProductPack>(), entry =>
+            return MemoryCache.GetOrCreate(GetCacheKey<ProductPack>(retrieveFullProduct), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 

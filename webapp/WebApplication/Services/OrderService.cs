@@ -177,7 +177,7 @@ namespace K9.WebApplication.Services
 
         public List<Order> List(bool retrieveFullOrder = false)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCache.GetOrCreate(GetCacheKey(retrieveFullOrder), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
 

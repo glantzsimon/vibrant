@@ -122,7 +122,7 @@ namespace K9.WebApplication.Services
 
         public List<Ingredient> List(bool retrieveFullIngredient = false, bool usedOnly = false)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCache.GetOrCreate(GetCacheKey(retrieveFullIngredient, usedOnly), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 
