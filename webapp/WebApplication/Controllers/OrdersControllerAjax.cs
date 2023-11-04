@@ -47,6 +47,11 @@ namespace K9.WebApplication.Controllers
                     if (value)
                     {
                         original.MadeOn = DateTime.Today;
+                        
+                        if (!original.StartedOn.HasValue)
+                        {
+                            original.StartedOn = DateTime.Today;
+                        }
                     }
                     else
                     {
@@ -88,6 +93,11 @@ namespace K9.WebApplication.Controllers
                     if (value)
                     {
                         original.CompletedOn = DateTime.Today;
+
+                        if (!original.StartedOn.HasValue)
+                        {
+                            original.StartedOn = DateTime.Today;
+                        }
                     }
                     else
                     {
@@ -109,6 +119,35 @@ namespace K9.WebApplication.Controllers
 
                 Repository.Update(original);
                 _orderService.ClearCache();
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
+
+        public JsonResult UpdateOrderIsStarted(int id, bool value)
+        {
+            try
+            {
+                var original = Repository.Find(id);
+
+                if (original.IsStarted != value)
+                {
+                    if (value)
+                    {
+                        original.StartedOn = DateTime.Today;
+                    }
+                    else
+                    {
+                        original.StartedOn = null;
+                    }
+                }
+
+                Repository.Update(original);
+                _orderService.ClearCache();
+
                 return Json(new { success = true });
             }
             catch (Exception ex)

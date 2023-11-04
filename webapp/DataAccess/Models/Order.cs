@@ -127,6 +127,10 @@ namespace K9.DataAccessLayer.Models
         public bool IsPaid => PaidOn != null && PaidOn <= DateTime.Today;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.IsStartedLabel)]
+        public bool IsStarted => StartedOn != null && StartedOn <= DateTime.Today;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.OrderStatusLabel)]
         public EOrderStatus GetOrderStatus() => CalculateOrderStatus();
 

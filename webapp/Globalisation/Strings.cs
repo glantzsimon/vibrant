@@ -91,6 +91,7 @@
             public const string IsOverDueLabel = "IsOverDueLabel";
             public const string PaidOnLabel = "PaidOnLabel";
             public const string IsPaidLabel = "IsPaidLabel";
+            public const string IsStartedLabel = "IsStartedLabel";
             public const string OrderStatusLabel = "OrderStatusLabel";
             public const string AdditionalCommentsLabel = "AdditionalComments";
             public const string AddressLabel = "AddressLabel";

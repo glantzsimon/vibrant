@@ -2683,6 +2683,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is Started.
+        /// </summary>
+        public static string IsStartedLabel {
+            get {
+                return ResourceManager.GetString("IsStartedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Item.
         /// </summary>
         public static string Item {

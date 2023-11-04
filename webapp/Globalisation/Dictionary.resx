@@ -2047,6 +2047,9 @@
   <data name="IsOnHoldLabel" xml:space="preserve">
     <value>Is On Hold</value>
   </data>
+  <data name="IsStartedLabel" xml:space="preserve">
+    <value>Is Started</value>
+  </data>
   <data name="OrdersPickSlip" xml:space="preserve">
     <value>Orders Pick Slip</value>
   </data>

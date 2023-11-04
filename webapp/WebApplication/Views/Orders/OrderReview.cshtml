@@ -37,6 +37,7 @@
                     <div class="col-xs-12">
                         <div class="inline-checkbox">
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsPaid)
+                            @Html.BootstrapEditorFor(e => e.SelectedOrder.IsStarted)
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsMade)
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsComplete)
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsOnHold)
@@ -125,6 +126,21 @@
             $("#pageSpinner").show();
             var value = $(this).is(":checked");
             ajaxcontroller().send("@Url.Action("UpdateOrderIsOnHold")",
+                {
+                    id: @Model.SelectedOrder.Id,
+                    value: value
+                }, "POST").done(
+                function(result) {
+                    $.fn.processResultAndShowPopup(result, function() {
+                        $("#SelectedOrderId").closest("form").submit();
+                    });
+                });
+        });
+        
+        $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.IsStarted)}")").click(function() {
+            $("#pageSpinner").show();
+            var value = $(this).is(":checked");
+            ajaxcontroller().send("@Url.Action("UpdateOrderIsStarted")",
                 {
                     id: @Model.SelectedOrder.Id,
                     value: value
