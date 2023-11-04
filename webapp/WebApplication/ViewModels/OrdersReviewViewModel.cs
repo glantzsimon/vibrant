@@ -85,7 +85,7 @@ namespace K9.WebApplication.ViewModels
                 results.Add(newOrderProduct);
             }
 
-            return results;
+            return results.OrderBy(e => e.Product.Name).ToList();
         }
     }
 }
