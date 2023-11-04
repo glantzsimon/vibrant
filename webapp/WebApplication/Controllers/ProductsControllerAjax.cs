@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
+using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Models;
+using ServiceStack.Text;
 
 namespace K9.WebApplication.Controllers
 {
@@ -16,6 +20,14 @@ namespace K9.WebApplication.Controllers
             {
                 return Json(new { success = false, error = ex.Message });
             }
+        }
+
+        [Route("products/json")]
+        public JsonResult GetProductsJson()
+        {
+            var productItems = GetProductItems();
+
+            return Json(new { success = true, data = productItems.ToJson() }, JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -174,26 +174,7 @@ namespace K9.WebApplication.Controllers
         [Route("products/export/csv")]
         public ActionResult DownloadProductsCsv()
         {
-            var products = _productService.List(true);
-            var productItems = new List<ProductItem>();
-
-            foreach (var product in products)
-            {
-                var productItem = product.MapTo<ProductItem>();
-
-                productItem.ProductName = product.GetProductName();
-                productItem.ProductSubTitle = product.GetProductSubTitle();
-                productItem.CapsulesDosageLabelText = product.GetCapsulesDosageLabelText();
-                productItem.CapsulesDailyLabellext = product.GetCapsulesDailyLabellext();
-                productItem.FullDosageLabellext = product.GetFullDosageLabellext();
-                productItem.BenefitsLabelText = product.GetBenefitsLabelText();
-                productItem.IngredientsList = product.GetIngredientsList();
-                productItem.QuantitiesList = product.GetQuantitiesList();
-                productItem.DailyValues = product.GetDailyValues();
-                productItem.RecommendationsText = product.GetRecommendationsText();
-
-                productItems.Add(productItem);
-            }
+            var productItems = GetProductItems();
 
             var data = productItems.ToCsv();
 
@@ -248,6 +229,32 @@ namespace K9.WebApplication.Controllers
             }
 
             return RedirectToAction("EditList");
+        }
+
+        private List<ProductItem> GetProductItems()
+        {
+            var products = _productService.List(true);
+            var productItems = new List<ProductItem>();
+
+            foreach (var product in products)
+            {
+                var productItem = product.MapTo<ProductItem>();
+
+                productItem.ProductName = product.GetProductName();
+                productItem.ProductSubTitle = product.GetProductSubTitle();
+                productItem.CapsulesDosageLabelText = product.GetCapsulesDosageLabelText();
+                productItem.CapsulesDailyLabellext = product.GetCapsulesDailyLabellext();
+                productItem.FullDosageLabellext = product.GetFullDosageLabellext();
+                productItem.BenefitsLabelText = product.GetBenefitsLabelText();
+                productItem.IngredientsList = product.GetIngredientsList();
+                productItem.QuantitiesList = product.GetQuantitiesList();
+                productItem.DailyValues = product.GetDailyValues();
+                productItem.RecommendationsText = product.GetRecommendationsText();
+
+                productItems.Add(productItem);
+            }
+
+            return productItems;
         }
 
         private void ProductsController_RecordBeforeUpdated(object sender, CrudEventArgs e)
