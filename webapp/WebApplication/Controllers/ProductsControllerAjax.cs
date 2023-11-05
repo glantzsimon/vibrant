@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ServiceStack.Text;
+using System;
 using System.Web.Mvc;
-using K9.SharedLibrary.Helpers;
-using K9.WebApplication.Models;
-using ServiceStack.Text;
 
 namespace K9.WebApplication.Controllers
 {
@@ -22,8 +19,8 @@ namespace K9.WebApplication.Controllers
             }
         }
 
-        [Route("products/json")]
-        public JsonResult GetProductsJson()
+        [Route("products/export/json")]
+        public ActionResult GetProductsJson()
         {
             var productItems = GetProductItems();
 
