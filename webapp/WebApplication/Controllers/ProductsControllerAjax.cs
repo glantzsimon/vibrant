@@ -27,7 +27,7 @@ namespace K9.WebApplication.Controllers
         {
             var productItems = GetProductItems();
 
-            return Json(productItems.ToJson(), JsonRequestBehavior.AllowGet);
+            return Json(new { success = true, data = productItems.ToJson() }, JsonRequestBehavior.AllowGet);
         }
     }
 }
