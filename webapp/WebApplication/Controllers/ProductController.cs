@@ -7,6 +7,7 @@ using NLog;
 using System;
 using System.Web.Mvc;
 using K9.SharedLibrary.Authentication;
+using ServiceStack.Text;
 
 namespace K9.WebApplication.Controllers
 {
@@ -26,6 +27,12 @@ namespace K9.WebApplication.Controllers
         public ActionResult Index()
         {
             return View(_productService.List());
+        }
+
+        [Route("products/export/json")]
+        public ActionResult GetProductsJson()
+        {
+            return Json(new { success = true, data = _productService.ListProductItems().ToJson() }, JsonRequestBehavior.AllowGet);
         }
 
         [Route("product/{seoFriendlyId}")]

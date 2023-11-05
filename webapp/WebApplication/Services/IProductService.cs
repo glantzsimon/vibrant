@@ -1,4 +1,5 @@
 ﻿using K9.DataAccessLayer.Models;
+using K9.WebApplication.Models;
 using System;
 using System.Collections.Generic;
 
@@ -20,6 +21,7 @@ namespace K9.WebApplication.Services
         void EditIngredientSubstitutes(Product product);
         void UpdateProductCategories();
         List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false);
+        List<ProductItem> ListProductItems();
         List<ProductPack> ListProductPacks(bool retrieveFullProduct = false);
 
         ProductPack FindPack(Guid id);

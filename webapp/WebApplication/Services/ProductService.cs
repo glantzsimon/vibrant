@@ -1,7 +1,9 @@
 ﻿using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Models;
 using Microsoft.Extensions.Caching.Memory;
 using NLog;
 using System;
@@ -351,6 +353,32 @@ namespace K9.WebApplication.Services
 
                 return products;
             });
+        }
+
+        public List<ProductItem> ListProductItems()
+        {
+            var products = List();
+            var productItems = new List<ProductItem>();
+
+            foreach (var product in products)
+            {
+                var productItem = product.MapTo<ProductItem>();
+
+                productItem.ProductName = product.GetProductName();
+                productItem.ProductSubTitle = product.GetProductSubTitle();
+                productItem.CapsulesDosageLabelText = product.GetCapsulesDosageLabelText();
+                productItem.CapsulesDailyLabellext = product.GetCapsulesDailyLabellext();
+                productItem.FullDosageLabellext = product.GetFullDosageLabellext();
+                productItem.BenefitsLabelText = product.GetBenefitsLabelText();
+                productItem.IngredientsList = product.GetIngredientsList();
+                productItem.QuantitiesList = product.GetQuantitiesList();
+                productItem.DailyValues = product.GetDailyValues();
+                productItem.RecommendationsText = product.GetRecommendationsText();
+
+                productItems.Add(productItem);
+            }
+
+            return productItems;
         }
 
         public List<ProductPack> ListProductPacks(bool retrieveFullProduct = false)

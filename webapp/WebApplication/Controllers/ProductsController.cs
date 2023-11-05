@@ -2,6 +2,7 @@
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Helpers;
+using K9.DataAccessLayer.Interfaces;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Helpers;
@@ -15,8 +16,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Enums;
-using K9.DataAccessLayer.Interfaces;
 
 namespace K9.WebApplication.Controllers
 {
@@ -174,9 +173,7 @@ namespace K9.WebApplication.Controllers
         [Route("products/export/csv")]
         public ActionResult DownloadProductsCsv()
         {
-            var productItems = GetProductItems();
-
-            var data = productItems.ToCsv();
+            var data = _productService.ListProductItems().ToCsv();
 
             Response.Clear();
             Response.ContentType = "application/CSV";
@@ -229,32 +226,6 @@ namespace K9.WebApplication.Controllers
             }
 
             return RedirectToAction("EditList");
-        }
-
-        private List<ProductItem> GetProductItems()
-        {
-            var products = _productService.List(true);
-            var productItems = new List<ProductItem>();
-
-            foreach (var product in products)
-            {
-                var productItem = product.MapTo<ProductItem>();
-
-                productItem.ProductName = product.GetProductName();
-                productItem.ProductSubTitle = product.GetProductSubTitle();
-                productItem.CapsulesDosageLabelText = product.GetCapsulesDosageLabelText();
-                productItem.CapsulesDailyLabellext = product.GetCapsulesDailyLabellext();
-                productItem.FullDosageLabellext = product.GetFullDosageLabellext();
-                productItem.BenefitsLabelText = product.GetBenefitsLabelText();
-                productItem.IngredientsList = product.GetIngredientsList();
-                productItem.QuantitiesList = product.GetQuantitiesList();
-                productItem.DailyValues = product.GetDailyValues();
-                productItem.RecommendationsText = product.GetRecommendationsText();
-
-                productItems.Add(productItem);
-            }
-
-            return productItems;
         }
 
         private void ProductsController_RecordBeforeUpdated(object sender, CrudEventArgs e)

@@ -18,13 +18,5 @@ namespace K9.WebApplication.Controllers
                 return Json(new { success = false, error = ex.Message });
             }
         }
-
-        [Route("products/export/json")]
-        public ActionResult GetProductsJson()
-        {
-            var productItems = GetProductItems();
-
-            return Json(new { success = true, data = productItems.ToJson() }, JsonRequestBehavior.AllowGet);
-        }
     }
 }
