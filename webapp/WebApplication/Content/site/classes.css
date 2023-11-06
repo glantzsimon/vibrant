@@ -267,3 +267,12 @@ li.divider {
     overflow: hidden !important;
     background-color: #a5a5a5 !important;
 }
+
+.ajaxpopup {
+    z-index: 999999;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3px;
+    font-size: 1.1em;
+}

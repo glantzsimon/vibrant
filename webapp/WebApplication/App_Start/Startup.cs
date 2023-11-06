@@ -37,7 +37,7 @@ namespace K9.WebApplication
             builder.RegisterSource(new ViewRegistrationSource());
             builder.RegisterFilterProvider();
 
-            builder.RegisterType<LocalDb>().As<DbContext>().InstancePerRequest();
+            builder.RegisterType<LocalDb>().As<DbContext>().InstancePerDependency();
             builder.Register(c => LogManager.GetCurrentClassLogger()).As<ILogger>().SingleInstance();
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>)).InstancePerRequest();
             builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>)).InstancePerRequest();

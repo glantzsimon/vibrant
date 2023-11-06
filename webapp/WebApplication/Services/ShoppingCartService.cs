@@ -18,8 +18,9 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Client> _clientsRepository;
         private readonly IRepository<User> _usersRepository;
         private readonly IOrderService _orderService;
+        private readonly IClientService _clientService;
 
-        public ShoppingCartService(IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Client> clientsRepository, IRepository<User> usersRepository, IOrderService orderService)
+        public ShoppingCartService(IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Client> clientsRepository, IRepository<User> usersRepository, IOrderService orderService, IClientService clientService)
         {
             _ordersRepository = ordersRepository;
             _orderProductsRepository = orderProductsRepository;
@@ -27,6 +28,7 @@ namespace K9.WebApplication.Services
             _clientsRepository = clientsRepository;
             _usersRepository = usersRepository;
             _orderService = orderService;
+            _clientService = clientService;
         }
 
         public void SetShoppingCartIsPaid()
@@ -125,23 +127,34 @@ namespace K9.WebApplication.Services
 
             if (shoppingCart == null)
             {
-                var client = _clientsRepository.Find(e => e.UserId == userId).FirstOrDefault();
                 var user = _usersRepository.Find(userId);
                 var shoppingCartId = Guid.NewGuid();
+                var client = _clientsRepository.Find(e => e.UserId == userId).FirstOrDefault();
+
+                if (client == null)
+                {
+                    client = _clientsRepository.Find(e => e.EmailAddress == user.EmailAddress).FirstOrDefault();
+
+                    if (client == null)
+                    {
+                        client = _clientService.GetOrCreateClient("", user.FullName, user.EmailAddress,
+                            user.PhoneNumber,
+                            user.Id);
+                    }
+                }
 
                 shoppingCart = new Order
                 {
                     UserId = userId,
-                    User = user,
                     ClientId = client?.Id,
-                    Client = client,
                     Products = new List<OrderProduct>(),
                     ProductPacks = new List<OrderProductPack>(),
                     ExternalId = shoppingCartId,
                     OrderType = EOrderType.ShoppingCart,
-                    Name = Globalisation.Dictionary.ShoppingCart,
+                    Name = $"{client.Name} - {Globalisation.Dictionary.ShoppingCart}",
+                    FullName = $"{client.Name} - {Globalisation.Dictionary.ShoppingCart}",
                     ShortDescription = Globalisation.Dictionary.ShoppingCart,
-
+                    RequestedOn = DateTime.Today
                 };
 
                 _ordersRepository.Create(shoppingCart);

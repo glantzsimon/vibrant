@@ -171,7 +171,7 @@
             {
                 <li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a title="@K9.Base.Globalisation.Dictionary.MyAccountTitle" href="@Url.Action("MyAccount", "Account")"><i class="fa fa-user-circle"></i><span class="site-controls-text"> @K9.Base.Globalisation.Dictionary.MyAccountTitle</span></a></li>
 
-                @Html.Action("ViewCart", "ShoppingCart")
+                @Html.Action("ShoppingCartMenuItem", "ShoppingCart")
             }
             @Html.LoginLogout()
 

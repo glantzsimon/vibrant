@@ -2095,4 +2095,34 @@
   <data name="WhatsAppUs" xml:space="preserve">
     <value>WhatsApp Us!</value>
   </data>
+  <data name="ItemAddedToCart" xml:space="preserve">
+    <value>Item added to cart</value>
+  </data>
+  <data name="ItemAddedToCartError" xml:space="preserve">
+    <value>Error adding item to cart</value>
+  </data>
+  <data name="ItemRemovedFromCart" xml:space="preserve">
+    <value>Item removed from cart</value>
+  </data>
+  <data name="ItemRemovedFromCartError" xml:space="preserve">
+    <value>Error removing item from cart</value>
+  </data>
+  <data name="OrderSuccess" xml:space="preserve">
+    <value>Your order has been successfully created.</value>
+  </data>
+  <data name="OrderUpdateText" xml:space="preserve">
+    <value>We will update you shortly with details of your order delivery.</value>
+  </data>
+  <data name="PureAlchemyOrder" xml:space="preserve">
+    <value>Pure Alchemy Order</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="UpdateCart" xml:space="preserve">
+    <value>Update Cart</value>
+  </data>
+  <data name="YourCartIsEmpty" xml:space="preserve">
+    <value>Your cart is empty</value>
+  </data>
 </root>

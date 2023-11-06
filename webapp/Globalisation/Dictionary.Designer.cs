@@ -2755,11 +2755,47 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Item added to cart.
+        /// </summary>
+        public static string ItemAddedToCart {
+            get {
+                return ResourceManager.GetString("ItemAddedToCart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error adding item to cart.
+        /// </summary>
+        public static string ItemAddedToCartError {
+            get {
+                return ResourceManager.GetString("ItemAddedToCartError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Item Code.
         /// </summary>
         public static string ItemCodeLabel {
             get {
                 return ResourceManager.GetString("ItemCodeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item removed from cart.
+        /// </summary>
+        public static string ItemRemovedFromCart {
+            get {
+                return ResourceManager.GetString("ItemRemovedFromCart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error removing item from cart.
+        /// </summary>
+        public static string ItemRemovedFromCartError {
+            get {
+                return ResourceManager.GetString("ItemRemovedFromCartError", resourceCulture);
             }
         }
         
@@ -3490,11 +3526,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your order has been successfully created..
+        /// </summary>
+        public static string OrderSuccess {
+            get {
+                return ResourceManager.GetString("OrderSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Order Type.
         /// </summary>
         public static string OrderTypeLabel {
             get {
                 return ResourceManager.GetString("OrderTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We will update you shortly with details of your order delivery..
+        /// </summary>
+        public static string OrderUpdateText {
+            get {
+                return ResourceManager.GetString("OrderUpdateText", resourceCulture);
             }
         }
         
@@ -4497,6 +4551,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pure Alchemy Order.
+        /// </summary>
+        public static string PureAlchemyOrder {
+            get {
+                return ResourceManager.GetString("PureAlchemyOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to QR Code Url.
         /// </summary>
         public static string QrCodeUrlsLabel {
@@ -4700,6 +4763,15 @@ namespace K9.Globalisation {
         public static string RegularPrice {
             get {
                 return ResourceManager.GetString("RegularPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        public static string Remove {
+            get {
+                return ResourceManager.GetString("Remove", resourceCulture);
             }
         }
         
@@ -5764,6 +5836,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Update Cart.
+        /// </summary>
+        public static string UpdateCart {
+            get {
+                return ResourceManager.GetString("UpdateCart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Update Item Codes.
         /// </summary>
         public static string UpdateItemCodes {
@@ -6261,6 +6342,15 @@ namespace K9.Globalisation {
         public static string YouAreSignedUp {
             get {
                 return ResourceManager.GetString("YouAreSignedUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your cart is empty.
+        /// </summary>
+        public static string YourCartIsEmpty {
+            get {
+                return ResourceManager.GetString("YourCartIsEmpty", resourceCulture);
             }
         }
         

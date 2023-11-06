@@ -159,6 +159,10 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double GetTotalPrice() => GetTotalProductsPrice() + GetTotalProductPacksPrice() + ShippingCost;
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        [DataType(DataType.Currency)]
+        public double GetTotalInternationalPrice() => GetTotalInternationalProductsPrice() + GetTotalInternationalProductPacksPrice() + ShippingCost;
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FullPriceLabel)]
         [DataType(DataType.Currency)]
         public double GetFullTotalPrice() => GetFullTotalProductsPrice() + GetFullTotalProductPacksPrice() + ShippingCost;
@@ -176,6 +180,10 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double GetTotalProductsPrice() => Products?.Sum(e => e.TotalPrice) ?? 0;
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double GetTotalInternationalProductsPrice() => Products?.Sum(e => e.TotalInternationalPrice) ?? 0;
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalFullProductsPriceLabel)]
         [DataType(DataType.Currency)]
         public double GetFullTotalProductsPrice() => Products?.Sum(e => e.FullTotalPrice) ?? 0;
@@ -192,6 +200,11 @@ namespace K9.DataAccessLayer.Models
         public double GetTotalProductPacksPrice() => ProductPacks?.Sum(e => e.TotalPrice) ?? 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.TotalProductPacksPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double GetTotalInternationalProductPacksPrice() => ProductPacks?.Sum(e => e.TotalInternationalPrice) ?? 0;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.TotalFullProductPacksPriceLabel)]
         [DataType(DataType.Currency)]
         public double GetFullTotalProductPacksPrice() => ProductPacks?.Sum(e => e.FullTotalPrice) ?? 0;
@@ -200,7 +213,7 @@ namespace K9.DataAccessLayer.Models
             Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
         public double GetSuggestedDiscount() =>
             Methods.RoundToInteger(GetTotalPrice() > 0 ? GetTotalPrice().GetSuggestedBulkDiscount() : 0, 100);
-
+        
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
@@ -253,6 +266,11 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double GrandTotal { get; set; }
 
+        [UIHint("InternationalCurrency")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
+        [DataType(DataType.Currency)]
+        public double GrandInternationalTotal => GetTotalInternationalPrice();
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         [DataType(DataType.Currency)]
         public double GetGrandTotal() => GetTotalPrice() - GetDiscountAmount();
@@ -260,6 +278,8 @@ namespace K9.DataAccessLayer.Models
         public int GetTotalProducts() => Products?.Sum(e => e.Amount) ?? 0;
 
         public int GetTotalProductPacks() => ProductPacks?.Sum(e => e.Amount) ?? 0;
+
+        public int GetTotalItemCount() => GetTotalProducts() + GetTotalProductPacks();
 
         public virtual IEnumerable<OrderProduct> OrderProducts { get; set; }
 

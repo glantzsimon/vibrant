@@ -1,3 +1,9 @@
 ﻿@using K9.Base.WebApplication.Extensions
+@model Order
 
-<li class="@ViewContext.GetActiveClass("ViewCart", "ShoppingCart")"><a title="@Dictionary.ShoppingCart" href="@Url.Action("ViewCart", "ShoppingCart")"><i class="fa fa-shopping-cart"></i><span class="site-controls-text"> @Dictionary.ShoppingCart</span></a></li>
+@{
+    var totalItemCount = Model.GetTotalItemCount();
+    var shoppingCartText = totalItemCount > 0 ? $"{Dictionary.ShoppingCart} ({totalItemCount})" : Dictionary.ShoppingCart;
+}
+
+<li class="@ViewContext.GetActiveClass("ViewCart", "ShoppingCart")"><a title="" href="@Url.Action("ViewCart", "ShoppingCart")"><i class="fa fa-shopping-cart"></i><span class="site-controls-text"> @shoppingCartText</span></a></li>

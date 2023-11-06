@@ -1,0 +1,78 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.WebApplication.Options
+@model Order
+
+@Html.Partial("_AjaxPopup", new AjaxPopupOptions
+{
+    SuccessMessage = Dictionary.ItemRemovedFromCart,
+    FailureMessage = Dictionary.ItemRemovedFromCartError
+})
+
+@if (Model.Products != null && Model.Products.Any())
+{
+    <div class="row">
+        <div class="col-xs-4">
+            @Html.LabelFor(e => Model.Products[0].Name)
+        </div>
+        <div class="col-xs-3">
+            @Html.LabelFor(e => Model.Products[0].Amount)
+        </div>
+        <div class="col-xs-3">
+            @Html.LabelFor(e => Model.Products[0].TotalPrice)
+        </div>
+        <div class="col-xs-2">
+        </div>
+    </div>
+
+    for (int i = 0; i < Model.Products?.Count; i++)
+    {
+        @Html.HiddenFor(e => Model.Products[i].Id)
+        @Html.HiddenFor(e => Model.Products[i].OrderId)
+        @Html.HiddenFor(e => Model.Products[i].ProductId)
+
+        <div class="row">
+            <div class="col-xs-4">
+                <a target="_blank" href="@Url.Action("Details", "Product", new {seoFriendlyId = Model.Products[i].Product.SeoFriendlyId})">
+                    @Html.DisplayFor(e => Model.Products[i].Product.Name)
+                </a>
+            </div>
+            <div class="col-xs-3">
+                @Html.BootstrapEditorFor(e => Model.Products[i].Amount, new EditorOptions
+                {
+                    Label = ""
+                })
+            </div>
+            <div class="col-xs-3">
+                @Html.DisplayFor(e => Model.Products[i].TotalInternationalPrice)
+            </div>
+            <div class="col-xs-2">
+                <button type="button" data-id="@Model.Products[i].ProductId" class="remove-product-from-cart-button btn btn btn-primary"><i class="fa fa-trash red"></i> @Dictionary.Remove</button>
+            </div>
+        </div>
+
+        <hr />
+    }
+}
+
+<script type="text/javascript">
+    $(function() {
+
+        $("button.remove-product-from-cart-button").click(function() {
+            $("#pageSpinner").show();
+            var $el = $(this);
+            var id = $el.data("id");
+            ajaxcontroller().send("@Url.Action("UpdateProductAmount", "ShoppingCart")",
+                {
+                    productId: id,
+                    amount: 0
+                },
+                "POST").done(
+                function(result) {
+                    $.fn.processResultAndShowPopup(result, function() {
+                        location.reload();
+                    });
+                });
+        });
+
+    });
+</script>

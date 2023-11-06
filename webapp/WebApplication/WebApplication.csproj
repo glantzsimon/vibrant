@@ -261,6 +261,7 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Controllers\ShoppingCartAjaxController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\RepCommissionsController.cs" />
     <Compile Include="Controllers\OrdersControllerAjax.cs" />
@@ -1549,6 +1550,10 @@
     <Content Include="Views\Shared\EditorTemplates\InternationalCurrency.cshtml" />
     <Content Include="Views\ShoppingCart\_MenuItem.cshtml" />
     <Content Include="Views\ShoppingCart\ViewCart.cshtml" />
+    <Content Include="Views\ShoppingCart\_ProductsList.cshtml" />
+    <Content Include="Views\ShoppingCart\_ProductPacksList.cshtml" />
+    <Content Include="Views\ShoppingCart\Checkout.cshtml" />
+    <Content Include="Views\ShoppingCart\OrderCreateSuccess.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

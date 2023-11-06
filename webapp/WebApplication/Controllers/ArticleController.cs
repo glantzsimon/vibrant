@@ -37,6 +37,7 @@ namespace K9.WebApplication.Controllers
             return View(article);
         }
 
+        [ChildActionOnly]
         public PartialViewResult ArticlesSummary()
         {
             return PartialView("_ArticlesSummary", _articlesRepository.GetQuery($"SELECT TOP 10 * FROM [{nameof(Article)}] ORDER BY [{nameof(Article.PublishedOn)}]").ToList());

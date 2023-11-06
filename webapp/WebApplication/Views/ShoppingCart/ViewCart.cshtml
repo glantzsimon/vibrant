@@ -1,4 +1,45 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @model Order
+@{
+    Layout = "../Shared/_LayoutForm.cshtml";
+    ViewBag.SubTitle = $"{Dictionary.ShoppingCart} <i class=\"fa fa-shopping-cart\"></i>";
+    ViewBag.Title = Dictionary.ShoppingCart;
+}
+@using (Html.BeginForm("UpdateCart", "ShoppingCart"))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        if (Model.GetTotalItemCount() == 0)
+        {
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    @Dictionary.YourCartIsEmpty
+                </div>
+            </div>
+        }
+        else
+        {
+            @Html.Partial("../ShoppingCart/_ProductsList")
+            @Html.Partial("../ShoppingCart/_ProductPacksList")
 
+            <div class="row">
+                <div class="col-xs-4">
+                    <strong>@Dictionary.TotalLabel</strong>
+                </div>
+                <div class="col-xs-3">
+                    <strong>@Model.GetTotalItemCount()</strong>
+                </div>
+                <div class="col-xs-3">
+                    <strong>@Html.DisplayFor(e => Model.GrandInternationalTotal)</strong>
+                </div>
+                <div class="col-xs-2">
+                </div>
+            </div>
+        }
 
+        <hr />
+
+        @Html.BootstrapButton(Dictionary.UpdateCart, EButtonType.Submit, "fa-pencil")
+        @Html.BootstrapActionLinkButton(Dictionary.Checkout, "Checkout", "ShoppingCart", null, "fa fa-shopping-cart")
+    }
+}

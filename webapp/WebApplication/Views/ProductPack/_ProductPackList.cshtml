@@ -1,7 +1,13 @@
 ﻿@using System.Web.Mvc.Html
 @using K9.Base.WebApplication.ViewModels
+@using K9.WebApplication.Options
 @model List<ProductPack>
 
+@Html.Partial("_AjaxPopup", new AjaxPopupOptions
+{
+    SuccessMessage = Dictionary.ItemAddedToCart,
+    FailureMessage = Dictionary.ItemAddedToCartError
+})
 
 <div class="row text-center">
     <div class="col-md-12">
@@ -23,7 +29,7 @@
                     @Html.Partial("_ImageFilesDisplay", new FileSourceViewModel(productPack.GetProductFileSources().ToArray()))
                 </div>
                 <div class="col-xs-8">
-                    <h4 class="margin-bottom-0">@productPack.Name</h4>
+                    <h4 class="margin-bottom-0 margin-top-0">@productPack.Name</h4>
                     <h5 class="margin-0">@productPack.GetFormattedInternationalPrice()</h5>
                     <div class="margin-top-10">
                         <div class="summary-info-item">@Dictionary.ClickOnAnItemForMoreInfo</div>
@@ -39,7 +45,8 @@
                     <p>@MvcHtmlString.Create(productPack.ShortDescription)</p>
 
                     @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Details", "ProductPack", new { seoFriendlyId = productPack.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Large)
-
+                    
+                    <button data-id="@productPack.Id" class="add-to-cart-button btn btn btn-primary btn-lg"><i class="fa fa-cart-plus"></i> @Dictionary.AddToCart</button>
                 </div>
             </div>
             <br />
@@ -51,3 +58,22 @@
         @MvcHtmlString.Create(Dictionary.ComingSoon)
     }
 </article>
+
+<script type="text/javascript">
+    $(function() {
+
+        $("button.add-to-cart-button").click(function() {
+            $("#pageSpinner").show();
+            var id = $(this).data("id");
+            ajaxcontroller().send("@Url.Action("AddProductPackToCart", "ShoppingCart")",
+                {
+                    productPackId: id
+                },
+                "POST").done(
+                function(result) {
+                    $.fn.processResultAndShowPopup(result);
+                });
+        });
+
+    });
+</script>

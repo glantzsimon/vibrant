@@ -16,10 +16,12 @@ namespace K9.DataAccessLayer.Helpers
 
         public static double ToInternationalPrice(this double value)
         {
-            var price = CultureInfo.CurrentCulture.TwoLetterISOLanguageName != Strings.LanguageCodes.Thai
-                ? value * ConversionConstants.BahtToDollarsRate
-                : value;
-            return Math.Round(price / 7, MidpointRounding.AwayFromZero) * 7;
+            if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName != Strings.LanguageCodes.Thai)
+            {
+                return Math.Round(value * ConversionConstants.BahtToDollarsRate / 7, MidpointRounding.AwayFromZero) * 7;
+            }
+
+            return value;
         }
 
         public static double RoundToInteger(double value, int roundValue)

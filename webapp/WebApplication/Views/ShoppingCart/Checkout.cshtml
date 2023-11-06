@@ -1,0 +1,20 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.WebApplication.Options
+@model Order
+@{
+    Layout = "../Shared/_LayoutForm.cshtml";
+    ViewBag.SubTitle = $"{Dictionary.Checkout} <i class=\"fa fa-shopping-cart\"></i>";
+    ViewBag.Title = Dictionary.Checkout;
+}
+
+@Html.Partial("_PaymentsForm", new PaymentsOptions(
+    0,
+    Model.GetTotalItemCount(),
+    Model.GrandInternationalTotal,
+    Dictionary.PureAlchemyOrder,
+    Dictionary.ConsultationDurationDescription,
+    "BookConsultationStart", "Consultation",
+    Url.Action("OrderCreateSuccess"),
+    Url.Action("Index", "Error"),
+    Url.Action("ProcessPayment", "ShoppingCart")
+    ))

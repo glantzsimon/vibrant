@@ -1,0 +1,68 @@
+﻿@using K9.Base.WebApplication.Extensions
+@model Order
+
+@if (Model.ProductPacks != null && Model.ProductPacks.Any())
+{
+    <div class="row">
+        <div class="col-xs-4">
+            @Html.LabelFor(e => Model.ProductPacks[0].Name)
+        </div>
+        <div class="col-xs-3">
+            @Html.LabelFor(e => Model.Products[0].Amount)
+        </div>
+        <div class="col-xs-3">
+            @Html.LabelFor(e => Model.Products[0].TotalPrice)
+        </div>
+        <div class="col-xs-2">
+        </div>
+    </div>
+
+    for (int i = 0; i < Model.ProductPacks.Count; i++)
+    {
+        @Html.HiddenFor(e => Model.ProductPacks[i].Id)
+        @Html.HiddenFor(e => Model.ProductPacks[i].OrderId)
+        @Html.HiddenFor(e => Model.ProductPacks[i].ProductPackId)
+
+        <div class="row">
+            <div class="col-xs-4">
+                <a target="_blank" href="@Url.Action("Details", "ProductPack", new {seoFriendlyId = Model.ProductPacks[i].ProductPack.SeoFriendlyId})">
+                    @Html.DisplayFor(e => Model.ProductPacks[i].ProductPack.Name)
+                </a>
+            </div>
+            <div class="col-xs-3">
+                @Html.DisplayFor(e => Model.ProductPacks[i].Amount)
+            </div>
+            <div class="col-xs-3">
+                @Html.DisplayFor(e => Model.ProductPacks[i].TotalPrice)
+            </div>
+            <div class="col-xs-2">
+                <button type="button" data-id="@Model.ProductPacks[i].ProductPackId" class="remove-productpack-from-cart-button btn btn btn-primary"><i class="fa fa-trash red"></i> @Dictionary.Remove</button>
+            </div>
+        </div>
+
+        <hr />
+    }
+}
+
+<script type="text/javascript">
+    $(function() {
+
+        $("button.remove-productpack-from-cart-button").click(function() {
+            $("#pageSpinner").show();
+            var $el = $(this);
+            var id = $el.data("id");
+            ajaxcontroller().send("@Url.Action("UpdateProductPackAmount", "ShoppingCart")",
+                {
+                    productPackId: id,
+                    amount: 0
+                },
+                "POST").done(
+                function(result) {
+                    $.fn.processResultAndShowPopup(result, function() {
+                        location.reload();
+                    });
+                });
+        });
+
+    });
+</script>

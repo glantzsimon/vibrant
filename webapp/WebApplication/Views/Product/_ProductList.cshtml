@@ -3,8 +3,14 @@
 @using K9.Base.WebApplication.ViewModels
 @using K9.DataAccessLayer.Helpers
 @using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Options
 @model List<Product>
 
+@Html.Partial("_AjaxPopup", new AjaxPopupOptions
+{
+    SuccessMessage = Dictionary.ItemAddedToCart,
+    FailureMessage = Dictionary.ItemAddedToCartError
+})
 
 <div class="row text-center">
     <div class="col-md-12">
@@ -71,8 +77,23 @@
             }
         </div>
     }
-    else
-    {
-        @MvcHtmlString.Create(Dictionary.ComingSoon)
-    }
 </article>
+
+<script type="text/javascript">
+    $(function() {
+
+        $("button.add-to-cart-button").click(function() {
+            $("#pageSpinner").show();
+            var id = $(this).data("id");
+            ajaxcontroller().send("@Url.Action("AddProductToCart", "ShoppingCart")",
+                {
+                    productId: id
+                },
+                "POST").done(
+                function(result) {
+                    $.fn.processResultAndShowPopup(result);
+                });
+        });
+
+    });
+</script>

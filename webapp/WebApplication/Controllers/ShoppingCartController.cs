@@ -1,28 +1,62 @@
 ﻿using K9.Base.WebApplication.UnitsOfWork;
+using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
+using K9.SharedLibrary.Extensions;
+using K9.WebApplication.Models;
 using K9.WebApplication.Services;
 using System;
+using System.Linq;
 using System.Web.Mvc;
+using NLog;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
-    public class ShoppingCartController : HtmlControllerBase<Order>
+    public partial class ShoppingCartController : HtmlControllerBase<Order>
     {
         private readonly IShoppingCartService _shoppingCartService;
         private readonly IOrderService _orderService;
+        private readonly IClientService _clientService;
+        private readonly ILogger _logger;
 
-        public ShoppingCartController(IControllerPackage<Order> controllerPackage, IShoppingCartService shoppingCartService, IOrderService orderService) : base(controllerPackage)
+        public Order GetShoppingCart() => WebSecurity.IsAuthenticated ? _shoppingCartService.GetShoppingCart(WebSecurity.CurrentUserId) : null;
+
+        public ShoppingCartController(IControllerPackage<Order> controllerPackage, IShoppingCartService shoppingCartService, IOrderService orderService, IClientService clientService, ILogger logger) : base(controllerPackage)
         {
             _shoppingCartService = shoppingCartService;
             _orderService = orderService;
+            _clientService = clientService;
+            _logger = logger;
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult UpdateCart(Order model)
+        {
+            if (model.Products != null && model.Products.Any())
+            {
+                foreach (var orderProduct in model.Products)
+                {
+                    _shoppingCartService.UpdateProductAmount(orderProduct.ProductId, orderProduct.Amount);
+                }
+            }
+
+            if (model.ProductPacks != null && model.ProductPacks.Any())
+            {
+                foreach (var orderProductPack in model.ProductPacks)
+                {
+                    _shoppingCartService.UpdateProductPackAmount(orderProductPack.ProductPackId, orderProductPack.Amount);
+                }
+            }
+                        
+            return RedirectToAction("ViewCart");
+        }
+
 
         public ActionResult ViewCart()
         {
-            var cart = _shoppingCartService.GetShoppingCart(WebSecurity.CurrentUserId);
-            return View(cart);
+            return View(GetShoppingCart());
         }
 
         [ChildActionOnly]
@@ -34,41 +68,40 @@ namespace K9.WebApplication.Controllers
                 return new EmptyResult();
             }
 
-            return PartialView("_MenuItem");
+            return PartialView("_MenuItem", cart);
+        }
+        
+
+        [Route("shop/checkout")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Checkout(Order shoppingCart)
+        {
+            return View(shoppingCart);
         }
 
-        public JsonResult AddProductToCart(int productId)
+        [HttpPost]
+        public ActionResult ProcessPayment(PurchaseModel purchaseModel)
         {
             try
             {
-                _shoppingCartService.AddProductToCart(productId, 1);
-                _orderService.ClearCache();
+                var order = _orderService.Find(purchaseModel.ItemId);
+
+                order.OrderType = EOrderType.Sale;
 
                 return Json(new { success = true });
             }
             catch (Exception ex)
             {
+                _logger.Error($"ShoppingCartController => ProcessPayment => Error: {ex.GetFullErrorMessage()}");
                 return Json(new { success = false, error = ex.Message });
             }
         }
 
-        public JsonResult AddProductPackToCart(int productPackId)
+        public ActionResult OrderCreateSuccess()
         {
-            try
-            {
-                _shoppingCartService.AddProductPackToCart(productPackId, 1);
-                _orderService.ClearCache();
-
-                return Json(new { success = true });
-            }
-            catch (Exception ex)
-            {
-                return Json(new { success = false, error = ex.Message });
-            }
+            return View();
         }
-
-
-
     }
 }
 
