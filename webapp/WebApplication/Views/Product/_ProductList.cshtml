@@ -25,11 +25,12 @@
         <ul class="nav nav-pills">
             @foreach (var category in categories)
             {
-                var categoryText = category.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+                var categoryText = category.ToString();
+                var categoryTitle = category.GetAttribute<EnumDescriptionAttribute>().GetDescription();
 
                 if (categoryIndex == 0)
                 {
-                    <li class="active"><a data-toggle="pill" href="#@categoryText">@categoryText</a></li>
+                    <li class="active"><a data-toggle="pill" href="#@categoryText">@categoryTitle</a></li>
                 }
                 else
                 {
@@ -49,8 +50,7 @@
 
                 foreach (var category in categories)
                 {
-                    var categoryText = category.GetAttribute<EnumDescriptionAttribute>
-                        ().GetDescription();
+                    var categoryText = category.ToString();
                     var products = Model.Where(e => e.Category == category).ToList();
 
                     if (categoryIndex == 0)
