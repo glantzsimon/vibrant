@@ -2,6 +2,7 @@
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.DataAccessLayer.Attributes;
+using K9.DataAccessLayer.Constants;
 using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Helpers;
 using K9.DataAccessLayer.Interfaces;
@@ -171,7 +172,14 @@ namespace K9.DataAccessLayer.Models
         public double Price { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
-        public string GetFormattedPrice() => double.Parse(Price.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedPrice() => Price.ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        [DataType(DataType.Currency)]
+        public double GetInternationalPrice() => Price.ToInternationalPrice();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        public string GetFormattedInternationalPrice() => GetInternationalPrice().ToString("C", CultureInfo.CurrentCulture);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceSmallPackLabel)]
         [DataType(DataType.Currency)]

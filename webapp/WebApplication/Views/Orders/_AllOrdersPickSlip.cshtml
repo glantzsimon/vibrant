@@ -1,13 +1,24 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Helpers
+@using Client = MailChimp.Net.Models.Client
 @model K9.WebApplication.ViewModels.OrdersReviewViewModel
 
 @using (Html.BeginForm())
 {
     using (Html.BeginBootstrapForm())
     {
-        foreach (var order in Model.GetIncompleteOrders())
+        var incompleteOrders = Model.GetIncompleteOrders();
+        var clientIds = incompleteOrders.Select(e => e.ClientId).ToList();
+
+        <div class="padding-5 padding-top-15 row">
+            <div class="col-xs-12">
+                @Html.BootstrapActionLinkButton(Dictionary.ViewClientAddressLabels, "ViewClientAddressLabelsForAllOrders", "Clients")
+            </div>
+        </div>
+        <hr />
+
+        foreach (var order in incompleteOrders)
         {
             <div class="padding-5 padding-top-15 row">
                 <div class="col-sm-5 valign-top">

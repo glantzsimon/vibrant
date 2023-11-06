@@ -25,7 +25,15 @@ namespace K9.WebApplication.Controllers
         [Route("productpack/all")]
         public ActionResult Index()
         {
-            return View(_productService.ListProductPacks());
+            var productPacks = _productService.ListProductPacks(true);
+            foreach (var productPack in productPacks)
+            {
+                foreach (var productPackProduct in productPack.Products)
+                {
+                    LoadUploadedFiles(productPackProduct.Product, false, true);
+                }
+            }
+            return View(productPacks);
         }
 
         [Route("productpack/{seoFriendlyId}")]
@@ -36,7 +44,12 @@ namespace K9.WebApplication.Controllers
             {
                 return HttpNotFound();
             }
-            
+
+            foreach (var productPackProduct in productPack.Products)
+            {
+                LoadUploadedFiles(productPackProduct.Product, false, true);
+            }
+
             LoadUploadedFiles(productPack);
             return View(productPack);
         }
@@ -44,7 +57,7 @@ namespace K9.WebApplication.Controllers
         [Authorize]
         public ActionResult Link(Guid id)
         {
-            if(!Roles.CurrentUserIsInRoles(Constants.Constants.UnicornUser) && !Roles.CurrentUserIsInRoles(RoleNames.Administrators))
+            if (!Roles.CurrentUserIsInRoles(Constants.Constants.UnicornUser) && !Roles.CurrentUserIsInRoles(RoleNames.Administrators))
             {
                 return HttpNotFound();
             }
@@ -56,7 +69,7 @@ namespace K9.WebApplication.Controllers
             }
             return View("Link", productPack);
         }
-        
+
         public override string GetObjectName()
         {
             return typeof(NewsItem).Name;

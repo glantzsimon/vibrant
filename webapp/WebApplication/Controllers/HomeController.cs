@@ -3,6 +3,7 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Services;
 using NLog;
 using System.Web.Mvc;
+using K9.Base.WebApplication.Constants;
 
 namespace K9.WebApplication.Controllers
 {
@@ -20,12 +21,7 @@ namespace K9.WebApplication.Controllers
         {
             return View();
         }
-
-        public ActionResult FrequentlyAskedQuestions()
-        {
-            return View();
-        }
-
+        
         public ActionResult DownloadKickStartGuide()
         {
             return View();

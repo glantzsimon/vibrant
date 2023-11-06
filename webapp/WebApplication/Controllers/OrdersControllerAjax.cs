@@ -176,5 +176,26 @@ namespace K9.WebApplication.Controllers
                 return Json(new { success = false, error = ex.Message });
             }
         }
+        
+        public JsonResult UpdateOrderIsLocalDelivery(int id, bool value)
+        {
+            try
+            {
+                var original = Repository.Find(id);
+
+                if (original.IsLocalDelivery != value)
+                {
+                    original.IsLocalDelivery = value;
+                }
+
+                Repository.Update(original);
+                _orderService.ClearCache();
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
     }
 }

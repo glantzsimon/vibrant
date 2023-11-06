@@ -41,6 +41,7 @@
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsMade)
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsComplete)
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsOnHold)
+                            @Html.BootstrapEditorFor(e => e.SelectedOrder.IsLocalDelivery)
                         </div>
 
                         @Html.Partial("_AjaxPopup")
@@ -141,6 +142,21 @@
             $("#pageSpinner").show();
             var value = $(this).is(":checked");
             ajaxcontroller().send("@Url.Action("UpdateOrderIsStarted")",
+                {
+                    id: @Model.SelectedOrder.Id,
+                    value: value
+                }, "POST").done(
+                function(result) {
+                    $.fn.processResultAndShowPopup(result, function() {
+                        $("#SelectedOrderId").closest("form").submit();
+                    });
+                });
+        });
+
+        $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.IsLocalDelivery)}")").click(function() {
+            $("#pageSpinner").show();
+            var value = $(this).is(":checked");
+            ajaxcontroller().send("@Url.Action("UpdateOrderIsLocalDelivery")",
                 {
                     id: @Model.SelectedOrder.Id,
                     value: value

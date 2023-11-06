@@ -161,18 +161,18 @@ namespace K9.WebApplication.Services
 
                 product.Url = _urlHelper.AbsoluteAction("Details", "Product", new { seoFriendlyId = product.SeoFriendlyId });
                 product.QrCodeUrl = _urlHelper.Action("GetQrCode", "Shared", new { code = product.Url, size = 111 });
-                
+
                 var productIngredients = GetProductIngredients().Where(e => e.ProductId == product.Id).ToList();
                 var productIngredientsWithSubstitutes = new List<ProductIngredient>();
                 var groupedProductIngredients = new List<ProductIngredient>();
-                
+
                 foreach (var productIngredient in productIngredients)
                 {
                     productIngredient.Ingredient = _ingredientService.Find(productIngredient.IngredientId);
                     productIngredient.IngredientName = productIngredient.Ingredient.Name;
                     productIngredient.IngredientSubstitutes =
                         GetProductIngredientSubstitutes().Where(e => e.ProductIngredientId == productIngredient.Id).ToList();
-                    
+
                     foreach (var ingredientSubstitute in productIngredient.Ingredient.Substitutes)
                     {
                         var productIngredientSubstitute = productIngredient.IngredientSubstitutes.FirstOrDefault(e =>
@@ -387,20 +387,23 @@ namespace K9.WebApplication.Services
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 
+                var fullProductPacks = new List<ProductPack>();
                 var productPacks = _productPackRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
 
                 if (retrieveFullProduct)
                 {
                     foreach (var pack in productPacks)
                     {
-                        foreach (var productPackProduct in pack.Products)
+                        var fullPack = GetFullProductPack(pack);
+                        foreach (var productPackProduct in fullPack.Products)
                         {
                             productPackProduct.Product = GetFullProduct(productPackProduct.Product);
                         }
+                        fullProductPacks.Add(fullPack);
                     }
                 }
 
-                return productPacks;
+                return fullProductPacks;
             });
         }
 

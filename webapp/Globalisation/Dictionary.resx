@@ -2053,10 +2053,22 @@
   <data name="OrdersPickSlip" xml:space="preserve">
     <value>Orders Pick Slip</value>
   </data>
+  <data name="Thai" xml:space="preserve">
+    <value>Thai</value>
+  </data>
   <data name="TotalFullProductPacksPriceLabel" xml:space="preserve">
     <value>Total Full Product Packs Price</value>
   </data>
   <data name="TotalFullProductsPriceLabel" xml:space="preserve">
     <value>Total Full Products Price</value>
+  </data>
+  <data name="InternationalPriceLabel" xml:space="preserve">
+    <value>International Price</value>
+  </data>
+  <data name="IsLocalDeliveryLabel" xml:space="preserve">
+    <value>Is Local Delivery</value>
+  </data>
+  <data name="ViewClientAddressLabels" xml:space="preserve">
+    <value>View Client Address Labels</value>
   </data>
 </root>

@@ -15,4 +15,5 @@
         public const string SomethingStoredOn = "SomethingStoredOn";
         public const string ArticleId = "ArticleId";
     }
+    
 }

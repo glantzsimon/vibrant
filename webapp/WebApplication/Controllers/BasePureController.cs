@@ -1,12 +1,16 @@
-﻿using K9.Base.WebApplication.Constants;
+﻿using System.Collections.Generic;
+using System.Globalization;
+using K9.Base.WebApplication.Constants;
 using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.Helpers;
 using K9.DataAccessLayer.Models;
+using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Services;
 using NLog;
 using System.Web.Mvc;
+using K9.Globalisation;
 
 namespace K9.WebApplication.Controllers
 {
@@ -20,12 +24,22 @@ namespace K9.WebApplication.Controllers
         {
             _membershipService = membershipService;
             SetBetaWarningSessionVariable();
+
+            var acceptableCultureCodes = new List<string>
+            {
+                Strings.CultureCodes.English,
+                Strings.CultureCodes.Thai
+            };
+
+            if (!acceptableCultureCodes.Contains(SessionHelper.GetStringValue(SessionConstants.CultureCode)))
+            {
+                SetCultureCode(Strings.LanguageCodes.English, Strings.CultureCodes.English);
+            }
         }
 
         public ActionResult SetLanguage(string languageCode, string cultureCode)
         {
-            Session[SessionConstants.LanguageCode] = languageCode;
-            Session[SessionConstants.CultureCode] = cultureCode;
+            SetCultureCode(languageCode, cultureCode);
             return Redirect(Request.UrlReferrer?.ToString());
         }
 
@@ -42,6 +56,12 @@ namespace K9.WebApplication.Controllers
         public override string GetObjectName()
         {
             return string.Empty;
+        }
+
+        private void SetCultureCode(string languageCode, string cultureCode)
+        {
+            SessionHelper.SetValue(SessionConstants.LanguageCode, languageCode);
+            SessionHelper.SetValue(SessionConstants.CultureCode, cultureCode);
         }
 
         private static void SetBetaWarningSessionVariable()

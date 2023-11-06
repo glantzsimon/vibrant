@@ -2,14 +2,25 @@
 using K9.SharedLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+using K9.DataAccessLayer.Constants;
+using K9.Globalisation;
 
 namespace K9.DataAccessLayer.Helpers
 {
     public static class Methods
     {
         public static readonly Random RandomGenerator = new Random();
+
+        public static double ToInternationalPrice(this double value)
+        {
+            var price = CultureInfo.CurrentCulture.TwoLetterISOLanguageName != Strings.LanguageCodes.Thai
+                ? value * ConversionConstants.BahtToDollarsRate
+                : value;
+            return Math.Round(price / 7, MidpointRounding.AwayFromZero) * 7;
+        }
 
         public static double RoundToInteger(double value, int roundValue)
         {

@@ -11,8 +11,10 @@ using K9.WebApplication.Models;
 using K9.WebApplication.Services;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
 {
@@ -24,13 +26,15 @@ namespace K9.WebApplication.Controllers
         private readonly ILogger _logger;
         private readonly IMailChimpService _mailChimpService;
         private readonly IRepository<Country> _countriesRepository;
+        private readonly IOrderService _ordersService;
 
-        public ClientsController(IControllerPackage<Client> controllerPackage, IRepository<Donation> donationRepository, ILogger logger, IMailChimpService mailChimpService, IRepository<Country> countriesRepository) : base(controllerPackage)
+        public ClientsController(IControllerPackage<Client> controllerPackage, IRepository<Donation> donationRepository, ILogger logger, IMailChimpService mailChimpService, IRepository<Country> countriesRepository, IOrderService ordersService) : base(controllerPackage)
         {
             _donationRepository = donationRepository;
             _logger = logger;
             _mailChimpService = mailChimpService;
             _countriesRepository = countriesRepository;
+            _ordersService = ordersService;
         }
 
         public ActionResult ImportClientsFromDonations()
@@ -62,9 +66,20 @@ namespace K9.WebApplication.Controllers
         }
 
         [OutputCache(NoStore = true, Duration = 0)]
+        public ActionResult ViewClientAddressLabelsForAllOrders()
+        {
+            var allOrders = _ordersService.List(true).Where(e => !e.IsOnHold && !e.IsLocalDelivery).ToList();
+            var ordersViewModel = new OrdersReviewViewModel(allOrders);
+            return ViewClientsAddressLabels(ordersViewModel.GetIncompleteOrders().Select(e => e.ClientId ?? 0).ToArray());
+        }
+
+        [OutputCache(NoStore = true, Duration = 0)]
         public ActionResult ViewClientsAddressLabels(params int[] ids)
         {
-            var recipients = Repository.Find(e => ids.Contains(e.Id)).ToList();
+            var recipients = ids != null
+                ? Repository.Find(e => ids.Contains(e.Id)).ToList()
+                : new List<Client>();
+
             foreach (var recipient in recipients)
             {
                 recipient.Country = _countriesRepository.Find(recipient.CountryId ?? 0);

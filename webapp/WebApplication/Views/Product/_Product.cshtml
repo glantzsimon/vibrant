@@ -27,13 +27,19 @@
     <br />
 
     <h5>@Dictionary.PriceLabel</h5>
-    @Model.GetFormattedPrice()
+    @Model.GetFormattedInternationalPrice()
+
+    <br />
+
+    <h5>@Dictionary.AmountLabel</h5>
+    @Model.FormattedAmount
 
     <br />
 
     <h5>@Dictionary.DosageLabel</h5>
-    @MvcHtmlString.Create(Model.Dosage)
+    @Model.GetRecommendationsText()
 
+    <br />
     <br />
 
     <h5>@Dictionary.BenefitsLabel</h5>

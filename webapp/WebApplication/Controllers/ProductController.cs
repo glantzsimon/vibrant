@@ -26,7 +26,12 @@ namespace K9.WebApplication.Controllers
         [Route("product/all")]
         public ActionResult Index()
         {
-            return View(_productService.List());
+            var products = _productService.List();
+            foreach (var product in products)
+            {
+                LoadUploadedFiles(product);
+            }
+            return View(products);
         }
 
         [Route("products/export/json")]

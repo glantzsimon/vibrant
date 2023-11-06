@@ -2,6 +2,7 @@
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Helpers;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Extensions;
 using System;
@@ -12,7 +13,6 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -84,6 +84,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.OrderTypeLabel)]
         public EOrderType OrderType { get; set; } = EOrderType.Sale;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.IsLocalDeliveryLabel)]
+        public bool IsLocalDelivery { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.RequestedOnLabel)]

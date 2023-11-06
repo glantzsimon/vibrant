@@ -24,28 +24,43 @@ namespace K9.WebApplication.Models
             switch (recipients.Count)
             {
                 case 5:
-                    allRecipients.Add(recipients.First());
+                    allRecipients.Add(recipients[0]);
+                    allRecipients.Add(recipients[0]);
+                    allRecipients.Add(recipients[1]);
+                    allRecipients.Add(recipients[2]);
+                    allRecipients.Add(recipients[3]);
+                    allRecipients.Add(recipients[4]);
                     break;
 
                 case 4:
                     allRecipients.Add(recipients[0]);
+                    allRecipients.Add(recipients[0]);
                     allRecipients.Add(recipients[1]);
+                    allRecipients.Add(recipients[1]);
+                    allRecipients.Add(recipients[2]);
+                    allRecipients.Add(recipients[3]);
                     break;
 
                 case 3:
                     allRecipients.Add(recipients[0]);
+                    allRecipients.Add(recipients[0]);
                     allRecipients.Add(recipients[1]);
-                    allRecipients.Add(recipients[3]);
+                    allRecipients.Add(recipients[1]);
+                    allRecipients.Add(recipients[2]);
+                    allRecipients.Add(recipients[2]);
                     break;
 
                 case 2:
                     allRecipients.Add(recipients[0]);
                     allRecipients.Add(recipients[0]);
+                    allRecipients.Add(recipients[0]);
+                    allRecipients.Add(recipients[1]);
                     allRecipients.Add(recipients[1]);
                     allRecipients.Add(recipients[1]);
                     break;
 
                 case 1:
+                    allRecipients.Add(recipients[0]);
                     allRecipients.Add(recipients[0]);
                     allRecipients.Add(recipients[0]);
                     allRecipients.Add(recipients[0]);

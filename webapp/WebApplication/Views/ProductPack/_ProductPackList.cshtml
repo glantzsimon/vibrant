@@ -18,9 +18,32 @@
     {
         foreach (var productPack in Model)
         {
-            <h5>@productPack.Name</h5>
-            <p>@MvcHtmlString.Create(productPack.ShortDescription)</p>
-            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Details", "ProductPack", new { seoFriendlyId = productPack.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Small)
+            <div class="row">
+                <div class="col-xs-4">
+                    @Html.Partial("_ImageFilesDisplay", new FileSourceViewModel(productPack.GetProductFileSources().ToArray()))
+                </div>
+                <div class="col-xs-8">
+                    <h4 class="margin-bottom-0">@productPack.Name</h4>
+                    <h5 class="margin-0">@productPack.GetFormattedInternationalPrice()</h5>
+                    <div class="margin-top-10">
+                        <div class="summary-info-item">@Dictionary.ClickOnAnItemForMoreInfo</div>
+                        @foreach (var product in productPack.Products)
+                        {
+                            <a target="_blank" href="@Url.Action("Details", "Product", new {seoFriendlyId = product.Product.SeoFriendlyId})">
+                                <span class="summary-item summary-item-small">@product.Amount x @product.Product.Name</span>
+                            </a>
+                        }
+                    </div>
+
+                    <br />
+                    <p>@MvcHtmlString.Create(productPack.ShortDescription)</p>
+
+                    @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Details", "ProductPack", new { seoFriendlyId = productPack.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Large)
+
+                </div>
+            </div>
+            <br />
+            <hr />
         }
     }
     else

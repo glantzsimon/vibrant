@@ -46,6 +46,8 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         public List<ProductPackProduct> Products { get; set; }
 
+        public List<FileSource> GetProductFileSources() => Products.Select(e => e.Product.ImageFileSource).ToList();
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShortDescriptionLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [StringLength(int.MaxValue)]
@@ -75,6 +77,13 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         public string GetFormattedPrice() => double.Parse(Price.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        [DataType(DataType.Currency)]
+        public double GetInternationalPrice() => Price.ToInternationalPrice();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        public string GetFormattedInternationalPrice() => GetInternationalPrice().ToString("C", CultureInfo.CurrentCulture);
+
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
@@ -99,6 +108,13 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalSavingsLabel)]
         [DataType(DataType.Currency)]
         public double ProductsDiscount => GetTotalProductsPrice() - Price;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalSavingsLabel)]
+        [DataType(DataType.Currency)]
+        public double InternationalProductsDiscount => ProductsDiscount.ToInternationalPrice();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalSavingsLabel)]
+        public string FormattedInternationalProductsDiscount => InternationalProductsDiscount.ToString("C", CultureInfo.CurrentCulture);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceDiscount1Label)]
         [DataType(DataType.Currency)]

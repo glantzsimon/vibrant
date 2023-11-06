@@ -62,6 +62,7 @@
             public const string PriceDiscount2Label = "PriceDiscount2Label";
             public const string PriceSmallPackDiscount1Label = "PriceSmallPackDiscount1Label";
             public const string PriceSmallPackDiscount2Label = "PriceSmallPackDiscount2Label";
+            public const string InternationalPriceLabel = "InternationalPriceLabel";
             public const string PriceLabel = "PriceLabel";
             public const string FullPriceLabel = "FullPriceLabel";
             public const string AmountRedeemableLabel = "AmountRedeemableLabel";
@@ -83,6 +84,7 @@
             public const string CustomerLabel = "CustomerLabel";
             public const string RepLabel = "RepLabel";
             public const string RequestedOnLabel = "RequestedOnLabel";
+            public const string IsLocalDeliveryLabel = "IsLocalDeliveryLabel";
             public const string StartedOnLabel = "StartedOnLabel";
             public const string MadeOnLabel = "MadeOnLabel";
             public const string IsMadeLabel = "IsMadeLabel";
@@ -471,6 +473,18 @@
                 public const string Litres = "litres";
             }
 
+        }
+
+        public class LanguageCodes
+        {
+            public const string Thai = "th";
+            public const string English = "en";
+        }
+
+        public class CultureCodes
+        {
+            public const string Thai = "th-TH";
+            public const string English = "en-US";
         }
     }
 }

@@ -2557,6 +2557,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to International Price.
+        /// </summary>
+        public static string InternationalPriceLabel {
+            get {
+                return ResourceManager.GetString("InternationalPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid reCAPTCHA response.
         /// </summary>
         public static string InvalidRecaptcha {
@@ -2625,6 +2634,15 @@ namespace K9.Globalisation {
         public static string IsLiveOnLabel {
             get {
                 return ResourceManager.GetString("IsLiveOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is Local Delivery.
+        /// </summary>
+        public static string IsLocalDeliveryLabel {
+            get {
+                return ResourceManager.GetString("IsLocalDeliveryLabel", resourceCulture);
             }
         }
         
@@ -5440,6 +5458,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thai.
+        /// </summary>
+        public static string Thai {
+            get {
+                return ResourceManager.GetString("Thai", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thailand.
         /// </summary>
         public static string Thailand {
@@ -5868,6 +5895,15 @@ namespace K9.Globalisation {
         public static string ViewClientAddressLabel {
             get {
                 return ResourceManager.GetString("ViewClientAddressLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Client Address Labels.
+        /// </summary>
+        public static string ViewClientAddressLabels {
+            get {
+                return ResourceManager.GetString("ViewClientAddressLabels", resourceCulture);
             }
         }
         

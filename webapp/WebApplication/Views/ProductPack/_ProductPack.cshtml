@@ -2,10 +2,7 @@
 @using K9.Base.WebApplication.ViewModels
 @model ProductPack
 
-@if (Model.ImageFileSource != null)
-{
-    @Html.Partial("_ImageFilesDisplay", new FileSourceViewModel(Model.ImageFileSource))
-}
+@Html.Partial("_ImageFilesDisplay", new FileSourceViewModel(Model.GetProductFileSources().ToArray()))
 
 <div class="row text-center">
     <div class="col-md-12">
@@ -27,8 +24,9 @@
     <br />
 
     <h5>@Dictionary.PriceLabel</h5>
-    @Model.GetFormattedPrice()
+    @Model.GetFormattedInternationalPrice()
     
+    <br />
     <br />
 
     <h5>@Dictionary.BenefitsLabel</h5>
@@ -44,7 +42,7 @@
 
     <div class="row">
         <div class="col-xs-12 large-text">
-            @Html.BootstrapDisplayFor(e => e.ProductsDiscount)
+            @Html.BootstrapDisplayFor(e => e.FormattedInternationalProductsDiscount)
         </div>
     </div>
 
