@@ -5,7 +5,8 @@ namespace K9.WebApplication.Services
 {
     public interface IClientService
     {
-        Client GetOrCreateClient(string stripeCustomerId, string fullName, string emailAddress, string phoneNumber = "");
+        Client GetOrCreateClient(string stripeCustomerId, string fullName, string emailAddress, string phoneNumber = "",
+            int? userId = null);
         Client Find(int id);
         Client Find(string emailAddress);
         List<Client> ListClients();

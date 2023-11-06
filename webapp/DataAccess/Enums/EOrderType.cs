@@ -10,5 +10,9 @@ namespace K9.DataAccessLayer.Enums
         Gift = 2,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.PersonalUse)]
         HealthCoachingPackage = 3,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Consultation)]
+        Consultation = 4,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ShoppingCart)]
+        ShoppingCart = 5,
     }
 }

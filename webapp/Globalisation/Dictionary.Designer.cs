@@ -151,6 +151,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add to cart!.
+        /// </summary>
+        public static string AddToCart {
+            get {
+                return ResourceManager.GetString("AddToCart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Whilst using this site, you agree to have read and accepted our &lt;a target=&quot;_blank&quot; href=&quot;{privacypolicyurl}&quot;&gt;terms of use, cookie and privacy policy&lt;/a&gt;.
         /// </summary>
         public static string AgreeToTerms {
@@ -645,7 +654,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    &lt;strong&gt;Could a &lt;span class=&quot;glossary&quot; key=&quot;CBSMutation&quot;&gt;CBS mutation&lt;/span&gt; could be causing your chronic health problems?&lt;/strong&gt;
+        ///    &lt;strong&gt;Could a &lt;span class=&quot;glossary&quot; key=&quot;CBSMutation&quot;&gt;CBS mutation&lt;/span&gt; be causing your chronic health problems?&lt;/strong&gt;
         ///&lt;/p&gt;
         ///&lt;div&gt;
         ///    &lt;a target=&quot;_blank&quot; class=&quot;btn btn-info btn-lg&quot; href=&quot;article/a-cbs-mutation-could-be-causing-your-chronic-health-problems&quot;&gt;Find out more
@@ -4956,6 +4965,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shopping Cart.
+        /// </summary>
+        public static string ShoppingCart {
+            get {
+                return ResourceManager.GetString("ShoppingCart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Short Description.
         /// </summary>
         public static string ShortDescriptionLabel {
@@ -6144,6 +6162,15 @@ namespace K9.Globalisation {
         public static string WelcomeSubTitle {
             get {
                 return ResourceManager.GetString("WelcomeSubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WhatsApp Us!.
+        /// </summary>
+        public static string WhatsAppUs {
+            get {
+                return ResourceManager.GetString("WhatsAppUs", resourceCulture);
             }
         }
         

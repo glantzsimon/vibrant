@@ -69,6 +69,7 @@ namespace K9.WebApplication
             builder.RegisterType<IngredientService>().As<IIngredientService>().InstancePerRequest();
             builder.RegisterType<ProtocolService>().As<IProtocolService>().InstancePerRequest();
             builder.RegisterType<QrCodeService>().As<IQrCodeService>().InstancePerRequest();
+            builder.RegisterType<ShoppingCartService>().As<IShoppingCartService>().InstancePerRequest();
             
             RegisterConfiguration(builder);
 

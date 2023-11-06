@@ -19,13 +19,13 @@ namespace K9.WebApplication.Services
             _logger = logger;
         }
 
-        public Client GetOrCreateClient(string stripeCustomerId, string fullName, string emailAddress, string phoneNumber = "")
+        public Client GetOrCreateClient(string stripeCustomerId, string fullName, string emailAddress, string phoneNumber = "", int? userId = null)
         {
             if (!string.IsNullOrEmpty(emailAddress))
             {
                 try
                 {
-                    var existingCustomer = _clientsRepository.Find(_ => _.StripeCustomerId == stripeCustomerId || _.EmailAddress == emailAddress).FirstOrDefault();
+                    var existingCustomer = _clientsRepository.Find(_ => _.StripeCustomerId == stripeCustomerId || _.EmailAddress == emailAddress || _.UserId == userId).FirstOrDefault();
                     if (existingCustomer == null)
                     {
                         _clientsRepository.Create(new Client
@@ -33,9 +33,10 @@ namespace K9.WebApplication.Services
                             StripeCustomerId = stripeCustomerId,
                             FullName = string.IsNullOrEmpty(fullName) ? emailAddress : fullName,
                             EmailAddress = emailAddress,
-                            PhoneNumber = phoneNumber
+                            PhoneNumber = phoneNumber,
+                            UserId = userId
                         });
-                        return _clientsRepository.Find(e => e.StripeCustomerId == stripeCustomerId).FirstOrDefault();
+                        return _clientsRepository.Find(e => e.StripeCustomerId == stripeCustomerId || e.EmailAddress == emailAddress || e.UserId == userId).FirstOrDefault();
                     }
 
                     var isUpdated = false;
@@ -48,6 +49,18 @@ namespace K9.WebApplication.Services
                     if (existingCustomer.EmailAddress != emailAddress)
                     {
                         existingCustomer.EmailAddress = emailAddress;
+                        isUpdated = true;
+                    }
+
+                    if (existingCustomer.UserId != userId)
+                    {
+                        existingCustomer.UserId = userId;
+                        isUpdated = true;
+                    }
+
+                    if (existingCustomer.StripeCustomerId != stripeCustomerId)
+                    {
+                        existingCustomer.StripeCustomerId = stripeCustomerId;
                         isUpdated = true;
                     }
 

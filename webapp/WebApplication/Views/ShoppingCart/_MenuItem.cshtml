@@ -1,0 +1,3 @@
+﻿@using K9.Base.WebApplication.Extensions
+
+<li class="@ViewContext.GetActiveClass("ViewCart", "ShoppingCart")"><a title="@Dictionary.ShoppingCart" href="@Url.Action("ViewCart", "ShoppingCart")"><i class="fa fa-shopping-cart"></i><span class="site-controls-text"> @Dictionary.ShoppingCart</span></a></li>

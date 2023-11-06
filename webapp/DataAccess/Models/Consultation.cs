@@ -8,6 +8,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
+using K9.DataAccessLayer.Helpers;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -41,6 +42,11 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double GetPrice() => GetPricePerDuration();
 
+        [UIHint("InternationalCurrency")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TotalPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double InternationalPrice => GetPrice().ToInternationalPrice();
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TotalPriceLabel)] public string FormattedPrice => GetPrice().ToString("C0", CultureInfo.GetCultureInfo("en-US"));
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DurationLabel)]
@@ -52,12 +58,12 @@ namespace K9.DataAccessLayer.Models
         {
             if (ConsultationDuration == EConsultationDuration.OneHour)
             {
-                return 17;
+                return 2200;
             }
 
             if (ConsultationDuration == EConsultationDuration.TwoHours)
             {
-                return 27;
+                return 3500;
             }
 
             return 0;

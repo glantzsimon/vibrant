@@ -101,9 +101,9 @@
                         <li class="@ViewContext.GetActiveClass("EditList", "Products") sub-item"><a href="@Url.Action("EditList", "Products")">@Dictionary.ProductsList</a></li>
 
                         <li class="@ViewContext.GetActiveClass("DownloadProductsCsv", "Products") sub-item"><a target="_blank" target="_blank" href="@Url.Action("DownloadProductsCsv", "Products")">@Dictionary.DownloadProductsCsv</a></li>
-                        
+
                         <li class="@ViewContext.GetActiveClass("ViewProductQrCodes", "Products") sub-item"><a target="_blank" target="_blank" href="@Url.Action("ViewProductQrCodes", "Products")">@Dictionary.ViewProductQrCodes</a></li>
-                        
+
                         <li class="divider"></li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "ProductPacks") sub-item"><a href="@Url.Action("Index", "ProductPacks")">@Dictionary.ProductPacks</a></li>
@@ -154,15 +154,27 @@
             </ul>
         }
         <ul class="site-controls">
-            @*<li class="@ViewContext.GetActiveClass("BookConsultationStart", "Consultation")"><a title="@Dictionary.BookAConsultation" href="@Url.Action("BookConsultationStart", "Consultation")"><i class="fa fa-phone-alt"></i><span class="site-controls-text"> @Dictionary.BookAConsultation</span></a></li>*@
+            <li class="@ViewContext.GetActiveClass("BookConsultationStart", "Consultation")"><a title="@Dictionary.BookAConsultation" href="@Url.Action("BookConsultationStart", "Consultation")"><i class="fa fa-phone-alt"></i><span class="site-controls-text"> @Dictionary.BookAConsultation</span></a></li>
+
             <li class="@ViewContext.GetActiveClass("Index", "Support")"><a title="@Dictionary.Support" href="@Url.Action("Index", "Support")"><i class="fa fa-question-circle"></i><span class="site-controls-text"> @Dictionary.Support</span></a></li>
-            @*<li class="@ViewContext.GetActiveClass("DonateStart", "Support")"><a title="@Dictionary.Donate" href="@Url.Action("DonateStart", "Support")"><i class="fa fa-donate"></i><span class="site-controls-text"> @Dictionary.Donate</span></a></li>*@
+
+            <li>
+                <a target="_blank" title="@Dictionary.WhatsAppUs" href="https://wa.me/+66633840139">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="site-controls-text">
+                        @Dictionary.WhatsAppUs
+                    </span>
+                </a>
+            </li>
+
             @if (WebSecurity.IsAuthenticated)
             {
                 <li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a title="@K9.Base.Globalisation.Dictionary.MyAccountTitle" href="@Url.Action("MyAccount", "Account")"><i class="fa fa-user-circle"></i><span class="site-controls-text"> @K9.Base.Globalisation.Dictionary.MyAccountTitle</span></a></li>
+
+                @Html.Action("ViewCart", "ShoppingCart")
             }
             @Html.LoginLogout()
-            
+
             @Html.Partial("Controls/_LanguageSelector")
         </ul>
     </div>
@@ -205,7 +217,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span> @Dictionary.Protocols</span> <span class="caret"></span></a>
 
                             <ul class="dropdown-menu nav navbar-nav">
-                                
+
                                 <li class="@ViewContext.GetActiveClass("Index", "ProtocolArticles")"><a href="@Url.Action("Index", "ProtocolArticles")"> @Dictionary.SeeAll</a></li>
                             </ul>
                         </li>

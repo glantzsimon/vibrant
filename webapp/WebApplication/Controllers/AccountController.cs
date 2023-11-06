@@ -20,10 +20,10 @@ using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
 using WebMatrix.WebData;
+using Client = K9.DataAccessLayer.Models.Client;
+using UserRole = K9.Base.DataAccessLayer.Models.UserRole;
 
 namespace K9.WebApplication.Controllers
 {
@@ -41,9 +41,11 @@ namespace K9.WebApplication.Controllers
         private readonly IRecaptchaService _recaptchaService;
         private readonly IRepository<UserProtocol> _userProtocolsRepository;
         private readonly IRepository<Protocol> _protocolsRepository;
+        private readonly IRepository<UserRole> _userRolesRepository;
+        private readonly IRepository<Role> _rolesRepository;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IClientService clientService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<UserProtocol> userProtocolsRepository, IRepository<Protocol> protocolsRepository)
+        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IClientService clientService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<UserProtocol> userProtocolsRepository, IRepository<Protocol> protocolsRepository, IRepository<UserRole> userRolesRepository, IRepository<Role> rolesRepository)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _userRepository = userRepository;
@@ -58,6 +60,8 @@ namespace K9.WebApplication.Controllers
             _recaptchaService = recaptchaService;
             _userProtocolsRepository = userProtocolsRepository;
             _protocolsRepository = protocolsRepository;
+            _userRolesRepository = userRolesRepository;
+            _rolesRepository = rolesRepository;
             _recaptchaConfig = recaptchaConfig.Value;
 
             websiteConfig.Value.RegistrationEmailTemplateText = Globalisation.Dictionary.WelcomeEmail;
@@ -317,6 +321,18 @@ namespace K9.WebApplication.Controllers
                             return RedirectToAction("AccountCreated", "Account", new { additionalError = Globalisation.Dictionary.PromoCodeNotUsed });
                         }
                     }
+
+                    // Add to client users
+                    var clientUserRole = _rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).FirstOrDefault();
+                    var userRole = new UserRole
+                    {
+                        UserId = user.Id,
+                        RoleId = clientUserRole.Id
+                    };
+                    _userRolesRepository.Create(userRole);
+
+                    // Create client record
+                    _clientService.GetOrCreateClient("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
 
                     return RedirectToAction("AccountCreated", "Account");
                 }

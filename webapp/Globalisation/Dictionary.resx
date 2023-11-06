@@ -2062,6 +2062,9 @@
   <data name="TotalFullProductsPriceLabel" xml:space="preserve">
     <value>Total Full Products Price</value>
   </data>
+  <data name="AddToCart" xml:space="preserve">
+    <value>Add to cart!</value>
+  </data>
   <data name="Alchemy" xml:space="preserve">
     <value>Alchemy</value>
   </data>
@@ -2077,6 +2080,9 @@
   <data name="IsLocalDeliveryLabel" xml:space="preserve">
     <value>Is Local Delivery</value>
   </data>
+  <data name="ShoppingCart" xml:space="preserve">
+    <value>Shopping Cart</value>
+  </data>
   <data name="ViewClientAddressLabels" xml:space="preserve">
     <value>View Client Address Labels</value>
   </data>
@@ -2085,5 +2091,8 @@
   </data>
   <data name="VitaminsMinerals" xml:space="preserve">
     <value>Vitamins &amp; Minerals</value>
+  </data>
+  <data name="WhatsAppUs" xml:space="preserve">
+    <value>WhatsApp Us!</value>
   </data>
 </root>

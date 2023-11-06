@@ -1,12 +1,14 @@
-﻿<div class="margin-top-10">
+﻿@model K9.WebApplication.Options.AjaxPopupOptions
+
+<div class="margin-top-10">
     <div id="success-popup" class="display-none">
         <div class="alert alert-@EAlertType.Success.ToString().ToLower() fade in">
-            @Dictionary.RecordUpdatedSuccessfully
+            @Model.SuccessMessage
         </div>
     </div>
     <div id="fail-popup" class="display-none">
         <div class="alert alert-@EAlertType.Fail.ToString().ToLower() fade in">
-            @Dictionary.RecordUpdateFailed
+            @Model.FailureMessage
         </div>
     </div>
 </div>

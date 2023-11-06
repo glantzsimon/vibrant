@@ -23,11 +23,13 @@ namespace K9.WebApplication.Options
 
         public int Quantity { get; set; }
 
+        [UIHint("InternationalCurrency")]
         [Required]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountToPayLabel)]
         [DataType(DataType.Currency)]
         public double Amount { get; }
 
+        [UIHint("InternationalCurrency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalLabel)]
         [DataType(DataType.Currency)]
         public double Total => Amount;

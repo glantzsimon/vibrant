@@ -1,5 +1,6 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Helpers
+@using K9.WebApplication.Options
 @model Ingredient
 
 <ul id="ingredients-list" class="list-group sortable">
@@ -14,7 +15,7 @@
     }
 </ul>
 
-@Html.Partial("_AjaxPopup")
+@Html.Partial("_AjaxPopup", new AjaxPopupOptions())
 
 <script type="text/javascript">
 

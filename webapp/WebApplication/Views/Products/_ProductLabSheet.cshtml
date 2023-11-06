@@ -4,6 +4,7 @@
 @using K9.SharedLibrary.Authentication
 @using K9.SharedLibrary.Extensions
 @using K9.WebApplication.Helpers
+@using K9.WebApplication.Options
 @model Product
 
 @{
@@ -86,7 +87,7 @@
     </div>
 }
 
-@Html.Partial("_AjaxPopup")
+@Html.Partial("_AjaxPopup", new AjaxPopupOptions())
 
 <script type="text/javascript">
 

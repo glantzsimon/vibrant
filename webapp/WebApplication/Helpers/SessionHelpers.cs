@@ -1,5 +1,7 @@
 ﻿using K9.WebApplication.Models;
 using System;
+using K9.Base.WebApplication.Constants;
+using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Helpers
 {
@@ -24,35 +26,5 @@ namespace K9.WebApplication.Helpers
             }
             return null;
         }
-
-        public static void SetLastSomething(MembershipModel model)
-        {
-            //Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.LastProfileDateOfBirth, model.PersonModel.DateOfBirth.ToString(Constants.FormatConstants.SessionDateTimeFormat));
-        }
-
-        public static void ClearLastSomething()
-        {
-            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.SessionConstants.IsRetrieveSomething, false);
-        }
-
-        public static PersonModel GetLastSomething(bool todayOnly = false, bool remove = true)
-        {
-            if (Base.WebApplication.Helpers.SessionHelper.GetBoolValue(Constants.SessionConstants.IsRetrieveSomething) && (!todayOnly || GetDateTimeValue(Constants.SessionConstants.SomethingStoredOn) == DateTime.Today))
-            {
-                //DateTime.TryParse(Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastProfileDateOfBirth), out var dateOfBirth);
-                
-                if (remove)
-                    ClearLastSomething();
-
-                return new PersonModel
-                {
-                    //DateOfBirth = dateOfBirth,
-                    //Gender = gender,
-                    //Name = Base.WebApplication.Helpers.SessionHelper.GetStringValue(Constants.SessionConstants.LastProfileName)
-                };
-            }
-            return null;
-        }
-
     }
 }

@@ -14,6 +14,7 @@
         public const string IsRetrieveSomething = "IsRetrieveSomething";
         public const string SomethingStoredOn = "SomethingStoredOn";
         public const string ArticleId = "ArticleId";
+        public const string ShoppingCartId = "ShoppingCartId";
     }
     
 }

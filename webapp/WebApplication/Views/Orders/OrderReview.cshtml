@@ -1,5 +1,6 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Options
 @using K9.WebApplication.ViewModels
 @model OrdersReviewViewModel
 @{
@@ -44,7 +45,7 @@
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsLocalDelivery)
                         </div>
 
-                        @Html.Partial("_AjaxPopup")
+                        @Html.Partial("_AjaxPopup", new AjaxPopupOptions())
                     </div>
                 </div>
             }

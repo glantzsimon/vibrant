@@ -234,6 +234,7 @@
             public const string HealthQuestionnaire = "HealthQuestionnaire";
             public const string HealthQuestionnaires = "HealthQuestionnaires";
             public const string Consultation = "Consultation";
+            public const string ShoppingCart = "ShoppingCart";
             public const string Consultations = "Consultations";
             public const string UserProtocol = "UserProtocol";
             public const string UserProtocols = "UserProtocols";
