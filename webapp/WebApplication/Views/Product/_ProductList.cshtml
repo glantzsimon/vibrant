@@ -1,5 +1,8 @@
 ﻿@using System.Web.Mvc.Html
+@using K9.Base.DataAccessLayer.Attributes
 @using K9.Base.WebApplication.ViewModels
+@using K9.DataAccessLayer.Helpers
+@using K9.SharedLibrary.Extensions
 @model List<Product>
 
 
@@ -16,27 +19,57 @@
 <article>
     @if (Model.Any())
     {
-        foreach (var product in Model)
+        var categoryIndex = 0;
+
+        <ul class="nav nav-pills">
+
+            @foreach (var category in Model.Select(e => e.Category).Distinct().OrderBy(e => e.ToString()))
+            {
+                var categoryText = category.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+                var categoryTitle = categoryText.Pluralise();
+
+                if (categoryIndex == 0)
+                {
+                    <li class="active"><a data-toggle="pill" href="#@categoryText">@categoryTitle</a></li>
+                }
+                else
+                {
+                    <li><a data-toggle="pill" href="#@categoryText">@categoryTitle</a></li>
+                }
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2></h2>
+                        <hr />
+                    </div>
+                </div>
+
+                categoryIndex++;
+            }
+
+        </ul>
+
+        categoryIndex = 0;
+
+        foreach (var category in Model.Select(e => e.Category).Distinct().OrderBy(e => e.ToString()))
         {
-            <div class="row">
-                <div class="col-xs-4">
-                    @if (product.ImageFileSource != null)
-                    {
-                        @Html.Partial("_ImageFilesDisplay", new FileSourceViewModel(product.ImageFileSource))
-                    }
-                </div>
-                <div class="col-xs-8">
-                    <h4 class="margin-bottom-0">@product.Name</h4>
-                    <h5 class="margin-0">@product.GetFormattedInternationalPrice()</h5>
+            var categoryText = category.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+            var products = Model.Where(e => e.Category == category).ToList();
 
-                    <br />
-                    <p>@MvcHtmlString.Create(product.ShortDescription)</p>
-
-                    @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Details", "Product", new { seoFriendlyId = product.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Large)
-                </div>
+            <div class="tab-content">
+                @if (categoryIndex == 0)
+                {
+                    <div id="@categoryText" class="tab-pane fade in active padding-top-15">
+                        @Html.Partial("../Product/_ProductsList", products)
+                    </div>
+                }
+                else
+                {
+                    <div id="@categoryText" class="tab-pane fade padding-top-15">
+                        @Html.Partial("../Product/_ProductsList", products)
+                    </div>
+                }
             </div>
-            <br />
-            <hr />
         }
     }
     else

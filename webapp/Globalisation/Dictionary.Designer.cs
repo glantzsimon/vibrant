@@ -160,6 +160,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alchemy.
+        /// </summary>
+        public static string Alchemy {
+            get {
+                return ResourceManager.GetString("Alchemy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All Orders Overview.
         /// </summary>
         public static string AllOrdersOverview {
@@ -1369,6 +1378,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Detox.
+        /// </summary>
+        public static string Detox {
+            get {
+                return ResourceManager.GetString("Detox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Detoxification.
         /// </summary>
         public static string Detoxification {
@@ -2391,6 +2409,15 @@ namespace K9.Globalisation {
         public static string Herb {
             get {
                 return ResourceManager.GetString("Herb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Herbal.
+        /// </summary>
+        public static string Herbal {
+            get {
+                return ResourceManager.GetString("Herbal", resourceCulture);
             }
         }
         
@@ -5985,6 +6012,24 @@ namespace K9.Globalisation {
         public static string Vitamin {
             get {
                 return ResourceManager.GetString("Vitamin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vitamins.
+        /// </summary>
+        public static string Vitamins {
+            get {
+                return ResourceManager.GetString("Vitamins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vitamins &amp; Minerals.
+        /// </summary>
+        public static string VitaminsMinerals {
+            get {
+                return ResourceManager.GetString("VitaminsMinerals", resourceCulture);
             }
         }
         

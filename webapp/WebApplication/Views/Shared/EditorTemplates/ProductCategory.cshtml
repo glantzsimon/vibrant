@@ -6,7 +6,7 @@
 @model ECategory
 
 @Html.BootstrapDropdownFor(model => model, new SelectList(this.GetDropdownData().GetDataSetFromEnum<ECategory>(true)
-    .Where(i => Constants.ProductCategories.Select(e => (int)e).Contains(i.Id)),
+    .Where(i => Constants.ProductCategories.Select(e => (int)e).Contains(i.Id)).OrderBy(e => e.Name),
     "Id", 
     "Name", 
     Model))

@@ -242,6 +242,12 @@
             public const string Ingredient = "Ingredient";
             public const string Ingredients = "Ingredients";
             public const string Vitamin = "Vitamin";
+            public const string Vitamins = "Vitamins";
+            public const string VitaminsMinerals = "VitaminsMinerals";
+            public const string Minerals = "Minerals";
+            public const string Detox = "Detox";
+            public const string Herbal = "Herbal";
+            public const string Alchemy = "Alchemy";
             public const string Mineral = "Mineral";
             public const string Product = "Product";
             public const string DietarySupplement = "DietarySupplement";

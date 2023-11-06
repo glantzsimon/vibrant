@@ -26,8 +26,13 @@ namespace K9.WebApplication.Constants
 
         public static List<ECategory> ProductCategories = new List<ECategory>
         {
+            ECategory.Alchemy,
+            ECategory.Detox,
+            ECategory.Herbal,
+            ECategory.VitaminsMinerals,
             ECategory.DietarySupplement,
-            ECategory.PersonalCare
+            ECategory.PersonalCare,
+            ECategory.Other,
         };
     }
 }

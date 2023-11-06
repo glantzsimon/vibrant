@@ -2,7 +2,6 @@
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.DataAccessLayer.Attributes;
-using K9.DataAccessLayer.Constants;
 using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Helpers;
 using K9.DataAccessLayer.Interfaces;

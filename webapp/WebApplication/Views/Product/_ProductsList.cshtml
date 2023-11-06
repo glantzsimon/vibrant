@@ -1,0 +1,29 @@
+﻿@using System.Web.Mvc.Html
+@using K9.Base.DataAccessLayer.Attributes
+@using K9.Base.WebApplication.ViewModels
+@using K9.DataAccessLayer.Helpers
+@using K9.SharedLibrary.Extensions
+@model List<Product>
+
+@foreach (var product in Model)
+{
+    <div class="row">
+        <div class="col-xs-4">
+            @if (product.ImageFileSource != null)
+            {
+                @Html.Partial("_ImageFilesDisplay", new FileSourceViewModel(product.ImageFileSource))
+            }
+        </div>
+        <div class="col-xs-8">
+            <h4 class="margin-bottom-0">@product.Name</h4>
+            <h5 class="margin-0">@product.GetFormattedInternationalPrice()</h5>
+
+            <br />
+            <p>@MvcHtmlString.Create(product.ShortDescription)</p>
+
+            @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Details", "Product", new { seoFriendlyId = product.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Large)
+        </div>
+    </div>
+    <br />
+    <hr />
+}

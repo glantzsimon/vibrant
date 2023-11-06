@@ -2062,6 +2062,15 @@
   <data name="TotalFullProductsPriceLabel" xml:space="preserve">
     <value>Total Full Products Price</value>
   </data>
+  <data name="Alchemy" xml:space="preserve">
+    <value>Alchemy</value>
+  </data>
+  <data name="Detox" xml:space="preserve">
+    <value>Detox</value>
+  </data>
+  <data name="Herbal" xml:space="preserve">
+    <value>Herbal</value>
+  </data>
   <data name="InternationalPriceLabel" xml:space="preserve">
     <value>International Price</value>
   </data>
@@ -2070,5 +2079,11 @@
   </data>
   <data name="ViewClientAddressLabels" xml:space="preserve">
     <value>View Client Address Labels</value>
+  </data>
+  <data name="Vitamins" xml:space="preserve">
+    <value>Vitamins</value>
+  </data>
+  <data name="VitaminsMinerals" xml:space="preserve">
+    <value>Vitamins &amp; Minerals</value>
   </data>
 </root>
