@@ -20,57 +20,56 @@
     @if (Model.Any())
     {
         var categoryIndex = 0;
+        var categories = Model.Select(e => e.Category).Distinct().OrderBy(e => e.ToString()).ToList();
 
         <ul class="nav nav-pills">
-
-            @foreach (var category in Model.Select(e => e.Category).Distinct().OrderBy(e => e.ToString()))
+            @foreach (var category in categories)
             {
                 var categoryText = category.GetAttribute<EnumDescriptionAttribute>().GetDescription();
-                var categoryTitle = categoryText.Pluralise();
 
                 if (categoryIndex == 0)
                 {
-                    <li class="active"><a data-toggle="pill" href="#@categoryText">@categoryTitle</a></li>
+                    <li class="active"><a data-toggle="pill" href="#@categoryText">@categoryText</a></li>
                 }
                 else
                 {
-                    <li><a data-toggle="pill" href="#@categoryText">@categoryTitle</a></li>
+                    <li><a data-toggle="pill" href="#@categoryText">@categoryText</a></li>
                 }
-
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h2></h2>
-                        <hr />
-                    </div>
-                </div>
 
                 categoryIndex++;
             }
 
         </ul>
 
-        categoryIndex = 0;
+        <br />
 
-        foreach (var category in Model.Select(e => e.Category).Distinct().OrderBy(e => e.ToString()))
-        {
-            var categoryText = category.GetAttribute<EnumDescriptionAttribute>().GetDescription();
-            var products = Model.Where(e => e.Category == category).ToList();
+        <div class="tab-content">
+            @{
+                categoryIndex = 0;
 
-            <div class="tab-content">
-                @if (categoryIndex == 0)
+                foreach (var category in categories)
                 {
-                    <div id="@categoryText" class="tab-pane fade in active padding-top-15">
-                        @Html.Partial("../Product/_ProductsList", products)
-                    </div>
+                    var categoryText = category.GetAttribute<EnumDescriptionAttribute>
+                        ().GetDescription();
+                    var products = Model.Where(e => e.Category == category).ToList();
+
+                    if (categoryIndex == 0)
+                    {
+                        <div id="@categoryText" class="tab-pane fade in active padding-top-15">
+                            @Html.Partial("../Product/_ProductsList", products)
+                        </div>
+                    }
+                    else
+                    {
+                        <div id="@categoryText" class="tab-pane fade padding-top-15">
+                            @Html.Partial("../Product/_ProductsList", products)
+                        </div>
+                    }
+
+                    categoryIndex++;
                 }
-                else
-                {
-                    <div id="@categoryText" class="tab-pane fade padding-top-15">
-                        @Html.Partial("../Product/_ProductsList", products)
-                    </div>
-                }
-            </div>
-        }
+            }
+        </div>
     }
     else
     {
