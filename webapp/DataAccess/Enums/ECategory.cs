@@ -24,9 +24,9 @@ namespace K9.DataAccessLayer.Enums
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Detox)]
         Detox = 730000,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Herbal)]
-        Herbal = 730000,
+        Herbal = 750000,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Alchemy)]
-        Alchemy = 750000,
+        Alchemy = 770000,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.PersonalCare)]
         PersonalCare = 800000,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Other)]
