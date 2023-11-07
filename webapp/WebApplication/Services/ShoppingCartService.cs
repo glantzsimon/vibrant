@@ -160,6 +160,9 @@ namespace K9.WebApplication.Services
                 
                 _ordersRepository.Create(shoppingCart);
                 _orderService.UpdateOrderNumberIfEmpty(shoppingCart);
+                _ordersRepository.Update(shoppingCart);
+
+                _orderService.ClearCache();
 
                 shoppingCart = _ordersRepository.Find(e => e.ExternalId == shoppingCartId).First();
             }

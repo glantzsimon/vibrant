@@ -15,7 +15,7 @@
                 function(result) {
                     $.fn.processResultAndShowPopup(result);
 
-                    var shoppingCartText = "@Dictionary.ShoppingCart";
+                    var shoppingCartText = " @Dictionary.ShoppingCart";
                     if (result.data.totalItems > 0) {
                         shoppingCartText = shoppingCartText + " (" + result.data.totalItems + ")";
                     }
