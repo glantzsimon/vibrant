@@ -1,10 +1,13 @@
 ﻿@using System.Globalization
 @using K9.SharedLibrary.Extensions
 @using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Config
 @using K9.WebApplication.Extensions
+@using K9.WebApplication.Models
 @{
     var glossaryJson = Json.Encode(typeof(Glossary).ToDictionaryItems());
     var dictionaryJson = Json.Encode(typeof(Dictionary).ToDictionaryItems());
+    var deviceType = new BrowserInfo(Request.Headers["User-Agent"]).DeviceType;
 }
 <script type="text/javascript">
 
@@ -155,7 +158,9 @@
 			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
             dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()",
             glossaryItems: @(Html.Raw(glossaryJson)),
-            dictionaryItems: @(Html.Raw(dictionaryJson))
+            dictionaryItems: @(Html.Raw(dictionaryJson)),
+            deviceType: "@deviceType",
+            whatsAppNumber: "@(DefaultValuesConfiguration.Instance.WhatsAppSupportNumber)"
 		}).init();
 
 		buttonBehaviours().init();

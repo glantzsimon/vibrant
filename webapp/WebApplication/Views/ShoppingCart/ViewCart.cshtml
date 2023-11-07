@@ -37,9 +37,11 @@
             </div>
         }
 
-        <hr />
+        if (Model.GetTotalItemCount() > 0)
+        {
+            <hr />
+            @Html.BootstrapButton(Dictionary.Checkout, EButtonType.Submit, "fa fa-shopping-cart")
+        }
 
-        @Html.BootstrapButton(Dictionary.UpdateCart, EButtonType.Submit, "fa-pencil")
-        @Html.BootstrapActionLinkButton(Dictionary.Checkout, "Checkout", "ShoppingCart", null, "fa fa-shopping-cart")
     }
 }

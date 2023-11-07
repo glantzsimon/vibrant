@@ -49,8 +49,8 @@ namespace K9.WebApplication.Controllers
                     _shoppingCartService.UpdateProductPackAmount(orderProductPack.ProductPackId, orderProductPack.Amount);
                 }
             }
-                        
-            return RedirectToAction("ViewCart");
+
+            return RedirectToAction("Checkout");
         }
 
 
@@ -70,14 +70,12 @@ namespace K9.WebApplication.Controllers
 
             return PartialView("_MenuItem", cart);
         }
-        
+
 
         [Route("shop/checkout")]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Checkout(Order shoppingCart)
+        public ActionResult Checkout()
         {
-            return View(shoppingCart);
+            return View(GetShoppingCart());
         }
 
         [HttpPost]
@@ -88,8 +86,14 @@ namespace K9.WebApplication.Controllers
                 var order = _orderService.Find(purchaseModel.ItemId);
 
                 order.OrderType = EOrderType.Sale;
+                order.RequestedOn = DateTime.Today;
+                order.PaidOn = DateTime.Today;
 
-                return Json(new { success = true });
+                Repository.Update(order);
+
+                _orderService.UpdateOrderNumberIfEmpty(order);
+
+                return Json(new { success = true, itemId = order.OrderNumber });
             }
             catch (Exception ex)
             {
@@ -98,9 +102,10 @@ namespace K9.WebApplication.Controllers
             }
         }
 
-        public ActionResult OrderCreateSuccess()
+        public ActionResult OrderCreateSuccess(string itemId)
         {
-            return View();
+            var order = _orderService.Find(itemId);
+            return View(order);
         }
     }
 }

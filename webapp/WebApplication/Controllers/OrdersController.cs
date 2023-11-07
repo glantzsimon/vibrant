@@ -229,17 +229,7 @@ namespace K9.WebApplication.Controllers
 
             return new EmptyResult();
         }
-
-        private void UpdateOrderNumberIfEmpty(Order order)
-        {
-            if (string.IsNullOrEmpty(order.OrderNumber))
-            {
-                var lastOrder = Repository.CustomQuery<Order>($"SELECT TOP 1 * FROM [{nameof(Order)}] ORDER BY [Id] DESC").FirstOrDefault();
-                var orderNumberCount = lastOrder?.Id + 3 + Order.OrderNumberRoot;
-                order.OrderNumber = $"PA-{orderNumberCount}";
-            }
-        }
-
+        
         private void OrdersController_RecordBeforeCreated(object sender, CrudEventArgs e)
         {
             var order = e.Item as Order;
@@ -254,7 +244,7 @@ namespace K9.WebApplication.Controllers
             order.DueBy = DateTime.Today.AddDays(11);
             order.UserId = WebSecurity.CurrentUserId;
 
-            UpdateOrderNumberIfEmpty(order);
+            _orderService.UpdateOrderNumberIfEmpty(order);
         }
 
         private void OrdersController_RecordBeforeDetails(object sender, CrudEventArgs e)
@@ -267,7 +257,7 @@ namespace K9.WebApplication.Controllers
         {
             var order = e.Item as Order;
             order = _orderService.GetFullOrder(order);
-            UpdateOrderNumberIfEmpty(order);
+            _orderService.UpdateOrderNumberIfEmpty(order);
         }
 
         private void OrdersController_RecordBeforeUpdated(object sender, CrudEventArgs e)

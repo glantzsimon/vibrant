@@ -3,62 +3,52 @@
     ViewBag.Title = K9.Base.Globalisation.Dictionary.MyAccountTitle;
     ViewBag.SubTitle = K9.Base.Globalisation.Dictionary.MyAccountTitle;
     Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
+
+    var activePaneClass = "in active padding-top-20";
+    var inactivePaneClass = "padding-bottom-0";
+    var activeTabClass = "active";
+    var inactiveTabClass = "";
+
+    var accountIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any());
+    var protocolsIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders != null || Model.Orders.Any());
+
+    var accontTabClass = accountIsActive ? activeTabClass : inactiveTabClass;
+    var accontPaneClass = accountIsActive ? activePaneClass : inactivePaneClass;
+    var protocolsTabClass = protocolsIsActive ? activeTabClass : inactiveTabClass;
+    var protocolsPaneClass = protocolsIsActive ? activePaneClass : inactivePaneClass;
 }
 @using (Html.BeginBootstrapForm())
 {
     <ul class="nav nav-tabs">
-        @if (Model.Protocols != null && Model.Protocols.Any())
+        @if (Model.Orders != null && Model.Orders.Any())
         {
-            <li class="active"><a data-toggle="tab" href="#protocols">@Dictionary.YourProtocols</a></li>
-            <li><a data-toggle="tab" href="#account">@Dictionary.UpdateYourDetails</a></li>
-        }
-        else
-        {
-            <li class="active"><a data-toggle="tab" href="#account">@Dictionary.UpdateYourDetails</a></li>
+            <li class="@activeTabClass"><a data-toggle="tab" href="#orders">@Dictionary.YourOrders</a></li>
         }
 
-        @if (Model.Membership != null)
+        @if (Model.Protocols != null && Model.Protocols.Any())
         {
-            <li><a data-toggle="tab" href="#membership">@Dictionary.YourCurrentMembership</a></li>
+            <li class="@protocolsTabClass"><a data-toggle="tab" href="#protocols">@Dictionary.YourProtocols</a></li>
         }
+
+        <li class="@accontTabClass"><a data-toggle="tab" href="#account">@Dictionary.UpdateYourDetails</a></li>
     </ul>
 
     <div class="tab-content">
-        @if (Model.Protocols != null && Model.Protocols.Any())
+        @if (Model.Orders != null && Model.Orders.Any())
         {
-            <div id="protocols" class="tab-pane fade in active padding-top-20">
-                @Html.Partial("_UserProtocols", Model.Protocols)
-            </div>
-            <div id="account" class="tab-pane fade padding-top-20 padding-bottom-0">
-                @Html.Partial("_AccountDetails", Model.User)
+            <div id="orders" class="tab-pane fade @activePaneClass">
+                @Html.Partial("_UserOrders", Model.Orders)
             </div>
         }
-        else
+        @if (Model.Protocols != null && Model.Protocols.Any())
         {
-            <div id="account" class="tab-pane fade in active padding-top-20">
-                @Html.Partial("_AccountDetails", Model.User)
+            <div id="protocols" class="tab-pane fade @protocolsPaneClass">
+                @Html.Partial("_UserProtocols", Model.Protocols)
             </div>
         }
 
-        <div id="membership" class="tab-pane fade padding-top-20 padding-bottom-0">
-            @if (Model.Membership != null)
-            {
-                @Html.Partial("../Membership/_MembershipDetails", Model.Membership)
-                @*if (Model.Membership.MembershipOption.IsUpgradable)
-                    {
-                        <hr />
-                        <div class="margin-top-15">
-                            @Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership", null, "fa-level-up-alt")
-                            <div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt")</div>
-                        </div>
-                    }*@
-            }
-            else
-            {
-                <hr />
-                @*@Html.BootstrapActionLinkButton(Dictionary.UpgradeMembershipText, "Index", "Membership")*@
-                @*<div class="inline" data-toggle="tooltip" title="@Dictionary.CreditsDescriptionUI">@Html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt")</div>*@
-            }
+        <div id="account" class="tab-pane fade @accontPaneClass">
+            @Html.Partial("_AccountDetails", Model.User)
         </div>
     </div>
 }

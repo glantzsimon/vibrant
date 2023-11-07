@@ -18,6 +18,7 @@ namespace K9.WebApplication.Services
         Order Duplicate(int id);
         RepCommissionViewModel CalculateRepCommission(int repId);
         void DeleteChildRecords(int id);
+        void UpdateOrderNumberIfEmpty(Order order);
 
         /// <summary>
         /// Update product pack amount and set to 1, if 0. This is the default behaviour when selecting product packs for the first time.
@@ -25,5 +26,6 @@ namespace K9.WebApplication.Services
         void UpdateProductPacksSetDefaultAmountIfZero(int orderId);
 
         List<Order> List(bool retrieveFullOrder = false);
+        List<Order> ListForClient(int clientId);
     }
 }

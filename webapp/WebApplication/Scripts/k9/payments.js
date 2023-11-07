@@ -159,7 +159,7 @@
                                     }, "POST").done(
                                         function (result) {
                                             if (result.data.success) {
-                                                document.location = that.data.successUrl;
+                                                document.location = that.data.successUrl + "?itemId=" + result.data.itemId;
                                             } else {
                                                 that.changeLoadingState(false);
                                                 that.processError(result.errorMessage || errorMessage);

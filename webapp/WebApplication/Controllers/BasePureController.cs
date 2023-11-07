@@ -1,16 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
-using K9.Base.WebApplication.Constants;
+﻿using K9.Base.WebApplication.Constants;
 using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.Helpers;
 using K9.DataAccessLayer.Models;
-using K9.SharedLibrary.Authentication;
+using K9.Globalisation;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Services;
 using NLog;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
-using K9.Globalisation;
+using K9.WebApplication.Enums;
+using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -56,6 +57,11 @@ namespace K9.WebApplication.Controllers
         public override string GetObjectName()
         {
             return string.Empty;
+        }
+
+        public EDeviceType GetDeviceType()
+        {
+            return new BrowserInfo(Request.Headers["User-Agent"]).DeviceType;
         }
 
         private void SetCultureCode(string languageCode, string cultureCode)

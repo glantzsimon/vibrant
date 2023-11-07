@@ -2107,6 +2107,9 @@
   <data name="ItemRemovedFromCartError" xml:space="preserve">
     <value>Error removing item from cart</value>
   </data>
+  <data name="NumberOfItems" xml:space="preserve">
+    <value>Number of Items</value>
+  </data>
   <data name="OrderSuccess" xml:space="preserve">
     <value>Your order has been successfully created.</value>
   </data>
@@ -2124,5 +2127,8 @@
   </data>
   <data name="YourCartIsEmpty" xml:space="preserve">
     <value>Your cart is empty</value>
+  </data>
+  <data name="YourOrders" xml:space="preserve">
+    <value>Your Orders</value>
   </data>
 </root>

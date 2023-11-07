@@ -2,10 +2,15 @@
     margin-top: 0;
 }
 
+.powered-by-stripe-container {
+    padding: 22px;
+    padding-left: 33px;
+    padding-right: 33px;
+}
+
 .powered-by-stripe {
     width: 100%;
     height: 100px;
-    padding: 5px;
     border-radius: 5px;
     background-image: url(../../../images/shared/powered-by-stripe-cards.png);
     background-repeat: no-repeat;

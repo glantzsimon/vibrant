@@ -1,0 +1,54 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model Order
+
+<div class="row">
+    <div class="col-sm-3">
+        @Html.BootstrapDisplayFor(model => model.OrderNumber)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapDisplayFor(model => model.OrderType)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapDisplayFor(model => model.OrderStatusText)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapDisplayFor(model => model.IsPaid)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-3">
+        @Html.BootstrapDisplayFor(model => model.TotalPrice)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapDisplayFor(model => model.DiscountAmount)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapDisplayFor(model => model.ShippingCost)
+    </div>
+    <div class="col-sm-3">
+        @Html.BootstrapDisplayFor(model => model.GrandTotal)
+    </div>
+</div>
+
+<hr />
+
+
+@if (Model.Products != null && Model.Products.Any())
+{
+    <div class="row">
+        <div class="col-sm-12">
+            @Html.CollapsiblePanel(Dictionary.ProductSummary, Html.Partial("../Orders/_ProductsSummary").ToString(), true)
+        </div>
+    </div>
+}
+
+@if (Model.ProductPacks != null && Model.ProductPacks.Any())
+{
+    <div class="row">
+        <div class="col-sm-12">
+            @Html.CollapsiblePanel(Dictionary.ProductPackSummary, Html.Partial("../Orders/_ProductPackSummary").ToString(), true)
+        </div>
+    </div>
+}

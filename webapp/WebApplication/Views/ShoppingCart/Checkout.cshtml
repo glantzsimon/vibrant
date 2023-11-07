@@ -8,11 +8,11 @@
 }
 
 @Html.Partial("_PaymentsForm", new PaymentsOptions(
-    0,
+    Model.Id,
     Model.GetTotalItemCount(),
     Model.GrandInternationalTotal,
     Dictionary.PureAlchemyOrder,
-    Dictionary.ConsultationDurationDescription,
+    Dictionary.NumberOfItems,
     "BookConsultationStart", "Consultation",
     Url.Action("OrderCreateSuccess"),
     Url.Action("Index", "Error"),

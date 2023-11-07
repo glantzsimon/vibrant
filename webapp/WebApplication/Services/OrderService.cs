@@ -2,12 +2,12 @@
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using K9.WebApplication.ViewModels;
 using Microsoft.Extensions.Caching.Memory;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Services
 {
@@ -175,6 +175,24 @@ namespace K9.WebApplication.Services
             return order;
         }
 
+        public List<Order> ListForClient(int clientId)
+        {
+            return MemoryCache.GetOrCreate(GetCacheKey(clientId), entry =>
+            {
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
+
+                var orders = _ordersRepository.Find(e => !e.IsDeleted && e.ClientId == clientId).OrderBy(e => e.Name).ToList();
+
+                var fullOrders = new List<Order>();
+                foreach (var order in orders)
+                {
+                    fullOrders.Add(GetFullOrder(order));
+                }
+
+                return fullOrders;
+            });
+        }
+
         public List<Order> List(bool retrieveFullOrder = false)
         {
             return MemoryCache.GetOrCreate(GetCacheKey(retrieveFullOrder), entry =>
@@ -309,6 +327,16 @@ namespace K9.WebApplication.Services
                     orderProductPack.Amount = 1;
                     _orderProductPacksRepository.Update(orderProductPack);
                 }
+            }
+        }
+
+        public void UpdateOrderNumberIfEmpty(Order order)
+        {
+            if (string.IsNullOrEmpty(order.OrderNumber))
+            {
+                var lastOrder = _ordersRepository.CustomQuery<Order>($"SELECT TOP 1 * FROM [{nameof(Order)}] ORDER BY [Id] DESC").FirstOrDefault();
+                var orderNumberCount = lastOrder?.Id + 3 + Order.OrderNumberRoot;
+                order.OrderNumber = $"PA-{orderNumberCount}";
             }
         }
     }

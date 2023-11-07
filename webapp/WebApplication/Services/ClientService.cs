@@ -1,10 +1,11 @@
-﻿using K9.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Models;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Services
 {
@@ -17,6 +18,11 @@ namespace K9.WebApplication.Services
         {
             _clientsRepository = clientsRepository;
             _logger = logger;
+        }
+
+        public Client GetOrCreateClientFromUser(User user)
+        {
+            return GetOrCreateClient("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
         }
 
         public Client GetOrCreateClient(string stripeCustomerId, string fullName, string emailAddress, string phoneNumber = "", int? userId = null)

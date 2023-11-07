@@ -1,0 +1,44 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Config
+@using K9.WebApplication.Enums
+@model Order
+@{
+    Layout = "../Shared/_LayoutForm.cshtml";
+    ViewBag.Title = Dictionary.OrderReview;
+    ViewBag.SubTitle = Dictionary.OrderReview;
+
+    var whatsAppQueryText = Url.Encode($"Hi. I have a query regarding order: {Model.OrderNumber}");
+}
+@using (Html.BeginForm())
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.HiddenFor(model => model.Id)
+
+        @Html.Partial("_DisplayFields")
+
+        <hr />
+
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.MyAccountTitle, "MyAccount", "Account", null, "fa fa-user-circle")
+
+        if (ViewBag.DeviceType == EDeviceType.Mobile)
+        {
+            <a class="btn btn btn-primary" target="_blank" title="@Dictionary.WhatsAppUs" href="https://wa.me/@(DefaultValuesConfiguration.Instance.WhatsAppSupportNumber)&text=@(whatsAppQueryText)">
+                <i class="fab fa-whatsapp"></i>
+                <span class="site-controls-text">
+                    @Dictionary.WhatsAppUs
+                </span>
+            </a>
+        }
+        else
+        {
+            <a class="btn btn btn-primary" target="_blank" title="@Dictionary.WhatsAppUs" href="https://web.whatsapp.com/send?phone=@(DefaultValuesConfiguration.Instance.WhatsAppSupportNumber)/?text=@(whatsAppQueryText)">
+                <i class="fab fa-whatsapp"></i>
+                <span class="site-controls-text">
+                    @Dictionary.WhatsAppUs
+                </span>
+            </a>
+        }
+
+    }
+}

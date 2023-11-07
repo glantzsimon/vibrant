@@ -1,8 +1,13 @@
 ﻿@using K9.Base.WebApplication.Extensions
 @using K9.SharedLibrary.Authentication
+@using K9.WebApplication.Config
+@using K9.WebApplication.Enums
+@using K9.WebApplication.Models
 @{
     var roles = this.GetRoles();
     var articles = this.GetDropdownData().GetDataSet<Article>(true, "Name", "SeoFriendlyId").OrderBy(e => e.Id).Take(11).ToList();
+    var deviceType = new BrowserInfo(Request.Headers["User-Agent"]).DeviceType;
+    var whatsAppLink = (deviceType == EDeviceType.Desktop ? "https://web.whatsapp.com/send?phone=" : "https://wa.me/") + DefaultValuesConfiguration.Instance.WhatsAppSupportNumber;
 }
 <div id="account-header">
     <div id="account-controls">
@@ -159,7 +164,7 @@
             <li class="@ViewContext.GetActiveClass("Index", "Support")"><a title="@Dictionary.Support" href="@Url.Action("Index", "Support")"><i class="fa fa-question-circle"></i><span class="site-controls-text"> @Dictionary.Support</span></a></li>
 
             <li>
-                <a target="_blank" title="@Dictionary.WhatsAppUs" href="https://wa.me/+66633840139">
+                <a class="whatsapp-button" target="_blank" title="@Dictionary.WhatsAppUs" href="@(whatsAppLink)">
                     <i class="fab fa-whatsapp"></i>
                     <span class="site-controls-text">
                         @Dictionary.WhatsAppUs

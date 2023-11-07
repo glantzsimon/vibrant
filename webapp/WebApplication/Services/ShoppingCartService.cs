@@ -154,8 +154,11 @@ namespace K9.WebApplication.Services
                     Name = $"{client.Name} - {Globalisation.Dictionary.ShoppingCart}",
                     FullName = $"{client.Name} - {Globalisation.Dictionary.ShoppingCart}",
                     ShortDescription = Globalisation.Dictionary.ShoppingCart,
-                    RequestedOn = DateTime.Today
+                    RequestedOn = DateTime.Today,
+                    DueBy = DateTime.Today.AddDays(7)
                 };
+
+                
 
                 _ordersRepository.Create(shoppingCart);
                 shoppingCart = _ordersRepository.Find(e => e.ExternalId == shoppingCartId).First();

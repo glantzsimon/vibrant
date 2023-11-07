@@ -3328,6 +3328,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Number of Items.
+        /// </summary>
+        public static string NumberOfItems {
+            get {
+                return ResourceManager.GetString("NumberOfItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of Times Off per Period.
         /// </summary>
         public static string NumberOfPeriodsOffLabel {
@@ -6360,6 +6369,15 @@ namespace K9.Globalisation {
         public static string YourCurrentMembership {
             get {
                 return ResourceManager.GetString("YourCurrentMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Orders.
+        /// </summary>
+        public static string YourOrders {
+            get {
+                return ResourceManager.GetString("YourOrders", resourceCulture);
             }
         }
         

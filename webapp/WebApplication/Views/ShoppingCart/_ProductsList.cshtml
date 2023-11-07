@@ -46,7 +46,7 @@
                 @Html.DisplayFor(e => Model.Products[i].TotalInternationalPrice)
             </div>
             <div class="col-xs-2">
-                <button type="button" data-id="@Model.Products[i].ProductId" class="remove-product-from-cart-button btn btn btn-primary"><i class="fa fa-trash red"></i> @Dictionary.Remove</button>
+                <button type="button" data-id="@Model.Products[i].ProductId" class="remove-product-from-cart-button btn btn btn-primary"><i class="fa fa-trash red"></i></button>
             </div>
         </div>
 
@@ -73,6 +73,5 @@
                     });
                 });
         });
-
     });
 </script>

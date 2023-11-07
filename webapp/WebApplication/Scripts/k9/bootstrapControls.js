@@ -15,7 +15,7 @@
             $("input[linkid=" + linkId + "]").val(formattedDate);
         });
     }
-
+    
     function initBootstrapSelect() {
         $(".selectpicker").selectpicker({
             size: 8

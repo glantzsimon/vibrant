@@ -261,6 +261,7 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ShoppingCartAjaxController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\RepCommissionsController.cs" />
@@ -313,6 +314,7 @@
     <Compile Include="Controllers\UserPromoCodesController.cs" />
     <Compile Include="Controllers\UserMembershipsController.cs" />
     <Compile Include="Controllers\ProductIngredientsController.cs" />
+    <Compile Include="Enums\EDeviceType.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Helpers\HtmlParser.cs" />
     <Compile Include="Helpers\General.cs" />
@@ -340,6 +342,7 @@
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\SessionHelpers.cs" />
     <Compile Include="Helpers\Separator.cs" />
+    <Compile Include="Models\Browser.cs" />
     <Compile Include="Models\IngredientsLabelsViewModel.cs" />
     <Compile Include="Models\AddressLabelViewModel.cs" />
     <Compile Include="Models\CategoryItem.cs" />
@@ -487,7 +490,7 @@
     <Content Include="Images\company\logo-med.png" />
     <Content Include="Images\company\logo-small.png" />
     <Content Include="Images\company\logo.png" />
-    <Content Include="Images\emailtemplates\email-template-header.jpg" />
+    <Content Include="Images\emailtemplates\email-template-header.png" />
     <Content Include="Images\flags\ad.png" />
     <Content Include="Images\flags\ae.png" />
     <Content Include="Images\flags\af.png" />
@@ -883,7 +886,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Attributes\" />
-    <Folder Include="Enums\" />
     <Folder Include="Images\archive\upload\ArchiveItem\" />
     <Folder Include="Upload\articles\Article\7\" />
     <Folder Include="Upload\articles\Article\8\" />
@@ -1554,6 +1556,9 @@
     <Content Include="Views\ShoppingCart\_ProductPacksList.cshtml" />
     <Content Include="Views\ShoppingCart\Checkout.cshtml" />
     <Content Include="Views\ShoppingCart\OrderCreateSuccess.cshtml" />
+    <Content Include="Views\Account\_UserOrders.cshtml" />
+    <Content Include="Views\Order\_DisplayFields.cshtml" />
+    <Content Include="Views\Order\ViewOrder.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
