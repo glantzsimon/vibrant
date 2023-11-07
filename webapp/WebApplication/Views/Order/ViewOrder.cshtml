@@ -7,7 +7,11 @@
     ViewBag.Title = Dictionary.OrderReview;
     ViewBag.SubTitle = Dictionary.OrderReview;
 
+    var whatsAppTelephone = DefaultValuesConfiguration.Instance.WhatsAppSupportNumber;
     var whatsAppQueryText = Url.Encode($"Hi. I have a query regarding order: {Model.OrderNumber}");
+    var whatsAppLink = ViewBag.DeviceType == EDeviceType.Desktop
+        ? $"https://web.whatsapp.com/send?phone={whatsAppTelephone}&text={whatsAppQueryText}"
+        : $"https://wa.me/{whatsAppTelephone}/?text={whatsAppQueryText}";
 }
 @using (Html.BeginForm())
 {
@@ -21,24 +25,11 @@
 
         @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.MyAccountTitle, "MyAccount", "Account", null, "fa fa-user-circle")
 
-        if (ViewBag.DeviceType == EDeviceType.Mobile)
-        {
-            <a class="btn btn btn-primary" target="_blank" title="@Dictionary.WhatsAppUs" href="https://wa.me/@(DefaultValuesConfiguration.Instance.WhatsAppSupportNumber)&text=@(whatsAppQueryText)">
-                <i class="fab fa-whatsapp"></i>
-                <span class="site-controls-text">
-                    @Dictionary.WhatsAppUs
-                </span>
-            </a>
-        }
-        else
-        {
-            <a class="btn btn btn-primary" target="_blank" title="@Dictionary.WhatsAppUs" href="https://web.whatsapp.com/send?phone=@(DefaultValuesConfiguration.Instance.WhatsAppSupportNumber)/?text=@(whatsAppQueryText)">
-                <i class="fab fa-whatsapp"></i>
-                <span class="site-controls-text">
-                    @Dictionary.WhatsAppUs
-                </span>
-            </a>
-        }
-
+        <a class="btn btn btn-primary" target="_blank" title="@Dictionary.WhatsAppUs" href="@(whatsAppLink)">
+            <i class="fab fa-whatsapp"></i>
+            <span class="site-controls-text">
+                @Dictionary.WhatsAppUs
+            </span>
+        </a>
     }
 }
