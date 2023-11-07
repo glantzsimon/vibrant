@@ -28,6 +28,8 @@ namespace K9.DataAccessLayer.Models
 
         public Guid ExternalId { get; set; }
 
+        [StringLength(9)]
+        [Index(IsUnique = true)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
         public string OrderNumber { get; set; }
 
@@ -216,7 +218,7 @@ namespace K9.DataAccessLayer.Models
             Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
         public double GetSuggestedDiscount() =>
             Methods.RoundToInteger(GetTotalPrice() > 0 ? GetTotalPrice().GetSuggestedBulkDiscount() : 0, 100);
-        
+
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]

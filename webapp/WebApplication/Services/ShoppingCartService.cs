@@ -157,10 +157,10 @@ namespace K9.WebApplication.Services
                     RequestedOn = DateTime.Today,
                     DueBy = DateTime.Today.AddDays(7)
                 };
-
                 
-
                 _ordersRepository.Create(shoppingCart);
+                _orderService.UpdateOrderNumberIfEmpty(shoppingCart);
+
                 shoppingCart = _ordersRepository.Find(e => e.ExternalId == shoppingCartId).First();
             }
 
