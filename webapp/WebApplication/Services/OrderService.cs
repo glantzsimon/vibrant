@@ -136,6 +136,7 @@ namespace K9.WebApplication.Services
             order.FormattedSuggestedDiscountAmount = order.GetFormattedSuggestedDiscountAmount();
             order.DiscountAmount = order.GetDiscountAmount();
             order.GrandTotal = order.GetGrandTotal();
+            order.InternationalGrandTotal = order.GetInternationalGrandTotal();
 
             return order;
         }

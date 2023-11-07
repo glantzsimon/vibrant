@@ -1563,6 +1563,7 @@
     <Content Include="Views\ProductPack\_AddToCart.cshtml" />
     <Content Include="Views\ProductPack\_DefaultAjax.cshtml" />
     <Content Include="Views\Product\_DefaultAjax.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\PriceTier.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

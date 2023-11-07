@@ -32,10 +32,7 @@ namespace K9.DataAccessLayer.Models
         [Index(IsUnique = true)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
         public string OrderNumber { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
-        public string DisplayName => $"{Globalisation.Dictionary.Order} {OrderNumber} - {RequestedOn.ToShortDateString()} - {FormattedGrandInternationalTotal} - {OrderStatusText}";
-
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsOnHoldLabel)]
         public bool IsOnHold { get; set; }
 
@@ -176,7 +173,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
-        public double GetTotalInternationalPrice() => GetTotalInternationalProductsPrice() + GetTotalInternationalProductPacksPrice() + ShippingCost;
+        public double GetTotalInternationalPrice() => GetTotalInternationalProductsPrice() + GetTotalInternationalProductPacksPrice() + InternationalShippingCost;
 
         [UIHint("InternationalCurrency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTotalLabel)]
@@ -313,16 +310,21 @@ namespace K9.DataAccessLayer.Models
         public double GrandTotal { get; set; }
 
         [UIHint("InternationalCurrency")]
+        [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         [DataType(DataType.Currency)]
-        public double GrandInternationalTotal => GetTotalInternationalPrice();
-
+        public double InternationalGrandTotal { get; set; }
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
-        public string FormattedGrandInternationalTotal => GetTotalInternationalPrice().ToString("C", CultureInfo.CurrentCulture);
+        public string FormattedInternationalGrandTotal => GetInternationalGrandTotal().ToString("C", CultureInfo.CurrentCulture);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         [DataType(DataType.Currency)]
         public double GetGrandTotal() => GetTotalPrice() - GetDiscountAmount();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
+        [DataType(DataType.Currency)]
+        public double GetInternationalGrandTotal() => GetTotalInternationalPrice() - GetInternationalDiscountAmount();
 
         public int GetTotalProducts() => Products?.Sum(e => e.Amount) ?? 0;
 
