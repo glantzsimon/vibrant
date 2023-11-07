@@ -4,16 +4,13 @@
 @model Order
 
 <div class="row">
-    <div class="col-sm-3">
-        @Html.LabelFor(e => Model.ProductPacks[0].Name)
+    <div class="col-sm-4">
+        @Html.LabelFor(e => Model.ProductPacks[0].ProductPack.Name)
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         @Html.LabelFor(e => Model.ProductPacks[0].Amount)
     </div>
-    <div class="col-sm-3">
-        @Html.LabelFor(e => Model.ProductPacks[0].PriceTier)
-    </div>
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         @Html.LabelFor(e => Model.ProductPacks[0].TotalInternationalPrice)
     </div>
 </div>
@@ -21,7 +18,7 @@
 @for (int i = 0; i < Model.ProductPacks?.Count; i++)
 {
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             @if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
             {
                 <a target="_blank" href="@Url.Action("Edit", "ProductPacks", new {id = Model.ProductPacks[i].ProductPackId})">
@@ -39,13 +36,10 @@
                 @Html.DisplayFor(e => Model.ProductPacks[i].ProductPack.Name)
             }
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             @Html.DisplayFor(e => Model.ProductPacks[i].Amount)
         </div>
-        <div class="col-sm-3">
-            @Html.DisplayFor(e => Model.ProductPacks[i].PriceTier)
-        </div>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             @Html.DisplayFor(e => Model.ProductPacks[i].TotalInternationalPrice)
         </div>
     </div>
@@ -53,15 +47,13 @@
     <hr />
 }
 <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         <strong>@Dictionary.TotalLabel</strong>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         <strong>@Model.GetTotalProductPacks()</strong>
     </div>
-    <div class="col-sm-3">
-    </div>
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         <strong>@Html.DisplayFor(e => Model.TotalInternationalProductPacksPrice)</strong>
     </div>
 </div>
