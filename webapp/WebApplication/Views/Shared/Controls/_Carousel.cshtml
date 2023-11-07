@@ -24,14 +24,7 @@
                 : "height: 100%; width: auto; max-width: none;";
 
             <div class="item @imageClass">
-                @if (fullsizeImage != null)
-                {
-                    <a href="~/@fullsizeImage.Src" target="_new"><img src="~/@image.Src" style="@imageStyle" /></a>
-                }
-                else
-                {
-                    <img src="~/@image.Src" style="@imageStyle" />
-                }
+                <img src="~/@image.Src" style="@imageStyle" />
             </div>
         }
     </div>

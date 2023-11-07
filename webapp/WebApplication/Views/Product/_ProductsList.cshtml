@@ -12,11 +12,17 @@
         <div class="col-xs-4">
             @if (product.ImageFileSource != null)
             {
-                @Html.Partial("_ImageFilesDisplay", new FileSourceViewModel(product.ImageFileSource))
+                <a target="_blank" href="@Url.Action("Details", "Product", new { seoFriendlyId = product.SeoFriendlyId })">
+                    @Html.Partial("_ImageFilesDisplay", new FileSourceViewModel(product.ImageFileSource))
+                </a>
             }
         </div>
         <div class="col-xs-8">
-            <h4 class="margin-bottom-0 margin-top-0">@product.Name</h4>
+            <h4 class="margin-bottom-0 margin-top-0">
+                <a target="_blank" href="@Url.Action("Details", "Product", new { seoFriendlyId = product.SeoFriendlyId })">
+                    @product.Name
+                </a>
+            </h4>
             <h6 class="margin-0">@product.GetFormattedAmount()</h6>
             <h5 class="margin-0">@product.GetFormattedInternationalPrice()</h5>
 
