@@ -276,3 +276,7 @@ li.divider {
     top: 3px;
     font-size: 1.1em;
 }
+
+.remove-productpack-from-cart-button, .remove-product-from-cart-button {
+    cursor: pointer !important;
+}

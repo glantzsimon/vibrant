@@ -11,8 +11,8 @@
 @if (Model.Products != null && Model.Products.Any())
 {
     <div class="row">
-        <div class="col-xs-4">
-            @Html.LabelFor(e => Model.Products[0].Name)
+        <div class="col-xs-5">
+            @Html.LabelFor(e => Model.Products[0].ProductName)
         </div>
         <div class="col-xs-3">
             @Html.LabelFor(e => Model.Products[0].Amount)
@@ -20,7 +20,7 @@
         <div class="col-xs-3">
             @Html.LabelFor(e => Model.Products[0].TotalPrice)
         </div>
-        <div class="col-xs-2">
+        <div class="col-xs-1">
         </div>
     </div>
 
@@ -31,7 +31,7 @@
         @Html.HiddenFor(e => Model.Products[i].ProductId)
 
         <div class="row">
-            <div class="col-xs-4">
+            <div class="col-xs-5">
                 <a target="_blank" href="@Url.Action("Details", "Product", new {seoFriendlyId = Model.Products[i].Product.SeoFriendlyId})">
                     @Html.DisplayFor(e => Model.Products[i].Product.Name)
                 </a>
@@ -45,8 +45,8 @@
             <div class="col-xs-3">
                 @Html.DisplayFor(e => Model.Products[i].TotalInternationalPrice)
             </div>
-            <div class="col-xs-2">
-                <button type="button" data-id="@Model.Products[i].ProductId" class="remove-product-from-cart-button btn btn btn-primary"><i class="fa fa-trash red"></i></button>
+            <div class="col-xs-1">
+                <span class="remove-product-from-cart-button" data-id="@Model.Products[i].ProductId"><i class="fa fa-trash"></i></span>
             </div>
         </div>
 
@@ -57,7 +57,7 @@
 <script type="text/javascript">
     $(function() {
 
-        $("button.remove-product-from-cart-button").click(function() {
+        $(".remove-product-from-cart-button").click(function() {
             $("#pageSpinner").show();
             var $el = $(this);
             var id = $el.data("id");
