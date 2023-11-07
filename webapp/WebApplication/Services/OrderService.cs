@@ -129,7 +129,9 @@ namespace K9.WebApplication.Services
 
             order.TotalPrice = order.GetTotalPrice();
             order.TotalProductsPrice = order.GetTotalProductsPrice();
+            order.TotalInternationalProductsPrice = order.GetTotalInternationalProductsPrice();
             order.TotalProductPacksPrice = order.GetTotalProductPacksPrice();
+            order.TotalInternationalProductPacksPrice = order.GetTotalInternationalProductPacksPrice();
             order.FormattedSuggestedDiscountAsPercent = order.GetFormattedSuggestedDiscountAsPercent();
             order.FormattedSuggestedDiscountAmount = order.GetFormattedSuggestedDiscountAmount();
             order.DiscountAmount = order.GetDiscountAmount();

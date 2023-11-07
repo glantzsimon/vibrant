@@ -151,22 +151,41 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double ShippingCost { get; set; }
 
+        [UIHint("InternationalCurrency")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShippingLabel)]
+        [DataType(DataType.Currency)]
+        public double InternationalShippingCost => ShippingCost.ToInternationalPrice();
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShippingLabel)]
         public string GetFormattedShippingCost() =>
             double.Parse(ShippingCost.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
         public double TotalPrice { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
         public double GetTotalPrice() => GetTotalProductsPrice() + GetTotalProductPacksPrice() + ShippingCost;
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        [UIHint("InternationalCurrency")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTotalLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalPriceMinusShipping => GetTotalProductsPrice() + GetTotalProductPacksPrice();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
         public double GetTotalInternationalPrice() => GetTotalInternationalProductsPrice() + GetTotalInternationalProductPacksPrice() + ShippingCost;
+
+        [UIHint("InternationalCurrency")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTotalLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalInternationalPriceMinusShipping => GetTotalInternationalPriceMinusShipping();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTotalLabel)]
+        [DataType(DataType.Currency)]
+        public double GetTotalInternationalPriceMinusShipping() => GetTotalInternationalProductsPrice() + GetTotalInternationalProductPacksPrice();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FullPriceLabel)]
         [DataType(DataType.Currency)]
@@ -180,6 +199,12 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
         public double TotalProductsPrice { get; set; }
+
+        [NotMapped]
+        [UIHint("InternationalCurrency")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalInternationalProductsPrice { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
@@ -198,6 +223,13 @@ namespace K9.DataAccessLayer.Models
             Name = Globalisation.Strings.Labels.TotalProductPacksPriceLabel)]
         [DataType(DataType.Currency)]
         public double TotalProductPacksPrice { get; set; }
+
+        [NotMapped]
+        [UIHint("InternationalCurrency")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.TotalProductPacksPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalInternationalProductPacksPrice { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.TotalProductPacksPriceLabel)]
@@ -240,7 +272,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.SuggestedBulkDiscountLabel)]
-        public string GetFormattedSuggestedDiscountAmount() => double.Parse(GetSuggestedDiscount().ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedSuggestedDiscountAmount() => GetSuggestedDiscount().ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [UIHint("Percentage")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
@@ -256,7 +288,16 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         [DataType(DataType.Currency)]
-        public double GetDiscountAmount() => GetTotalPrice() * (Discount / 100 ?? 0);
+        public double GetDiscountAmount() => (TotalPriceMinusShipping * (Discount / 100 ?? 0) + ShippingCost);
+
+        [UIHint("InternationalCurrency")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
+        [DataType(DataType.Currency)]
+        public double InternationalDiscountAmount => GetInternationalDiscountAmount();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
+        [DataType(DataType.Currency)]
+        public double GetInternationalDiscountAmount() => GetDiscountAmount().ToInternationalPrice();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         [DataType(DataType.Currency)]

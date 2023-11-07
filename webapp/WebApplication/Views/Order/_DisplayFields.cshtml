@@ -19,16 +19,16 @@
 
 <div class="row">
     <div class="col-sm-3">
-        @Html.BootstrapDisplayFor(model => model.TotalPrice)
+        @Html.BootstrapDisplayFor(model => model.TotalInternationalPriceMinusShipping)
     </div>
     <div class="col-sm-3">
-        @Html.BootstrapDisplayFor(model => model.DiscountAmount)
+        @Html.BootstrapDisplayFor(model => model.InternationalDiscountAmount)
     </div>
     <div class="col-sm-3">
-        @Html.BootstrapDisplayFor(model => model.ShippingCost)
+        @Html.BootstrapDisplayFor(model => model.InternationalShippingCost)
     </div>
     <div class="col-sm-3">
-        @Html.BootstrapDisplayFor(model => model.GrandTotal)
+        @Html.BootstrapDisplayFor(model => model.GrandInternationalTotal)
     </div>
 </div>
 
