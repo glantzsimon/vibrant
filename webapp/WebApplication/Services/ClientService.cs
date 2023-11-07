@@ -31,7 +31,7 @@ namespace K9.WebApplication.Services
             {
                 try
                 {
-                    var existingCustomer = _clientsRepository.Find(_ => _.StripeCustomerId == stripeCustomerId || _.EmailAddress == emailAddress || _.UserId == userId).FirstOrDefault();
+                    var existingCustomer = _clientsRepository.Find(_ => (!string.IsNullOrEmpty(stripeCustomerId) && _.StripeCustomerId == stripeCustomerId) || _.EmailAddress == emailAddress || _.UserId == userId).FirstOrDefault();
                     if (existingCustomer == null)
                     {
                         _clientsRepository.Create(new Client

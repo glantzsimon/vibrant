@@ -1,9 +1,11 @@
-﻿using K9.Base.WebApplication.UnitsOfWork;
+﻿using System.Linq;
+using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Services;
 using System.Web.Mvc;
+using K9.Base.DataAccessLayer.Models;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -15,14 +17,18 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<OrderProductPack> _orderProductPackRepository;
         private readonly IOrderService _orderService;
         private readonly IProductService _productService;
+        private readonly IRepository<User> _usersRepository;
+        private readonly IRepository<Client> _clientsRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public OrderController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPackRepository, IOrderService orderService, IProductService productService, IMembershipService membershipService) : base(controllerPackage.Logger, controllerPackage.DataSetsHelper, controllerPackage.Roles, controllerPackage.Authentication, controllerPackage.FileSourceHelper, membershipService)
+        public OrderController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPackRepository, IOrderService orderService, IProductService productService, IMembershipService membershipService, IRepository<User> usersRepository, IRepository<Client> clientsRepository) : base(controllerPackage.Logger, controllerPackage.DataSetsHelper, controllerPackage.Roles, controllerPackage.Authentication, controllerPackage.FileSourceHelper, membershipService)
         {
             _orderProductsRepository = orderProductsRepository;
             _orderProductPackRepository = orderProductPackRepository;
             _orderService = orderService;
             _productService = productService;
+            _usersRepository = usersRepository;
+            _clientsRepository = clientsRepository;
             _defaultValues = defaultValues.Value;
         }
 
@@ -34,9 +40,15 @@ namespace K9.WebApplication.Controllers
             {
                 return HttpNotFound();
             }
+
             if (order.UserId != WebSecurity.CurrentUserId)
             {
-                return HttpForbidden();
+                var user = _usersRepository.Find(WebSecurity.CurrentUserId);
+                var client = _clientsRepository.Find(e => e.UserId == user.Id).First();
+                if (client.Id != order.ClientId)
+                {
+                    return HttpForbidden();
+                }
             }
 
             ViewBag.DeviceType = GetDeviceType();
