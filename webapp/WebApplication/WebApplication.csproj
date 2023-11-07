@@ -1559,6 +1559,10 @@
     <Content Include="Views\Account\_UserOrders.cshtml" />
     <Content Include="Views\Order\_DisplayFields.cshtml" />
     <Content Include="Views\Order\ViewOrder.cshtml" />
+    <Content Include="Views\Product\_AddToCart.cshtml" />
+    <Content Include="Views\ProductPack\_AddToCart.cshtml" />
+    <Content Include="Views\ProductPack\_DefaultAjax.cshtml" />
+    <Content Include="Views\Product\_DefaultAjax.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

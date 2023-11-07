@@ -158,30 +158,33 @@
                 </li>
             </ul>
         }
-        <ul class="site-controls">
-            <li class="@ViewContext.GetActiveClass("BookConsultationStart", "Consultation")"><a title="@Dictionary.BookAConsultation" href="@Url.Action("BookConsultationStart", "Consultation")"><i class="fa fa-phone-alt"></i><span class="site-controls-text"> @Dictionary.BookAConsultation</span></a></li>
+            <ul class="site-controls">
+                <li class="@ViewContext.GetActiveClass("BookConsultationStart", "Consultation")"><a title="@Dictionary.BookAConsultation" href="@Url.Action("BookConsultationStart", "Consultation")"><i class="fa fa-phone-alt"></i><span class="site-controls-text"> @Dictionary.BookAConsultation</span></a></li>
 
-            <li class="@ViewContext.GetActiveClass("Index", "Support")"><a title="@Dictionary.Support" href="@Url.Action("Index", "Support")"><i class="fa fa-question-circle"></i><span class="site-controls-text"> @Dictionary.Support</span></a></li>
+                <li class="@ViewContext.GetActiveClass("Index", "Support")"><a title="@Dictionary.Support" href="@Url.Action("Index", "Support")"><i class="fa fa-question-circle"></i><span class="site-controls-text"> @Dictionary.Support</span></a></li>
 
-            <li>
-                <a class="whatsapp-button" target="_blank" title="@Dictionary.WhatsAppUs" href="@(whatsAppLink)">
-                    <i class="fab fa-whatsapp"></i>
-                    <span class="site-controls-text">
-                        @Dictionary.WhatsAppUs
-                    </span>
-                </a>
-            </li>
+                <li>
+                    <a class="whatsapp-button" target="_blank" title="@Dictionary.WhatsAppUs" href="@(whatsAppLink)">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="site-controls-text">
+                            @Dictionary.WhatsAppUs
+                        </span>
+                    </a>
+                </li>
 
-            @if (WebSecurity.IsAuthenticated)
-            {
-                <li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a title="@K9.Base.Globalisation.Dictionary.MyAccountTitle" href="@Url.Action("MyAccount", "Account")"><i class="fa fa-user-circle"></i><span class="site-controls-text"> @K9.Base.Globalisation.Dictionary.MyAccountTitle</span></a></li>
+                @if (WebSecurity.IsAuthenticated)
+                {
+                    <li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a title="@K9.Base.Globalisation.Dictionary.MyAccountTitle" href="@Url.Action("MyAccount", "Account")"><i class="fa fa-user-circle"></i><span class="site-controls-text"> @K9.Base.Globalisation.Dictionary.MyAccountTitle</span></a></li>
 
-                @Html.Action("ShoppingCartMenuItem", "ShoppingCart")
-            }
-            @Html.LoginLogout()
+                    @Html.Action("ShoppingCartMenuItem", "ShoppingCart")
+                }
+                @Html.LoginLogout()
 
-            @Html.Partial("Controls/_LanguageSelector")
-        </ul>
+                @if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
+                {
+                    @Html.Partial("Controls/_LanguageSelector")
+                }
+            </ul>
     </div>
 </div>
 <div id="main-logo-container" class="menu-main">

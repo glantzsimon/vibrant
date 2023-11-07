@@ -1,0 +1,12 @@
+﻿@using System.Web.Mvc.Html
+@using K9.Base.WebApplication.ViewModels
+@model Product
+
+@if (WebSecurity.IsAuthenticated)
+{
+    <button data-id="@Model.Id" class="add-to-cart-button btn btn btn-primary btn-lg"><i class="fa fa-cart-plus"></i> @Dictionary.AddToCart</button>
+}
+else
+{
+    @Html.BootstrapActionLinkButton(Dictionary.LogIntoYourAccountToPurchase, "Login", "Account", new { returnUrl = Request.Url.ToString() }, "fa fa-sign-in", EButtonClass.Large)
+}

@@ -58,19 +58,11 @@
                 {
                     var categoryText = category.ToString();
                     var products = Model.Where(e => e.Category == category).ToList();
+                    var tabClass = categoryIndex == 0 ? "in active" : "";
 
-                    if (categoryIndex == 0)
-                    {
-                        <div id="@categoryText" class="tab-pane fade in active padding-top-15">
-                            @Html.Partial("../Product/_ProductsList", products)
-                        </div>
-                    }
-                    else
-                    {
-                        <div id="@categoryText" class="tab-pane fade padding-top-15">
-                            @Html.Partial("../Product/_ProductsList", products)
-                        </div>
-                    }
+                    <div id="@categoryText" class="tab-pane fade @(tabClass) padding-top-15">
+                        @Html.Partial("../Product/_ProductsList", products)
+                    </div>
 
                     categoryIndex++;
                 }
@@ -79,21 +71,4 @@
     }
 </article>
 
-<script type="text/javascript">
-    $(function() {
-
-        $("button.add-to-cart-button").click(function() {
-            $("#pageSpinner").show();
-            var id = $(this).data("id");
-            ajaxcontroller().send("@Url.Action("AddProductToCart", "ShoppingCart")",
-                {
-                    productId: id
-                },
-                "POST").done(
-                function(result) {
-                    $.fn.processResultAndShowPopup(result);
-                });
-        });
-
-    });
-</script>
+@Html.Partial("_DefaultAjax")

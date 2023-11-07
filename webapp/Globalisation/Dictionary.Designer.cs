@@ -2882,6 +2882,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sign into your account to purchase.
+        /// </summary>
+        public static string LogIntoYourAccountToPurchase {
+            get {
+                return ResourceManager.GetString("LogIntoYourAccountToPurchase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log into your account to view more details.
         /// </summary>
         public static string LogIntoYourAccountToView {

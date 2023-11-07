@@ -14,7 +14,7 @@ namespace K9.WebApplication.Controllers
                 _shoppingCartService.AddProductToCart(productId, 1);
                 _orderService.ClearCache();
 
-                return Json(new { success = true });
+                return Json(new { success = true, totalItems = GetShoppingCart().GetTotalItemCount() });
             }
             catch (Exception ex)
             {
@@ -29,7 +29,7 @@ namespace K9.WebApplication.Controllers
                 _shoppingCartService.AddProductPackToCart(productPackId, 1);
                 _orderService.ClearCache();
 
-                return Json(new { success = true });
+                return Json(new { success = true, totalItems = GetShoppingCart().GetTotalItemCount() });
             }
             catch (Exception ex)
             {

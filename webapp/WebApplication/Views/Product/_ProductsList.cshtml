@@ -25,7 +25,7 @@
 
             @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Details", "Product", new { seoFriendlyId = product.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Large)
 
-            <button data-id="@product.Id" class="add-to-cart-button btn btn btn-primary btn-lg"><i class="fa fa-cart-plus"></i> @Dictionary.AddToCart</button>
+            @Html.Partial("../Product/_AddToCart", product)
         </div>
     </div>
     <br />

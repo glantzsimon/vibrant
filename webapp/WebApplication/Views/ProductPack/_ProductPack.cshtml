@@ -49,6 +49,7 @@
     <hr />
 
     <div class="buttons-container">
+        @Html.Partial("../ProductPack/_AddToCart", Model)
         @Html.BootstrapActionLinkButton(Dictionary.SeeAllProductPacks, "Index", "ProductPack", null, "", EButtonClass.Info, EButtonClass.Large)
     </div>
 </article>

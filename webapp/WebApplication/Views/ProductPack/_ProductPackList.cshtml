@@ -45,8 +45,8 @@
                     <p>@MvcHtmlString.Create(productPack.ShortDescription)</p>
 
                     @Html.BootstrapActionLinkButton(Dictionary.FindOutMore, "Details", "ProductPack", new { seoFriendlyId = productPack.SeoFriendlyId }, "", EButtonClass.Primary, EButtonClass.Large)
-                    
-                    <button data-id="@productPack.Id" class="add-to-cart-button btn btn btn-primary btn-lg"><i class="fa fa-cart-plus"></i> @Dictionary.AddToCart</button>
+
+                    @Html.Partial("../ProductPack/_AddToCart", productPack)
                 </div>
             </div>
             <br />
@@ -59,21 +59,4 @@
     }
 </article>
 
-<script type="text/javascript">
-    $(function() {
-
-        $("button.add-to-cart-button").click(function() {
-            $("#pageSpinner").show();
-            var id = $(this).data("id");
-            ajaxcontroller().send("@Url.Action("AddProductPackToCart", "ShoppingCart")",
-                {
-                    productPackId: id
-                },
-                "POST").done(
-                function(result) {
-                    $.fn.processResultAndShowPopup(result);
-                });
-        });
-
-    });
-</script>
+@Html.Partial("_DefaultAjax")
