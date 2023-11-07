@@ -24,6 +24,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ClientLabel)]
         public int ClientId => Id;
         
+        [UIHint("User")]
         [ForeignKey("User")]
         public int? UserId { get; set; }
 

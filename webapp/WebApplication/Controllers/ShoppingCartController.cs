@@ -88,10 +88,9 @@ namespace K9.WebApplication.Controllers
                 order.OrderType = EOrderType.Sale;
                 order.RequestedOn = DateTime.Today;
                 order.PaidOn = DateTime.Today;
-
-                Repository.Update(order);
-
                 _orderService.UpdateOrderNumberIfEmpty(order);
+                Repository.Update(order);
+                _orderService.ClearCache();
 
                 return Json(new { success = true, itemId = order.OrderNumber });
             }

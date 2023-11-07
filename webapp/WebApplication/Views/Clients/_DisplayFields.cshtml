@@ -6,11 +6,14 @@
         @Html.BootstrapDisplayFor(model => model.FullName)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.CompanyName)
+        @Html.BootstrapDisplayFor(model => model.UserId)
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.CompanyName)
+    </div>
+    <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.Notes)
     </div>
 </div>

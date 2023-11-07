@@ -6265,7 +6265,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WhatsApp Us!.
+        ///   Looks up a localized string similar to WhatsApp.
         /// </summary>
         public static string WhatsAppUs {
             get {

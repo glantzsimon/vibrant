@@ -279,6 +279,7 @@ namespace K9.WebApplication.Controllers
 
         private void OrdersController_RecordDeleted(object sender, CrudEventArgs e)
         {
+            _orderService.ClearCache();
         }
 
         private void OrdersController_RecordCreated(object sender, CrudEventArgs e)
@@ -287,10 +288,13 @@ namespace K9.WebApplication.Controllers
             e.Controller = typeof(OrdersController).GetControllerName();
             e.Action = nameof(EditProductPacks);
             e.RouteValues = new { id = e.Item.Id };
+
+            _orderService.ClearCache();
         }
 
         private void OrdersController_RecordUpdated(object sender, CrudEventArgs e)
         {
+            _orderService.ClearCache();
         }
     }
 }

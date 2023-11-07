@@ -5,13 +5,15 @@
 }
 <div class="margin-bottom-10">
     @Html.Success(Dictionary.OrderSuccess, Dictionary.OrderUpdateText + " <i class='fa fa-smile-o'></i>")
-    <hr />
+    <hr/>
     <div class="row">
-        <div class="col-xs-6">
-            <h4>
-                @Dictionary.OrderNumberLabel 
-                <a href="@Url.Action("ViewOrder", "Order", new {ordernumber = Model.OrderNumber})">@Model.OrderNumber</a>
-            </h4>
+        <div class="col-xs-12 text-center">
+            <strong>
+                <h3>
+                    @Dictionary.OrderNumberLabel:
+                    <a href="@Url.Action("ViewOrder", "Order", new {ordernumber = Model.OrderNumber})">@Model.OrderNumber</a>
+                </h3>
+            </strong>
         </div>
     </div>
 </div>
