@@ -456,6 +456,10 @@
     <Compile Include="Migrations\202311071052298_IsUniqueOrderNumber.Designer.cs">
       <DependentUpon>202311071052298_IsUniqueOrderNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311080203517_HealthQuestionnaire.cs" />
+    <Compile Include="Migrations\202311080203517_HealthQuestionnaire.Designer.cs">
+      <DependentUpon>202311080203517_HealthQuestionnaire.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\FoodItem.cs" />
     <Compile Include="Models\GenoTypeQuestoinnaire.cs" />
     <Compile Include="Models\HealthQuestionnaire.cs" />
@@ -689,6 +693,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311071052298_IsUniqueOrderNumber.resx">
       <DependentUpon>202311071052298_IsUniqueOrderNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311080203517_HealthQuestionnaire.resx">
+      <DependentUpon>202311080203517_HealthQuestionnaire.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
