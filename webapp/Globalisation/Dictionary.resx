@@ -2360,12 +2360,180 @@
     <value>Do your index fingerprints match from hand to hand?</value>
   </data>
   <data name="SpaceBetweenThighsLabel" xml:space="preserve">
-    <value>What is the size of the gap between your thighs? (cm)</value>
+    <value>What is the size of the gap between your thighs?</value>
   </data>
   <data name="TendonsAndSinewsVisibleLabel" xml:space="preserve">
-    <value>Are the tendons and sinews under the skin in your limbs (particularly at the wrists) visible?</value>
+    <value>When you relax your arm and look at the skin around your wrists, can you see the outline of your tendons?</value>
   </data>
   <data name="WristsAndAnklesPaddedLabel" xml:space="preserve">
     <value>Do your wrists and ankles look padded?</value>
+  </data>
+  <data name="AlmondShaped" xml:space="preserve">
+    <value>Almond Shaped</value>
+  </data>
+  <data name="AmbidextrousLabel" xml:space="preserve">
+    <value>Are you ambidextrous?</value>
+  </data>
+  <data name="Arch" xml:space="preserve">
+    <value>Arch</value>
+  </data>
+  <data name="BiometricsRequirements" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\biometricsrequirements.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ChairHeightInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\chairheightinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ChairHeightLabel" xml:space="preserve">
+    <value>What is the height of the chair?</value>
+  </data>
+  <data name="CruciferousVegetablesVeryBitterLabel" xml:space="preserve">
+    <value>Do cruciferous vegetables, such as broccoli and kale, taste bitter and unpleasant to you?</value>
+  </data>
+  <data name="FingerLengthInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\fingerlengthinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="FingerPrintsInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\fingerprintsinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GonialAngle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\gonialangle.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GonialAngleLabel" xml:space="preserve">
+    <value>Gonial Angle (Jaw Angle)</value>
+  </data>
+  <data name="HeadShapeLabel" xml:space="preserve">
+    <value>Head Shape</value>
+  </data>
+  <data name="HipSizeLabel" xml:space="preserve">
+    <value>What size are your hips? (Please measure the widest part of the hips)</value>
+  </data>
+  <data name="IncisorShovellingLabel" xml:space="preserve">
+    <value>Are your incisors shaped like spades / shovels?</value>
+  </data>
+  <data name="InTheMiddle" xml:space="preserve">
+    <value>In The Middle</value>
+  </data>
+  <data name="IsLeftIndexFingerLongerThanLeftRingFingerLabel" xml:space="preserve">
+    <value>Left Index Finger is Longer than Left Ring Finger</value>
+  </data>
+  <data name="IsLowerLegLengthGreaterThanUpperLegLengthLabel" xml:space="preserve">
+    <value>Lower Leg Length is Greater than Upper Leg Length</value>
+  </data>
+  <data name="IsRightIndexFingerLongerThanRightRingFingerLabel" xml:space="preserve">
+    <value>Right Index Finger is Longer than Right Ring Finger</value>
+  </data>
+  <data name="LeftHandedLabel" xml:space="preserve">
+    <value>Are you left-handed?</value>
+  </data>
+  <data name="LeftIndexFingerprintLabel" xml:space="preserve">
+    <value>Left Index Fingerpring Type</value>
+  </data>
+  <data name="LeftLittleFingerprintLabel" xml:space="preserve">
+    <value>Left Little Fingerprint Type</value>
+  </data>
+  <data name="LeftMiddleFingerprintLabel" xml:space="preserve">
+    <value>Left Middle Fingerprint Type</value>
+  </data>
+  <data name="LeftRingFingerprintLabel" xml:space="preserve">
+    <value>Left Ring Fingerprint Type</value>
+  </data>
+  <data name="LeftThumprintLabel" xml:space="preserve">
+    <value>Left Thumbprint Type</value>
+  </data>
+  <data name="Loop" xml:space="preserve">
+    <value>Loop</value>
+  </data>
+  <data name="LowerLegLengthLabel" xml:space="preserve">
+    <value>What is your lower-leg length?</value>
+  </data>
+  <data name="LowreLegLengthInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\lowreleglengthinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NotSure" xml:space="preserve">
+    <value>I'm not sure</value>
+  </data>
+  <data name="RightIndexFingerprintLabel" xml:space="preserve">
+    <value>Right Index Fingerprint Type</value>
+  </data>
+  <data name="RightLittleFingerprintLabel" xml:space="preserve">
+    <value>Right Little Fingerprint Type</value>
+  </data>
+  <data name="RightMiddleFingerprintLabel" xml:space="preserve">
+    <value>Right Middle Fingerprint Type</value>
+  </data>
+  <data name="RightRingFingerprintLabel" xml:space="preserve">
+    <value>Right Ring Fingerprint Type</value>
+  </data>
+  <data name="RightThumprintLabel" xml:space="preserve">
+    <value>Right Thumbprint Type</value>
+  </data>
+  <data name="SittingHeightInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\sittingheightinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SittingHeightLabel" xml:space="preserve">
+    <value>What is your sitting height?</value>
+  </data>
+  <data name="SquareJaw" xml:space="preserve">
+    <value>Square / Lantern Jaw</value>
+  </data>
+  <data name="StandingHeightInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\standingheightinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="StandingHeightLabel" xml:space="preserve">
+    <value>What is your standing height?</value>
+  </data>
+  <data name="TorsoLengthGreatherThanLegLengthLabel" xml:space="preserve">
+    <value>Torso Length is Greater than Total Leg Length</value>
+  </data>
+  <data name="TotalLegLengthLabel" xml:space="preserve">
+    <value>Total Leg Length</value>
+  </data>
+  <data name="UpperLegLengthInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\upperleglengthinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="UpperLegLengthLabel" xml:space="preserve">
+    <value>What is your upper-leg length?</value>
+  </data>
+  <data name="WaistSizeLabel" xml:space="preserve">
+    <value>What size is your waist? (Please measure the narrowest part of the abdomen)</value>
+  </data>
+  <data name="Whorl" xml:space="preserve">
+    <value>Whorl</value>
+  </data>
+  <data name="Ectomesomorph" xml:space="preserve">
+    <value>Ecto-mesomorph</value>
+  </data>
+  <data name="Ectomorph" xml:space="preserve">
+    <value>Ectomorph</value>
+  </data>
+  <data name="Endomorph" xml:space="preserve">
+    <value>Endomorph</value>
+  </data>
+  <data name="LegGapMeasurementInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\leggapmeasurementinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MediumAngle" xml:space="preserve">
+    <value>Medium Angle</value>
+  </data>
+  <data name="MesoEndomorph" xml:space="preserve">
+    <value>Meso-endomorph</value>
+  </data>
+  <data name="Mesomorph" xml:space="preserve">
+    <value>Mesomorph</value>
+  </data>
+  <data name="NarrowAngle" xml:space="preserve">
+    <value>Narrow Angle</value>
+  </data>
+  <data name="SomatoTypeInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\somatotypeinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SomatoTypeLabel" xml:space="preserve">
+    <value>What is your somatotype?</value>
+  </data>
+  <data name="Touching" xml:space="preserve">
+    <value>Touching</value>
+  </data>
+  <data name="WideAngle" xml:space="preserve">
+    <value>Wide Angle</value>
   </data>
 </root>

@@ -229,11 +229,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Almond Shaped.
+        /// </summary>
+        public static string AlmondShaped {
+            get {
+                return ResourceManager.GetString("AlmondShaped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Always.
         /// </summary>
         public static string Always {
             get {
                 return ResourceManager.GetString("Always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you ambidextrous?.
+        /// </summary>
+        public static string AmbidextrousLabel {
+            get {
+                return ResourceManager.GetString("AmbidextrousLabel", resourceCulture);
             }
         }
         
@@ -409,6 +427,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Arch.
+        /// </summary>
+        public static string Arch {
+            get {
+                return ResourceManager.GetString("Arch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Article.
         /// </summary>
         public static string Article {
@@ -543,6 +570,23 @@ namespace K9.Globalisation {
         public static string Biometrics {
             get {
                 return ResourceManager.GetString("Biometrics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;To perform the tests necessary for the Genetic Profile Calculator, you will need:&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Fifteen minutes&lt;/li&gt;
+        ///    &lt;li&gt;An assistant to help you measure&lt;/li&gt;
+        ///    &lt;li&gt;A firm measuring tape, the kind you can use to measure your height&lt;/li&gt;
+        ///    &lt;li&gt;A firm measuring tape, the kind you can use to measure your height&lt;/li&gt;
+        ///    &lt;li&gt;A small ruler that you can use to measure your finger length in millimeters&lt;/li&gt;
+        ///    &lt;li&gt;A standard kitchen chair with backrest&lt;/li&gt;
+        ///    &lt;li&gt;Your ABO blood group&lt;/li [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BiometricsRequirements {
+            get {
+                return ResourceManager.GetString("BiometricsRequirements", resourceCulture);
             }
         }
         
@@ -774,6 +818,28 @@ namespace K9.Globalisation {
         public static string CbsUpregulation {
             get {
                 return ResourceManager.GetString("CbsUpregulation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Determine the height of the chair&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Using your tape measure, measure from the top of the seat of the chair straight down to the ground.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string ChairHeightInstructions {
+            get {
+                return ResourceManager.GetString("ChairHeightInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is the height of the chair?.
+        /// </summary>
+        public static string ChairHeightLabel {
+            get {
+                return ResourceManager.GetString("ChairHeightLabel", resourceCulture);
             }
         }
         
@@ -1353,6 +1419,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do cruciferous vegetables, such as broccoli and kale, taste bitter and unpleasant to you?.
+        /// </summary>
+        public static string CruciferousVegetablesVeryBitterLabel {
+            get {
+                return ResourceManager.GetString("CruciferousVegetablesVeryBitterLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Currency.
         /// </summary>
         public static string CurrencyLabel {
@@ -1507,10 +1582,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Dermatoglyphics refers to the analysis of fingerprints in order to determine certain genetic markers. Our fingerprints correlate strongly to events in our epigenetic history and can therefore be used to determine a person&apos;s genetic profile and any associated susceptibility to specific imbalances.
+        ///    Teeth can tell a lot about a person&apos;s genetics. Incisor shovelling (where the incisors are spade-like) is more strongly associated with an ancestral history of herding or hunting, whereas the presence of Carabelli&apos;s cups is assocated with more agrarian ancestry. In each case, these features indicate key specific metabolic patterns.
         ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///As a general rule, the more your symmetry that exists between the left and right fingerprints (digit to digit), the less stress you experienced in the womb. This is because the left and right s [rest of string was truncated]&quot;;.
+        ///.
         /// </summary>
         public static string Dentition {
             get {
@@ -1991,6 +2065,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ecto-mesomorph.
+        /// </summary>
+        public static string Ectomesomorph {
+            get {
+                return ResourceManager.GetString("Ectomesomorph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ectomorph.
+        /// </summary>
+        public static string Ectomorph {
+            get {
+                return ResourceManager.GetString("Ectomorph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit Activities.
         /// </summary>
         public static string EditActivities {
@@ -2216,6 +2308,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Endomorph.
+        /// </summary>
+        public static string Endomorph {
+            get {
+                return ResourceManager.GetString("Endomorph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ends On.
         /// </summary>
         public static string EndsOnLabel {
@@ -2419,6 +2520,35 @@ namespace K9.Globalisation {
         public static string FindOutMore {
             get {
                 return ResourceManager.GetString("FindOutMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;How to measure your index and ring fingers&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    You may think you will be able to simply look at your hands and see at a glance which of your fingers is longer, but you’ll want to measure with your small ruler/ The index finger can often look longer than it is. Measure from the bottom of the crease where the palm starts and use the side of the finger closest to the middle finger (not the thumb or little finger). Try to get a measurement within 2-3 milimetres if possible.
+        ///&lt;/p&gt;
+        ///&lt;div&gt;
+        ///    &lt;img [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string FingerLengthInstructions {
+            get {
+                return ResourceManager.GetString("FingerLengthInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Fingerprint Analysis&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Simply use your phone flashlight to shine light obliquely over your fingertips. This helps to highlight the grooves and make the finger more visible.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;Alternatively, you can create images of your fingerprints by downloading the &quot;Finger Print Imager&quot; app from the app store. You can find more info &lt;a href=&quot;https://apps.apple.com/us/app/finger-print-imager/id1535871705&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    For each digit, identify the type of fingerprint and  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string FingerPrintsInstructions {
+            get {
+                return ResourceManager.GetString("FingerPrintsInstructions", resourceCulture);
             }
         }
         
@@ -2666,6 +2796,30 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The jaw can be anything from wide-angled or &quot;almond shaped&quot; to narrow or, what is sometimes referred to as a “lantern jaw”. This angle is called the &quot;gonial angle&quot; and indicates exposure to certain prenatal growth factors.
+        ///&lt;/p&gt;
+        ///&lt;div&gt;
+        ///    &lt;img title=&quot;Gonial Angle&quot; alt=&quot;Gonial Angle&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/questionnaire/gonial-angle.png&quot; /&gt;
+        ///&lt;/div&gt;
+        ///.
+        /// </summary>
+        public static string GonialAngle {
+            get {
+                return ResourceManager.GetString("GonialAngle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gonial Angle (Jaw Angle).
+        /// </summary>
+        public static string GonialAngleLabel {
+            get {
+                return ResourceManager.GetString("GonialAngleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Grains.
         /// </summary>
         public static string Grains {
@@ -2689,6 +2843,15 @@ namespace K9.Globalisation {
         public static string Grounding {
             get {
                 return ResourceManager.GetString("Grounding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Head Shape.
+        /// </summary>
+        public static string HeadShapeLabel {
+            get {
+                return ResourceManager.GetString("HeadShapeLabel", resourceCulture);
             }
         }
         
@@ -2801,6 +2964,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to What size are your hips? (Please measure the widest part of the hips).
+        /// </summary>
+        public static string HipSizeLabel {
+            get {
+                return ResourceManager.GetString("HipSizeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hunter.
         /// </summary>
         public static string Hunter {
@@ -2824,6 +2996,15 @@ namespace K9.Globalisation {
         public static string ImmuneSupport {
             get {
                 return ResourceManager.GetString("ImmuneSupport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are your incisors shaped like spades / shovels?.
+        /// </summary>
+        public static string IncisorShovellingLabel {
+            get {
+                return ResourceManager.GetString("IncisorShovellingLabel", resourceCulture);
             }
         }
         
@@ -2994,6 +3175,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to In The Middle.
+        /// </summary>
+        public static string InTheMiddle {
+            get {
+                return ResourceManager.GetString("InTheMiddle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid reCAPTCHA response.
         /// </summary>
         public static string InvalidRecaptcha {
@@ -3057,6 +3247,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Left Index Finger is Longer than Left Ring Finger.
+        /// </summary>
+        public static string IsLeftIndexFingerLongerThanLeftRingFingerLabel {
+            get {
+                return ResourceManager.GetString("IsLeftIndexFingerLongerThanLeftRingFingerLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Go-Live Date.
         /// </summary>
         public static string IsLiveOnLabel {
@@ -3071,6 +3270,15 @@ namespace K9.Globalisation {
         public static string IsLocalDeliveryLabel {
             get {
                 return ResourceManager.GetString("IsLocalDeliveryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lower Leg Length is Greater than Upper Leg Length.
+        /// </summary>
+        public static string IsLowerLegLengthGreaterThanUpperLegLengthLabel {
+            get {
+                return ResourceManager.GetString("IsLowerLegLengthGreaterThanUpperLegLengthLabel", resourceCulture);
             }
         }
         
@@ -3116,6 +3324,15 @@ namespace K9.Globalisation {
         public static string IsPaidLabel {
             get {
                 return ResourceManager.GetString("IsPaidLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right Index Finger is Longer than Right Ring Finger.
+        /// </summary>
+        public static string IsRightIndexFingerLongerThanRightRingFingerLabel {
+            get {
+                return ResourceManager.GetString("IsRightIndexFingerLongerThanRightRingFingerLabel", resourceCulture);
             }
         }
         
@@ -3247,11 +3464,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you left-handed?.
+        /// </summary>
+        public static string LeftHandedLabel {
+            get {
+                return ResourceManager.GetString("LeftHandedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Left Index Finger Length (cm).
         /// </summary>
         public static string LeftIndexFingerLengthLabel {
             get {
                 return ResourceManager.GetString("LeftIndexFingerLengthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left Index Fingerpring Type.
+        /// </summary>
+        public static string LeftIndexFingerprintLabel {
+            get {
+                return ResourceManager.GetString("LeftIndexFingerprintLabel", resourceCulture);
             }
         }
         
@@ -3265,6 +3500,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Left Little Fingerprint Type.
+        /// </summary>
+        public static string LeftLittleFingerprintLabel {
+            get {
+                return ResourceManager.GetString("LeftLittleFingerprintLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left Middle Fingerprint Type.
+        /// </summary>
+        public static string LeftMiddleFingerprintLabel {
+            get {
+                return ResourceManager.GetString("LeftMiddleFingerprintLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Left Ring Finger Length (cm).
         /// </summary>
         public static string LeftRingFingerLengthLabel {
@@ -3274,11 +3527,44 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Left Ring Fingerprint Type.
+        /// </summary>
+        public static string LeftRingFingerprintLabel {
+            get {
+                return ResourceManager.GetString("LeftRingFingerprintLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left Thumbprint Type.
+        /// </summary>
+        public static string LeftThumprintLabel {
+            get {
+                return ResourceManager.GetString("LeftThumprintLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;Leg and torso ratios reflect the levels of the growth factor hormones, in particular IGF-1 and  IGF-2, which are present in the womb and during early childhood. These growth factors influence growth and height. They also determine our genetic susceptibility to certain diseases as well as the ideal diet and lifestyle that will offer maximum protection against health problems.&lt;/p&gt;.
         /// </summary>
         public static string LegAndTorsoLengthDescription {
             get {
                 return ResourceManager.GetString("LegAndTorsoLengthDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;How to measure the gap between your thighs&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Stand straight without shoes, with your ankles touching. Either look in the mirror or have a friend help you and check the gap between your thighs at the level of the knees. Is the gap large, small or do your thighs touch?
+        ///&lt;/p&gt;
+        ///&lt;div&gt;
+        ///    &lt;img title=&quot;Gap Between Thighs Measurement&quot; alt=&quot;Gap Between Thighs Measurement&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/questionnaire/leg-gap-measurement.png&quot; /&gt;
+        ///&lt;/div&gt;.
+        /// </summary>
+        public static string LegGapMeasurementInstructions {
+            get {
+                return ResourceManager.GetString("LegGapMeasurementInstructions", resourceCulture);
             }
         }
         
@@ -3333,6 +3619,38 @@ namespace K9.Globalisation {
         public static string LogIntoYourAccountToView {
             get {
                 return ResourceManager.GetString("LogIntoYourAccountToView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loop.
+        /// </summary>
+        public static string Loop {
+            get {
+                return ResourceManager.GetString("Loop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is your lower-leg length?.
+        /// </summary>
+        public static string LowerLegLengthLabel {
+            get {
+                return ResourceManager.GetString("LowerLegLengthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;How to measure your lower leg&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Stand straight without shoes and have your assistant measure up the side of your leg, starting from the place where your ankle sticks out the farthest and ending at the bump on the outer side of your leg, just below your kneecap. If you’re carrying excess weight, you may have trouble finding the bump; if so, just flex your knee until you it can be felt.
+        ///&lt;/p&gt;
+        ///&lt;div&gt;
+        ///    &lt;img title=&quot;Upper Lower Leg Measurements&quot; alt=&quot;Upper Lower Leg Measurements&quot; class=&quot;auto- [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string LowreLegLengthInstructions {
+            get {
+                return ResourceManager.GetString("LowreLegLengthInstructions", resourceCulture);
             }
         }
         
@@ -3445,6 +3763,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Medium Angle.
+        /// </summary>
+        public static string MediumAngle {
+            get {
+                return ResourceManager.GetString("MediumAngle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
         ///
@@ -3508,6 +3835,24 @@ namespace K9.Globalisation {
         public static string MembershipRunsUntil {
             get {
                 return ResourceManager.GetString("MembershipRunsUntil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Meso-endomorph.
+        /// </summary>
+        public static string MesoEndomorph {
+            get {
+                return ResourceManager.GetString("MesoEndomorph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mesomorph.
+        /// </summary>
+        public static string Mesomorph {
+            get {
+                return ResourceManager.GetString("Mesomorph", resourceCulture);
             }
         }
         
@@ -3634,6 +3979,15 @@ namespace K9.Globalisation {
         public static string MoreDetails {
             get {
                 return ResourceManager.GetString("MoreDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Narrow Angle.
+        /// </summary>
+        public static string NarrowAngle {
+            get {
+                return ResourceManager.GetString("NarrowAngle", resourceCulture);
             }
         }
         
@@ -3788,6 +4142,15 @@ namespace K9.Globalisation {
         public static string NotRegisteredYet {
             get {
                 return ResourceManager.GetString("NotRegisteredYet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I&apos;m not sure.
+        /// </summary>
+        public static string NotSure {
+            get {
+                return ResourceManager.GetString("NotSure", resourceCulture);
             }
         }
         
@@ -5465,6 +5828,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Right Index Fingerprint Type.
+        /// </summary>
+        public static string RightIndexFingerprintLabel {
+            get {
+                return ResourceManager.GetString("RightIndexFingerprintLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Right Leg Length (cm).
         /// </summary>
         public static string RightLegLengthLabel {
@@ -5474,11 +5846,47 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Right Little Fingerprint Type.
+        /// </summary>
+        public static string RightLittleFingerprintLabel {
+            get {
+                return ResourceManager.GetString("RightLittleFingerprintLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right Middle Fingerprint Type.
+        /// </summary>
+        public static string RightMiddleFingerprintLabel {
+            get {
+                return ResourceManager.GetString("RightMiddleFingerprintLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Right Ring Finger Length (cm).
         /// </summary>
         public static string RightRingFingerLengthLabel {
             get {
                 return ResourceManager.GetString("RightRingFingerLengthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right Ring Fingerprint Type.
+        /// </summary>
+        public static string RightRingFingerprintLabel {
+            get {
+                return ResourceManager.GetString("RightRingFingerprintLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right Thumbprint Type.
+        /// </summary>
+        public static string RightThumprintLabel {
+            get {
+                return ResourceManager.GetString("RightThumprintLabel", resourceCulture);
             }
         }
         
@@ -5771,6 +6179,28 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Determine your sitting height&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Sit in a standard kitchen chair with the book resting on your head to ensure the correct angle of the head (or have your assistant check). Have your assistant measure from the bottom of the book down to the ground.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string SittingHeightInstructions {
+            get {
+                return ResourceManager.GetString("SittingHeightInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is your sitting height?.
+        /// </summary>
+        public static string SittingHeightLabel {
+            get {
+                return ResourceManager.GetString("SittingHeightLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Six Months.
         /// </summary>
         public static string SixMonths {
@@ -5807,11 +6237,41 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to What is the size of the gap between your thighs? (cm).
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Your body type—also known as your somatotype—can tell us quite a bit about your metabolism and your genetic profile. This is a fairly easy question to answer, although I’m going to suggest you get a friend to confirm your results anyway. In our “thin is in” culture, lots of women consider themselves “rounded” when virtually everyone else would call them “muscular” or even “lanky.” Similarly, many men who are muscular may mistakingly think they are thin.
+        ///&lt;/p&gt;
+        ///&lt;h4&gt;Which of the following most resemb [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SomatoTypeInstructions {
+            get {
+                return ResourceManager.GetString("SomatoTypeInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is your somatotype?.
+        /// </summary>
+        public static string SomatoTypeLabel {
+            get {
+                return ResourceManager.GetString("SomatoTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is the size of the gap between your thighs?.
         /// </summary>
         public static string SpaceBetweenThighsLabel {
             get {
                 return ResourceManager.GetString("SpaceBetweenThighsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Square / Lantern Jaw.
+        /// </summary>
+        public static string SquareJaw {
+            get {
+                return ResourceManager.GetString("SquareJaw", resourceCulture);
             }
         }
         
@@ -5849,6 +6309,28 @@ namespace K9.Globalisation {
         public static string StandardMembership {
             get {
                 return ResourceManager.GetString("StandardMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;Determine your standing height&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Stand straight, without shoes and with a book resting on your head to make sure your head is level (or as your assistant to check). Have your assistant measure from the bottom of the book straight down the floor, ideally using a rigid tape measure.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string StandingHeightInstructions {
+            get {
+                return ResourceManager.GetString("StandingHeightInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is your standing height?.
+        /// </summary>
+        public static string StandingHeightLabel {
+            get {
+                return ResourceManager.GetString("StandingHeightLabel", resourceCulture);
             }
         }
         
@@ -6255,7 +6737,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are the tendons and sinews under the skin in your limbs (particularly at the wrists) visible?.
+        ///   Looks up a localized string similar to When you relax your arm and look at the skin around your wrists, can you see the outline of your tendons?.
         /// </summary>
         public static string TendonsAndSinewsVisibleLabel {
             get {
@@ -6345,6 +6827,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Torso Length is Greater than Total Leg Length.
+        /// </summary>
+        public static string TorsoLengthGreatherThanLegLengthLabel {
+            get {
+                return ResourceManager.GetString("TorsoLengthGreatherThanLegLengthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Torso Length (cm).
         /// </summary>
         public static string TorsoLengthLabel {
@@ -6399,6 +6890,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total Leg Length.
+        /// </summary>
+        public static string TotalLegLengthLabel {
+            get {
+                return ResourceManager.GetString("TotalLegLengthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Total Price.
         /// </summary>
         public static string TotalPriceLabel {
@@ -6440,6 +6940,15 @@ namespace K9.Globalisation {
         public static string TotalsLabel {
             get {
                 return ResourceManager.GetString("TotalsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Touching.
+        /// </summary>
+        public static string Touching {
+            get {
+                return ResourceManager.GetString("Touching", resourceCulture);
             }
         }
         
@@ -6602,6 +7111,27 @@ namespace K9.Globalisation {
         public static string UpgradeMembershipText {
             get {
                 return ResourceManager.GetString("UpgradeMembershipText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;How to measure your upper leg&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Sit in a chair and place your fingertips on the kneecap of either leg. Slide your fingers upward until they are off the kneecap and your fingertips slide into the groove above the kneecap. Now look for the long skin crease between your hip and your leg. From this point, measure in a straight line to the groove on your knee. This is your upper-leg length.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string UpperLegLengthInstructions {
+            get {
+                return ResourceManager.GetString("UpperLegLengthInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is your upper-leg length?.
+        /// </summary>
+        public static string UpperLegLengthLabel {
+            get {
+                return ResourceManager.GetString("UpperLegLengthLabel", resourceCulture);
             }
         }
         
@@ -6849,6 +7379,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to What size is your waist? (Please measure the narrowest part of the abdomen).
+        /// </summary>
+        public static string WaistSizeLabel {
+            get {
+                return ResourceManager.GetString("WaistSizeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Waiting.
         /// </summary>
         public static string Waiting {
@@ -6977,6 +7516,24 @@ namespace K9.Globalisation {
         public static string WhatsAppUs {
             get {
                 return ResourceManager.GetString("WhatsAppUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Whorl.
+        /// </summary>
+        public static string Whorl {
+            get {
+                return ResourceManager.GetString("Whorl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wide Angle.
+        /// </summary>
+        public static string WideAngle {
+            get {
+                return ResourceManager.GetString("WideAngle", resourceCulture);
             }
         }
         

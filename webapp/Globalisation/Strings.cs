@@ -227,20 +227,54 @@
             public const string TendonsAndSinewsVisibleLabel = "TendonsAndSinewsVisibleLabel";
             public const string WristsAndAnklesPaddedLabel = "WristsAndAnklesPaddedLabel";
             public const string GainsMuscleEasilyLabel = "GainsMuscleEasilyLabel";
+            public const string SomatoTypeLabel = "SomatoTypeLabel";
+
+            public const string LeftThumprintLabel = "LeftThumprintLabel";
+            public const string LeftIndexFingerprintLabel = "LeftIndexFingerprintLabel";
+            public const string LeftMiddleFingerprintLabel = "LeftMiddleFingerprintLabel";
+            public const string LeftRingFingerprintLabel = "LeftRingFingerprintLabel";
+            public const string LeftLittleFingerprintLabel = "LeftLittleFingerprintLabel";
+            public const string RightThumprintLabel = "RightThumprintLabel";
+            public const string RightIndexFingerprintLabel = "RightIndexFingerprintLabel";
+            public const string RightMiddleFingerprintLabel = "RightMiddleFingerprintLabel";
+            public const string RightRingFingerprintLabel = "RightRingFingerprintLabel";
+            public const string RightLittleFingerprintLabel = "RightLittleFingerprintLabel";
+            public const string LeftHandedLabel = "LeftHandedLabel";
+            public const string AmbidextrousLabel = "AmbidextrousLabel";
+
+            public const string GonialAngleLabel = "GonialAngleLabel";
+            public const string HeadShapeLabel = "HeadShapeLabel";
+            
+            public const string CruciferousVegetablesVeryBitterLabel = "CruciferousVegetablesVeryBitterLabel";
 
             public const string FamilyHistoryOfNeurologicalDiseaseLabel = "FamilyHistoryOfNeurologicalDiseaseLabel";
             public const string FamilyHistoryOfSubstanceDependencyLabel = "FamilyHistoryOfSubstanceDependencyLabel";
             public const string FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel = "FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel";
             public const string FamilyHistoryOfCancerLabel = "FamilyHistoryOfCancerLabel";
             public const string FamilyHistoryOfAutoimmuneDiseaseLabel = "FamilyHistoryOfAutoimmuneDiseaseLabel";
+            
+            public const string IncisorShovellingLabel = "IncisorShovellingLabel";
 
+            public const string ChairHeightLabel = "ChairHeightLabel";
+            public const string StandingHeightLabel = "StandingHeightLabel";
+            public const string SittingHeightLabel = "SittingHeightLabel";
             public const string TorsoLengthLabel = "TorsoLengthLabel";
+            public const string TotalLegLengthLabel = "TotalLegLengthLabel";
             public const string LeftLegLengthLabel = "LeftLegLengthLabel";
             public const string RightLegLengthLabel = "RightLegLengthLabel";
             public const string LeftIndexFingerLengthLabel = "LeftIndexFingerLengthLabel";
             public const string RightIndexFingerLengthLabel = "RightIndexFingerLengthLabel";
             public const string LeftRingFingerLengthLabel = "LeftRingFingerLengthLabel";
             public const string RightRingFingerLengthLabel = "RightRingFingerLengthLabel";
+            public const string WaistSizeLabel = "WaistSizeLabel";
+            public const string HipSizeLabel = "HipSizeLabel";
+            public const string LowerLegLengthLabel = "LowerLegLengthLabel";
+            public const string UpperLegLengthLabel = "UpperLegLengthLabel";
+            public const string TorsoLengthGreatherThanLegLengthLabel = "TorsoLengthGreatherThanLegLengthLabel";
+            public const string IsLowerLegLengthGreaterThanUpperLegLengthLabel = "IsLowerLegLengthGreaterThanUpperLegLengthLabel";
+            public const string IsLeftIndexFingerLongerThanLeftRingFingerLabel = "IsLeftIndexFingerLongerThanLeftRingFingerLabel";
+            public const string IsRightIndexFingerLongerThanRightRingFingerLabel = "IsRightIndexFingerLongerThanRightRingFingerLabel";
+            
             public const string BloodGroupLabel = "BloodGroupLabel";
             public const string RhesusFactorLabel = "RhesusFactorLabel";
         }
@@ -400,8 +434,23 @@
             public const string Weeks = "Weeks";
             public const string Months = "Months";
 
+            public const string Aries = "Aries";
+            public const string Taurus = "Taurus";
+            public const string Gemini = "Gemini";
+            public const string Cancer = "Cancer";
+            public const string Leo = "Leo";
+            public const string Virgo = "Virgo";
+            public const string Libra = "Libra";
+            public const string Scorpio = "Scorpio";
+            public const string Sagittarius = "Sagittarius";
+            public const string Capricorn = "Capricorn";
+            public const string Aquarius = "Aquarius";
+            public const string Pisces = "Pisces";
+
             public const string Yes = "Yes";
             public const string No = "No";
+            public const string NotSure = "NotSure";
+
             public const string Female = "Female";
             public const string Male = "Male";
             public const string TransFemale = "TransFemale";
@@ -445,6 +494,7 @@
             public const string YoungestSon = "YoungestSon";
             public const string MiddleDaughter = "MiddleDaughter";
             public const string Tree = "Tree";
+            public const string Air = "Air";
             public const string Metal = "Metal";
             public const string Earth = "Earth";
             public const string White = "White";
@@ -513,6 +563,16 @@
             public const string MountainMonth = "mountain_month";
             public const string FireMonth = "fire_month";
 
+            public const string VeryLow = "VeryLow";
+            public const string Low = "Low";
+            public const string Medium = "Low";
+            public const string High = "High";
+            public const string VeryHigh = "VeryHigh";
+
+            public const string Small = "Small";
+            public const string Large = "Large";
+            public const string Touching = "Touching";
+
             public const string Negative = "Negative";
             public const string Positive = "Positive";
             public const string A = "A";
@@ -520,12 +580,32 @@
             public const string AB = "AB";
             public const string O = "O";
 
+            public const string Loop = "Loop";
+            public const string Whorl = "Whorl";
+            public const string Arch = "Arch";
+
+            public const string Square = "Square";
+            public const string Elongated = "Elongated";
+
             public const string Hunter = "Hunter";
             public const string Gatherer = "Gatherer";
             public const string Teacher = "Teacher";
             public const string Explorer = "Explorer";
             public const string Warrior = "Warrior";
             public const string Nomad = "Nomad";
+
+            public const string AlmondShaped = "AlmondShaped";
+            public const string SquareJaw = "SquareJaw";
+            public const string InTheMiddle = "InTheMiddle";
+            public const string WideAngle = "WideAngle";
+            public const string MediumAngle = "MediumAngle";
+            public const string NarrowAngle = "NarrowAngle";
+
+            public const string Ectomorph = "Ectomorph";
+            public const string Ectomesomorph = "Ectomesomorph";
+            public const string Mesomorph = "Mesomorph";
+            public const string MesoEndomorph = "MesoEndomorph";
+            public const string Endomorph = "Endomorph";
 
             public const string Fruits = "Fruits";
             public const string Vegetables = "Vegetables";

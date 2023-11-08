@@ -111,7 +111,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Questionnaires\en-gb\FingerPrintsInstructions.htm" />
+    <Content Include="Questionnaires\en-gb\ChairHeightInstructions.htm" />
+    <Content Include="Questionnaires\en-gb\FingerLengthInstructions.htm" />
+    <Content Include="Questionnaires\en-gb\SomatoTypeInstructions.htm" />
+    <Content Include="Questionnaires\en-gb\LegGapMeasurementInstructions.htm" />
+    <Content Include="Questionnaires\en-gb\UpperLegLengthInstructions.htm" />
+    <Content Include="Questionnaires\en-gb\LowreLegLengthInstructions.htm" />
+    <Content Include="Questionnaires\en-gb\SittingHeightInstructions.htm" />
+    <Content Include="Questionnaires\en-gb\StandingHeightInstructions.htm" />
     <Content Include="Questionnaires\en-gb\Biometrics.htm" />
+    <Content Include="Questionnaires\en-gb\BiometricsRequirements.htm" />
+    <Content Include="Questionnaires\en-gb\GonialAngle.htm" />
     <Content Include="Questionnaires\en-gb\Dentition.htm" />
     <Content Include="Questionnaires\en-gb\Dermatoglyphics.htm" />
     <Content Include="Questionnaires\en-gb\Acetylation.htm" />

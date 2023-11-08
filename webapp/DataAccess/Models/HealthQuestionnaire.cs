@@ -50,6 +50,11 @@ namespace K9.DataAccessLayer.Models
             return serializer.Deserialize<NineStarKiModel>(nineStarKiJson);
         }
 
+        public ZodiacModel GetZodiacModel()
+        {
+            return new ZodiacModel(DateOfBirth);
+        }
+
         private int GetYearsOld()
         {
             return (DateTime.Now.Year - DateOfBirth.Year) - (DateTime.Now.DayOfYear < DateOfBirth.DayOfYear ? 1 : 0);
