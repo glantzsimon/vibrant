@@ -262,7 +262,7 @@
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Controllers\OrderController.cs" />
-    <Compile Include="Controllers\ShoppingCartAjaxController.cs" />
+    <Compile Include="Controllers\ShoppingCartControllerAjax.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\RepCommissionsController.cs" />
     <Compile Include="Controllers\OrdersControllerAjax.cs" />
@@ -1571,6 +1571,7 @@
     <Content Include="Views\Shared\EditorTemplates\Measurement.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\BloodGroup.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\RhesusFactor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Range.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

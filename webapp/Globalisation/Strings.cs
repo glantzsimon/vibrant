@@ -216,6 +216,23 @@
             public const string NutritionExpertiseLevelLabel = "NutritionExpertiseLevelLabel";
             public const string EnjoysCookingLabel = "EnjoysCookingLabel";
             public const string CookingFrequencyLabel = "CookingFrequencyLabel";
+            public const string CaffeineSensitivityLabel = "CaffeineSensitivityLabel";
+            public const string MedicationSensitivityLabel = "MedicationSensitivityLabel";
+            public const string SensitiveToMoldLabel = "SensitiveToMoldLabel";
+            public const string SensitiveToEnvironmentalChemicalsLabel = "SensitiveToEnvironmentalChemicalsLabel";
+            public const string CaffeineAffectsSleepLabel = "CaffeineAffectsSleepLabel";
+            public const string NumberOfMatchingFingerprintsLabel = "NumberOfMatchingFingerprintsLabel";
+            public const string IndexFingersMatchLabel = "IndexFingersMatchLabel";
+            public const string SpaceBetweenThighsLabel = "SpaceBetweenThighsLabel";
+            public const string TendonsAndSinewsVisibleLabel = "TendonsAndSinewsVisibleLabel";
+            public const string WristsAndAnklesPaddedLabel = "WristsAndAnklesPaddedLabel";
+            public const string GainsMuscleEasilyLabel = "GainsMuscleEasilyLabel";
+
+            public const string FamilyHistoryOfNeurologicalDiseaseLabel = "FamilyHistoryOfNeurologicalDiseaseLabel";
+            public const string FamilyHistoryOfSubstanceDependencyLabel = "FamilyHistoryOfSubstanceDependencyLabel";
+            public const string FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel = "FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel";
+            public const string FamilyHistoryOfCancerLabel = "FamilyHistoryOfCancerLabel";
+            public const string FamilyHistoryOfAutoimmuneDiseaseLabel = "FamilyHistoryOfAutoimmuneDiseaseLabel";
 
             public const string TorsoLengthLabel = "TorsoLengthLabel";
             public const string LeftLegLengthLabel = "LeftLegLengthLabel";
@@ -225,6 +242,7 @@
             public const string LeftRingFingerLengthLabel = "LeftRingFingerLengthLabel";
             public const string RightRingFingerLengthLabel = "RightRingFingerLengthLabel";
             public const string BloodGroupLabel = "BloodGroupLabel";
+            public const string RhesusFactorLabel = "RhesusFactorLabel";
         }
 
         public static class Names
@@ -501,6 +519,13 @@
             public const string B = "B";
             public const string AB = "AB";
             public const string O = "O";
+
+            public const string Hunter = "Hunter";
+            public const string Gatherer = "Gatherer";
+            public const string Teacher = "Teacher";
+            public const string Explorer = "Explorer";
+            public const string Warrior = "Warrior";
+            public const string Nomad = "Nomad";
 
             public const string Fruits = "Fruits";
             public const string Vegetables = "Vegetables";

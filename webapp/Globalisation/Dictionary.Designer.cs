@@ -106,6 +106,21 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Sensitivity to medications, alcohol, caffeine and environmental chemicals is a sign of &quot;slow acetylation&quot;, which is an important factor, influencing many aspects of our metabolim, especially in regards to hepatitc detoxification pathways.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Fast acetylators, on the other hand, whilst they have relatively fewer problems with hepatic detoxification, may encounter other issues, such as a relatively lesser ability to detoxify certain carcinogens, especially those found in meat.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string Acetylation {
+            get {
+                return ResourceManager.GetString("Acetylation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Acid Alkaline.
         /// </summary>
         public static string AcidAlkaline {
@@ -520,11 +535,34 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Biometrics is literally “the measure of living things”: It’s a way of measuring your morphology and other key elements of your physical self. Our growth patterns are influenced by various hormones and growth factors. Therefore, an analysis of our morphology yields important information that can be used in health analysis.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string Biometrics {
+            get {
+                return ResourceManager.GetString("Biometrics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Black.
         /// </summary>
         public static string Black {
             get {
                 return ResourceManager.GetString("Black", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;A person&apos;s blood group is one of the most significant physical markers related to health that we have. It holds important information about their metabolism, genetics and the susceptibility to certain imbalances and diseases. The blood group also influences how our immune system reacts to certain lectins, glutens, etc. present in food, which affects levels of inflammation in the body. It also influences how our immune system responds to pathogens and other substances.&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    The Rhesus (or Rh) blo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BloodGroupDescription {
+            get {
+                return ResourceManager.GetString("BloodGroupDescription", resourceCulture);
             }
         }
         
@@ -622,6 +660,24 @@ namespace K9.Globalisation {
         public static string BulkDiscountLabel {
             get {
                 return ResourceManager.GetString("BulkDiscountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would a cup of coffee in the afternoon or early evening keep you awake at night?.
+        /// </summary>
+        public static string CaffeineAffectsSleepLabel {
+            get {
+                return ResourceManager.GetString("CaffeineAffectsSleepLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On a scale of 1 - 10, how sensitive are you to caffeine?.
+        /// </summary>
+        public static string CaffeineSensitivityLabel {
+            get {
+                return ResourceManager.GetString("CaffeineSensitivityLabel", resourceCulture);
             }
         }
         
@@ -1450,6 +1506,32 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Dermatoglyphics refers to the analysis of fingerprints in order to determine certain genetic markers. Our fingerprints correlate strongly to events in our epigenetic history and can therefore be used to determine a person&apos;s genetic profile and any associated susceptibility to specific imbalances.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///As a general rule, the more your symmetry that exists between the left and right fingerprints (digit to digit), the less stress you experienced in the womb. This is because the left and right s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Dentition {
+            get {
+                return ResourceManager.GetString("Dentition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Dermatoglyphics refers to the analysis of fingerprints in order to determine certain genetic markers. Our fingerprints correlate strongly to events in our epigenetic history and can therefore be used to determine a person&apos;s genetic profile and any associated susceptibility to specific imbalances.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///As a general rule, the more your symmetry that exists between the left and right fingerprints (digit to digit), the less stress you experienced in the womb. This is because the left and right s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Dermatoglyphics {
+            get {
+                return ResourceManager.GetString("Dermatoglyphics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Descriptive Name.
         /// </summary>
         public static string DescriptiveNameLabel {
@@ -2215,11 +2297,65 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Explorer.
+        /// </summary>
+        public static string Explorer {
+            get {
+                return ResourceManager.GetString("Explorer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to External Link.
         /// </summary>
         public static string ExternalLink {
             get {
                 return ResourceManager.GetString("ExternalLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In your close family (parents, grandparents, siblings or yourself) have there been two or more instances of autoimmune disease (lupus, rheumatoid arthritis, multiple sclerosis, CFS, fibromylagia etc.)?.
+        /// </summary>
+        public static string FamilyHistoryOfAutoimmuneDiseaseLabel {
+            get {
+                return ResourceManager.GetString("FamilyHistoryOfAutoimmuneDiseaseLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In your close family (parents, grandparents, siblings or yourself) have there been two or more instances of heart disease, diabetes or stroke?.
+        /// </summary>
+        public static string FamilyHistoryOfCancerLabel {
+            get {
+                return ResourceManager.GetString("FamilyHistoryOfCancerLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In your close family (parents, grandparents, siblings or yourself) have there been two or more instances of heart disease, diabetes or stroke?.
+        /// </summary>
+        public static string FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel {
+            get {
+                return ResourceManager.GetString("FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In your close family (parents, grandparents, siblings or yourself) have there been two or more instances of clinical depression, anxiety, neurosis or cognitive dysfunction such as Alzheimer’s, Parkinson&apos;s disease, etc.?.
+        /// </summary>
+        public static string FamilyHistoryOfNeurologicalDiseaseLabel {
+            get {
+                return ResourceManager.GetString("FamilyHistoryOfNeurologicalDiseaseLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In your close family (parents, grandparents, siblings or yourself) have there been two or more instances of alcoholism or other substance dependency?.
+        /// </summary>
+        public static string FamilyHistoryOfSubstanceDependencyLabel {
+            get {
+                return ResourceManager.GetString("FamilyHistoryOfSubstanceDependencyLabel", resourceCulture);
             }
         }
         
@@ -2440,6 +2576,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you naturally quite muscular and / or do you gain muscle mass easily?.
+        /// </summary>
+        public static string GainsMuscleEasilyLabel {
+            get {
+                return ResourceManager.GetString("GainsMuscleEasilyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gatherer.
+        /// </summary>
+        public static string Gatherer {
+            get {
+                return ResourceManager.GetString("Gatherer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gay.
         /// </summary>
         public static string Gay {
@@ -2647,6 +2801,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hunter.
+        /// </summary>
+        public static string Hunter {
+            get {
+                return ResourceManager.GetString("Hunter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is Hydroscopic.
         /// </summary>
         public static string IdHydroscopicLabel {
@@ -2661,6 +2824,28 @@ namespace K9.Globalisation {
         public static string ImmuneSupport {
             get {
                 return ResourceManager.GetString("ImmuneSupport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Index-to-ring-finger or D2:D4 ratio is an excellent marker for sex hormone exposure. Higher levels of exposure to androgens in the womb correlates with longer ring fingers, whereas higher estrogen correlates with longer index fingers. The ration of hormones holds key information about a person&apos;s health and their ideal diet and lifestyle.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    A comparison of the length of the index and ring fingers in each hand gives some indication of symmetry. The degree of “sameness”. Asymmetry is a p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string IndexAndRingFingerLengthDescription {
+            get {
+                return ResourceManager.GetString("IndexAndRingFingerLengthDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do your index fingerprints match from hand to hand?.
+        /// </summary>
+        public static string IndexFingersMatchLabel {
+            get {
+                return ResourceManager.GetString("IndexFingersMatchLabel", resourceCulture);
             }
         }
         
@@ -3242,6 +3427,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to On a scale of 1 - 10, how sensitive are you to medications? (For example, do you often react strongly to relatively small doses that are well tolerated by others?).
+        /// </summary>
+        public static string MedicationSensitivityLabel {
+            get {
+                return ResourceManager.GetString("MedicationSensitivityLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Meditation Techniques.
         /// </summary>
         public static string MeditationTechniques {
@@ -3544,6 +3738,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nomad.
+        /// </summary>
+        public static string Nomad {
+            get {
+                return ResourceManager.GetString("Nomad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to None.
         /// </summary>
         public static string None {
@@ -3639,6 +3842,15 @@ namespace K9.Globalisation {
         public static string NumberOfItems {
             get {
                 return ResourceManager.GetString("NumberOfItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How many of your fingerprints match from hand to hand (i.e. the left thumbprint is symmetrical to the right thumbprint or left index to right index, etc.)?.
+        /// </summary>
+        public static string NumberOfMatchingFingerprintsLabel {
+            get {
+                return ResourceManager.GetString("NumberOfMatchingFingerprintsLabel", resourceCulture);
             }
         }
         
@@ -5235,6 +5447,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rhesus Factor.
+        /// </summary>
+        public static string RhesusFactorLabel {
+            get {
+                return ResourceManager.GetString("RhesusFactorLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Right Index Finger Length (cm).
         /// </summary>
         public static string RightIndexFingerLengthLabel {
@@ -5415,6 +5636,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sensitive to environmental chemicals, such as car fumes, solvents, perfumes, etc.?.
+        /// </summary>
+        public static string SensitiveToEnvironmentalChemicalsLabel {
+            get {
+                return ResourceManager.GetString("SensitiveToEnvironmentalChemicalsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sensitive to mold?.
+        /// </summary>
+        public static string SensitiveToMoldLabel {
+            get {
+                return ResourceManager.GetString("SensitiveToMoldLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Serving Size.
         /// </summary>
         public static string ServingSizeLabel {
@@ -5564,6 +5803,15 @@ namespace K9.Globalisation {
         public static string SmallPackAmountLabel {
             get {
                 return ResourceManager.GetString("SmallPackAmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is the size of the gap between your thighs? (cm).
+        /// </summary>
+        public static string SpaceBetweenThighsLabel {
+            get {
+                return ResourceManager.GetString("SpaceBetweenThighsLabel", resourceCulture);
             }
         }
         
@@ -5994,6 +6242,24 @@ namespace K9.Globalisation {
         public static string Tapping {
             get {
                 return ResourceManager.GetString("Tapping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Teacher.
+        /// </summary>
+        public static string Teacher {
+            get {
+                return ResourceManager.GetString("Teacher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are the tendons and sinews under the skin in your limbs (particularly at the wrists) visible?.
+        /// </summary>
+        public static string TendonsAndSinewsVisibleLabel {
+            get {
+                return ResourceManager.GetString("TendonsAndSinewsVisibleLabel", resourceCulture);
             }
         }
         
@@ -6592,6 +6858,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Warrior.
+        /// </summary>
+        public static string Warrior {
+            get {
+                return ResourceManager.GetString("Warrior", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Water.
         /// </summary>
         public static string Water {
@@ -6738,6 +7013,15 @@ namespace K9.Globalisation {
         public static string WoundCare {
             get {
                 return ResourceManager.GetString("WoundCare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do your wrists and ankles look padded?.
+        /// </summary>
+        public static string WristsAndAnklesPaddedLabel {
+            get {
+                return ResourceManager.GetString("WristsAndAnklesPaddedLabel", resourceCulture);
             }
         }
         

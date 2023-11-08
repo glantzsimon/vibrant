@@ -164,6 +164,7 @@
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.192\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.SharedLibrary.2.0.0.192\lib\net461\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -190,6 +191,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\NineStarKiEnumMetaDataAttribute.cs" />
     <Compile Include="Attributes\NoCacheAttribute.cs" />
     <Compile Include="Attributes\ProductLabelAttribute.cs" />
     <Compile Include="Constants\Constants.cs" />
@@ -197,6 +199,9 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\ENineStarKiElement.cs" />
+    <Compile Include="Enums\ENineStarKiEnergy.cs" />
+    <Compile Include="Enums\EGenoType.cs" />
     <Compile Include="Enums\ERhesusFactor.cs" />
     <Compile Include="Enums\EBloodGroup.cs" />
     <Compile Include="Enums\EFoodCategory.cs" />
@@ -460,8 +465,9 @@
     <Compile Include="Migrations\202311080203517_HealthQuestionnaire.Designer.cs">
       <DependentUpon>202311080203517_HealthQuestionnaire.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\NineStarKiModel.cs" />
     <Compile Include="Models\FoodItem.cs" />
-    <Compile Include="Models\GenoTypeQuestoinnaire.cs" />
+    <Compile Include="Models\GenoTypeQuestionnaire.cs" />
     <Compile Include="Models\HealthQuestionnaire.cs" />
     <Compile Include="Models\DietaryRecommendation.cs" />
     <Compile Include="Models\Ingredient.cs" />

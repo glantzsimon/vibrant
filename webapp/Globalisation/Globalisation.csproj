@@ -111,7 +111,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Questionnaires\en-gb\Biometrics.htm" />
+    <Content Include="Questionnaires\en-gb\Dentition.htm" />
+    <Content Include="Questionnaires\en-gb\Dermatoglyphics.htm" />
+    <Content Include="Questionnaires\en-gb\Acetylation.htm" />
     <Content Include="Questionnaires\en-gb\IndexAndRingFingerLengthDescription.htm" />
+    <Content Include="Questionnaires\en-gb\BloodGroupDescription.htm" />
     <Content Include="Questionnaires\en-gb\LegAndTorsoLengthDescription.htm" />
     <Content Include="General\en-gb\AgreeToTerms.htm" />
     <Content Include="General\en-gb\platinum-annual-membership-description.htm" />
