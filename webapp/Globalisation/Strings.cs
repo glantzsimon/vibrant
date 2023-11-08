@@ -153,6 +153,7 @@
             public const string SideEffectsLabel = "SideEffectsLabel";
             public const string ShortDescriptionLabel = "ShortDescriptionLabel";
             public const string TextLabel = "TextLabel";
+            public const string QuestionPartsLabel = "QuestionPartsLabel";
             public const string DisplayOrderLabel = "DisplayOrderLabel";
             public const string SubTitleLabel = "SubTitleLabel";
             public const string MaxDosageLabel = "MaxDosageLabel";
@@ -195,6 +196,7 @@
             public const string NumberOfPeriodsOnLabel = "NumberOfPeriodsOnLabel";
             public const string ProtocolSectionLabel = "ProtocolSection";
             public const string InvoiceDateLabel = "InvoiceDateLabel";
+            public const string QuestionTypeLabel = "QuestionTypeLabel";
             public const string OrderTypeLabel = "OrderTypeLabel";
             public const string OrderItemTypeLabel = "OrderItemTypeLabel";
             public const string IngredientTypeLabel = "IngredientTypeLabel";
@@ -207,6 +209,22 @@
             public const string ProductsLabel = "ProductsLabel";
             public const string ProductPackLabel = "ProductPackLabel";
             public const string ProductPacksLabel = "ProductPacksLabel";
+
+            public const string CurrentHealthIssuesLabel = "CurrentHealthIssuesLabel";
+            public const string HealthGoalsLabel = "HealthGoalsLabel";
+            public const string CurrentHealthLevelLabel = "CurrentHealthLevelLabel";
+            public const string NutritionExpertiseLevelLabel = "NutritionExpertiseLevelLabel";
+            public const string EnjoysCookingLabel = "EnjoysCookingLabel";
+            public const string CookingFrequencyLabel = "CookingFrequencyLabel";
+
+            public const string TorsoLengthLabel = "TorsoLengthLabel";
+            public const string LeftLegLengthLabel = "LeftLegLengthLabel";
+            public const string RightLegLengthLabel = "RightLegLengthLabel";
+            public const string LeftIndexFingerLengthLabel = "LeftIndexFingerLengthLabel";
+            public const string RightIndexFingerLengthLabel = "RightIndexFingerLengthLabel";
+            public const string LeftRingFingerLengthLabel = "LeftRingFingerLengthLabel";
+            public const string RightRingFingerLengthLabel = "RightRingFingerLengthLabel";
+            public const string BloodGroupLabel = "BloodGroupLabel";
         }
 
         public static class Names
@@ -233,6 +251,8 @@
             public const string QuestionParts = "QuestionParts";
             public const string HealthQuestionnaire = "HealthQuestionnaire";
             public const string HealthQuestionnaires = "HealthQuestionnaires";
+            public const string GenoTypeQuestionnaire = "GenoTypeQuestionnaire";
+            public const string GenoTypeQuestionnaires = "GenoTypeQuestionnaires";
             public const string Consultation = "Consultation";
             public const string ShoppingCart = "ShoppingCart";
             public const string Consultations = "Consultations";
@@ -260,6 +280,8 @@
             public const string ProductPack = "ProductPack";
             public const string Activity = "Activity";
             public const string Activities = "Activities";
+            public const string FoodItems = "FoodItems";
+            public const string FoodItem = "FoodItem";
             public const string DietaryRecommendation = "DietaryRecommendation";
             public const string DietaryRecommendations = "DietaryRecommendations";
             public const string Products = "Products";
@@ -342,9 +364,14 @@
             public const string WithFood = "WithFood";
             public const string WithFat = "WithFat";
 
+            public const string Always = "Always";
             public const string Daily = "Daily";
             public const string Weekly = "Weekly";
             public const string Fortnightly = "Fortnightly";
+            public const string SeveralTimesAWeek = "SeveralTimesAWeek";
+            public const string SeveralTimesAMonth = "SeveralTimesAMonth";
+            public const string Rarely = "Rarely";
+            public const string Never = "Never";
             public const string Custom = "Custom";
             
             public const string Default = "Default";
@@ -355,6 +382,8 @@
             public const string Weeks = "Weeks";
             public const string Months = "Months";
 
+            public const string Yes = "Yes";
+            public const string No = "No";
             public const string Female = "Female";
             public const string Male = "Male";
             public const string TransFemale = "TransFemale";
@@ -465,6 +494,31 @@
             public const string LakeMonth = "lake_month";
             public const string MountainMonth = "mountain_month";
             public const string FireMonth = "fire_month";
+
+            public const string Negative = "Negative";
+            public const string Positive = "Positive";
+            public const string A = "A";
+            public const string B = "B";
+            public const string AB = "AB";
+            public const string O = "O";
+
+            public const string Fruits = "Fruits";
+            public const string Vegetables = "Vegetables";
+            public const string NutsAndSeeds = "NutsAndSeeds";
+            public const string Fungi = "Fungi";
+            public const string Legumes = "Legumes";
+            public const string Meat = "Meat";
+            public const string FishAndSeafood = "FishAndSeafood";
+            public const string EggsAndDairy = "EggsAndDairy";
+            public const string Grains = "Grains";
+            public const string NoodlesAndPasta = "NoodlesAndPasta";
+            public const string HerbsAndSpices = "HerbsAndSpices";
+            public const string Deserts = "Deserts";
+            public const string Confectionery = "Confectionery";
+            public const string Snacks = "Snacks";
+            public const string Oils = "Oils";
+            public const string Condiments = "Condiments";
+            public const string FermentedFoods = "FermentedFoods";
         }
 
         public static class Constants

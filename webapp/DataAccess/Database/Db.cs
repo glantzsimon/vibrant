@@ -13,6 +13,7 @@ namespace K9.DataAccessLayer.Database
         public DbSet<Client> Clients { get; set; }
         public DbSet<DietaryRecommendation> DietaryRecommendations { get; set; }
         public DbSet<Donation> Donations { get; set; }
+        public DbSet<HealthQuestionnaire> HealthQuestionnaires { get; set; }
         public DbSet<MembershipOption> MembershipOptions { get; set; }
         public DbSet<PromoCode> PromoCodes { get; set; }
         public DbSet<Product> Products { get; set; }

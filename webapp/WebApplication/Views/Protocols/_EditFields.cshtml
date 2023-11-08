@@ -4,8 +4,8 @@
 @model Protocol
 
 @{
-    var periodDisplayValue = Model.Frequency != EFrequency.Custom ? "none" : "";
-    var daysOnOffDisplayValue = Model.Frequency == EFrequency.Custom ? "none" : "";
+    var periodDisplayValue = Model.ProtocolFrequency != EProtocolFrequency.Custom ? "none" : "";
+    var daysOnOffDisplayValue = Model.ProtocolFrequency == EProtocolFrequency.Custom ? "none" : "";
     var optionalFieldsDisplayValue = Model.Type == EProtocolType.Default ? "" : "none";
     var customDurationDisplayValue = Model.Duration == EProtocolDuration.Custom ? "" : "none";
 }
@@ -23,7 +23,7 @@
         @Html.BootstrapEditorFor(model => model.Type)
     </div>
     <div id="frequency-container" class="col-sm-6" style="display: @optionalFieldsDisplayValue;">
-        @Html.BootstrapEditorFor(model => model.Frequency)
+        @Html.BootstrapEditorFor(model => model.ProtocolFrequency)
     </div>
 </div>
 <div id="optional-fields-container" style="display: @optionalFieldsDisplayValue;">
@@ -89,7 +89,7 @@
             let $numberOfPeriodsOff = $("#@nameof(Protocol.NumberOfPeriodsOff)");
             let $numberOfPeriodsOn = $("#@nameof(Protocol.NumberOfPeriodsOn)");
 
-            if (frequency === "@((int)EFrequency.Custom)") {
+            if (frequency === "@((int)EProtocolFrequency.Custom)") {
                 $daysContainer.hide();
                 $periodContainer.show();
             } else {
@@ -97,10 +97,10 @@
                 $periodContainer.hide();
             }
 
-            if (frequency === "@((int)EFrequency.Daily)") {
+            if (frequency === "@((int)EProtocolFrequency.Daily)") {
                 $numberOfPeriodsOff.show();
                 $numberOfPeriodsOn.hide();
-            } else if (frequency === "@((int)EFrequency.Monthly)" || frequency === "@((int)EFrequency.Fortnightly)") {
+            } else if (frequency === "@((int)EProtocolFrequency.Monthly)" || frequency === "@((int)EProtocolFrequency.Fortnightly)") {
                 $numberOfPeriodsOn.show();
                 $numberOfPeriodsOff.hide();
             }

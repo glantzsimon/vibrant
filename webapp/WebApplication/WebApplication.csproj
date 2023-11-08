@@ -1564,6 +1564,13 @@
     <Content Include="Views\ProductPack\_DefaultAjax.cshtml" />
     <Content Include="Views\Product\_DefaultAjax.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\PriceTier.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\YesNo.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\FoodItem.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\FoodItem.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\FoodCategory.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Measurement.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\BloodGroup.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\RhesusFactor.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

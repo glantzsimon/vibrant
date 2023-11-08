@@ -2095,6 +2095,15 @@
   <data name="WhatsAppUs" xml:space="preserve">
     <value>WhatsApp</value>
   </data>
+  <data name="CurrentHealthIssuesLabel" xml:space="preserve">
+    <value>Are there any health issues that you hope to improve with nutrition? Please provide details if you can.</value>
+  </data>
+  <data name="CurrentHealthLevelLabel" xml:space="preserve">
+    <value>How healthy do you currently feel on a scale of 1 - 10</value>
+  </data>
+  <data name="HealthGoalsLabel" xml:space="preserve">
+    <value>Do you have any other goals that you would like to achieve with the help of a nutritional plan? Please provide details if you can.</value>
+  </data>
   <data name="ItemAddedToCart" xml:space="preserve">
     <value>Item added to cart</value>
   </data>
@@ -2110,8 +2119,14 @@
   <data name="LogIntoYourAccountToPurchase" xml:space="preserve">
     <value>Sign into your account to purchase</value>
   </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
   <data name="NumberOfItems" xml:space="preserve">
     <value>Number of Items</value>
+  </data>
+  <data name="NutritionExpertiseLevelLabel" xml:space="preserve">
+    <value>Please rate your nutritional expertise from 1 to 10 (10 being advanced)</value>
   </data>
   <data name="OrderSuccess" xml:space="preserve">
     <value>Your order has been successfully created.</value>
@@ -2122,16 +2137,148 @@
   <data name="PureAlchemyOrder" xml:space="preserve">
     <value>Pure Alchemy Order</value>
   </data>
+  <data name="QuestionPartsLabel" xml:space="preserve">
+    <value>Question Parts</value>
+  </data>
+  <data name="QuestionTypeLabel" xml:space="preserve">
+    <value>Question Type</value>
+  </data>
   <data name="Remove" xml:space="preserve">
     <value>Remove</value>
   </data>
   <data name="UpdateCart" xml:space="preserve">
     <value>Update Cart</value>
   </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
   <data name="YourCartIsEmpty" xml:space="preserve">
     <value>Your cart is empty</value>
   </data>
   <data name="YourOrders" xml:space="preserve">
     <value>Your Orders</value>
+  </data>
+  <data name="A" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="AB" xml:space="preserve">
+    <value>AB</value>
+  </data>
+  <data name="Always" xml:space="preserve">
+    <value>Always</value>
+  </data>
+  <data name="B" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="BloodGroupLabel" xml:space="preserve">
+    <value>Blood Group</value>
+  </data>
+  <data name="Condiments" xml:space="preserve">
+    <value>Condiments</value>
+  </data>
+  <data name="Confectionery" xml:space="preserve">
+    <value>Confectionery</value>
+  </data>
+  <data name="CookingFrequencyLabel" xml:space="preserve">
+    <value>How often do you cook?</value>
+  </data>
+  <data name="Deserts" xml:space="preserve">
+    <value>Deserts</value>
+  </data>
+  <data name="EggsAndDairy" xml:space="preserve">
+    <value>Eggs &amp; Dairy</value>
+  </data>
+  <data name="EnjoysCookingLabel" xml:space="preserve">
+    <value>Do you enjoy cooking?</value>
+  </data>
+  <data name="FishAndSeafood" xml:space="preserve">
+    <value>Fish &amp; Seafood</value>
+  </data>
+  <data name="FoodItem" xml:space="preserve">
+    <value>Food</value>
+  </data>
+  <data name="FoodItems" xml:space="preserve">
+    <value>Foods</value>
+  </data>
+  <data name="Fruits" xml:space="preserve">
+    <value>Fruits</value>
+  </data>
+  <data name="Fungi" xml:space="preserve">
+    <value>Fungi</value>
+  </data>
+  <data name="GenoTypeQuestionnaire" xml:space="preserve">
+    <value>GenoType Questionnaire</value>
+  </data>
+  <data name="GenoTypeQuestionnaires" xml:space="preserve">
+    <value>GenoType Questionnaires</value>
+  </data>
+  <data name="Grains" xml:space="preserve">
+    <value>Grains</value>
+  </data>
+  <data name="HerbsAndSpices" xml:space="preserve">
+    <value>Herbs &amp; Spices</value>
+  </data>
+  <data name="LeftIndexFingerLengthLabel" xml:space="preserve">
+    <value>Left Index Finger Length (cm)</value>
+  </data>
+  <data name="LeftLegLengthLabel" xml:space="preserve">
+    <value>Left Leg Length (cm)</value>
+  </data>
+  <data name="LeftRingFingerLengthLabel" xml:space="preserve">
+    <value>Left Ring Finger Length (cm)</value>
+  </data>
+  <data name="LegAndTorsoLengthDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\legandtorsolengthdescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Legumes" xml:space="preserve">
+    <value>Legumes</value>
+  </data>
+  <data name="Meat" xml:space="preserve">
+    <value>Meat</value>
+  </data>
+  <data name="Negative" xml:space="preserve">
+    <value>Negative</value>
+  </data>
+  <data name="Never" xml:space="preserve">
+    <value>Never</value>
+  </data>
+  <data name="NoodlesAndPasta" xml:space="preserve">
+    <value>Noodles &amp; Pasta</value>
+  </data>
+  <data name="NutsAndSeeds" xml:space="preserve">
+    <value>Nuts &amp; Seeds</value>
+  </data>
+  <data name="O" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="Oils" xml:space="preserve">
+    <value>Oils</value>
+  </data>
+  <data name="Positive" xml:space="preserve">
+    <value>Positive</value>
+  </data>
+  <data name="Rarely" xml:space="preserve">
+    <value>Rarely</value>
+  </data>
+  <data name="RightIndexFingerLengthLabel" xml:space="preserve">
+    <value>Right Index Finger Length (cm)</value>
+  </data>
+  <data name="RightLegLengthLabel" xml:space="preserve">
+    <value>Right Leg Length (cm)</value>
+  </data>
+  <data name="RightRingFingerLengthLabel" xml:space="preserve">
+    <value>Right Ring Finger Length (cm)</value>
+  </data>
+  <data name="SeveralTimesAMonth" xml:space="preserve">
+    <value>A few times per month</value>
+  </data>
+  <data name="SeveralTimesAWeek" xml:space="preserve">
+    <value>A few times per week.</value>
+  </data>
+  <data name="TorsoLengthLabel" xml:space="preserve">
+    <value>Torso Length (cm)</value>
+  </data>
+  <data name="Vegetables" xml:space="preserve">
+    <value>Vegetables</value>
   </data>
 </root>

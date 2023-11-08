@@ -4,8 +4,8 @@
 @model Protocol
 
 @{
-    var periodDisplayValue = Model.Frequency == EFrequency.Custom ? "" : "none";
-    var daysOnOffDisplayValue = Model.Frequency == EFrequency.Custom ? "none" : "";
+    var periodDisplayValue = Model.ProtocolFrequency == EProtocolFrequency.Custom ? "" : "none";
+    var daysOnOffDisplayValue = Model.ProtocolFrequency == EProtocolFrequency.Custom ? "none" : "";
     var optionalFieldsDisplayValue = Model.Type == EProtocolType.Default ? "" : "none";
 }
 
@@ -22,7 +22,7 @@
         @Html.BootstrapDisplayFor(model => model.Type)
     </div>
     <div class="col-sm-6" style="display: @optionalFieldsDisplayValue;">
-        @Html.BootstrapDisplayFor(model => model.Frequency)
+        @Html.BootstrapDisplayFor(model => model.ProtocolFrequency)
     </div>
 </div>
 <div id="optional-fields-container" style="display: @optionalFieldsDisplayValue;">

@@ -111,6 +111,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Questionnaires\en-gb\IndexAndRingFingerLengthDescription.htm" />
+    <Content Include="Questionnaires\en-gb\LegAndTorsoLengthDescription.htm" />
     <Content Include="General\en-gb\AgreeToTerms.htm" />
     <Content Include="General\en-gb\platinum-annual-membership-description.htm" />
     <Content Include="General\en-gb\platinum-monthly-membership-description.htm" />

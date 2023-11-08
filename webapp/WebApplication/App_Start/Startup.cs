@@ -41,8 +41,8 @@ namespace K9.WebApplication
             builder.Register(c => LogManager.GetCurrentClassLogger()).As<ILogger>().SingleInstance();
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>)).InstancePerRequest();
             builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>)).InstancePerRequest();
-            builder.RegisterType<Config.ColumnsConfig>().As<IColumnsConfig>().InstancePerRequest();
-            builder.RegisterType<DataSetsHelper>().As<IDataSetsHelper>().InstancePerRequest();
+            builder.RegisterType<Config.ColumnsConfig>().As<IColumnsConfig>().SingleInstance();
+            builder.RegisterType<DataSetsHelper>().As<IDataSetsHelper>().SingleInstance();
             builder.RegisterType<DataSets>().As<IDataSets>().SingleInstance();
             builder.RegisterType<Users>().As<IUsers>().InstancePerRequest();
             builder.RegisterType<Roles>().As<IRoles>().InstancePerRequest();

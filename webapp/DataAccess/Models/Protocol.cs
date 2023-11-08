@@ -30,7 +30,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("Frequency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FrequencyLabel)]
-        public EFrequency Frequency { get; set; }
+        public EProtocolFrequency ProtocolFrequency { get; set; }
 
         [UIHint("Period")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PeriodLabel)]
@@ -140,15 +140,15 @@ namespace K9.DataAccessLayer.Models
 
         public int GetPeriodLength()
         {
-            switch (Frequency)
+            switch (ProtocolFrequency)
             {
-                case EFrequency.Fortnightly:
+                case EProtocolFrequency.Fortnightly:
                     return 14;
 
-                case EFrequency.Monthly:
+                case EProtocolFrequency.Monthly:
                     return 28;
 
-                case EFrequency.Daily:
+                case EProtocolFrequency.Daily:
                     return 7;
             }
 
@@ -180,13 +180,13 @@ namespace K9.DataAccessLayer.Models
             }
 
             var numberOfPeriodsPerDuration = GetNumberOfPeriodsPerDuration();
-            switch (Frequency)
+            switch (ProtocolFrequency)
             {
-                case EFrequency.Daily:
+                case EProtocolFrequency.Daily:
                     return numberOfPeriodsPerDuration * (GetPeriodLength() - NumberOfPeriodsOff);
 
-                case EFrequency.Fortnightly:
-                case EFrequency.Monthly:
+                case EProtocolFrequency.Fortnightly:
+                case EProtocolFrequency.Monthly:
                     return numberOfPeriodsPerDuration * (NumberOfPeriodsOn);
                     
                 default:

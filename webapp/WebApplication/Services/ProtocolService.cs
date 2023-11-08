@@ -487,7 +487,7 @@ namespace K9.WebApplication.Services
 
         public static bool CheckSchedule(Protocol protocol, DayOfWeek dayofWeek)
         {
-            if (protocol.Frequency == EFrequency.Daily)
+            if (protocol.ProtocolFrequency == EProtocolFrequency.Daily)
             {
                 if (protocol.NumberOfPeriodsOff >= 7)
                 {
@@ -524,7 +524,7 @@ namespace K9.WebApplication.Services
 
         public static int[] GetSchedule(Protocol protocol)
         {
-            if (protocol.Frequency == EFrequency.Monthly)
+            if (protocol.ProtocolFrequency == EProtocolFrequency.Monthly)
             {
                 var intervalLength = protocol.GetPeriodLength();
                 var interval = (int)Math.Floor((double)intervalLength / protocol.NumberOfPeriodsOn);

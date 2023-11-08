@@ -19,17 +19,17 @@ else
                 <h3>@Dictionary.SupplementSchedule (@Model.DaysDurationTitle)</h3>
             </div>
         </div>
-        @switch (Model.Frequency)
+        @switch (Model.ProtocolFrequency)
         {
-            case EFrequency.Daily:
+            case EProtocolFrequency.Daily:
                 @Html.Partial("../Protocols/_DailySchedule")
                 break;
 
-            case EFrequency.Monthly:
+            case EProtocolFrequency.Monthly:
                 @Html.Partial("../Protocols/_MonthlySchedule")
                 break;
 
-            case EFrequency.Fortnightly:
+            case EProtocolFrequency.Fortnightly:
                 @Html.Partial("../Protocols/_FortnightlySchedule")
                 break;
 

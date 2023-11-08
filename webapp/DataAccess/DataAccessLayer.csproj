@@ -197,14 +197,18 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
-    <Compile Include="Enums\EQuestionType.cs" />
+    <Compile Include="Enums\ERhesusFactor.cs" />
+    <Compile Include="Enums\EBloodGroup.cs" />
+    <Compile Include="Enums\EFoodCategory.cs" />
+    <Compile Include="Enums\EFrequency.cs" />
+    <Compile Include="Enums\EYesNo.cs" />
     <Compile Include="Enums\EProtocolDuration.cs" />
     <Compile Include="Enums\ECategory.cs" />
     <Compile Include="Enums\EProtocolType.cs" />
     <Compile Include="Enums\EPeriod.cs" />
     <Compile Include="Enums\EIngredientType.cs" />
     <Compile Include="Enums\EOrderStatus.cs" />
-    <Compile Include="Enums\EFrequency.cs" />
+    <Compile Include="Enums\EProtocolFrequency.cs" />
     <Compile Include="Enums\EPriceTier.cs" />
     <Compile Include="Enums\EOrderType.cs" />
     <Compile Include="Enums\EProductRecommendation.cs" />
@@ -452,8 +456,8 @@
     <Compile Include="Migrations\202311071052298_IsUniqueOrderNumber.Designer.cs">
       <DependentUpon>202311071052298_IsUniqueOrderNumber.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\QuestionPart.cs" />
-    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\FoodItem.cs" />
+    <Compile Include="Models\GenoTypeQuestoinnaire.cs" />
     <Compile Include="Models\HealthQuestionnaire.cs" />
     <Compile Include="Models\DietaryRecommendation.cs" />
     <Compile Include="Models\Ingredient.cs" />
