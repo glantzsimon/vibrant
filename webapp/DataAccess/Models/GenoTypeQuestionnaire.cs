@@ -4,17 +4,164 @@ using K9.Globalisation;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using K9.Base.DataAccessLayer.Enums;
 
 namespace K9.DataAccessLayer.Models
 {
     public partial class HealthQuestionnaire
     {
-        public List<EGenoType> GetTotalGenotypeScore()
+
+        public EGenoType CalculateGenoType()
+        {
+            var genotypes = new List<EGenoType>();
+
+            if (IsTorsoLengthGreaterThanLegLength())
+            {
+                if (IsLowerLegLengthGreaterThanUpperLegLength())
+                {
+                    if (IndexFingersAreLongerThanRingFingersOnBothHands())
+                    {
+                        genotypes.AddRange(new EGenoType[]
+                        {
+                            EGenoType.Gatherer,
+                            EGenoType.Explorer,
+                            EGenoType.Warrior,
+                            EGenoType.Nomad
+                        });
+                    }
+                    else if (RingFingersAreLongerThanIndexFingersOnBothHands())
+                    {
+                        genotypes.AddRange(new EGenoType[]
+                        {
+                            EGenoType.Hunter,
+                            EGenoType.Teacher,
+                            EGenoType.Explorer,
+                            EGenoType.Nomad
+                        });
+                    }
+                    else
+                    {
+                        genotypes.AddRange(new EGenoType[]
+                        {
+                            EGenoType.Gatherer,
+                            EGenoType.Teacher,
+                            EGenoType.Explorer,
+                            EGenoType.Nomad
+                        });
+                    }
+                }
+                else
+                {
+                    if (IndexFingersAreLongerThanRingFingersOnBothHands())
+                    {
+                        genotypes.AddRange(new EGenoType[]
+                        {
+                            EGenoType.Gatherer,
+                            EGenoType.Teacher,
+                            EGenoType.Explorer,
+                            EGenoType.Nomad
+                        });
+                    }
+                    else if (RingFingersAreLongerThanIndexFingersOnBothHands())
+                    {
+                        genotypes.AddRange(new EGenoType[]
+                        {
+                            EGenoType.Hunter,
+                            EGenoType.Teacher,
+                            EGenoType.Explorer,
+                            EGenoType.Nomad
+                        });
+                    }
+                    else
+                    {
+                        genotypes.AddRange(new EGenoType[]
+                        {
+                            EGenoType.Gatherer,
+                            EGenoType.Teacher,
+                            EGenoType.Explorer,
+                            EGenoType.Warrior
+                        });
+                    }
+                }
+            }
+            else
+            {
+                if (IsLowerLegLengthGreaterThanUpperLegLength())
+                {
+                    if (IndexFingersAreLongerThanRingFingersOnBothHands())
+                    {
+                        genotypes.AddRange(new EGenoType[]
+                        {
+                            EGenoType.Gatherer,
+                            EGenoType.Explorer,
+                            EGenoType.Warrior,
+                            EGenoType.Nomad
+                        });
+                    }
+                    else if (RingFingersAreLongerThanIndexFingersOnBothHands())
+                    {
+                        genotypes.AddRange(new EGenoType[]
+                        {
+                            EGenoType.Hunter,
+                            EGenoType.Teacher,
+                            EGenoType.Warrior,
+                            EGenoType.Nomad
+                        });
+                    }
+                    else
+                    {
+                        genotypes.AddRange(new EGenoType[]
+                        {
+                            EGenoType.Hunter,
+                            EGenoType.Teacher,
+                            EGenoType.Warrior,
+                            EGenoType.Nomad
+                        });
+                    }
+                }
+                else
+                {
+                    if (IndexFingersAreLongerThanRingFingersOnBothHands())
+                    {
+                        genotypes.AddRange(new EGenoType[]
+                        {
+                            EGenoType.Gatherer,
+                            EGenoType.Explorer,
+                            EGenoType.Warrior,
+                            EGenoType.Nomad
+                        });
+                    }
+                    else if (RingFingersAreLongerThanIndexFingersOnBothHands())
+                    {
+                        genotypes.AddRange(new EGenoType[]
+                        {
+                            EGenoType.Hunter,
+                            EGenoType.Explorer,
+                            EGenoType.Warrior,
+                            EGenoType.Nomad
+                        });
+                    }
+                    else
+                    {
+                        genotypes.AddRange(new EGenoType[]
+                        {
+                            EGenoType.Hunter,
+                            EGenoType.Gatherer,
+                            EGenoType.Teacher,
+                            EGenoType.Explorer
+                        });
+                    }
+                }
+            }
+        }
+
+        public List<EGenoType> GetGenotypeStrengthTestScore()
         {
             return GetGenoTypeFromSpaceBetweenThighs()
                     .Concat(GetGenoTypeFromTendonsAndSinewsAndMuscles())
                     .Concat(GetGenoTypeFromGonialAngle())
                     .Concat(GetGenoTypeFromHeadShape())
+                    .Concat(GetGenoTypeFromTasterStatus())
                     .Concat(GetGenoTypeFromFingerprints()).ToList();
         }
 
@@ -48,12 +195,12 @@ namespace K9.DataAccessLayer.Models
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LowerLegLengthLabel)]
         [Required]
-        public int LowerLegLength { get; set; }
+        public double LowerLegLength { get; set; }
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LowerLegLengthLabel)]
         [Required]
-        public int UpperLegLength { get; set; }
+        public double UpperLegLength { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TorsoLengthGreatherThanLegLengthLabel)]
         public bool IsTorsoLengthGreaterThanLegLength() => TorsoLength >= TotalLegLength;
@@ -64,12 +211,12 @@ namespace K9.DataAccessLayer.Models
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftIndexFingerLengthLabel)]
         [Required]
-        public int IndexFingerLengthLeft { get; set; }
+        public double IndexFingerLengthLeft { get; set; }
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightIndexFingerLengthLabel)]
         [Required]
-        public int IndexFingerLengthRight { get; set; }
+        public double IndexFingerLengthRight { get; set; }
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftRingFingerLengthLabel)]
@@ -79,14 +226,20 @@ namespace K9.DataAccessLayer.Models
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightRingFingerLengthLabel)]
         [Required]
-        public int RingFingerLengthRight { get; set; }
+        public double RingFingerLengthRight { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsLeftIndexFingerLongerThanLeftRingFingerLabel)]
         public bool IsIndexFingerLongerThanRingFingerLeft() => IndexFingerLengthLeft >= RingFingerLengthLeft;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsRightIndexFingerLongerThanRightRingFingerLabel)]
         public bool IsIndexFingerLongerThanRingFingerRight() => IndexFingerLengthRight >= RingFingerLengthRight;
-        
+
+        public bool IndexFingersAreLongerThanRingFingersOnBothHands() =>
+            IsIndexFingerLongerThanRingFingerLeft() && IsIndexFingerLongerThanRingFingerRight();
+
+        public bool RingFingersAreLongerThanIndexFingersOnBothHands() =>
+            !IsIndexFingerLongerThanRingFingerLeft() && !IsIndexFingerLongerThanRingFingerRight();
+
         [UIHint("GapSize")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SpaceBetweenThighsLabel)]
         [Required]
@@ -117,35 +270,81 @@ namespace K9.DataAccessLayer.Models
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WaistSizeLabel)]
         [Required]
-        public int WaistSize { get; set; }
+        public double WaistSize { get; set; }
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HipSizeLabel)]
         [Required]
-        public int HipSize { get; set; }
+        public double HipSize { get; set; }
 
         public ERatio GetWaistToHipRatio()
         {
             var ratio = WaistSize / HipSize;
 
-            if (ratio <= 0.7)
+            if (Gender == EGender.Male)
             {
-                return ERatio.VeryLow;
+                if (YearsOld < 50)
+                {
+                    if (ratio > 0.96)
+                    {
+                        return ERatio.High;
+                    }
+
+                    if (ratio >= 0.91)
+                    {
+                        return ERatio.Average;
+                    }
+
+                    return ERatio.Ideal;
+                }
+                else
+                {
+                    if (ratio > 0.99)
+                    {
+                        return ERatio.High;
+                    }
+
+                    if (ratio >= 0.93)
+                    {
+                        return ERatio.Average;
+                    }
+
+                    return ERatio.Ideal;
+                }
             }
-            if (ratio <= 0.8)
+            else if (Gender == EGender.Female || Gender == EGender.Other)
             {
-                return ERatio.Low;
-            }
-            if (ratio <= 0.9)
-            {
-                return ERatio.Medium;
-            }
-            if (ratio <= 1)
-            {
-                return ERatio.High;
+                if (YearsOld < 50)
+                {
+                    if (ratio > 0.79)
+                    {
+                        return ERatio.High;
+                    }
+
+                    if (ratio >= 0.71)
+                    {
+                        return ERatio.Average;
+                    }
+
+                    return ERatio.Ideal;
+                }
+                else
+                {
+                    if (ratio > 0.84)
+                    {
+                        return ERatio.High;
+                    }
+
+                    if (ratio >= 0.75)
+                    {
+                        return ERatio.Average;
+                    }
+
+                    return ERatio.Ideal;
+                }
             }
 
-            return ERatio.VeryHigh;
+            return ERatio.Average;
         }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GonialAngleLabel)]
@@ -167,13 +366,40 @@ namespace K9.DataAccessLayer.Models
                 results.Add(EGenoType.Explorer);
                 results.Add(EGenoType.Explorer);
             }
-           
+
             return results;
         }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HeadShapeLabel)]
+        public EHeadShape GetHeadShape()
+        {
+            var cephalicIndex = GetCephalicIndex();
+            if (cephalicIndex < 75)
+            {
+                return EHeadShape.Dolichocephalic;
+            }
+            if (cephalicIndex <= 80)
+            {
+                return EHeadShape.Mesocephalic;
+            }
+
+            return EHeadShape.Brachycephalic;
+        }
+
+        [UIHint("Measurement")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WaistSizeLabel)]
         [Required]
-        public EHeadShape HeadShape { get; set; }
+        public double HeadWidth { get; set; }
+
+        [UIHint("Measurement")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WaistSizeLabel)]
+        [Required]
+        public double HeadLength { get; set; }
+
+        public double GetCephalicIndex()
+        {
+            return (HeadWidth / HeadLength) * 100;
+        }
 
         public List<EGenoType> GetGenoTypeFromHeadShape()
         {
@@ -190,7 +416,7 @@ namespace K9.DataAccessLayer.Models
                 results.Add(EGenoType.Explorer);
                 results.Add(EGenoType.Nomad);
             }
-           
+
             return results;
         }
 
@@ -225,7 +451,7 @@ namespace K9.DataAccessLayer.Models
                 results.Add(EGenoType.Nomad);
                 results.Add(EGenoType.Gatherer);
             }
-           
+
             return results;
         }
 
@@ -277,8 +503,6 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GainsMuscleEasilyLabel)]
         [Required]
         public ESomatoType SomatoType { get; set; }
-
-        //Waist to hip ratio
 
         #endregion
 
@@ -386,7 +610,7 @@ namespace K9.DataAccessLayer.Models
 
             return total;
         }
-        
+
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IndexFingersMatchLabel)]
         [Required]
@@ -441,7 +665,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightLittleFingerprintLabel)]
         [Required]
         public EFingerprintType RightLittleFingerprintType { get; set; }
-        
+
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftHandedLabel)]
         [Required]
@@ -479,7 +703,7 @@ namespace K9.DataAccessLayer.Models
 
             return results;
         }
-        
+
         #endregion
 
         #region Dentition

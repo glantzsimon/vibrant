@@ -4,11 +4,11 @@ namespace K9.DataAccessLayer.Enums
 {
     public enum EGonialAngle
     {
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.AlmondShaped)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.WideAngle)]
         WideAngle,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.SquareJaw)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NarrowAngle)]
         NarrowAngle,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.InTheMiddle)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.MediumAngle)]
         MediumAngle
     }
 }

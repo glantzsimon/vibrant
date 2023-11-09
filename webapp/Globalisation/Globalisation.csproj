@@ -116,6 +116,8 @@
     <Content Include="Questionnaires\en-gb\FingerLengthInstructions.htm" />
     <Content Include="Questionnaires\en-gb\SomatoTypeInstructions.htm" />
     <Content Include="Questionnaires\en-gb\LegGapMeasurementInstructions.htm" />
+    <Content Include="Questionnaires\en-gb\HeadShapeInstructions.htm" />
+    <Content Include="Questionnaires\en-gb\WaistToHipRatioInstructions.htm" />
     <Content Include="Questionnaires\en-gb\UpperLegLengthInstructions.htm" />
     <Content Include="Questionnaires\en-gb\LowreLegLengthInstructions.htm" />
     <Content Include="Questionnaires\en-gb\SittingHeightInstructions.htm" />

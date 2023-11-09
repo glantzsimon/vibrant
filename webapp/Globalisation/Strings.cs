@@ -268,6 +268,8 @@
             public const string RightRingFingerLengthLabel = "RightRingFingerLengthLabel";
             public const string WaistSizeLabel = "WaistSizeLabel";
             public const string HipSizeLabel = "HipSizeLabel";
+            public const string HeadWidthLabel = "HeadWidthLabel";
+            public const string HeadLengthLabel = "HeadLengthLabel";
             public const string LowerLegLengthLabel = "LowerLegLengthLabel";
             public const string UpperLegLengthLabel = "UpperLegLengthLabel";
             public const string TorsoLengthGreatherThanLegLengthLabel = "TorsoLengthGreatherThanLegLengthLabel";
@@ -566,8 +568,10 @@
             public const string VeryLow = "VeryLow";
             public const string Low = "Low";
             public const string Medium = "Low";
+            public const string Ideal = "Ideal";
             public const string High = "High";
             public const string VeryHigh = "VeryHigh";
+            public const string Average = "Average";
 
             public const string Small = "Small";
             public const string Large = "Large";
@@ -586,6 +590,9 @@
 
             public const string Square = "Square";
             public const string Elongated = "Elongated";
+            public const string Dolichocephalic = "Dolichocephalic";
+            public const string Brachycephalic = "Brachycephalic";
+            public const string Mesocephalic = "Mesocephalic";
 
             public const string Hunter = "Hunter";
             public const string Gatherer = "Gatherer";

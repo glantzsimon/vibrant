@@ -2500,6 +2500,15 @@
   <data name="Whorl" xml:space="preserve">
     <value>Whorl</value>
   </data>
+  <data name="Average" xml:space="preserve">
+    <value>Average</value>
+  </data>
+  <data name="Brachycephalic" xml:space="preserve">
+    <value>Brachycephalic (short-headed)</value>
+  </data>
+  <data name="Dolichocephalic" xml:space="preserve">
+    <value>Dolichocephalic (long-headed)</value>
+  </data>
   <data name="Ectomesomorph" xml:space="preserve">
     <value>Ecto-mesomorph</value>
   </data>
@@ -2509,11 +2518,26 @@
   <data name="Endomorph" xml:space="preserve">
     <value>Endomorph</value>
   </data>
+  <data name="HeadLengthLabel" xml:space="preserve">
+    <value>What is the length of your head?</value>
+  </data>
+  <data name="HeadShapeInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\headshapeinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="HeadWidthLabel" xml:space="preserve">
+    <value>What is the width of your head?</value>
+  </data>
+  <data name="Ideal" xml:space="preserve">
+    <value>Ideal</value>
+  </data>
   <data name="LegGapMeasurementInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>questionnaires\en-gb\leggapmeasurementinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="MediumAngle" xml:space="preserve">
     <value>Medium Angle</value>
+  </data>
+  <data name="Mesocephalic" xml:space="preserve">
+    <value>Mesocephalic (medium-headed)</value>
   </data>
   <data name="MesoEndomorph" xml:space="preserve">
     <value>Meso-endomorph</value>
@@ -2532,6 +2556,9 @@
   </data>
   <data name="Touching" xml:space="preserve">
     <value>Touching</value>
+  </data>
+  <data name="WaistToHipRatioInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\waisttohipratioinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="WideAngle" xml:space="preserve">
     <value>Wide Angle</value>

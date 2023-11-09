@@ -499,6 +499,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Average.
+        /// </summary>
+        public static string Average {
+            get {
+                return ResourceManager.GetString("Average", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Awaiting Payment.
         /// </summary>
         public static string AwaitingPayment {
@@ -677,6 +686,15 @@ namespace K9.Globalisation {
         public static string Bottles {
             get {
                 return ResourceManager.GetString("Bottles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brachycephalic (short-headed).
+        /// </summary>
+        public static string Brachycephalic {
+            get {
+                return ResourceManager.GetString("Brachycephalic", resourceCulture);
             }
         }
         
@@ -1719,6 +1737,15 @@ namespace K9.Globalisation {
         public static string DisplayOrderLabel {
             get {
                 return ResourceManager.GetString("DisplayOrderLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dolichocephalic (long-headed).
+        /// </summary>
+        public static string Dolichocephalic {
+            get {
+                return ResourceManager.GetString("Dolichocephalic", resourceCulture);
             }
         }
         
@@ -2847,11 +2874,43 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to What is the length of your head?.
+        /// </summary>
+        public static string HeadLengthLabel {
+            get {
+                return ResourceManager.GetString("HeadLengthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Up until the Middle Ages, our heads got gradually wider and assumed more of a &quot;blockhead&quot; shape. From the Middle Ages onwards, our head shape appears to have been elongating and narrowing, in combination with a gradual increase in our height. Head shape reveals important information about the genetic profile of a person.
+        ///&lt;/p&gt;
+        ///&lt;h4&gt;How to determine your head shape&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Most people can get a good idea of their head shape by having a friend view the top of their head while seated. If you ha [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string HeadShapeInstructions {
+            get {
+                return ResourceManager.GetString("HeadShapeInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Head Shape.
         /// </summary>
         public static string HeadShapeLabel {
             get {
                 return ResourceManager.GetString("HeadShapeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is the width of your head?.
+        /// </summary>
+        public static string HeadWidthLabel {
+            get {
+                return ResourceManager.GetString("HeadWidthLabel", resourceCulture);
             }
         }
         
@@ -2978,6 +3037,15 @@ namespace K9.Globalisation {
         public static string Hunter {
             get {
                 return ResourceManager.GetString("Hunter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ideal.
+        /// </summary>
+        public static string Ideal {
+            get {
+                return ResourceManager.GetString("Ideal", resourceCulture);
             }
         }
         
@@ -3835,6 +3903,15 @@ namespace K9.Globalisation {
         public static string MembershipRunsUntil {
             get {
                 return ResourceManager.GetString("MembershipRunsUntil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mesocephalic (medium-headed).
+        /// </summary>
+        public static string Mesocephalic {
+            get {
+                return ResourceManager.GetString("Mesocephalic", resourceCulture);
             }
         }
         
@@ -7384,6 +7461,20 @@ namespace K9.Globalisation {
         public static string WaistSizeLabel {
             get {
                 return ResourceManager.GetString("WaistSizeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Our waist-to-hip ratio reveals a lot of important information about our genetic profile, metabolism susceptibility to specific imbalances.
+        ///&lt;/p&gt;
+        ///&lt;h4&gt;How to measure your waist&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    Wrap a soft tape measure around your waist at its narrowest point, just above the belly button. Make sure your tape measure is level all the way around your body and parallel to the floor. Gently tighten the tape measure until it’s snug but not so tight as to depress the skin. Try for an accuracy of within 0.5  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string WaistToHipRatioInstructions {
+            get {
+                return ResourceManager.GetString("WaistToHipRatioInstructions", resourceCulture);
             }
         }
         

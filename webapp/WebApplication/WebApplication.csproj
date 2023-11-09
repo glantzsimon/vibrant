@@ -774,6 +774,8 @@
     <Content Include="Images\questionnaire\fingerprint patterns.jpg" />
     <Content Include="Images\questionnaire\fingers measurements.png" />
     <Content Include="Images\questionnaire\gonial-angle.png" />
+    <Content Include="Images\questionnaire\cephalic-index.png" />
+    <Content Include="Images\questionnaire\head-shapes.png" />
     <Content Include="Images\questionnaire\leg-gap-measurement.png" />
     <Content Include="Images\questionnaire\upper-lower-leg-measurements.png" />
     <Content Include="Images\shared\loading5.gif" />
