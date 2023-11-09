@@ -4,6 +4,8 @@ namespace K9.DataAccessLayer.Enums
 {
     public enum EGenoType
     {
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Unspecified)]
+        Unspecified = 0,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Hunter)]
         Hunter = 1,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Gatherer)]
