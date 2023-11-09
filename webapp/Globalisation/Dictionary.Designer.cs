@@ -6502,6 +6502,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Strong.
+        /// </summary>
+        public static string Strong {
+            get {
+                return ResourceManager.GetString("Strong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subjective Effects.
         /// </summary>
         public static string SubjectiveEffectsLabel {
@@ -7353,6 +7362,15 @@ namespace K9.Globalisation {
         public static string Vegetables {
             get {
                 return ResourceManager.GetString("Vegetables", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Very Strong.
+        /// </summary>
+        public static string VeryStrong {
+            get {
+                return ResourceManager.GetString("VeryStrong", resourceCulture);
             }
         }
         

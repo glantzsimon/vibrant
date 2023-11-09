@@ -2563,8 +2563,14 @@
   <data name="SomatoTypeLabel" xml:space="preserve">
     <value>What is your somatotype?</value>
   </data>
+  <data name="Strong" xml:space="preserve">
+    <value>Strong</value>
+  </data>
   <data name="Touching" xml:space="preserve">
     <value>Touching</value>
+  </data>
+  <data name="VeryStrong" xml:space="preserve">
+    <value>Very Strong</value>
   </data>
   <data name="WaistToHipRatioInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>questionnaires\en-gb\waisttohipratioinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

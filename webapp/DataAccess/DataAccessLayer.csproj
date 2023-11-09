@@ -205,6 +205,7 @@
     <Compile Include="Enums\EFingerprintType.cs" />
     <Compile Include="Enums\EHeadShape.cs" />
     <Compile Include="Enums\EGonialAngle.cs" />
+    <Compile Include="Enums\EStrength.cs" />
     <Compile Include="Enums\ETaste.cs" />
     <Compile Include="Enums\EZodiacElement.cs" />
     <Compile Include="Enums\ENineStarKiElement.cs" />
@@ -475,6 +476,7 @@
     <Compile Include="Migrations\202311080203517_HealthQuestionnaire.Designer.cs">
       <DependentUpon>202311080203517_HealthQuestionnaire.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\GenoTypeStrengthTestResult.cs" />
     <Compile Include="Models\ZodiacModel.cs" />
     <Compile Include="Models\NineStarKiModel.cs" />
     <Compile Include="Models\FoodItem.cs" />

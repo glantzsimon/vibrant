@@ -577,6 +577,9 @@
             public const string VeryHigh = "VeryHigh";
             public const string Average = "Average";
 
+            public const string VeryStrong = "VeryStrong";
+            public const string Strong = "Strong";
+
             public const string Small = "Small";
             public const string Large = "Large";
             public const string Touching = "Touching";
