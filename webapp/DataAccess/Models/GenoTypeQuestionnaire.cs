@@ -39,37 +39,30 @@ namespace K9.DataAccessLayer.Models
         
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StandingHeightLabel)]
-        [Required]
         public double StandingHeight { get; set; }
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StandingHeightLabel)]
-        [Required]
         public double SittingHeight { get; set; }
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChairHeightLabel)]
-        [Required]
         public double ChairHeight { get; set; }
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TorsoLengthLabel)]
-        [Required]
         public double TorsoLength => SittingHeight - ChairHeight;
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TotalLegLengthLabel)]
-        [Required]
         public double TotalLegLength => StandingHeight - TorsoLength;
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LowerLegLengthLabel)]
-        [Required]
         public double LowerLegLength { get; set; }
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LowerLegLengthLabel)]
-        [Required]
         public double UpperLegLength { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TorsoLengthGreatherThanLegLengthLabel)]
@@ -80,22 +73,18 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftIndexFingerLengthLabel)]
-        [Required]
         public double IndexFingerLengthLeft { get; set; }
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightIndexFingerLengthLabel)]
-        [Required]
         public double IndexFingerLengthRight { get; set; }
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftRingFingerLengthLabel)]
-        [Required]
         public int RingFingerLengthLeft { get; set; }
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightRingFingerLengthLabel)]
-        [Required]
         public double RingFingerLengthRight { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsLeftIndexFingerLongerThanLeftRingFingerLabel)]
@@ -112,7 +101,6 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("GapSize")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SpaceBetweenThighsLabel)]
-        [Required]
         public EGapSize SpaceBetweenThighs { get; set; }
 
         public List<EGenoType> GetGenoTypeFromSpaceBetweenThighs()
@@ -152,12 +140,10 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WaistSizeLabel)]
-        [Required]
         public double WaistSize { get; set; }
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HipSizeLabel)]
-        [Required]
         public double HipSize { get; set; }
 
         public ERatio GetWaistToHipRatio()
@@ -231,7 +217,6 @@ namespace K9.DataAccessLayer.Models
         }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GonialAngleLabel)]
-        [Required]
         public EGonialAngle GonialAngle { get; set; }
 
         public List<EGenoType> GetGenoTypeFromGonialAngle()
@@ -288,12 +273,10 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WaistSizeLabel)]
-        [Required]
         public double HeadWidth { get; set; }
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WaistSizeLabel)]
-        [Required]
         public double HeadLength { get; set; }
 
         public double GetCephalicIndex()
@@ -329,7 +312,6 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CruciferousVegetablesVeryBitterLabel)]
-        [Required]
         public ETaste CruciferousVegetablesTasteVeryBitter { get; set; }
 
         public List<EGenoType> GetGenoTypeFromTasterStatus()
@@ -385,17 +367,14 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TendonsAndSinewsVisibleLabel)]
-        [Required]
         public EYesNo TendonsAndSinewsVisible { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WristsAndAnklesPaddedLabel)]
-        [Required]
         public EYesNo WristsAndAnklesLookPadded { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GainsMuscleEasilyLabel)]
-        [Required]
         public EYesNo GainsMuscleEasily { get; set; }
 
         public List<EGenoType> GetGenoTypeFromTendonsAndSinewsAndMuscles()
@@ -440,7 +419,6 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("SomatoType")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GainsMuscleEasilyLabel)]
-        [Required]
         public ESomatoType SomatoType { get; set; }
 
         public List<EGenoType> GetGenoTypeFromSomatoType()
@@ -491,12 +469,10 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("BloodGroup")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BloodGroupLabel)]
-        [Required]
         public EBloodGroup BloodGroup { get; set; }
 
         [UIHint("RhesusFactor")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RhesusFactorLabel)]
-        [Required]
         public ERhesusFactor RhesusFactor { get; set; }
 
         public List<EGenoType> GetGenoTypeFromRhesusFactor()
@@ -521,27 +497,22 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MedicationSensitivityLabel)]
-        [Required]
         public EYesNo SensitivityToMedications { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CaffeineSensitivityLabel)]
-        [Required]
         public EYesNo SensitiveToCaffeine { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CaffeineAffectsSleepLabel)]
-        [Required]
         public EYesNo CaffeineAffectsSleep { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SensitiveToMoldLabel)]
-        [Required]
         public EYesNo SensitiveToMold { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SensitiveToEnvironmentalChemicalsLabel)]
-        [Required]
         public EYesNo SensitiveToEnvironmentalChemicals { get; set; }
 
         public List<EGenoType> GetGenoTypeFromChemicalSensitivity()
@@ -577,27 +548,22 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfNeurologicalDiseaseLabel)]
-        [Required]
         public EYesNo FamilyHistoryOfNeurologicalDisease { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel)]
-        [Required]
         public EYesNo FamilyHistoryOfHeartDiseaseStrokeOrDiabetes { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfCancerLabel)]
-        [Required]
         public EYesNo FamilyHistoryOfCancer { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfAutoimmuneDiseaseLabel)]
-        [Required]
         public EYesNo FamilyHistoryOfAutoimmuneDisease { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfSubstanceDependencyLabel)]
-        [Required]
         public EYesNo FamilyHistoryOfSubstanceDependency { get; set; }
 
         public List<EGenoType> GetGenoTypesFromFamilyHistory()
@@ -637,8 +603,7 @@ namespace K9.DataAccessLayer.Models
 
             return results;
         }
-
-
+        
         #endregion
 
         #region Dermatoglyphics
@@ -674,67 +639,54 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IndexFingersMatchLabel)]
-        [Required]
         public EYesNo IndexFingerprintsMatch { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftThumprintLabel)]
-        [Required]
         public EFingerprintType LeftThumprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftIndexFingerprintLabel)]
-        [Required]
         public EFingerprintType LeftIndexFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftMiddleFingerprintLabel)]
-        [Required]
         public EFingerprintType LeftMiddleFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftRingFingerprintLabel)]
-        [Required]
         public EFingerprintType LeftRingFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftLittleFingerprintLabel)]
-        [Required]
         public EFingerprintType LeftLittleFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightThumprintLabel)]
-        [Required]
         public EFingerprintType RightThumprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightIndexFingerprintLabel)]
-        [Required]
         public EFingerprintType RightIndexFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightMiddleFingerprintLabel)]
-        [Required]
         public EFingerprintType RightMiddleFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightRingFingerprintLabel)]
-        [Required]
         public EFingerprintType RightRingFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightLittleFingerprintLabel)]
-        [Required]
         public EFingerprintType RightLittleFingerprintType { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftHandedLabel)]
-        [Required]
         public EYesNo LeftHanded { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmbidextrousLabel)]
-        [Required]
         public EYesNo Ambidextrous { get; set; }
 
         public List<EGenoType> GetGenoTypeFromHandedness()
@@ -842,7 +794,6 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IncisorShovellingLabel)]
-        [Required]
         public EYesNo IncisorShovelling { get; set; }
 
         public List<EGenoType> GetGenoTypesFromIncisorShovelling()

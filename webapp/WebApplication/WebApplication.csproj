@@ -261,6 +261,7 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Controllers\HealthQuestionnaireController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ShoppingCartControllerAjax.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
@@ -370,6 +371,8 @@
     <Compile Include="Services\IProtocolService.cs" />
     <Compile Include="Services\IOrderService.cs" />
     <Compile Include="Services\IShoppingCartService.cs" />
+    <Compile Include="Services\IQuestionnaireService.cs" />
+    <Compile Include="Services\QuestionnaireService.cs" />
     <Compile Include="Services\ShoppingCartService.cs" />
     <Compile Include="Services\ProtocolService.cs" />
     <Compile Include="Services\OrderService.cs" />

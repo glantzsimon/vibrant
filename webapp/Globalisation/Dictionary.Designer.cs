@@ -1984,6 +1984,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you have a question?.
+        /// </summary>
+        public static string DoYouHaveAQuestion {
+            get {
+                return ResourceManager.GetString("DoYouHaveAQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Due By.
         /// </summary>
         public static string DueByLabel {

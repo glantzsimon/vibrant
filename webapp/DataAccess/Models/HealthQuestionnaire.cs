@@ -8,6 +8,7 @@ using K9.DataAccessLayer.Enums;
 using K9.Globalisation;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Script.Serialization;
 
 namespace K9.DataAccessLayer.Models
@@ -17,7 +18,16 @@ namespace K9.DataAccessLayer.Models
     public partial class HealthQuestionnaire : ObjectBase
     {
 
+        [Required]
+        public Guid ExternalId { get; set; }
+
         #region Personal Details
+        
+        [UIHint("Client")]
+        [ForeignKey("Client")]
+        public int ClientId { get; set; }
+
+        public virtual Client Client { get; set; }
 
         [UIHint("Gender")]
         [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary), ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
@@ -65,35 +75,29 @@ namespace K9.DataAccessLayer.Models
         #region General Health 
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CurrentHealthIssuesLabel)]
-        [Required]
         public string CurrentHealthIssues { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HealthGoalsLabel)]
-        [Required]
         public string HealthGoals { get; set; }
 
         [UIHint("Range")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CurrentHealthLevelLabel)]
-        [Required]
         [Min(1)]
         [Max(10)]
         public int CurrentHealthLevel { get; set; }
 
         [UIHint("Range")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NutritionExpertiseLevelLabel)]
-        [Required]
         [Min(1)]
         [Max(10)]
         public int NutritionExpertiseLevel { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnjoysCookingLabel)]
-        [Required]
         public EYesNo EnjoysCooking { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnjoysCookingLabel)]
-        [Required]
         [Min(1)]
         [Max(10)]
         public EFrequency CookingFrequency { get; set; }
