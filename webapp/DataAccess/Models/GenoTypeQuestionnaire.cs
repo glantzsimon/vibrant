@@ -35,8 +35,97 @@ namespace K9.DataAccessLayer.Models
             return strengthTestResults.OrderByDescending(e => e.Count).First();
         }
 
+        #region Blood Analysis
+
+        [UIHint("BloodGroup")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BloodGroupLabel)]
+        public EBloodGroup BloodGroup { get; set; }
+
+        [UIHint("RhesusFactor")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RhesusFactorLabel)]
+        public ERhesusFactor RhesusFactor { get; set; }
+
+        public List<EGenoType> GetGenoTypeFromRhesusFactor()
+        {
+            var results = new List<EGenoType>();
+
+            if (RhesusFactor == ERhesusFactor.Negative)
+            {
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+            }
+
+            return results;
+        }
+
+        public bool IsBloodAnalysisComplete() =>
+            BloodGroup != EBloodGroup.NotSure && RhesusFactor != ERhesusFactor.NotSure;
+
+        #endregion
+
+        #region Acetylation Status
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MedicationSensitivityLabel)]
+        public EYesNo SensitivityToMedications { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CaffeineSensitivityLabel)]
+        public EYesNo SensitiveToCaffeine { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CaffeineAffectsSleepLabel)]
+        public EYesNo CaffeineAffectsSleep { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SensitiveToMoldLabel)]
+        public EYesNo SensitiveToMold { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SensitiveToEnvironmentalChemicalsLabel)]
+        public EYesNo SensitiveToEnvironmentalChemicals { get; set; }
+
+        public List<EGenoType> GetGenoTypeFromChemicalSensitivity()
+        {
+            var results = new List<EGenoType>();
+
+            if (SensitivityToMedications == EYesNo.Yes
+                || SensitiveToCaffeine == EYesNo.Yes
+                || CaffeineAffectsSleep == EYesNo.Yes
+                || SensitiveToMold == EYesNo.Yes
+                || SensitiveToEnvironmentalChemicals == EYesNo.Yes)
+            {
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+            }
+
+            if (SensitiveToCaffeine == EYesNo.No)
+            {
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+            }
+
+            return results;
+        }
+
+        public bool IsAcetylationStatusComplete() =>
+            SensitivityToMedications != EYesNo.Unanswered &&
+            SensitiveToCaffeine != EYesNo.Unanswered &&
+            CaffeineAffectsSleep != EYesNo.Unanswered &&
+            SensitiveToMold != EYesNo.Unanswered &&
+            SensitiveToEnvironmentalChemicals != EYesNo.Unanswered;
+
+        #endregion
+
         #region Biometrics
-        
+
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StandingHeightLabel)]
         public double StandingHeight { get; set; }
@@ -424,7 +513,7 @@ namespace K9.DataAccessLayer.Models
         public List<EGenoType> GetGenoTypeFromSomatoType()
         {
             var results = new List<EGenoType>();
-            
+
             if (SomatoType == ESomatoType.Ectomorph)
             {
                 results.Add(EGenoType.Hunter);
@@ -459,151 +548,13 @@ namespace K9.DataAccessLayer.Models
                 results.Add(EGenoType.Warrior);
                 results.Add(EGenoType.Warrior);
             }
-            
-            return results;
-        }
-
-        #endregion
-
-        #region Blood Analysis
-
-        [UIHint("BloodGroup")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BloodGroupLabel)]
-        public EBloodGroup BloodGroup { get; set; }
-
-        [UIHint("RhesusFactor")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RhesusFactorLabel)]
-        public ERhesusFactor RhesusFactor { get; set; }
-
-        public List<EGenoType> GetGenoTypeFromRhesusFactor()
-        {
-            var results = new List<EGenoType>();
-            
-            if (RhesusFactor == ERhesusFactor.Negative)
-            {
-                results.Add(EGenoType.Explorer);
-                results.Add(EGenoType.Explorer);
-                results.Add(EGenoType.Explorer);
-                results.Add(EGenoType.Explorer);
-                results.Add(EGenoType.Explorer);
-            }
-            
-            return results;
-        }
-
-        #endregion
-
-        #region Acetylation Status
-
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MedicationSensitivityLabel)]
-        public EYesNo SensitivityToMedications { get; set; }
-
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CaffeineSensitivityLabel)]
-        public EYesNo SensitiveToCaffeine { get; set; }
-
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CaffeineAffectsSleepLabel)]
-        public EYesNo CaffeineAffectsSleep { get; set; }
-
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SensitiveToMoldLabel)]
-        public EYesNo SensitiveToMold { get; set; }
-
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SensitiveToEnvironmentalChemicalsLabel)]
-        public EYesNo SensitiveToEnvironmentalChemicals { get; set; }
-
-        public List<EGenoType> GetGenoTypeFromChemicalSensitivity()
-        {
-            var results = new List<EGenoType>();
-            
-            if (SensitivityToMedications == EYesNo.Yes 
-                || SensitiveToCaffeine == EYesNo.Yes
-                || CaffeineAffectsSleep == EYesNo.Yes
-                || SensitiveToMold == EYesNo.Yes
-                || SensitiveToEnvironmentalChemicals == EYesNo.Yes)
-            {
-                results.Add(EGenoType.Explorer);
-                results.Add(EGenoType.Explorer);
-                results.Add(EGenoType.Explorer);
-                results.Add(EGenoType.Explorer);
-                results.Add(EGenoType.Explorer);
-            }
-
-            if (SensitiveToCaffeine == EYesNo.No)
-            {
-                results.Add(EGenoType.Warrior);
-                results.Add(EGenoType.Warrior);
-                results.Add(EGenoType.Warrior);
-            }
-            
-            return results;
-        }
-
-        #endregion
-
-        #region Family History
-
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfNeurologicalDiseaseLabel)]
-        public EYesNo FamilyHistoryOfNeurologicalDisease { get; set; }
-
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel)]
-        public EYesNo FamilyHistoryOfHeartDiseaseStrokeOrDiabetes { get; set; }
-
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfCancerLabel)]
-        public EYesNo FamilyHistoryOfCancer { get; set; }
-
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfAutoimmuneDiseaseLabel)]
-        public EYesNo FamilyHistoryOfAutoimmuneDisease { get; set; }
-
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfSubstanceDependencyLabel)]
-        public EYesNo FamilyHistoryOfSubstanceDependency { get; set; }
-
-        public List<EGenoType> GetGenoTypesFromFamilyHistory()
-        {
-            var results = new List<EGenoType>();
-            if (FamilyHistoryOfAutoimmuneDisease == EYesNo.Yes)
-            {
-                results.Add(EGenoType.Hunter);
-                results.Add(EGenoType.Hunter);
-                results.Add(EGenoType.Hunter);
-            }
-
-            if (FamilyHistoryOfHeartDiseaseStrokeOrDiabetes == EYesNo.Yes)
-            {
-                results.Add(EGenoType.Gatherer);
-                results.Add(EGenoType.Gatherer);
-                results.Add(EGenoType.Gatherer);
-
-                results.Add(EGenoType.Warrior);
-                results.Add(EGenoType.Warrior);
-                results.Add(EGenoType.Warrior);
-            }
-
-            if (FamilyHistoryOfCancer == EYesNo.Yes)
-            {
-                results.Add(EGenoType.Teacher);
-                results.Add(EGenoType.Teacher);
-                results.Add(EGenoType.Teacher);
-            }
-
-            if (FamilyHistoryOfNeurologicalDisease == EYesNo.Yes)
-            {
-                results.Add(EGenoType.Nomad);
-                results.Add(EGenoType.Nomad);
-                results.Add(EGenoType.Nomad);
-            }
 
             return results;
         }
-        
+
+        public bool IsBiometricsComplete() =>
+            
+
         #endregion
 
         #region Dermatoglyphics
@@ -739,7 +690,7 @@ namespace K9.DataAccessLayer.Models
                 results.Add(EGenoType.Explorer);
             }
 
-            if(CountFingerprintsByType(EFingerprintType.Whorl) >= 5)
+            if (CountFingerprintsByType(EFingerprintType.Whorl) >= 5)
             {
                 results.Add(EGenoType.Teacher);
                 results.Add(EGenoType.Teacher);
@@ -748,7 +699,7 @@ namespace K9.DataAccessLayer.Models
                 results.Add(EGenoType.Teacher);
             }
 
-            if(CountFingerprintsByType(EFingerprintType.Arch) >= 2)
+            if (CountFingerprintsByType(EFingerprintType.Arch) >= 2)
             {
                 results.Add(EGenoType.Warrior);
                 results.Add(EGenoType.Warrior);
@@ -757,7 +708,7 @@ namespace K9.DataAccessLayer.Models
                 results.Add(EGenoType.Warrior);
             }
 
-            if(CountFingerprintsByType(EFingerprintType.Loop) >= 8)
+            if (CountFingerprintsByType(EFingerprintType.Loop) >= 8)
             {
                 results.Add(EGenoType.Nomad);
                 results.Add(EGenoType.Nomad);
@@ -806,6 +757,68 @@ namespace K9.DataAccessLayer.Models
                 results.Add(EGenoType.Hunter);
                 results.Add(EGenoType.Hunter);
 
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+            }
+
+            return results;
+        }
+
+        #endregion
+
+        #region Family History
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfNeurologicalDiseaseLabel)]
+        public EYesNo FamilyHistoryOfNeurologicalDisease { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel)]
+        public EYesNo FamilyHistoryOfHeartDiseaseStrokeOrDiabetes { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfCancerLabel)]
+        public EYesNo FamilyHistoryOfCancer { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfAutoimmuneDiseaseLabel)]
+        public EYesNo FamilyHistoryOfAutoimmuneDisease { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfSubstanceDependencyLabel)]
+        public EYesNo FamilyHistoryOfSubstanceDependency { get; set; }
+
+        public List<EGenoType> GetGenoTypesFromFamilyHistory()
+        {
+            var results = new List<EGenoType>();
+            if (FamilyHistoryOfAutoimmuneDisease == EYesNo.Yes)
+            {
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+            }
+
+            if (FamilyHistoryOfHeartDiseaseStrokeOrDiabetes == EYesNo.Yes)
+            {
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+            }
+
+            if (FamilyHistoryOfCancer == EYesNo.Yes)
+            {
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+            }
+
+            if (FamilyHistoryOfNeurologicalDisease == EYesNo.Yes)
+            {
                 results.Add(EGenoType.Nomad);
                 results.Add(EGenoType.Nomad);
                 results.Add(EGenoType.Nomad);
@@ -1116,7 +1129,7 @@ namespace K9.DataAccessLayer.Models
                         }
                     }
                     else
-                        // Finger length assymetrical
+                    // Finger length assymetrical
                     {
                         if (BloodGroup == EBloodGroup.NotSure)
                         {
@@ -1229,7 +1242,7 @@ namespace K9.DataAccessLayer.Models
                     }
                 }
                 else
-                    // Upper leg is longer
+                // Upper leg is longer
                 {
                     if (IndexFingersAreLongerThanRingFingersOnBothHands())
                     {
@@ -1550,7 +1563,7 @@ namespace K9.DataAccessLayer.Models
                         }
                     }
                     else
-                        // Finger length assymetrical
+                    // Finger length assymetrical
                     {
                         if (BloodGroup == EBloodGroup.NotSure)
                         {
@@ -1682,7 +1695,7 @@ namespace K9.DataAccessLayer.Models
                 }
             }
             else
-                // Legs are longer than torso
+            // Legs are longer than torso
             {
                 if (IsLowerLegLengthGreaterThanUpperLegLength())
                 {
@@ -2025,7 +2038,7 @@ namespace K9.DataAccessLayer.Models
                         }
                     }
                     else
-                        // Finger lengths are assymetrical
+                    // Finger lengths are assymetrical
                     {
                         if (BloodGroup == EBloodGroup.NotSure)
                         {
@@ -2158,7 +2171,7 @@ namespace K9.DataAccessLayer.Models
                     }
                 }
                 else
-                    // Upper leg is longer
+                // Upper leg is longer
                 {
                     if (IndexFingersAreLongerThanRingFingersOnBothHands())
                     {
@@ -2506,7 +2519,7 @@ namespace K9.DataAccessLayer.Models
                         }
                     }
                     else
-                        // Finger lengths are assymetrical
+                    // Finger lengths are assymetrical
                     {
                         if (BloodGroup == EBloodGroup.NotSure)
                         {

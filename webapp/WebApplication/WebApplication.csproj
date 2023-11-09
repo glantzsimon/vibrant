@@ -372,7 +372,7 @@
     <Compile Include="Services\IOrderService.cs" />
     <Compile Include="Services\IShoppingCartService.cs" />
     <Compile Include="Services\IQuestionnaireService.cs" />
-    <Compile Include="Services\QuestionnaireService.cs" />
+    <Compile Include="Services\HealthQuestionnaireService.cs" />
     <Compile Include="Services\ShoppingCartService.cs" />
     <Compile Include="Services\ProtocolService.cs" />
     <Compile Include="Services\OrderService.cs" />
@@ -1585,6 +1585,9 @@
     <Content Include="Views\Shared\EditorTemplates\FingerPrint.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\GapSize.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SomatoType.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\AnswerHealthQuestionnaire.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_Page1PersonalDetails.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_PIlls.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

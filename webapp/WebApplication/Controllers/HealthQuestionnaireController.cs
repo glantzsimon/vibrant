@@ -1,15 +1,16 @@
-﻿using K9.Base.WebApplication.UnitsOfWork;
+﻿using K9.Base.WebApplication.Filters;
+using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Services;
-using System.Linq;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
+    [RequirePermissions(Role = Constants.Constants.ClientUser)]
     public class HealthQuestionnaireController : BasePureController
     {
         private readonly IQuestionnaireService _questionnaireService;
@@ -37,20 +38,17 @@ namespace K9.WebApplication.Controllers
             {
                 return HttpNotFound();
             }
+            
+            return View(hq);
+        }
 
-            if (order.UserId != WebSecurity.CurrentUserId)
-            {
-                var user = _usersRepository.Find(WebSecurity.CurrentUserId);
-                var client = _clientsRepository.Find(e => e.UserId == user.Id).First();
-                if (client.Id != order.ClientId)
-                {
-                    return HttpForbidden();
-                }
-            }
 
-            ViewBag.DeviceType = GetDeviceType();
-
-            return View(order);
+        [Route("health-questionnaire")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AnswerHealthQuestionnaire(HealthQuestionnaire model)
+        {
+            
         }
     }
 }

@@ -6,14 +6,14 @@ using System.Linq;
 
 namespace K9.WebApplication.Services
 {
-    public class QuestionnaireService : IQuestionnaireService
+    public class HealthQuestionnaireService : IQuestionnaireService
     {
         private readonly IRepository<HealthQuestionnaire> _healthQuestionnaireRepository;
         private readonly IRepository<User> _usersRepository;
         private readonly IRepository<Client> _clientsRepository;
         private readonly IClientService _clientService;
 
-        public QuestionnaireService(IRepository<HealthQuestionnaire> healthQuestionnaireRepository, IRepository<User> usersRepository, IRepository<Client> clientsRepository, IClientService clientService)
+        public HealthQuestionnaireService(IRepository<HealthQuestionnaire> healthQuestionnaireRepository, IRepository<User> usersRepository, IRepository<Client> clientsRepository, IClientService clientService)
         {
             _healthQuestionnaireRepository = healthQuestionnaireRepository;
             _usersRepository = usersRepository;
@@ -64,6 +64,11 @@ namespace K9.WebApplication.Services
             }
 
             return hq;
+        }
+
+        public void Save(HealthQuestionnaire model)
+        {
+            _healthQuestionnaireRepository.Update(model);
         }
     }
 }

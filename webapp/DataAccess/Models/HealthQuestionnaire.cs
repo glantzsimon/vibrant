@@ -21,6 +21,11 @@ namespace K9.DataAccessLayer.Models
         [Required]
         public Guid ExternalId { get; set; }
 
+        public bool IsComplete()
+        {
+
+        }
+
         #region Personal Details
         
         [UIHint("Client")]

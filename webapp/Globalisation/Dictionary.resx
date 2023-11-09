@@ -2557,6 +2557,9 @@
   <data name="NoticeablyBitter" xml:space="preserve">
     <value>Noticeably Bitter</value>
   </data>
+  <data name="PersonalDetails" xml:space="preserve">
+    <value>Personal Details</value>
+  </data>
   <data name="SlightlyBitter" xml:space="preserve">
     <value>Slightly Bitter</value>
   </data>

@@ -19,14 +19,12 @@
     {
         @Html.HiddenFor(model => model.Id)
 
-        
+        @Html.Partial("_Pills")
 
         <hr />
 
-        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.MyAccountTitle, "MyAccount", "Account", null, "fa fa-user-circle")
-        
         <h3>@Dictionary.DoYouHaveAQuestion</h3>
-        
+
         <a class="btn btn btn-primary" target="_blank" title="@Dictionary.WhatsAppUs" href="@(whatsAppLink)">
             <i class="fab fa-whatsapp"></i>
             <span class="site-controls-text">
