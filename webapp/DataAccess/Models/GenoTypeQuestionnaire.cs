@@ -62,24 +62,26 @@ namespace K9.DataAccessLayer.Models
                                     }
                                 }
                             }
-                            else
+                            else if (BloodGroup == EBloodGroup.AB)
                             {
-                                if (BloodGroup == EBloodGroup.AB)
+                                if (Gender == EGender.Male)
                                 {
-                                    if (RhesusFactor == ERhesusFactor.NotSure)
+                                    genotypes.AddRange(new[]
                                     {
-                                        genotypes.AddRange(new[]
-                                        {
-                                            EGenoType.Warrior,
-                                            EGenoType.Nomad
-                                        });
-                                    }
-                                    else
-                                    {
-
-                                    }
+                                        EGenoType.Warrior
+                                    });
                                 }
-                                else if (BloodGroup == EBloodGroup.B)
+                                else
+                                {
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Nomad
+                                    });
+                                }
+                            }
+                            else if (BloodGroup == EBloodGroup.B)
+                            {
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
                                     genotypes.AddRange(new[]
                                     {
@@ -87,13 +89,62 @@ namespace K9.DataAccessLayer.Models
                                         EGenoType.Nomad
                                     });
                                 }
-                                else if (BloodGroup == EBloodGroup.O)
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Gatherer,
+                                            EGenoType.Nomad
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Gatherer
+                                        });
+                                    }
+                                }
+                            }
+                            else if (BloodGroup == EBloodGroup.O)
+                            {
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
                                     genotypes.AddRange(new[]
                                     {
                                         EGenoType.Gatherer,
                                         EGenoType.Explorer
                                     });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Gatherer
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Gatherer,
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Gatherer
+                                            });
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -112,29 +163,150 @@ namespace K9.DataAccessLayer.Models
                         }
                         else
                         {
-                            if (BloodGroup == EBloodGroup.A || BloodGroup == EBloodGroup.AB)
+                            if (BloodGroup == EBloodGroup.A)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Teacher,
-                                    EGenoType.Explorer
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Teacher,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Teacher
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Teacher
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                    }
+                                }
+                            }
+                            else if (BloodGroup == EBloodGroup.AB)
+                            {
+                                if (RhesusFactor == ERhesusFactor.NotSure)
+                                {
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Teacher,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Teacher
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Teacher,
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.B)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Nomad,
-                                    EGenoType.Explorer
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Nomad,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Nomad
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Nomad,
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.O)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Hunter,
-                                    EGenoType.Explorer
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Hunter,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Hunter
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Hunter,
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -153,28 +325,100 @@ namespace K9.DataAccessLayer.Models
                         }
                         else
                         {
-                            if (BloodGroup == EBloodGroup.A || BloodGroup == EBloodGroup.AB)
+                            if (BloodGroup == EBloodGroup.A)
                             {
                                 genotypes.AddRange(new[]
                                 {
                                     EGenoType.Teacher
                                 });
                             }
+                            else if (BloodGroup == EBloodGroup.AB)
+                            {
+                                if (RhesusFactor == ERhesusFactor.NotSure)
+                                {
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Teacher,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Teacher
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Teacher,
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                }
+                            }
                             else if (BloodGroup == EBloodGroup.B)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Gatherer,
-                                    EGenoType.Nomad
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Gatherer,
+                                        EGenoType.Nomad,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Gatherer,
+                                            EGenoType.Nomad
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.O)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Gatherer,
-                                    EGenoType.Explorer
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Gatherer,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Gatherer
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Gatherer,
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                }
                             }
                         }
                     }
@@ -622,7 +866,7 @@ namespace K9.DataAccessLayer.Models
                                             genotypes.AddRange(new[]
                                             {
                                                 EGenoType.Gatherer,
-                                                EGenoType.Explorer  
+                                                EGenoType.Explorer
                                             });
                                         }
                                     }
@@ -653,34 +897,169 @@ namespace K9.DataAccessLayer.Models
                         {
                             if (BloodGroup == EBloodGroup.A)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Warrior
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Warrior,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Warrior
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Explorer,
+                                                EGenoType.Warrior
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Warrior
+                                            });
+                                        }
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.AB)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Warrior,
-                                    EGenoType.Nomad
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Warrior,
+                                        EGenoType.Nomad
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Warrior
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Nomad
+                                            });
+                                        }
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Warrior
+                                        });
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.B)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Gatherer,
-                                    EGenoType.Nomad
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Gatherer,
+                                        EGenoType.Nomad
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Gatherer,
+                                                EGenoType.Nomad
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Nomad
+                                            });
+                                        }
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Gatherer
+                                        });
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.O)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Gatherer,
-                                    EGenoType.Explorer
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Gatherer,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Gatherer,
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Gatherer
+                                            });
+                                        }
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Gatherer,
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -700,26 +1079,136 @@ namespace K9.DataAccessLayer.Models
                         {
                             if (BloodGroup == EBloodGroup.A)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Teacher,
-                                    EGenoType.Warrior
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Teacher,
+                                        EGenoType.Warrior
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Teacher
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Warrior
+                                            });
+                                        }
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Teacher
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Warrior,
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.AB)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Warrior,
-                                    EGenoType.Nomad
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Warrior,
+                                        EGenoType.Nomad
+                                    });
+                                }
+                                else if (RhesusFactor == ERhesusFactor.Positive)
+                                {
+                                    if (Gender == EGender.Male)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Nomad
+                                        });
+                                    }
+                                    else
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Warrior
+                                        });
+                                    }
+                                }
+                                else if (RhesusFactor == ERhesusFactor.Negative)
+                                {
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Warrior
+                                    });
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.B)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Nomad
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Nomad,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Nomad
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Nomad,
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Nomad
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.O)
                             {
@@ -755,25 +1244,109 @@ namespace K9.DataAccessLayer.Models
                             }
                             else if (BloodGroup == EBloodGroup.AB)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Warrior,
-                                    EGenoType.Nomad
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Warrior,
+                                        EGenoType.Nomad
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Warrior
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Nomad
+                                            });
+                                        }
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Warrior
+                                        });
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.B)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Nomad
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Nomad,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Nomad,
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Nomad
+                                            });
+                                        }
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.O)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Hunter
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Hunter,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Hunter
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Hunter,
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                }
                             }
                         }
 
@@ -798,34 +1371,170 @@ namespace K9.DataAccessLayer.Models
                         {
                             if (BloodGroup == EBloodGroup.A)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Explorer,
-                                    EGenoType.Warrior
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Explorer,
+                                        EGenoType.Warrior
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Warrior
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.AB)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Warrior,
-                                    EGenoType.Nomad
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Warrior,
+                                        EGenoType.Nomad
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Warrior
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Nomad
+                                            });
+                                        }
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Warrior
+                                        });
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.B)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Gatherer,
-                                    EGenoType.Nomad
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Gatherer,
+                                        EGenoType.Nomad,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Gatherer
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Nomad,
+                                                EGenoType.Gatherer
+                                            });
+                                        }
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Nomad,
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.O)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Gatherer
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Gatherer,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Gatherer,
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Gatherer
+                                            });
+                                        }
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Gatherer,
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Gatherer
+                                            });
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -845,35 +1554,149 @@ namespace K9.DataAccessLayer.Models
                         {
                             if (BloodGroup == EBloodGroup.A)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Gatherer,
-                                    EGenoType.Warrior
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Gatherer,
+                                        EGenoType.Warrior
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Explorer,
+                                                EGenoType.Warrior
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Warrior
+                                            });
+                                        }
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Explorer,
+                                            EGenoType.Warrior
+                                        });
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.AB)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Explorer,
-                                    EGenoType.Warrior
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Explorer,
+                                        EGenoType.Warrior
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Warrior
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Warrior,
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.B)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Explorer,
-                                    EGenoType.Nomad
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Explorer,
+                                        EGenoType.Nomad
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Nomad
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Nomad,
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.O)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Hunter,
-                                    EGenoType.Explorer
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Hunter,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Hunter
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        if (Gender == EGender.Male)
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Hunter
+                                            });
+                                        }
+                                        else
+                                        {
+                                            genotypes.AddRange(new[]
+                                            {
+                                                EGenoType.Explorer
+                                            });
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -894,10 +1717,32 @@ namespace K9.DataAccessLayer.Models
                         {
                             if (BloodGroup == EBloodGroup.A)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Teacher
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Teacher,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Teacher
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Teacher,
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.AB)
                             {
@@ -909,11 +1754,31 @@ namespace K9.DataAccessLayer.Models
                             }
                             else if (BloodGroup == EBloodGroup.B)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Gatherer,
-                                    EGenoType.Explorer
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Gatherer,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else
+                                {
+                                    if (RhesusFactor == ERhesusFactor.Positive)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Gatherer
+                                        });
+                                    }
+                                    else if (RhesusFactor == ERhesusFactor.Negative)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.O)
                             {
