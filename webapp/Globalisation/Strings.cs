@@ -453,6 +453,10 @@
             public const string No = "No";
             public const string NotSure = "NotSure";
 
+            public const string NoticeablyBitter = "NoticeablyBitter";
+            public const string SlightlyBitter = "SlightlyBitter";
+            public const string NotBitter = "NotBitter";
+
             public const string Female = "Female";
             public const string Male = "Male";
             public const string TransFemale = "TransFemale";

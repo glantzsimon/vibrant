@@ -205,6 +205,7 @@
     <Compile Include="Enums\EFingerprintType.cs" />
     <Compile Include="Enums\EHeadShape.cs" />
     <Compile Include="Enums\EGonialAngle.cs" />
+    <Compile Include="Enums\ETaste.cs" />
     <Compile Include="Enums\EZodiacElement.cs" />
     <Compile Include="Enums\ENineStarKiElement.cs" />
     <Compile Include="Enums\EZodiac.cs" />

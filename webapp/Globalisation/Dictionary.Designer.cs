@@ -735,7 +735,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to On a scale of 1 - 10, how sensitive are you to caffeine?.
+        ///   Looks up a localized string similar to Are you sensitive to caffeine? For example, can it make you jittery and wired for hours?.
         /// </summary>
         public static string CaffeineSensitivityLabel {
             get {
@@ -4205,11 +4205,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not Bitter.
+        /// </summary>
+        public static string NotBitter {
+            get {
+                return ResourceManager.GetString("NotBitter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Notes.
         /// </summary>
         public static string NotesLabel {
             get {
                 return ResourceManager.GetString("NotesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Noticeably Bitter.
+        /// </summary>
+        public static string NoticeablyBitter {
+            get {
+                return ResourceManager.GetString("NoticeablyBitter", resourceCulture);
             }
         }
         
@@ -6301,6 +6319,15 @@ namespace K9.Globalisation {
         public static string Sleep {
             get {
                 return ResourceManager.GetString("Sleep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Slightly Bitter.
+        /// </summary>
+        public static string SlightlyBitter {
+            get {
+                return ResourceManager.GetString("SlightlyBitter", resourceCulture);
             }
         }
         

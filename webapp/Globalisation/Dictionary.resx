@@ -2297,7 +2297,7 @@
     <value>Would a cup of coffee in the afternoon or early evening keep you awake at night?</value>
   </data>
   <data name="CaffeineSensitivityLabel" xml:space="preserve">
-    <value>On a scale of 1 - 10, how sensitive are you to caffeine?</value>
+    <value>Are you sensitive to caffeine? For example, can it make you jittery and wired for hours?</value>
   </data>
   <data name="Dermatoglyphics" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>questionnaires\en-gb\dermatoglyphics.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -2547,6 +2547,15 @@
   </data>
   <data name="NarrowAngle" xml:space="preserve">
     <value>Narrow Angle</value>
+  </data>
+  <data name="NotBitter" xml:space="preserve">
+    <value>Not Bitter</value>
+  </data>
+  <data name="NoticeablyBitter" xml:space="preserve">
+    <value>Noticeably Bitter</value>
+  </data>
+  <data name="SlightlyBitter" xml:space="preserve">
+    <value>Slightly Bitter</value>
   </data>
   <data name="SomatoTypeInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>questionnaires\en-gb\somatotypeinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

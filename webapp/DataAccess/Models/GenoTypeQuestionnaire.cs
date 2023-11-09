@@ -1,10 +1,9 @@
-﻿using DataAnnotationsExtensions;
+﻿using K9.Base.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Enums;
 using K9.Globalisation;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using K9.Base.DataAccessLayer.Enums;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -1802,7 +1801,13 @@ namespace K9.DataAccessLayer.Models
                     .Concat(GetGenoTypeFromTendonsAndSinewsAndMuscles())
                     .Concat(GetGenoTypeFromGonialAngle())
                     .Concat(GetGenoTypeFromHeadShape())
+                    .Concat(GetGenoTypeFromRhesusFactor())
                     .Concat(GetGenoTypeFromTasterStatus())
+                    .Concat(GetGenoTypeFromChemicalSensitivity())
+                    .Concat(GetGenoTypeFromSomatoType())
+                    .Concat(GetGenoTypesFromFamilyHistory())
+                    .Concat(GetGenoTypeFromHandedness())
+                    .Concat(GetGenoTypesFromIncisorShovelling())
                     .Concat(GetGenoTypeFromFingerprints()).ToList();
         }
 
@@ -1892,16 +1897,29 @@ namespace K9.DataAccessLayer.Models
             if (SpaceBetweenThighs == EGapSize.Touching)
             {
                 results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
             }
             else if (SpaceBetweenThighs == EGapSize.Small)
             {
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+
                 results.Add(EGenoType.Hunter);
                 results.Add(EGenoType.Warrior);
             }
             else if (SpaceBetweenThighs == EGapSize.Large)
             {
-                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+
                 results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+
+                results.Add(EGenoType.Explorer);
                 results.Add(EGenoType.Nomad);
             }
 
@@ -1999,11 +2017,28 @@ namespace K9.DataAccessLayer.Models
             {
                 results.Add(EGenoType.Gatherer);
                 results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+
                 results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
             }
 
             if (GonialAngle == EGonialAngle.NarrowAngle)
             {
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+
+                results.Add(EGenoType.Explorer);
                 results.Add(EGenoType.Explorer);
                 results.Add(EGenoType.Explorer);
             }
@@ -2049,12 +2084,19 @@ namespace K9.DataAccessLayer.Models
             {
                 results.Add(EGenoType.Warrior);
                 results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
             }
 
             if (GetHeadShape() == EHeadShape.Brachycephalic)
             {
                 results.Add(EGenoType.Explorer);
                 results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
                 results.Add(EGenoType.Nomad);
             }
 
@@ -2064,33 +2106,54 @@ namespace K9.DataAccessLayer.Models
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CruciferousVegetablesVeryBitterLabel)]
         [Required]
-        public EYesNo CruciferousVegetablesTasteVeryBitter { get; set; }
+        public ETaste CruciferousVegetablesTasteVeryBitter { get; set; }
 
         public List<EGenoType> GetGenoTypeFromTasterStatus()
         {
             var results = new List<EGenoType>();
-            if (CruciferousVegetablesTasteVeryBitter == EYesNo.Yes)
+            if (CruciferousVegetablesTasteVeryBitter == ETaste.NoticeablyBitter)
             {
                 results.Add(EGenoType.Hunter);
                 results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+
                 results.Add(EGenoType.Explorer);
                 results.Add(EGenoType.Explorer);
-                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
             }
 
-            if (CruciferousVegetablesTasteVeryBitter == EYesNo.No)
+            else if (CruciferousVegetablesTasteVeryBitter == ETaste.NotBitter)
             {
                 results.Add(EGenoType.Gatherer);
                 results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
                 results.Add(EGenoType.Warrior);
                 results.Add(EGenoType.Warrior);
             }
 
-            if (CruciferousVegetablesTasteVeryBitter == EYesNo.NotSure)
+            else if (CruciferousVegetablesTasteVeryBitter == ETaste.SlightlyBitter)
             {
                 results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+
                 results.Add(EGenoType.Nomad);
-                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
             }
 
             return results;
@@ -2118,6 +2181,10 @@ namespace K9.DataAccessLayer.Models
             {
                 results.Add(EGenoType.Teacher);
                 results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+
                 results.Add(EGenoType.Hunter);
                 results.Add(EGenoType.Explorer);
             }
@@ -2126,6 +2193,10 @@ namespace K9.DataAccessLayer.Models
             {
                 results.Add(EGenoType.Gatherer);
                 results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+
                 results.Add(EGenoType.Warrior);
             }
 
@@ -2133,7 +2204,10 @@ namespace K9.DataAccessLayer.Models
             {
                 results.Add(EGenoType.Explorer);
                 results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
                 results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Warrior);
                 results.Add(EGenoType.Warrior);
             }
 
@@ -2144,6 +2218,48 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GainsMuscleEasilyLabel)]
         [Required]
         public ESomatoType SomatoType { get; set; }
+
+        public List<EGenoType> GetGenoTypeFromSomatoType()
+        {
+            var results = new List<EGenoType>();
+            
+            if (SomatoType == ESomatoType.Ectomorph)
+            {
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+            }
+
+            if (SomatoType == ESomatoType.Ectomesomorph || GetWaistToHipRatio() == ERatio.Ideal)
+            {
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+            }
+
+            if (SomatoType == ESomatoType.Endomorph || GetWaistToHipRatio() == ERatio.High)
+            {
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+            }
+
+            if (SomatoType == ESomatoType.Mesomorph || GetWaistToHipRatio() == ERatio.Ideal)
+            {
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+            }
+
+            if (SomatoType == ESomatoType.MesoEndomorph || GetWaistToHipRatio() == ERatio.High)
+            {
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+            }
+            
+            return results;
+        }
 
         #endregion
 
@@ -2159,6 +2275,22 @@ namespace K9.DataAccessLayer.Models
         [Required]
         public ERhesusFactor RhesusFactor { get; set; }
 
+        public List<EGenoType> GetGenoTypeFromRhesusFactor()
+        {
+            var results = new List<EGenoType>();
+            
+            if (RhesusFactor == ERhesusFactor.Negative)
+            {
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+            }
+            
+            return results;
+        }
+
         #endregion
 
         #region Acetylation Status
@@ -2168,12 +2300,10 @@ namespace K9.DataAccessLayer.Models
         [Required]
         public EYesNo SensitivityToMedications { get; set; }
 
-        [UIHint("Range")]
+        [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CaffeineSensitivityLabel)]
         [Required]
-        [Min(1)]
-        [Max(10)]
-        public int SensitivityToCaffeine { get; set; }
+        public EYesNo SensitiveToCaffeine { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CaffeineAffectsSleepLabel)]
@@ -2189,6 +2319,33 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SensitiveToEnvironmentalChemicalsLabel)]
         [Required]
         public EYesNo SensitiveToEnvironmentalChemicals { get; set; }
+
+        public List<EGenoType> GetGenoTypeFromChemicalSensitivity()
+        {
+            var results = new List<EGenoType>();
+            
+            if (SensitivityToMedications == EYesNo.Yes 
+                || SensitiveToCaffeine == EYesNo.Yes
+                || CaffeineAffectsSleep == EYesNo.Yes
+                || SensitiveToMold == EYesNo.Yes
+                || SensitiveToEnvironmentalChemicals == EYesNo.Yes)
+            {
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+            }
+
+            if (SensitiveToCaffeine == EYesNo.No)
+            {
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+            }
+            
+            return results;
+        }
 
         #endregion
 
@@ -2218,6 +2375,45 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfSubstanceDependencyLabel)]
         [Required]
         public EYesNo FamilyHistoryOfSubstanceDependency { get; set; }
+
+        public List<EGenoType> GetGenoTypesFromFamilyHistory()
+        {
+            var results = new List<EGenoType>();
+            if (FamilyHistoryOfAutoimmuneDisease == EYesNo.Yes)
+            {
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+            }
+
+            if (FamilyHistoryOfHeartDiseaseStrokeOrDiabetes == EYesNo.Yes)
+            {
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+            }
+
+            if (FamilyHistoryOfCancer == EYesNo.Yes)
+            {
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+            }
+
+            if (FamilyHistoryOfNeurologicalDisease == EYesNo.Yes)
+            {
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+            }
+
+            return results;
+        }
+
 
         #endregion
 
@@ -2317,32 +2513,103 @@ namespace K9.DataAccessLayer.Models
         [Required]
         public EYesNo Ambidextrous { get; set; }
 
-        public List<EGenoType> GetGenoTypeFromFingerprints()
+        public List<EGenoType> GetGenoTypeFromHandedness()
         {
             var results = new List<EGenoType>();
-            if (GetNumberOfMatchingFingerprints() <= 2)
+
+            if (LeftHanded == EYesNo.Yes || Ambidextrous == EYesNo.Yes)
             {
                 results.Add(EGenoType.Explorer);
-                results.Add(EGenoType.Gatherer);
-            }
-            else if (GetNumberOfMatchingFingerprints() >= 4)
-            {
-                results.Add(EGenoType.Hunter);
-                results.Add(EGenoType.Nomad);
-            }
-            else
-            {
-                results.Add(EGenoType.Warrior);
-                results.Add(EGenoType.Teacher);
-            }
-
-            if (IndexFingerprintsMatch == EYesNo.Yes)
-            {
                 results.Add(EGenoType.Explorer);
                 results.Add(EGenoType.Explorer);
             }
 
             return results;
+        }
+
+        public List<EGenoType> GetGenoTypeFromFingerprints()
+        {
+            var results = new List<EGenoType>();
+
+            if (GetNumberOfMatchingFingerprints() <= 2)
+            {
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+            }
+            else if (GetNumberOfMatchingFingerprints() >= 4)
+            {
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+            }
+            else
+            {
+                results.Add(EGenoType.Teacher);
+            }
+
+            if (IndexFingerprintsMatch == EYesNo.No)
+            {
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+            }
+
+            if(CountFingerprintsByType(EFingerprintType.Whorl) >= 5)
+            {
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+            }
+
+            if(CountFingerprintsByType(EFingerprintType.Arch) >= 2)
+            {
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+            }
+
+            if(CountFingerprintsByType(EFingerprintType.Loop) >= 8)
+            {
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+            }
+
+            return results;
+        }
+
+        private int CountFingerprintsByType(EFingerprintType type)
+        {
+            var fingerPrints = new List<EFingerprintType>
+            {
+                LeftThumprintType,
+                LeftIndexFingerprintType,
+                LeftMiddleFingerprintType,
+                LeftRingFingerprintType,
+                LeftLittleFingerprintType,
+                RightThumprintType,
+                RightIndexFingerprintType,
+                RightMiddleFingerprintType,
+                RightRingFingerprintType,
+                RightLittleFingerprintType
+            };
+
+            return fingerPrints.Count(e => e == type);
         }
 
         #endregion
@@ -2353,6 +2620,24 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IncisorShovellingLabel)]
         [Required]
         public EYesNo IncisorShovelling { get; set; }
+
+        public List<EGenoType> GetGenoTypesFromIncisorShovelling()
+        {
+            var results = new List<EGenoType>();
+
+            if (IncisorShovelling == EYesNo.Yes)
+            {
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+            }
+
+            return results;
+        }
 
         #endregion
     }
