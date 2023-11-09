@@ -8,7 +8,7 @@
     ViewBag.SubTitle = Dictionary.HealthQuestionnaire;
 
     var whatsAppTelephone = DefaultValuesConfiguration.Instance.WhatsAppSupportNumber;
-    var whatsAppQueryText = Url.Encode($"Hi. I have a query regarding order: {Model.OrderNumber}");
+    var whatsAppQueryText = Url.Encode($"Hi. I have a query regarding the health questoinnaire.");
     var whatsAppLink = ViewBag.DeviceType == EDeviceType.Desktop
         ? $"https://web.whatsapp.com/send?phone={whatsAppTelephone}&text={whatsAppQueryText}"
         : $"https://wa.me/{whatsAppTelephone}/?text={whatsAppQueryText}";
