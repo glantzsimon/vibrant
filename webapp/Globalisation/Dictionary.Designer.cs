@@ -2896,8 +2896,9 @@ namespace K9.Globalisation {
         ///    Up until the Middle Ages, our heads got gradually wider and assumed more of a &quot;blockhead&quot; shape. From the Middle Ages onwards, our head shape appears to have been elongating and narrowing, in combination with a gradual increase in our height. Head shape reveals important information about the genetic profile of a person.
         ///&lt;/p&gt;
         ///&lt;h4&gt;How to determine your head shape&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Most people can get a good idea of their head shape by having a friend view the top of their head while seated. If you ha [rest of string was truncated]&quot;;.
+        ///
+        ///&lt;div&gt;
+        ///    &lt;img title=&quot;Head Shapes&quot; alt=&quot;Head Shapes&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/questionnaire/head-shapes.png&quot;  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HeadShapeInstructions {
             get {
@@ -4866,6 +4867,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to -- Please Select --.
+        /// </summary>
+        public static string PleaseSelect {
+            get {
+                return ResourceManager.GetString("PleaseSelect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Positive.
         /// </summary>
         public static string Positive {
@@ -5658,6 +5668,15 @@ namespace K9.Globalisation {
         public static string Question {
             get {
                 return ResourceManager.GetString("Question", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your health questionnaire has been successfully completed and uploaded to our system. We will contact you soon, pending analysis of the questions..
+        /// </summary>
+        public static string QuestionnairecompletedSuccessfully {
+            get {
+                return ResourceManager.GetString("QuestionnairecompletedSuccessfully", resourceCulture);
             }
         }
         

@@ -584,6 +584,8 @@
             public const string Large = "Large";
             public const string Touching = "Touching";
 
+            public const string PleaseSelect = "PleaseSelect";
+
             public const string Negative = "Negative";
             public const string Positive = "Positive";
             public const string A = "A";

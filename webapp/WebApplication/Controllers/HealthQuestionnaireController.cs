@@ -48,7 +48,20 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AnswerHealthQuestionnaire(HealthQuestionnaire model)
         {
-            
+            _questionnaireService.Save(model);
+
+            if (model.IsComplete())
+            {
+                return RedirectToAction("QuestionnaireCompletedSuccess");
+            }
+
+            return View(model);
+        }
+
+        [Route("health-questionnaire/success")]
+        public ActionResult QuestionnaireCompletedSuccess()
+        {
+            return View();
         }
     }
 }

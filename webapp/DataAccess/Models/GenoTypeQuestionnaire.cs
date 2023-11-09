@@ -400,61 +400,6 @@ namespace K9.DataAccessLayer.Models
         }
 
         [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CruciferousVegetablesVeryBitterLabel)]
-        public ETaste CruciferousVegetablesTasteVeryBitter { get; set; }
-
-        public List<EGenoType> GetGenoTypeFromTasterStatus()
-        {
-            var results = new List<EGenoType>();
-            if (CruciferousVegetablesTasteVeryBitter == ETaste.NoticeablyBitter)
-            {
-                results.Add(EGenoType.Hunter);
-                results.Add(EGenoType.Hunter);
-                results.Add(EGenoType.Hunter);
-                results.Add(EGenoType.Hunter);
-                results.Add(EGenoType.Hunter);
-
-                results.Add(EGenoType.Explorer);
-                results.Add(EGenoType.Explorer);
-                results.Add(EGenoType.Explorer);
-                results.Add(EGenoType.Explorer);
-                results.Add(EGenoType.Explorer);
-            }
-
-            else if (CruciferousVegetablesTasteVeryBitter == ETaste.NotBitter)
-            {
-                results.Add(EGenoType.Gatherer);
-                results.Add(EGenoType.Gatherer);
-                results.Add(EGenoType.Gatherer);
-                results.Add(EGenoType.Gatherer);
-                results.Add(EGenoType.Gatherer);
-
-                results.Add(EGenoType.Warrior);
-                results.Add(EGenoType.Warrior);
-                results.Add(EGenoType.Warrior);
-                results.Add(EGenoType.Warrior);
-                results.Add(EGenoType.Warrior);
-            }
-
-            else if (CruciferousVegetablesTasteVeryBitter == ETaste.SlightlyBitter)
-            {
-                results.Add(EGenoType.Teacher);
-                results.Add(EGenoType.Teacher);
-                results.Add(EGenoType.Teacher);
-                results.Add(EGenoType.Teacher);
-                results.Add(EGenoType.Teacher);
-
-                results.Add(EGenoType.Nomad);
-                results.Add(EGenoType.Nomad);
-                results.Add(EGenoType.Nomad);
-                results.Add(EGenoType.Nomad);
-                results.Add(EGenoType.Nomad);
-            }
-
-            return results;
-        }
-
-        [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TendonsAndSinewsVisibleLabel)]
         public EYesNo TendonsAndSinewsVisible { get; set; }
 
@@ -553,7 +498,31 @@ namespace K9.DataAccessLayer.Models
         }
 
         public bool IsBiometricsComplete() =>
-            
+            StandingHeight > 0 &&
+            SittingHeight > 0 &&
+            ChairHeight > 0 &&
+            TorsoLength > 0 &&
+            TotalLegLength > 0 &&
+            LowerLegLength > 0 &&
+            UpperLegLength > 0 &&
+            IndexFingerLengthLeft > 0 &&
+            IndexFingerLengthRight > 0 &&
+            RingFingerLengthLeft > 0 &&
+            RingFingerLengthRight > 0 &&
+            WaistSize > 0 &&
+            HipSize > 0 &&
+            HeadWidth > 0 &&
+            HeadLength > 0 &&
+
+            TendonsAndSinewsVisible != EYesNo.Unanswered &&
+            WristsAndAnklesLookPadded != EYesNo.Unanswered &&
+            GainsMuscleEasily != EYesNo.Unanswered &&
+
+            SpaceBetweenThighs != EGapSize.Unanswered &&
+
+            GonialAngle != EGonialAngle.Unanswered &&
+
+            SomatoType != ESomatoType.Unanswered;
 
         #endregion
 
@@ -739,6 +708,22 @@ namespace K9.DataAccessLayer.Models
             return fingerPrints.Count(e => e == type);
         }
 
+        public bool IsDermatoglyphicsComplete() =>
+            LeftThumprintType != EFingerprintType.Unanswered &&
+            LeftIndexFingerprintType != EFingerprintType.Unanswered &&
+            LeftMiddleFingerprintType != EFingerprintType.Unanswered &&
+            LeftRingFingerprintType != EFingerprintType.Unanswered &&
+            LeftLittleFingerprintType != EFingerprintType.Unanswered &&
+            RightThumprintType != EFingerprintType.Unanswered &&
+            RightIndexFingerprintType != EFingerprintType.Unanswered &&
+            RightMiddleFingerprintType != EFingerprintType.Unanswered &&
+            RightRingFingerprintType != EFingerprintType.Unanswered &&
+            RightLittleFingerprintType != EFingerprintType.Unanswered &&
+
+            IndexFingerprintsMatch != EYesNo.Unanswered &&
+            LeftHanded != EYesNo.Unanswered &&
+            Ambidextrous != EYesNo.Unanswered;
+
         #endregion
 
         #region Dentition
@@ -764,6 +749,67 @@ namespace K9.DataAccessLayer.Models
 
             return results;
         }
+
+        #endregion
+
+        #region Taster Status
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CruciferousVegetablesVeryBitterLabel)]
+        public ETaste CruciferousVegetablesTasteVeryBitter { get; set; }
+
+        public List<EGenoType> GetGenoTypeFromTasterStatus()
+        {
+            var results = new List<EGenoType>();
+            if (CruciferousVegetablesTasteVeryBitter == ETaste.NoticeablyBitter)
+            {
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+                results.Add(EGenoType.Hunter);
+
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+                results.Add(EGenoType.Explorer);
+            }
+
+            else if (CruciferousVegetablesTasteVeryBitter == ETaste.NotBitter)
+            {
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+                results.Add(EGenoType.Gatherer);
+
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+                results.Add(EGenoType.Warrior);
+            }
+
+            else if (CruciferousVegetablesTasteVeryBitter == ETaste.SlightlyBitter)
+            {
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+                results.Add(EGenoType.Teacher);
+
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+                results.Add(EGenoType.Nomad);
+            }
+
+            return results;
+        }
+
+        public bool IsTasterStatusComplete() => CruciferousVegetablesTasteVeryBitter != ETaste.Unanswered;
 
         #endregion
 
@@ -826,6 +872,13 @@ namespace K9.DataAccessLayer.Models
 
             return results;
         }
+
+        public bool IsFamilyHistoryComplete() =>
+            FamilyHistoryOfNeurologicalDisease != EYesNo.Unanswered &&
+            FamilyHistoryOfHeartDiseaseStrokeOrDiabetes != EYesNo.Unanswered &&
+            FamilyHistoryOfCancer != EYesNo.Unanswered &&
+            FamilyHistoryOfAutoimmuneDisease != EYesNo.Unanswered &&
+            FamilyHistoryOfSubstanceDependency != EYesNo.Unanswered;
 
         #endregion
 

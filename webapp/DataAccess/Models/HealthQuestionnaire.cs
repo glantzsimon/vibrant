@@ -23,7 +23,13 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsComplete()
         {
-
+            return IsFamilyHistoryComplete() &&
+                   IsAcetylationStatusComplete() &&
+                   IsBiometricsComplete() &&
+                   IsBloodAnalysisComplete() &&
+                   IsFamilyHistoryComplete() &&
+                   IsDermatoglyphicsComplete() &&
+                   IsTasterStatusComplete();
         }
 
         #region Personal Details

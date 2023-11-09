@@ -4,7 +4,7 @@ namespace K9.DataAccessLayer.Enums
 {
     public enum EYesNo
     {
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = "")]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.PleaseSelect)]
         Unanswered,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.No)]
         No,

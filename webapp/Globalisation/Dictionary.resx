@@ -2560,6 +2560,12 @@
   <data name="PersonalDetails" xml:space="preserve">
     <value>Personal Details</value>
   </data>
+  <data name="PleaseSelect" xml:space="preserve">
+    <value>-- Please Select --</value>
+  </data>
+  <data name="QuestionnairecompletedSuccessfully" xml:space="preserve">
+    <value>Your health questionnaire has been successfully completed and uploaded to our system. We will contact you soon, pending analysis of the questions.</value>
+  </data>
   <data name="SlightlyBitter" xml:space="preserve">
     <value>Slightly Bitter</value>
   </data>
