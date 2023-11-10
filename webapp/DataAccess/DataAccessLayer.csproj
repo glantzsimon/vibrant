@@ -486,6 +486,10 @@
     <Compile Include="Migrations\202311100954385_HealthQuestionnaireClientIdUnique.Designer.cs">
       <DependentUpon>202311100954385_HealthQuestionnaireClientIdUnique.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311101009505_HQNullableValues.cs" />
+    <Compile Include="Migrations\202311101009505_HQNullableValues.Designer.cs">
+      <DependentUpon>202311101009505_HQNullableValues.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\GenoTypeStrengthTestResult.cs" />
     <Compile Include="Models\CbsMethylationQuestionnaire.cs" />
@@ -733,6 +737,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311100954385_HealthQuestionnaireClientIdUnique.resx">
       <DependentUpon>202311100954385_HealthQuestionnaireClientIdUnique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311101009505_HQNullableValues.resx">
+      <DependentUpon>202311101009505_HQNullableValues.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

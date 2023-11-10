@@ -1,10 +1,10 @@
-﻿using K9.Base.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Enums;
+using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
 using System;
 using System.Linq;
-using K9.Base.DataAccessLayer.Enums;
-using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Services
 {
@@ -58,7 +58,6 @@ namespace K9.WebApplication.Services
                     ClientId = clientId,
                     Name = $"{client.Name} - {Globalisation.Dictionary.HealthQuestionnaire}",
                     Gender = EGender.Other,
-                    DateOfBirth = HealthQuestionnaire.DefaultDate,
                     NutritionExpertiseLevel = 5,
                     CurrentHealthLevel = 5,
                     CookingFrequency = EFrequency.SeveralTimesAWeek,
@@ -67,8 +66,6 @@ namespace K9.WebApplication.Services
                 _healthQuestionnaireRepository.Create(hq);
 
                 hq = _healthQuestionnaireRepository.Find(e => e.ExternalId == hqId).First();
-
-                hq.DateOfBirth = new DateTime();
             }
 
             return hq;

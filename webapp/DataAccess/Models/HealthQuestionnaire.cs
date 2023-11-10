@@ -17,8 +17,6 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.HealthQuestionnaires, PluralName = Strings.Names.HealthQuestionnaires, Name = Strings.Names.HealthQuestionnaire)]
     public partial class HealthQuestionnaire : ObjectBase
     {
-        public static DateTime DefaultDate = new DateTime(1800, 1, 1);
-
         [Required]
         public Guid ExternalId { get; set; }
 
@@ -63,25 +61,25 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsBiometricsActive() => IsPersonalInformationComplete() &&
                                           IsBloodAnalysisComplete() &&
-                                          IsAcetylationStatusComplete() &
+                                          IsAcetylationStatusComplete() &&
                                           !IsBiometricsComplete();
 
         public bool IsDermatoglyphicsActive() => IsPersonalInformationComplete() &&
                                                IsBloodAnalysisComplete() &&
-                                               IsAcetylationStatusComplete() &
+                                               IsAcetylationStatusComplete() &&
                                                IsBiometricsComplete() &&
                                                !IsDermatoglyphicsComplete();
 
         public bool IsDentitionActive() => IsPersonalInformationComplete() &&
                                          IsBloodAnalysisComplete() &&
-                                         IsAcetylationStatusComplete() &
+                                         IsAcetylationStatusComplete() &&
                                          IsBiometricsComplete() &&
                                          IsDermatoglyphicsComplete() &&
                                          !IsDentitionComplete();
 
         public bool IsTasterStatusActive() => IsPersonalInformationComplete() &&
                                             IsBloodAnalysisComplete() &&
-                                            IsAcetylationStatusComplete() &
+                                            IsAcetylationStatusComplete() &&
                                             IsBiometricsComplete() &&
                                             IsDermatoglyphicsComplete() &&
                                             IsDentitionComplete() &&
@@ -89,7 +87,7 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsFamilyHistoryActive() => IsPersonalInformationComplete() &&
                                              IsBloodAnalysisComplete() &&
-                                             IsAcetylationStatusComplete() &
+                                             IsAcetylationStatusComplete() &&
                                              IsBiometricsComplete() &&
                                              IsDermatoglyphicsComplete() &&
                                              IsDentitionComplete() &&
@@ -98,7 +96,7 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsGeneralHealthActive() => IsPersonalInformationComplete() &&
                                              IsBloodAnalysisComplete() &&
-                                             IsAcetylationStatusComplete() &
+                                             IsAcetylationStatusComplete() &&
                                              IsBiometricsComplete() &&
                                              IsDermatoglyphicsComplete() &&
                                              IsDentitionComplete() &&
@@ -108,7 +106,7 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsCbsAndMethylationActive() => IsPersonalInformationComplete() &&
                                              IsBloodAnalysisComplete() &&
-                                             IsAcetylationStatusComplete() &
+                                             IsAcetylationStatusComplete() &&
                                              IsBiometricsComplete() &&
                                              IsDermatoglyphicsComplete() &&
                                              IsDentitionComplete() &&
@@ -119,14 +117,14 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsDoshasActive() => IsPersonalInformationComplete() &&
                                         IsBloodAnalysisComplete() &&
-                                        IsAcetylationStatusComplete() &
+                                        IsAcetylationStatusComplete() &&
                                         IsBiometricsComplete() &&
                                         IsDermatoglyphicsComplete() &&
                                         IsDentitionComplete() &&
                                         IsTasterStatusComplete() &&
                                         IsFamilyHistoryComplete() &&
                                         IsGeneralHealthComplete() &&
-                                        IsCbsAndMethylationComplete() &
+                                        IsCbsAndMethylationComplete() &&
                                         !IsDoshasComplete();
 
         public string GetPersonalDetailsActivePanelClass() =>
@@ -257,7 +255,7 @@ namespace K9.DataAccessLayer.Models
             return DateOfBirth.HasValue ? (DateTime.Now.Year - DateOfBirth.Value.Year) - (DateTime.Now.DayOfYear < DateOfBirth.Value.DayOfYear ? 1 : 0) : (int?)null;
         }
 
-        public bool IsPersonalInformationComplete() => DateOfBirth != DefaultDate & DateOfBirth != new DateTime();
+        public bool IsPersonalInformationComplete() => DateOfBirth.HasValue;
 
         #endregion
 
