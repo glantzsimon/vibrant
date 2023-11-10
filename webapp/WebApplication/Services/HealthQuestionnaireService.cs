@@ -58,7 +58,7 @@ namespace K9.WebApplication.Services
                     ClientId = clientId,
                     Name = $"{client.Name} - {Globalisation.Dictionary.HealthQuestionnaire}",
                     Gender = EGender.Other,
-                    DateOfBirth = new DateTime(2000, 1, 1),
+                    DateOfBirth = new DateTime(),
                     NutritionExpertiseLevel = 5,
                     CurrentHealthLevel = 5,
                     CookingFrequency = EFrequency.SeveralTimesAWeek,

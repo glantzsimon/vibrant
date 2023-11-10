@@ -3,8 +3,19 @@
 @using K9.WebApplication.Enums
 @model HealthQuestionnaire
 
-<div class="row">
-
+<div class="well">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            @Html.BootstrapEditorFor(e => e.DateOfBirth)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            @Html.BootstrapEditorFor(e => e.Gender)
+        </div>
+    </div>
 </div>
 
-@Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
+<hr />
+
+@Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight, EButtonClass.Large)

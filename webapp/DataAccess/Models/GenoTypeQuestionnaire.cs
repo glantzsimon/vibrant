@@ -750,6 +750,9 @@ namespace K9.DataAccessLayer.Models
             return results;
         }
 
+        public bool IsDentitionComplete() =>
+            IncisorShovelling != EYesNo.Unanswered;
+
         #endregion
 
         #region Taster Status

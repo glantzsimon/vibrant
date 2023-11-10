@@ -1587,8 +1587,9 @@
     <Content Include="Views\Shared\EditorTemplates\SomatoType.cshtml" />
     <Content Include="Views\HealthQuestionnaire\AnswerHealthQuestionnaire.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page1PersonalDetails.cshtml" />
-    <Content Include="Views\HealthQuestionnaire\_PIlls.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_Pills.cshtml" />
     <Content Include="Views\HealthQuestionnaire\QuestionnaireCompletedSuccess.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_Page2BloodAnalysis.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

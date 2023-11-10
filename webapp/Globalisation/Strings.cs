@@ -672,5 +672,11 @@
             public const string Thai = "th-TH";
             public const string English = "en-US";
         }
+
+        public class CssClasses
+        {
+            public const string ActiveTabClass = "active";
+            public const string ActivePanelClass = "in active";
+        }
     }
 }

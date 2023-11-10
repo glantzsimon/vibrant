@@ -2635,6 +2635,9 @@
   <data name="WideAngle" xml:space="preserve">
     <value>Wide Angle</value>
   </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
   <data name="DentitionTitle" xml:space="preserve">
     <value>Dentition</value>
   </data>

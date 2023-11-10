@@ -4,9 +4,9 @@
     ViewBag.SubTitle = K9.Base.Globalisation.Dictionary.MyAccountTitle;
     Layout = "~/Views/Shared/_LayoutFormSmall.cshtml";
 
-    var activePaneClass = "in active padding-top-20";
+    var activePaneClass = $"{Strings.CssClasses.ActivePanelClass} padding-top-20";
     var inactivePaneClass = "padding-bottom-0";
-    var activeTabClass = "active";
+    var activeTabClass = Strings.CssClasses.ActiveTabClass;
     var inactiveTabClass = "";
 
     var hqIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any());
