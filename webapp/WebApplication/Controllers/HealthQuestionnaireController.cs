@@ -50,6 +50,16 @@ namespace K9.WebApplication.Controllers
         {
             _questionnaireService.Save(model);
 
+            if (!model.DateOfBirth.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.DateOfBirth), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.Gender.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.Gender), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
             if (model.IsComplete())
             {
                 return RedirectToAction("QuestionnaireCompletedSuccess");

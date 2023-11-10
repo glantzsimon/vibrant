@@ -677,6 +677,14 @@
         {
             public const string ActiveTabClass = "active";
             public const string ActivePanelClass = "in active";
+            public const string DisabledClass = "disabled";
+            public const string Toggle = "toggle";
         }
+
+        public class Attributes
+        {
+            public const string AriaDisabled = "area-disabled=\"true\"";
+        }
+
     }
 }

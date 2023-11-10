@@ -52,70 +52,88 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsPersonalDetailsActive() => !IsPersonalInformationComplete();
 
-        public bool IsBloodAnalysisActive() => IsPersonalInformationComplete() &&
+        public bool IsBloodAnalysisEnabled() => IsPersonalInformationComplete();
+
+        public bool IsBloodAnalysisActive() => IsBloodAnalysisEnabled() &&
                                                !IsBloodAnalysisComplete();
 
-        public bool IsAcetylationActive() => IsPersonalInformationComplete() &&
-                                           IsBloodAnalysisComplete() &&
+        public bool IsAcetylationEnabled() => IsPersonalInformationComplete() &&
+                                             IsBloodAnalysisComplete();
+
+        public bool IsAcetylationActive() => IsAcetylationEnabled() &&
                                            !IsAcetylationStatusComplete();
 
-        public bool IsBiometricsActive() => IsPersonalInformationComplete() &&
-                                          IsBloodAnalysisComplete() &&
-                                          IsAcetylationStatusComplete() &&
+        public bool IsBiometricsEnabled() => IsPersonalInformationComplete() &&
+                                            IsBloodAnalysisComplete() &&
+                                            IsAcetylationStatusComplete();
+
+        public bool IsBiometricsActive() => IsBiometricsEnabled() &&
                                           !IsBiometricsComplete();
 
-        public bool IsDermatoglyphicsActive() => IsPersonalInformationComplete() &&
+        public bool IsDermatoglyphicsEnabled() => IsPersonalInformationComplete() &&
+                                                 IsBloodAnalysisComplete() &&
+                                                 IsAcetylationStatusComplete() &&
+                                                 IsBiometricsComplete();
+
+        public bool IsDermatoglyphicsActive() => IsDermatoglyphicsEnabled() &&
+                                               !IsDermatoglyphicsComplete();
+
+        public bool IsDentitionEnabled() => IsPersonalInformationComplete() &&
+                                           IsBloodAnalysisComplete() &&
+                                           IsAcetylationStatusComplete() &&
+                                           IsBiometricsComplete() &&
+                                           IsDermatoglyphicsComplete();
+
+        public bool IsDentitionActive() => IsDentitionEnabled() &&
+                                         !IsDentitionComplete();
+
+        public bool IsTasterStatusEnabled() => IsPersonalInformationComplete() &&
+                                              IsBloodAnalysisComplete() &&
+                                              IsAcetylationStatusComplete() &&
+                                              IsBiometricsComplete() &&
+                                              IsDermatoglyphicsComplete() &&
+                                              IsDentitionComplete();
+
+        public bool IsTasterStatusActive() => IsTasterStatusEnabled() &&
+                                            !IsTasterStatusComplete();
+
+        public bool IsFamilyHistoryEnabled() => IsPersonalInformationComplete() &&
                                                IsBloodAnalysisComplete() &&
                                                IsAcetylationStatusComplete() &&
                                                IsBiometricsComplete() &&
-                                               !IsDermatoglyphicsComplete();
+                                               IsDermatoglyphicsComplete() &&
+                                               IsDentitionComplete() &&
+                                               IsTasterStatusComplete();
 
-        public bool IsDentitionActive() => IsPersonalInformationComplete() &&
-                                         IsBloodAnalysisComplete() &&
-                                         IsAcetylationStatusComplete() &&
-                                         IsBiometricsComplete() &&
-                                         IsDermatoglyphicsComplete() &&
-                                         !IsDentitionComplete();
-
-        public bool IsTasterStatusActive() => IsPersonalInformationComplete() &&
-                                            IsBloodAnalysisComplete() &&
-                                            IsAcetylationStatusComplete() &&
-                                            IsBiometricsComplete() &&
-                                            IsDermatoglyphicsComplete() &&
-                                            IsDentitionComplete() &&
-                                            !IsTasterStatusComplete();
-
-        public bool IsFamilyHistoryActive() => IsPersonalInformationComplete() &&
-                                             IsBloodAnalysisComplete() &&
-                                             IsAcetylationStatusComplete() &&
-                                             IsBiometricsComplete() &&
-                                             IsDermatoglyphicsComplete() &&
-                                             IsDentitionComplete() &&
-                                             IsTasterStatusComplete() &&
+        public bool IsFamilyHistoryActive() => IsFamilyHistoryEnabled() &&
                                              !IsFamilyHistoryComplete();
 
-        public bool IsGeneralHealthActive() => IsPersonalInformationComplete() &&
-                                             IsBloodAnalysisComplete() &&
-                                             IsAcetylationStatusComplete() &&
-                                             IsBiometricsComplete() &&
-                                             IsDermatoglyphicsComplete() &&
-                                             IsDentitionComplete() &&
-                                             IsTasterStatusComplete() &&
-                                             IsFamilyHistoryComplete() &&
+        public bool IsGeneralHealthEnabled() => IsPersonalInformationComplete() &&
+                                               IsBloodAnalysisComplete() &&
+                                               IsAcetylationStatusComplete() &&
+                                               IsBiometricsComplete() &&
+                                               IsDermatoglyphicsComplete() &&
+                                               IsDentitionComplete() &&
+                                               IsTasterStatusComplete() &&
+                                               IsFamilyHistoryComplete();
+
+        public bool IsGeneralHealthActive() => IsGeneralHealthEnabled() &&
                                              !IsGeneralHealthComplete();
 
-        public bool IsCbsAndMethylationActive() => IsPersonalInformationComplete() &&
-                                             IsBloodAnalysisComplete() &&
-                                             IsAcetylationStatusComplete() &&
-                                             IsBiometricsComplete() &&
-                                             IsDermatoglyphicsComplete() &&
-                                             IsDentitionComplete() &&
-                                             IsTasterStatusComplete() &&
-                                             IsFamilyHistoryComplete() &&
-                                             IsGeneralHealthComplete() &&
-                                             !IsCbsAndMethylationComplete();
+        public bool IsCbsAndMethylationEnabled() => IsPersonalInformationComplete() &&
+                                                   IsBloodAnalysisComplete() &&
+                                                   IsAcetylationStatusComplete() &&
+                                                   IsBiometricsComplete() &&
+                                                   IsDermatoglyphicsComplete() &&
+                                                   IsDentitionComplete() &&
+                                                   IsTasterStatusComplete() &&
+                                                   IsFamilyHistoryComplete() &&
+                                                   IsGeneralHealthComplete();
 
-        public bool IsDoshasActive() => IsPersonalInformationComplete() &&
+        public bool IsCbsAndMethylationActive() => IsCbsAndMethylationEnabled() &&
+                                                   !IsCbsAndMethylationComplete();
+
+        public bool IsDoshasEnabled() => IsPersonalInformationComplete() &&
                                         IsBloodAnalysisComplete() &&
                                         IsAcetylationStatusComplete() &&
                                         IsBiometricsComplete() &&
@@ -124,7 +142,9 @@ namespace K9.DataAccessLayer.Models
                                         IsTasterStatusComplete() &&
                                         IsFamilyHistoryComplete() &&
                                         IsGeneralHealthComplete() &&
-                                        IsCbsAndMethylationComplete() &&
+                                        IsCbsAndMethylationComplete();
+
+        public bool IsDoshasActive() => IsDoshasEnabled() &&
                                         !IsDoshasComplete();
 
         public string GetPersonalDetailsActivePanelClass() =>
@@ -139,17 +159,35 @@ namespace K9.DataAccessLayer.Models
         public string GetBloodAnalysisActiveTabClass() =>
             IsBloodAnalysisActive() ? Strings.CssClasses.ActiveTabClass : "";
 
+        public string GetBloodAnalysisEnabledClass() =>
+            IsBloodAnalysisEnabled() ? "" : Strings.CssClasses.DisabledClass;
+
+        public string GetBloodAnalysisToggle() =>
+            IsBloodAnalysisEnabled() ? Strings.CssClasses.Toggle : "";
+
         public string GetAcetylationActivePanelClass() =>
             IsAcetylationActive() ? Strings.CssClasses.ActivePanelClass : "";
 
         public string GetAcetylationActiveTabClass() =>
             IsAcetylationActive() ? Strings.CssClasses.ActiveTabClass : "";
-       
+
+        public string GetAcetylationEnabledClass() =>
+            IsAcetylationEnabled() ? "" : Strings.CssClasses.DisabledClass;
+
+        public string GetAcetylationToggle() =>
+            IsAcetylationEnabled() ? Strings.CssClasses.Toggle : "";
+
         public string GetBiometricsActivePanelClass() =>
-        IsBloodAnalysisActive() ? Strings.CssClasses.ActivePanelClass : "";
+        IsBiometricsActive() ? Strings.CssClasses.ActivePanelClass : "";
 
         public string GetBiometricsActiveTabClass() =>
-            IsBloodAnalysisActive() ? Strings.CssClasses.ActiveTabClass : "";
+            IsBiometricsActive() ? Strings.CssClasses.ActiveTabClass : "";
+
+        public string GetBiometricsEnabledClass() =>
+            IsBiometricsEnabled() ? "" : Strings.CssClasses.DisabledClass;
+
+        public string GetBiometricsToggle() =>
+            IsBiometricsEnabled() ? Strings.CssClasses.Toggle : "";
 
         public string GetDermatoglyphicsActivePanelClass() =>
             IsDermatoglyphicsActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -157,41 +195,83 @@ namespace K9.DataAccessLayer.Models
         public string GetDermatoglyphicsActiveTabClass() =>
             IsDermatoglyphicsActive() ? Strings.CssClasses.ActiveTabClass : "";
 
+        public string GetDermatoglyphicsEnabledClass() =>
+            IsDermatoglyphicsEnabled() ? "" : Strings.CssClasses.DisabledClass;
+
+        public string GetDermatoglyphicsToggle() =>
+            IsDermatoglyphicsEnabled() ? Strings.CssClasses.Toggle : "";
+
         public string GetDentitionActivePanelClass() =>
             IsDentitionActive() ? Strings.CssClasses.ActivePanelClass : "";
 
         public string GetDentitionActiveTabClass() =>
-            IsDentitionActive() ? Strings.CssClasses.ActiveTabClass: "";
+            IsDentitionActive() ? Strings.CssClasses.ActiveTabClass : "";
+
+        public string GetDentitionEnabledClass() =>
+            IsDentitionActive() ? "" : Strings.CssClasses.DisabledClass;
+
+        public string GetDentitionToggle() =>
+            IsDentitionActive() ? Strings.CssClasses.Toggle : "";
 
         public string GetTasterStatusActivePanelClass() =>
             IsTasterStatusActive() ? Strings.CssClasses.ActivePanelClass : "";
 
         public string GetTasterStatusActiveTabClass() =>
-            IsTasterStatusActive() ? Strings.CssClasses.ActiveTabClass: "";
+            IsTasterStatusActive() ? Strings.CssClasses.ActiveTabClass : "";
+
+        public string GetTasterStatusEnabledClass() =>
+            IsTasterStatusActive() ? "" : Strings.CssClasses.DisabledClass;
+
+        public string GetTasterStatusToggle() =>
+            IsTasterStatusActive() ? Strings.CssClasses.Toggle : "";
 
         public string GetFamilyHistoryActivePanelClass() =>
             IsFamilyHistoryActive() ? Strings.CssClasses.ActivePanelClass : "";
 
         public string GetFamilyHistoryActiveTabClass() =>
-            IsFamilyHistoryActive() ? Strings.CssClasses.ActiveTabClass: "";
+            IsFamilyHistoryActive() ? Strings.CssClasses.ActiveTabClass : "";
+
+        public string GetFamilyHistoryEnabledClass() =>
+            IsFamilyHistoryActive() ? "" : Strings.CssClasses.DisabledClass;
+
+        public string GetFamilyHistoryToggle() =>
+            IsFamilyHistoryActive() ? Strings.CssClasses.Toggle : "";
 
         public string GetGeneralHealthActivePanelClass() =>
             IsGeneralHealthActive() ? Strings.CssClasses.ActivePanelClass : "";
 
         public string GetGeneralHealthActiveTabClass() =>
-            IsGeneralHealthActive() ? Strings.CssClasses.ActiveTabClass: "";
+            IsGeneralHealthActive() ? Strings.CssClasses.ActiveTabClass : "";
+
+        public string GetGeneralHealthEnabledClass() =>
+            IsGeneralHealthActive() ? "" : Strings.CssClasses.DisabledClass;
+
+        public string GetGeneralHealthToggle() =>
+            IsGeneralHealthActive() ? Strings.CssClasses.Toggle : "";
 
         public string GetCbsAndMethylationActivePanelClass() =>
-            IsCbsAndMethylationActive() ? Strings.CssClasses.ActivePanelClass: "";
+            IsCbsAndMethylationActive() ? Strings.CssClasses.ActivePanelClass : "";
 
         public string GetCbsAndMethylationActiveTabClass() =>
-            IsCbsAndMethylationActive() ? Strings.CssClasses.ActiveTabClass: "";
+            IsCbsAndMethylationActive() ? Strings.CssClasses.ActiveTabClass : "";
+
+        public string GetCbsAndMethylationEnabledClass() =>
+            IsCbsAndMethylationActive() ? "" : Strings.CssClasses.DisabledClass;
+
+        public string GetCbsAndMethylationToggle() =>
+            IsCbsAndMethylationActive() ? Strings.CssClasses.Toggle : "";
 
         public string GetDoshasActivePanelClass() =>
-            IsDoshasActive() ? Strings.CssClasses.ActivePanelClass: "";
+            IsDoshasActive() ? Strings.CssClasses.ActivePanelClass : "";
 
         public string GetDoshasActiveTabClass() =>
-            IsDoshasActive() ? Strings.CssClasses.ActiveTabClass: "";
+            IsDoshasActive() ? Strings.CssClasses.ActiveTabClass : "";
+
+        public string GetDoshasEnabledClass() =>
+            IsDoshasActive() ? "" : Strings.CssClasses.DisabledClass;
+
+        public string GetDoshasToggle() =>
+            IsDoshasActive() ? Strings.CssClasses.Toggle : "";
 
         #endregion
 
@@ -243,8 +323,8 @@ namespace K9.DataAccessLayer.Models
 
         public ZodiacModel GetZodiacModel()
         {
-            return DateOfBirth.HasValue 
-                ? new ZodiacModel(DateOfBirth.Value) 
+            return DateOfBirth.HasValue
+                ? new ZodiacModel(DateOfBirth.Value)
                 : null;
         }
 
@@ -253,7 +333,7 @@ namespace K9.DataAccessLayer.Models
             return DateOfBirth.HasValue ? (DateTime.Now.Year - DateOfBirth.Value.Year) - (DateTime.Now.DayOfYear < DateOfBirth.Value.DayOfYear ? 1 : 0) : (int?)null;
         }
 
-        public bool IsPersonalInformationComplete() => DateOfBirth.HasValue;
+        public bool IsPersonalInformationComplete() => DateOfBirth.HasValue && Gender.HasValue;
 
         #endregion
 
