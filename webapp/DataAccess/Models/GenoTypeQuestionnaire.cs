@@ -170,7 +170,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftRingFingerLengthLabel)]
-        public int RingFingerLengthLeft { get; set; }
+        public double RingFingerLengthLeft { get; set; }
 
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightRingFingerLengthLabel)]

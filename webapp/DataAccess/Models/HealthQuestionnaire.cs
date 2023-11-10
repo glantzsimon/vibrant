@@ -17,6 +17,8 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.HealthQuestionnaires, PluralName = Strings.Names.HealthQuestionnaires, Name = Strings.Names.HealthQuestionnaire)]
     public partial class HealthQuestionnaire : ObjectBase
     {
+        public static DateTime DefaultDate = new DateTime(1800, 1, 1);
+
         [Required]
         public Guid ExternalId { get; set; }
 
@@ -212,7 +214,7 @@ namespace K9.DataAccessLayer.Models
 
         [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary), ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DateOfBirthLabel)]
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
 
         [Display(ResourceType = typeof(Base.Globalisation.Dictionary), Name = Base.Globalisation.Strings.Labels.LanguageLabel)]
         public string GenderName => Gender.GetLocalisedLanguageName();
@@ -221,7 +223,7 @@ namespace K9.DataAccessLayer.Models
 
         public string GenderPronoun => Gender == EGender.Male ? "he" : "she";
 
-        public int YearsOld => GetYearsOld();
+        public int? YearsOld => GetYearsOld();
 
         public bool IsAdult() => YearsOld >= 18;
 
@@ -230,23 +232,32 @@ namespace K9.DataAccessLayer.Models
         public NineStarKiModel GetNineStarKiModel()
         {
             var client = new System.Net.WebClient();
-            var nineStarKiJson = client.DownloadString($"https://9starki.org/api/calculate?dateOfBirth={DateOfBirth.ToString(FormatConstants.ApiDateTimeFormat)}&gender={Gender}");
-            var serializer = new JavaScriptSerializer();
+            if (DateOfBirth.HasValue)
+            {
+                var requestString =
+                    $"https://9starki.org/api/calculate?dateOfBirth={DateOfBirth.Value.ToString(FormatConstants.ApiDateTimeFormat)}&gender={Gender}";
+                var nineStarKiJson = client.DownloadString(requestString);
+                var serializer = new JavaScriptSerializer();
 
-            return serializer.Deserialize<NineStarKiModel>(nineStarKiJson);
+                return serializer.Deserialize<NineStarKiModel>(nineStarKiJson);
+            }
+
+            return null;
         }
 
         public ZodiacModel GetZodiacModel()
         {
-            return new ZodiacModel(DateOfBirth);
+            return DateOfBirth.HasValue 
+                ? new ZodiacModel(DateOfBirth.Value) 
+                : null;
         }
 
-        private int GetYearsOld()
+        private int? GetYearsOld()
         {
-            return (DateTime.Now.Year - DateOfBirth.Year) - (DateTime.Now.DayOfYear < DateOfBirth.DayOfYear ? 1 : 0);
+            return DateOfBirth.HasValue ? (DateTime.Now.Year - DateOfBirth.Value.Year) - (DateTime.Now.DayOfYear < DateOfBirth.Value.DayOfYear ? 1 : 0) : (int?)null;
         }
 
-        public bool IsPersonalInformationComplete() => DateOfBirth != new DateTime();
+        public bool IsPersonalInformationComplete() => DateOfBirth != DefaultDate & DateOfBirth != new DateTime();
 
         #endregion
 
@@ -262,13 +273,13 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CurrentHealthLevelLabel)]
         [Min(1)]
         [Max(10)]
-        public int CurrentHealthLevel { get; set; }
+        public int? CurrentHealthLevel { get; set; }
 
         [UIHint("Range")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NutritionExpertiseLevelLabel)]
         [Min(1)]
         [Max(10)]
-        public int NutritionExpertiseLevel { get; set; }
+        public int? NutritionExpertiseLevel { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnjoysCookingLabel)]
