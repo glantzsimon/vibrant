@@ -70,23 +70,23 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MedicationSensitivityLabel)]
-        public EYesNo SensitivityToMedications { get; set; }
+        public EYesNo? SensitivityToMedications { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CaffeineSensitivityLabel)]
-        public EYesNo SensitiveToCaffeine { get; set; }
+        public EYesNo? SensitiveToCaffeine { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CaffeineAffectsSleepLabel)]
-        public EYesNo CaffeineAffectsSleep { get; set; }
+        public EYesNo? CaffeineAffectsSleep { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SensitiveToMoldLabel)]
-        public EYesNo SensitiveToMold { get; set; }
+        public EYesNo? SensitiveToMold { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SensitiveToEnvironmentalChemicalsLabel)]
-        public EYesNo SensitiveToEnvironmentalChemicals { get; set; }
+        public EYesNo? SensitiveToEnvironmentalChemicals { get; set; }
 
         public List<EGenoType> GetGenoTypeFromChemicalSensitivity()
         {
@@ -116,11 +116,11 @@ namespace K9.DataAccessLayer.Models
         }
 
         public bool IsAcetylationStatusComplete() =>
-            SensitivityToMedications != EYesNo.Unanswered &&
-            SensitiveToCaffeine != EYesNo.Unanswered &&
-            CaffeineAffectsSleep != EYesNo.Unanswered &&
-            SensitiveToMold != EYesNo.Unanswered &&
-            SensitiveToEnvironmentalChemicals != EYesNo.Unanswered;
+            SensitivityToMedications.HasValue &&
+            SensitiveToCaffeine.HasValue &&
+            CaffeineAffectsSleep.HasValue &&
+            SensitiveToMold.HasValue &&
+            SensitiveToEnvironmentalChemicals.HasValue;
 
         #endregion
 
@@ -190,7 +190,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("GapSize")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SpaceBetweenThighsLabel)]
-        public EGapSize SpaceBetweenThighs { get; set; }
+        public EGapSize? SpaceBetweenThighs { get; set; }
 
         public List<EGenoType> GetGenoTypeFromSpaceBetweenThighs()
         {
@@ -306,7 +306,7 @@ namespace K9.DataAccessLayer.Models
         }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GonialAngleLabel)]
-        public EGonialAngle GonialAngle { get; set; }
+        public EGonialAngle? GonialAngle { get; set; }
 
         public List<EGenoType> GetGenoTypeFromGonialAngle()
         {
@@ -345,7 +345,7 @@ namespace K9.DataAccessLayer.Models
         }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HeadShapeLabel)]
-        public EHeadShape GetHeadShape()
+        public EHeadShape? GetHeadShape()
         {
             var cephalicIndex = GetCephalicIndex();
             if (cephalicIndex < 75)
@@ -401,15 +401,15 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TendonsAndSinewsVisibleLabel)]
-        public EYesNo TendonsAndSinewsVisible { get; set; }
+        public EYesNo? TendonsAndSinewsVisible { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WristsAndAnklesPaddedLabel)]
-        public EYesNo WristsAndAnklesLookPadded { get; set; }
+        public EYesNo? WristsAndAnklesLookPadded { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GainsMuscleEasilyLabel)]
-        public EYesNo GainsMuscleEasily { get; set; }
+        public EYesNo? GainsMuscleEasily { get; set; }
 
         public List<EGenoType> GetGenoTypeFromTendonsAndSinewsAndMuscles()
         {
@@ -453,7 +453,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("SomatoType")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GainsMuscleEasilyLabel)]
-        public ESomatoType SomatoType { get; set; }
+        public ESomatoType? SomatoType { get; set; }
 
         public List<EGenoType> GetGenoTypeFromSomatoType()
         {
@@ -514,15 +514,15 @@ namespace K9.DataAccessLayer.Models
             HeadWidth > 0 &&
             HeadLength > 0 &&
 
-            TendonsAndSinewsVisible != EYesNo.Unanswered &&
-            WristsAndAnklesLookPadded != EYesNo.Unanswered &&
-            GainsMuscleEasily != EYesNo.Unanswered &&
+            TendonsAndSinewsVisible.HasValue &&
+            WristsAndAnklesLookPadded.HasValue &&
+            GainsMuscleEasily.HasValue &&
 
-            SpaceBetweenThighs != EGapSize.Unanswered &&
+            SpaceBetweenThighs.HasValue &&
 
-            GonialAngle != EGonialAngle.Unanswered &&
+            GonialAngle.HasValue &&
 
-            SomatoType != ESomatoType.Unanswered;
+            SomatoType.HasValue;
 
         #endregion
 
@@ -559,55 +559,55 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IndexFingersMatchLabel)]
-        public EYesNo IndexFingerprintsMatch { get; set; }
+        public EYesNo? IndexFingerprintsMatch { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftThumprintLabel)]
-        public EFingerprintType LeftThumprintType { get; set; }
+        public EFingerprintType? LeftThumprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftIndexFingerprintLabel)]
-        public EFingerprintType LeftIndexFingerprintType { get; set; }
+        public EFingerprintType? LeftIndexFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftMiddleFingerprintLabel)]
-        public EFingerprintType LeftMiddleFingerprintType { get; set; }
+        public EFingerprintType? LeftMiddleFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftRingFingerprintLabel)]
-        public EFingerprintType LeftRingFingerprintType { get; set; }
+        public EFingerprintType? LeftRingFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftLittleFingerprintLabel)]
-        public EFingerprintType LeftLittleFingerprintType { get; set; }
+        public EFingerprintType? LeftLittleFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightThumprintLabel)]
-        public EFingerprintType RightThumprintType { get; set; }
+        public EFingerprintType? RightThumprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightIndexFingerprintLabel)]
-        public EFingerprintType RightIndexFingerprintType { get; set; }
+        public EFingerprintType? RightIndexFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightMiddleFingerprintLabel)]
-        public EFingerprintType RightMiddleFingerprintType { get; set; }
+        public EFingerprintType? RightMiddleFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightRingFingerprintLabel)]
-        public EFingerprintType RightRingFingerprintType { get; set; }
+        public EFingerprintType? RightRingFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightLittleFingerprintLabel)]
-        public EFingerprintType RightLittleFingerprintType { get; set; }
+        public EFingerprintType? RightLittleFingerprintType { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftHandedLabel)]
-        public EYesNo LeftHanded { get; set; }
+        public EYesNo? LeftHanded { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmbidextrousLabel)]
-        public EYesNo Ambidextrous { get; set; }
+        public EYesNo? Ambidextrous { get; set; }
 
         public List<EGenoType> GetGenoTypeFromHandedness()
         {
@@ -691,7 +691,7 @@ namespace K9.DataAccessLayer.Models
 
         private int CountFingerprintsByType(EFingerprintType type)
         {
-            var fingerPrints = new List<EFingerprintType>
+            var fingerPrints = new List<EFingerprintType?>
             {
                 LeftThumprintType,
                 LeftIndexFingerprintType,
@@ -709,20 +709,20 @@ namespace K9.DataAccessLayer.Models
         }
 
         public bool IsDermatoglyphicsComplete() =>
-            LeftThumprintType != EFingerprintType.Unanswered &&
-            LeftIndexFingerprintType != EFingerprintType.Unanswered &&
-            LeftMiddleFingerprintType != EFingerprintType.Unanswered &&
-            LeftRingFingerprintType != EFingerprintType.Unanswered &&
-            LeftLittleFingerprintType != EFingerprintType.Unanswered &&
-            RightThumprintType != EFingerprintType.Unanswered &&
-            RightIndexFingerprintType != EFingerprintType.Unanswered &&
-            RightMiddleFingerprintType != EFingerprintType.Unanswered &&
-            RightRingFingerprintType != EFingerprintType.Unanswered &&
-            RightLittleFingerprintType != EFingerprintType.Unanswered &&
+            LeftThumprintType.HasValue &&
+            LeftIndexFingerprintType.HasValue &&
+            LeftMiddleFingerprintType.HasValue &&
+            LeftRingFingerprintType.HasValue &&
+            LeftLittleFingerprintType.HasValue &&
+            RightThumprintType.HasValue &&
+            RightIndexFingerprintType.HasValue &&
+            RightMiddleFingerprintType.HasValue &&
+            RightRingFingerprintType.HasValue &&
+            RightLittleFingerprintType.HasValue &&
 
-            IndexFingerprintsMatch != EYesNo.Unanswered &&
-            LeftHanded != EYesNo.Unanswered &&
-            Ambidextrous != EYesNo.Unanswered;
+            IndexFingerprintsMatch.HasValue &&
+            LeftHanded.HasValue &&
+            Ambidextrous.HasValue;
 
         #endregion
 
@@ -730,7 +730,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IncisorShovellingLabel)]
-        public EYesNo IncisorShovelling { get; set; }
+        public EYesNo? IncisorShovelling { get; set; }
 
         public List<EGenoType> GetGenoTypesFromIncisorShovelling()
         {
@@ -751,7 +751,7 @@ namespace K9.DataAccessLayer.Models
         }
 
         public bool IsDentitionComplete() =>
-            IncisorShovelling != EYesNo.Unanswered;
+            IncisorShovelling.HasValue;
 
         #endregion
 
@@ -759,7 +759,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CruciferousVegetablesVeryBitterLabel)]
-        public ETaste CruciferousVegetablesTasteVeryBitter { get; set; }
+        public ETaste? CruciferousVegetablesTasteVeryBitter { get; set; }
 
         public List<EGenoType> GetGenoTypeFromTasterStatus()
         {
@@ -812,7 +812,7 @@ namespace K9.DataAccessLayer.Models
             return results;
         }
 
-        public bool IsTasterStatusComplete() => CruciferousVegetablesTasteVeryBitter != ETaste.Unanswered;
+        public bool IsTasterStatusComplete() => CruciferousVegetablesTasteVeryBitter.HasValue;
 
         #endregion
 
@@ -820,23 +820,23 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfNeurologicalDiseaseLabel)]
-        public EYesNo FamilyHistoryOfNeurologicalDisease { get; set; }
+        public EYesNo? FamilyHistoryOfNeurologicalDisease { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel)]
-        public EYesNo FamilyHistoryOfHeartDiseaseStrokeOrDiabetes { get; set; }
+        public EYesNo? FamilyHistoryOfHeartDiseaseStrokeOrDiabetes { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfCancerLabel)]
-        public EYesNo FamilyHistoryOfCancer { get; set; }
+        public EYesNo? FamilyHistoryOfCancer { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfAutoimmuneDiseaseLabel)]
-        public EYesNo FamilyHistoryOfAutoimmuneDisease { get; set; }
+        public EYesNo? FamilyHistoryOfAutoimmuneDisease { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfSubstanceDependencyLabel)]
-        public EYesNo FamilyHistoryOfSubstanceDependency { get; set; }
+        public EYesNo? FamilyHistoryOfSubstanceDependency { get; set; }
 
         public List<EGenoType> GetGenoTypesFromFamilyHistory()
         {
@@ -877,11 +877,11 @@ namespace K9.DataAccessLayer.Models
         }
 
         public bool IsFamilyHistoryComplete() =>
-            FamilyHistoryOfNeurologicalDisease != EYesNo.Unanswered &&
-            FamilyHistoryOfHeartDiseaseStrokeOrDiabetes != EYesNo.Unanswered &&
-            FamilyHistoryOfCancer != EYesNo.Unanswered &&
-            FamilyHistoryOfAutoimmuneDisease != EYesNo.Unanswered &&
-            FamilyHistoryOfSubstanceDependency != EYesNo.Unanswered;
+            FamilyHistoryOfNeurologicalDisease.HasValue &&
+            FamilyHistoryOfHeartDiseaseStrokeOrDiabetes.HasValue &&
+            FamilyHistoryOfCancer.HasValue &&
+            FamilyHistoryOfAutoimmuneDisease.HasValue &&
+            FamilyHistoryOfSubstanceDependency.HasValue;
 
         #endregion
 

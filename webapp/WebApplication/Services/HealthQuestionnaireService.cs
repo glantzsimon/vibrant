@@ -57,9 +57,6 @@ namespace K9.WebApplication.Services
                     ExternalId = hqId,
                     ClientId = clientId,
                     Name = $"{client.Name} - {Globalisation.Dictionary.HealthQuestionnaire}",
-                    Gender = EGender.Other,
-                    NutritionExpertiseLevel = 5,
-                    CurrentHealthLevel = 5,
                     CookingFrequency = EFrequency.SeveralTimesAWeek,
                 };
 

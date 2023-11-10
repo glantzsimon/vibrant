@@ -4,8 +4,6 @@ namespace K9.DataAccessLayer.Enums
 {
     public enum ESomatoType
     {
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.PleaseSelect)]
-        Unanswered,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Ectomorph)]
         Ectomorph,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Ectomesomorph)]

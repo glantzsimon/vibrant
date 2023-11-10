@@ -4,8 +4,6 @@ namespace K9.DataAccessLayer.Enums
 {
     public enum EFrequency
     {
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.PleaseSelect)]
-        Unanswered,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Always)]
         Always,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Daily)]

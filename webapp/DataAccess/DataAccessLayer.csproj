@@ -490,6 +490,18 @@
     <Compile Include="Migrations\202311101009505_HQNullableValues.Designer.cs">
       <DependentUpon>202311101009505_HQNullableValues.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311101019171_HQRequiredFields.cs" />
+    <Compile Include="Migrations\202311101019171_HQRequiredFields.Designer.cs">
+      <DependentUpon>202311101019171_HQRequiredFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311101134205_HOptionalFields.cs" />
+    <Compile Include="Migrations\202311101134205_HOptionalFields.Designer.cs">
+      <DependentUpon>202311101134205_HOptionalFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311101144592_HQMoreOptionalFields.cs" />
+    <Compile Include="Migrations\202311101144592_HQMoreOptionalFields.Designer.cs">
+      <DependentUpon>202311101144592_HQMoreOptionalFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\GenoTypeStrengthTestResult.cs" />
     <Compile Include="Models\CbsMethylationQuestionnaire.cs" />
@@ -740,6 +752,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311101009505_HQNullableValues.resx">
       <DependentUpon>202311101009505_HQNullableValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311101019171_HQRequiredFields.resx">
+      <DependentUpon>202311101019171_HQRequiredFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311101134205_HOptionalFields.resx">
+      <DependentUpon>202311101134205_HOptionalFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311101144592_HQMoreOptionalFields.resx">
+      <DependentUpon>202311101144592_HQMoreOptionalFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

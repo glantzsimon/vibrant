@@ -206,11 +206,9 @@ namespace K9.DataAccessLayer.Models
         public virtual Client Client { get; set; }
 
         [UIHint("Gender")]
-        [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary), ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GenderLabel)]
-        public EGender Gender { get; set; }
+        public EGender? Gender { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary), ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DateOfBirthLabel)]
         public DateTime? DateOfBirth { get; set; }
 
@@ -281,18 +279,18 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnjoysCookingLabel)]
-        public EYesNo EnjoysCooking { get; set; }
+        public EYesNo? EnjoysCooking { get; set; }
 
         [UIHint("Frequency")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnjoysCookingLabel)]
-        public EFrequency CookingFrequency { get; set; }
+        public EFrequency? CookingFrequency { get; set; }
 
         public bool IsGeneralHealthComplete()
         {
             return !string.IsNullOrEmpty(CurrentHealthIssues) &&
                    !string.IsNullOrEmpty(HealthGoals) &&
-                   EnjoysCooking != EYesNo.Unanswered &&
-                   CookingFrequency != EFrequency.Unanswered;
+                   EnjoysCooking.HasValue &&
+                   CookingFrequency.HasValue;
         }
 
         #endregion
