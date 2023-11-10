@@ -2500,11 +2500,17 @@
   <data name="Whorl" xml:space="preserve">
     <value>Whorl</value>
   </data>
+  <data name="AcetylationTitle" xml:space="preserve">
+    <value>Acetylation</value>
+  </data>
   <data name="AnswerHealthQuestionnaire" xml:space="preserve">
     <value>Take the Health Questionnaire</value>
   </data>
   <data name="Average" xml:space="preserve">
     <value>Average</value>
+  </data>
+  <data name="BiometricsTitle" xml:space="preserve">
+    <value>Biometrics</value>
   </data>
   <data name="BloodAnalysis" xml:space="preserve">
     <value>Blood Analysis</value>
@@ -2519,7 +2525,7 @@
     <value>Dolichocephalic (long-headed)</value>
   </data>
   <data name="DoYouHaveAQuestion" xml:space="preserve">
-    <value>Do you have a question?</value>
+    <value>Do you have a question? You can contact us on:</value>
   </data>
   <data name="Ectomesomorph" xml:space="preserve">
     <value>Ecto-mesomorph</value>

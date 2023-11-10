@@ -121,6 +121,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Acetylation.
+        /// </summary>
+        public static string AcetylationTitle {
+            get {
+                return ResourceManager.GetString("AcetylationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Acid Alkaline.
         /// </summary>
         public static string AcidAlkaline {
@@ -605,6 +614,15 @@ namespace K9.Globalisation {
         public static string BiometricsRequirements {
             get {
                 return ResourceManager.GetString("BiometricsRequirements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biometrics.
+        /// </summary>
+        public static string BiometricsTitle {
+            get {
+                return ResourceManager.GetString("BiometricsTitle", resourceCulture);
             }
         }
         
@@ -2011,7 +2029,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you have a question?.
+        ///   Looks up a localized string similar to Do you have a question? You can contact us on:.
         /// </summary>
         public static string DoYouHaveAQuestion {
             get {
