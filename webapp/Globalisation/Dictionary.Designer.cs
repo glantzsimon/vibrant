@@ -418,6 +418,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Take the Health Questionnaire.
+        /// </summary>
+        public static string AnswerHealthQuestionnaire {
+            get {
+                return ResourceManager.GetString("AnswerHealthQuestionnaire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Anti-aging.
         /// </summary>
         public static string AntiAging {
@@ -605,6 +614,15 @@ namespace K9.Globalisation {
         public static string Black {
             get {
                 return ResourceManager.GetString("Black", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blood Analysis.
+        /// </summary>
+        public static string BloodAnalysis {
+            get {
+                return ResourceManager.GetString("BloodAnalysis", resourceCulture);
             }
         }
         
@@ -812,6 +830,15 @@ namespace K9.Globalisation {
         public static string CategoryLabel {
             get {
                 return ResourceManager.GetString("CategoryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CBS &amp; Methylation Status.
+        /// </summary>
+        public static string CbsAndMethylation {
+            get {
+                return ResourceManager.GetString("CbsAndMethylation", resourceCulture);
             }
         }
         
@@ -2452,6 +2479,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Family History.
+        /// </summary>
+        public static string FamilyHistory {
+            get {
+                return ResourceManager.GetString("FamilyHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to In your close family (parents, grandparents, siblings or yourself) have there been two or more instances of autoimmune disease (lupus, rheumatoid arthritis, multiple sclerosis, CFS, fibromylagia etc.)?.
         /// </summary>
         public static string FamilyHistoryOfAutoimmuneDiseaseLabel {
@@ -2783,6 +2819,15 @@ namespace K9.Globalisation {
         public static string GenderSelectionTooltip {
             get {
                 return ResourceManager.GetString("GenderSelectionTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to General Health.
+        /// </summary>
+        public static string GeneralHealth {
+            get {
+                return ResourceManager.GetString("GeneralHealth", resourceCulture);
             }
         }
         
@@ -5753,6 +5798,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reactive.
+        /// </summary>
+        public static string Reactive {
+            get {
+                return ResourceManager.GetString("Reactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    A reactive strategy responds to the environment in more of an aggressive, proactive way. The body reacts swiftly to infection or allergens and, similarly, the character is often quick to respond to perceived threats or injustices. This worldview is inflammation-based. The level of reactivity This strategy provides for good immunity aginst infection and toxicity. However, the downside of this worldview is that, when out of balance, it comes at the expense of damaging the body’s own tissues as a by-p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ReactiveDescription {
+            get {
+                return ResourceManager.GetString("ReactiveDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Read Less.
         /// </summary>
         public static string ReadLess {
@@ -6878,6 +6942,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PROP Taster Status.
+        /// </summary>
+        public static string TasterStatus {
+            get {
+                return ResourceManager.GetString("TasterStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Teacher.
         /// </summary>
         public static string Teacher {
@@ -6968,11 +7041,49 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thrifty.
+        /// </summary>
+        public static string Thrifty {
+            get {
+                return ResourceManager.GetString("Thrifty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    A thrifty strategy responds to the environment in a cautious way, seeking not to confront threats but to avoid them where possible. It is a conservative approach based on self-preservation. A thrifty strategy is highly desirable in a world of shortage or scarcity, but it is poorly adapted to the luxuries of today’s widely available fats and sugars. Thrifty metabolic types respond to scarcity by slowing down their metabolisms—in particular, the way in which the cells respond to hormone stimulation.  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ThriftyDescription {
+            get {
+                return ResourceManager.GetString("ThriftyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thursday.
         /// </summary>
         public static string Thursday {
             get {
                 return ResourceManager.GetString("Thursday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tolerant.
+        /// </summary>
+        public static string Tolerant {
+            get {
+                return ResourceManager.GetString("Tolerant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    A tolerant strategy is accepting and adaptable: &quot;what worked yesterday may not work tomorrow, so don’t react too quickly - figure it out&quot;. This strategy is constantly adapting its responses to the environment, often by altering the binding sites, or receptors, that are found on the cells and tissues. Many of these receptors are used by microbes to attach to the tissues and organs. Sometimes this is harmonious (such as our relationship with the “good bacteria,” or probiotics, in our digestive tract) [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string TolerantDescription {
+            get {
+                return ResourceManager.GetString("TolerantDescription", resourceCulture);
             }
         }
         
@@ -7207,6 +7318,15 @@ namespace K9.Globalisation {
         public static string UpdateCart {
             get {
                 return ResourceManager.GetString("UpdateCart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update Health Questionnaire.
+        /// </summary>
+        public static string UpdateHealthQuestionnaire {
+            get {
+                return ResourceManager.GetString("UpdateHealthQuestionnaire", resourceCulture);
             }
         }
         

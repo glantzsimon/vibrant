@@ -1,8 +1,7 @@
 namespace K9.DataAccessLayer.Database
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class HealthQuestionnaire : DbMigration
     {
         public override void Up()

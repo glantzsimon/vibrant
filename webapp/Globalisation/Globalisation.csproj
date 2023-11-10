@@ -111,6 +111,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Questionnaires\en-gb\TolerantDescription.htm" />
+    <Content Include="Questionnaires\en-gb\ThriftyDescription.htm" />
+    <Content Include="Questionnaires\en-gb\ReactiveDescription.htm" />
     <Content Include="Questionnaires\en-gb\FingerPrintsInstructions.htm" />
     <Content Include="Questionnaires\en-gb\ChairHeightInstructions.htm" />
     <Content Include="Questionnaires\en-gb\FingerLengthInstructions.htm" />

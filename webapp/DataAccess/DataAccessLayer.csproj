@@ -98,10 +98,10 @@
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.192\lib\net461\DataAnnotationsExtensions.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.192\lib\net461\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.SharedLibrary.2.0.0.192\lib\net461\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.192\lib\net461\Facebook.dll</HintPath>
@@ -191,6 +191,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\GenoTypeEnumMetaDataAttribute.cs" />
     <Compile Include="Attributes\ZodiacEnumMetaDataAttribute.cs" />
     <Compile Include="Attributes\NineStarKiEnumMetaDataAttribute.cs" />
     <Compile Include="Attributes\NoCacheAttribute.cs" />
@@ -200,6 +201,7 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\EGenoTypeStrategy.cs" />
     <Compile Include="Enums\ESomatoType.cs" />
     <Compile Include="Enums\EGapSize.cs" />
     <Compile Include="Enums\EFingerprintType.cs" />
@@ -476,6 +478,10 @@
     <Compile Include="Migrations\202311080203517_HealthQuestionnaire.Designer.cs">
       <DependentUpon>202311080203517_HealthQuestionnaire.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311100324312_AddHealthQuestionnaire.cs" />
+    <Compile Include="Migrations\202311100324312_AddHealthQuestionnaire.Designer.cs">
+      <DependentUpon>202311100324312_AddHealthQuestionnaire.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GenoTypeStrengthTestResult.cs" />
     <Compile Include="Models\ZodiacModel.cs" />
     <Compile Include="Models\NineStarKiModel.cs" />
@@ -715,6 +721,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311080203517_HealthQuestionnaire.resx">
       <DependentUpon>202311080203517_HealthQuestionnaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311100324312_AddHealthQuestionnaire.resx">
+      <DependentUpon>202311100324312_AddHealthQuestionnaire.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,9 +9,12 @@
     var activeTabClass = "active";
     var inactiveTabClass = "";
 
-    var accountIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any());
+    var hqIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any());
+    var accountIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any() && !Model.HealthQuestionnaire.IsComplete());
     var protocolsIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders != null || Model.Orders.Any());
 
+    var hqTabClass = hqIsActive ? activeTabClass : inactiveTabClass;
+    var hqPaneClass = hqIsActive ? activePaneClass : inactivePaneClass;
     var accontTabClass = accountIsActive ? activeTabClass : inactiveTabClass;
     var accontPaneClass = accountIsActive ? activePaneClass : inactivePaneClass;
     var protocolsTabClass = protocolsIsActive ? activeTabClass : inactiveTabClass;
@@ -30,6 +33,8 @@
             <li class="@protocolsTabClass"><a data-toggle="tab" href="#protocols">@Dictionary.YourProtocols</a></li>
         }
 
+        <li class="@hqTabClass"><a data-toggle="tab" href="#health-questionnaire">@Dictionary.HealthQuestionnaire</a></li>
+
         <li class="@accontTabClass"><a data-toggle="tab" href="#account">@Dictionary.UpdateYourDetails</a></li>
     </ul>
 
@@ -46,6 +51,17 @@
                 @Html.Partial("_UserProtocols", Model.Protocols)
             </div>
         }
+
+        <div id="health-questionnaire" class="tab-pane fade @hqPaneClass">
+            @if (Model.HealthQuestionnaire.IsStarted())
+            {
+                @Html.BootstrapActionLinkButton(Dictionary.UpdateHealthQuestionnaire, "AnswerHealthQuestionnaire", "HealthQuestionnaire", new { clientId = Model.Client.Id })
+            }
+            else
+            {
+                @Html.BootstrapActionLinkButton(Dictionary.AnswerHealthQuestionnaire, "AnswerHealthQuestionnaire", "HealthQuestionnaire", new { clientId = Model.Client.Id })
+            }
+        </div>
 
         <div id="account" class="tab-pane fade @accontPaneClass">
             @Html.Partial("_AccountDetails", Model.User)

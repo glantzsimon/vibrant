@@ -44,9 +44,10 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<UserRole> _userRolesRepository;
         private readonly IRepository<Role> _rolesRepository;
         private readonly IOrderService _orderService;
+        private readonly IQuestionnaireService _questionnaireService;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IClientService clientService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<UserProtocol> userProtocolsRepository, IRepository<Protocol> protocolsRepository, IRepository<UserRole> userRolesRepository, IRepository<Role> rolesRepository, IOrderService orderService)
+        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IClientService clientService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<UserProtocol> userProtocolsRepository, IRepository<Protocol> protocolsRepository, IRepository<UserRole> userRolesRepository, IRepository<Role> rolesRepository, IOrderService orderService, IQuestionnaireService questionnaireService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _userRepository = userRepository;
@@ -64,6 +65,7 @@ namespace K9.WebApplication.Controllers
             _userRolesRepository = userRolesRepository;
             _rolesRepository = rolesRepository;
             _orderService = orderService;
+            _questionnaireService = questionnaireService;
             _recaptchaConfig = recaptchaConfig.Value;
 
             websiteConfig.Value.RegistrationEmailTemplateText = Globalisation.Dictionary.WelcomeEmail;
@@ -406,9 +408,11 @@ namespace K9.WebApplication.Controllers
             return View(new MyAccountViewModel
             {
                 User = user,
+                Client = clientRecord,
                 Membership = _membershipService.GetActiveUserMembership(user?.Id),
                 Protocols = protocols,
-                Orders = _orderService.ListForClient(clientRecord.Id).Where(e => e.OrderType != EOrderType.ShoppingCart).ToList()
+                Orders = _orderService.ListForClient(clientRecord.Id).Where(e => e.OrderType != EOrderType.ShoppingCart).ToList(),
+                HealthQuestionnaire = _questionnaireService.GetHealthQuestionnaireForUser(WebSecurity.CurrentUserId)
             });
         }
 

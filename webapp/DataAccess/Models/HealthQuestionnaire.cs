@@ -32,10 +32,22 @@ namespace K9.DataAccessLayer.Models
                    IsTasterStatusComplete();
         }
 
+        public bool IsStarted()
+        {
+            return IsFamilyHistoryComplete() ||
+                   IsAcetylationStatusComplete() ||
+                   IsBiometricsComplete() ||
+                   IsBloodAnalysisComplete() ||
+                   IsFamilyHistoryComplete() ||
+                   IsDermatoglyphicsComplete() ||
+                   IsTasterStatusComplete();
+        }
+
         #region Personal Details
-        
+
         [UIHint("Client")]
         [ForeignKey("Client")]
+        [Required]
         public int ClientId { get; set; }
 
         public virtual Client Client { get; set; }
@@ -107,10 +119,8 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnjoysCookingLabel)]
         public EYesNo EnjoysCooking { get; set; }
 
-        [UIHint("YesNo")]
+        [UIHint("Frequency")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnjoysCookingLabel)]
-        [Min(1)]
-        [Max(10)]
         public EFrequency CookingFrequency { get; set; }
 
         #endregion

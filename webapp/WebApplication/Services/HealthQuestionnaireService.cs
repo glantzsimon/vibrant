@@ -3,6 +3,8 @@ using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
 using System;
 using System.Linq;
+using K9.Base.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.Services
 {
@@ -54,13 +56,19 @@ namespace K9.WebApplication.Services
                 {
                     ExternalId = hqId,
                     ClientId = clientId,
-                    Name = $"{client.Name} - {Globalisation.Dictionary.HealthQuestionnaire}"
+                    Name = $"{client.Name} - {Globalisation.Dictionary.HealthQuestionnaire}",
+                    Gender = EGender.Other,
+                    DateOfBirth = new DateTime(2000, 1, 1),
+                    NutritionExpertiseLevel = 5,
+                    CurrentHealthLevel = 5,
+                    CookingFrequency = EFrequency.SeveralTimesAWeek,
                 };
 
                 _healthQuestionnaireRepository.Create(hq);
-
-
+                
                 hq = _healthQuestionnaireRepository.Find(e => e.ExternalId == hqId).First();
+
+                hq.DateOfBirth = new DateTime();
             }
 
             return hq;

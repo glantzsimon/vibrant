@@ -603,6 +603,10 @@
             public const string Brachycephalic = "Brachycephalic";
             public const string Mesocephalic = "Mesocephalic";
 
+            public const string Reactive = "Reactive";
+            public const string Thrifty = "Thrifty";
+            public const string Tolerant = "Tolerant";
+
             public const string Hunter = "Hunter";
             public const string Gatherer = "Gatherer";
             public const string Teacher = "Teacher";
