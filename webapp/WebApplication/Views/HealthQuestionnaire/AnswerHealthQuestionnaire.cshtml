@@ -18,12 +18,14 @@
     using (Html.BeginBootstrapForm())
     {
         @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.ClientId)
+        @Html.HiddenFor(model => model.ExternalId)
 
         @Html.Partial("_Pills")
 
         <hr />
 
-        <h3>@Dictionary.DoYouHaveAQuestion</h3>
+        <h4>@Dictionary.DoYouHaveAQuestion</h4>
 
         <a class="btn btn btn-primary" target="_blank" title="@Dictionary.WhatsAppUs" href="@(whatsAppLink)">
             <i class="fab fa-whatsapp"></i>

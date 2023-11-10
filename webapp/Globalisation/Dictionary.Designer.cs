@@ -1656,6 +1656,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dentition.
+        /// </summary>
+        public static string DentitionTitle {
+            get {
+                return ResourceManager.GetString("DentitionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Dermatoglyphics refers to the analysis of fingerprints in order to determine certain genetic markers. Our fingerprints correlate strongly to events in our epigenetic history and can therefore be used to determine a person&apos;s genetic profile and any associated susceptibility to specific imbalances.
         ///&lt;/p&gt;
@@ -1665,6 +1674,15 @@ namespace K9.Globalisation {
         public static string Dermatoglyphics {
             get {
                 return ResourceManager.GetString("Dermatoglyphics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dermatoglyphics.
+        /// </summary>
+        public static string DermatoglyphicsTitle {
+            get {
+                return ResourceManager.GetString("DermatoglyphicsTitle", resourceCulture);
             }
         }
         
@@ -2029,7 +2047,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you have a question? You can contact us on:.
+        ///   Looks up a localized string similar to Do you have a question? .
         /// </summary>
         public static string DoYouHaveAQuestion {
             get {
@@ -7823,6 +7841,15 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to WhatsApp.
+        /// </summary>
+        public static string WhatsApp {
+            get {
+                return ResourceManager.GetString("WhatsApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WhatsApp Us!.
         /// </summary>
         public static string WhatsAppUs {
             get {

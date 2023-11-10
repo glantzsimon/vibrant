@@ -280,3 +280,7 @@ li.divider {
 .remove-productpack-from-cart-button, .remove-product-from-cart-button {
     cursor: pointer !important;
 }
+
+.display-inline-block {
+    display: inline-block;
+}

@@ -2093,7 +2093,7 @@
     <value>Vitamins &amp; Minerals</value>
   </data>
   <data name="WhatsAppUs" xml:space="preserve">
-    <value>WhatsApp</value>
+    <value>WhatsApp Us!</value>
   </data>
   <data name="CurrentHealthIssuesLabel" xml:space="preserve">
     <value>Are there any health issues that you hope to improve with nutrition? Please provide details if you can.</value>
@@ -2525,7 +2525,7 @@
     <value>Dolichocephalic (long-headed)</value>
   </data>
   <data name="DoYouHaveAQuestion" xml:space="preserve">
-    <value>Do you have a question? You can contact us on:</value>
+    <value>Do you have a question? </value>
   </data>
   <data name="Ectomesomorph" xml:space="preserve">
     <value>Ecto-mesomorph</value>
@@ -2634,5 +2634,14 @@
   </data>
   <data name="WideAngle" xml:space="preserve">
     <value>Wide Angle</value>
+  </data>
+  <data name="DentitionTitle" xml:space="preserve">
+    <value>Dentition</value>
+  </data>
+  <data name="DermatoglyphicsTitle" xml:space="preserve">
+    <value>Dermatoglyphics</value>
+  </data>
+  <data name="WhatsApp" xml:space="preserve">
+    <value>WhatsApp</value>
   </data>
 </root>
