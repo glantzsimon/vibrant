@@ -226,6 +226,7 @@
             public const string UTILabel ="UTILabel";
             public const string CandidaFungusLabel ="CandidaFungusLabel";
             public const string AnaemiaLabel ="AnaemiaLabel";
+            public const string SkinTypeLabel ="SkinTypeLabel";
             public const string CrampsTremorsTwitchesLabel ="CrampsTremorsTwitchesLabel";
             public const string HistoryOfchronicFatigueOrFibromyalgiaLabel ="HistoryOfchronicFatigueOrFibromyalgiaLabel";
             public const string MigrainesLabel ="MigrainesLabel";
@@ -460,6 +461,49 @@
             public const string InProgress = "InProgress";
             public const string ReadyForDelivery = "ReadyForDelivery";
 
+            public const string VataDosha = "VataDosha";
+            public const string PittaDosha = "PittaDosha";
+            public const string KaphaDosha = "KaphaDosha";
+            public const string VataPittaDosha = "VataPittaDosha";
+            public const string PittaKaphaDosha = "PittaKaphaDosha";
+            public const string KaphaVataDosha = "KaphaVataDosha";
+            public const string TriDoshic = "TriDoshic";
+
+            public const string LightSleep = "LightSleep";
+            public const string ModerateSleep = "ModerateSleep";
+            public const string DeepSleep = "DeepSleep";
+            public const string SleepLabel = "SleepLabel";
+
+            public const string WeightGainEasy = "WeightGainEasy";
+            public const string WeightGainModerate = "WeightGainModerate";
+            public const string WeightGainDifficult = "WeightGainDifficult";
+            public const string WeightGainQuestionLabel = "WeightGainQuestionLabel";
+
+            public const string BodyColdLabel = "BodyColdLabel";
+            public const string BodyHotLabel = "BodycoldSkinHotLabelLabel";
+            public const string BodyColdMoistLabel = "BodyColdMoistLabel";
+            public const string BodyTemperatureQuestionLabel = "BodyTemperatureQuestionLabel";
+
+            public const string StressReclusiveLabel = "StressReclusiveLabel";
+            public const string StressAnxiousLabel = "StressAnxiousLabel";
+            public const string StressIrritableLabel = "StressIrritableLabel";
+            public const string StressResponseQuestionLabel = "StressResponseQuestionLabel";
+
+            public const string PenetratingEyesLabel = "PenetratingEyesLabel";
+            public const string SmallEyesLabel = "SmallEyesLabel";
+            public const string LargeEyesLabel = "LargeEyesLabel";
+            public const string EyesTypeQuestionLabel = "EyesTypeQuestionLabel";
+            
+            public const string EvenDispositionLabel = "EvenDispositionLabel";
+            public const string DrivenDispositionLabel = "DrivenDispositionLabel";
+            public const string LivelyDispositionLabel = "LivelyDispositionLabel";
+            public const string DispositionQuestionLabel = "DispositionQuestionLabel";
+
+            public const string FullHairTypeLabel = "FullHairTypeLabel";
+            public const string FrizzyHairTypeLabel = "FrizzyHairTypeLabel";
+            public const string FineHairTypeLabel = "LivelyHairTypeLabel";
+            public const string HairTypeQuestionLabel = "HairTypeQuestionLabel";
+
             public const string MembershipOption = "MembershipOption";
             public const string ProfileReading = "ProfileReading";
             public const string CompatibilityReading = "CompatibilityReading";
@@ -527,6 +571,10 @@
             public const string Yes = "Yes";
             public const string No = "No";
             public const string NotSure = "NotSure";
+
+            public const string DrySkin = "DrySkin";
+            public const string ThickSkin = "ThickSkin";
+            public const string OilySkin = "OilySkin";
 
             public const string MoreSevere = "MoreSevere";
             public const string LessSevere = "LessSevere";

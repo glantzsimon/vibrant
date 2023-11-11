@@ -112,6 +112,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Questionnaires\en-gb\DoshasDescription.htm" />
     <Content Include="Questionnaires\en-gb\CBSMethylationDescription.htm" />
     <Content Include="Questionnaires\en-gb\WristCircumferenceTestInstructions.htm" />
     <Content Include="Questionnaires\en-gb\TolerantDescription.htm" />

@@ -1606,6 +1606,15 @@
     <Content Include="Views\HealthQuestionnaire\_Page8FamilyHistory.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page9CbsMethylation.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Severity.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SleepQuality.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SkinType.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\WeightGain.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\BodyTemperature.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\StressResponse.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EyesType.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\HairType.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Disposition.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_Page10Doshas.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

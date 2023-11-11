@@ -765,6 +765,42 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Itend to feel cold, especially in the extremeties. I feel more comfortable in warm or hot weather.
+        /// </summary>
+        public static string BodyColdLabel {
+            get {
+                return ResourceManager.GetString("BodyColdLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I adapt reasonably well to different temperatures, but I generally feel better in warm, dry weahter. I don&apos;t love cold, damp weather..
+        /// </summary>
+        public static string BodyColdMoistLabel {
+            get {
+                return ResourceManager.GetString("BodyColdMoistLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Itend to feel warm or even hot all year round. I generally feel uncomfortable in hot weather and prefer cooler climates.
+        /// </summary>
+        public static string BodyHotLabel {
+            get {
+                return ResourceManager.GetString("BodyHotLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which of the following statements best describe your body temperature?.
+        /// </summary>
+        public static string BodyTemperatureQuestionLabel {
+            get {
+                return ResourceManager.GetString("BodyTemperatureQuestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;article&gt;
         ///    &lt;h5 class=&quot;margin-top-0&quot;&gt;
         ///        Book a one-to-one Pure Alchemy consultation to discuss your health in greater detail
@@ -980,8 +1016,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    This section is designed to determine the whether you have specific metabolic variations, which, if present, would mean that a specialised diet and supplement plan may be appropriate. CBS refers to &quot;CBS upregulation&quot;, which occur in a not insignificant percentage of the population, especially in respond to environmental chemicals, infection and chronic stress.
-        ///&lt;/p&gt;.
+        ///    This section is designed to determine the whether you have specific variations in the &lt;span class=&quot;glossary&quot;&gt;methylation&lt;/span&gt; cycle, which, if present, would mean that a specialised diet and supplement plan may be appropriate. &lt;span class=&quot;glossary&quot;&gt;CBS&lt;/span&gt; upregulation refers to a genetic variation that occurs in a not insignificant percentage of the population, especially in respond to environmental chemicals, infection and chronic stress and is a major cause of chronic ill health issues.
+        ///&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CBSMethylationDescription {
             get {
@@ -1835,6 +1871,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I sleep like a log and can sleep for hours..
+        /// </summary>
+        public static string DeepSleep {
+            get {
+                return ResourceManager.GetString("DeepSleep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default.
         /// </summary>
         public static string Default {
@@ -2031,6 +2076,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Which of the following best describes your disposition?.
+        /// </summary>
+        public static string DispositionQuestionLabel {
+            get {
+                return ResourceManager.GetString("DispositionQuestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dolichocephalic (long-headed).
         /// </summary>
         public static string Dolichocephalic {
@@ -2220,6 +2274,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Ayurvedic &quot;doshas&quot; are patterns of Nature that can be easily observed in human beings. Everything is connected in the natural world. For example, our emotions and thoughts have a biochemical counterpart, in the form of neurotransmitters and neurohormones, giving rise to biochemical markers specific to certain emotional and mental states. That means that our personality, emotions and thoughts affect our biochemistry! Similarly, there is rich biochemistry influencing physical attributes, such as our  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DoshasDescription {
+            get {
+                return ResourceManager.GetString("DoshasDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Download as CSV.
         /// </summary>
         public static string DownloadAsCsv {
@@ -2288,6 +2352,24 @@ namespace K9.Globalisation {
         public static string DrinksAlcoholLabel {
             get {
                 return ResourceManager.GetString("DrinksAlcoholLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I am often driven, passionate, ambitious and enterprising.
+        /// </summary>
+        public static string DrivenDispositionLabel {
+            get {
+                return ResourceManager.GetString("DrivenDispositionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dry, rough, brittle or thin.
+        /// </summary>
+        public static string DrySkin {
+            get {
+                return ResourceManager.GetString("DrySkin", resourceCulture);
             }
         }
         
@@ -2724,6 +2806,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I am generally even-tempered, accepting, patient and supportive.
+        /// </summary>
+        public static string EvenDispositionLabel {
+            get {
+                return ResourceManager.GetString("EvenDispositionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Every.
         /// </summary>
         public static string Every {
@@ -2765,6 +2856,15 @@ namespace K9.Globalisation {
         public static string ExternalLink {
             get {
                 return ResourceManager.GetString("ExternalLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which of the following most accurately describe your eyes?.
+        /// </summary>
+        public static string EyesTypeQuestionLabel {
+            get {
+                return ResourceManager.GetString("EyesTypeQuestionLabel", resourceCulture);
             }
         }
         
@@ -2882,6 +2982,15 @@ namespace K9.Globalisation {
         public static string FindOutMore {
             get {
                 return ResourceManager.GetString("FindOutMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My hair is fine and soft.
+        /// </summary>
+        public static string FineHairTypeLabel {
+            get {
+                return ResourceManager.GetString("FineHairTypeLabel", resourceCulture);
             }
         }
         
@@ -3031,6 +3140,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My hair is often dry and brittle / frizzy.
+        /// </summary>
+        public static string FrizzyHairTypeLabel {
+            get {
+                return ResourceManager.GetString("FrizzyHairTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fruits.
         /// </summary>
         public static string Fruits {
@@ -3045,6 +3163,15 @@ namespace K9.Globalisation {
         public static string FullDosageText {
             get {
                 return ResourceManager.GetString("FullDosageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My hair is thick and tends to be on the oily side.
+        /// </summary>
+        public static string FullHairTypeLabel {
+            get {
+                return ResourceManager.GetString("FullHairTypeLabel", resourceCulture);
             }
         }
         
@@ -3258,6 +3385,15 @@ namespace K9.Globalisation {
         public static string Grounding {
             get {
                 return ResourceManager.GetString("Grounding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which of the following best describes your hair?.
+        /// </summary>
+        public static string HairTypeQuestionLabel {
+            get {
+                return ResourceManager.GetString("HairTypeQuestionLabel", resourceCulture);
             }
         }
         
@@ -4083,6 +4219,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kapha Dosha.
+        /// </summary>
+        public static string KaphaDosha {
+            get {
+                return ResourceManager.GetString("KaphaDosha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kapha Vata Dosha.
+        /// </summary>
+        public static string KaphaVataDosha {
+            get {
+                return ResourceManager.GetString("KaphaVataDosha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pure Alchemy nutrition health coach herbalism naturopathy detoxification superfoods superherbs bioharmonising biohacking lifestyle wellbeing electromedicine balance thrive
         ///.
         /// </summary>
@@ -4107,6 +4261,15 @@ namespace K9.Globalisation {
         public static string Large {
             get {
                 return ResourceManager.GetString("Large", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My eyes are large, soft with a gentle gaze.
+        /// </summary>
+        public static string LargeEyesLabel {
+            get {
+                return ResourceManager.GetString("LargeEyesLabel", resourceCulture);
             }
         }
         
@@ -4270,6 +4433,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I am a light sleeper and wake up easily.
+        /// </summary>
+        public static string LightSleep {
+            get {
+                return ResourceManager.GetString("LightSleep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Links.
         /// </summary>
         public static string Links {
@@ -4284,6 +4456,15 @@ namespace K9.Globalisation {
         public static string Liquid {
             get {
                 return ResourceManager.GetString("Liquid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I am often lively, enthusiastic and drawn to change.
+        /// </summary>
+        public static string LivelyDispositionLabel {
+            get {
+                return ResourceManager.GetString("LivelyDispositionLabel", resourceCulture);
             }
         }
         
@@ -4696,6 +4877,15 @@ namespace K9.Globalisation {
         public static string Minerals {
             get {
                 return ResourceManager.GetString("Minerals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I generally sleep well and rarely need to sleep in for hours.
+        /// </summary>
+        public static string ModerateSleep {
+            get {
+                return ResourceManager.GetString("ModerateSleep", resourceCulture);
             }
         }
         
@@ -5124,6 +5314,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Oily, reddish, warm, prone to irritation and breakouts.
+        /// </summary>
+        public static string OilySkin {
+            get {
+                return ResourceManager.GetString("OilySkin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to One Hour.
         /// </summary>
         public static string OneHour {
@@ -5475,6 +5674,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I have intense or penetrating eyes.
+        /// </summary>
+        public static string PenetratingEyesLabel {
+            get {
+                return ResourceManager.GetString("PenetratingEyesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to % of RDA.
         /// </summary>
         public static string PercentageOfRDALabel {
@@ -5570,6 +5778,24 @@ namespace K9.Globalisation {
         public static string Phytonutrient {
             get {
                 return ResourceManager.GetString("Phytonutrient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PittaDosha.
+        /// </summary>
+        public static string PittaDosha {
+            get {
+                return ResourceManager.GetString("PittaDosha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pitta Kapha Dosha.
+        /// </summary>
+        public static string PittaKaphaDosha {
+            get {
+                return ResourceManager.GetString("PittaKaphaDosha", resourceCulture);
             }
         }
         
@@ -7233,6 +7459,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Which of the following best describes your skin?.
+        /// </summary>
+        public static string SkinTypeLabel {
+            get {
+                return ResourceManager.GetString("SkinTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Skip.
         /// </summary>
         public static string Skip {
@@ -7247,6 +7482,15 @@ namespace K9.Globalisation {
         public static string Sleep {
             get {
                 return ResourceManager.GetString("Sleep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which of the following best describes how you typically sleep?.
+        /// </summary>
+        public static string SleepLabel {
+            get {
+                return ResourceManager.GetString("SleepLabel", resourceCulture);
             }
         }
         
@@ -7274,6 +7518,15 @@ namespace K9.Globalisation {
         public static string Small {
             get {
                 return ResourceManager.GetString("Small", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My eyes often move quickly from one thing to another.
+        /// </summary>
+        public static string SmallEyesLabel {
+            get {
+                return ResourceManager.GetString("SmallEyesLabel", resourceCulture);
             }
         }
         
@@ -7488,6 +7741,42 @@ namespace K9.Globalisation {
         public static string Straight {
             get {
                 return ResourceManager.GetString("Straight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When stressed, I tend to feel anxious and even fearful.
+        /// </summary>
+        public static string StressAnxiousLabel {
+            get {
+                return ResourceManager.GetString("StressAnxiousLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When stressed I often get irritable and impatient.
+        /// </summary>
+        public static string StressIrritableLabel {
+            get {
+                return ResourceManager.GetString("StressIrritableLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When stressed, I often feel low and reclusive.
+        /// </summary>
+        public static string StressReclusiveLabel {
+            get {
+                return ResourceManager.GetString("StressReclusiveLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which of the following best describes how you respond when stressed?.
+        /// </summary>
+        public static string StressResponseQuestionLabel {
+            get {
+                return ResourceManager.GetString("StressResponseQuestionLabel", resourceCulture);
             }
         }
         
@@ -7975,6 +8264,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thick, smooth, moist or &quot;dewy&quot;.
+        /// </summary>
+        public static string ThickSkin {
+            get {
+                return ResourceManager.GetString("ThickSkin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Three Months.
         /// </summary>
         public static string ThreeMonths {
@@ -8171,6 +8469,15 @@ namespace K9.Globalisation {
         public static string Trial {
             get {
                 return ResourceManager.GetString("Trial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tridoshic.
+        /// </summary>
+        public static string Tridoshic {
+            get {
+                return ResourceManager.GetString("Tridoshic", resourceCulture);
             }
         }
         
@@ -8465,6 +8772,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vata Dosha.
+        /// </summary>
+        public static string VataDosha {
+            get {
+                return ResourceManager.GetString("VataDosha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vegan or Omnivore.
         /// </summary>
         public static string VeganOrOmni {
@@ -8718,6 +9034,42 @@ namespace K9.Globalisation {
         public static string Weeks {
             get {
                 return ResourceManager.GetString("Weeks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I find it difficult to gain weight, but I lose it easily.
+        /// </summary>
+        public static string WeightGainDifficult {
+            get {
+                return ResourceManager.GetString("WeightGainDifficult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I gain weight easily.
+        /// </summary>
+        public static string WeightGainEasy {
+            get {
+                return ResourceManager.GetString("WeightGainEasy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I gain weight moderately easily and lose it just as easily.
+        /// </summary>
+        public static string WeightGainModerate {
+            get {
+                return ResourceManager.GetString("WeightGainModerate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How easily do you gain weight?.
+        /// </summary>
+        public static string WeightGainQuestionLabel {
+            get {
+                return ResourceManager.GetString("WeightGainQuestionLabel", resourceCulture);
             }
         }
         

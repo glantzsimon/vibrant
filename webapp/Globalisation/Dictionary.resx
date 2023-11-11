@@ -2803,6 +2803,15 @@
   <data name="BloatingLabel" xml:space="preserve">
     <value>Do you often experience bloating after a meal or in general?</value>
   </data>
+  <data name="BodyColdLabel" xml:space="preserve">
+    <value>Itend to feel cold, especially in the extremeties. I feel more comfortable in warm or hot weather</value>
+  </data>
+  <data name="BodyColdMoistLabel" xml:space="preserve">
+    <value>I adapt reasonably well to different temperatures, but I generally feel better in warm, dry weahter. I don't love cold, damp weather.</value>
+  </data>
+  <data name="BodyHotLabel" xml:space="preserve">
+    <value>Itend to feel warm or even hot all year round. I generally feel uncomfortable in hot weather and prefer cooler climates</value>
+  </data>
   <data name="BrainFogLabel" xml:space="preserve">
     <value>Do you ever experience brain fog or short term memory issues?</value>
   </data>
@@ -2833,6 +2842,9 @@
   <data name="CrampsTremorsTwitchesLabel" xml:space="preserve">
     <value>Do you ever experience cramps, tremors or twitches anywhere on your body?</value>
   </data>
+  <data name="DeepSleep" xml:space="preserve">
+    <value>I sleep like a log and can sleep for hours.</value>
+  </data>
   <data name="DentalIssuesLabel" xml:space="preserve">
     <value>Do you have any other dental or oral health issues? If so, please provide details</value>
   </data>
@@ -2841,6 +2853,9 @@
   </data>
   <data name="DrinksAlcoholLabel" xml:space="preserve">
     <value>Do you regularly consume alcohol?</value>
+  </data>
+  <data name="DrySkin" xml:space="preserve">
+    <value>Dry, rough, brittle or thin</value>
   </data>
   <data name="EmotionalTraumaLabel" xml:space="preserve">
     <value>Have you ever suffered any major emotional / psychological trauma?</value>
@@ -2884,11 +2899,20 @@
   <data name="JointInflammationLabel" xml:space="preserve">
     <value>Do you ever experience joint pain or stiffness?</value>
   </data>
+  <data name="KaphaDosha" xml:space="preserve">
+    <value>Kapha Dosha</value>
+  </data>
+  <data name="KaphaVataDosha" xml:space="preserve">
+    <value>Kapha Vata Dosha</value>
+  </data>
   <data name="LeftHanded" xml:space="preserve">
     <value>Left-Handed</value>
   </data>
   <data name="LessSevere" xml:space="preserve">
     <value>Less Severe</value>
+  </data>
+  <data name="LightSleep" xml:space="preserve">
+    <value>I am a light sleeper and wake up easily</value>
   </data>
   <data name="LooseStoolLabel" xml:space="preserve">
     <value>Do you often experience loose stool?</value>
@@ -2902,6 +2926,9 @@
   <data name="MigrainesLabel" xml:space="preserve">
     <value>Do you often suffer from migraines?</value>
   </data>
+  <data name="ModerateSleep" xml:space="preserve">
+    <value>I generally sleep well and rarely need to sleep in for hours</value>
+  </data>
   <data name="MoreSevere" xml:space="preserve">
     <value>More Severe</value>
   </data>
@@ -2911,6 +2938,9 @@
   <data name="OCDLabel" xml:space="preserve">
     <value>Do you like things to be carefully organised and do you spend a fair amount of time arranging things or making sure that things are just right? Or does chaos (such as a messy house / workplace) make you feel stressed?</value>
   </data>
+  <data name="OilySkin" xml:space="preserve">
+    <value>Oily, reddish, warm, prone to irritation and breakouts</value>
+  </data>
   <data name="PhotoOfEyesLabel" xml:space="preserve">
     <value>Please upload a clear photo of your tongue</value>
   </data>
@@ -2919,6 +2949,12 @@
   </data>
   <data name="PhysicalTraumaLabel" xml:space="preserve">
     <value>Have you ever suffered any major physical trauma? If so please provide details.</value>
+  </data>
+  <data name="PittaDosha" xml:space="preserve">
+    <value>PittaDosha</value>
+  </data>
+  <data name="PittaKaphaDosha" xml:space="preserve">
+    <value>Pitta Kapha Dosha</value>
   </data>
   <data name="PostExertionalMalaiseLabel" xml:space="preserve">
     <value>Do you ever experience post-exertional malaise? (In other words, do you feel exhausted after physical activity?</value>
@@ -2944,6 +2980,12 @@
   <data name="SkinIssuesLabel" xml:space="preserve">
     <value>Do you experience any issues with your skin, such as rashes, eczema, fungus, dermatitis or other complaint?</value>
   </data>
+  <data name="SkinTypeLabel" xml:space="preserve">
+    <value>Which of the following best describes your skin?</value>
+  </data>
+  <data name="SleepLabel" xml:space="preserve">
+    <value>Which of the following best describes how you typically sleep?</value>
+  </data>
   <data name="SlowWoundHealingLabel" xml:space="preserve">
     <value>Do you experience slow wound-healing?</value>
   </data>
@@ -2965,10 +3007,85 @@
   <data name="SurgeryDetailsLabel" xml:space="preserve">
     <value>Have you had any surgical operations? If so, please provide details.</value>
   </data>
+  <data name="ThickSkin" xml:space="preserve">
+    <value>Thick, smooth, moist or "dewy"</value>
+  </data>
+  <data name="Tridoshic" xml:space="preserve">
+    <value>Tridoshic</value>
+  </data>
   <data name="UTILabel" xml:space="preserve">
     <value>Do you often experience urinary tract infections?</value>
   </data>
+  <data name="VataDosha" xml:space="preserve">
+    <value>Vata Dosha</value>
+  </data>
+  <data name="WeightGainDifficult" xml:space="preserve">
+    <value>I find it difficult to gain weight, but I lose it easily</value>
+  </data>
+  <data name="WeightGainEasy" xml:space="preserve">
+    <value>I gain weight easily</value>
+  </data>
+  <data name="WeightGainModerate" xml:space="preserve">
+    <value>I gain weight moderately easily and lose it just as easily</value>
+  </data>
+  <data name="WeightGainQuestionLabel" xml:space="preserve">
+    <value>How easily do you gain weight?</value>
+  </data>
   <data name="WhiteSpotsOnNailsLabel" xml:space="preserve">
     <value>Do you have one or more white flecks anywhere on your fingernails?</value>
+  </data>
+  <data name="BodyTemperatureQuestionLabel" xml:space="preserve">
+    <value>Which of the following statements best describe your body temperature?</value>
+  </data>
+  <data name="DispositionQuestionLabel" xml:space="preserve">
+    <value>Which of the following best describes your disposition?</value>
+  </data>
+  <data name="DoshasDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\doshasdescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DrivenDispositionLabel" xml:space="preserve">
+    <value>I am often driven, passionate, ambitious and enterprising</value>
+  </data>
+  <data name="EvenDispositionLabel" xml:space="preserve">
+    <value>I am generally even-tempered, accepting, patient and supportive</value>
+  </data>
+  <data name="EyesTypeQuestionLabel" xml:space="preserve">
+    <value>Which of the following most accurately describe your eyes?</value>
+  </data>
+  <data name="FineHairTypeLabel" xml:space="preserve">
+    <value>My hair is fine and soft</value>
+  </data>
+  <data name="FrizzyHairTypeLabel" xml:space="preserve">
+    <value>My hair is often dry and brittle / frizzy</value>
+  </data>
+  <data name="FullHairTypeLabel" xml:space="preserve">
+    <value>My hair is thick and tends to be on the oily side</value>
+  </data>
+  <data name="HairTypeQuestionLabel" xml:space="preserve">
+    <value>Which of the following best describes your hair?</value>
+  </data>
+  <data name="LargeEyesLabel" xml:space="preserve">
+    <value>My eyes are large, soft with a gentle gaze</value>
+  </data>
+  <data name="LivelyDispositionLabel" xml:space="preserve">
+    <value>I am often lively, enthusiastic and drawn to change</value>
+  </data>
+  <data name="PenetratingEyesLabel" xml:space="preserve">
+    <value>I have intense or penetrating eyes</value>
+  </data>
+  <data name="SmallEyesLabel" xml:space="preserve">
+    <value>My eyes often move quickly from one thing to another</value>
+  </data>
+  <data name="StressAnxiousLabel" xml:space="preserve">
+    <value>When stressed, I tend to feel anxious and even fearful</value>
+  </data>
+  <data name="StressIrritableLabel" xml:space="preserve">
+    <value>When stressed I often get irritable and impatient</value>
+  </data>
+  <data name="StressReclusiveLabel" xml:space="preserve">
+    <value>When stressed, I often feel low and reclusive</value>
+  </data>
+  <data name="StressResponseQuestionLabel" xml:space="preserve">
+    <value>Which of the following best describes how you respond when stressed?</value>
   </data>
 </root>
