@@ -539,6 +539,10 @@
     <Compile Include="Migrations\202311111550015_Doshas.Designer.cs">
       <DependentUpon>202311111550015_Doshas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311111614350_HQChanged.cs" />
+    <Compile Include="Migrations\202311111614350_HQChanged.Designer.cs">
+      <DependentUpon>202311111614350_HQChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
     <Compile Include="Models\Doshas.cs" />
@@ -818,6 +822,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311111550015_Doshas.resx">
       <DependentUpon>202311111550015_Doshas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311111614350_HQChanged.resx">
+      <DependentUpon>202311111614350_HQChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
