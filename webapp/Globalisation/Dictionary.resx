@@ -2674,11 +2674,29 @@
   <data name="Small" xml:space="preserve">
     <value>Small</value>
   </data>
+  <data name="BloodGroupQuestionLabel" xml:space="preserve">
+    <value>What is your ABO blood group?</value>
+  </data>
   <data name="ChairHeightTitle" xml:space="preserve">
     <value>Chair Height</value>
   </data>
+  <data name="FingerLength" xml:space="preserve">
+    <value>Finger Length</value>
+  </data>
   <data name="GeneticProfileTest" xml:space="preserve">
     <value>Genetic Profile Test</value>
+  </data>
+  <data name="GonialAngleQuestionLabel" xml:space="preserve">
+    <value>What is your gonial angle?</value>
+  </data>
+  <data name="HeadAndJawTitle" xml:space="preserve">
+    <value>Head &amp; Jaw</value>
+  </data>
+  <data name="HeadLengthQuestionLabel" xml:space="preserve">
+    <value>What is the length of your head?</value>
+  </data>
+  <data name="HeadWidthQuestionLabel" xml:space="preserve">
+    <value>What is the width of your head?</value>
   </data>
   <data name="HowToMeasureLengthOfFingers" xml:space="preserve">
     <value>How to measure the length of your fingers</value>
@@ -2686,17 +2704,14 @@
   <data name="HowToMeasureSpaceBetweenThighs" xml:space="preserve">
     <value>How to measure the space between your thighs</value>
   </data>
+  <data name="HowToMeasureYourWaistAndHips" xml:space="preserve">
+    <value>How to measure your waist and hips</value>
+  </data>
   <data name="LeftIndexFingerLengthQuestionLabel" xml:space="preserve">
     <value>How long is your left index finger?</value>
   </data>
   <data name="LeftRingFingerLengthQuestionLabel" xml:space="preserve">
     <value>How long is your left ring finger?</value>
-  </data>
-  <data name="LengthOfIndexFingers" xml:space="preserve">
-    <value>Length of Index Fingers</value>
-  </data>
-  <data name="LengthOfRingFingers" xml:space="preserve">
-    <value>Length of Ring Fingers</value>
   </data>
   <data name="LowerLegLengthTitle" xml:space="preserve">
     <value>Lower Leg Length</value>
@@ -2713,6 +2728,9 @@
   <data name="Requirements" xml:space="preserve">
     <value>Requirements</value>
   </data>
+  <data name="RhesusFactorQuestionLabel" xml:space="preserve">
+    <value>What is your blood's rhesus factor?</value>
+  </data>
   <data name="RightIndexFingerLengthQuestionLabel" xml:space="preserve">
     <value>How long is your right index finger?</value>
   </data>
@@ -2722,14 +2740,29 @@
   <data name="SittingHeightTitle" xml:space="preserve">
     <value>Sitting Height</value>
   </data>
+  <data name="SomatoTypeQuestionLabel" xml:space="preserve">
+    <value>What is your somatotype?</value>
+  </data>
+  <data name="SomatoTypeTitle" xml:space="preserve">
+    <value>Somatotype</value>
+  </data>
   <data name="SpaceBetweenThighsTitle" xml:space="preserve">
     <value>Space Between Thighs</value>
   </data>
   <data name="StandingHeightTitle" xml:space="preserve">
     <value>Standing Height</value>
   </data>
+  <data name="TendonsAndSinewsVisibleQuestionLabel" xml:space="preserve">
+    <value>Are your tendons and sinews visible?</value>
+  </data>
   <data name="UpperLegLengthTitle" xml:space="preserve">
     <value>Upper Leg Length</value>
+  </data>
+  <data name="WaistToHipRatio" xml:space="preserve">
+    <value>Waist-to-Hip Ratio</value>
+  </data>
+  <data name="WristCircumferenceQuestionLabel" xml:space="preserve">
+    <value>When encircling your wrist with the middle finger of the opposite hand, which of the following applies to you?</value>
   </data>
   <data name="WristCircumferenceTest" xml:space="preserve">
     <value>Wrist Circumference Test</value>

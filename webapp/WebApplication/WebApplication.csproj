@@ -1594,7 +1594,6 @@
     <Content Include="Views\HealthQuestionnaire\_Page2BloodAnalysis.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page3Acetylation.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page4Biometrics.cshtml" />
-    <Content Include="Views\HealthQuestionnaire\_BiometricsHeight.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_PageRequirements.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\WristCircumference.cshtml" />
     <None Include="Web.Integration.config">

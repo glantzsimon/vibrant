@@ -38,11 +38,11 @@ namespace K9.DataAccessLayer.Models
         #region Blood Analysis
 
         [UIHint("BloodGroup")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BloodGroupLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BloodGroupQuestionLabel)]
         public EBloodGroup? BloodGroup { get; set; }
 
         [UIHint("RhesusFactor")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RhesusFactorLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RhesusFactorQuestionLabel)]
         public ERhesusFactor? RhesusFactor { get; set; }
 
         public List<EGenoType> GetGenoTypeFromRhesusFactor()
@@ -305,7 +305,7 @@ namespace K9.DataAccessLayer.Models
             return ERatio.Average;
         }
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GonialAngleLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GonialAngleQuestionLabel)]
         public EGonialAngle? GonialAngle { get; set; }
 
         public List<EGenoType> GetGenoTypeFromGonialAngle()
@@ -361,11 +361,11 @@ namespace K9.DataAccessLayer.Models
         }
 
         [UIHint("Measurement")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WaistSizeLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HeadWidthQuestionLabel)]
         public double HeadWidth { get; set; }
 
         [UIHint("Measurement")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WaistSizeLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HeadLengthQuestionLabel)]
         public double HeadLength { get; set; }
 
         public double GetCephalicIndex()
@@ -452,11 +452,11 @@ namespace K9.DataAccessLayer.Models
         }
 
         [UIHint("SomatoType")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GainsMuscleEasilyLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SomatoTypeQuestionLabel)]
         public ESomatoType? SomatoType { get; set; }
 
         [UIHint("WristCircumference")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WristTypeLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WristCircumferenceQuestionLabel)]
         public EWristCircumference? WristCircumference { get; set; }
 
         public List<EGenoType> GetGenoTypeFromSomatoType()

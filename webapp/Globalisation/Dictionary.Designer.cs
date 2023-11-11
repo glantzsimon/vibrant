@@ -666,6 +666,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to What is your ABO blood group?.
+        /// </summary>
+        public static string BloodGroupQuestionLabel {
+            get {
+                return ResourceManager.GetString("BloodGroupQuestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;article&gt;
         ///    &lt;h5 class=&quot;margin-top-0&quot;&gt;
         ///        Book a one-to-one Pure Alchemy consultation to discuss your health in greater detail
@@ -2650,6 +2659,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Finger Length.
+        /// </summary>
+        public static string FingerLength {
+            get {
+                return ResourceManager.GetString("FingerLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;How to measure your index and ring fingers&lt;/h4&gt;
         ///&lt;p&gt;
         ///    You may think you will be able to simply look at your hands and see at a glance which of your fingers is longer, but you’ll want to measure with your small ruler/ The index finger can often look longer than it is. Measure from the bottom of the crease where the palm starts and use the side of the finger closest to the middle finger (not the thumb or little finger). Try to get a measurement within 2-3 milimetres if possible.
@@ -2943,7 +2961,7 @@ namespace K9.Globalisation {
         ///    The jaw can be anything from wide-angled or &quot;almond shaped&quot; to narrow or, what is sometimes referred to as a “lantern jaw”. This angle is called the &quot;gonial angle&quot; and indicates exposure to certain prenatal growth factors.
         ///&lt;/p&gt;
         ///&lt;div&gt;
-        ///    &lt;img title=&quot;Gonial Angle&quot; alt=&quot;Gonial Angle&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/questionnaire/gonial-angle.png&quot; /&gt;
+        ///    &lt;img title=&quot;Gonial Angle&quot; alt=&quot;Gonial Angle&quot; class=&quot;auto-size center-block&quot; src=&quot;../Images/questionnaire/gonial-angle.png&quot; /&gt;
         ///&lt;/div&gt;
         ///.
         /// </summary>
@@ -2959,6 +2977,15 @@ namespace K9.Globalisation {
         public static string GonialAngleLabel {
             get {
                 return ResourceManager.GetString("GonialAngleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is your gonial angle?.
+        /// </summary>
+        public static string GonialAngleQuestionLabel {
+            get {
+                return ResourceManager.GetString("GonialAngleQuestionLabel", resourceCulture);
             }
         }
         
@@ -2990,11 +3017,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Head &amp; Jaw.
+        /// </summary>
+        public static string HeadAndJawTitle {
+            get {
+                return ResourceManager.GetString("HeadAndJawTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to What is the length of your head?.
         /// </summary>
         public static string HeadLengthLabel {
             get {
                 return ResourceManager.GetString("HeadLengthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is the length of your head?.
+        /// </summary>
+        public static string HeadLengthQuestionLabel {
+            get {
+                return ResourceManager.GetString("HeadLengthQuestionLabel", resourceCulture);
             }
         }
         
@@ -3028,6 +3073,15 @@ namespace K9.Globalisation {
         public static string HeadWidthLabel {
             get {
                 return ResourceManager.GetString("HeadWidthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is the width of your head?.
+        /// </summary>
+        public static string HeadWidthQuestionLabel {
+            get {
+                return ResourceManager.GetString("HeadWidthQuestionLabel", resourceCulture);
             }
         }
         
@@ -3208,6 +3262,15 @@ namespace K9.Globalisation {
         public static string HowToMeasureUpperLeg {
             get {
                 return ResourceManager.GetString("HowToMeasureUpperLeg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How to measure your waist and hips.
+        /// </summary>
+        public static string HowToMeasureYourWaistAndHips {
+            get {
+                return ResourceManager.GetString("HowToMeasureYourWaistAndHips", resourceCulture);
             }
         }
         
@@ -3829,12 +3892,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;How to measure the gap between your thighs&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;How to measure the space between your thighs&lt;/h4&gt;
         ///&lt;p&gt;
         ///    Stand straight without shoes, with your ankles touching. Either look in the mirror or have a friend help you and check the gap between your thighs at the level of the knees. Is the gap large, small or do your thighs touch?
         ///&lt;/p&gt;
         ///&lt;div&gt;
-        ///    &lt;img title=&quot;Gap Between Thighs Measurement&quot; alt=&quot;Gap Between Thighs Measurement&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/questionnaire/leg-gap-measurement.png&quot; /&gt;
+        ///    &lt;img title=&quot;Gap Between Thighs Measurement&quot; alt=&quot;Gap Between Thighs Measurement&quot; class=&quot;auto-size center-block&quot; src=&quot;../Images/questionnaire/leg-gap-measurement.png&quot; /&gt;
         ///&lt;/div&gt;.
         /// </summary>
         public static string LegGapMeasurementInstructions {
@@ -3849,24 +3912,6 @@ namespace K9.Globalisation {
         public static string Legumes {
             get {
                 return ResourceManager.GetString("Legumes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length of Index Fingers.
-        /// </summary>
-        public static string LengthOfIndexFingers {
-            get {
-                return ResourceManager.GetString("LengthOfIndexFingers", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length of Ring Fingers.
-        /// </summary>
-        public static string LengthOfRingFingers {
-            get {
-                return ResourceManager.GetString("LengthOfRingFingers", resourceCulture);
             }
         }
         
@@ -6237,6 +6282,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to What is your blood&apos;s rhesus factor?.
+        /// </summary>
+        public static string RhesusFactorQuestionLabel {
+            get {
+                return ResourceManager.GetString("RhesusFactorQuestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Right Index Finger Length (cm).
         /// </summary>
         public static string RightIndexFingerLengthLabel {
@@ -6725,6 +6779,24 @@ namespace K9.Globalisation {
         public static string SomatoTypeLabel {
             get {
                 return ResourceManager.GetString("SomatoTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is your somatotype?.
+        /// </summary>
+        public static string SomatoTypeQuestionLabel {
+            get {
+                return ResourceManager.GetString("SomatoTypeQuestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Somatotype.
+        /// </summary>
+        public static string SomatoTypeTitle {
+            get {
+                return ResourceManager.GetString("SomatoTypeTitle", resourceCulture);
             }
         }
         
@@ -7248,6 +7320,15 @@ namespace K9.Globalisation {
         public static string TendonsAndSinewsVisibleLabel {
             get {
                 return ResourceManager.GetString("TendonsAndSinewsVisibleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are your tendons and sinews visible?.
+        /// </summary>
+        public static string TendonsAndSinewsVisibleQuestionLabel {
+            get {
+                return ResourceManager.GetString("TendonsAndSinewsVisibleQuestionLabel", resourceCulture);
             }
         }
         
@@ -7958,6 +8039,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Waist-to-Hip Ratio.
+        /// </summary>
+        public static string WaistToHipRatio {
+            get {
+                return ResourceManager.GetString("WaistToHipRatio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Our waist-to-hip ratio reveals a lot of important information about our genetic profile, metabolism susceptibility to specific imbalances.
         ///&lt;/p&gt;
@@ -8163,6 +8253,15 @@ namespace K9.Globalisation {
         public static string WoundCare {
             get {
                 return ResourceManager.GetString("WoundCare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When encircling your wrist with the middle finger of the opposite hand, which of the following applies to you?.
+        /// </summary>
+        public static string WristCircumferenceQuestionLabel {
+            get {
+                return ResourceManager.GetString("WristCircumferenceQuestionLabel", resourceCulture);
             }
         }
         

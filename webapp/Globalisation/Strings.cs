@@ -225,10 +225,13 @@
             public const string IndexFingersMatchLabel = "IndexFingersMatchLabel";
             public const string SpaceBetweenThighsLabel = "SpaceBetweenThighsLabel";
             public const string TendonsAndSinewsVisibleLabel = "TendonsAndSinewsVisibleLabel";
+            public const string TendonsAndSinewsVisibleQuestionLabel = "TendonsAndSinewsVisibleQuestionLabel";
             public const string WristsAndAnklesPaddedLabel = "WristsAndAnklesPaddedLabel";
             public const string GainsMuscleEasilyLabel = "GainsMuscleEasilyLabel";
             public const string WristTypeLabel = "WristTypeLabel";
             public const string SomatoTypeLabel = "SomatoTypeLabel";
+            public const string SomatoTypeQuestionLabel = "SomatoTypeQuestionLabel";
+            public const string WristCircumferenceQuestionLabel = "WristCircumferenceQuestionLabel";
 
             public const string LeftThumprintLabel = "LeftThumprintLabel";
             public const string LeftIndexFingerprintLabel = "LeftIndexFingerprintLabel";
@@ -244,7 +247,10 @@
             public const string AmbidextrousLabel = "AmbidextrousLabel";
 
             public const string GonialAngleLabel = "GonialAngleLabel";
+            public const string GonialAngleQuestionLabel = "GonialAngleQuestionLabel";
             public const string HeadShapeLabel = "HeadShapeLabel";
+            public const string HeadWidthQuestionLabel = "HeadWidthQuestionLabel";
+            public const string HeadLengthQuestionLabel = "HeadLengthQuestionLabel";
             
             public const string CruciferousVegetablesVeryBitterLabel = "CruciferousVegetablesVeryBitterLabel";
 
@@ -283,7 +289,9 @@
             public const string IsRightIndexFingerLongerThanRightRingFingerLabel = "IsRightIndexFingerLongerThanRightRingFingerLabel";
             
             public const string BloodGroupLabel = "BloodGroupLabel";
+            public const string BloodGroupQuestionLabel = "BloodGroupQuestionLabel";
             public const string RhesusFactorLabel = "RhesusFactorLabel";
+            public const string RhesusFactorQuestionLabel = "RhesusFactorQuestionLabel";
         }
 
         public static class Names

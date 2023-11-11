@@ -11,6 +11,12 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-xs-12">
+            @Html.Raw(Dictionary.BloodGroupDescription)
+        </div>
+    </div>
+    <br />
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
             @Html.BootstrapEditorFor(e => e.BloodGroup)
         </div>
@@ -18,11 +24,6 @@
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
             @Html.BootstrapEditorFor(e => e.RhesusFactor)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.CollapsiblePanel(Dictionary.MoreDetails, Dictionary.BloodGroupDescription)
         </div>
     </div>
 </div>
@@ -41,9 +42,9 @@
 <script type="text/javascript">
 
     $(window).on("load",
-        function() {
+        function () {
 
-            $("#backToPage1").click(function() {
+            $("#backToPage1").click(function () {
                 $.fn.activateTab("personal-details");
             });
 

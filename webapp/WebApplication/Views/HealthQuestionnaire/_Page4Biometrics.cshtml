@@ -5,9 +5,23 @@
 @using K9.WebApplication.Options
 @model HealthQuestionnaire
 
-<div class="row">
-    <div class="col-xs-12">
-        <img title="Height Measurements" alt="Height Measurements" class="auto-size center-block" src="../Images/questionnaire/height-measurements.png" />
+
+<div class="well">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.BiometricsTitle</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.Raw(Dictionary.Biometrics)
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            <img title="Height Measurements" alt="Height Measurements" class="auto-size center-block" src="../Images/questionnaire/height-measurements.png" />
+        </div>
     </div>
 </div>
 
@@ -156,7 +170,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.LengthOfIndexFingers</h3>
+            <h3 class="section-title">@Dictionary.FingerLength</h3>
         </div>
     </div>
     <div class="row">
@@ -186,21 +200,7 @@
             })
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.CollapsiblePanel(Dictionary.HowToMeasureLengthOfFingers, Dictionary.FingerLengthInstructions, true)
-        </div>
-    </div>
 
-</div>
-
-<div class="well">
-
-    <div class="row">
-        <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.LengthOfRingFingers</h3>
-        </div>
-    </div>
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.RingFingerLengthLeft)
@@ -228,6 +228,7 @@
             })
         </div>
     </div>
+
     <div class="row">
         <div class="col-xs-12">
             @Html.CollapsiblePanel(Dictionary.HowToMeasureLengthOfFingers, Dictionary.FingerLengthInstructions, true)
@@ -268,6 +269,11 @@
 
     <div class="row">
         <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.WaistToHipRatio</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
             @Html.LabelFor(e => e.WaistSize)
         </div>
     </div>
@@ -293,7 +299,21 @@
             })
         </div>
     </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.CollapsiblePanel(Dictionary.HowToMeasureYourWaistAndHips, Dictionary.WaistToHipRatioInstructions, true)
+        </div>
+    </div>
 
+</div>
+
+<div class="well">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.HeadAndJawTitle</h3>
+        </div>
+    </div>
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.GonialAngle)
@@ -305,6 +325,11 @@
             {
                 Label = ""
             })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.CollapsiblePanel(Dictionary.GonialAngleLabel, Dictionary.GonialAngle, true)
         </div>
     </div>
 
@@ -335,7 +360,21 @@
             })
         </div>
     </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.CollapsiblePanel(Dictionary.HeadShapeLabel, Dictionary.HeadShapeInstructions, true)
+        </div>
+    </div>
 
+</div>
+
+<div class="well">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.SomatoTypeTitle</h3>
+        </div>
+    </div>
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.SomatoType)
@@ -349,18 +388,28 @@
             })
         </div>
     </div>
-
     <div class="row">
         <div class="col-xs-12">
-            @Html.CollapsiblePanel(Dictionary.WristCircumferenceTest, Dictionary.StandingHeightInstructions, true)
+            @Html.CollapsiblePanel(Dictionary.SomatoTypeTitle, Dictionary.SomatoTypeInstructions, true)
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.LabelFor(e => e.WristCircumference)
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.SomatoType, new EditorOptions
+            @Html.BootstrapEditorFor(e => e.WristCircumference, new EditorOptions
             {
                 Label = ""
             })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.CollapsiblePanel(Dictionary.WristCircumferenceTest, Dictionary.WristCircumferenceTestInstructions, true)
         </div>
     </div>
 
