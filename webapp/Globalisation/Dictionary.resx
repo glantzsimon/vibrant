@@ -2783,7 +2783,13 @@
     <value>Please provide details of any allergies and sensitivities you experience</value>
   </data>
   <data name="AllergiesAndSensitivitiesLabel" xml:space="preserve">
-    <value>Do you have any allergies or sensitivities?</value>
+    <value>Do you have any allergies, sensitivities or have you had any adverse reactions to any knwn substance?</value>
+  </data>
+  <data name="AmalgamFillingsHistoryLabel" xml:space="preserve">
+    <value>Have you ever had any silver amalgam fillings in the past?</value>
+  </data>
+  <data name="AmalgamFillingsLabel" xml:space="preserve">
+    <value>Do you have any silver amalgam fillings in your mouth?</value>
   </data>
   <data name="Ambidextrous" xml:space="preserve">
     <value>Ambidextrous</value>
@@ -2806,6 +2812,9 @@
   <data name="CoarseThinEyebrowsLabel" xml:space="preserve">
     <value>Is the outer third of your eyebrows thinning or do you have any coarse, long eyebrow hairs?</value>
   </data>
+  <data name="CoatedTongueLabel" xml:space="preserve">
+    <value>Do you ever notice that your tongue has a white or off-white coating?</value>
+  </data>
   <data name="ColdExtremitiesLabel" xml:space="preserve">
     <value>Do you often experience cold extremities?</value>
   </data>
@@ -2818,8 +2827,17 @@
   <data name="CrampsTremorsTwitchesLabel" xml:space="preserve">
     <value>Do you ever experience cramps, tremors or twitches anywhere on your body?</value>
   </data>
+  <data name="DentalIssuesLabel" xml:space="preserve">
+    <value>Do you have any other dental or oral health issues? If so, please provide details</value>
+  </data>
   <data name="DepressionAnxietyLabel" xml:space="preserve">
     <value>Do you have a history of or are you currently experiencing depression or anxiety?</value>
+  </data>
+  <data name="DrinksAlcoholLabel" xml:space="preserve">
+    <value>Do you regularly consume alcohol?</value>
+  </data>
+  <data name="EmotionalTraumaLabel" xml:space="preserve">
+    <value>Have you ever suffered any major emotional / psychological trauma?</value>
   </data>
   <data name="ExerciseLabel" xml:space="preserve">
     <value>How often do you exercise and what types of exercise do you do? Please profide details.</value>
@@ -2832,6 +2850,9 @@
   </data>
   <data name="HandednessLabel" xml:space="preserve">
     <value>Are you right-handed, left-handed or ambidextrous?</value>
+  </data>
+  <data name="HighBloodPressureLabel" xml:space="preserve">
+    <value>Have you ever been diagnosed with high blood pressure?</value>
   </data>
   <data name="HistoryOfchronicFatigueOrFibromyalgiaLabel" xml:space="preserve">
     <value>Do you have a history of chronic fatigue, fibromyalgia or burnout?</value>
@@ -2872,11 +2893,26 @@
   <data name="NightSweatsLabel" xml:space="preserve">
     <value>Do you ever experience night sweats?</value>
   </data>
+  <data name="OCDLabel" xml:space="preserve">
+    <value>Do you like things to be carefully organised and do you spend a fair amount of time arranging things or making sure that things are just right? Or does chaos (such as a messy house / workplace) make you feel stressed?</value>
+  </data>
+  <data name="PhotoOfEyesLabel" xml:space="preserve">
+    <value>Please upload a clear photo of your tongue</value>
+  </data>
+  <data name="PhotoOfTongueLabel" xml:space="preserve">
+    <value>Please upload a clear photo of your eyes (it's important to be able to see the iris)</value>
+  </data>
+  <data name="PhysicalTraumaLabel" xml:space="preserve">
+    <value>Have you ever suffered any major physical trauma? If so please provide details.</value>
+  </data>
   <data name="PostExertionalMalaiseLabel" xml:space="preserve">
     <value>Do you ever experience post-exertional malaise? (In other words, do you feel exhausted after physical activity?</value>
   </data>
   <data name="POTSLabel" xml:space="preserve">
     <value>Do you ever experience dizziness when standing up, after sitting or lying down for some time?</value>
+  </data>
+  <data name="PrescriptionMedicationLabel" xml:space="preserve">
+    <value>Please provide details of any prescription medication you are currently taking (with dosage)</value>
   </data>
   <data name="RacingThoughtsLabel" xml:space="preserve">
     <value>Do you often experience racing thoughts?</value>
@@ -2884,13 +2920,31 @@
   <data name="RightHanded" xml:space="preserve">
     <value>Right-Handed</value>
   </data>
+  <data name="RootCanalsLabel" xml:space="preserve">
+    <value>Do you have any root canals?</value>
+  </data>
   <data name="SkinIssuesDetailsLabel" xml:space="preserve">
     <value>Please provide details of any skin issues you experience</value>
   </data>
   <data name="SkinIssuesLabel" xml:space="preserve">
     <value>Do you experience any issues with your skin, such as rashes, eczema, fungus, dermatitis or other complaint?</value>
   </data>
+  <data name="SmokeLabel" xml:space="preserve">
+    <value>Do you smoke tobacco?</value>
+  </data>
+  <data name="SugarCrashesLabel" xml:space="preserve">
+    <value>Do you ever experience sugar crashes after eating carbohydrates?</value>
+  </data>
+  <data name="SupplementsLabel" xml:space="preserve">
+    <value>Please provide details of any supplements you are currently taking (with dosage)</value>
+  </data>
+  <data name="SurgeryDetailsLabel" xml:space="preserve">
+    <value>Have you had any surgical operations? If so, please provide details.</value>
+  </data>
   <data name="UTILabel" xml:space="preserve">
     <value>Do you often experience urinary tract infections?</value>
+  </data>
+  <data name="WhiteSpotsOnNailsLabel" xml:space="preserve">
+    <value>Do you have one or more white flecks anywhere on your fingernails?</value>
   </data>
 </root>

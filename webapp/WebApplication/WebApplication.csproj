@@ -1604,7 +1604,7 @@
     <Content Include="Views\HealthQuestionnaire\_Page7TasterStatus.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Taste.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page8FamilyHistory.cshtml" />
-    <Content Include="Views\HealthQuestionnaire\_Page9.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_Page9CbsMethylation.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Severity.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>

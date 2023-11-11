@@ -10,7 +10,10 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Script.Serialization;
+using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Enums;
+using K9.SharedLibrary.Models;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -445,6 +448,8 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CookingFrequencyLabel)]
         public EFrequency? CookingFrequency { get; set; }
 
+        #region Digestion
+
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BloatingLabel)]
         public EYesNo? Bloating { get; set; }
@@ -472,10 +477,19 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinIssuesDetailsLabel)]
         public string SkinIssuesDetails { get; set; }
 
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CoatedTongueLabel)]
+        public EYesNo? CoatedTongue { get; set; }
+
         public double GetDigestionIssuesScore()
         {
-            var totalScore = 6;
+            var totalScore = 7;
             var score = 0;
+
+            if (CoatedTongue == EYesNo.Yes)
+            {
+                score++;
+            }
 
             if (Bloating == EYesNo.Yes)
             {
@@ -510,6 +524,10 @@ namespace K9.DataAccessLayer.Models
             return score / totalScore;
         }
 
+        #endregion
+
+        #region Immune System
+
         [UIHint("Severity")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InfectionSeverityLabel)]
         public ESeverity? InfectionSeverity { get; set; }
@@ -517,6 +535,10 @@ namespace K9.DataAccessLayer.Models
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinIssuesLabel)]
         public EYesNo? AllergiesAndSensitivities { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HighBloodPressureLabel)]
+        public EYesNo? HighBloodPressure { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.UTILabel)]
@@ -557,6 +579,8 @@ namespace K9.DataAccessLayer.Models
 
             return score / totalScore;
         }
+
+        #endregion
 
         #region Yin Disease
 
@@ -610,7 +634,7 @@ namespace K9.DataAccessLayer.Models
 
         public double GetInflammationScore()
         {
-            var totalScore = 3;
+            var totalScore = 4;
             var score = 0;
 
             if (JointInflammation == EYesNo.Yes)
@@ -628,8 +652,68 @@ namespace K9.DataAccessLayer.Models
                 score++;
             }
 
+            if (HighBloodPressure == EYesNo.Yes)
+            {
+                score++;
+            }
+
             return score / totalScore;
         }
+
+        #endregion
+
+        #region Other
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SurgeryDetailsLabel)]
+        public string SurgeryDetails { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PrescriptionMedicationLabel)]
+        public string PrescriptionMedication { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SupplementsLabel)]
+        public string Supplements { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SmokeLabel)]
+        public EYesNo? Smoke { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DrinksAlcoholLabel)]
+        public EYesNo? DrinksAlcohol { get; set; }
+
+        [FileSourceInfo("upload/health", Filter = EFilesSourceFilter.Images)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PhotoOfEyesLabel)]
+        public FileSource EyesFileSource { get; set; }
+        
+        #endregion
+
+        #region Trauma
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PhysicalTraumaLabel)]
+        public string PhysicalTraumaDetails { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DrinksAlcoholLabel)]
+        public EYesNo? EmotionalTrauma { get; set; }
+
+        #endregion
+
+        #region Teeth
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmalgamFillingsLabel)]
+        public EYesNo? AmalgamFillings { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmalgamFillingsHistoryLabel)]
+        public EYesNo? AmalgamFillingsHistory { get; set; }
+        
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RootCanalsLabel)]
+        public EYesNo? RootCanals { get; set; }
+        
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DentalIssuesLabel)]
+        public string DentalIssuesLabel { get; set; }
 
         #endregion
 
@@ -640,16 +724,37 @@ namespace K9.DataAccessLayer.Models
         {
             return !string.IsNullOrEmpty(CurrentHealthIssues) &&
                    !string.IsNullOrEmpty(HealthGoals) &&
+
+                   CurrentHealthLevel.HasValue &&
+                   NutritionExpertiseLevel.HasValue &&
                    EnjoysCooking.HasValue &&
                    CookingFrequency.HasValue &&
                    Bloating.HasValue &&
                    Gas.HasValue &&
                    LooseStool.HasValue &&
-                   Constipation.HasValue &
+                   Constipation.HasValue &&
                    AbdominalPainOrCramping.HasValue &&
+                   InfectionSeverity.HasValue &&
+
+                   AllergiesAndSensitivities == EYesNo.Yes
+                ? !string.IsNullOrEmpty(AllergiesAndSensitivitiesDetails)
+                : AllergiesAndSensitivities.HasValue &&
+
+                   HighBloodPressure.HasValue &&
+                   UTI.HasValue &&
+                   ColdExtremities.HasValue &&
+                   ColdIntolerant.HasValue &&
+                   CandidaAndFungus.HasValue &&
+                   JointInflammation.HasValue &&
+                   Smoke.HasValue &&
+                   DrinksAlcohol.HasValue &&
+                  AmalgamFillings.HasValue &&
+                  AmalgamFillingsHistory.HasValue &&
+
                    SkinIssues == EYesNo.Yes
                 ? !string.IsNullOrEmpty(SkinIssuesDetails)
                 : SkinIssues.HasValue &&
+
                   InfectionSeverity.HasValue;
             ;
         }

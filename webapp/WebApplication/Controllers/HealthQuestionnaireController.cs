@@ -310,8 +310,107 @@ namespace K9.WebApplication.Controllers
             
             #endregion
 
+            #region Cbs Methylation
 
-            if (model.IsComplete())
+            if (!model.WhiteSpotsOnNails.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.WhiteSpotsOnNails), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.Anaemia.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.Anaemia), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.PostExertionalMalaise.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.PostExertionalMalaise), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.CrampsTremorsTwitches.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.CrampsTremorsTwitches), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.HistoryOfchronicFatigueOrFibromyalgia.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.HistoryOfchronicFatigueOrFibromyalgia), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.Migraines.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.Migraines), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.POTS.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.POTS), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.DepressionAnxiety.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.DepressionAnxiety), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.BrainFog.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.BrainFog), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.Insomnia.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.Insomnia), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.NightSweats.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.NightSweats), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.LowMorningEnergy.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.LowMorningEnergy), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.RacingThoughts.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.RacingThoughts), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.InnerTension.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.InnerTension), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.LoudNoisesBrightLights.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.LoudNoisesBrightLights), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.CoarseThinEyebrows.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.CoarseThinEyebrows), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.AmmoniaSmell.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.AmmoniaSmell), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.SugarCrashes.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.SugarCrashes), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.OCD.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.OCD), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            #endregion
+
+
+            if (model.IsComplete() && ModelState.IsValid)
             {
                 return RedirectToAction("QuestionnaireCompletedSuccess");
             }

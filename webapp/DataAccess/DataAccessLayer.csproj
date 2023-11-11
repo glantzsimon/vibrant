@@ -517,6 +517,10 @@
     <Compile Include="Migrations\202311110936437_Handedness.Designer.cs">
       <DependentUpon>202311110936437_Handedness.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311111323502_MultipleAdditionsToHQ.cs" />
+    <Compile Include="Migrations\202311111323502_MultipleAdditionsToHQ.Designer.cs">
+      <DependentUpon>202311111323502_MultipleAdditionsToHQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
     <Compile Include="Models\GenoTypeStrengthTestResult.cs" />
@@ -786,6 +790,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311110936437_Handedness.resx">
       <DependentUpon>202311110936437_Handedness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311111323502_MultipleAdditionsToHQ.resx">
+      <DependentUpon>202311111323502_MultipleAdditionsToHQ.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

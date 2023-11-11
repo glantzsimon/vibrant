@@ -247,7 +247,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you have any allergies or sensitivities?.
+        ///   Looks up a localized string similar to Do you have any allergies, sensitivities or have you had any adverse reactions to any knwn substance?.
         /// </summary>
         public static string AllergiesAndSensitivitiesLabel {
             get {
@@ -288,6 +288,24 @@ namespace K9.Globalisation {
         public static string Always {
             get {
                 return ResourceManager.GetString("Always", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Have you ever had any silver amalgam fillings in the past?.
+        /// </summary>
+        public static string AmalgamFillingsHistoryLabel {
+            get {
+                return ResourceManager.GetString("AmalgamFillingsHistoryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you have any silver amalgam fillings in your mouth?.
+        /// </summary>
+        public static string AmalgamFillingsLabel {
+            get {
+                return ResourceManager.GetString("AmalgamFillingsLabel", resourceCulture);
             }
         }
         
@@ -1141,6 +1159,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you ever notice that your tongue has a white or off-white coating?.
+        /// </summary>
+        public static string CoatedTongueLabel {
+            get {
+                return ResourceManager.GetString("CoatedTongueLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Code.
         /// </summary>
         public static string Code {
@@ -1806,6 +1833,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you have any other dental or oral health issues? If so, please provide details.
+        /// </summary>
+        public static string DentalIssuesLabel {
+            get {
+                return ResourceManager.GetString("DentalIssuesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Teeth can tell a lot about a person&apos;s genetics. Incisor shovelling (where the incisors are spade-like) is more strongly associated with an ancestral history of herding or hunting, whereas the presence of Carabelli&apos;s cups is assocated with more agrarian ancestry. In each case, these features indicate key specific metabolic patterns.
         ///&lt;/p&gt;
@@ -2227,6 +2263,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you regularly consume alcohol?.
+        /// </summary>
+        public static string DrinksAlcoholLabel {
+            get {
+                return ResourceManager.GetString("DrinksAlcoholLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Due By.
         /// </summary>
         public static string DueByLabel {
@@ -2574,6 +2619,15 @@ namespace K9.Globalisation {
         public static string EMFs {
             get {
                 return ResourceManager.GetString("EMFs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Have you ever suffered any major emotional / psychological trauma?.
+        /// </summary>
+        public static string EmotionalTraumaLabel {
+            get {
+                return ResourceManager.GetString("EmotionalTraumaLabel", resourceCulture);
             }
         }
         
@@ -3371,6 +3425,15 @@ namespace K9.Globalisation {
         public static string Here {
             get {
                 return ResourceManager.GetString("Here", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Have you ever been diagnosed with high blood pressure?.
+        /// </summary>
+        public static string HighBloodPressureLabel {
+            get {
+                return ResourceManager.GetString("HighBloodPressureLabel", resourceCulture);
             }
         }
         
@@ -4996,6 +5059,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you like things to be carefully organised and do you spend a fair amount of time arranging things or making sure that things are just right? Or does chaos (such as a messy house / workplace) make you feel stressed?.
+        /// </summary>
+        public static string OCDLabel {
+            get {
+                return ResourceManager.GetString("OCDLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Oils.
         /// </summary>
         public static string Oils {
@@ -5419,6 +5491,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please upload a clear photo of your tongue.
+        /// </summary>
+        public static string PhotoOfEyesLabel {
+            get {
+                return ResourceManager.GetString("PhotoOfEyesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please upload a clear photo of your eyes (it&apos;s important to be able to see the iris).
+        /// </summary>
+        public static string PhotoOfTongueLabel {
+            get {
+                return ResourceManager.GetString("PhotoOfTongueLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Have you ever suffered any major physical trauma? If so please provide details..
+        /// </summary>
+        public static string PhysicalTraumaLabel {
+            get {
+                return ResourceManager.GetString("PhysicalTraumaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phytonutrient.
         /// </summary>
         public static string Phytonutrient {
@@ -5509,6 +5608,15 @@ namespace K9.Globalisation {
         public static string Powder {
             get {
                 return ResourceManager.GetString("Powder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please provide details of any prescription medication you are currently taking (with dosage).
+        /// </summary>
+        public static string PrescriptionMedicationLabel {
+            get {
+                return ResourceManager.GetString("PrescriptionMedicationLabel", resourceCulture);
             }
         }
         
@@ -6715,6 +6823,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you have any root canals?.
+        /// </summary>
+        public static string RootCanalsLabel {
+            get {
+                return ResourceManager.GetString("RootCanalsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Run Maintenance Script.
         /// </summary>
         public static string RunMaintenanceScript {
@@ -7114,6 +7231,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you smoke tobacco?.
+        /// </summary>
+        public static string SmokeLabel {
+            get {
+                return ResourceManager.GetString("SmokeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Your body type - also known as your somatotype - can tell us quite a bit about your metabolism and your genetic profile. This is a fairly easy question to answer, although I’m going to suggest you get a friend to confirm your results anyway. In our &quot;thin is in&quot; culture, lots of women consider themselves &quot;rounded&quot; when virtually everyone else would call them &quot;muscular&quot; or even &quot;lanky.&quot; Similarly, many men who are muscular may mistakingly think they are thin.
         ///&lt;/p&gt;
@@ -7418,6 +7544,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you ever experience sugar crashes after eating carbohydrates?.
+        /// </summary>
+        public static string SugarCrashesLabel {
+            get {
+                return ResourceManager.GetString("SugarCrashesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Suggested Bulk Discount.
         /// </summary>
         public static string SuggestedBulkDiscountLabel {
@@ -7544,6 +7679,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please provide details of any supplements you are currently taking (with dosage).
+        /// </summary>
+        public static string SupplementsLabel {
+            get {
+                return ResourceManager.GetString("SupplementsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Support.
         /// </summary>
         public static string Support {
@@ -7591,6 +7735,15 @@ namespace K9.Globalisation {
         public static string SupportQuery {
             get {
                 return ResourceManager.GetString("SupportQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Have you had any surgical operations? If so, please provide details..
+        /// </summary>
+        public static string SurgeryDetailsLabel {
+            get {
+                return ResourceManager.GetString("SurgeryDetailsLabel", resourceCulture);
             }
         }
         
@@ -8560,6 +8713,15 @@ namespace K9.Globalisation {
         public static string WhatsAppUs {
             get {
                 return ResourceManager.GetString("WhatsAppUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you have one or more white flecks anywhere on your fingernails?.
+        /// </summary>
+        public static string WhiteSpotsOnNailsLabel {
+            get {
+                return ResourceManager.GetString("WhiteSpotsOnNailsLabel", resourceCulture);
             }
         }
         

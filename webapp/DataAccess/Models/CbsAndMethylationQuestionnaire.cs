@@ -4,13 +4,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace K9.DataAccessLayer.Models
 {
-    public partial class HealthQuestionnaire
+    public partial class HealthQuestionnaire    
     {
         
         #region Cbs
 
         [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfNeurologicalDiseaseLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WhiteSpotsOnNailsLabel)]
         public EYesNo? WhiteSpotsOnNails { get; set; } 
 
         [UIHint("YesNo")]
@@ -76,24 +76,46 @@ namespace K9.DataAccessLayer.Models
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmmoniaSmellLabel)]
         public EYesNo? AmmoniaSmell { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SugarCrashesLabel)]
+        public EYesNo? SugarCrashes { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OCDLabel)]
+        public EYesNo? OCD { get; set; }
         
         public double GetCbsScore()
         {
-            var totalScore = 22;
+            var totalScore = 24;
             var score = 0;
 
+            if (OCD == EYesNo.Yes)
+            {
+                score++;
+            }
+            
+            if (SugarCrashes == EYesNo.Yes)
+            {
+                score++;
+            }
+            
             if (AmmoniaSmell == EYesNo.Yes)
             {
+                score++;
+                score++;
                 score++;
             }
             
             if (CoarseThinEyebrows == EYesNo.Yes)
             {
                 score++;
+                score++;
             }
             
             if (LoudNoisesBrightLights == EYesNo.Yes)
             {
+                score++;
                 score++;
             }
 
@@ -150,7 +172,7 @@ namespace K9.DataAccessLayer.Models
             {
                 score++;
             }
-
+            
             if (WhiteSpotsOnNails == EYesNo.Yes)
             {
                 score++;
@@ -174,11 +196,25 @@ namespace K9.DataAccessLayer.Models
         #endregion
         
         public bool IsCbsAndMethylationComplete() =>
-            FamilyHistoryOfNeurologicalDisease.HasValue &&
-            FamilyHistoryOfHeartDiseaseStrokeOrDiabetes.HasValue &&
-            FamilyHistoryOfCancer.HasValue &&
-            FamilyHistoryOfAutoimmuneDisease.HasValue &&
+            WhiteSpotsOnNails.HasValue &&
+            Anaemia.HasValue &&
+            PostExertionalMalaise.HasValue &&
+            CrampsTremorsTwitches.HasValue &&
+            HistoryOfchronicFatigueOrFibromyalgia.HasValue &&
+            Migraines.HasValue &&
+            POTS.HasValue &&
+            DepressionAnxiety.HasValue &&
+            BrainFog.HasValue &&
+            Insomnia.HasValue &&
+            NightSweats.HasValue &&
+            LowMorningEnergy.HasValue &&
+            RacingThoughts.HasValue &&
+            InnerTension.HasValue &&
+            LoudNoisesBrightLights.HasValue &&
+            CoarseThinEyebrows.HasValue &&
+            AmmoniaSmell.HasValue &&
+            OCD.HasValue &&
+            SugarCrashes.HasValue &&
             FamilyHistoryOfSubstanceDependency.HasValue;
-        
     }
 }
