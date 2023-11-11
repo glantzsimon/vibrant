@@ -2773,10 +2773,19 @@
   <data name="WristTypeLabel" xml:space="preserve">
     <value>Wrist Circumference</value>
   </data>
+  <data name="Ambidextrous" xml:space="preserve">
+    <value>Ambidextrous</value>
+  </data>
   <data name="Handedness" xml:space="preserve">
     <value>Handedness</value>
   </data>
   <data name="HandednessLabel" xml:space="preserve">
     <value>Are you right-handed, left-handed or ambidextrous?</value>
+  </data>
+  <data name="LeftHanded" xml:space="preserve">
+    <value>Left-Handed</value>
+  </data>
+  <data name="RightHanded" xml:space="preserve">
+    <value>Right-Handed</value>
   </data>
 </root>

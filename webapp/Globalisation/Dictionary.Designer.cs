@@ -256,6 +256,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ambidextrous.
+        /// </summary>
+        public static string Ambidextrous {
+            get {
+                return ResourceManager.GetString("Ambidextrous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you ambidextrous?.
         /// </summary>
         public static string AmbidextrousLabel {
@@ -3803,6 +3812,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Left-Handed.
+        /// </summary>
+        public static string LeftHanded {
+            get {
+                return ResourceManager.GetString("LeftHanded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you left-handed?.
         /// </summary>
         public static string LeftHandedLabel {
@@ -6306,6 +6324,15 @@ namespace K9.Globalisation {
         public static string RhesusFactorQuestionLabel {
             get {
                 return ResourceManager.GetString("RhesusFactorQuestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right-Handed.
+        /// </summary>
+        public static string RightHanded {
+            get {
+                return ResourceManager.GetString("RightHanded", resourceCulture);
             }
         }
         
