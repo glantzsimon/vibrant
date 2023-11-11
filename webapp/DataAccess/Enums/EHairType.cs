@@ -5,8 +5,6 @@ namespace K9.DataAccessLayer.Enums
 {
     public enum EHairType
     {
-        [DoshaEnumMetaData(ResourceType = typeof(Globalisation.Dictionary), Dosha = EDosha.Undefined)]
-        Undefined,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.FrizzyHairTypeLabel)]
         [DoshaEnumMetaData(ResourceType = typeof(Globalisation.Dictionary), Dosha = EDosha.Vata)]
         Brittle,

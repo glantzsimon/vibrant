@@ -4,8 +4,6 @@ namespace K9.DataAccessLayer.Enums
 {
     public enum EDosha
     {
-        Undefined,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VataDosha)]
         Vata,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VataPittaDosha)]
         VataPitta,

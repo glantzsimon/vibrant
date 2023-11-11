@@ -5,8 +5,6 @@ namespace K9.DataAccessLayer.Enums
 {
     public enum EStressResponse
     {
-        [DoshaEnumMetaData(ResourceType = typeof(Globalisation.Dictionary), Dosha = EDosha.Undefined)]
-        Undefined,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.StressReclusiveLabel)]
         [DoshaEnumMetaData(ResourceType = typeof(Globalisation.Dictionary), Dosha = EDosha.Vata)]
         DepressedReclusive,

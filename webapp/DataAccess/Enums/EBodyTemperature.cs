@@ -5,8 +5,6 @@ namespace K9.DataAccessLayer.Enums
 {
     public enum EBodyTemperature
     {
-        [DoshaEnumMetaData(ResourceType = typeof(Globalisation.Dictionary), Dosha = EDosha.Undefined)]
-        Undefined,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.BodyHotLabel)]
         [DoshaEnumMetaData(ResourceType = typeof(Globalisation.Dictionary), Dosha = EDosha.Vata)]
         Hot,
