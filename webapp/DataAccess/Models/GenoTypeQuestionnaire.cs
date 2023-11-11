@@ -773,7 +773,7 @@ namespace K9.DataAccessLayer.Models
 
         #region Taster Status
 
-        [UIHint("YesNo")]
+        [UIHint("Taste")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CruciferousVegetablesVeryBitterLabel)]
         public ETaste? CruciferousVegetablesTasteVeryBitter { get; set; }
 

@@ -2569,7 +2569,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to In your close family (parents, grandparents, siblings or yourself) have there been two or more instances of heart disease, diabetes or stroke?.
+        ///   Looks up a localized string similar to In your close family (parents, grandparents, siblings or yourself) have there been two or more instances of cancer?.
         /// </summary>
         public static string FamilyHistoryOfCancerLabel {
             get {

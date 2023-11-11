@@ -5,7 +5,7 @@
 @{
     Layout = "../Shared/_LayoutFormWide.cshtml";
     ViewBag.Title = Dictionary.GeneticProfileTest;
-    ViewBag.SubTitle = Dictionary.GeneticProfileTest;
+    ViewBag.SubTitle = $"{Dictionary.GeneticProfileTest} <i class=\"fa fa-dna\"></i>";
 
     var whatsAppTelephone = DefaultValuesConfiguration.Instance.WhatsAppSupportNumber;
     var whatsAppQueryText = Url.Encode($"Hi. I have a query regarding the genetic profile test.");

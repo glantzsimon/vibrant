@@ -1,15 +1,19 @@
-﻿@using K9.Base.WebApplication.Helpers
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.SharedLibrary.Authentication
+@using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Config
 @using K9.WebApplication.Enums
 @model HealthQuestionnaire
 
 <ul class="nav nav-pills">
-    <li><a data-toggle="pill" href="#requirements">
-        <i class="fas fa-exclamation-circle"></i>
-        <span class="site-controls-text">
-            @Dictionary.Requirements
-        </span>
-    </a></li>
+    <li>
+        <a data-toggle="pill" href="#requirements">
+            <i class="fas fa-exclamation-circle"></i>
+            <span class="site-controls-text">
+                @Dictionary.Requirements
+            </span>
+        </a>
+    </li>
 
     <li class="@(Model.GetPersonalDetailsActiveTabClass())"><a data-toggle="pill" href="#personal-details">@Dictionary.PersonalDetails @Html.Raw(Model.GetPersonalDetailsCompleteHtml())</a></li>
 
@@ -27,54 +31,62 @@
 
     <li class="@($"{Model.GetFamilyHistoryActiveTabClass()} {Model.GetFamilyHistoryEnabledClass()}")"><a data-toggle="@Model.GetFamilyHistoryToggle()" href="#family-history">@Dictionary.FamilyHistory @Html.Raw(Model.GetFamilyHistoryCompleteHtml())</a></li>
 
-    <li class="@($"{Model.GetGeneralHealthActiveTabClass()} {Model.GetGeneralHealthEnabledClass()}")"><a data-toggle="@Model.GetGeneralHealthToggle()" href="#general-health">@Dictionary.GeneralHealth @Html.Raw(Model.GetGeneralHealthCompleteHtml())</a></li>
-
     <li class="@($"{Model.GetCbsAndMethylationActiveTabClass()} {Model.GetCbsAndMethylationEnabledClass()}")"><a data-toggle="@Model.GetCbsAndMethylationToggle()" href="#cbs-methylation">@Dictionary.CbsAndMethylation @Html.Raw(Model.GetCbsAndMethylationCompleteHtml())</a></li>
 
     <li class="@($"{Model.GetDoshasActiveTabClass()} {Model.GetDoshasEnabledClass()}")"><a data-toggle="@Model.GetDoshasToggle()" href="#doshas">@Dictionary.Doshas @Html.Raw(Model.GetDoshasCompleteHtml())</a></li>
+
+    @if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
+    {
+        <li class="@($"{Model.GetGeneralHealthActiveTabClass()} {Model.GetGeneralHealthEnabledClass()}")"><a data-toggle="@Model.GetGeneralHealthToggle()" href="#general-health">@Dictionary.GeneralHealth @Html.Raw(Model.GetGeneralHealthCompleteHtml())</a></li>
+    }
 </ul>
 
 <div class="tab-content">
     <div id="requirements" class="tab-pane fade padding-top-15">
         @Html.Partial("_PageRequirements")
     </div>
-    
+
     <div id="personal-details" class="tab-pane fade @(Model.GetPersonalDetailsActivePanelClass()) padding-top-15">
         @Html.Partial("_Page1PersonalDetails")
     </div>
-    
+
     <div id="blood-analysis" class="tab-pane fade @(Model.GetBloodAnalysisActivePanelClass()) padding-top-15">
         @Html.Partial("_Page2BloodAnalysis")
     </div>
-    
+
     <div id="acetylation" class="tab-pane fade @(Model.GetAcetylationActivePanelClass()) padding-top-15">
         @Html.Partial("_Page3Acetylation")
     </div>
-    
+
     <div id="biometrics" class="tab-pane fade @(Model.GetBiometricsActivePanelClass()) padding-top-15">
         @Html.Partial("_Page4Biometrics")
     </div>
-    
+
     <div id="dermatoglyphics" class="tab-pane @(Model.GetDermatoglyphicsActivePanelClass()) fade padding-top-15">
         @Html.Partial("_Page5Dermatoglyphics")
     </div>
-    
+
     <div id="dentition" class="tab-pane fade @(Model.GetDentitionActivePanelClass()) padding-top-15">
         @Html.Partial("_Page6Dentition")
     </div>
-    
+
     <div id="taster-status" class="tab-pane fade @(Model.GetTasterStatusActivePanelClass()) padding-top-15">
+        @Html.Partial("_Page7TasterStatus")
     </div>
-    
+
     <div id="family-history" class="tab-pane fade @(Model.GetFamilyHistoryActivePanelClass()) padding-top-15">
+        @Html.Partial("_Page8FamilyHistory")
     </div>
-    
-    <div id="general-health" class="tab-pane fade @(Model.GetGeneralHealthActivePanelClass()) padding-top-15">
-    </div>
-    
+
     <div id="cbs-methylation" class="tab-pane fade @(Model.GetCbsAndMethylationActivePanelClass()) padding-top-15">
     </div>
-    
+
     <div id="doshas" class="tab-pane fade @(Model.GetDoshasActivePanelClass()) padding-top-15">
     </div>
+
+    @if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
+    {
+        <div id="general-health" class="tab-pane fade @(Model.GetGeneralHealthActivePanelClass()) padding-top-15">
+        </div>
+    }
 </div>

@@ -1600,6 +1600,10 @@
     <Content Include="Views\HealthQuestionnaire\_Page5Dermatoglyphics.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Handedness.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page6Dentition.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_Page7TasterStatus.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Taste.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_Page8FamilyHistory.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_Page9.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

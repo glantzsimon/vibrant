@@ -2309,7 +2309,7 @@
     <value>In your close family (parents, grandparents, siblings or yourself) have there been two or more instances of autoimmune disease (lupus, rheumatoid arthritis, multiple sclerosis, CFS, fibromylagia etc.)?</value>
   </data>
   <data name="FamilyHistoryOfCancerLabel" xml:space="preserve">
-    <value>In your close family (parents, grandparents, siblings or yourself) have there been two or more instances of heart disease, diabetes or stroke?</value>
+    <value>In your close family (parents, grandparents, siblings or yourself) have there been two or more instances of cancer?</value>
   </data>
   <data name="FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel" xml:space="preserve">
     <value>In your close family (parents, grandparents, siblings or yourself) have there been two or more instances of heart disease, diabetes or stroke?</value>

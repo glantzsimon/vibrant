@@ -272,6 +272,44 @@ namespace K9.WebApplication.Controllers
             
             #endregion
 
+            #region PROP Taster
+
+            if (!model.CruciferousVegetablesTasteVeryBitter.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.CruciferousVegetablesTasteVeryBitter), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            #endregion
+
+            #region Family History
+
+            if (!model.FamilyHistoryOfAutoimmuneDisease.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.FamilyHistoryOfAutoimmuneDisease), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.FamilyHistoryOfCancer.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.FamilyHistoryOfCancer), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.FamilyHistoryOfHeartDiseaseStrokeOrDiabetes.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.FamilyHistoryOfHeartDiseaseStrokeOrDiabetes), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.FamilyHistoryOfNeurologicalDisease.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.FamilyHistoryOfNeurologicalDisease), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.FamilyHistoryOfSubstanceDependency.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.FamilyHistoryOfSubstanceDependency), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            #endregion
+
 
             if (model.IsComplete())
             {
