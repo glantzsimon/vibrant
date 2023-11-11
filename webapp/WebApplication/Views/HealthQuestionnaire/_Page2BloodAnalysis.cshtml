@@ -6,17 +6,32 @@
 <div class="well">
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.DateOfBirth)
+            
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.Gender)
+            
         </div>
     </div>
 </div>
 
 <hr />
 
-@Html.BootstrapActionLinkButton(Dictionary.Back, "Index", "Membership", null, "fa-chevron-left", EButtonClass.Large)
+<a id="backToPage1" class="btn btn btn-primary btn-lg" title="@Dictionary.Back" href="#">
+    <i class="fa-chevron-right"></i>
+    <span class="site-controls-text">
+        @Dictionary.Back
+    </span>
+</a>
+
 @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight, EButtonClass.Large)
+
+<script type="text/javascript">
+
+    $(window).on("load",
+        function() {
+            
+        });
+
+</script>

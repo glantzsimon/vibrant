@@ -163,7 +163,7 @@ namespace K9.DataAccessLayer.Models
             IsBloodAnalysisEnabled() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetBloodAnalysisToggle() =>
-            IsBloodAnalysisEnabled() ? Strings.CssClasses.Toggle : "";
+            IsBloodAnalysisEnabled() ? Strings.CssClasses.Pill : "";
 
         public string GetAcetylationActivePanelClass() =>
             IsAcetylationActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -175,7 +175,7 @@ namespace K9.DataAccessLayer.Models
             IsAcetylationEnabled() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetAcetylationToggle() =>
-            IsAcetylationEnabled() ? Strings.CssClasses.Toggle : "";
+            IsAcetylationEnabled() ? Strings.CssClasses.Pill : "";
 
         public string GetBiometricsActivePanelClass() =>
         IsBiometricsActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -187,7 +187,7 @@ namespace K9.DataAccessLayer.Models
             IsBiometricsEnabled() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetBiometricsToggle() =>
-            IsBiometricsEnabled() ? Strings.CssClasses.Toggle : "";
+            IsBiometricsEnabled() ? Strings.CssClasses.Pill : "";
 
         public string GetDermatoglyphicsActivePanelClass() =>
             IsDermatoglyphicsActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -199,7 +199,7 @@ namespace K9.DataAccessLayer.Models
             IsDermatoglyphicsEnabled() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetDermatoglyphicsToggle() =>
-            IsDermatoglyphicsEnabled() ? Strings.CssClasses.Toggle : "";
+            IsDermatoglyphicsEnabled() ? Strings.CssClasses.Pill : "";
 
         public string GetDentitionActivePanelClass() =>
             IsDentitionActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -211,7 +211,7 @@ namespace K9.DataAccessLayer.Models
             IsDentitionActive() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetDentitionToggle() =>
-            IsDentitionActive() ? Strings.CssClasses.Toggle : "";
+            IsDentitionActive() ? Strings.CssClasses.Pill : "";
 
         public string GetTasterStatusActivePanelClass() =>
             IsTasterStatusActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -223,7 +223,7 @@ namespace K9.DataAccessLayer.Models
             IsTasterStatusActive() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetTasterStatusToggle() =>
-            IsTasterStatusActive() ? Strings.CssClasses.Toggle : "";
+            IsTasterStatusActive() ? Strings.CssClasses.Pill : "";
 
         public string GetFamilyHistoryActivePanelClass() =>
             IsFamilyHistoryActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -235,7 +235,7 @@ namespace K9.DataAccessLayer.Models
             IsFamilyHistoryActive() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetFamilyHistoryToggle() =>
-            IsFamilyHistoryActive() ? Strings.CssClasses.Toggle : "";
+            IsFamilyHistoryActive() ? Strings.CssClasses.Pill : "";
 
         public string GetGeneralHealthActivePanelClass() =>
             IsGeneralHealthActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -247,7 +247,7 @@ namespace K9.DataAccessLayer.Models
             IsGeneralHealthActive() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetGeneralHealthToggle() =>
-            IsGeneralHealthActive() ? Strings.CssClasses.Toggle : "";
+            IsGeneralHealthActive() ? Strings.CssClasses.Pill : "";
 
         public string GetCbsAndMethylationActivePanelClass() =>
             IsCbsAndMethylationActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -259,7 +259,7 @@ namespace K9.DataAccessLayer.Models
             IsCbsAndMethylationActive() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetCbsAndMethylationToggle() =>
-            IsCbsAndMethylationActive() ? Strings.CssClasses.Toggle : "";
+            IsCbsAndMethylationActive() ? Strings.CssClasses.Pill : "";
 
         public string GetDoshasActivePanelClass() =>
             IsDoshasActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -271,7 +271,7 @@ namespace K9.DataAccessLayer.Models
             IsDoshasActive() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetDoshasToggle() =>
-            IsDoshasActive() ? Strings.CssClasses.Toggle : "";
+            IsDoshasActive() ? Strings.CssClasses.Pill : "";
 
         #endregion
 

@@ -1,30 +1,36 @@
 ﻿function bootstrapControls(config) {
+    window.$my = {
+        $divDates: $("div.dateonly"),
+        $divDateTimes: $("div.datetime"),
+        $forms: $("form")
+    };
 
     function initBootstrapDateTimePickers() {
-        $("div.dateonly").datetimepicker({
+        $my.$divDates.datetimepicker({
             format: "L"
         });
 
-        $("div.datetime").datetimepicker({
+        $my.$divDateTimes.datetimepicker({
             format: "L"
         });
 
-        $("div.dateonly, div.datetime").on("dp.change", function (e) {
+        var bindDatesFunction = function (e) {
             var linkId = e.target.firstElementChild.id;
             var formattedDate = e.date.format("YYYY-MM-DD");
             $("input[linkid=" + linkId + "]").val(formattedDate);
-        });
+        };
+
+        $my.$divDates.on("dp.change", bindDatesFunction);
+        $my.$divDateTimes.on("dp.change", bindDatesFunction);
     }
-    
+
     function initBootstrapSelect() {
-        $(".selectpicker").selectpicker({
-            size: 8
-        });
-        $("select").each(function () {
-            this.getSelectedText = function () {
+        let $selects = $("select");
+        for (var i = 0; i < $selects.length; i++) {
+            $selects[i].getSelectedText = function () {
                 return $(this).parent().find("li[data-original-index=" + this.selectedIndex + "] span.text").html();
             };
-        });
+        }
     }
 
     function initCollapsibleDivs() {
@@ -44,14 +50,15 @@
     }
 
     function initBootstrapSortable() {
-        $("ul.sortable").each(function () {
-            var $sortableList = $(this);
+        let $ulSortables = $("ul.sortable");
+        for (var j = 0; j < $ulSortables.length; j++) {
+            var $sortableList = $($ulSortables[i]);
             var displayIndexFieldName = $sortableList.data("displayIndexFieldName");
 
             if ($sortableList.length > 0) {
                 new Sortable($sortableList[0],
                     {
-                        dataIdAttr: 'data-id',
+                        dataIdAttr: "data-id",
 
                         onSort: function (e) {
                             var children = e.to.children;
@@ -71,11 +78,11 @@
                         }
                     });
             }
-        });
+        }
     }
 
     function initTextScroller() {
-        $(".scroller-container").vTicker({
+        $("div.scroller-container").vTicker({
             speed: 500,
             pause: 3000,
             showItems: 3,
@@ -84,7 +91,6 @@
             height: 0,
             direction: "up"
         });
-
     }
 
     function initDateTimeValidation() {
@@ -96,72 +102,89 @@
     }
 
     function initToolTips() {
-        $('[data-toggle="tooltip"]').tooltip();
+        $("[data-toggle='tooltip']").tooltip();
     }
 
     function selectFirstFormInput() {
-        $("form").find("input[type=text], textarea, select").filter(":not(#main-search):visible:first").focus();
+        if ($my.$forms.length)
+            $my.$forms.find("input[type=text], textarea, select").filter(":not(#main-search):visible:first").focus();
     }
 
     function initCollapsiblePanels() {
-        $("a.collapsible-panel-link").mouseup(function () {
-            var el = $(this);
-            var i = el.find("i.fa");
-            if (el.attr("aria-expanded") !== "true") {
-                i.removeClass("fa-caret-down");
-                i.addClass("fa-caret-up");
-            } else {
-                i.removeClass("fa-caret-up");
-                i.addClass("fa-caret-down");
-            }
-        });
+        let $collapsiblePanels = $("a.collapsible-panel-link");
+        if ($collapsiblePanels.length) {
+            $collapsiblePanels.mouseup(function() {
+                var el = $(this);
+                var i = el.find("i.fa");
+                if (el.attr("aria-expanded") !== "true") {
+                    i.removeClass("fa-caret-down");
+                    i.addClass("fa-caret-up");
+                } else {
+                    i.removeClass("fa-caret-up");
+                    i.addClass("fa-caret-down");
+                }
+            });
+        }
 
-        $(".collapsible-panel-anchor").click(function () {
-            var el = $(this);
-            var panelId = el.attr("data-panel-id");
+        let $collapsiblePanelAnchors = $(".collapsible-panel-anchor");
+        if ($collapsiblePanelAnchors.length) {
+            $collapsiblePanelAnchors.click(function() {
+                var el = $(this);
+                var panelId = el.data("panel-id");
 
-            window.setTimeout(function () {
-                $("[data-panel-id='" + panelId + "'].panel-collapse").collapse("show");
-            }, 200);
-        });
+                window.setTimeout(function() {
+                        $("div[data-panel-id='" + panelId + "'].panel-collapse").collapse("show");
+                    },
+                    200);
+            });
+        }
     }
 
     function initQuantityInputs() {
-        let $typeInput = $("form").find("select[data-input-id='ingredient-type'], select[data-input-id='product-type'], input[data-input-id='product-type']");
-        let quantityFn = function ($el) {
-            if ($el.length > 0) {
-                let isHidden = $el[0].type === "hidden";
-                var type = isHidden ? $el[0].value : $el[0].getSelectedText();
-                var measure = type === "Liquid" ? "ml" : type === "Capsules" ? "capsules" : "mg";
-                let $labels = isHidden ? $el.parent().find("span[data-input-id='quantity']") : $el.closest("form").find("span[data-input-id='quantity']");
-                $labels.each(function () {
-                    var $label = $(this);
-                    if ($label.parent().find("input").attr("id") === "AmountPerServing" && measure === "capsules") {
-                        $label.text("mg");
-                    } else {
-                        $label.text(measure);
+        if ($my.$forms.length) {
+            let $typeInput = $my.$forms.find("select[data-input-id='ingredient-type'], select[data-input-id='product-type'], input[data-input-id='product-type']");
+            
+            let quantityFn = function ($el) {
+                if ($el.length > 0) {
+                    let isHidden = $el[0].type === "hidden";
+                    let type = isHidden ? $el[0].value : $el[0].getSelectedText();
+                    let measure = type === "Liquid" ? "ml" : type === "Capsules" ? "capsules" : "mg";
+                    let $labels = isHidden ? $el.parent().find("span[data-input-id='quantity']") : $el.closest("form").find("span[data-input-id='quantity']");
+                    
+                    if ($labels.length) {
+                        for (var i = 0; i < $labels.length; i++) {
+                            var $label = $labels[i];
+                            if ($label.parent().find("input").attr("id") === "AmountPerServing" && measure === "capsules") {
+                                $label.text("mg");
+                            } else {
+                                $label.text(measure);
+                            }   
+                        }
                     }
-                });
-            }
-        };
-        $typeInput.change(function () {
+                }
+            };
+            $typeInput.change(function () {
+                quantityFn($typeInput);
+            });
             quantityFn($typeInput);
-        });
-        quantityFn($typeInput);
+        }
     }
 
     function initGlossary() {
-        $("span.glossary").each(function () {
-            var $el = $(this);
-            var word = ($el).attr("key") || $el.html().replace(/\s+/g, "");
-            var glossaryItem = config.glossaryItems.find(e => e.Name.toLowerCase() === word.toLowerCase());
+        var $glossarySpans = $("span.glossary");
+        if ($glossarySpans.length) {
+            for (var i = 0; i < $glossarySpans.length; i++) {
+                var $el = $glossarySpans[i];
+                var word = ($el).attr("key") || $el.html().replace(/\s+/g, "");
+                var glossaryItem = config.glossaryItems.find(e => e.Name.toLowerCase() === word.toLowerCase());
 
-            if (glossaryItem) {
-                $el.tooltip({
-                    title: glossaryItem.Description
-                });
+                if (glossaryItem) {
+                    $el.tooltip({
+                        title: glossaryItem.Description
+                    });
+                }
             }
-        });
+        }
     }
 
     function getDictionaryItem(key) {
@@ -172,7 +195,7 @@
         }
     }
 
-    function initGauges(maxValue) {
+    function initGauges() {
         var opts = {
             angle: 0.15, // The span of the gauge arc
             lineWidth: 0.44,
@@ -191,44 +214,50 @@
             highDpiSupport: true
         };
 
-        $(".gauge").each(function () {
-            var $el = $(this);
-            var value = parseInt($el.attr("data-value") || 0);
-            var maxValue = parseInt($el.attr("data-max-value") || 10);
-            var isInverted = $el.attr("data-invert") === "true" ? true : false;
+        var $gauges = $(".gauge");
+        if ($gauges.length) {
+            for (var i = 0; i < $gauges.length; i++) {
+                var $el = $gauges[i];
+                var value = parseInt($el.attr("data-value") || 0);
+                var maxValue = parseInt($el.attr("data-max-value") || 10);
+                var isInverted = $el.attr("data-invert") === "true" ? true : false;
 
-            if (isInverted) {
-                opts.percentColors = [[0.0, "#08F321"], [0.50, "#FCDA14"], [1.0, "#FD0510"]];
-            }
-            else {
-                opts.percentColors = [[0.0, "#FD0510"], [0.50, "#FCDA14"], [1.0, "#08F321"]];
-            }
+                if (isInverted) {
+                    opts.percentColors = [[0.0, "#08F321"], [0.50, "#FCDA14"], [1.0, "#FD0510"]];
+                }
+                else {
+                    opts.percentColors = [[0.0, "#FD0510"], [0.50, "#FCDA14"], [1.0, "#08F321"]];
+                }
 
-            var gauge = new Gauge($el[0]).setOptions(opts);
-            gauge.maxValue = maxValue;
-            gauge.setMinValue(0);
-            gauge.animationSpeed = 32;
-            gauge.set(value);
-        });
+                var gauge = new Gauge($el[0]).setOptions(opts);
+                gauge.maxValue = maxValue;
+                gauge.setMinValue(0);
+                gauge.animationSpeed = 32;
+                gauge.set(value);       
+            }
+        }
     }
 
     function initDataTables() {
-        $(".k9-datatable").DataTable({
-            "columnDefs": customColumnDefs || [],
-            "order": customOrder || []
-        });
+        let $dataTables = $("table.k9-datatable");
+        if ($dataTables.length) {
+            $dataTables.DataTable({
+                "columnDefs": customColumnDefs || [],
+                "order": customOrder || []
+            });
+        }
     }
 
     var init = function () {
         initBootstrapDateTimePickers();
         initBootstrapSelect();
         initDateTimeValidation();
-        initToolTips();
+        //initToolTips();
         initTextScroller();
         initCollapsiblePanels();
         initQuantityInputs();
         initGlossary();
-        initGauges();
+        //initGauges();
         initDataTables();
         initBootstrapSortable();
         initCollapsibleDivs();

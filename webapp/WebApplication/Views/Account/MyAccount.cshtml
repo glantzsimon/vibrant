@@ -55,11 +55,11 @@
         <div id="health-questionnaire" class="tab-pane fade @hqPaneClass">
             @if (Model.HealthQuestionnaire.IsStarted())
             {
-                @Html.BootstrapActionLinkButton(Dictionary.UpdateHealthQuestionnaire, "AnswerHealthQuestionnaire", "HealthQuestionnaire", new { clientId = Model.Client.Id })
+                @Html.BootstrapActionLinkButton(Dictionary.UpdateHealthQuestionnaire, "AnswerHealthQuestionnaire", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Info)
             }
             else
             {
-                @Html.BootstrapActionLinkButton(Dictionary.AnswerHealthQuestionnaire, "AnswerHealthQuestionnaire", "HealthQuestionnaire", new { clientId = Model.Client.Id })
+                @Html.BootstrapActionLinkButton(Dictionary.AnswerHealthQuestionnaire, "AnswerHealthQuestionnaire", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Info)
             }
         </div>
 

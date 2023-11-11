@@ -7,7 +7,7 @@
     <span class="field-validation-valid" data-valmsg-for="Search" data-valmsg-replace="true"></span>
 </div>
 <script type="text/javascript">
-    $(function() {
+    $(window).on("load", function() {
         searchTimeout = null;
 
         $("#Search").keyup(function() {

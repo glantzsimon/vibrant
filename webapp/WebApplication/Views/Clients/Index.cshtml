@@ -24,24 +24,24 @@
         new Button
         {
             Action = "ViewClientAddressLabel",
-            Text = Dictionary.ViewClientAddressLabel,
+            Text = $" {Dictionary.ViewClientAddressLabel}",
             ButtonType = K9.SharedLibrary.Models.EButtonType.Info,
-            IconCssClass = "fa fa-address"
+            IconCssClass = "far fa-file-alt"
         },
         new Button
         {
             Action = "ReviewCommission",
             Text = Dictionary.ReviewRepCommissions,
             ButtonType = K9.SharedLibrary.Models.EButtonType.Info,
-            IconCssClass = "fa fa-money"
+            IconCssClass = "fas fa-coins"
         },
         new Button
         {
             Action = "AnswerHealthQuestionnaire",
             Controller = "HealthQuestionnaire",
-            Text = Dictionary.AnswerHealthQuestionnaire,
-            ButtonType = K9.SharedLibrary.Models.EButtonType.Primary,
-            IconCssClass = "fa fa-question-circle"
+            Text = $" {Dictionary.HealthQuestionnaire}",
+            ButtonType = K9.SharedLibrary.Models.EButtonType.Success,
+            IconCssClass = "fa fa-heartbeat"
         }
     }
 })

@@ -24,7 +24,7 @@
     };
 
     function renderYesNo(value, type, row) {
-        return value ? '@K9.Base.Globalisation.Dictionary.Yes' : '@K9.Base.Globalisation.Dictionary.No';
+        return value ? "@K9.Base.Globalisation.Dictionary.Yes" : "@K9.Base.Globalisation.Dictionary.No";
     }
 
     function renderEmail(value, type, row) {
@@ -34,23 +34,26 @@
     function getColumnDefs() {
         var columnDefs = @Model.GetColumnDefsJson();
 
-        $(columnDefs).each(function() {
-            var c = this;
-            if (c.dataType === 'system.boolean') {
-                c.render = renderYesNo;
-            }
+        var $columnDefs = $(columnDefs);
+        if ($columnDefs.length) {
+            for (var i = 0; i < $columnDefs.length; i++) {
+                var $columnDef = this;
+                if ($columnDef.dataType === "system.boolean") {
+                    $columnDef.render = renderYesNo;
+                }
 
-            if (c.dataType === 'system.string') {
-                c.render = renderEmail;
-            }
+                if ($columnDef.dataType === "system.string") {
+                    $columnDef.render = renderEmail;
+                }
 
-            if (customColumnDefs !== null) {
-                var customColumnDef = customColumnDefs.find(cdef => cdef.dataType === c.dataType);
-                if (customColumnDef && customColumnDef.render) {
-                    c.render = customColumnDef.render;
+                if (customColumnDefs !== null) {
+                    var customColumnDef = customColumnDefs.find(cdef => cdef.dataType === $columnDef.dataType);
+                    if (customColumnDef && customColumnDef.render) {
+                        $columnDef.render = customColumnDef.render;
+                    }
                 }
             }
-        });
+        }
 
         if (@Model.AllowCrud().ToString().ToLower()) {
             columnDefs.push({
@@ -62,7 +65,7 @@
         return columnDefs;
     }
 
-    $(function() {
+    $(window).on("load", function() {
         var table = $("table#@Model.TableId");
         table.on("xhr.dt", function(e, settings, json, xhr) {
             var initTableButtons = function() {
@@ -73,6 +76,7 @@
         dataTable = table.DataTable({
             "ajax": table.attr("data-url"),
             "columns": @Model.GetColumnsJson(),
+            "pageLength": 100,
             "columnDefs": getColumnDefs(),
             "processing": true,
             "serverSide": true,

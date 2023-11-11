@@ -2,7 +2,7 @@
 @using K9.Base.WebApplication.ViewModels
 
 <script type="text/javascript">
-    $(function() {
+    $(window).on("load", function() {
 
         $("button.add-to-cart-button").click(function() {
             $("#pageSpinner").show();

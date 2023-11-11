@@ -139,7 +139,7 @@
 
 <script type="text/javascript">
 
-    $(function() {
+    $(window).on("load", function() {
         $("#Discount").change(function() {
             var totalPrice = $("#TotalPrice").val();
             var perc = $("#Discount").val();
