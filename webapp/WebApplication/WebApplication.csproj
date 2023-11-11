@@ -1596,6 +1596,7 @@
     <Content Include="Views\HealthQuestionnaire\_Page4Biometrics.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_PageRequirements.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\WristCircumference.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\GonialAngle.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

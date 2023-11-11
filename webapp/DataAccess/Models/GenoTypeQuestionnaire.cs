@@ -305,6 +305,7 @@ namespace K9.DataAccessLayer.Models
             return ERatio.Average;
         }
 
+        [UIHint("GonialAngle")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GonialAngleQuestionLabel)]
         public EGonialAngle? GonialAngle { get; set; }
 

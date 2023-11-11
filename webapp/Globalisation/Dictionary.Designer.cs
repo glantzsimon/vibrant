@@ -590,7 +590,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Biometrics is literally “the measure of living things”: It’s a way of measuring your morphology and other key elements of your physical self. Our growth patterns are influenced by various hormones and growth factors. Therefore, an analysis of our morphology yields important information that can be used in health analysis.
+        ///    Biometrics is literally "the measure of living things": It’s a way of measuring your morphology and other key elements of your physical self. Our growth patterns are influenced by various hormones and growth factors. Therefore, an analysis of our morphology yields important information that can be used in health analysis.
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -2958,7 +2958,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    The jaw can be anything from wide-angled or &quot;almond shaped&quot; to narrow or, what is sometimes referred to as a “lantern jaw”. This angle is called the &quot;gonial angle&quot; and indicates exposure to certain prenatal growth factors.
+        ///    The jaw can be anything from wide-angled or &quot;almond shaped&quot; to narrow or, what is sometimes referred to as a "lantern jaw". This angle is called the &quot;gonial angle&quot; and indicates exposure to certain prenatal growth factors.
         ///&lt;/p&gt;
         ///&lt;div&gt;
         ///    &lt;img title=&quot;Gonial Angle&quot; alt=&quot;Gonial Angle&quot; class=&quot;auto-size center-block&quot; src=&quot;../Images/questionnaire/gonial-angle.png&quot; /&gt;
@@ -3324,7 +3324,7 @@ namespace K9.Globalisation {
         ///    Index-to-ring-finger or D2:D4 ratio is an excellent marker for sex hormone exposure. Higher levels of exposure to androgens in the womb correlates with longer ring fingers, whereas higher estrogen correlates with longer index fingers. The ration of hormones holds key information about a person&apos;s health and their ideal diet and lifestyle.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    A comparison of the length of the index and ring fingers in each hand gives some indication of symmetry. The degree of “sameness”. Asymmetry is a p [rest of string was truncated]&quot;;.
+        ///    A comparison of the length of the index and ring fingers in each hand gives some indication of symmetry. The degree of "sameness". Asymmetry is a p [rest of string was truncated]&quot;;.
         /// </summary>
         public static string IndexAndRingFingerLengthDescription {
             get {
@@ -5304,7 +5304,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h4&gt;Introduction&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    This privacy notice aims to inform you about how we collect and process any information that we collect from you, or that you provide to us. It covers information that could identify you (“personal information”) and information that could not. In the context of the law and this notice, “process” means collect, s [rest of string was truncated]&quot;;.
+        ///    This privacy notice aims to inform you about how we collect and process any information that we collect from you, or that you provide to us. It covers information that could identify you ("personal information") and information that could not. In the context of the law and this notice, "process" means collect, s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PrivacyPolicy {
             get {
@@ -6763,7 +6763,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Your body type—also known as your somatotype—can tell us quite a bit about your metabolism and your genetic profile. This is a fairly easy question to answer, although I’m going to suggest you get a friend to confirm your results anyway. In our “thin is in” culture, lots of women consider themselves “rounded” when virtually everyone else would call them “muscular” or even “lanky.” Similarly, many men who are muscular may mistakingly think they are thin.
+        ///    Your body type—also known as your somatotype—can tell us quite a bit about your metabolism and your genetic profile. This is a fairly easy question to answer, although I’m going to suggest you get a friend to confirm your results anyway. In our "thin is in" culture, lots of women consider themselves "rounded" when virtually everyone else would call them "muscular" or even "lanky." Similarly, many men who are muscular may mistakingly think they are thin.
         ///&lt;/p&gt;
         ///&lt;h4&gt;Which of the following most resemb [rest of string was truncated]&quot;;.
         /// </summary>
@@ -7443,7 +7443,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    A tolerant strategy is accepting and adaptable: &quot;what worked yesterday may not work tomorrow, so don’t react too quickly - figure it out&quot;. This strategy is constantly adapting its responses to the environment, often by altering the binding sites, or receptors, that are found on the cells and tissues. Many of these receptors are used by microbes to attach to the tissues and organs. Sometimes this is harmonious (such as our relationship with the “good bacteria,” or probiotics, in our digestive tract) [rest of string was truncated]&quot;;.
+        ///    A tolerant strategy is accepting and adaptable: &quot;what worked yesterday may not work tomorrow, so don’t react too quickly - figure it out&quot;. This strategy is constantly adapting its responses to the environment, often by altering the binding sites, or receptors, that are found on the cells and tissues. Many of these receptors are used by microbes to attach to the tissues and organs. Sometimes this is harmonious (such as our relationship with the "good bacteria," or probiotics, in our digestive tract) [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TolerantDescription {
             get {

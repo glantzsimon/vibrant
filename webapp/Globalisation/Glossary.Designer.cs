@@ -342,7 +342,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Telomerase is an enzyme found inside our cells, which may be related to the aging process. It adds short, repetitive “caps” to our DNA strands. These caps are called “telomeres.”
+        ///   Looks up a localized string similar to Telomerase is an enzyme found inside our cells, which may be related to the aging process. It adds short, repetitive "caps" to our DNA strands. These caps are called "telomeres."
         ///
         ///Each time our cells divide, they must replicate their DNA so that each daughter cell gets a full set of operating instructions. However, with each cell division, a small part of the DNA strand’s protective telomeres are lost.
         ///
