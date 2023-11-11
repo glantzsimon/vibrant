@@ -2680,6 +2680,24 @@
   <data name="GeneticProfileTest" xml:space="preserve">
     <value>Genetic Profile Test</value>
   </data>
+  <data name="HowToMeasureLengthOfFingers" xml:space="preserve">
+    <value>How to measure the length of your fingers</value>
+  </data>
+  <data name="HowToMeasureSpaceBetweenThighs" xml:space="preserve">
+    <value>How to measure the space between your thighs</value>
+  </data>
+  <data name="LeftIndexFingerLengthQuestionLabel" xml:space="preserve">
+    <value>How long is your left index finger?</value>
+  </data>
+  <data name="LeftRingFingerLengthQuestionLabel" xml:space="preserve">
+    <value>How long is your left ring finger?</value>
+  </data>
+  <data name="LengthOfIndexFingers" xml:space="preserve">
+    <value>Length of Index Fingers</value>
+  </data>
+  <data name="LengthOfRingFingers" xml:space="preserve">
+    <value>Length of Ring Fingers</value>
+  </data>
   <data name="LowerLegLengthTitle" xml:space="preserve">
     <value>Lower Leg Length</value>
   </data>
@@ -2695,11 +2713,23 @@
   <data name="Requirements" xml:space="preserve">
     <value>Requirements</value>
   </data>
+  <data name="RightIndexFingerLengthQuestionLabel" xml:space="preserve">
+    <value>How long is your right index finger?</value>
+  </data>
+  <data name="RightRingFingerLengthQuestionLabel" xml:space="preserve">
+    <value>How long is your right ring finger?</value>
+  </data>
   <data name="SittingHeightTitle" xml:space="preserve">
     <value>Sitting Height</value>
   </data>
+  <data name="SpaceBetweenThighsTitle" xml:space="preserve">
+    <value>Space Between Thighs</value>
+  </data>
   <data name="StandingHeightTitle" xml:space="preserve">
     <value>Standing Height</value>
+  </data>
+  <data name="UpperLegLengthTitle" xml:space="preserve">
+    <value>Upper Leg Length</value>
   </data>
   <data name="WristCircumferenceTest" xml:space="preserve">
     <value>Wrist Circumference Test</value>

@@ -5,6 +5,12 @@
 @using K9.WebApplication.Options
 @model HealthQuestionnaire
 
+<div class="row">
+    <div class="col-xs-12">
+        <img title="Height Measurements" alt="Height Measurements" class="auto-size center-block" src="../Images/questionnaire/height-measurements.png" />
+    </div>
+</div>
+
 <div class="well">
 
     <div class="row">
@@ -122,6 +128,11 @@
 
     <div class="row">
         <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.UpperLegLengthTitle</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
             @Html.LabelFor(e => e.UpperLegLength)
         </div>
     </div>
@@ -143,6 +154,11 @@
 
 <div class="well">
 
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.LengthOfIndexFingers</h3>
+        </div>
+    </div>
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.IndexFingerLengthLeft)
@@ -170,7 +186,21 @@
             })
         </div>
     </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.CollapsiblePanel(Dictionary.HowToMeasureLengthOfFingers, Dictionary.FingerLengthInstructions, true)
+        </div>
+    </div>
 
+</div>
+
+<div class="well">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.LengthOfRingFingers</h3>
+        </div>
+    </div>
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.RingFingerLengthLeft)
@@ -198,7 +228,21 @@
             })
         </div>
     </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.CollapsiblePanel(Dictionary.HowToMeasureLengthOfFingers, Dictionary.FingerLengthInstructions, true)
+        </div>
+    </div>
 
+</div>
+
+<div class="well">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.SpaceBetweenThighsTitle</h3>
+        </div>
+    </div>
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.SpaceBetweenThighs)
@@ -212,6 +256,15 @@
             })
         </div>
     </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.CollapsiblePanel(Dictionary.HowToMeasureSpaceBetweenThighs, Dictionary.LegGapMeasurementInstructions, true)
+        </div>
+    </div>
+
+</div>
+
+<div class="well">
 
     <div class="row">
         <div class="col-xs-12">

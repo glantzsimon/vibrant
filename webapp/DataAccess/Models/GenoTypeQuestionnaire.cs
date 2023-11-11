@@ -151,7 +151,7 @@ namespace K9.DataAccessLayer.Models
         public double LowerLegLength { get; set; }
 
         [UIHint("Measurement")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LowerLegLengthLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.UpperLegLengthLabel)]
         public double UpperLegLength { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TorsoLengthGreatherThanLegLengthLabel)]
@@ -161,19 +161,19 @@ namespace K9.DataAccessLayer.Models
         public bool IsLowerLegLengthGreaterThanUpperLegLength() => LowerLegLength >= UpperLegLength;
 
         [UIHint("Measurement")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftIndexFingerLengthLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftIndexFingerLengthQuestionLabel)]
         public double IndexFingerLengthLeft { get; set; }
 
         [UIHint("Measurement")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightIndexFingerLengthLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightIndexFingerLengthQuestionLabel)]
         public double IndexFingerLengthRight { get; set; }
 
         [UIHint("Measurement")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftRingFingerLengthLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftRingFingerLengthQuestionLabel)]
         public double RingFingerLengthLeft { get; set; }
 
         [UIHint("Measurement")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightRingFingerLengthLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightRingFingerLengthQuestionLabel)]
         public double RingFingerLengthRight { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsLeftIndexFingerLongerThanLeftRingFingerLabel)]

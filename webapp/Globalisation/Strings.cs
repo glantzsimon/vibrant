@@ -267,6 +267,10 @@
             public const string RightIndexFingerLengthLabel = "RightIndexFingerLengthLabel";
             public const string LeftRingFingerLengthLabel = "LeftRingFingerLengthLabel";
             public const string RightRingFingerLengthLabel = "RightRingFingerLengthLabel";
+            public const string LeftIndexFingerLengthQuestionLabel = "LeftIndexFingerLengthQuestionLabel";
+            public const string RightIndexFingerLengthQuestionLabel = "RightIndexFingerLengthQuestionLabel";
+            public const string LeftRingFingerLengthQuestionLabel = "LeftRingFingerLengthQuestionLabel";
+            public const string RightRingFingerLengthQuestionLabel = "RightRingFingerLengthQuestionLabel";
             public const string WaistSizeLabel = "WaistSizeLabel";
             public const string HipSizeLabel = "HipSizeLabel";
             public const string HeadWidthLabel = "HeadWidthLabel";

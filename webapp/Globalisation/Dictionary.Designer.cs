@@ -3176,11 +3176,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to How to measure the length of your fingers.
+        /// </summary>
+        public static string HowToMeasureLengthOfFingers {
+            get {
+                return ResourceManager.GetString("HowToMeasureLengthOfFingers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to How to measure your lower leg.
         /// </summary>
         public static string HowToMeasureLowerLeg {
             get {
                 return ResourceManager.GetString("HowToMeasureLowerLeg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How to measure the space between your thighs.
+        /// </summary>
+        public static string HowToMeasureSpaceBetweenThighs {
+            get {
+                return ResourceManager.GetString("HowToMeasureSpaceBetweenThighs", resourceCulture);
             }
         }
         
@@ -3721,6 +3739,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to How long is your left index finger?.
+        /// </summary>
+        public static string LeftIndexFingerLengthQuestionLabel {
+            get {
+                return ResourceManager.GetString("LeftIndexFingerLengthQuestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Left Index Fingerpring Type.
         /// </summary>
         public static string LeftIndexFingerprintLabel {
@@ -3762,6 +3789,15 @@ namespace K9.Globalisation {
         public static string LeftRingFingerLengthLabel {
             get {
                 return ResourceManager.GetString("LeftRingFingerLengthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How long is your left ring finger?.
+        /// </summary>
+        public static string LeftRingFingerLengthQuestionLabel {
+            get {
+                return ResourceManager.GetString("LeftRingFingerLengthQuestionLabel", resourceCulture);
             }
         }
         
@@ -3813,6 +3849,24 @@ namespace K9.Globalisation {
         public static string Legumes {
             get {
                 return ResourceManager.GetString("Legumes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Length of Index Fingers.
+        /// </summary>
+        public static string LengthOfIndexFingers {
+            get {
+                return ResourceManager.GetString("LengthOfIndexFingers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Length of Ring Fingers.
+        /// </summary>
+        public static string LengthOfRingFingers {
+            get {
+                return ResourceManager.GetString("LengthOfRingFingers", resourceCulture);
             }
         }
         
@@ -3883,8 +3937,7 @@ namespace K9.Globalisation {
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Stand straight without shoes and have your assistant measure up the side of your leg, starting from the place where your ankle sticks out the farthest and ending at the bump on the outer side of your leg, just below your kneecap. If you’re carrying excess weight, you may have trouble finding the bump; if so, just flex your knee until you it can be felt.
         ///&lt;/p&gt;
-        ///&lt;div&gt;
-        ///    &lt;img title=&quot;Upper Lower Leg Measurements&quot; alt=&quot;Upper Lower Leg Measurements&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/questionn [rest of string was truncated]&quot;;.
+        ///.
         /// </summary>
         public static string LowerLegLengthInstructions {
             get {
@@ -6193,6 +6246,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to How long is your right index finger?.
+        /// </summary>
+        public static string RightIndexFingerLengthQuestionLabel {
+            get {
+                return ResourceManager.GetString("RightIndexFingerLengthQuestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Right Index Fingerprint Type.
         /// </summary>
         public static string RightIndexFingerprintLabel {
@@ -6234,6 +6296,15 @@ namespace K9.Globalisation {
         public static string RightRingFingerLengthLabel {
             get {
                 return ResourceManager.GetString("RightRingFingerLengthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How long is your right ring finger?.
+        /// </summary>
+        public static string RightRingFingerLengthQuestionLabel {
+            get {
+                return ResourceManager.GetString("RightRingFingerLengthQuestionLabel", resourceCulture);
             }
         }
         
@@ -6663,6 +6734,15 @@ namespace K9.Globalisation {
         public static string SpaceBetweenThighsLabel {
             get {
                 return ResourceManager.GetString("SpaceBetweenThighsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Space Between Thighs.
+        /// </summary>
+        public static string SpaceBetweenThighsTitle {
+            get {
+                return ResourceManager.GetString("SpaceBetweenThighsTitle", resourceCulture);
             }
         }
         
@@ -7604,6 +7684,15 @@ namespace K9.Globalisation {
         public static string UpperLegLengthLabel {
             get {
                 return ResourceManager.GetString("UpperLegLengthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upper Leg Length.
+        /// </summary>
+        public static string UpperLegLengthTitle {
+            get {
+                return ResourceManager.GetString("UpperLegLengthTitle", resourceCulture);
             }
         }
         
