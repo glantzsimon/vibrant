@@ -108,9 +108,11 @@
     <EmbeddedResource Include="Glossary.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Glossary.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Questionnaires\en-gb\CBSMethylationDescription.htm" />
     <Content Include="Questionnaires\en-gb\WristCircumferenceTestInstructions.htm" />
     <Content Include="Questionnaires\en-gb\TolerantDescription.htm" />
     <Content Include="Questionnaires\en-gb\ThriftyDescription.htm" />

@@ -242,6 +242,13 @@
             public const string AmmoniaSmellLabel = "AmmoniaSmellLabel";
             public const string SugarCrashesLabel = "SugarCrashesLabel";
             public const string OCDLabel = "OCDLabel";
+            public const string ChronicViralInfectionsLabel = "ChronicViralInfectionsLabel";
+            public const string SlowWoundHealingLabel = "SlowWoundHealingLabel";
+            public const string SpiderVeinsLabel = "SpiderVeinsLabel";
+            public const string StretchMarksLabel = "StretchMarksLabel";
+            public const string FrequentNighttimeUrinationLabel = "FrequentNighttimeUrinationLabel";
+            public const string HerpesLabel = "HerpesLabel";
+            public const string IrritabilityLabel = "IrritabilityLabel";
             public const string SurgeryDetailsLabel = "SurgeryDetailsLabel";
             public const string PrescriptionMedicationLabel = "PrescriptionMedicationLabel";
             public const string SupplementsLabel = "SupplementsLabel";

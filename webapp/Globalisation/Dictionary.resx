@@ -2809,6 +2809,12 @@
   <data name="CandidaFungusLabel" xml:space="preserve">
     <value>Do you often experience issues related to candida or other yeast or fungus, such as athlete's foot, thrush, etc?</value>
   </data>
+  <data name="CBSMethylationDescription" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\cbsmethylationdescription.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ChronicViralInfectionsLabel" xml:space="preserve">
+    <value>Do you have a history of chronic viral infections?</value>
+  </data>
   <data name="CoarseThinEyebrowsLabel" xml:space="preserve">
     <value>Is the outer third of your eyebrows thinning or do you have any coarse, long eyebrow hairs?</value>
   </data>
@@ -2842,6 +2848,9 @@
   <data name="ExerciseLabel" xml:space="preserve">
     <value>How often do you exercise and what types of exercise do you do? Please profide details.</value>
   </data>
+  <data name="FrequentNighttimeUrinationLabel" xml:space="preserve">
+    <value>Do you wake up frequently at night to urinate?</value>
+  </data>
   <data name="GasLabel" xml:space="preserve">
     <value>Do you often experience flatulence, especially after meals?</value>
   </data>
@@ -2850,6 +2859,9 @@
   </data>
   <data name="HandednessLabel" xml:space="preserve">
     <value>Are you right-handed, left-handed or ambidextrous?</value>
+  </data>
+  <data name="HerpesLabel" xml:space="preserve">
+    <value>Do you experience frequent herpes outbreaks?</value>
   </data>
   <data name="HighBloodPressureLabel" xml:space="preserve">
     <value>Have you ever been diagnosed with high blood pressure?</value>
@@ -2865,6 +2877,9 @@
   </data>
   <data name="InsomniaLabel" xml:space="preserve">
     <value>Do you ever experience insomnia, either difficulty getting to sleep or staying asleep?</value>
+  </data>
+  <data name="IrritabilityLabel" xml:space="preserve">
+    <value>Do you often feel irritable?</value>
   </data>
   <data name="JointInflammationLabel" xml:space="preserve">
     <value>Do you ever experience joint pain or stiffness?</value>
@@ -2929,8 +2944,17 @@
   <data name="SkinIssuesLabel" xml:space="preserve">
     <value>Do you experience any issues with your skin, such as rashes, eczema, fungus, dermatitis or other complaint?</value>
   </data>
+  <data name="SlowWoundHealingLabel" xml:space="preserve">
+    <value>Do you experience slow wound-healing?</value>
+  </data>
   <data name="SmokeLabel" xml:space="preserve">
     <value>Do you smoke tobacco?</value>
+  </data>
+  <data name="SpiderVeinsLabel" xml:space="preserve">
+    <value>Do you have many spider veins, varicose veins or experience hemorrhoids?</value>
+  </data>
+  <data name="StretchMarksLabel" xml:space="preserve">
+    <value>Do you have any stretchmarks?</value>
   </data>
   <data name="SugarCrashesLabel" xml:space="preserve">
     <value>Do you ever experience sugar crashes after eating carbohydrates?</value>

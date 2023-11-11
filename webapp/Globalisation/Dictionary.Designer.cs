@@ -980,6 +980,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
+        ///    This section is designed to determine the whether you have specific metabolic variations, which, if present, would mean that a specialised diet and supplement plan may be appropriate. CBS refers to &quot;CBS upregulation&quot;, which occur in a not insignificant percentage of the population, especially in respond to environmental chemicals, infection and chronic stress.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string CBSMethylationDescription {
+            get {
+                return ResourceManager.GetString("CBSMethylationDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    &lt;strong&gt;Could a &lt;span class=&quot;glossary&quot; key=&quot;CBSMutation&quot;&gt;CBS mutation&lt;/span&gt; be causing your chronic health problems?&lt;/strong&gt;
         ///&lt;/p&gt;
         ///&lt;div&gt;
@@ -1083,6 +1094,15 @@ namespace K9.Globalisation {
         public static string CheckOutOurProducts {
             get {
                 return ResourceManager.GetString("CheckOutOurProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you have a history of chronic viral infections?.
+        /// </summary>
+        public static string ChronicViralInfectionsLabel {
+            get {
+                return ResourceManager.GetString("ChronicViralInfectionsLabel", resourceCulture);
             }
         }
         
@@ -2993,6 +3013,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you wake up frequently at night to urinate?.
+        /// </summary>
+        public static string FrequentNighttimeUrinationLabel {
+            get {
+                return ResourceManager.GetString("FrequentNighttimeUrinationLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Friday.
         /// </summary>
         public static string Friday {
@@ -3429,6 +3458,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you experience frequent herpes outbreaks?.
+        /// </summary>
+        public static string HerpesLabel {
+            get {
+                return ResourceManager.GetString("HerpesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Have you ever been diagnosed with high blood pressure?.
         /// </summary>
         public static string HighBloodPressureLabel {
@@ -3807,6 +3845,15 @@ namespace K9.Globalisation {
         public static string InvoiceNumbersLabel {
             get {
                 return ResourceManager.GetString("InvoiceNumbersLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you often feel irritable?.
+        /// </summary>
+        public static string IrritabilityLabel {
+            get {
+                return ResourceManager.GetString("IrritabilityLabel", resourceCulture);
             }
         }
         
@@ -7213,6 +7260,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you experience slow wound-healing?.
+        /// </summary>
+        public static string SlowWoundHealingLabel {
+            get {
+                return ResourceManager.GetString("SlowWoundHealingLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Small.
         /// </summary>
         public static string Small {
@@ -7293,6 +7349,15 @@ namespace K9.Globalisation {
         public static string SpaceBetweenThighsTitle {
             get {
                 return ResourceManager.GetString("SpaceBetweenThighsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you have many spider veins, varicose veins or experience hemorrhoids?.
+        /// </summary>
+        public static string SpiderVeinsLabel {
+            get {
+                return ResourceManager.GetString("SpiderVeinsLabel", resourceCulture);
             }
         }
         
@@ -7423,6 +7488,15 @@ namespace K9.Globalisation {
         public static string Straight {
             get {
                 return ResourceManager.GetString("Straight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you have any stretchmarks?.
+        /// </summary>
+        public static string StretchMarksLabel {
+            get {
+                return ResourceManager.GetString("StretchMarksLabel", resourceCulture);
             }
         }
         
