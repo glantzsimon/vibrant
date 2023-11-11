@@ -28,7 +28,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProtocolTypeLabel)]
         public EProtocolType Type { get; set; }
 
-        [UIHint("Frequency")]
+        [UIHint("ProtocolFrequency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FrequencyLabel)]
         public EProtocolFrequency ProtocolFrequency { get; set; }
 
