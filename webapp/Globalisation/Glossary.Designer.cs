@@ -117,6 +117,15 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to A genetic SNP or polymorphism (i.e. variant), which predisposes certain individual&apos;s to difficulties processing and detoxifying certain environmental chemicals as well as making them more susceptible to stress..
         /// </summary>
+        public static string CBS {
+            get {
+                return ResourceManager.GetString("CBS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A genetic SNP or polymorphism (i.e. variant), which predisposes certain individual&apos;s to difficulties processing and detoxifying certain environmental chemicals as well as making them more susceptible to stress..
+        /// </summary>
         public static string CBSMutation {
             get {
                 return ResourceManager.GetString("CBSMutation", resourceCulture);
@@ -342,7 +351,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Telomerase is an enzyme found inside our cells, which may be related to the aging process. It adds short, repetitive "caps" to our DNA strands. These caps are called "telomeres."
+        ///   Looks up a localized string similar to Telomerase is an enzyme found inside our cells, which may be related to the aging process. It adds short, repetitive &quot;caps&quot; to our DNA strands. These caps are called &quot;telomeres.&quot;
         ///
         ///Each time our cells divide, they must replicate their DNA so that each daughter cell gets a full set of operating instructions. However, with each cell division, a small part of the DNA strand’s protective telomeres are lost.
         ///

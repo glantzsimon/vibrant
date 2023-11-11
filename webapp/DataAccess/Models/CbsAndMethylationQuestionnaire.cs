@@ -274,7 +274,6 @@ namespace K9.DataAccessLayer.Models
             StretchMarks.HasValue &&
             FrequentNighttimeUrination.HasValue &&
             Herpes.HasValue &&
-            Irritability.HasValue &&
-            FamilyHistoryOfSubstanceDependency.HasValue;
+            Irritability.HasValue;
     }
 }

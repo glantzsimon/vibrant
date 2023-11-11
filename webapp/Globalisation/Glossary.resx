@@ -219,4 +219,7 @@ Each time our cells divide, they must replicate their DNA so that each daughter 
 
 Scientists believe that the loss of telomeres leads to eventual loss of important, coding regions of DNA, and that this impairs cells’ ability to divide and produce healthy daughter cells over time.</value>
   </data>
+  <data name="CBS" xml:space="preserve">
+    <value>A genetic SNP or polymorphism (i.e. variant), which predisposes certain individual's to difficulties processing and detoxifying certain environmental chemicals as well as making them more susceptible to stress.</value>
+  </data>
 </root>

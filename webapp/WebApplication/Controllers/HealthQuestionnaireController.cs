@@ -407,6 +407,46 @@ namespace K9.WebApplication.Controllers
                 ModelState.AddModelError(nameof(HealthQuestionnaire.OCD), Base.Globalisation.Dictionary.FieldIsRequired);
             }
 
+            if (!model.SugarCrashes.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.OCD), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.OCD.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.OCD), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.ChronicViralInfections.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.ChronicViralInfections), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.SpiderVeins.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.SpiderVeins), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.StretchMarks.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.StretchMarks), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.FrequentNighttimeUrination.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.FrequentNighttimeUrination), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.Herpes.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.Herpes), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.Irritability.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.Irritability), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
             #endregion
 
 
