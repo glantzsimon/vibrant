@@ -580,9 +580,8 @@ namespace K9.DataAccessLayer.Models
             return total;
         }
 
-        [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IndexFingersMatchLabel)]
-        public EYesNo? IndexFingerprintsMatch { get; set; }
+        public bool IndexFingerprintsMatch => LeftIndexFingerprintType == RightIndexFingerprintType;
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftThumprintLabel)]
@@ -624,19 +623,15 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightLittleFingerprintLabel)]
         public EFingerprintType? RightLittleFingerprintType { get; set; }
 
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftHandedLabel)]
-        public EYesNo? LeftHanded { get; set; }
-
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmbidextrousLabel)]
-        public EYesNo? Ambidextrous { get; set; }
+        [UIHint("Handedness")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HandednessLabel)]
+        public EHandedness? Handedness { get; set; }
 
         public List<EGenoType> GetGenoTypeFromHandedness()
         {
             var results = new List<EGenoType>();
 
-            if (LeftHanded == EYesNo.Yes || Ambidextrous == EYesNo.Yes)
+            if (Handedness == EHandedness.Left || Handedness == EHandedness.Ambidextrous)
             {
                 results.Add(EGenoType.Explorer);
                 results.Add(EGenoType.Explorer);
@@ -675,7 +670,7 @@ namespace K9.DataAccessLayer.Models
                 results.Add(EGenoType.Teacher);
             }
 
-            if (IndexFingerprintsMatch == EYesNo.No)
+            if (IndexFingerprintsMatch)
             {
                 results.Add(EGenoType.Explorer);
                 results.Add(EGenoType.Explorer);
@@ -743,9 +738,7 @@ namespace K9.DataAccessLayer.Models
             RightRingFingerprintType.HasValue &&
             RightLittleFingerprintType.HasValue &&
 
-            IndexFingerprintsMatch.HasValue &&
-            LeftHanded.HasValue &&
-            Ambidextrous.HasValue;
+            Handedness.HasValue;
 
         #endregion
 

@@ -3,6 +3,6 @@
 @using K9.Base.WebApplication.Helpers
 @using K9.DataAccessLayer.Enums
 @using K9.SharedLibrary.Extensions
-@model EFingerprintType
+@model EFingerprintType?
 
 @Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectListFromEnum<EFingerprintType>(Convert.ToInt32(Model), true), false, new ViewDataDictionary())

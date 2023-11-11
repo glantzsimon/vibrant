@@ -147,11 +147,20 @@ namespace K9.DataAccessLayer.Models
         public bool IsDoshasActive() => IsDoshasEnabled() &&
                                         !IsDoshasComplete();
 
+        #region Personal Details
+
         public string GetPersonalDetailsActivePanelClass() =>
             IsPersonalDetailsActive() ? Strings.CssClasses.ActivePanelClass : "";
 
         public string GetPersonalDetailsActiveTabClass() =>
             IsPersonalDetailsActive() ? Strings.CssClasses.ActiveTabClass : "";
+
+        public string GetPersonalDetailsCompleteHtml() =>
+            IsPersonalInformationComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
+
+        #endregion
+
+        #region Blood Analysis
 
         public string GetBloodAnalysisActivePanelClass() =>
             IsBloodAnalysisActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -165,6 +174,13 @@ namespace K9.DataAccessLayer.Models
         public string GetBloodAnalysisToggle() =>
             IsBloodAnalysisEnabled() ? Strings.CssClasses.Pill : "";
 
+        public string GetBloodAnalysisCompleteHtml() =>
+            IsBloodAnalysisComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
+
+        #endregion
+
+        #region Acetylation
+
         public string GetAcetylationActivePanelClass() =>
             IsAcetylationActive() ? Strings.CssClasses.ActivePanelClass : "";
 
@@ -176,6 +192,13 @@ namespace K9.DataAccessLayer.Models
 
         public string GetAcetylationToggle() =>
             IsAcetylationEnabled() ? Strings.CssClasses.Pill : "";
+
+        public string GetAcetylationCompleteHtml() =>
+            IsAcetylationStatusComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
+
+        #endregion
+
+        #region Biometrics
 
         public string GetBiometricsActivePanelClass() =>
         IsBiometricsActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -189,6 +212,13 @@ namespace K9.DataAccessLayer.Models
         public string GetBiometricsToggle() =>
             IsBiometricsEnabled() ? Strings.CssClasses.Pill : "";
 
+        public string GetBiometricsCompleteHtml() =>
+            IsBiometricsComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
+
+        #endregion
+
+        #region Dermatoglyphics
+
         public string GetDermatoglyphicsActivePanelClass() =>
             IsDermatoglyphicsActive() ? Strings.CssClasses.ActivePanelClass : "";
 
@@ -200,6 +230,13 @@ namespace K9.DataAccessLayer.Models
 
         public string GetDermatoglyphicsToggle() =>
             IsDermatoglyphicsEnabled() ? Strings.CssClasses.Pill : "";
+
+        public string GetDermatoglyphicsCompleteHtml() =>
+            IsDermatoglyphicsComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
+
+        #endregion
+
+        #region Dentition
 
         public string GetDentitionActivePanelClass() =>
             IsDentitionActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -213,6 +250,13 @@ namespace K9.DataAccessLayer.Models
         public string GetDentitionToggle() =>
             IsDentitionActive() ? Strings.CssClasses.Pill : "";
 
+        public string GetDentitionCompleteHtml() =>
+            IsDentitionComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
+
+        #endregion
+
+        #region Taster Status
+
         public string GetTasterStatusActivePanelClass() =>
             IsTasterStatusActive() ? Strings.CssClasses.ActivePanelClass : "";
 
@@ -224,6 +268,13 @@ namespace K9.DataAccessLayer.Models
 
         public string GetTasterStatusToggle() =>
             IsTasterStatusActive() ? Strings.CssClasses.Pill : "";
+
+        public string GetTasterStatusCompleteHtml() =>
+            IsTasterStatusComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
+
+        #endregion
+
+        #region Family History
 
         public string GetFamilyHistoryActivePanelClass() =>
             IsFamilyHistoryActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -237,6 +288,13 @@ namespace K9.DataAccessLayer.Models
         public string GetFamilyHistoryToggle() =>
             IsFamilyHistoryActive() ? Strings.CssClasses.Pill : "";
 
+        public string GetFamilyHistoryCompleteHtml() =>
+            IsFamilyHistoryComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
+
+        #endregion
+
+        #region General Health
+
         public string GetGeneralHealthActivePanelClass() =>
             IsGeneralHealthActive() ? Strings.CssClasses.ActivePanelClass : "";
 
@@ -248,6 +306,13 @@ namespace K9.DataAccessLayer.Models
 
         public string GetGeneralHealthToggle() =>
             IsGeneralHealthActive() ? Strings.CssClasses.Pill : "";
+
+        public string GetGeneralHealthCompleteHtml() =>
+            IsGeneralHealthComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
+
+        #endregion
+
+        #region Cbs And Methylation
 
         public string GetCbsAndMethylationActivePanelClass() =>
             IsCbsAndMethylationActive() ? Strings.CssClasses.ActivePanelClass : "";
@@ -261,6 +326,13 @@ namespace K9.DataAccessLayer.Models
         public string GetCbsAndMethylationToggle() =>
             IsCbsAndMethylationActive() ? Strings.CssClasses.Pill : "";
 
+        public string GetCbsAndMethylationCompleteHtml() =>
+            IsCbsAndMethylationComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
+
+        #endregion
+
+        #region Doshas
+
         public string GetDoshasActivePanelClass() =>
             IsDoshasActive() ? Strings.CssClasses.ActivePanelClass : "";
 
@@ -272,6 +344,11 @@ namespace K9.DataAccessLayer.Models
 
         public string GetDoshasToggle() =>
             IsDoshasActive() ? Strings.CssClasses.Pill : "";
+
+        public string GetDoshasCompleteHtml() =>
+            IsDoshasComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
+
+        #endregion
 
         #endregion
 

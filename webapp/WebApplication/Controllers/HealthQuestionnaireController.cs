@@ -51,6 +51,8 @@ namespace K9.WebApplication.Controllers
         {
             _questionnaireService.Save(model);
 
+            #region Personal Details
+
             if (!model.DateOfBirth.HasValue)
             {
                 ModelState.AddModelError(nameof(HealthQuestionnaire.DateOfBirth), Base.Globalisation.Dictionary.FieldIsRequired);
@@ -61,6 +63,10 @@ namespace K9.WebApplication.Controllers
                 ModelState.AddModelError(nameof(HealthQuestionnaire.Gender), Base.Globalisation.Dictionary.FieldIsRequired);
             }
 
+            #endregion
+
+            #region Blood
+
             if (!model.BloodGroup.HasValue)
             {
                 ModelState.AddModelError(nameof(HealthQuestionnaire.BloodGroup), Base.Globalisation.Dictionary.FieldIsRequired);
@@ -70,6 +76,10 @@ namespace K9.WebApplication.Controllers
             {
                 ModelState.AddModelError(nameof(HealthQuestionnaire.RhesusFactor), Base.Globalisation.Dictionary.FieldIsRequired);
             }
+
+            #endregion
+
+            #region Acetylation
             
             if (!model.SensitivityToMedications.HasValue)
             {
@@ -95,6 +105,108 @@ namespace K9.WebApplication.Controllers
             {
                 ModelState.AddModelError(nameof(HealthQuestionnaire.SensitiveToEnvironmentalChemicals), Base.Globalisation.Dictionary.FieldIsRequired);
             }
+
+            #endregion 
+
+            #region Biometrics
+
+            if (model.StandingHeight <= 0)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.StandingHeight), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (model.SittingHeight <= 0)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.SittingHeight), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (model.ChairHeight <= 0)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.ChairHeight), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (model.LowerLegLength <= 0)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.LowerLegLength), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (model.UpperLegLength <= 0)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.UpperLegLength), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (model.IndexFingerLengthLeft <= 0)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.IndexFingerLengthLeft), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (model.IndexFingerLengthRight <= 0)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.IndexFingerLengthRight), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (model.RingFingerLengthLeft <= 0)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.RingFingerLengthLeft), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (model.RingFingerLengthRight <= 0)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.RingFingerLengthRight), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.SpaceBetweenThighs.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.SpaceBetweenThighs), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (model.WaistSize <= 0)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.WaistSize), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (model.HipSize <= 0)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.HipSize), Base.Globalisation.Dictionary.FieldIsRequired);
+            } 
+            
+            if (model.HeadWidth <= 0)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.HeadWidth), Base.Globalisation.Dictionary.FieldIsRequired);
+            } 
+            
+            if (model.HeadLength <= 0)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.HeadLength), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (!model.GonialAngle.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.GonialAngle), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (!model.TendonsAndSinewsVisible.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.TendonsAndSinewsVisible), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (!model.WristsAndAnklesLookPadded.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.WristsAndAnklesLookPadded), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (!model.GainsMuscleEasily.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.GainsMuscleEasily), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (!model.SomatoType.HasValue && !model.WristCircumference.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.SomatoType), Base.Globalisation.Dictionary.FieldIsRequired);
+                ModelState.AddModelError(nameof(HealthQuestionnaire.WristCircumference), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            #endregion
 
             if (model.IsComplete())
             {

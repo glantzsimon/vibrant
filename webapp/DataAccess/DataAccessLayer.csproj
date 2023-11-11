@@ -201,6 +201,7 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\EHandedness.cs" />
     <Compile Include="Enums\EGenoTypeStrategy.cs" />
     <Compile Include="Enums\EWristCircumference.cs" />
     <Compile Include="Enums\ESomatoType.cs" />
@@ -511,6 +512,10 @@
     <Compile Include="Migrations\202311110634265_WristCircumference.Designer.cs">
       <DependentUpon>202311110634265_WristCircumference.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311110936437_Handedness.cs" />
+    <Compile Include="Migrations\202311110936437_Handedness.Designer.cs">
+      <DependentUpon>202311110936437_Handedness.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\GenoTypeStrengthTestResult.cs" />
     <Compile Include="Models\CbsMethylationQuestionnaire.cs" />
@@ -776,6 +781,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311110634265_WristCircumference.resx">
       <DependentUpon>202311110634265_WristCircumference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311110936437_Handedness.resx">
+      <DependentUpon>202311110936437_Handedness.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

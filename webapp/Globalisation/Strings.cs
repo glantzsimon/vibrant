@@ -245,6 +245,7 @@
             public const string RightLittleFingerprintLabel = "RightLittleFingerprintLabel";
             public const string LeftHandedLabel = "LeftHandedLabel";
             public const string AmbidextrousLabel = "AmbidextrousLabel";
+            public const string HandednessLabel = "HandednessLabel";
 
             public const string GonialAngleLabel = "GonialAngleLabel";
             public const string GonialAngleQuestionLabel = "GonialAngleQuestionLabel";
@@ -444,6 +445,10 @@
             public const string Default = "Default";
             public const string ParasiteCleanse = "ParasiteCleanse";
             public const string ParasiteCleanseMaintenance = "ParasiteCleanseMaintenance";
+
+            public const string RightHanded = "RightHanded";
+            public const string LeftHanded = "LeftHanded";
+            public const string Ambidextrous = "Ambidextrous";
 
             public const string Days = "Days";
             public const string Weeks = "Weeks";
