@@ -2327,7 +2327,7 @@
     <value>Hunter</value>
   </data>
   <data name="MedicationSensitivityLabel" xml:space="preserve">
-    <value>On a scale of 1 - 10, how sensitive are you to medications? (For example, do you often react strongly to relatively small doses that are well tolerated by others?)</value>
+    <value>Are you generally more sensitive to medications than the average? (For example, do you often react strongly to relatively small doses that are well tolerated by others?)</value>
   </data>
   <data name="Nomad" xml:space="preserve">
     <value>Nomad</value>
@@ -2647,7 +2647,13 @@
   <data name="WhatsApp" xml:space="preserve">
     <value>WhatsApp</value>
   </data>
+  <data name="Large" xml:space="preserve">
+    <value>Large</value>
+  </data>
   <data name="SaveAndContinue" xml:space="preserve">
     <value>Save and Continue</value>
+  </data>
+  <data name="Small" xml:space="preserve">
+    <value>Small</value>
   </data>
 </root>

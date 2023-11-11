@@ -62,11 +62,11 @@ namespace K9.DataAccessLayer.Models
         }
 
         public bool IsBloodAnalysisComplete() =>
-            BloodGroup != EBloodGroup.NotSure && RhesusFactor != ERhesusFactor.NotSure;
+            BloodGroup.HasValue && RhesusFactor.HasValue;
 
         #endregion
 
-        #region Acetylation Status
+        #region Acetylation
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MedicationSensitivityLabel)]

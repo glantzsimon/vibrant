@@ -3623,6 +3623,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Large.
+        /// </summary>
+        public static string Large {
+            get {
+                return ResourceManager.GetString("Large", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Learn.
         /// </summary>
         public static string Learn {
@@ -3913,7 +3922,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to On a scale of 1 - 10, how sensitive are you to medications? (For example, do you often react strongly to relatively small doses that are well tolerated by others?).
+        ///   Looks up a localized string similar to Are you generally more sensitive to medications than the average? (For example, do you often react strongly to relatively small doses that are well tolerated by others?).
         /// </summary>
         public static string MedicationSensitivityLabel {
             get {
@@ -6483,6 +6492,15 @@ namespace K9.Globalisation {
         public static string SlightlyBitter {
             get {
                 return ResourceManager.GetString("SlightlyBitter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small.
+        /// </summary>
+        public static string Small {
+            get {
+                return ResourceManager.GetString("Small", resourceCulture);
             }
         }
         

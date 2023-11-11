@@ -37,9 +37,11 @@
     </div>
     
     <div id="acetylation" class="tab-pane fade @(Model.GetAcetylationActivePanelClass()) padding-top-15">
+        @Html.Partial("_Page3Acetylation")
     </div>
     
     <div id="biometrics" class="tab-pane fade @(Model.GetBiometricsActivePanelClass()) padding-top-15">
+        @Html.Partial("_Page4Biometrics")
     </div>
     
     <div id="dermatoglyphics" class="tab-pane @(Model.GetDermatoglyphicsActivePanelClass()) fade padding-top-15">

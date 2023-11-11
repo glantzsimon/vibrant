@@ -69,6 +69,31 @@ namespace K9.WebApplication.Controllers
             {
                 ModelState.AddModelError(nameof(HealthQuestionnaire.RhesusFactor), Base.Globalisation.Dictionary.FieldIsRequired);
             }
+            
+            if (!model.SensitivityToMedications.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.SensitivityToMedications), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.SensitiveToCaffeine.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.SensitiveToCaffeine), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.CaffeineAffectsSleep.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.CaffeineAffectsSleep), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (!model.SensitiveToMold.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.SensitiveToMold), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (!model.SensitiveToEnvironmentalChemicals.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.SensitiveToEnvironmentalChemicals), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
 
             if (model.IsComplete())
             {

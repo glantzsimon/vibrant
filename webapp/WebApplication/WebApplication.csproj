@@ -1591,6 +1591,8 @@
     <Content Include="Views\HealthQuestionnaire\_Pills.cshtml" />
     <Content Include="Views\HealthQuestionnaire\QuestionnaireCompletedSuccess.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page2BloodAnalysis.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_Page3Acetylation.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_Page4Biometrics.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
