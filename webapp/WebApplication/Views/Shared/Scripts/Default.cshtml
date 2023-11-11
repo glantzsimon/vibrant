@@ -27,7 +27,8 @@
 		};
 
         $.fn.activateTab = function(tabId) {
-            $(".nav-tabs a[href='#'" + tabId + "]").tab("show");
+            $("ul.nav-tabs a[href='#" + tabId + "']").tab("show");
+            $("ul.nav-pills a[href='#" + tabId + "']").tab("show");
 	    };
 
 		$.fn.createGuid = function () {

@@ -1,37 +1,47 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Config
 @using K9.WebApplication.Enums
+@using K9.WebApplication.Helpers
 @model HealthQuestionnaire
 
 <div class="well">
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
-            
+            @Html.BootstrapEditorFor(e => e.BloodGroup)
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
-            
+            @Html.BootstrapEditorFor(e => e.RhesusFactor)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.CollapsiblePanel(Dictionary.MoreDetails, Dictionary.BloodGroupDescription)
         </div>
     </div>
 </div>
 
 <hr />
 
-<a id="backToPage1" class="btn btn btn-primary btn-lg" title="@Dictionary.Back" href="#">
-    <i class="fa-chevron-right"></i>
+<a id="backToPage1" class="btn btn-primary btn-lg" title="@Dictionary.Back" href="#">
+    <i class="fa fa-chevron-left"></i>
     <span class="site-controls-text">
         @Dictionary.Back
     </span>
 </a>
 
-@Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight, EButtonClass.Large)
+@Html.BootstrapButton(Dictionary.SaveAndContinue, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight, EButtonClass.Large)
 
 <script type="text/javascript">
 
     $(window).on("load",
         function() {
-            
+
+            $("#backToPage1").click(function() {
+                $.fn.activateTab("personal-details");
+            });
+
         });
 
 </script>

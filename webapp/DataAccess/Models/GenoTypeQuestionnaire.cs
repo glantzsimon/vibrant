@@ -39,11 +39,11 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("BloodGroup")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BloodGroupLabel)]
-        public EBloodGroup BloodGroup { get; set; }
+        public EBloodGroup? BloodGroup { get; set; }
 
         [UIHint("RhesusFactor")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RhesusFactorLabel)]
-        public ERhesusFactor RhesusFactor { get; set; }
+        public ERhesusFactor? RhesusFactor { get; set; }
 
         public List<EGenoType> GetGenoTypeFromRhesusFactor()
         {

@@ -9,7 +9,8 @@
     }
 
     form .well .col-sm-6, .well form .col-sm-6,
-    form .well .col-sm-12, .well form .col-sm-12 {
+    form .well .col-sm-12, .well form .col-sm-12,
+    form .well .col-xs-12, .well form .col-xs-12 {
         padding: 0;
     }
 

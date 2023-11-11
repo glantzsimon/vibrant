@@ -502,6 +502,10 @@
     <Compile Include="Migrations\202311101144592_HQMoreOptionalFields.Designer.cs">
       <DependentUpon>202311101144592_HQMoreOptionalFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311110416583_HQMoreOptionalFields1.cs" />
+    <Compile Include="Migrations\202311110416583_HQMoreOptionalFields1.Designer.cs">
+      <DependentUpon>202311110416583_HQMoreOptionalFields1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\GenoTypeStrengthTestResult.cs" />
     <Compile Include="Models\CbsMethylationQuestionnaire.cs" />
@@ -761,6 +765,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311101144592_HQMoreOptionalFields.resx">
       <DependentUpon>202311101144592_HQMoreOptionalFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311110416583_HQMoreOptionalFields1.resx">
+      <DependentUpon>202311110416583_HQMoreOptionalFields1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -741,6 +741,7 @@
     <Content Include="Images\flags\za.png" />
     <Content Include="Images\flags\zm.png" />
     <Content Include="Images\flags\zw.png" />
+    <Content Include="Images\icons\android-chrome-144x144.png" />
     <Content Include="Images\icons\logo-med.png" />
     <Content Include="Images\pages\default-image.jpg" />
     <Content Include="Images\icons\android-chrome-192x192.png" />

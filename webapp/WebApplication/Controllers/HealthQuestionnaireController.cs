@@ -60,6 +60,16 @@ namespace K9.WebApplication.Controllers
                 ModelState.AddModelError(nameof(HealthQuestionnaire.Gender), Base.Globalisation.Dictionary.FieldIsRequired);
             }
 
+            if (!model.BloodGroup.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.BloodGroup), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.RhesusFactor.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.RhesusFactor), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
             if (model.IsComplete())
             {
                 return RedirectToAction("QuestionnaireCompletedSuccess");

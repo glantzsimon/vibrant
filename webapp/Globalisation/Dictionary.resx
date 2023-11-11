@@ -2647,4 +2647,7 @@
   <data name="WhatsApp" xml:space="preserve">
     <value>WhatsApp</value>
   </data>
+  <data name="SaveAndContinue" xml:space="preserve">
+    <value>Save and Continue</value>
+  </data>
 </root>
