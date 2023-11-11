@@ -480,7 +480,7 @@
             public const string WeightGainQuestionLabel = "WeightGainQuestionLabel";
 
             public const string BodyColdLabel = "BodyColdLabel";
-            public const string BodyHotLabel = "BodycoldSkinHotLabelLabel";
+            public const string BodyHotLabel = "BodyHotLabel";
             public const string BodyColdMoistLabel = "BodyColdMoistLabel";
             public const string BodyTemperatureQuestionLabel = "BodyTemperatureQuestionLabel";
 
