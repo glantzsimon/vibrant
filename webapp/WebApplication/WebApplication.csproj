@@ -782,6 +782,7 @@
     <Content Include="Images\questionnaire\head-shapes.png" />
     <Content Include="Images\questionnaire\leg-gap-measurement.png" />
     <Content Include="Images\questionnaire\upper-lower-leg-measurements.png" />
+    <Content Include="Images\questionnaire\wrist-circumference-test.png" />
     <Content Include="Images\shared\loading5.gif" />
     <Content Include="Images\shared\powered-by-stripe-cards.png" />
     <Content Include="Images\shared\powered-by-stripe.png" />
@@ -1593,6 +1594,9 @@
     <Content Include="Views\HealthQuestionnaire\_Page2BloodAnalysis.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page3Acetylation.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page4Biometrics.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_BiometricsHeight.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_PageRequirements.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\WristCircumference.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

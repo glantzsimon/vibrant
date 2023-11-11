@@ -174,8 +174,8 @@
         var $glossarySpans = $("span.glossary");
         if ($glossarySpans.length) {
             for (var i = 0; i < $glossarySpans.length; i++) {
-                var $el = $glossarySpans[i];
-                var word = ($el).attr("key") || $el.html().replace(/\s+/g, "");
+                var $el = $($glossarySpans[i]);
+                var word = $el.attr("key") || $el.html().replace(/\s+/g, "");
                 var glossaryItem = config.glossaryItems.find(e => e.Name.toLowerCase() === word.toLowerCase());
 
                 if (glossaryItem) {

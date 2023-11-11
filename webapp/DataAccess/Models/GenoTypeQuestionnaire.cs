@@ -131,7 +131,7 @@ namespace K9.DataAccessLayer.Models
         public double StandingHeight { get; set; }
 
         [UIHint("Measurement")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StandingHeightLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SittingHeightLabel)]
         public double SittingHeight { get; set; }
 
         [UIHint("Measurement")]
@@ -455,32 +455,54 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GainsMuscleEasilyLabel)]
         public ESomatoType? SomatoType { get; set; }
 
+        [UIHint("WristCircumference")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WristTypeLabel)]
+        public EWristCircumference? WristCircumference { get; set; }
+
         public List<EGenoType> GetGenoTypeFromSomatoType()
         {
             var results = new List<EGenoType>();
 
-            if (SomatoType == ESomatoType.Ectomorph)
+            var somatoType = SomatoType;
+
+            if (SomatoType == ESomatoType.NotSure)
+            {
+                if (WristCircumference == EWristCircumference.DoNotTouch)
+                {
+                    somatoType = ESomatoType.Endomorph;
+                }
+                else if (WristCircumference == EWristCircumference.JustTouch)
+                {
+                    somatoType = ESomatoType.Mesomorph;
+                }
+                else if (WristCircumference == EWristCircumference.Overlap)
+                {
+                    somatoType = ESomatoType.Ectomorph;
+                }
+            }
+
+            if (somatoType == ESomatoType.Ectomorph)
             {
                 results.Add(EGenoType.Hunter);
                 results.Add(EGenoType.Hunter);
                 results.Add(EGenoType.Hunter);
             }
 
-            if (SomatoType == ESomatoType.Ectomesomorph || GetWaistToHipRatio() == ERatio.Ideal)
+            if (somatoType == ESomatoType.Ectomesomorph || GetWaistToHipRatio() == ERatio.Ideal)
             {
                 results.Add(EGenoType.Teacher);
                 results.Add(EGenoType.Teacher);
                 results.Add(EGenoType.Teacher);
             }
 
-            if (SomatoType == ESomatoType.Endomorph || GetWaistToHipRatio() == ERatio.High)
+            if (somatoType == ESomatoType.Endomorph || GetWaistToHipRatio() == ERatio.High)
             {
                 results.Add(EGenoType.Gatherer);
                 results.Add(EGenoType.Gatherer);
                 results.Add(EGenoType.Gatherer);
             }
 
-            if (SomatoType == ESomatoType.Mesomorph || GetWaistToHipRatio() == ERatio.Ideal)
+            if (somatoType == ESomatoType.Mesomorph || GetWaistToHipRatio() == ERatio.Ideal)
             {
                 results.Add(EGenoType.Explorer);
                 results.Add(EGenoType.Explorer);

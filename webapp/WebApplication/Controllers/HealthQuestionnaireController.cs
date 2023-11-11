@@ -11,6 +11,7 @@ namespace K9.WebApplication.Controllers
 {
     [Authorize]
     [RequirePermissions(Role = Constants.Constants.ClientUser)]
+    [Route("genetic-profile")]
     public class HealthQuestionnaireController : BasePureController
     {
         private readonly IQuestionnaireService _questionnaireService;
@@ -20,7 +21,7 @@ namespace K9.WebApplication.Controllers
             _questionnaireService = questionnaireService;
         }
 
-        [Route("health-questionnaire")]
+        [Route("genetic-profile/questionnaire")]
         public ActionResult AnswerHealthQuestionnaire(int? clientId = null)
         {
             HealthQuestionnaire hq;
@@ -43,7 +44,7 @@ namespace K9.WebApplication.Controllers
         }
 
 
-        [Route("health-questionnaire")]
+        [Route("genetic-profile/questionnaire")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AnswerHealthQuestionnaire(HealthQuestionnaire model)
@@ -103,7 +104,7 @@ namespace K9.WebApplication.Controllers
             return View(model);
         }
 
-        [Route("health-questionnaire/success")]
+        [Route("genetic-profile/questionnaire/success")]
         public ActionResult QuestionnaireCompletedSuccess()
         {
             return View();

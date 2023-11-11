@@ -2446,8 +2446,8 @@
   <data name="LowerLegLengthLabel" xml:space="preserve">
     <value>What is your lower-leg length?</value>
   </data>
-  <data name="LowreLegLengthInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>questionnaires\en-gb\lowreleglengthinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="LowerLegLengthInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\lowerleglengthinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="NotSure" xml:space="preserve">
     <value>I'm not sure</value>
@@ -2647,13 +2647,67 @@
   <data name="WhatsApp" xml:space="preserve">
     <value>WhatsApp</value>
   </data>
+  <data name="HowToDetermineSittingHeight" xml:space="preserve">
+    <value>How to determine your sitting height</value>
+  </data>
+  <data name="HowToDetermineStandingHeight" xml:space="preserve">
+    <value>How to determine your standing height</value>
+  </data>
+  <data name="HowToMeasureChairHeight" xml:space="preserve">
+    <value>How to measure the height of the chair</value>
+  </data>
+  <data name="HowToMeasureLowerLeg" xml:space="preserve">
+    <value>How to measure your lower leg</value>
+  </data>
+  <data name="HowToMeasureUpperLeg" xml:space="preserve">
+    <value>How to measure your upper leg</value>
+  </data>
   <data name="Large" xml:space="preserve">
     <value>Large</value>
+  </data>
+  <data name="Low" xml:space="preserve">
+    <value>Low</value>
   </data>
   <data name="SaveAndContinue" xml:space="preserve">
     <value>Save and Continue</value>
   </data>
   <data name="Small" xml:space="preserve">
     <value>Small</value>
+  </data>
+  <data name="ChairHeightTitle" xml:space="preserve">
+    <value>Chair Height</value>
+  </data>
+  <data name="GeneticProfileTest" xml:space="preserve">
+    <value>Genetic Profile Test</value>
+  </data>
+  <data name="LowerLegLengthTitle" xml:space="preserve">
+    <value>Lower Leg Length</value>
+  </data>
+  <data name="MiddleFingerAndThumbDoNotTouch" xml:space="preserve">
+    <value>Your middle finger and thumb do not touch.</value>
+  </data>
+  <data name="MiddleFingerAndThumbJustTouch" xml:space="preserve">
+    <value>Your middle finger and thumb just touch</value>
+  </data>
+  <data name="MiddleFingerAndThumbOverlap" xml:space="preserve">
+    <value>Your middle finger and thumb overlap</value>
+  </data>
+  <data name="Requirements" xml:space="preserve">
+    <value>Requirements</value>
+  </data>
+  <data name="SittingHeightTitle" xml:space="preserve">
+    <value>Sitting Height</value>
+  </data>
+  <data name="StandingHeightTitle" xml:space="preserve">
+    <value>Standing Height</value>
+  </data>
+  <data name="WristCircumferenceTest" xml:space="preserve">
+    <value>Wrist Circumference Test</value>
+  </data>
+  <data name="WristCircumferenceTestInstructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>questionnaires\en-gb\wristcircumferencetestinstructions.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="WristTypeLabel" xml:space="preserve">
+    <value>Wrist Circumference</value>
   </data>
 </root>

@@ -9,7 +9,10 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.StandingHeightTitle</h3>
+            @Html.Panel
+            {
+            Body = 
+            })
         </div>
     </div>
 
@@ -26,21 +29,7 @@
             })
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.CollapsiblePanel(Dictionary.HowToDetermineStandingHeight, Dictionary.StandingHeightInstructions, true)
-        </div>
-    </div>
 
-</div>
-
-<div class="well">
-
-    <div class="row">
-        <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.SittingHeightTitle</h3>
-        </div>
-    </div>
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.SittingHeight)
@@ -54,21 +43,7 @@
             })
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.CollapsiblePanel(Dictionary.HowToDetermineSittingHeight, Dictionary.SittingHeightInstructions, true)
-        </div>
-    </div>
 
-</div>
-
-<div class="well">
-
-    <div class="row">
-        <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.ChairHeightTitle</h3>
-        </div>
-    </div>
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.ChairHeight)
@@ -82,21 +57,7 @@
             })
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.CollapsiblePanel(Dictionary.HowToMeasureChairHeight, Dictionary.ChairHeightInstructions, true)
-        </div>
-    </div>
 
-</div>
-
-<div class="well">
-
-    <div class="row">
-        <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.LowerLegLengthTitle</h3>
-        </div>
-    </div>
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.LowerLegLength)
@@ -110,15 +71,6 @@
             })
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.CollapsiblePanel(Dictionary.HowToMeasureLowerLeg, Dictionary.LowerLegLengthInstructions, true)
-        </div>
-    </div>
-
-</div>
-
-<div class="well">
 
     <div class="row">
         <div class="col-xs-12">
@@ -133,15 +85,6 @@
             })
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.CollapsiblePanel(Dictionary.HowToMeasureUpperLeg, Dictionary.UpperLegLengthInstructions, true)
-        </div>
-    </div>
-
-</div>
-
-<div class="well">
 
     <div class="row">
         <div class="col-xs-12">
@@ -286,20 +229,6 @@
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.SomatoType)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.SomatoType, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.CollapsiblePanel(Dictionary.WristCircumferenceTest, Dictionary.StandingHeightInstructions, true)
         </div>
     </div>
     <div class="row">

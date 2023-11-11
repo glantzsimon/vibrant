@@ -4,11 +4,11 @@
 @model HealthQuestionnaire
 @{
     Layout = "../Shared/_LayoutFormWide.cshtml";
-    ViewBag.Title = Dictionary.HealthQuestionnaire;
-    ViewBag.SubTitle = Dictionary.HealthQuestionnaire;
+    ViewBag.Title = Dictionary.GeneticProfileTest;
+    ViewBag.SubTitle = Dictionary.GeneticProfileTest;
 
     var whatsAppTelephone = DefaultValuesConfiguration.Instance.WhatsAppSupportNumber;
-    var whatsAppQueryText = Url.Encode($"Hi. I have a query regarding the health questionnaire.");
+    var whatsAppQueryText = Url.Encode($"Hi. I have a query regarding the genetic profile test.");
     var whatsAppLink = ViewBag.DeviceType == EDeviceType.Desktop
         ? $"https://web.whatsapp.com/send?phone={whatsAppTelephone}&text={whatsAppQueryText}"
         : $"https://wa.me/{whatsAppTelephone}/?text={whatsAppQueryText}";

@@ -33,7 +33,7 @@
             <li class="@protocolsTabClass"><a data-toggle="tab" href="#protocols">@Dictionary.YourProtocols</a></li>
         }
 
-        <li class="@hqTabClass"><a data-toggle="tab" href="#health-questionnaire">@Dictionary.HealthQuestionnaire</a></li>
+        <li class="@hqTabClass"><a data-toggle="tab" href="#health-questionnaire">@Dictionary.GeneticProfileTest</a></li>
 
         <li class="@accontTabClass"><a data-toggle="tab" href="#account">@Dictionary.UpdateYourDetails</a></li>
     </ul>
@@ -55,7 +55,7 @@
         <div id="health-questionnaire" class="tab-pane fade @hqPaneClass">
             @if (Model.HealthQuestionnaire.IsStarted())
             {
-                @Html.BootstrapActionLinkButton(Dictionary.UpdateHealthQuestionnaire, "AnswerHealthQuestionnaire", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Info)
+                @Html.BootstrapActionLinkButton(Dictionary.GeneticProfileTest, "AnswerHealthQuestionnaire", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Info)
             }
             else
             {

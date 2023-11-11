@@ -603,13 +603,14 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;To perform the tests necessary for the Genetic Profile Calculator, you will need:&lt;/h4&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;Fifteen minutes&lt;/li&gt;
+        ///    &lt;li&gt;Thirty minutes&lt;/li&gt;
         ///    &lt;li&gt;An assistant to help you measure&lt;/li&gt;
         ///    &lt;li&gt;A firm measuring tape, the kind you can use to measure your height&lt;/li&gt;
-        ///    &lt;li&gt;A firm measuring tape, the kind you can use to measure your height&lt;/li&gt;
+        ///    &lt;li&gt;A soft measuring tape, the kind you can use to waist and hips&lt;/li&gt;
         ///    &lt;li&gt;A small ruler that you can use to measure your finger length in millimeters&lt;/li&gt;
         ///    &lt;li&gt;A standard kitchen chair with backrest&lt;/li&gt;
-        ///    &lt;li&gt;Your ABO blood group&lt;/li [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Your ABO blood group&lt;/li&gt;
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BiometricsRequirements {
             get {
@@ -885,8 +886,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Determine the height of the chair&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Using your tape measure, measure from the top of the seat of the chair straight down to the ground.
         ///&lt;/p&gt;
         ///.
@@ -903,6 +903,15 @@ namespace K9.Globalisation {
         public static string ChairHeightLabel {
             get {
                 return ResourceManager.GetString("ChairHeightLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chair Height.
+        /// </summary>
+        public static string ChairHeightTitle {
+            get {
+                return ResourceManager.GetString("ChairHeightTitle", resourceCulture);
             }
         }
         
@@ -2657,11 +2666,10 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Fingerprint Analysis&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Simply use your phone flashlight to shine light obliquely over your fingertips. This helps to highlight the grooves and make the finger more visible.
+        ///    Simply use your phone flashlight to shine light obliquely over your fingertips. This helps to highlight the grooves and make the finger more visible. If you can&apos;t see your fingerprints clearly, you can also use a notary fingerprint kit, which you an buy online.
         ///&lt;/p&gt;
-        ///&lt;p&gt;Alternatively, you can create images of your fingerprints by downloading the &quot;Finger Print Imager&quot; app from the app store. You can find more info &lt;a href=&quot;https://apps.apple.com/us/app/finger-print-imager/id1535871705&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
         ///&lt;p&gt;
-        ///    For each digit, identify the type of fingerprint and  [rest of string was truncated]&quot;;.
+        ///    Alternatively, you can create images of your fingerprints by downloading the &quot;Finger Print Imager&quot; app from the app store. You can find more info &lt;a href=&quot;https://apps.apple.com/us/app/finger-pr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FingerPrintsInstructions {
             get {
@@ -2891,6 +2899,15 @@ namespace K9.Globalisation {
         public static string GeneralWellbeing {
             get {
                 return ResourceManager.GetString("GeneralWellbeing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Genetic Profile Test.
+        /// </summary>
+        public static string GeneticProfileTest {
+            get {
+                return ResourceManager.GetString("GeneticProfileTest", resourceCulture);
             }
         }
         
@@ -3128,6 +3145,51 @@ namespace K9.Globalisation {
         public static string HipSizeLabel {
             get {
                 return ResourceManager.GetString("HipSizeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How to determine your sitting height.
+        /// </summary>
+        public static string HowToDetermineSittingHeight {
+            get {
+                return ResourceManager.GetString("HowToDetermineSittingHeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How to determine your standing height.
+        /// </summary>
+        public static string HowToDetermineStandingHeight {
+            get {
+                return ResourceManager.GetString("HowToDetermineStandingHeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How to measure the height of the chair.
+        /// </summary>
+        public static string HowToMeasureChairHeight {
+            get {
+                return ResourceManager.GetString("HowToMeasureChairHeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How to measure your lower leg.
+        /// </summary>
+        public static string HowToMeasureLowerLeg {
+            get {
+                return ResourceManager.GetString("HowToMeasureLowerLeg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How to measure your upper leg.
+        /// </summary>
+        public static string HowToMeasureUpperLeg {
+            get {
+                return ResourceManager.GetString("HowToMeasureUpperLeg", resourceCulture);
             }
         }
         
@@ -3809,6 +3871,28 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Low.
+        /// </summary>
+        public static string Low {
+            get {
+                return ResourceManager.GetString("Low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Stand straight without shoes and have your assistant measure up the side of your leg, starting from the place where your ankle sticks out the farthest and ending at the bump on the outer side of your leg, just below your kneecap. If you’re carrying excess weight, you may have trouble finding the bump; if so, just flex your knee until you it can be felt.
+        ///&lt;/p&gt;
+        ///&lt;div&gt;
+        ///    &lt;img title=&quot;Upper Lower Leg Measurements&quot; alt=&quot;Upper Lower Leg Measurements&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/questionn [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string LowerLegLengthInstructions {
+            get {
+                return ResourceManager.GetString("LowerLegLengthInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to What is your lower-leg length?.
         /// </summary>
         public static string LowerLegLengthLabel {
@@ -3818,16 +3902,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;How to measure your lower leg&lt;/h4&gt;
-        ///&lt;p&gt;
-        ///    Stand straight without shoes and have your assistant measure up the side of your leg, starting from the place where your ankle sticks out the farthest and ending at the bump on the outer side of your leg, just below your kneecap. If you’re carrying excess weight, you may have trouble finding the bump; if so, just flex your knee until you it can be felt.
-        ///&lt;/p&gt;
-        ///&lt;div&gt;
-        ///    &lt;img title=&quot;Upper Lower Leg Measurements&quot; alt=&quot;Upper Lower Leg Measurements&quot; class=&quot;auto- [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Lower Leg Length.
         /// </summary>
-        public static string LowreLegLengthInstructions {
+        public static string LowerLegLengthTitle {
             get {
-                return ResourceManager.GetString("LowreLegLengthInstructions", resourceCulture);
+                return ResourceManager.GetString("LowerLegLengthTitle", resourceCulture);
             }
         }
         
@@ -4075,6 +4154,33 @@ namespace K9.Globalisation {
         public static string MethylationSupport {
             get {
                 return ResourceManager.GetString("MethylationSupport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your middle finger and thumb do not touch..
+        /// </summary>
+        public static string MiddleFingerAndThumbDoNotTouch {
+            get {
+                return ResourceManager.GetString("MiddleFingerAndThumbDoNotTouch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your middle finger and thumb just touch.
+        /// </summary>
+        public static string MiddleFingerAndThumbJustTouch {
+            get {
+                return ResourceManager.GetString("MiddleFingerAndThumbJustTouch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your middle finger and thumb overlap.
+        /// </summary>
+        public static string MiddleFingerAndThumbOverlap {
+            get {
+                return ResourceManager.GetString("MiddleFingerAndThumbOverlap", resourceCulture);
             }
         }
         
@@ -6024,6 +6130,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Requirements.
+        /// </summary>
+        public static string Requirements {
+            get {
+                return ResourceManager.GetString("Requirements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Research.
         /// </summary>
         public static string ResearchLabel {
@@ -6438,8 +6553,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Determine your sitting height&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Sit in a standard kitchen chair with the book resting on your head to ensure the correct angle of the head (or have your assistant check). Have your assistant measure from the bottom of the book down to the ground.
         ///&lt;/p&gt;
         ///.
@@ -6456,6 +6570,15 @@ namespace K9.Globalisation {
         public static string SittingHeightLabel {
             get {
                 return ResourceManager.GetString("SittingHeightLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sitting Height.
+        /// </summary>
+        public static string SittingHeightTitle {
+            get {
+                return ResourceManager.GetString("SittingHeightTitle", resourceCulture);
             }
         }
         
@@ -6590,8 +6713,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Determine your standing height&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Stand straight, without shoes and with a book resting on your head to make sure your head is level (or as your assistant to check). Have your assistant measure from the bottom of the book straight down the floor, ideally using a rigid tape measure.
         ///&lt;/p&gt;
         ///.
@@ -6608,6 +6730,15 @@ namespace K9.Globalisation {
         public static string StandingHeightLabel {
             get {
                 return ResourceManager.GetString("StandingHeightLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Standing Height.
+        /// </summary>
+        public static string StandingHeightTitle {
+            get {
+                return ResourceManager.GetString("StandingHeightTitle", resourceCulture);
             }
         }
         
@@ -7457,8 +7588,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;How to measure your upper leg&lt;/h4&gt;
-        ///&lt;p&gt;
+        ///   Looks up a localized string similar to &lt;p&gt;
         ///    Sit in a chair and place your fingertips on the kneecap of either leg. Slide your fingers upward until they are off the kneecap and your fingertips slide into the groove above the kneecap. Now look for the long skin crease between your hip and your leg. From this point, measure in a straight line to the groove on your knee. This is your upper-leg length.
         ///&lt;/p&gt;.
         /// </summary>
@@ -7948,11 +8078,46 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wrist Circumference Test.
+        /// </summary>
+        public static string WristCircumferenceTest {
+            get {
+                return ResourceManager.GetString("WristCircumferenceTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    If you are unsure about which body type best describes you, try this simple test:
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Circle your wrist with the thumb and middle finger of the other hand (see photo), then choose an option below from the &quot;Wrist Circumference Test&quot; dropdown.
+        ///&lt;/p&gt;
+        ///&lt;div&gt;
+        ///    &lt;img title=&quot;Wrist Circumference Test&quot; alt=&quot;Wrist Circumference Test&quot; class=&quot;auto-size center-block&quot; src=&quot;Images/questionnaire/wrist-circumference-test.png&quot; /&gt;
+        ///&lt;/div&gt;.
+        /// </summary>
+        public static string WristCircumferenceTestInstructions {
+            get {
+                return ResourceManager.GetString("WristCircumferenceTestInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do your wrists and ankles look padded?.
         /// </summary>
         public static string WristsAndAnklesPaddedLabel {
             get {
                 return ResourceManager.GetString("WristsAndAnklesPaddedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wrist Circumference.
+        /// </summary>
+        public static string WristTypeLabel {
+            get {
+                return ResourceManager.GetString("WristTypeLabel", resourceCulture);
             }
         }
         

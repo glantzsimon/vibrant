@@ -111,6 +111,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Questionnaires\en-gb\WristCircumferenceTestInstructions.htm" />
     <Content Include="Questionnaires\en-gb\TolerantDescription.htm" />
     <Content Include="Questionnaires\en-gb\ThriftyDescription.htm" />
     <Content Include="Questionnaires\en-gb\ReactiveDescription.htm" />
@@ -122,7 +123,7 @@
     <Content Include="Questionnaires\en-gb\HeadShapeInstructions.htm" />
     <Content Include="Questionnaires\en-gb\WaistToHipRatioInstructions.htm" />
     <Content Include="Questionnaires\en-gb\UpperLegLengthInstructions.htm" />
-    <Content Include="Questionnaires\en-gb\LowreLegLengthInstructions.htm" />
+    <Content Include="Questionnaires\en-gb\LowerLegLengthInstructions.htm" />
     <Content Include="Questionnaires\en-gb\SittingHeightInstructions.htm" />
     <Content Include="Questionnaires\en-gb\StandingHeightInstructions.htm" />
     <Content Include="Questionnaires\en-gb\Biometrics.htm" />

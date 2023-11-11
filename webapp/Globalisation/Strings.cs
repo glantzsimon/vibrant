@@ -227,6 +227,7 @@
             public const string TendonsAndSinewsVisibleLabel = "TendonsAndSinewsVisibleLabel";
             public const string WristsAndAnklesPaddedLabel = "WristsAndAnklesPaddedLabel";
             public const string GainsMuscleEasilyLabel = "GainsMuscleEasilyLabel";
+            public const string WristTypeLabel = "WristTypeLabel";
             public const string SomatoTypeLabel = "SomatoTypeLabel";
 
             public const string LeftThumprintLabel = "LeftThumprintLabel";
@@ -620,6 +621,10 @@
             public const string WideAngle = "WideAngle";
             public const string MediumAngle = "MediumAngle";
             public const string NarrowAngle = "NarrowAngle";
+
+            public const string MiddleFingerAndThumbDoNotTouch = "MiddleFingerAndThumbDoNotTouch";
+            public const string MiddleFingerAndThumbJustTouch = "MiddleFingerAndThumbJustTouch";
+            public const string MiddleFingerAndThumbOverlap = "MiddleFingerAndThumbOverlap";
 
             public const string Ectomorph = "Ectomorph";
             public const string Ectomesomorph = "Ectomesomorph";
