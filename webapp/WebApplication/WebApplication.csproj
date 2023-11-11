@@ -1615,6 +1615,7 @@
     <Content Include="Views\Shared\EditorTemplates\HairType.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Disposition.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page10Doshas.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_Page11General.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

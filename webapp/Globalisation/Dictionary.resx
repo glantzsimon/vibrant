@@ -3037,6 +3037,9 @@
   <data name="BodyTemperatureQuestionLabel" xml:space="preserve">
     <value>Which of the following statements best describe your body temperature?</value>
   </data>
+  <data name="Digestion" xml:space="preserve">
+    <value>Digestion</value>
+  </data>
   <data name="DispositionQuestionLabel" xml:space="preserve">
     <value>Which of the following best describes your disposition?</value>
   </data>
@@ -3063,6 +3066,9 @@
   </data>
   <data name="HairTypeQuestionLabel" xml:space="preserve">
     <value>Which of the following best describes your hair?</value>
+  </data>
+  <data name="ImmuneSystem" xml:space="preserve">
+    <value>Immune System</value>
   </data>
   <data name="LargeEyesLabel" xml:space="preserve">
     <value>My eyes are large, soft with a gentle gaze</value>

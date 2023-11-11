@@ -2049,6 +2049,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Digestion.
+        /// </summary>
+        public static string Digestion {
+            get {
+                return ResourceManager.GetString("Digestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Diplomat.
         /// </summary>
         public static string Diplomat {
@@ -2275,7 +2284,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Ayurvedic &quot;doshas&quot; are patterns of Nature that can be easily observed in human beings. Everything is connected in the natural world. For example, our emotions and thoughts have a biochemical counterpart, in the form of neurotransmitters and neurohormones, giving rise to biochemical markers specific to certain emotional and mental states. That means that our personality, emotions and thoughts affect our biochemistry! Similarly, there is rich biochemistry influencing physical attributes, such as our  [rest of string was truncated]&quot;;.
+        ///    The Ayurvedic &quot;doshas&quot; are patterns of Nature that can be easily observed in human beings. Everything is connected in the natural world. For example, our emotions and thoughts have a biochemical counterpart, in the form of neurotransmitters and neurohormones, giving rise to biochemical markers specific to certain emotional and mental states. That means that our personality, emotions and thoughts affect our biochemistry! Similarly, there is rich biochemistry influencing physical attributes, such as  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DoshasDescription {
             get {
@@ -3734,6 +3743,15 @@ namespace K9.Globalisation {
         public static string ImmuneSupport {
             get {
                 return ResourceManager.GetString("ImmuneSupport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Immune System.
+        /// </summary>
+        public static string ImmuneSystem {
+            get {
+                return ResourceManager.GetString("ImmuneSystem", resourceCulture);
             }
         }
         

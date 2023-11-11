@@ -501,7 +501,7 @@
 
             public const string FullHairTypeLabel = "FullHairTypeLabel";
             public const string FrizzyHairTypeLabel = "FrizzyHairTypeLabel";
-            public const string FineHairTypeLabel = "LivelyHairTypeLabel";
+            public const string FineHairTypeLabel = "FineHairTypeLabel";
             public const string HairTypeQuestionLabel = "HairTypeQuestionLabel";
 
             public const string MembershipOption = "MembershipOption";

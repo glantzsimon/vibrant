@@ -6,14 +6,13 @@ using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Constants;
 using K9.DataAccessLayer.Enums;
 using K9.Globalisation;
+using K9.SharedLibrary.Attributes;
+using K9.SharedLibrary.Enums;
+using K9.SharedLibrary.Models;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Script.Serialization;
-using K9.SharedLibrary.Attributes;
-using K9.SharedLibrary.Authentication;
-using K9.SharedLibrary.Enums;
-using K9.SharedLibrary.Models;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -532,24 +531,16 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InfectionSeverityLabel)]
         public ESeverity? InfectionSeverity { get; set; }
 
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinIssuesLabel)]
-        public EYesNo? AllergiesAndSensitivities { get; set; }
-
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HighBloodPressureLabel)]
-        public EYesNo? HighBloodPressure { get; set; }
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AllergiesAndSensitivitiesLabel)]
+        public string AllergiesAndSensitivitiesDetails { get; set; }
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.UTILabel)]
         public EYesNo? UTI { get; set; }
 
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AllergiesAndSensitivitiesLabel)]
-        public string AllergiesAndSensitivitiesDetails { get; set; }
-
         public double GetImmunityIssuesScore()
         {
-            var totalScore = 5;
+            var totalScore = 4;
             var score = 0;
 
             if (InfectionSeverity == ESeverity.MoreSevere)
@@ -558,11 +549,6 @@ namespace K9.DataAccessLayer.Models
             }
 
             if (CandidaAndFungus == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (AllergiesAndSensitivities == EYesNo.Yes)
             {
                 score++;
             }
@@ -632,9 +618,13 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.JointInflammationLabel)]
         public EYesNo? JointInflammation { get; set; }
 
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HighBloodPressureLabel)]
+        public EYesNo? HighBloodPressure { get; set; }
+
         public double GetInflammationScore()
         {
-            var totalScore = 4;
+            var totalScore = 3;
             var score = 0;
 
             if (JointInflammation == EYesNo.Yes)
@@ -642,17 +632,12 @@ namespace K9.DataAccessLayer.Models
                 score++;
             }
 
-            if (AllergiesAndSensitivities == EYesNo.Yes)
+            if (HighBloodPressure == EYesNo.Yes)
             {
                 score++;
             }
 
             if (SkinIssues == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (HighBloodPressure == EYesNo.Yes)
             {
                 score++;
             }
@@ -684,7 +669,7 @@ namespace K9.DataAccessLayer.Models
         [FileSourceInfo("upload/health", Filter = EFilesSourceFilter.Images)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PhotoOfEyesLabel)]
         public FileSource EyesFileSource { get; set; }
-        
+
         #endregion
 
         #region Trauma
@@ -707,11 +692,11 @@ namespace K9.DataAccessLayer.Models
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmalgamFillingsHistoryLabel)]
         public EYesNo? AmalgamFillingsHistory { get; set; }
-        
+
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RootCanalsLabel)]
         public EYesNo? RootCanals { get; set; }
-        
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DentalIssuesLabel)]
         public string DentalIssuesLabel { get; set; }
 
@@ -736,9 +721,7 @@ namespace K9.DataAccessLayer.Models
                    AbdominalPainOrCramping.HasValue &&
                    InfectionSeverity.HasValue &&
 
-                   AllergiesAndSensitivities == EYesNo.Yes
-                ? !string.IsNullOrEmpty(AllergiesAndSensitivitiesDetails)
-                : AllergiesAndSensitivities.HasValue &&
+                 !string.IsNullOrEmpty(AllergiesAndSensitivitiesDetails) &&
 
                    HighBloodPressure.HasValue &&
                    UTI.HasValue &&
