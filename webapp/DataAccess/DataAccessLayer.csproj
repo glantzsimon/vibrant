@@ -211,6 +211,7 @@
     <Compile Include="Enums\EGonialAngle.cs" />
     <Compile Include="Enums\EStrength.cs" />
     <Compile Include="Enums\ETaste.cs" />
+    <Compile Include="Enums\ESeverity.cs" />
     <Compile Include="Enums\EZodiacElement.cs" />
     <Compile Include="Enums\ENineStarKiElement.cs" />
     <Compile Include="Enums\EZodiac.cs" />
@@ -517,8 +518,9 @@
       <DependentUpon>202311110936437_Handedness.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DoshasQuestionnaire.cs" />
+    <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
     <Compile Include="Models\GenoTypeStrengthTestResult.cs" />
-    <Compile Include="Models\CbsMethylationQuestionnaire.cs" />
+    <Compile Include="Models\HealthQuestionnaireFoodItem.cs" />
     <Compile Include="Models\ZodiacModel.cs" />
     <Compile Include="Models\NineStarKiModel.cs" />
     <Compile Include="Models\FoodItem.cs" />

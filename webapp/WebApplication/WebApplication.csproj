@@ -263,6 +263,7 @@
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Controllers\HealthQuestionnaireController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\HealthQuestionnaireFoodItemsController.cs" />
     <Compile Include="Controllers\ShoppingCartControllerAjax.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\RepCommissionsController.cs" />
@@ -1604,6 +1605,7 @@
     <Content Include="Views\Shared\EditorTemplates\Taste.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page8FamilyHistory.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page9.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Severity.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

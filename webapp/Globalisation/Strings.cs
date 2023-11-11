@@ -210,11 +210,42 @@
             public const string ProductPackLabel = "ProductPackLabel";
             public const string ProductPacksLabel = "ProductPacksLabel";
 
+            public const string BloatingLabel = "BloatingLabel";
+            public const string GasLabel = "GasLabel ";
+            public const string LooseStoolLabel = "LooseStoolLabel ";
+            public const string ConstipationLabel = "ConstipationLabel ";
+            public const string AbdominalPainOrCrampingLabel = "AbdominalPainOrCrampingLabel ";
+            public const string InfectionSeverityLabel = "InfectionSeverityLabel ";
+            public const string PostExertionalMalaiseLabel = "PostExertionalMalaiseLabel ";
+            public const string SkinIssuesLabel = "SkinIssuesLabel ";
+            public const string SkinIssuesDetailsLabel = "SkinIssuesDetailsLabel ";
+            public const string ColdExtremitiesLabel = "ColdExtremitiesLabel ";
+            public const string ColdIntolerantLabel = "ColdIntolerantLabel ";
+            public const string JointInflammationLabel = "JointInflammationLabel ";
+            public const string UTILabel = "UTILabel ";
+            public const string CandidaFungusLabel = "CandidaFungusLabel ";
+            public const string AnaemiaLabel = "AnaemiaLabel ";
+            public const string CrampsTremorsTwitchesLabel = "CrampsTremorsTwitchesLabel ";
+            public const string HistoryOfchronicFatigueOrFibromyalgiaLabel = "HistoryOfchronicFatigueOrFibromyalgiaLabel ";
+            public const string MigrainesLabel = "MigrainesLabel ";
+            public const string POTSLabel = "POTSLabel ";
+            public const string DepressionAnxietyLabel = "DepressionAnxietyLabel ";
+            public const string BrainFogLabel = "BrainFogLabel ";
+            public const string InsomniaLabel = "InsomniaLabel ";
+            public const string NightSweatsLabel = "NightSweatsLabel ";
+            public const string LowMorningEnergyLabel = "LowMorningEnergyLabel ";
+            public const string RacingThoughtsLabel = "RacingThoughtsLabel ";
+            public const string InnerTensionLabel = "InnerTensionLabel ";
+            public const string LoudNoisesBrightLightsLabel = "LoudNoisesBrightLightsLabel ";
+
             public const string CurrentHealthIssuesLabel = "CurrentHealthIssuesLabel";
             public const string HealthGoalsLabel = "HealthGoalsLabel";
             public const string CurrentHealthLevelLabel = "CurrentHealthLevelLabel";
             public const string NutritionExpertiseLevelLabel = "NutritionExpertiseLevelLabel";
             public const string EnjoysCookingLabel = "EnjoysCookingLabel";
+            public const string AllergiesAndSensitivitiesLabel = "AllergiesAndSensitivitiesLabel";
+            public const string AllergiesAndSensitivitiesDetailsLabel = "AllergiesAndSensitivitiesDetailsLabel";
+            public const string ExerciseLabel = "ExerciseLabel";
             public const string CookingFrequencyLabel = "CookingFrequencyLabel";
             public const string CaffeineSensitivityLabel = "CaffeineSensitivityLabel";
             public const string MedicationSensitivityLabel = "MedicationSensitivityLabel";
@@ -252,7 +283,7 @@
             public const string HeadShapeLabel = "HeadShapeLabel";
             public const string HeadWidthQuestionLabel = "HeadWidthQuestionLabel";
             public const string HeadLengthQuestionLabel = "HeadLengthQuestionLabel";
-            
+
             public const string CruciferousVegetablesVeryBitterLabel = "CruciferousVegetablesVeryBitterLabel";
 
             public const string FamilyHistoryOfNeurologicalDiseaseLabel = "FamilyHistoryOfNeurologicalDiseaseLabel";
@@ -260,7 +291,7 @@
             public const string FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel = "FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel";
             public const string FamilyHistoryOfCancerLabel = "FamilyHistoryOfCancerLabel";
             public const string FamilyHistoryOfAutoimmuneDiseaseLabel = "FamilyHistoryOfAutoimmuneDiseaseLabel";
-            
+
             public const string IncisorShovellingLabel = "IncisorShovellingLabel";
 
             public const string ChairHeightLabel = "ChairHeightLabel";
@@ -288,7 +319,7 @@
             public const string IsLowerLegLengthGreaterThanUpperLegLengthLabel = "IsLowerLegLengthGreaterThanUpperLegLengthLabel";
             public const string IsLeftIndexFingerLongerThanLeftRingFingerLabel = "IsLeftIndexFingerLongerThanLeftRingFingerLabel";
             public const string IsRightIndexFingerLongerThanRightRingFingerLabel = "IsRightIndexFingerLongerThanRightRingFingerLabel";
-            
+
             public const string BloodGroupLabel = "BloodGroupLabel";
             public const string BloodGroupQuestionLabel = "BloodGroupQuestionLabel";
             public const string RhesusFactorLabel = "RhesusFactorLabel";
@@ -402,7 +433,7 @@
             public const string InPreparation = "InPreparation";
             public const string InProgress = "InProgress";
             public const string ReadyForDelivery = "ReadyForDelivery";
-            
+
             public const string MembershipOption = "MembershipOption";
             public const string ProfileReading = "ProfileReading";
             public const string CompatibilityReading = "CompatibilityReading";
@@ -441,7 +472,7 @@
             public const string Rarely = "Rarely";
             public const string Never = "Never";
             public const string Custom = "Custom";
-            
+
             public const string Default = "Default";
             public const string ParasiteCleanse = "ParasiteCleanse";
             public const string ParasiteCleanseMaintenance = "ParasiteCleanseMaintenance";
@@ -470,6 +501,10 @@
             public const string Yes = "Yes";
             public const string No = "No";
             public const string NotSure = "NotSure";
+
+            public const string MoreSevere = "MoreSevere";
+            public const string LessSevere = "LessSevere";
+            public const string AboutAverage = "AboutAverage";
 
             public const string NoticeablyBitter = "NoticeablyBitter";
             public const string SlightlyBitter = "SlightlyBitter";

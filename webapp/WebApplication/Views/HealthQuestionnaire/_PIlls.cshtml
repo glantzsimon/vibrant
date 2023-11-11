@@ -35,10 +35,7 @@
 
     <li class="@($"{Model.GetDoshasActiveTabClass()} {Model.GetDoshasEnabledClass()}")"><a data-toggle="@Model.GetDoshasToggle()" href="#doshas">@Dictionary.Doshas @Html.Raw(Model.GetDoshasCompleteHtml())</a></li>
 
-    @if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
-    {
-        <li class="@($"{Model.GetGeneralHealthActiveTabClass()} {Model.GetGeneralHealthEnabledClass()}")"><a data-toggle="@Model.GetGeneralHealthToggle()" href="#general-health">@Dictionary.GeneralHealth @Html.Raw(Model.GetGeneralHealthCompleteHtml())</a></li>
-    }
+    <li class="@($"{Model.GetGeneralHealthActiveTabClass()} {Model.GetGeneralHealthEnabledClass()}")"><a data-toggle="@Model.GetGeneralHealthToggle()" href="#general-health">@Dictionary.GeneralHealth @Html.Raw(Model.GetGeneralHealthCompleteHtml())</a></li>
 </ul>
 
 <div class="tab-content">
@@ -84,9 +81,6 @@
     <div id="doshas" class="tab-pane fade @(Model.GetDoshasActivePanelClass()) padding-top-15">
     </div>
 
-    @if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
-    {
-        <div id="general-health" class="tab-pane fade @(Model.GetGeneralHealthActivePanelClass()) padding-top-15">
-        </div>
-    }
+    <div id="general-health" class="tab-pane fade @(Model.GetGeneralHealthActivePanelClass()) padding-top-15">
+    </div>
 </div>

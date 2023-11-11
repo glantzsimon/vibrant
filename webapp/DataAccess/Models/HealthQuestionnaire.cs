@@ -10,6 +10,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Script.Serialization;
+using K9.SharedLibrary.Authentication;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -108,17 +109,6 @@ namespace K9.DataAccessLayer.Models
         public bool IsFamilyHistoryActive() => IsFamilyHistoryEnabled() &&
                                              !IsFamilyHistoryComplete();
 
-        public bool IsGeneralHealthEnabled() => IsPersonalInformationComplete() &&
-                                               IsBloodAnalysisComplete() &&
-                                               IsAcetylationStatusComplete() &&
-                                               IsBiometricsComplete() &&
-                                               IsDermatoglyphicsComplete() &&
-                                               IsDentitionComplete() &&
-                                               IsTasterStatusComplete() &&
-                                               IsFamilyHistoryComplete();
-
-        public bool IsGeneralHealthActive() => IsGeneralHealthEnabled() &&
-                                             !IsGeneralHealthComplete();
 
         public bool IsCbsAndMethylationEnabled() => IsPersonalInformationComplete() &&
                                                    IsBloodAnalysisComplete() &&
@@ -127,8 +117,7 @@ namespace K9.DataAccessLayer.Models
                                                    IsDermatoglyphicsComplete() &&
                                                    IsDentitionComplete() &&
                                                    IsTasterStatusComplete() &&
-                                                   IsFamilyHistoryComplete() &&
-                                                   IsGeneralHealthComplete();
+                                                   IsFamilyHistoryComplete();
 
         public bool IsCbsAndMethylationActive() => IsCbsAndMethylationEnabled() &&
                                                    !IsCbsAndMethylationComplete();
@@ -141,11 +130,25 @@ namespace K9.DataAccessLayer.Models
                                         IsDentitionComplete() &&
                                         IsTasterStatusComplete() &&
                                         IsFamilyHistoryComplete() &&
-                                        IsGeneralHealthComplete() &&
                                         IsCbsAndMethylationComplete();
 
         public bool IsDoshasActive() => IsDoshasEnabled() &&
                                         !IsDoshasComplete();
+
+        public bool IsGeneralHealthEnabled() => IsPersonalInformationComplete() &&
+                                                IsBloodAnalysisComplete() &&
+                                                IsAcetylationStatusComplete() &&
+                                                IsBiometricsComplete() &&
+                                                IsDermatoglyphicsComplete() &&
+                                                IsDentitionComplete() &&
+                                                IsTasterStatusComplete() &&
+                                                IsCbsAndMethylationComplete() &&
+                                                IsDoshasComplete() &&
+                                                IsFamilyHistoryComplete();
+
+        public bool IsGeneralHealthActive() => IsGeneralHealthEnabled() &&
+                                               !IsGeneralHealthComplete();
+
 
         #region Personal Details
 
@@ -439,15 +442,216 @@ namespace K9.DataAccessLayer.Models
         public EYesNo? EnjoysCooking { get; set; }
 
         [UIHint("Frequency")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnjoysCookingLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CookingFrequencyLabel)]
         public EFrequency? CookingFrequency { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BloatingLabel)]
+        public EYesNo? Bloating { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GasLabel)]
+        public EYesNo? Gas { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LooseStoolLabel)]
+        public EYesNo? LooseStool { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ConstipationLabel)]
+        public EYesNo? Constipation { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AbdominalPainOrCrampingLabel)]
+        public EYesNo? AbdominalPainOrCramping { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinIssuesLabel)]
+        public EYesNo? SkinIssues { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinIssuesDetailsLabel)]
+        public string SkinIssuesDetails { get; set; }
+
+        public double GetDigestionIssuesScore()
+        {
+            var totalScore = 6;
+            var score = 0;
+
+            if (Bloating == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (Gas == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (LooseStool == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (Constipation == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (AbdominalPainOrCramping == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (SkinIssues == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            return score / totalScore;
+        }
+
+        [UIHint("Severity")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InfectionSeverityLabel)]
+        public ESeverity? InfectionSeverity { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinIssuesLabel)]
+        public EYesNo? AllergiesAndSensitivities { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.UTILabel)]
+        public EYesNo? UTI { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AllergiesAndSensitivitiesLabel)]
+        public string AllergiesAndSensitivitiesDetails { get; set; }
+
+        public double GetImmunityIssuesScore()
+        {
+            var totalScore = 5;
+            var score = 0;
+
+            if (InfectionSeverity == ESeverity.MoreSevere)
+            {
+                score++;
+            }
+
+            if (CandidaAndFungus == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (AllergiesAndSensitivities == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (UTI == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (GetDigestionIssuesScore() > 0)
+            {
+                score++;
+            }
+
+            return score / totalScore;
+        }
+
+        #region Yin Disease
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColdExtremitiesLabel)]
+        public EYesNo? ColdExtremities { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColdIntolerantLabel)]
+        public EYesNo? ColdIntolerant { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CandidaFungusLabel)]
+        public EYesNo? CandidaAndFungus { get; set; }
+
+        public double GetYinDiseaseScore()
+        {
+            var totalScore = 4;
+            var score = 0;
+
+            if (ColdExtremities == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (ColdIntolerant == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (CandidaAndFungus == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (UTI == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            return score / totalScore;
+        }
+
+        #endregion
+
+        #region Inflammation
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.JointInflammationLabel)]
+        public EYesNo? JointInflammation { get; set; }
+
+        public double GetInflammationScore()
+        {
+            var totalScore = 3;
+            var score = 0;
+
+            if (JointInflammation == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (AllergiesAndSensitivities == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (SkinIssues == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            return score / totalScore;
+        }
+
+        #endregion
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ExerciseLabel)]
+        public string Exercise { get; set; }
 
         public bool IsGeneralHealthComplete()
         {
             return !string.IsNullOrEmpty(CurrentHealthIssues) &&
                    !string.IsNullOrEmpty(HealthGoals) &&
                    EnjoysCooking.HasValue &&
-                   CookingFrequency.HasValue;
+                   CookingFrequency.HasValue &&
+                   Bloating.HasValue &&
+                   Gas.HasValue &&
+                   LooseStool.HasValue &&
+                   Constipation.HasValue &
+                   AbdominalPainOrCramping.HasValue &&
+                   SkinIssues == EYesNo.Yes
+                ? !string.IsNullOrEmpty(SkinIssuesDetails)
+                : SkinIssues.HasValue &&
+                  InfectionSeverity.HasValue;
+            ;
         }
 
         #endregion

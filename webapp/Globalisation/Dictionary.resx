@@ -2773,8 +2773,59 @@
   <data name="WristTypeLabel" xml:space="preserve">
     <value>Wrist Circumference</value>
   </data>
+  <data name="AbdominalPainOrCrampingLabel" xml:space="preserve">
+    <value>Do you often experience abdominal pain or cramping?</value>
+  </data>
+  <data name="AboutAverage" xml:space="preserve">
+    <value>About Average</value>
+  </data>
+  <data name="AllergiesAndSensitivitiesDetailsLabel" xml:space="preserve">
+    <value>Please provide details of any allergies and sensitivities you experience</value>
+  </data>
+  <data name="AllergiesAndSensitivitiesLabel" xml:space="preserve">
+    <value>Do you have any allergies or sensitivities?</value>
+  </data>
   <data name="Ambidextrous" xml:space="preserve">
     <value>Ambidextrous</value>
+  </data>
+  <data name="AmmoniaSmellLabel" xml:space="preserve">
+    <value>Do you ever notice a strong ammonia smell in your sweat or urine?</value>
+  </data>
+  <data name="AnaemiaLabel" xml:space="preserve">
+    <value>Do you ever experience symptoms of anaemia, such as pale skin, low energy, feeling faint, etc.?</value>
+  </data>
+  <data name="BloatingLabel" xml:space="preserve">
+    <value>Do you often experience bloating after a meal or in general?</value>
+  </data>
+  <data name="BrainFogLabel" xml:space="preserve">
+    <value>Do you ever experience brain fog or short term memory issues?</value>
+  </data>
+  <data name="CandidaFungusLabel" xml:space="preserve">
+    <value>Do you often experience issues related to candida or other yeast or fungus, such as athlete's foot, thrush, etc?</value>
+  </data>
+  <data name="CoarseThinEyebrowsLabel" xml:space="preserve">
+    <value>Is the outer third of your eyebrows thinning or do you have any coarse, long eyebrow hairs?</value>
+  </data>
+  <data name="ColdExtremitiesLabel" xml:space="preserve">
+    <value>Do you often experience cold extremities?</value>
+  </data>
+  <data name="ColdIntolerantLabel" xml:space="preserve">
+    <value>Do you often feel cold and / or do you find it a chellenge to tolerate cold weather?</value>
+  </data>
+  <data name="ConstipationLabel" xml:space="preserve">
+    <value>Do you often get constipated?</value>
+  </data>
+  <data name="CrampsTremorsTwitchesLabel" xml:space="preserve">
+    <value>Do you ever experience cramps, tremors or twitches anywhere on your body?</value>
+  </data>
+  <data name="DepressionAnxietyLabel" xml:space="preserve">
+    <value>Do you have a history of or are you currently experiencing depression or anxiety?</value>
+  </data>
+  <data name="ExerciseLabel" xml:space="preserve">
+    <value>How often do you exercise and what types of exercise do you do? Please profide details.</value>
+  </data>
+  <data name="GasLabel" xml:space="preserve">
+    <value>Do you often experience flatulence, especially after meals?</value>
   </data>
   <data name="Handedness" xml:space="preserve">
     <value>Handedness</value>
@@ -2782,10 +2833,64 @@
   <data name="HandednessLabel" xml:space="preserve">
     <value>Are you right-handed, left-handed or ambidextrous?</value>
   </data>
+  <data name="HistoryOfchronicFatigueOrFibromyalgiaLabel" xml:space="preserve">
+    <value>Do you have a history of chronic fatigue, fibromyalgia or burnout?</value>
+  </data>
+  <data name="InfectionSeverityLabel" xml:space="preserve">
+    <value>When you catch a cold or the flu, how severe are your symptoms, typically, in comparison to most other people?</value>
+  </data>
+  <data name="InnerTensionLabel" xml:space="preserve">
+    <value>Do you often feel an inner tension that makes it very hard to relax?</value>
+  </data>
+  <data name="InsomniaLabel" xml:space="preserve">
+    <value>Do you ever experience insomnia, either difficulty getting to sleep or staying asleep?</value>
+  </data>
+  <data name="JointInflammationLabel" xml:space="preserve">
+    <value>Do you ever experience joint pain or stiffness?</value>
+  </data>
   <data name="LeftHanded" xml:space="preserve">
     <value>Left-Handed</value>
   </data>
+  <data name="LessSevere" xml:space="preserve">
+    <value>Less Severe</value>
+  </data>
+  <data name="LooseStoolLabel" xml:space="preserve">
+    <value>Do you often experience loose stool?</value>
+  </data>
+  <data name="LoudNoisesBrightLightsLabel" xml:space="preserve">
+    <value>Do loud noises or bright lights ever make you anxious or overwhelmed?</value>
+  </data>
+  <data name="LowMorningEnergyLabel" xml:space="preserve">
+    <value>Do you tend to feel groggy and / or exhausted when you first wake up?</value>
+  </data>
+  <data name="MigrainesLabel" xml:space="preserve">
+    <value>Do you often suffer from migraines?</value>
+  </data>
+  <data name="MoreSevere" xml:space="preserve">
+    <value>More Severe</value>
+  </data>
+  <data name="NightSweatsLabel" xml:space="preserve">
+    <value>Do you ever experience night sweats?</value>
+  </data>
+  <data name="PostExertionalMalaiseLabel" xml:space="preserve">
+    <value>Do you ever experience post-exertional malaise? (In other words, do you feel exhausted after physical activity?</value>
+  </data>
+  <data name="POTSLabel" xml:space="preserve">
+    <value>Do you ever experience dizziness when standing up, after sitting or lying down for some time?</value>
+  </data>
+  <data name="RacingThoughtsLabel" xml:space="preserve">
+    <value>Do you often experience racing thoughts?</value>
+  </data>
   <data name="RightHanded" xml:space="preserve">
     <value>Right-Handed</value>
+  </data>
+  <data name="SkinIssuesDetailsLabel" xml:space="preserve">
+    <value>Please provide details of any skin issues you experience</value>
+  </data>
+  <data name="SkinIssuesLabel" xml:space="preserve">
+    <value>Do you experience any issues with your skin, such as rashes, eczema, fungus, dermatitis or other complaint?</value>
+  </data>
+  <data name="UTILabel" xml:space="preserve">
+    <value>Do you often experience urinary tract infections?</value>
   </data>
 </root>
