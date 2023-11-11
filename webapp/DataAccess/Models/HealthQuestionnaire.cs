@@ -34,6 +34,7 @@ namespace K9.DataAccessLayer.Models
                    IsBloodAnalysisComplete() &&
                    IsFamilyHistoryComplete() &&
                    IsDermatoglyphicsComplete() &&
+                   IsDoshasComplete() &&
                    IsTasterStatusComplete();
         }
 
@@ -375,6 +376,8 @@ namespace K9.DataAccessLayer.Models
         public DateTime? DateOfBirth { get; set; }
 
         [Display(ResourceType = typeof(Base.Globalisation.Dictionary), Name = Base.Globalisation.Strings.Labels.LanguageLabel)]
+        [StringLength(1111)]
+        [DataType(DataType.MultilineText)]
         public string GenderName => Gender.GetLocalisedLanguageName();
 
         public string GenderPossessivePronoun => Gender == EGender.Male ? "his" : "her";
@@ -422,9 +425,13 @@ namespace K9.DataAccessLayer.Models
         #region General Health 
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CurrentHealthIssuesLabel)]
+        [StringLength(1111)]
+        [DataType(DataType.MultilineText)]
         public string CurrentHealthIssues { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HealthGoalsLabel)]
+        [StringLength(1111)]
+        [DataType(DataType.MultilineText)]
         public string HealthGoals { get; set; }
 
         [UIHint("Range")]
@@ -474,6 +481,8 @@ namespace K9.DataAccessLayer.Models
         public EYesNo? SkinIssues { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinIssuesDetailsLabel)]
+        [StringLength(1111)]
+        [DataType(DataType.MultilineText)]
         public string SkinIssuesDetails { get; set; }
 
         [UIHint("YesNo")]
@@ -532,6 +541,8 @@ namespace K9.DataAccessLayer.Models
         public ESeverity? InfectionSeverity { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AllergiesAndSensitivitiesLabel)]
+        [StringLength(1111)]
+        [DataType(DataType.MultilineText)]
         public string AllergiesAndSensitivitiesDetails { get; set; }
 
         [UIHint("YesNo")]
@@ -650,12 +661,18 @@ namespace K9.DataAccessLayer.Models
         #region Other
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SurgeryDetailsLabel)]
+        [StringLength(1111)]
+        [DataType(DataType.MultilineText)]
         public string SurgeryDetails { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PrescriptionMedicationLabel)]
+        [StringLength(1111)]
+        [DataType(DataType.MultilineText)]
         public string PrescriptionMedication { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SupplementsLabel)]
+        [StringLength(1111)]
+        [DataType(DataType.MultilineText)]
         public string Supplements { get; set; }
 
         [UIHint("YesNo")]
@@ -675,6 +692,8 @@ namespace K9.DataAccessLayer.Models
         #region Trauma
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PhysicalTraumaLabel)]
+        [StringLength(1111)]
+        [DataType(DataType.MultilineText)]
         public string PhysicalTraumaDetails { get; set; }
 
         [UIHint("YesNo")]
@@ -698,11 +717,15 @@ namespace K9.DataAccessLayer.Models
         public EYesNo? RootCanals { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DentalIssuesLabel)]
+        [StringLength(1111)]
+        [DataType(DataType.MultilineText)]
         public string DentalIssuesLabel { get; set; }
 
         #endregion
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ExerciseLabel)]
+        [StringLength(1111)]
+        [DataType(DataType.MultilineText)]
         public string Exercise { get; set; }
 
         public bool IsGeneralHealthComplete()
