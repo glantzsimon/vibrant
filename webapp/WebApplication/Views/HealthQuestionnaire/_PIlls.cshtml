@@ -27,7 +27,7 @@
 
     <li class="@($"{Model.GetFamilyHistoryActiveTabClass()} {Model.GetFamilyHistoryEnabledClass()}")"><a data-toggle="@Model.GetFamilyHistoryToggle()" href="#family-history">@Dictionary.FamilyHistory @Html.Raw(Model.GetFamilyHistoryCompleteHtml())</a></li>
 
-    <li class="@($"{Model.GetGeneralHealthActiveTabClass()} {Model.GetGeneralHealthEnabledClass()}")"><a data-toggle="@Model.GetGeneralHealthToggle()" href="#general-health">@Dictionary.GeneralHealth @Html>Raw(Model.GetGeneralHealthCompleteHtml())</a></li>
+    <li class="@($"{Model.GetGeneralHealthActiveTabClass()} {Model.GetGeneralHealthEnabledClass()}")"><a data-toggle="@Model.GetGeneralHealthToggle()" href="#general-health">@Dictionary.GeneralHealth @Html.Raw(Model.GetGeneralHealthCompleteHtml())</a></li>
 
     <li class="@($"{Model.GetCbsAndMethylationActiveTabClass()} {Model.GetCbsAndMethylationEnabledClass()}")"><a data-toggle="@Model.GetCbsAndMethylationToggle()" href="#cbs-methylation">@Dictionary.CbsAndMethylation @Html.Raw(Model.GetCbsAndMethylationCompleteHtml())</a></li>
 
@@ -60,6 +60,7 @@
     </div>
     
     <div id="dentition" class="tab-pane fade @(Model.GetDentitionActivePanelClass()) padding-top-15">
+        @Html.Partial("_Page6Dentition")
     </div>
     
     <div id="taster-status" class="tab-pane fade @(Model.GetTasterStatusActivePanelClass()) padding-top-15">

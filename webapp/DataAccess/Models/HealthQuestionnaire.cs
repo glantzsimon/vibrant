@@ -245,10 +245,10 @@ namespace K9.DataAccessLayer.Models
             IsDentitionActive() ? Strings.CssClasses.ActiveTabClass : "";
 
         public string GetDentitionEnabledClass() =>
-            IsDentitionActive() ? "" : Strings.CssClasses.DisabledClass;
+            IsDentitionEnabled() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetDentitionToggle() =>
-            IsDentitionActive() ? Strings.CssClasses.Pill : "";
+            IsDentitionEnabled() ? Strings.CssClasses.Pill : "";
 
         public string GetDentitionCompleteHtml() =>
             IsDentitionComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
@@ -264,10 +264,10 @@ namespace K9.DataAccessLayer.Models
             IsTasterStatusActive() ? Strings.CssClasses.ActiveTabClass : "";
 
         public string GetTasterStatusEnabledClass() =>
-            IsTasterStatusActive() ? "" : Strings.CssClasses.DisabledClass;
+            IsTasterStatusEnabled() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetTasterStatusToggle() =>
-            IsTasterStatusActive() ? Strings.CssClasses.Pill : "";
+            IsTasterStatusEnabled() ? Strings.CssClasses.Pill : "";
 
         public string GetTasterStatusCompleteHtml() =>
             IsTasterStatusComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
@@ -283,10 +283,10 @@ namespace K9.DataAccessLayer.Models
             IsFamilyHistoryActive() ? Strings.CssClasses.ActiveTabClass : "";
 
         public string GetFamilyHistoryEnabledClass() =>
-            IsFamilyHistoryActive() ? "" : Strings.CssClasses.DisabledClass;
+            IsFamilyHistoryEnabled() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetFamilyHistoryToggle() =>
-            IsFamilyHistoryActive() ? Strings.CssClasses.Pill : "";
+            IsFamilyHistoryEnabled() ? Strings.CssClasses.Pill : "";
 
         public string GetFamilyHistoryCompleteHtml() =>
             IsFamilyHistoryComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
@@ -302,10 +302,10 @@ namespace K9.DataAccessLayer.Models
             IsGeneralHealthActive() ? Strings.CssClasses.ActiveTabClass : "";
 
         public string GetGeneralHealthEnabledClass() =>
-            IsGeneralHealthActive() ? "" : Strings.CssClasses.DisabledClass;
+            IsGeneralHealthEnabled() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetGeneralHealthToggle() =>
-            IsGeneralHealthActive() ? Strings.CssClasses.Pill : "";
+            IsGeneralHealthEnabled() ? Strings.CssClasses.Pill : "";
 
         public string GetGeneralHealthCompleteHtml() =>
             IsGeneralHealthComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
@@ -321,10 +321,10 @@ namespace K9.DataAccessLayer.Models
             IsCbsAndMethylationActive() ? Strings.CssClasses.ActiveTabClass : "";
 
         public string GetCbsAndMethylationEnabledClass() =>
-            IsCbsAndMethylationActive() ? "" : Strings.CssClasses.DisabledClass;
+            IsCbsAndMethylationEnabled() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetCbsAndMethylationToggle() =>
-            IsCbsAndMethylationActive() ? Strings.CssClasses.Pill : "";
+            IsCbsAndMethylationEnabled() ? Strings.CssClasses.Pill : "";
 
         public string GetCbsAndMethylationCompleteHtml() =>
             IsCbsAndMethylationComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";
@@ -340,10 +340,10 @@ namespace K9.DataAccessLayer.Models
             IsDoshasActive() ? Strings.CssClasses.ActiveTabClass : "";
 
         public string GetDoshasEnabledClass() =>
-            IsDoshasActive() ? "" : Strings.CssClasses.DisabledClass;
+            IsDoshasEnabled() ? "" : Strings.CssClasses.DisabledClass;
 
         public string GetDoshasToggle() =>
-            IsDoshasActive() ? Strings.CssClasses.Pill : "";
+            IsDoshasEnabled() ? Strings.CssClasses.Pill : "";
 
         public string GetDoshasCompleteHtml() =>
             IsDoshasComplete() ? "<i class=\"fa fa-check-circle green\"></i>" : "";

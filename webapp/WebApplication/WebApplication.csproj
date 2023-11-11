@@ -1599,6 +1599,7 @@
     <Content Include="Views\Shared\EditorTemplates\GonialAngle.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page5Dermatoglyphics.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Handedness.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_Page6Dentition.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

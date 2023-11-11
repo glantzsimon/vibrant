@@ -206,7 +206,72 @@ namespace K9.WebApplication.Controllers
                 ModelState.AddModelError(nameof(HealthQuestionnaire.WristCircumference), Base.Globalisation.Dictionary.FieldIsRequired);
             }
             
+            if (model.StandingHeight <= 0)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.StandingHeight), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
             #endregion
+
+            #region Dermatoglyphics
+
+            if (!model.LeftThumprintType.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.LeftThumprintType), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.LeftIndexFingerprintType.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.LeftIndexFingerprintType), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.LeftMiddleFingerprintType.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.LeftMiddleFingerprintType), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.LeftRingFingerprintType.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.LeftRingFingerprintType), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.LeftLittleFingerprintType.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.LeftLittleFingerprintType), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.RightThumprintType.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.RightThumprintType), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.RightIndexFingerprintType.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.RightIndexFingerprintType), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.RightMiddleFingerprintType.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.RightMiddleFingerprintType), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.RightRingFingerprintType.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.RightRingFingerprintType), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            #endregion
+
+
+            #region Dentition
+
+            if (!model.IncisorShovelling.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.IncisorShovelling), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            #endregion
+
 
             if (model.IsComplete())
             {
