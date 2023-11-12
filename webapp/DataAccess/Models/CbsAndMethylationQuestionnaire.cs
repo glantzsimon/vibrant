@@ -70,6 +70,14 @@ namespace K9.DataAccessLayer.Models
         public EYesNo? LoudNoisesBrightLights { get; set; }
 
         [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SulfiteSensitivityLabel)]
+        public EYesNo? SulfiteSensitivity { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MsgSensitivityLabel)]
+        public EYesNo? MsgSensitivity { get; set; }
+
+        [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CoarseThinEyebrowsLabel)]
         public EYesNo? CoarseThinEyebrows { get; set; }
 
@@ -111,8 +119,18 @@ namespace K9.DataAccessLayer.Models
 
         public double GetCbsScore()
         {
-            var totalScore = 30;
+            var totalScore = 32;
             var score = 0;
+
+            if (MsgSensitivity == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (SulfiteSensitivity == EYesNo.Yes)
+            {
+                score++;
+            }
 
             if (ChronicViralInfections == EYesNo.Yes)
             {
@@ -274,6 +292,8 @@ namespace K9.DataAccessLayer.Models
             StretchMarks.HasValue &&
             FrequentNighttimeUrination.HasValue &&
             Herpes.HasValue &&
+            SulfiteSensitivity.HasValue &&
+            MsgSensitivity.HasValue &&
             Irritability.HasValue;
     }
 }

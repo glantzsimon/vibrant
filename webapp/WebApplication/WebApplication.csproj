@@ -1588,7 +1588,7 @@
     <Content Include="Views\Shared\EditorTemplates\FingerPrint.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\GapSize.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SomatoType.cshtml" />
-    <Content Include="Views\HealthQuestionnaire\AnswerHealthQuestionnaire.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\GeneticProfileTest.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page1PersonalDetails.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Pills.cshtml" />
     <Content Include="Views\HealthQuestionnaire\QuestionnaireCompletedSuccess.cshtml" />
@@ -1617,6 +1617,8 @@
     <Content Include="Views\HealthQuestionnaire\_Page10Doshas.cshtml" />
     <Content Include="Views\HealthQuestionnaire\_Page11General.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Frequency.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\GeneticProfileTestOverview.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\_PillsOverview.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

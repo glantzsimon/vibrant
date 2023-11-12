@@ -250,6 +250,8 @@
             public const string FrequentNighttimeUrinationLabel = "FrequentNighttimeUrinationLabel";
             public const string HerpesLabel = "HerpesLabel";
             public const string IrritabilityLabel = "IrritabilityLabel";
+            public const string SulfiteSensitivityLabel = "SulfiteSensitivityLabel";
+            public const string MsgSensitivityLabel = "MsgSensitivityLabel";
             public const string SurgeryDetailsLabel = "SurgeryDetailsLabel";
             public const string PrescriptionMedicationLabel = "PrescriptionMedicationLabel";
             public const string SupplementsLabel = "SupplementsLabel";

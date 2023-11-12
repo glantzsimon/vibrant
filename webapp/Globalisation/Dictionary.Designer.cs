@@ -4980,6 +4980,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Does Chinese food often make you feel jittery, groggy or sedated, or does it give you a headache?.
+        /// </summary>
+        public static string MsgSensitivityLabel {
+            get {
+                return ResourceManager.GetString("MsgSensitivityLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Narrow Angle.
         /// </summary>
         public static string NarrowAngle {
@@ -7948,6 +7957,15 @@ namespace K9.Globalisation {
         public static string SuggestedRetailPriceLabel {
             get {
                 return ResourceManager.GetString("SuggestedRetailPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would even one glass of wine or beer probably cause you to experience hangover symptoms? Or do you notice a hungover feeling after eating certain cheeses, dried fruits or sauces?.
+        /// </summary>
+        public static string SulfiteSensitivityLabel {
+            get {
+                return ResourceManager.GetString("SulfiteSensitivityLabel", resourceCulture);
             }
         }
         

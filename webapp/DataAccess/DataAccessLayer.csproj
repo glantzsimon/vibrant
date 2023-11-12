@@ -547,6 +547,10 @@
     <Compile Include="Migrations\202311111647172_HQUpdateAgain.Designer.cs">
       <DependentUpon>202311111647172_HQUpdateAgain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311120526423_SulfphitesAndMsg.cs" />
+    <Compile Include="Migrations\202311120526423_SulfphitesAndMsg.Designer.cs">
+      <DependentUpon>202311120526423_SulfphitesAndMsg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
     <Compile Include="Models\Doshas.cs" />
@@ -832,6 +836,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311111647172_HQUpdateAgain.resx">
       <DependentUpon>202311111647172_HQUpdateAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311120526423_SulfphitesAndMsg.resx">
+      <DependentUpon>202311120526423_SulfphitesAndMsg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

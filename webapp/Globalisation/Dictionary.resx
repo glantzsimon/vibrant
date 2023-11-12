@@ -3076,6 +3076,9 @@
   <data name="LivelyDispositionLabel" xml:space="preserve">
     <value>I am often lively, enthusiastic and drawn to change</value>
   </data>
+  <data name="MsgSensitivityLabel" xml:space="preserve">
+    <value>Does Chinese food often make you feel jittery, groggy or sedated, or does it give you a headache?</value>
+  </data>
   <data name="PenetratingEyesLabel" xml:space="preserve">
     <value>I have intense or penetrating eyes</value>
   </data>
@@ -3093,5 +3096,8 @@
   </data>
   <data name="StressResponseQuestionLabel" xml:space="preserve">
     <value>Which of the following best describes how you respond when stressed?</value>
+  </data>
+  <data name="SulfiteSensitivityLabel" xml:space="preserve">
+    <value>Would even one glass of wine or beer probably cause you to experience hangover symptoms? Or do you notice a hungover feeling after eating certain cheeses, dried fruits or sauces?</value>
   </data>
 </root>

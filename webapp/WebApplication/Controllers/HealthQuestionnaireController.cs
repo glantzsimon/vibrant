@@ -21,8 +21,8 @@ namespace K9.WebApplication.Controllers
             _questionnaireService = questionnaireService;
         }
 
-        [Route("genetic-profile/questionnaire")]
-        public ActionResult AnswerHealthQuestionnaire(int? clientId = null)
+        [Route("genetic-profile/questionnaire/overview")]
+        public ActionResult GeneticProfileTestOverview(int? clientId = null)
         {
             HealthQuestionnaire hq;
 
@@ -43,11 +43,32 @@ namespace K9.WebApplication.Controllers
             return View(hq);
         }
 
+        [Route("genetic-profile/questionnaire")]
+        public ActionResult GeneticProfileTest(int? clientId = null)
+        {
+            HealthQuestionnaire hq;
+
+            if (clientId.HasValue)
+            {
+                hq = _questionnaireService.GetHealthQuestionnaireForClient(clientId.Value);
+            }
+            else
+            {
+                hq = _questionnaireService.GetHealthQuestionnaireForUser(WebSecurity.CurrentUserId);
+            }
+            
+            if (hq == null)
+            {
+                return HttpNotFound();
+            }
+            
+            return View(hq);
+        }
 
         [Route("genetic-profile/questionnaire")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AnswerHealthQuestionnaire(HealthQuestionnaire model)
+        public ActionResult GeneticProfileTest(HealthQuestionnaire model)
         {
             _questionnaireService.Save(model);
 
