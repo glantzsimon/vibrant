@@ -34,6 +34,7 @@ namespace K9.DataAccessLayer.Models
                    IsBloodAnalysisComplete() &&
                    IsFamilyHistoryComplete() &&
                    IsDermatoglyphicsComplete() &&
+                   IsCbsAndMethylationComplete() &&
                    IsDoshasComplete() &&
                    IsTasterStatusComplete();
         }

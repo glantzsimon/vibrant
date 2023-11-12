@@ -508,7 +508,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Take the Health Questionnaire.
+        ///   Looks up a localized string similar to Take the Genetic Profile Test.
         /// </summary>
         public static string AnswerHealthQuestionnaire {
             get {
@@ -8867,6 +8867,15 @@ namespace K9.Globalisation {
         public static string ViewClientAddressLabels {
             get {
                 return ResourceManager.GetString("ViewClientAddressLabels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Genetic Profile Test Results.
+        /// </summary>
+        public static string ViewHealthQuestionnaireResults {
+            get {
+                return ResourceManager.GetString("ViewHealthQuestionnaireResults", resourceCulture);
             }
         }
         

@@ -2504,7 +2504,7 @@
     <value>Acetylation</value>
   </data>
   <data name="AnswerHealthQuestionnaire" xml:space="preserve">
-    <value>Take the Health Questionnaire</value>
+    <value>Take the Genetic Profile Test</value>
   </data>
   <data name="Average" xml:space="preserve">
     <value>Average</value>
@@ -3099,5 +3099,8 @@
   </data>
   <data name="SulfiteSensitivityLabel" xml:space="preserve">
     <value>Would even one glass of wine or beer probably cause you to experience hangover symptoms? Or do you notice a hungover feeling after eating certain cheeses, dried fruits or sauces?</value>
+  </data>
+  <data name="ViewHealthQuestionnaireResults" xml:space="preserve">
+    <value>View Genetic Profile Test Results</value>
   </data>
 </root>

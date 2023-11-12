@@ -5,6 +5,7 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Services;
 using System.Web.Mvc;
+using K9.SharedLibrary.Authentication;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -19,6 +20,12 @@ namespace K9.WebApplication.Controllers
         public HealthQuestionnaireController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IMembershipService membershipService, IQuestionnaireService questionnaireService) : base(controllerPackage.Logger, controllerPackage.DataSetsHelper, controllerPackage.Roles, controllerPackage.Authentication, controllerPackage.FileSourceHelper, membershipService)
         {
             _questionnaireService = questionnaireService;
+        }
+
+        [Route("genetic-profile/questionnaire/overviewforclient")]
+        public ActionResult GeneticProfileTestOverviewForClient(int? id = null)
+        {
+            return GeneticProfileTestOverview(id);
         }
 
         [Route("genetic-profile/questionnaire/overview")]
@@ -39,8 +46,19 @@ namespace K9.WebApplication.Controllers
             {
                 return HttpNotFound();
             }
+
+            if (!hq.IsComplete() && !Roles.CurrentUserIsInRoles(RoleNames.Administrators))
+            {
+                return RedirectToAction("GeneticProfileTest");
+            }
             
             return View(hq);
+        }
+
+        [Route("genetic-profile/questionnaireforclient")]
+        public ActionResult GeneticProfileTestForClient(int? id = null)
+        {
+            return GeneticProfileTest(id);
         }
 
         [Route("genetic-profile/questionnaire")]

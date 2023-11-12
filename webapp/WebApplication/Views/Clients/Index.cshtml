@@ -37,7 +37,7 @@
         },
         new Button
         {
-            Action = "AnswerHealthQuestionnaire",
+            Action = "GeneticProfileTestForClient",
             Controller = "HealthQuestionnaire",
             Text = Dictionary.GeneticProfileTest,
             ButtonType = K9.SharedLibrary.Models.EButtonType.Primary,
@@ -45,9 +45,9 @@
         },
         new Button
         {
-            Action = "GeneticProfileTestOverview",
+            Action = "GeneticProfileTestOverviewForClient",
             Controller = "HealthQuestionnaire",
-            Text = $"{Dictionary.GeneticProfileTest} {Dictionary.OverviewLabel}",
+            Text = Dictionary.ViewHealthQuestionnaireResults,
             ButtonType = K9.SharedLibrary.Models.EButtonType.Success,
             IconCssClass = "fa fa-heartbeat"
         }

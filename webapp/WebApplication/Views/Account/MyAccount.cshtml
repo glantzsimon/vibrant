@@ -1,4 +1,5 @@
-﻿@model K9.WebApplication.ViewModels.MyAccountViewModel
+﻿@using K9.Base.WebApplication.Extensions
+@model K9.WebApplication.ViewModels.MyAccountViewModel
 @{
     ViewBag.Title = K9.Base.Globalisation.Dictionary.MyAccountTitle;
     ViewBag.SubTitle = K9.Base.Globalisation.Dictionary.MyAccountTitle;
@@ -55,11 +56,16 @@
         <div id="health-questionnaire" class="tab-pane fade @hqPaneClass">
             @if (Model.HealthQuestionnaire.IsStarted())
             {
-                @Html.BootstrapActionLinkButton(Dictionary.GeneticProfileTest, "AnswerHealthQuestionnaire", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Info)
+                @Html.BootstrapActionLinkButton(Dictionary.GeneticProfileTest, "GeneticProfileTest", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Primary)
             }
             else
             {
-                @Html.BootstrapActionLinkButton(Dictionary.AnswerHealthQuestionnaire, "AnswerHealthQuestionnaire", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Info)
+                @Html.BootstrapActionLinkButton(Dictionary.AnswerHealthQuestionnaire, "GeneticProfileTest", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Primary)
+            }
+
+            @if (Model.HealthQuestionnaire.IsComplete() && this.GetRoles().CurrentUserIsInRoles(K9.SharedLibrary.Authentication.RoleNames.Administrators))
+            {
+                @Html.BootstrapActionLinkButton(Dictionary.ViewHealthQuestionnaireResults, "GeneticProfileTestOverview", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Success)
             }
         </div>
 
