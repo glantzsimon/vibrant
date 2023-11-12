@@ -3166,6 +3166,9 @@
   <data name="StressResponseQuestionLabel" xml:space="preserve">
     <value>Which of the following best describes how you respond when stressed?</value>
   </data>
+  <data name="StrongOrgans" xml:space="preserve">
+    <value>Strong Organs</value>
+  </data>
   <data name="StrongOrgansDescription" xml:space="preserve">
     <value>These organs have more qi running through their meridians and are therefore capapble of relatively more work than the other organs. However, when stress and trauma can cause excess qi to flow through these meridians, leading to the possibility of irritation, inflammation and congestion. Care must be taken to soothe and calm these organs and meridians in times of stress.</value>
   </data>
@@ -3201,6 +3204,9 @@
   </data>
   <data name="ViewHealthQuestionnaireResults" xml:space="preserve">
     <value>View Genetic Profile Test Results</value>
+  </data>
+  <data name="WeakOrgans" xml:space="preserve">
+    <value>Weak Organs</value>
   </data>
   <data name="WeakOrgansDescription" xml:space="preserve">
     <value>These organs have less qi running through their meridians and are therefore more susceptible to imbalances related to insufficiency and stagnation. Care must be taken to nourish these organs and meridians during times of lower energy.</value>

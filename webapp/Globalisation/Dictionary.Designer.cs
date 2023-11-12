@@ -8042,6 +8042,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Strong Organs.
+        /// </summary>
+        public static string StrongOrgans {
+            get {
+                return ResourceManager.GetString("StrongOrgans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to These organs have more qi running through their meridians and are therefore capapble of relatively more work than the other organs. However, when stress and trauma can cause excess qi to flow through these meridians, leading to the possibility of irritation, inflammation and congestion. Care must be taken to soothe and calm these organs and meridians in times of stress..
         /// </summary>
         public static string StrongOrgansDescription {
@@ -9349,6 +9358,15 @@ namespace K9.Globalisation {
         public static string WaterMagic {
             get {
                 return ResourceManager.GetString("WaterMagic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weak Organs.
+        /// </summary>
+        public static string WeakOrgans {
+            get {
+                return ResourceManager.GetString("WeakOrgans", resourceCulture);
             }
         }
         

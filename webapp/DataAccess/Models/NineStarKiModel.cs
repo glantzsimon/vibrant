@@ -28,17 +28,21 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MonthlyCycleEnergy)]
         public ENineStarKiEnergy MonthlyCycleEnergy { get; set; }
 
+        [UIHint("Organ")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StrongYinOrgans)]
         public EOrgan? StrongYinOrgans => MainEnergy.GetAttribute<NineStarKiEnumMetaDataAttribute>()?.StrongYinOrgans;
 
+        [UIHint("Organ")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StrongYangOrgans)]
         public EOrgan? StrongYangOrgans =>
             MainEnergy.GetAttribute<NineStarKiEnumMetaDataAttribute>()?.StrongYangOrgans;
 
+        [UIHint("Organs")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WeakYinOrgans)]
         public EOrgan[] WeakYinOrgans =>
             MainEnergy.GetAttribute<NineStarKiEnumMetaDataAttribute>()?.WeakYinOrgans;
 
+        [UIHint("Organs")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WeakYangOrgans)]
         public EOrgan[] WeakYangOrgans =>
             MainEnergy.GetAttribute<NineStarKiEnumMetaDataAttribute>()?.WeakYangOrgans;

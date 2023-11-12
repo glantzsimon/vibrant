@@ -744,6 +744,16 @@
     <Content Include="Images\flags\zw.png" />
     <Content Include="Images\icons\android-chrome-144x144.png" />
     <Content Include="Images\icons\logo-med.png" />
+    <Content Include="Images\organs\gallbladder.png" />
+    <Content Include="Images\organs\heart.png" />
+    <Content Include="Images\organs\kidneys.png" />
+    <Content Include="Images\organs\largeintestine.png" />
+    <Content Include="Images\organs\liver.png" />
+    <Content Include="Images\organs\lungs.png" />
+    <Content Include="Images\organs\smallintestine.png" />
+    <Content Include="Images\organs\spleenpancreas.png" />
+    <Content Include="Images\organs\stomach.png" />
+    <Content Include="Images\organs\urinarybladder.png" />
     <Content Include="Images\pages\default-image.jpg" />
     <Content Include="Images\icons\android-chrome-192x192.png" />
     <Content Include="Images\icons\apple-touch-icon-114x114.png" />
@@ -1623,6 +1633,8 @@
     <Content Include="Views\HealthQuestionnaire\Overview\_NineStarKi.cshtml" />
     <Content Include="Views\HealthQuestionnaire\Overview\_PersonalDetails.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\NineStarKiEnergy.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Organ.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Organs.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

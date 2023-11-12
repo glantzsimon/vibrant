@@ -32,19 +32,48 @@
     </div>
 </div>
 
-<hr/>
+<hr />
 
 <div class="row">
-    <div class="col-xs-5 col-sm-3>
+    <div class="col-xs-12">
+        <h3 class="section-title">@Dictionary.StrongOrgans</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        @Html.Raw(Dictionary.StrongOrgansDescription)
+    </div>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="col-xs-4 col-sm-3 col-md-2">
         @Html.BootstrapDisplayFor(e => nineStarKiModel.StrongYinOrgans)
     </div>
-    <div class="col-xs-5 col-sm-3>
-        @Html.BootstrapDisplayFor(e => nineStarKiModel.StrongYinOrgans)
+    <div class="col-xs-4 col-sm-3 col-md-2">
+        @Html.BootstrapDisplayFor(e => nineStarKiModel.StrongYangOrgans)
     </div>
-    <div class="col-xs-5 col-sm-3>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <h3 class="section-title">@Dictionary.WeakOrgans</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        @Html.Raw(Dictionary.WeakOrgansDescription)
+    </div>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="col-xs-4 col-sm-3 col-md-2">
         @Html.BootstrapDisplayFor(e => nineStarKiModel.WeakYinOrgans)
     </div>
-    <div class="col-xs-5 col-sm-3>
+    <div class="col-xs-4 col-sm-3 col-md-2">
         @Html.BootstrapDisplayFor(e => nineStarKiModel.WeakYangOrgans)
     </div>
 </div>
