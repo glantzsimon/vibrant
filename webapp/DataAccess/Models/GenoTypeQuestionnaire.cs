@@ -41,9 +41,17 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BloodGroupQuestionLabel)]
         public EBloodGroup? BloodGroup { get; set; }
 
+        [UIHint("BloodGroup")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BloodGroupLabel)]
+        public EBloodGroup? BloodGroupDisplay => BloodGroup;
+
         [UIHint("RhesusFactor")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RhesusFactorQuestionLabel)]
         public ERhesusFactor? RhesusFactor { get; set; }
+
+        [UIHint("RhesusFactor")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RhesusFactorLabel)]
+        public ERhesusFactor? RhesusFactorDisplay => RhesusFactor;
 
         public List<EGenoType> GetGenoTypeFromRhesusFactor()
         {
@@ -155,7 +163,14 @@ namespace K9.DataAccessLayer.Models
         public double UpperLegLength { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TorsoLengthGreatherThanLegLengthLabel)]
+        public bool TorsoLengthIsGreaterThanLegLength => IsTorsoLengthGreaterThanLegLength();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TorsoLengthGreatherThanLegLengthLabel)]
         public bool IsTorsoLengthGreaterThanLegLength() => TorsoLength >= TotalLegLength;
+
+        [Display(ResourceType = typeof(Dictionary),
+            Name = Strings.Labels.IsLowerLegLengthGreaterThanUpperLegLengthLabel)]
+        public bool LowerLegLengthIsGreaterThanUpperLegLength => IsLowerLegLengthGreaterThanUpperLegLength();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsLowerLegLengthGreaterThanUpperLegLengthLabel)]
         public bool IsLowerLegLengthGreaterThanUpperLegLength() => LowerLegLength >= UpperLegLength;
@@ -175,6 +190,10 @@ namespace K9.DataAccessLayer.Models
         [UIHint("Measurement")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightRingFingerLengthQuestionLabel)]
         public double RingFingerLengthRight { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary),
+            Name = Strings.Labels.IsLeftIndexFingerLongerThanLeftRingFingerLabel)]
+        public bool LeftIndexFingerIsLongerThanRingFinger => IsIndexFingerLongerThanRingFingerLeft();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsLeftIndexFingerLongerThanLeftRingFingerLabel)]
         public bool IsIndexFingerLongerThanRingFingerLeft() => IndexFingerLengthLeft >= RingFingerLengthLeft;
@@ -550,6 +569,9 @@ namespace K9.DataAccessLayer.Models
         #endregion
 
         #region Dermatoglyphics
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NumberOfMatchingFingerprintsLabel)]
+        public int NumberOfMatchingFingerprints => GetNumberOfMatchingFingerprints();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NumberOfMatchingFingerprintsLabel)]
         public int GetNumberOfMatchingFingerprints()

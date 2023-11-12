@@ -3073,6 +3073,12 @@
   <data name="GeneticProfileTestResults" xml:space="preserve">
     <value>Genetic Profile Test Results</value>
   </data>
+  <data name="GenoType" xml:space="preserve">
+    <value>GenoType</value>
+  </data>
+  <data name="GenoTypeLabel" xml:space="preserve">
+    <value>GenoType</value>
+  </data>
   <data name="HairTypeQuestionLabel" xml:space="preserve">
     <value>Which of the following best describes your hair?</value>
   </data>
@@ -3153,6 +3159,9 @@
   </data>
   <data name="Stomach" xml:space="preserve">
     <value>Stomach</value>
+  </data>
+  <data name="StrengthLabel" xml:space="preserve">
+    <value>Strength</value>
   </data>
   <data name="StressAnxiousLabel" xml:space="preserve">
     <value>When stressed, I tend to feel anxious and even fearful</value>

@@ -6,9 +6,9 @@
 @model HealthQuestionnaire
 
 <ul class="nav nav-pills">
-    <li class="active"><a data-toggle="pill" href="#overview">@Dictionary.OverviewLabel</a></li>
+    <li class="active"><a data-toggle="pill" href="#ninestarki">@Dictionary.NineStarKi</a></li>
 
-    <li><a data-toggle="pill" href="#blood-analysis">@Dictionary.BloodAnalysis</a></li>
+    <li><a data-toggle="pill" href="#genotype">@Dictionary.GenoType</a></li>
 
     <li><a data-toggle="pill" href="#acetylation">@Dictionary.AcetylationTitle</a></li>
 
@@ -30,12 +30,12 @@
 </ul>
 
 <div class="tab-content">
-    <div id="overview" class="tab-pane fade active in padding-top-15">
-        @Html.Partial("Overview/_Page1Overview")
+    <div id="ninestarki" class="tab-pane fade active in padding-top-15">
+        @Html.Partial("Overview/_Page1NineStarKi")
     </div>
 
-    <div id="blood-analysis" class="tab-pane fade padding-top-15">
-        
+    <div id="genotype" class="tab-pane fade padding-top-15">
+        @Html.Partial("Overview/_Page2GenoType")
     </div>
 
     <div id="acetylation" class="tab-pane fade padding-top-15">

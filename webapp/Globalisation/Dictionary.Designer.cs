@@ -3338,6 +3338,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GenoType.
+        /// </summary>
+        public static string GenoType {
+            get {
+                return ResourceManager.GetString("GenoType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GenoType.
+        /// </summary>
+        public static string GenoTypeLabel {
+            get {
+                return ResourceManager.GetString("GenoTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GenoType Questionnaire.
         /// </summary>
         public static string GenoTypeQuestionnaire {
@@ -7975,6 +7993,15 @@ namespace K9.Globalisation {
         public static string Straight {
             get {
                 return ResourceManager.GetString("Straight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strength.
+        /// </summary>
+        public static string StrengthLabel {
+            get {
+                return ResourceManager.GetString("StrengthLabel", resourceCulture);
             }
         }
         

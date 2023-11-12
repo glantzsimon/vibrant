@@ -247,6 +247,8 @@
             public const string SlowWoundHealingLabel = "SlowWoundHealingLabel";
             public const string SpiderVeinsLabel = "SpiderVeinsLabel";
             public const string StretchMarksLabel = "StretchMarksLabel";
+            public const string StrengthLabel = "StrengthLabel";
+            public const string GenoTypeLabel = "GenoTypeLabel";
             public const string FrequentNighttimeUrinationLabel = "FrequentNighttimeUrinationLabel";
             public const string HerpesLabel = "HerpesLabel";
             public const string IrritabilityLabel = "IrritabilityLabel";
