@@ -7,8 +7,8 @@ namespace K9.DataAccessLayer.Enums
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Reactive)]
         Reactive = 1,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Thrifty)]
-        Thrifty = 2,
+        Thrifty,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Tolerant)]
-        Tolerant = 3
+        Tolerant
     }
 }

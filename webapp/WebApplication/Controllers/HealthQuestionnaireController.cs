@@ -21,13 +21,7 @@ namespace K9.WebApplication.Controllers
         {
             _questionnaireService = questionnaireService;
         }
-
-        [Route("genetic-profile/questionnaire/overviewforclient")]
-        public ActionResult GeneticProfileTestOverviewForClient(int? id = null)
-        {
-            return GeneticProfileTestOverview(id);
-        }
-
+        
         [Route("genetic-profile/questionnaire/overview")]
         public ActionResult GeneticProfileTestOverview(int? clientId = null)
         {
@@ -54,13 +48,7 @@ namespace K9.WebApplication.Controllers
             
             return View(hq);
         }
-
-        [Route("genetic-profile/questionnaireforclient")]
-        public ActionResult GeneticProfileTestForClient(int? id = null)
-        {
-            return GeneticProfileTest(id);
-        }
-
+        
         [Route("genetic-profile/questionnaire")]
         public ActionResult GeneticProfileTest(int? clientId = null)
         {

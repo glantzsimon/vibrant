@@ -5,7 +5,7 @@ namespace K9.DataAccessLayer.Enums
     public enum EStrength
     {
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VeryHigh)]
-        VeryStrong,
+        VeryStrong = 1,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Strong)]
         Strong,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Positive)]

@@ -5,7 +5,7 @@ namespace K9.DataAccessLayer.Enums
     public enum ETaste
     {
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NoticeablyBitter)]
-        NoticeablyBitter,
+        NoticeablyBitter = 1,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.SlightlyBitter)]
         SlightlyBitter,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NotBitter)]

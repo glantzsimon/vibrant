@@ -3425,6 +3425,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to He.
+        /// </summary>
+        public static string He {
+            get {
+                return ResourceManager.GetString("He", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Head &amp; Jaw.
         /// </summary>
         public static string HeadAndJawTitle {
@@ -3567,6 +3576,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Her.
+        /// </summary>
+        public static string Her {
+            get {
+                return ResourceManager.GetString("Her", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Herb.
         /// </summary>
         public static string Herb {
@@ -3612,6 +3630,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hers.
+        /// </summary>
+        public static string Hers {
+            get {
+                return ResourceManager.GetString("Hers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Have you ever been diagnosed with high blood pressure?.
         /// </summary>
         public static string HighBloodPressureLabel {
@@ -3621,11 +3648,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Him.
+        /// </summary>
+        public static string Him {
+            get {
+                return ResourceManager.GetString("Him", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to What size are your hips? (Please measure the widest part of the hips).
         /// </summary>
         public static string HipSizeLabel {
             get {
                 return ResourceManager.GetString("HipSizeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to His.
+        /// </summary>
+        public static string His {
+            get {
+                return ResourceManager.GetString("His", resourceCulture);
             }
         }
         
@@ -7348,6 +7393,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to She.
+        /// </summary>
+        public static string She {
+            get {
+                return ResourceManager.GetString("She", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shipping.
         /// </summary>
         public static string ShippingLabel {
@@ -8296,6 +8350,33 @@ namespace K9.Globalisation {
         public static string ThankyouForSubscriptionEmailTitle {
             get {
                 return ResourceManager.GetString("ThankyouForSubscriptionEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Theirs.
+        /// </summary>
+        public static string Theirs {
+            get {
+                return ResourceManager.GetString("Theirs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Them.
+        /// </summary>
+        public static string Them {
+            get {
+                return ResourceManager.GetString("Them", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to They.
+        /// </summary>
+        public static string They {
+            get {
+                return ResourceManager.GetString("They", resourceCulture);
             }
         }
         

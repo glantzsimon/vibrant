@@ -3067,6 +3067,21 @@
   <data name="HairTypeQuestionLabel" xml:space="preserve">
     <value>Which of the following best describes your hair?</value>
   </data>
+  <data name="He" xml:space="preserve">
+    <value>He</value>
+  </data>
+  <data name="Her" xml:space="preserve">
+    <value>Her</value>
+  </data>
+  <data name="Hers" xml:space="preserve">
+    <value>Hers</value>
+  </data>
+  <data name="Him" xml:space="preserve">
+    <value>Him</value>
+  </data>
+  <data name="His" xml:space="preserve">
+    <value>His</value>
+  </data>
   <data name="ImmuneSystem" xml:space="preserve">
     <value>Immune System</value>
   </data>
@@ -3081,6 +3096,9 @@
   </data>
   <data name="PenetratingEyesLabel" xml:space="preserve">
     <value>I have intense or penetrating eyes</value>
+  </data>
+  <data name="She" xml:space="preserve">
+    <value>She</value>
   </data>
   <data name="SmallEyesLabel" xml:space="preserve">
     <value>My eyes often move quickly from one thing to another</value>
@@ -3099,6 +3117,15 @@
   </data>
   <data name="SulfiteSensitivityLabel" xml:space="preserve">
     <value>Would even one glass of wine or beer probably cause you to experience hangover symptoms? Or do you notice a hungover feeling after eating certain cheeses, dried fruits or sauces?</value>
+  </data>
+  <data name="Theirs" xml:space="preserve">
+    <value>Theirs</value>
+  </data>
+  <data name="Them" xml:space="preserve">
+    <value>Them</value>
+  </data>
+  <data name="They" xml:space="preserve">
+    <value>They</value>
   </data>
   <data name="ViewHealthQuestionnaireResults" xml:space="preserve">
     <value>View Genetic Profile Test Results</value>

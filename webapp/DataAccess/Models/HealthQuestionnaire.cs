@@ -379,11 +379,11 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Base.Globalisation.Dictionary), Name = Base.Globalisation.Strings.Labels.LanguageLabel)]
         [StringLength(1111)]
         [DataType(DataType.MultilineText)]
-        public string GenderName => Gender.GetLocalisedLanguageName();
+        public string GenderName => Gender?.GetLocalisedLanguageName();
 
-        public string GenderPossessivePronoun => Gender == EGender.Male ? "his" : "her";
+        public string GenderPossessivePronoun => Gender == EGender.Male ? Dictionary.His : Gender == EGender.Female ?  Dictionary.Hers : Dictionary.Theirs;
 
-        public string GenderPronoun => Gender == EGender.Male ? "he" : "she";
+        public string GenderPronoun => Gender == EGender.Male ? Dictionary.He : Gender == EGender.Female ? Dictionary.She : Dictionary.They;
 
         public int? YearsOld => GetYearsOld();
 

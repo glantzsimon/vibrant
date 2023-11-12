@@ -143,5 +143,15 @@ namespace K9.WebApplication.Controllers
         {
             return RedirectToAction("Review", "RepCommissions", new { repId = id });
         }
+
+        public ActionResult GeneticProfileTestOverviewForClient(int? id = null)
+        {
+            return RedirectToAction("GeneticProfileTestOverview", "HealthQuestionnaire", new {clientId = id});
+        }
+
+        public ActionResult GeneticProfileTestForClient(int? id = null)
+        {
+            return RedirectToAction("GeneticProfileTest", "HealthQuestionnaire", new {clientId = id});
+        }
     }
 }
