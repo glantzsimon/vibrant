@@ -1080,3 +1080,9 @@ ul.sortable {
     margin-top: 0;
     margin-bottom: 0;
 }
+
+.ninestarki-image {
+    width: 77px;
+    height: 77px;
+    margin-top: 3px;
+}

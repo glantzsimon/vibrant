@@ -4,8 +4,8 @@
 @model HealthQuestionnaire
 @{
     Layout = "../Shared/_LayoutFormWide.cshtml";
-    ViewBag.Title = Dictionary.GeneticProfileTest;
-    ViewBag.SubTitle = $"{Dictionary.GeneticProfileTest} <i class=\"fa fa-dna\"></i>";
+    ViewBag.Title = Dictionary.GeneticProfileTestResults;
+    ViewBag.SubTitle = $"{Dictionary.GeneticProfileTestResults} <i class=\"fa fa-dna\"></i>";
 }
 
 @using (Html.BeginForm())
@@ -16,6 +16,6 @@
         @Html.HiddenFor(model => model.ClientId)
         @Html.HiddenFor(model => model.ExternalId)
 
-        @Html.Partial("_PillsOverview")
+        @Html.Partial("Overview/_Pills")
     }
 }

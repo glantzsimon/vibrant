@@ -45,9 +45,14 @@ namespace K9.WebApplication.Services
 
         public HealthQuestionnaire GetHealthQuestionnaireForClient(int clientId)
         {
-            var hq = _healthQuestionnaireRepository.Find(e => e.ClientId == clientId).FirstOrDefault();
             var client = _clientsRepository.Find(clientId);
+            return GetHealthQuestionnaireForClient(client);
+        }
 
+        private HealthQuestionnaire GetHealthQuestionnaireForClient(Client client)
+        {
+            var hq = _healthQuestionnaireRepository.Find(e => e.ClientId == client.Id).FirstOrDefault();
+            
             if (hq == null)
             {
                 var hqId = Guid.NewGuid();
@@ -55,7 +60,7 @@ namespace K9.WebApplication.Services
                 hq = new HealthQuestionnaire
                 {
                     ExternalId = hqId,
-                    ClientId = clientId,
+                    ClientId = client.Id,
                     Name = $"{client.Name} - {Globalisation.Dictionary.HealthQuestionnaire}",
                     CookingFrequency = EFrequency.SeveralTimesAWeek,
                 };
@@ -64,6 +69,8 @@ namespace K9.WebApplication.Services
 
                 hq = _healthQuestionnaireRepository.Find(e => e.ExternalId == hqId).First();
             }
+
+            hq.Client = client;
 
             return hq;
         }

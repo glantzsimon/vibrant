@@ -3037,6 +3037,9 @@
   <data name="BodyTemperatureQuestionLabel" xml:space="preserve">
     <value>Which of the following statements best describe your body temperature?</value>
   </data>
+  <data name="CharacterEnergy" xml:space="preserve">
+    <value>Character Energy</value>
+  </data>
   <data name="Digestion" xml:space="preserve">
     <value>Digestion</value>
   </data>
@@ -3064,11 +3067,20 @@
   <data name="FullHairTypeLabel" xml:space="preserve">
     <value>My hair is thick and tends to be on the oily side</value>
   </data>
+  <data name="Gallbladder" xml:space="preserve">
+    <value>Gallbladder</value>
+  </data>
+  <data name="GeneticProfileTestResults" xml:space="preserve">
+    <value>Genetic Profile Test Results</value>
+  </data>
   <data name="HairTypeQuestionLabel" xml:space="preserve">
     <value>Which of the following best describes your hair?</value>
   </data>
   <data name="He" xml:space="preserve">
     <value>He</value>
+  </data>
+  <data name="Heart" xml:space="preserve">
+    <value>Heart</value>
   </data>
   <data name="Her" xml:space="preserve">
     <value>Her</value>
@@ -3085,14 +3097,41 @@
   <data name="ImmuneSystem" xml:space="preserve">
     <value>Immune System</value>
   </data>
+  <data name="Kidneys" xml:space="preserve">
+    <value>Kidneys</value>
+  </data>
+  <data name="Lake" xml:space="preserve">
+    <value>Lake</value>
+  </data>
   <data name="LargeEyesLabel" xml:space="preserve">
     <value>My eyes are large, soft with a gentle gaze</value>
+  </data>
+  <data name="LargeIntestine" xml:space="preserve">
+    <value>Large Intestine</value>
   </data>
   <data name="LivelyDispositionLabel" xml:space="preserve">
     <value>I am often lively, enthusiastic and drawn to change</value>
   </data>
+  <data name="Liver" xml:space="preserve">
+    <value>Liver</value>
+  </data>
+  <data name="Lungs" xml:space="preserve">
+    <value>Lungs</value>
+  </data>
+  <data name="MainEnergy" xml:space="preserve">
+    <value>Main Energy</value>
+  </data>
+  <data name="MonthlyCycleEnergy" xml:space="preserve">
+    <value>Monthly Cycle Energy</value>
+  </data>
+  <data name="Mountain" xml:space="preserve">
+    <value>Mountain</value>
+  </data>
   <data name="MsgSensitivityLabel" xml:space="preserve">
     <value>Does Chinese food often make you feel jittery, groggy or sedated, or does it give you a headache?</value>
+  </data>
+  <data name="NineStarKi" xml:space="preserve">
+    <value>Nine Star Ki</value>
   </data>
   <data name="PenetratingEyesLabel" xml:space="preserve">
     <value>I have intense or penetrating eyes</value>
@@ -3102,6 +3141,18 @@
   </data>
   <data name="SmallEyesLabel" xml:space="preserve">
     <value>My eyes often move quickly from one thing to another</value>
+  </data>
+  <data name="SmallIntestine" xml:space="preserve">
+    <value>SmallIntestine</value>
+  </data>
+  <data name="Soil" xml:space="preserve">
+    <value>Soil</value>
+  </data>
+  <data name="SpleenPancreas" xml:space="preserve">
+    <value>Spleen &amp; Pancreas</value>
+  </data>
+  <data name="Stomach" xml:space="preserve">
+    <value>Stomach</value>
   </data>
   <data name="StressAnxiousLabel" xml:space="preserve">
     <value>When stressed, I tend to feel anxious and even fearful</value>
@@ -3115,8 +3166,20 @@
   <data name="StressResponseQuestionLabel" xml:space="preserve">
     <value>Which of the following best describes how you respond when stressed?</value>
   </data>
+  <data name="StrongOrgansDescription" xml:space="preserve">
+    <value>These organs have more qi running through their meridians and are therefore capapble of relatively more work than the other organs. However, when stress and trauma can cause excess qi to flow through these meridians, leading to the possibility of irritation, inflammation and congestion. Care must be taken to soothe and calm these organs and meridians in times of stress.</value>
+  </data>
+  <data name="StrongYangOrgans" xml:space="preserve">
+    <value>Strong Yang Organs</value>
+  </data>
+  <data name="StrongYinOrgans" xml:space="preserve">
+    <value>Strong Yin Organs</value>
+  </data>
   <data name="SulfiteSensitivityLabel" xml:space="preserve">
     <value>Would even one glass of wine or beer probably cause you to experience hangover symptoms? Or do you notice a hungover feeling after eating certain cheeses, dried fruits or sauces?</value>
+  </data>
+  <data name="SurfaceEnergy" xml:space="preserve">
+    <value>Surface Energy</value>
   </data>
   <data name="Theirs" xml:space="preserve">
     <value>Theirs</value>
@@ -3127,7 +3190,31 @@
   <data name="They" xml:space="preserve">
     <value>They</value>
   </data>
+  <data name="Thunder" xml:space="preserve">
+    <value>Thunder</value>
+  </data>
+  <data name="Tree" xml:space="preserve">
+    <value>Tree</value>
+  </data>
+  <data name="UrinaryBladder" xml:space="preserve">
+    <value>Urinary Bladder</value>
+  </data>
   <data name="ViewHealthQuestionnaireResults" xml:space="preserve">
     <value>View Genetic Profile Test Results</value>
+  </data>
+  <data name="WeakOrgansDescription" xml:space="preserve">
+    <value>These organs have less qi running through their meridians and are therefore more susceptible to imbalances related to insufficiency and stagnation. Care must be taken to nourish these organs and meridians during times of lower energy.</value>
+  </data>
+  <data name="WeakYangOrgans" xml:space="preserve">
+    <value>Weak Yang Organs</value>
+  </data>
+  <data name="WeakYinOrgans" xml:space="preserve">
+    <value>Weak Yin Organs</value>
+  </data>
+  <data name="Wind" xml:space="preserve">
+    <value>Wind</value>
+  </data>
+  <data name="YearlyCycleEnergy" xml:space="preserve">
+    <value>Yearly Cycle Energy</value>
   </data>
 </root>

@@ -11,6 +11,10 @@ namespace K9.DataAccessLayer.Attributes
         public Type ResourceType { get; set; }
         public string Name { get; set; }
         public ENineStarKiElement Element { get; set; }
+        public EOrgan StrongYinOrgans { get; set; }
+        public EOrgan StrongYangOrgans { get; set; }
+        public EOrgan[] WeakYinOrgans { get; set; }
+        public EOrgan[] WeakYangOrgans { get; set; }
     
         public string GetDescription()
         {

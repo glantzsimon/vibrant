@@ -267,6 +267,16 @@
             public const string PhotoOfEyesLabel = "PhotoOfEyesLabel";
             public const string WhiteSpotsOnNailsLabel = "WhiteSpotsOnNailsLabel";
             
+            public const string MainEnergy = "MainEnergy";
+            public const string CharacterEnergy = "CharacterEnergy";
+            public const string SurfaceEnergy = "SurfaceEnergy";
+            public const string YearlyCycleEnergy = "YearlyCycleEnergy";
+            public const string MonthlyCycleEnergy = "MonthlyCycleEnergy";
+            public const string StrongYinOrgans = "StrongYinOrgans";
+            public const string StrongYangOrgans = "StrongYangOrgans";
+            public const string WeakYinOrgans = "WeakYinOrgans";
+            public const string WeakYangOrgans = "WeakYangOrgans";
+
             public const string CurrentHealthIssuesLabel = "CurrentHealthIssuesLabel";
             public const string HealthGoalsLabel = "HealthGoalsLabel";
             public const string CurrentHealthLevelLabel = "CurrentHealthLevelLabel";
@@ -462,6 +472,17 @@
             public const string InPreparation = "InPreparation";
             public const string InProgress = "InProgress";
             public const string ReadyForDelivery = "ReadyForDelivery";
+
+            public const string SpleenPancreas = "SpleenPancreas";
+            public const string Lungs = "Lungs";
+            public const string Kidneys = "Kidneys";
+            public const string Liver = "Liver";
+            public const string Heart = "Heart";
+            public const string Stomach = "Stomach";
+            public const string LargeIntestine = "LargeIntestine";
+            public const string UrinaryBladder = "UrinaryBladder";
+            public const string Gallbladder = "Gallbladder";
+            public const string SmallIntestine = "SmallIntestine";
 
             public const string VataDosha = "VataDosha";
             public const string PittaDosha = "PittaDosha";

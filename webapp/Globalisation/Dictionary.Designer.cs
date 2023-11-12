@@ -1107,6 +1107,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Character Energy.
+        /// </summary>
+        public static string CharacterEnergy {
+            get {
+                return ResourceManager.GetString("CharacterEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Checkout.
         /// </summary>
         public static string Checkout {
@@ -3029,10 +3038,10 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;Fingerprint Analysis&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    Simply use your phone flashlight to shine light obliquely over your fingertips. This helps to highlight the grooves and make the finger more visible. If you can&apos;t see your fingerprints clearly, you can also use a notary fingerprint kit, which you an buy online.
+        ///    Many people find that they can clearly make out their fingerprints by using their phone&apos;s flashlight to shine light obliquely over them. This helps to highlight the grooves and make the finger more visible. Wearing a pair of reading glasses or using a magnifying glass also helps tremendously. Otherwise, If you still can&apos;t see your fingerprints clearly, you can also use a notary fingerprint kit, which you an buy online.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    Alternatively, you can create images of your fingerprints by downloading the &quot;Finger Print Imager&quot; app from the app store. You can find more info &lt;a href=&quot;https://apps.apple.com/us/app/finger-pr [rest of string was truncated]&quot;;.
+        ///    Alternatively, you can create ima [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FingerPrintsInstructions {
             get {
@@ -3230,6 +3239,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gallbladder.
+        /// </summary>
+        public static string Gallbladder {
+            get {
+                return ResourceManager.GetString("Gallbladder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you often experience flatulence, especially after meals?.
         /// </summary>
         public static string GasLabel {
@@ -3307,6 +3325,15 @@ namespace K9.Globalisation {
         public static string GeneticProfileTest {
             get {
                 return ResourceManager.GetString("GeneticProfileTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Genetic Profile Test Results.
+        /// </summary>
+        public static string GeneticProfileTestResults {
+            get {
+                return ResourceManager.GetString("GeneticProfileTestResults", resourceCulture);
             }
         }
         
@@ -3554,6 +3581,15 @@ namespace K9.Globalisation {
         public static string HealthQuestionnaires {
             get {
                 return ResourceManager.GetString("HealthQuestionnaires", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heart.
+        /// </summary>
+        public static string Heart {
+            get {
+                return ResourceManager.GetString("Heart", resourceCulture);
             }
         }
         
@@ -4310,11 +4346,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kidneys.
+        /// </summary>
+        public static string Kidneys {
+            get {
+                return ResourceManager.GetString("Kidneys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lab Sheet.
         /// </summary>
         public static string LabSheet {
             get {
                 return ResourceManager.GetString("LabSheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lake.
+        /// </summary>
+        public static string Lake {
+            get {
+                return ResourceManager.GetString("Lake", resourceCulture);
             }
         }
         
@@ -4333,6 +4387,15 @@ namespace K9.Globalisation {
         public static string LargeEyesLabel {
             get {
                 return ResourceManager.GetString("LargeEyesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Large Intestine.
+        /// </summary>
+        public static string LargeIntestine {
+            get {
+                return ResourceManager.GetString("LargeIntestine", resourceCulture);
             }
         }
         
@@ -4532,6 +4595,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Liver.
+        /// </summary>
+        public static string Liver {
+            get {
+                return ResourceManager.GetString("Liver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loading....
         /// </summary>
         public static string Loading {
@@ -4634,6 +4706,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lungs.
+        /// </summary>
+        public static string Lungs {
+            get {
+                return ResourceManager.GetString("Lungs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Made On.
         /// </summary>
         public static string MadeOnLabel {
@@ -4657,6 +4738,15 @@ namespace K9.Globalisation {
         public static string MailChimpImportSuccess {
             get {
                 return ResourceManager.GetString("MailChimpImportSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main Energy.
+        /// </summary>
+        public static string MainEnergy {
+            get {
+                return ResourceManager.GetString("MainEnergy", resourceCulture);
             }
         }
         
@@ -4980,6 +5070,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Monthly Cycle Energy.
+        /// </summary>
+        public static string MonthlyCycleEnergy {
+            get {
+                return ResourceManager.GetString("MonthlyCycleEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monthly Platinum Subscription.
         /// </summary>
         public static string MonthlyPlatinumMembership {
@@ -5021,6 +5120,15 @@ namespace K9.Globalisation {
         public static string MoreSevere {
             get {
                 return ResourceManager.GetString("MoreSevere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mountain.
+        /// </summary>
+        public static string Mountain {
+            get {
+                return ResourceManager.GetString("Mountain", resourceCulture);
             }
         }
         
@@ -5130,6 +5238,15 @@ namespace K9.Globalisation {
         public static string NightSweatsLabel {
             get {
                 return ResourceManager.GetString("NightSweatsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nine Star Ki.
+        /// </summary>
+        public static string NineStarKi {
+            get {
+                return ResourceManager.GetString("NineStarKi", resourceCulture);
             }
         }
         
@@ -7612,6 +7729,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SmallIntestine.
+        /// </summary>
+        public static string SmallIntestine {
+            get {
+                return ResourceManager.GetString("SmallIntestine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Small Pack Amount.
         /// </summary>
         public static string SmallPackAmountLabel {
@@ -7626,6 +7752,15 @@ namespace K9.Globalisation {
         public static string SmokeLabel {
             get {
                 return ResourceManager.GetString("SmokeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Soil.
+        /// </summary>
+        public static string Soil {
+            get {
+                return ResourceManager.GetString("Soil", resourceCulture);
             }
         }
         
@@ -7692,6 +7827,15 @@ namespace K9.Globalisation {
         public static string SpiderVeinsLabel {
             get {
                 return ResourceManager.GetString("SpiderVeinsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spleen &amp; Pancreas.
+        /// </summary>
+        public static string SpleenPancreas {
+            get {
+                return ResourceManager.GetString("SpleenPancreas", resourceCulture);
             }
         }
         
@@ -7817,6 +7961,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stomach.
+        /// </summary>
+        public static string Stomach {
+            get {
+                return ResourceManager.GetString("Stomach", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Straight.
         /// </summary>
         public static string Straight {
@@ -7885,6 +8038,33 @@ namespace K9.Globalisation {
         public static string Strong {
             get {
                 return ResourceManager.GetString("Strong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to These organs have more qi running through their meridians and are therefore capapble of relatively more work than the other organs. However, when stress and trauma can cause excess qi to flow through these meridians, leading to the possibility of irritation, inflammation and congestion. Care must be taken to soothe and calm these organs and meridians in times of stress..
+        /// </summary>
+        public static string StrongOrgansDescription {
+            get {
+                return ResourceManager.GetString("StrongOrgansDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strong Yang Organs.
+        /// </summary>
+        public static string StrongYangOrgans {
+            get {
+                return ResourceManager.GetString("StrongYangOrgans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strong Yin Organs.
+        /// </summary>
+        public static string StrongYinOrgans {
+            get {
+                return ResourceManager.GetString("StrongYinOrgans", resourceCulture);
             }
         }
         
@@ -8192,6 +8372,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Surface Energy.
+        /// </summary>
+        public static string SurfaceEnergy {
+            get {
+                return ResourceManager.GetString("SurfaceEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Have you had any surgical operations? If so, please provide details..
         /// </summary>
         public static string SurgeryDetailsLabel {
@@ -8418,6 +8607,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thunder.
+        /// </summary>
+        public static string Thunder {
+            get {
+                return ResourceManager.GetString("Thunder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thursday.
         /// </summary>
         public static string Thursday {
@@ -8577,6 +8775,15 @@ namespace K9.Globalisation {
         public static string ToxicityReduction {
             get {
                 return ResourceManager.GetString("ToxicityReduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tree.
+        /// </summary>
+        public static string Tree {
+            get {
+                return ResourceManager.GetString("Tree", resourceCulture);
             }
         }
         
@@ -8777,6 +8984,15 @@ namespace K9.Globalisation {
         public static string UpperLegLengthTitle {
             get {
                 return ResourceManager.GetString("UpperLegLengthTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Urinary Bladder.
+        /// </summary>
+        public static string UrinaryBladder {
+            get {
+                return ResourceManager.GetString("UrinaryBladder", resourceCulture);
             }
         }
         
@@ -9137,6 +9353,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to These organs have less qi running through their meridians and are therefore more susceptible to imbalances related to insufficiency and stagnation. Care must be taken to nourish these organs and meridians during times of lower energy..
+        /// </summary>
+        public static string WeakOrgansDescription {
+            get {
+                return ResourceManager.GetString("WeakOrgansDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weak Yang Organs.
+        /// </summary>
+        public static string WeakYangOrgans {
+            get {
+                return ResourceManager.GetString("WeakYangOrgans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weak Yin Organs.
+        /// </summary>
+        public static string WeakYinOrgans {
+            get {
+                return ResourceManager.GetString("WeakYinOrgans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wednesday.
         /// </summary>
         public static string Wednesday {
@@ -9296,6 +9539,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wind.
+        /// </summary>
+        public static string Wind {
+            get {
+                return ResourceManager.GetString("Wind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to With fat.
         /// </summary>
         public static string WithFat {
@@ -9399,6 +9651,15 @@ namespace K9.Globalisation {
         public static string Year {
             get {
                 return ResourceManager.GetString("Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly Cycle Energy.
+        /// </summary>
+        public static string YearlyCycleEnergy {
+            get {
+                return ResourceManager.GetString("YearlyCycleEnergy", resourceCulture);
             }
         }
         

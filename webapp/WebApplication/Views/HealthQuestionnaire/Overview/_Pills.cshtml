@@ -1,0 +1,76 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.SharedLibrary.Authentication
+@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Config
+@using K9.WebApplication.Enums
+@model HealthQuestionnaire
+
+<ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#overview">@Dictionary.OverviewLabel</a></li>
+
+    <li><a data-toggle="pill" href="#blood-analysis">@Dictionary.BloodAnalysis</a></li>
+
+    <li><a data-toggle="pill" href="#acetylation">@Dictionary.AcetylationTitle</a></li>
+
+    <li><a data-toggle="pill" href="#biometrics">@Dictionary.BiometricsTitle</a></li>
+
+    <li><a data-toggle="pill" href="#dermatoglyphics">@Dictionary.DermatoglyphicsTitle</a></li>
+
+    <li><a data-toggle="pill" href="#dentition">@Dictionary.DentitionTitle</a></li>
+
+    <li><a data-toggle="pill" href="#taster-status">@Dictionary.TasterStatus</a></li>
+
+    <li><a data-toggle="pill" href="#family-history">@Dictionary.FamilyHistory</a></li>
+
+    <li><a data-toggle="pill" href="#cbs-methylation">@Dictionary.CbsAndMethylation</a></li>
+
+    <li><a data-toggle="pill" href="#doshas">@Dictionary.Doshas</a></li>
+
+    <li><a data-toggle="pill" href="#general-health">@Dictionary.GeneralHealth</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="overview" class="tab-pane fade active in padding-top-15">
+        @Html.Partial("Overview/_Page1Overview")
+    </div>
+
+    <div id="blood-analysis" class="tab-pane fade padding-top-15">
+        
+    </div>
+
+    <div id="acetylation" class="tab-pane fade padding-top-15">
+        
+    </div>
+
+    <div id="biometrics" class="tab-pane fade padding-top-15">
+        
+    </div>
+
+    <div id="dermatoglyphics" class="tab-pane fade padding-top-15">
+        
+    </div>
+
+    <div id="dentition" class="tab-pane fade padding-top-15">
+        
+    </div>
+
+    <div id="taster-status" class="tab-pane fadepadding-top-15">
+        
+    </div>
+
+    <div id="family-history" class="tab-pane fade padding-top-15">
+        
+    </div>
+
+    <div id="cbs-methylation" class="tab-pane fade padding-top-15">
+        
+    </div>
+
+    <div id="doshas" class="tab-pane fade padding-top-15">
+        
+    </div>
+
+    <div id="general-health" class="tab-pane fade padding-top-15">
+        
+    </div>
+</div>
