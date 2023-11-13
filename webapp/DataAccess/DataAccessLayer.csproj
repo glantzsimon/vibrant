@@ -571,6 +571,10 @@
     <Compile Include="Migrations\202311131128134_AddGenoTypeColumns.Designer.cs">
       <DependentUpon>202311131128134_AddGenoTypeColumns.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311131302277_ColumnChange.cs" />
+    <Compile Include="Migrations\202311131302277_ColumnChange.Designer.cs">
+      <DependentUpon>202311131302277_ColumnChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
@@ -873,6 +877,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311131128134_AddGenoTypeColumns.resx">
       <DependentUpon>202311131128134_AddGenoTypeColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311131302277_ColumnChange.resx">
+      <DependentUpon>202311131302277_ColumnChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -19,7 +19,7 @@
     var yangColor = Model.GetColorFromScore(Model.GetYangImbalanceScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var dentalIssuesColor = Model.GetColorFromScore(Model.GetDentalHealthScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var neurologicalColor = Model.GetColorFromScore(Model.GetNeurologicalScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    
+
     var currentHealthColor = Model.GetColorFromScore(Model.GetCurrentHealthScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var expertiseColor = Model.GetColorFromScore(Model.GetNutritionExpertiseScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 }
@@ -87,6 +87,9 @@
             })
         </div>
     </div>
+</div>
+
+<div class="well">
     <div class="row">
         <div class="col-xs-6 col-sm-3 col-md-2">
             @Html.Partial("Controls/_Gauge", new GaugeOptions
@@ -133,6 +136,9 @@
             })
         </div>
     </div>
+</div>
+
+<div class="well">
     <div class="row">
         <div class="col-xs-6 col-sm-3 col-md-2">
             @Html.Partial("Controls/_Gauge", new GaugeOptions
