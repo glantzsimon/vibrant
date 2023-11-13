@@ -33,9 +33,13 @@
         <div class="col-xs-12">
             @foreach (var property in Model.GetCbsProperties())
             {
-                if ((EYesNo)Model.GetProperty(property) == EYesNo.Yes)
+                var value = Model.GetProperty(property);
+                if (value != null)
                 {
-                    <span class="summary-item">@property.Name.SplitOnCapitalLetter()</span>
+                    if ((EYesNo)value == EYesNo.Yes)
+                    {
+                        <span class="summary-item">@property.Name.SplitOnCapitalLetter()</span>
+                    }
                 }
             }
         </div>
