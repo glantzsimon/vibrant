@@ -988,6 +988,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cardiovascular Health.
+        /// </summary>
+        public static string CardiovascularHealth {
+            get {
+                return ResourceManager.GetString("CardiovascularHealth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Category.
         /// </summary>
         public static string Category {
@@ -1002,6 +1011,15 @@ namespace K9.Globalisation {
         public static string CategoryLabel {
             get {
                 return ResourceManager.GetString("CategoryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CBS.
+        /// </summary>
+        public static string Cbs {
+            get {
+                return ResourceManager.GetString("Cbs", resourceCulture);
             }
         }
         
@@ -2067,6 +2085,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Digestive Health.
+        /// </summary>
+        public static string DigestiveHealth {
+            get {
+                return ResourceManager.GetString("DigestiveHealth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Diplomat.
         /// </summary>
         public static string Diplomat {
@@ -2685,6 +2712,15 @@ namespace K9.Globalisation {
         public static string ElementDescriptionLabel {
             get {
                 return ResourceManager.GetString("ElementDescriptionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Elements.
+        /// </summary>
+        public static string Elements {
+            get {
+                return ResourceManager.GetString("Elements", resourceCulture);
             }
         }
         
@@ -3383,6 +3419,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GenoTypes.
+        /// </summary>
+        public static string GenoTypes {
+            get {
+                return ResourceManager.GetString("GenoTypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gift.
         /// </summary>
         public static string Gift {
@@ -3747,6 +3792,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hormone Balance.
+        /// </summary>
+        public static string HormoneBalance {
+            get {
+                return ResourceManager.GetString("HormoneBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to How to determine your sitting height.
         /// </summary>
         public static string HowToDetermineSittingHeight {
@@ -3846,6 +3900,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Imbalances.
+        /// </summary>
+        public static string Imbalances {
+            get {
+                return ResourceManager.GetString("Imbalances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Immune System.
         /// </summary>
         public static string ImmuneSupport {
@@ -3860,6 +3923,15 @@ namespace K9.Globalisation {
         public static string ImmuneSystem {
             get {
                 return ResourceManager.GetString("ImmuneSystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Immunity.
+        /// </summary>
+        public static string Immunity {
+            get {
+                return ResourceManager.GetString("Immunity", resourceCulture);
             }
         }
         
@@ -5196,6 +5268,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Neurological Health.
+        /// </summary>
+        public static string NeurologicalHealth {
+            get {
+                return ResourceManager.GetString("NeurologicalHealth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Never.
         /// </summary>
         public static string Never {
@@ -5382,6 +5463,24 @@ namespace K9.Globalisation {
         public static string NotSure {
             get {
                 return ResourceManager.GetString("NotSure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nourishes Yang.
+        /// </summary>
+        public static string NourishesYang {
+            get {
+                return ResourceManager.GetString("NourishesYang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nourishes Yin.
+        /// </summary>
+        public static string NourishesYin {
+            get {
+                return ResourceManager.GetString("NourishesYin", resourceCulture);
             }
         }
         
@@ -6007,7 +6106,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PittaDosha.
+        ///   Looks up a localized string similar to Pitta Dosha.
         /// </summary>
         public static string PittaDosha {
             get {
@@ -8069,6 +8168,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stress Relief.
+        /// </summary>
+        public static string StressRelief {
+            get {
+                return ResourceManager.GetString("StressRelief", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Which of the following best describes how you respond when stressed?.
         /// </summary>
         public static string StressResponseQuestionLabel {
@@ -8851,6 +8959,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Treatment.
+        /// </summary>
+        public static string Treatment {
+            get {
+                return ResourceManager.GetString("Treatment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tree.
         /// </summary>
         public static string Tree {
@@ -9065,6 +9182,15 @@ namespace K9.Globalisation {
         public static string UrinaryBladder {
             get {
                 return ResourceManager.GetString("UrinaryBladder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Urological Health.
+        /// </summary>
+        public static string UrologicalHealth {
+            get {
+                return ResourceManager.GetString("UrologicalHealth", resourceCulture);
             }
         }
         

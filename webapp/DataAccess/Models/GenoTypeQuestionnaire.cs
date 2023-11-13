@@ -5,6 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
+using K9.DataAccessLayer.Attributes;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -54,12 +57,19 @@ namespace K9.DataAccessLayer.Models
         public EColor GetColorFromScore(int score)
         {
             double factor = 100f / 7f;
+            double index = 0;
 
-            var index = (int)Math.Floor(score / factor);
-
-            if (score == 100)
+            if (score == 0)
+            {
+                index = 0;
+            }
+            else if (score == 100)
             {
                 index = 6;
+            }
+            else
+            {
+                index = (int)Math.Floor(score / factor);
             }
 
             return (EColor)index;
@@ -924,22 +934,27 @@ namespace K9.DataAccessLayer.Models
         #region Family History
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.FamilyHistory)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfNeurologicalDiseaseLabel)]
         public EYesNo? FamilyHistoryOfNeurologicalDisease { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.FamilyHistory)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel)]
         public EYesNo? FamilyHistoryOfHeartDiseaseStrokeOrDiabetes { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.FamilyHistory)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfCancerLabel)]
         public EYesNo? FamilyHistoryOfCancer { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.FamilyHistory)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfAutoimmuneDiseaseLabel)]
         public EYesNo? FamilyHistoryOfAutoimmuneDisease { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.FamilyHistory)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfSubstanceDependencyLabel)]
         public EYesNo? FamilyHistoryOfSubstanceDependency { get; set; }
 
@@ -1020,6 +1035,9 @@ namespace K9.DataAccessLayer.Models
 
             return (int)Math.Ceiling(score / 5 * 100);
         }
+
+        public List<PropertyInfo> FamilyHistoryProperties() => this
+            .GetProperties().Where(e => e.GetAttribute<QuestionCategoryAttribute>()?.Category == EQuestionCategory.FamilyHistory).ToList();
 
         #endregion
 

@@ -80,6 +80,8 @@
                 Units = $"{Model.GetImmunityIssuesScore()}%",
             })
         </div>
+    </div>
+    <div class="row">
         <div class="col-xs-6 col-sm-3 col-md-2">
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {
@@ -91,8 +93,6 @@
                 Units = $"{Model.GetYinImbalanceScore()}%",
             })
         </div>
-    </div>
-    <div class="row">
         <div class="col-xs-6 col-sm-3 col-md-2">
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {

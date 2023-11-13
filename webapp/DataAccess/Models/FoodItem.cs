@@ -1,5 +1,4 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
-using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Attributes;
@@ -13,7 +12,7 @@ using System.Web.Mvc;
 namespace K9.DataAccessLayer.Models
 {
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.FoodItems, PluralName = Globalisation.Strings.Names.FoodItems, Name = Globalisation.Strings.Names.FoodItem)]
-    public class FoodItem : ObjectBase
+    public class FoodItem : GenoTypeBase
     {
         public Guid ExternalId { get; set; }
 

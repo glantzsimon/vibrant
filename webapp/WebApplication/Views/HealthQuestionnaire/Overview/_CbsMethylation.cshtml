@@ -12,11 +12,19 @@
 <div class="well">
     <div class="row">
         <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.GeneralHealth @Dictionary.Scores</h3>
+            <h3 class="section-title">@Dictionary.CbsAndMethylation</h3>
         </div>
     </div>
     <div class="row">
-        
+        <div class="col-xs-12">
+            @foreach (var property in Model.GetCbsProperties())
+            {
+                if ((EYesNo)Model.GetProperty(property) == EYesNo.Yes)
+                {
+                    <span class="summary-item">@property.Name.SplitOnCapitalLetter()</span>
+                }
+            }
+        </div>
     </div>
 </div>
 

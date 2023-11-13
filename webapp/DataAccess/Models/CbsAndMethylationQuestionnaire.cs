@@ -1,7 +1,12 @@
-﻿using K9.DataAccessLayer.Enums;
+﻿using K9.DataAccessLayer.Attributes;
+using K9.DataAccessLayer.Enums;
 using K9.Globalisation;
+using K9.SharedLibrary.Extensions;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Reflection;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -10,113 +15,143 @@ namespace K9.DataAccessLayer.Models
 
         #region Cbs
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WhiteSpotsOnNailsLabel)]
         public EYesNo? WhiteSpotsOnNails { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AnaemiaLabel)]
         public EYesNo? Anaemia { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PostExertionalMalaiseLabel)]
         public EYesNo? PostExertionalMalaise { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CrampsTremorsTwitchesLabel)]
         public EYesNo? CrampsTremorsTwitches { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HistoryOfchronicFatigueOrFibromyalgiaLabel)]
         public EYesNo? HistoryOfchronicFatigueOrFibromyalgia { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MigrainesLabel)]
         public EYesNo? Migraines { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.POTSLabel)]
         public EYesNo? POTS { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DepressionAnxietyLabel)]
         public EYesNo? DepressionAnxiety { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BrainFogLabel)]
         public EYesNo? BrainFog { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InsomniaLabel)]
         public EYesNo? Insomnia { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NightSweatsLabel)]
         public EYesNo? NightSweats { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LowMorningEnergyLabel)]
         public EYesNo? LowMorningEnergy { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RacingThoughtsLabel)]
         public EYesNo? RacingThoughts { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InnerTensionLabel)]
         public EYesNo? InnerTension { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LoudNoisesBrightLightsLabel)]
         public EYesNo? LoudNoisesBrightLights { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SulfiteSensitivityLabel)]
         public EYesNo? SulfiteSensitivity { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MsgSensitivityLabel)]
         public EYesNo? MsgSensitivity { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CoarseThinEyebrowsLabel)]
         public EYesNo? CoarseThinEyebrows { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmmoniaSmellLabel)]
         public EYesNo? AmmoniaSmell { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SugarCrashesLabel)]
         public EYesNo? SugarCrashes { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OCDLabel)]
         public EYesNo? OCD { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChronicViralInfectionsLabel)]
         public EYesNo? ChronicViralInfections { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SpiderVeinsLabel)]
         public EYesNo? SpiderVeins { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StretchMarksLabel)]
         public EYesNo? StretchMarks { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FrequentNighttimeUrinationLabel)]
         public EYesNo? FrequentNighttimeUrination { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HerpesLabel)]
         public EYesNo? Herpes { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IrritabilityLabel)]
         public EYesNo? Irritability { get; set; }
+
+        public List<PropertyInfo> GetCbsProperties() => this
+            .GetProperties().Where(e => e.GetAttribute<QuestionCategoryAttribute>()?.Category == EQuestionCategory.Cbs).ToList();
 
         public int GetCbsScore()
         {

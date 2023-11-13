@@ -191,6 +191,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\QuestionCategoryAttribute.cs" />
     <Compile Include="Attributes\DoshaEnumMetaDataAttribute.cs" />
     <Compile Include="Attributes\GenoTypeEnumMetaDataAttribute.cs" />
     <Compile Include="Attributes\ZodiacEnumMetaDataAttribute.cs" />
@@ -202,6 +203,7 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\EQuestionCategory.cs" />
     <Compile Include="Enums\EColor.cs" />
     <Compile Include="Enums\EOrgan.cs" />
     <Compile Include="Enums\EHairType.cs" />
@@ -557,6 +559,11 @@
     <Compile Include="Migrations\202311130652322_AddLGBTQPlus.Designer.cs">
       <DependentUpon>202311130652322_AddLGBTQPlus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311131056113_Magic.cs" />
+    <Compile Include="Migrations\202311131056113_Magic.Designer.cs">
+      <DependentUpon>202311131056113_Magic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
     <Compile Include="Models\Doshas.cs" />
@@ -849,6 +856,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311130652322_AddLGBTQPlus.resx">
       <DependentUpon>202311130652322_AddLGBTQPlus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311131056113_Magic.resx">
+      <DependentUpon>202311131056113_Magic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

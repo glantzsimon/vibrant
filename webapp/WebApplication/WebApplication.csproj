@@ -261,6 +261,7 @@
     <Compile Include="Config\StripeConfiguration.cs" />
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Controllers\FoodItemsController.cs" />
     <Compile Include="Controllers\HealthQuestionnaireController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\HealthQuestionnaireFoodItemsController.cs" />
@@ -1653,6 +1654,16 @@
     <Content Include="Views\HealthQuestionnaire\Overview\_Page9Recommendations.cshtml" />
     <Content Include="Views\HealthQuestionnaire\Overview\_Recommendations.cshtml" />
     <Content Include="Views\HealthQuestionnaire\Overview\_Page1PersonalDetails.cshtml" />
+    <Content Include="Views\Shared\_GenoTypeBaseEditFields.cshtml" />
+    <Content Include="Views\Shared\_GenoTypeBaseDisplayFields.cshtml" />
+    <Content Include="Views\FoodItems\_DisplayFields.cshtml" />
+    <Content Include="Views\FoodItems\_DisplaySummary.cshtml" />
+    <Content Include="Views\FoodItems\_EditFields.cshtml" />
+    <Content Include="Views\FoodItems\Create.cshtml" />
+    <Content Include="Views\FoodItems\Delete.cshtml" />
+    <Content Include="Views\FoodItems\Details.cshtml" />
+    <Content Include="Views\FoodItems\Edit.cshtml" />
+    <Content Include="Views\FoodItems\Index.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

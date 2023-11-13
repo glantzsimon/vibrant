@@ -629,6 +629,17 @@
             public const string Lake = "Lake";
             public const string Mountain = "Mountain";
             public const string Fire = "Fire";
+            public const string Cbs = "Cbs";
+            public const string Immunity = "Immunity";
+            public const string NeurologicalHealth = "NeurologicalHealth";
+            public const string DigestiveHealth = "DigestiveHealth";
+            public const string CardiovascularHealth = "CardiovascularHealth";
+            public const string UrologicalHealth = "UrologicalHealth";
+            public const string HormoneBalance = "HormoneBalance";
+            public const string StressRelief = "StressRelief";
+            public const string Detoxification = "Detoxification";
+            public const string NourishesYin = "NourishesYin";
+            public const string NourishesYang = "NourishesYang";
             public const string Unspecified = "Unspecified";
             public const string Free = "Free";
             public const string Complete = "Complete";

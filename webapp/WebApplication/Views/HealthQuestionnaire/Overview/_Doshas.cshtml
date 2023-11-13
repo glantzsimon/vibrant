@@ -9,17 +9,52 @@
 @model HealthQuestionnaire
 
 @{
-    
+    var doshas = Model.GetDoshas();
+    var vataColor = Model.GetColorFromScore(doshas.GetVataDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var pittaColor = Model.GetColorFromScore(doshas.GetPittaDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var kaphaColor = Model.GetColorFromScore(doshas.GetKaphaDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 }
 
 <div class="well">
     <div class="row">
         <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.GeneralHealth @Dictionary.Scores</h3>
+            <h3 class="section-title">@Dictionary.Doshas</h3>
         </div>
     </div>
     <div class="row">
-        
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = doshas.GetVataDoshaPercentage(),
+                Title = Dictionary.VataDosha,
+                BackgroundColor = $"rgb({vataColor}, 0.33)",
+                StrokeColor = $"rgb({vataColor})",
+                Units = $"{doshas.GetVataDoshaPercentage()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = doshas.GetPittaDoshaPercentage(),
+                Title = Dictionary.PittaDosha,
+                BackgroundColor = $"rgb({pittaColor}, 0.33)",
+                StrokeColor = $"rgb({pittaColor})",
+                Units = $"{doshas.GetPittaDoshaPercentage()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = doshas.GetKaphaDoshaPercentage(),
+                Title = Dictionary.KaphaDosha,
+                BackgroundColor = $"rgb({kaphaColor}, 0.33)",
+                StrokeColor = $"rgb({kaphaColor})",
+                Units = $"{doshas.GetKaphaDoshaPercentage()}%",
+            })
+        </div>
     </div>
 </div>
 

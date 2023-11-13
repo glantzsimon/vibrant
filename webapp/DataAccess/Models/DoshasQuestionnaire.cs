@@ -68,12 +68,16 @@ namespace K9.DataAccessLayer.Models
                 StressResponse.GetAttribute<DoshaEnumMetaDataAttribute>().Dosha,
             };
 
-            var totalDoshas = results.Count;    
+            var totalDoshas = results.Count;
+            var vataCount = results.Count(e => e == EDosha.Vata);
+            var pittaCount = results.Count(e => e == EDosha.Pitta);
+            var kaphaCount = results.Count(e => e == EDosha.Kapha);
+
             return new Doshas
             {
-                VataDoshaScore = totalDoshas / results.Count(e => e == EDosha.Vata),
-                PittaDoshaScore = totalDoshas / results.Count(e => e == EDosha.Pitta),
-                KaphaDoshaScore = totalDoshas / results.Count(e => e == EDosha.Kapha)
+                VataDoshaScore = vataCount > 0 ? (double)vataCount / totalDoshas : 0,
+                PittaDoshaScore = pittaCount > 0 ? (double)pittaCount / totalDoshas : 0,
+                KaphaDoshaScore = kaphaCount > 0 ? (double)kaphaCount / totalDoshas : 0
             };
         }
 

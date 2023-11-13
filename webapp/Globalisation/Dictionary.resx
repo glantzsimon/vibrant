@@ -2951,7 +2951,7 @@
     <value>Have you ever suffered any major physical trauma? If so please provide details.</value>
   </data>
   <data name="PittaDosha" xml:space="preserve">
-    <value>PittaDosha</value>
+    <value>Pitta Dosha</value>
   </data>
   <data name="PittaKaphaDosha" xml:space="preserve">
     <value>Pitta Kapha Dosha</value>
@@ -3238,11 +3238,53 @@
   <data name="YearlyCycleEnergy" xml:space="preserve">
     <value>Yearly Cycle Energy</value>
   </data>
+  <data name="CardiovascularHealth" xml:space="preserve">
+    <value>Cardiovascular Health</value>
+  </data>
+  <data name="Cbs" xml:space="preserve">
+    <value>CBS</value>
+  </data>
+  <data name="DigestiveHealth" xml:space="preserve">
+    <value>Digestive Health</value>
+  </data>
+  <data name="Elements" xml:space="preserve">
+    <value>Elements</value>
+  </data>
+  <data name="GenoTypes" xml:space="preserve">
+    <value>GenoTypes</value>
+  </data>
+  <data name="HormoneBalance" xml:space="preserve">
+    <value>Hormone Balance</value>
+  </data>
+  <data name="Imbalances" xml:space="preserve">
+    <value>Imbalances</value>
+  </data>
+  <data name="Immunity" xml:space="preserve">
+    <value>Immunity</value>
+  </data>
   <data name="IsLGBTQPlusLabel" xml:space="preserve">
     <value>Are you LGBTQ+?</value>
   </data>
+  <data name="NeurologicalHealth" xml:space="preserve">
+    <value>Neurological Health</value>
+  </data>
+  <data name="NourishesYang" xml:space="preserve">
+    <value>Nourishes Yang</value>
+  </data>
+  <data name="NourishesYin" xml:space="preserve">
+    <value>Nourishes Yin</value>
+  </data>
   <data name="Scores" xml:space="preserve">
     <value>Scores</value>
+  </data>
+  <data name="StressRelief" xml:space="preserve">
+    <value>Stress Relief</value>
+  </data>
+  <data name="Treatment" xml:space="preserve">
+    <value>Treatment</value>
+  </data>
+  <data name="UrologicalHealth" xml:space="preserve">
+    <value>Urological Health</value>
   </data>
   <data name="YangImbalance" xml:space="preserve">
     <value>Yang Imbalance</value>
