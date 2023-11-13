@@ -1,5 +1,6 @@
 ﻿using K9.DataAccessLayer.Enums;
 using K9.Globalisation;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace K9.DataAccessLayer.Models
@@ -117,10 +118,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IrritabilityLabel)]
         public EYesNo? Irritability { get; set; }
 
-        public double GetCbsScore()
+        public int GetCbsScore()
         {
-            var totalScore = 32;
-            var score = 0;
+            double totalScore = 32;
+            double score = 0;
 
             if (MsgSensitivity == EYesNo.Yes)
             {
@@ -262,7 +263,7 @@ namespace K9.DataAccessLayer.Models
                 score++;
             }
 
-            return score / totalScore;
+            return (int)Math.Ceiling((score / totalScore) * 100);
         }
 
         #endregion

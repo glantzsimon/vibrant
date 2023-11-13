@@ -1006,7 +1006,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CBS &amp; Methylation Status.
+        ///   Looks up a localized string similar to CBS &amp; Methylation.
         /// </summary>
         public static string CbsAndMethylation {
             get {
@@ -7389,6 +7389,15 @@ namespace K9.Globalisation {
         public static string Schedule {
             get {
                 return ResourceManager.GetString("Schedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scores.
+        /// </summary>
+        public static string Scores {
+            get {
+                return ResourceManager.GetString("Scores", resourceCulture);
             }
         }
         

@@ -1,6 +1,7 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Enums;
 using K9.Globalisation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace K9.DataAccessLayer.Models
         public GenoTypeStrengthTestResult CalculateGenotype()
         {
             return GetGroupedStrengthTestResults()
-                .Results
+                .FilteredResults
                 .First();
         }
 
@@ -48,6 +49,20 @@ namespace K9.DataAccessLayer.Models
                 .Concat(GetGenoTypeFromFingerprints());
 
             return genoTypesStrengthTestResults.ToList();
+        }
+
+        public EColor GetColorFromScore(int score)
+        {
+            double factor = 100f / 7f;
+
+            var index = (int)Math.Floor(score / factor);
+
+            if (score == 100)
+            {
+                index = 6;
+            }
+
+            return (EColor)index;
         }
 
         #region Blood Analysis
@@ -144,6 +159,39 @@ namespace K9.DataAccessLayer.Models
             CaffeineAffectsSleep.HasValue &&
             SensitiveToMold.HasValue &&
             SensitiveToEnvironmentalChemicals.HasValue;
+
+        public int GetAcetulationScore()
+        {
+            double max = 5;
+            double score = 0;
+
+            if (SensitivityToMedications == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (SensitiveToCaffeine == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (CaffeineAffectsSleep == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (SensitiveToMold == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (SensitiveToEnvironmentalChemicals == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            return (int)Math.Ceiling(score / 5 * 100);
+        }
 
         #endregion
 
@@ -939,6 +987,39 @@ namespace K9.DataAccessLayer.Models
             FamilyHistoryOfCancer.HasValue &&
             FamilyHistoryOfAutoimmuneDisease.HasValue &&
             FamilyHistoryOfSubstanceDependency.HasValue;
+
+        public int GetFamilyHistoryScore()
+        {
+            double max = 5;
+            double score = 0;
+
+            if (FamilyHistoryOfNeurologicalDisease == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (FamilyHistoryOfHeartDiseaseStrokeOrDiabetes == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (FamilyHistoryOfCancer == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (FamilyHistoryOfAutoimmuneDisease == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (FamilyHistoryOfSubstanceDependency == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            return (int)Math.Ceiling(score / 5 * 100);
+        }
 
         #endregion
 

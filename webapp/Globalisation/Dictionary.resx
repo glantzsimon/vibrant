@@ -2519,7 +2519,7 @@
     <value>Brachycephalic (short-headed)</value>
   </data>
   <data name="CbsAndMethylation" xml:space="preserve">
-    <value>CBS &amp; Methylation Status</value>
+    <value>CBS &amp; Methylation</value>
   </data>
   <data name="Dolichocephalic" xml:space="preserve">
     <value>Dolichocephalic (long-headed)</value>
@@ -3240,5 +3240,8 @@
   </data>
   <data name="IsLGBTQPlusLabel" xml:space="preserve">
     <value>Are you LGBTQ+?</value>
+  </data>
+  <data name="Scores" xml:space="preserve">
+    <value>Scores</value>
   </data>
 </root>

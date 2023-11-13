@@ -1,4 +1,6 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@using K9.DataAccessLayer.Attributes
+@using K9.DataAccessLayer.Enums
 @using K9.SharedLibrary.Extensions
 @using K9.WebApplication.Config
 @using K9.WebApplication.Enums
@@ -36,17 +38,12 @@
 <div class="well">
     <div class="row">
         <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.GenoTypeDetails</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <h4>@Dictionary.StrengthTestResults</h4>
+            <h3 class="section-title">@Dictionary.StrengthTestResults</h3>
         </div>
     </div>
     <div class="row">
         @foreach (var result in strengthTestResults.FilteredResults)
-        {           
+        {
 
             <div class="col-xs-6 col-sm-3 col-md-2">
                 @Html.Partial("Controls/_Gauge", new GaugeOptions
@@ -60,7 +57,5 @@
                })
             </div>
         }
-
     </div>
 </div>
-

@@ -494,10 +494,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CoatedTongueLabel)]
         public EYesNo? CoatedTongue { get; set; }
 
-        public double GetDigestionIssuesScore()
+        public int GetDigestionIssuesScore()
         {
-            var totalScore = 7;
-            var score = 0;
+            double totalScore = 7;
+            double score = 0;
 
             if (CoatedTongue == EYesNo.Yes)
             {
@@ -534,7 +534,7 @@ namespace K9.DataAccessLayer.Models
                 score++;
             }
 
-            return score / totalScore;
+            return (int)Math.Ceiling((score / totalScore) * 100);
         }
 
         #endregion
@@ -554,10 +554,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.UTILabel)]
         public EYesNo? UTI { get; set; }
 
-        public double GetImmunityIssuesScore()
+        public int GetImmunityIssuesScore()
         {
-            var totalScore = 4;
-            var score = 0;
+            double totalScore = 4;
+            double score = 0;
 
             if (InfectionSeverity == ESeverity.MoreSevere)
             {
@@ -579,7 +579,7 @@ namespace K9.DataAccessLayer.Models
                 score++;
             }
 
-            return score / totalScore;
+            return (int)Math.Ceiling((score / totalScore) * 100);
         }
 
         #endregion
@@ -598,10 +598,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CandidaFungusLabel)]
         public EYesNo? CandidaAndFungus { get; set; }
 
-        public double GetYinDiseaseScore()
+        public int GetYinDiseaseScore()
         {
-            var totalScore = 4;
-            var score = 0;
+            double totalScore = 4;
+            double score = 0;
 
             if (ColdExtremities == EYesNo.Yes)
             {
@@ -623,7 +623,7 @@ namespace K9.DataAccessLayer.Models
                 score++;
             }
 
-            return score / totalScore;
+            return (int)Math.Ceiling((score / totalScore) * 100);
         }
 
         #endregion

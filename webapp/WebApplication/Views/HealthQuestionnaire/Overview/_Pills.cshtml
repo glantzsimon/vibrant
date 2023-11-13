@@ -10,16 +10,8 @@
 
     <li><a data-toggle="pill" href="#genotype">@Dictionary.GenoType</a></li>
 
-    <li><a data-toggle="pill" href="#acetylation">@Dictionary.AcetylationTitle</a></li>
-
-    <li><a data-toggle="pill" href="#biometrics">@Dictionary.BiometricsTitle</a></li>
-
-    <li><a data-toggle="pill" href="#dermatoglyphics">@Dictionary.DermatoglyphicsTitle</a></li>
-
-    <li><a data-toggle="pill" href="#dentition">@Dictionary.DentitionTitle</a></li>
-
-    <li><a data-toggle="pill" href="#taster-status">@Dictionary.TasterStatus</a></li>
-
+    <li><a data-toggle="pill" href="#scores">@Dictionary.Scores</a></li>
+    
     <li><a data-toggle="pill" href="#family-history">@Dictionary.FamilyHistory</a></li>
 
     <li><a data-toggle="pill" href="#cbs-methylation">@Dictionary.CbsAndMethylation</a></li>
@@ -27,6 +19,8 @@
     <li><a data-toggle="pill" href="#doshas">@Dictionary.Doshas</a></li>
 
     <li><a data-toggle="pill" href="#general-health">@Dictionary.GeneralHealth</a></li>
+    
+    <li><a data-toggle="pill" href="#recommendations">@Dictionary.RecommendationsLabel</a></li>
 </ul>
 
 <div class="tab-content">
@@ -38,39 +32,27 @@
         @Html.Partial("Overview/_Page2GenoType")
     </div>
 
-    <div id="acetylation" class="tab-pane fade padding-top-15">
-        
-    </div>
-
-    <div id="biometrics" class="tab-pane fade padding-top-15">
-        
-    </div>
-
-    <div id="dermatoglyphics" class="tab-pane fade padding-top-15">
-        
-    </div>
-
-    <div id="dentition" class="tab-pane fade padding-top-15">
-        
-    </div>
-
-    <div id="taster-status" class="tab-pane fadepadding-top-15">
-        
+    <div id="scores" class="tab-pane fade padding-top-15">
+        @Html.Partial("Overview/_Page3Scores")
     </div>
 
     <div id="family-history" class="tab-pane fade padding-top-15">
-        
+        @Html.Partial("Overview/_Page4FamilyHistory")
     </div>
 
     <div id="cbs-methylation" class="tab-pane fade padding-top-15">
-        
+        @Html.Partial("Overview/_Page5CbsMethylation")
     </div>
 
     <div id="doshas" class="tab-pane fade padding-top-15">
-        
+        @Html.Partial("Overview/_Page6Doshas")
     </div>
 
     <div id="general-health" class="tab-pane fade padding-top-15">
-        
+        @Html.Partial("Overview/_Page7GeneralHealth")
+    </div>
+
+    <div id="recommendations" class="tab-pane fade padding-top-15">
+        @Html.Partial("Overview/_Page8Recommendations")
     </div>
 </div>

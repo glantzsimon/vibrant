@@ -202,6 +202,7 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\EColor.cs" />
     <Compile Include="Enums\EOrgan.cs" />
     <Compile Include="Enums\EHairType.cs" />
     <Compile Include="Enums\EDisposition.cs" />

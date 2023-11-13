@@ -1637,10 +1637,21 @@
     <Content Include="Views\Shared\DisplayTemplates\Organs.cshtml" />
     <Content Include="Views\HealthQuestionnaire\Overview\_GenoType.cshtml" />
     <Content Include="Views\HealthQuestionnaire\Overview\_Page2GenoType.cshtml" />
-    <Content Include="Views\HealthQuestionnaire\Overview\_Biometrics.cshtml" />
     <Content Include="Views\Shared\Controls\_Gauge.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Strength.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Strength.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\Overview\_Page3Scores.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\Overview\_Scores.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\Overview\_GeneralHealth.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\Overview\_FamilyHistory.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\Overview\_CbsMethylation.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\Overview\_Doshas.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\Overview\_Page4FamilyHistory.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\Overview\_Page5CbsMethylation.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\Overview\_Page6Doshas.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\Overview\_Page7GeneralHealth.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\Overview\_Page8Recommendations.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\Overview\_Recommendations.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
