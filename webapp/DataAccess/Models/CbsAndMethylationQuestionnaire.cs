@@ -57,6 +57,16 @@ namespace K9.DataAccessLayer.Models
 
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MemoryProblemsLabel)]
+        public EYesNo? MemoryProblems { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ConcentrationProblemsLabel)]
+        public EYesNo? ConcentrationProblems { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
+        [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BrainFogLabel)]
         public EYesNo? BrainFog { get; set; }
 
@@ -155,8 +165,18 @@ namespace K9.DataAccessLayer.Models
 
         public int GetCbsScore()
         {
-            double totalScore = 32;
+            double totalScore = 34;
             double score = 0;
+
+            if (ConcentrationProblems == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (MemoryProblems == EYesNo.Yes)
+            {
+                score++;
+            }
 
             if (MsgSensitivity == EYesNo.Yes)
             {
@@ -330,6 +350,8 @@ namespace K9.DataAccessLayer.Models
             Herpes.HasValue &&
             SulfiteSensitivity.HasValue &&
             MsgSensitivity.HasValue &&
+            MemoryProblems.HasValue &&
+            ConcentrationProblems.HasValue &&
             Irritability.HasValue;
     }
 }

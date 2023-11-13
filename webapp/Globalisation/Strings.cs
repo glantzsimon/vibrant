@@ -220,6 +220,7 @@
             public const string PostExertionalMalaiseLabel ="PostExertionalMalaiseLabel";
             public const string SkinIssuesLabel ="SkinIssuesLabel";
             public const string HighBloodPressureLabel ="HighBloodPressureLabel";
+            public const string AutoImmunityLabel ="AutoImmunityLabel";
             public const string SkinIssuesDetailsLabel ="SkinIssuesDetailsLabel";
             public const string ColdExtremitiesLabel ="ColdExtremitiesLabel";
             public const string ColdIntolerantLabel ="ColdIntolerantLabel";
@@ -233,6 +234,8 @@
             public const string MigrainesLabel ="MigrainesLabel";
             public const string POTSLabel ="POTSLabel";
             public const string DepressionAnxietyLabel ="DepressionAnxietyLabel";
+            public const string MemoryProblemsLabel ="MemoryProblemsLabel";
+            public const string ConcentrationProblemsLabel ="ConcentrationProblemsLabel";
             public const string BrainFogLabel ="BrainFogLabel";
             public const string InsomniaLabel ="InsomniaLabel";
             public const string NightSweatsLabel ="NightSweatsLabel";
@@ -640,6 +643,7 @@
             public const string CardiovascularHealth = "CardiovascularHealth";
             public const string UrologicalHealth = "UrologicalHealth";
             public const string HormoneBalance = "HormoneBalance";
+            public const string AntiInflammatory = "AntiInflammatory";
             public const string StressRelief = "StressRelief";
             public const string Detoxification = "Detoxification";
             public const string DentalHealth = "DentalHealth";

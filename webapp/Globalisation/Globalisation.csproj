@@ -112,13 +112,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Doshas\en-gb\VataDetails.htm" />
-    <Content Include="Doshas\en-gb\PittaDetails.htm" />
-    <Content Include="Doshas\en-gb\KaphaDetails.htm" />
+    <Content Include="Doshas\en-gb\VataDoshaDetails.htm" />
+    <Content Include="Doshas\en-gb\PittaDoshaDetails.htm" />
+    <Content Include="Doshas\en-gb\KaphaDoshaDetails.htm" />
     <Content Include="Doshas\en-gb\TridoshicDetails.htm" />
-    <Content Include="Doshas\en-gb\VataPittaDetails.htm" />
+    <Content Include="Doshas\en-gb\VataPittaDoshaDetails.htm" />
     <Content Include="Doshas\en-gb\PittaKaphaDetails.htm" />
-    <Content Include="Doshas\en-gb\KaphaVataDetails.htm" />
+    <Content Include="Doshas\en-gb\KaphaVataDoshaDetails.htm" />
     <Content Include="GenoTypes\en-gb\NomadDetails.htm" />
     <Content Include="GenoTypes\en-gb\GathererDetails.htm" />
     <Content Include="GenoTypes\en-gb\WarriorDetails.htm" />

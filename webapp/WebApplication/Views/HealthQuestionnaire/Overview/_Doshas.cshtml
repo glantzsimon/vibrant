@@ -11,7 +11,7 @@
 
 @{
     var doshas = Model.GetDoshas();
-    var doshaName = doshas.GetDosha().GetAttribute<EnumDescriptionAttribute>().GetDescription();
+    var doshaName = doshas.GetDosha().GetAttribute<EnumDescriptionAttribute>().Name;
     var vataColor = Model.GetColorFromScore(doshas.GetVataDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var pittaColor = Model.GetColorFromScore(doshas.GetPittaDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var kaphaColor = Model.GetColorFromScore(doshas.GetKaphaDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;

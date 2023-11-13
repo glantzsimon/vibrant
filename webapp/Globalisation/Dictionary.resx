@@ -3241,6 +3241,15 @@
   <data name="AllergiesAndSensitivities" xml:space="preserve">
     <value>Allergies &amp; Sensitivities</value>
   </data>
+  <data name="AntiInflammatory" xml:space="preserve">
+    <value>Anti-inflammatory</value>
+  </data>
+  <data name="Autoimmunity" xml:space="preserve">
+    <value>Autoimmunity</value>
+  </data>
+  <data name="AutoImmunityLabel" xml:space="preserve">
+    <value>Do you have any autoimmune or inflammatory conditions?</value>
+  </data>
   <data name="CardiovascularHealth" xml:space="preserve">
     <value>Cardiovascular Health</value>
   </data>
@@ -3249,6 +3258,12 @@
   </data>
   <data name="Cbs" xml:space="preserve">
     <value>CBS</value>
+  </data>
+  <data name="ConcentrationIssues" xml:space="preserve">
+    <value>Concentration Issues</value>
+  </data>
+  <data name="ConcentrationProblemsLabel" xml:space="preserve">
+    <value>Do you ever have difficulty concentrating?</value>
   </data>
   <data name="CrackedTeeth" xml:space="preserve">
     <value>Do you have any cracked teeth?</value>
@@ -3304,14 +3319,23 @@
   <data name="InfectionSeverity" xml:space="preserve">
     <value>Typical Infection Severity</value>
   </data>
+  <data name="Inflammation" xml:space="preserve">
+    <value>Inflammation</value>
+  </data>
   <data name="IsLGBTQPlusLabel" xml:space="preserve">
     <value>Are you LGBTQ+?</value>
   </data>
-  <data name="KaphaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>doshas\en-gb\kaphadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="KaphaDoshaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>doshas\en-gb\kaphadoshadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="KaphaVataDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>doshas\en-gb\kaphavatadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="KaphaVataDoshaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>doshas\en-gb\kaphavatadoshadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MemoryIssues" xml:space="preserve">
+    <value>Memory Issues</value>
+  </data>
+  <data name="MemoryProblemsLabel" xml:space="preserve">
+    <value>Do you experience any issues with your memory?</value>
   </data>
   <data name="NeurologicalHealth" xml:space="preserve">
     <value>Neurological Health</value>
@@ -3331,10 +3355,13 @@
   <data name="PhysicalTrauma" xml:space="preserve">
     <value>Details of Major Physical Trauma</value>
   </data>
-  <data name="PittaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>doshas\en-gb\pittadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="PittaDoshaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>doshas\en-gb\pittadoshadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="PittaKaphaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>doshas\en-gb\pittakaphadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PittaKaphaDetails1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>doshas\en-gb\pittakaphadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="PrescriptionMedication" xml:space="preserve">
@@ -3370,14 +3397,17 @@
   <data name="TridoshicDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>doshas\en-gb\tridoshicdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="TridoshicDetails1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>doshas\en-gb\tridoshicdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="UrologicalHealth" xml:space="preserve">
     <value>Urological Health</value>
   </data>
-  <data name="VataDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>doshas\en-gb\vatadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="VataDoshaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>doshas\en-gb\vatadoshadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="VataPittaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>doshas\en-gb\vatapittadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="VataPittaDoshaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>doshas\en-gb\vatapittadoshadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="WarriorDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>genotypes\en-gb\warriordetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

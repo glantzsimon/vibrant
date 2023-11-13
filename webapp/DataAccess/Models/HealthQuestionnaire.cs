@@ -57,9 +57,7 @@ namespace K9.DataAccessLayer.Models
                    IsDermatoglyphicsComplete() ||
                    IsTasterStatusComplete();
         }
-
-
-
+        
         public int GetDentalHealthScore()
         {
             double totalScore = 11;
@@ -113,8 +111,18 @@ namespace K9.DataAccessLayer.Models
 
         public int GetNeurologicalScore()
         {
-            double totalScore = 13;
+            double totalScore = 15;
             double score = 0;
+
+            if (MemoryProblems == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (ConcentrationProblems == EYesNo.Yes)
+            {
+                score++;
+            }
 
             if (FamilyHistoryOfNeurologicalDisease == EYesNo.Yes)
             {
@@ -185,6 +193,41 @@ namespace K9.DataAccessLayer.Models
             }
 
             if (SpiderVeins == EYesNo.Yes)
+            {
+                score++;
+            }
+            
+            return (int)Math.Ceiling((score / totalScore) * 100);
+        }
+
+        public int GetInflammationScore()
+        {
+            double totalScore = 7;
+            double score = 0;
+
+            if (JointInflammation == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (Autoimmunity == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (GetDigestionIssuesScore() > 50)
+            {
+                score++;
+            }
+
+            if (GetCbsScore() > 50 || GetNeurologicalScore() > 50 || GetDigestionIssuesScore() > 50)
+            {
+                score++;
+                score++;
+                score++;
+            }
+
+            if (HighBloodPressure == EYesNo.Yes)
             {
                 score++;
             }
@@ -837,12 +880,22 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HighBloodPressureLabel)]
         public EYesNo? HighBloodPressure { get; set; }
 
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AutoImmunityLabel)]
+        public EYesNo? Autoimmunity { get; set; }
+
         public int GetYangImbalanceScore()
         {
-            double totalScore = 4;
+            double totalScore = 5;
             double score = 0;
 
             if (JointInflammation == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (Autoimmunity == EYesNo.Yes)
             {
                 score++;
             }
@@ -987,11 +1040,12 @@ namespace K9.DataAccessLayer.Models
                    ColdIntolerant.HasValue &&
                    CandidaAndFungus.HasValue &&
                    JointInflammation.HasValue &&
+                   Autoimmunity.HasValue &&
                    Smoke.HasValue &&
                    DrinksAlcohol.HasValue &&
+
                   AmalgamFillings.HasValue &&
                   AmalgamFillingsHistory.HasValue &&
-                  
                    ToothPain.HasValue &&
                    TMJ.HasValue &&
                    CrackedTeeth.HasValue &&

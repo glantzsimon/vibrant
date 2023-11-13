@@ -20,6 +20,7 @@
     var dentalIssuesColor = Model.GetColorFromScore(Model.GetDentalHealthScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var neurologicalColor = Model.GetColorFromScore(Model.GetNeurologicalScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var cardiovascularColor = Model.GetColorFromScore(Model.GetCardiovascularScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var inflammationColor = Model.GetColorFromScore(Model.GetInflammationScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 
     var currentHealthColor = Model.GetColorFromScore(Model.GetCurrentHealthScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var expertiseColor = Model.GetColorFromScore(Model.GetNutritionExpertiseScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
@@ -145,6 +146,17 @@
                 BackgroundColor = $"rgb({cardiovascularColor}, 0.33)",
                 StrokeColor = $"rgb({cardiovascularColor})",
                 Units = $"{Model.GetCardiovascularScore().InvertScore()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = Model.GetInflammationScore().InvertScore(),
+                Title = Dictionary.Inflammation,
+                BackgroundColor = $"rgb({inflammationColor}, 0.33)",
+                StrokeColor = $"rgb({inflammationColor})",
+                Units = $"{Model.GetInflammationScore().InvertScore()}%",
             })
         </div>
     </div>

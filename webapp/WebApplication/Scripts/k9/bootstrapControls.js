@@ -153,7 +153,7 @@
                     
                     if ($labels.length) {
                         for (var i = 0; i < $labels.length; i++) {
-                            var $label = $labels[i];
+                            var $label = $($labels[i]);
                             if ($label.parent().find("input").attr("id") === "AmountPerServing" && measure === "capsules") {
                                 $label.text("mg");
                             } else {
