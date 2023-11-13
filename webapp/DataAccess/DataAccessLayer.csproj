@@ -587,6 +587,10 @@
     <Compile Include="Migrations\202311131456048_CellularHealth.Designer.cs">
       <DependentUpon>202311131456048_CellularHealth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311131518558_CardioVascular.cs" />
+    <Compile Include="Migrations\202311131518558_CardioVascular.Designer.cs">
+      <DependentUpon>202311131518558_CardioVascular.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
@@ -901,6 +905,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311131456048_CellularHealth.resx">
       <DependentUpon>202311131456048_CellularHealth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311131518558_CardioVascular.resx">
+      <DependentUpon>202311131518558_CardioVascular.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

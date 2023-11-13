@@ -220,6 +220,9 @@
             public const string PostExertionalMalaiseLabel ="PostExertionalMalaiseLabel";
             public const string SkinIssuesLabel ="SkinIssuesLabel";
             public const string HighBloodPressureLabel ="HighBloodPressureLabel";
+            public const string ChestPainLabel ="ChestPainLabel";
+            public const string PalpitationsLabel ="PalpitationsLabel";
+            public const string EasilyOutOfBreathLabel ="EasilyOutOfBreathLabel";
             public const string AutoImmunityLabel ="AutoImmunityLabel";
             public const string SkinIssuesDetailsLabel ="SkinIssuesDetailsLabel";
             public const string ColdExtremitiesLabel ="ColdExtremitiesLabel";

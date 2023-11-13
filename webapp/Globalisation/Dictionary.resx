@@ -3262,6 +3262,9 @@
   <data name="CellularHealth" xml:space="preserve">
     <value>Cellular Health</value>
   </data>
+  <data name="ChestPainLabel" xml:space="preserve">
+    <value>Do you ever experience chest pain when you exert yourself?</value>
+  </data>
   <data name="ConcentrationIssues" xml:space="preserve">
     <value>Concentration Issues</value>
   </data>
@@ -3285,6 +3288,9 @@
   </data>
   <data name="DigestiveHealth" xml:space="preserve">
     <value>Digestive Health</value>
+  </data>
+  <data name="EasilyOutOfBreathLabel" xml:space="preserve">
+    <value>Do you get easily out of breath?</value>
   </data>
   <data name="Elements" xml:space="preserve">
     <value>Elements</value>
@@ -3354,6 +3360,9 @@
   </data>
   <data name="NutritionExpertise" xml:space="preserve">
     <value>Health Expertise</value>
+  </data>
+  <data name="PalpitationsLabel" xml:space="preserve">
+    <value>Do you ever get palpitations?</value>
   </data>
   <data name="PhysicalTrauma" xml:space="preserve">
     <value>Details of Major Physical Trauma</value>

@@ -1215,6 +1215,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you ever experience chest pain when you exert yourself?.
+        /// </summary>
+        public static string ChestPainLabel {
+            get {
+                return ResourceManager.GetString("ChestPainLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you have a history of chronic viral infections?.
         /// </summary>
         public static string ChronicViralInfectionsLabel {
@@ -2640,6 +2649,15 @@ namespace K9.Globalisation {
         public static string EarthElement {
             get {
                 return ResourceManager.GetString("EarthElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you get easily out of breath?.
+        /// </summary>
+        public static string EasilyOutOfBreathLabel {
+            get {
+                return ResourceManager.GetString("EasilyOutOfBreathLabel", resourceCulture);
             }
         }
         
@@ -6219,6 +6237,15 @@ namespace K9.Globalisation {
         public static string PaidOnLabel {
             get {
                 return ResourceManager.GetString("PaidOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you ever get palpitations?.
+        /// </summary>
+        public static string PalpitationsLabel {
+            get {
+                return ResourceManager.GetString("PalpitationsLabel", resourceCulture);
             }
         }
         

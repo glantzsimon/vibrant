@@ -178,8 +178,31 @@ namespace K9.DataAccessLayer.Models
 
         public int GetCardiovascularScore()
         {
-            double totalScore = 6;
+            double totalScore = 11;
             double score = 0;
+
+            if (ChestPain == EYesNo.Yes)
+            {
+                score++;
+                score++;
+            }
+
+            if (EasilyOutOfBreath == EYesNo.Yes)
+            {
+                score++;
+                score++;
+            }
+
+            if (Palpitations == EYesNo.Yes)
+            {
+                score++;
+                score++;
+            }
+
+            if (FamilyHistoryOfHeartDiseaseStrokeOrDiabetes == EYesNo.Yes)
+            {
+                score++;
+            }
 
             if (FamilyHistoryOfHeartDiseaseStrokeOrDiabetes == EYesNo.Yes)
             {
@@ -609,6 +632,32 @@ namespace K9.DataAccessLayer.Models
 
         #endregion
 
+        
+        #region Cardiovascular Health{
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HighBloodPressureLabel)]
+        public EYesNo? HighBloodPressure { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChestPainLabel)]
+        public EYesNo? ChestPain { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PalpitationsLabel)]
+        public EYesNo? Palpitations { get; set; }
+        
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EasilyOutOfBreathLabel)]
+        public EYesNo? EasilyOutOfBreath { get; set; }
+        
+        #endregion
+
+
         #region General Health 
 
         public List<PropertyInfo> GeneralHealthProperties() => this
@@ -874,12 +923,7 @@ namespace K9.DataAccessLayer.Models
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.JointInflammationLabel)]
         public EYesNo? JointInflammation { get; set; }
-
-        [UIHint("YesNo")]
-        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HighBloodPressureLabel)]
-        public EYesNo? HighBloodPressure { get; set; }
-
+        
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AutoImmunityLabel)]
@@ -1035,6 +1079,9 @@ namespace K9.DataAccessLayer.Models
                  !string.IsNullOrEmpty(AllergiesAndSensitivitiesDetails) &&
 
                    HighBloodPressure.HasValue &&
+                   ChestPain.HasValue &&
+                   EasilyOutOfBreath.HasValue &&
+                   Palpitations.HasValue &&
                    UTI.HasValue &&
                    ColdExtremities.HasValue &&
                    ColdIntolerant.HasValue &&

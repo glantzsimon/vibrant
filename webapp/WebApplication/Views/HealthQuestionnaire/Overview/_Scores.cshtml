@@ -152,11 +152,11 @@
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {
                 MaxValue = 100,
-                Value = Model.GetInflammationScore().InvertScore(),
+                Value = Model.GetInflammationScore(),
                 Title = Dictionary.Inflammation,
                 BackgroundColor = $"rgb({inflammationColor}, 0.33)",
                 StrokeColor = $"rgb({inflammationColor})",
-                Units = $"{Model.GetInflammationScore().InvertScore()}%",
+                Units = $"{Model.GetInflammationScore()}%",
             })
         </div>
     </div>
