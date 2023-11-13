@@ -3834,6 +3834,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hereditary Risk.
+        /// </summary>
+        public static string HereditaryRisk {
+            get {
+                return ResourceManager.GetString("HereditaryRisk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you experience frequent herpes outbreaks?.
         /// </summary>
         public static string HerpesLabel {

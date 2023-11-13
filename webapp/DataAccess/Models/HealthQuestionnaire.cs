@@ -60,39 +60,26 @@ namespace K9.DataAccessLayer.Models
 
         public int GetDentalHealthScore()
         {
-            double totalScore = 7;
+            double totalScore = 6;
             double score = 0;
 
             if (CoatedTongue == EYesNo.Yes)
             {
                 score++;
             }
-
-            if (Smoke == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (DrinksAlcohol == EYesNo.Yes)
-            {
-                score++;
-            }
-
+            
             if (RootCanals == EYesNo.Yes)
             {
                 score++;
-            }
-
-            if (AmalgamFillingsHistory == EYesNo.Yes)
-            {
                 score++;
             }
 
-            if (AmalgamFillings == EYesNo.Yes)
+            if (AmalgamFillingsHistory == EYesNo.Yes || AmalgamFillings == EYesNo.Yes)
             {
                 score++;
+                score++;
             }
-
+            
             if (!string.IsNullOrEmpty(DentalIssues))
             {
                 score++;

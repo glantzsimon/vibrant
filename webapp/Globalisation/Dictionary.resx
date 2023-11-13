@@ -3280,6 +3280,9 @@
   <data name="HealthGoals" xml:space="preserve">
     <value>Health Goals</value>
   </data>
+  <data name="HereditaryRisk" xml:space="preserve">
+    <value>Hereditary Risk</value>
+  </data>
   <data name="HormoneBalance" xml:space="preserve">
     <value>Hormone Balance</value>
   </data>

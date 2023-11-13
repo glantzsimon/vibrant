@@ -35,11 +35,11 @@
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {
                 MaxValue = 100,
-                Value = Model.GetAcetulationScore(),
+                Value = Model.GetAcetulationScore().InvertScore(),
                 Title = Dictionary.AcetylationTitle,
                 BackgroundColor = $"rgb({acetylationColor}, 0.33)",
                 StrokeColor = $"rgb({acetylationColor})",
-                Units = $"{Model.GetAcetulationScore()}%",
+                Units = $"{Model.GetAcetulationScore().InvertScore()}%",
             })
         </div>
         <div class="col-xs-6 col-sm-3 col-md-2">
@@ -47,7 +47,7 @@
             {
                 MaxValue = 100,
                 Value = Model.GetFamilyHistoryScore(),
-                Title = Dictionary.FamilyHistory,
+                Title = Dictionary.HereditaryRisk,
                 BackgroundColor = $"rgb({familyHistoryColor}, 0.33)",
                 StrokeColor = $"rgb({familyHistoryColor})",
                 Units = $"{Model.GetFamilyHistoryScore()}%",
@@ -68,22 +68,22 @@
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {
                 MaxValue = 100,
-                Value = Model.GetDigestionIssuesScore(),
+                Value = Model.GetDigestionIssuesScore().InvertScore(),
                 Title = Dictionary.Digestion,
                 BackgroundColor = $"rgb({digestionColor}, 0.33)",
                 StrokeColor = $"rgb({digestionColor})",
-                Units = $"{Model.GetDigestionIssuesScore()}%",
+                Units = $"{Model.GetDigestionIssuesScore().InvertScore()}%",
             })
         </div>
         <div class="col-xs-6 col-sm-3 col-md-2">
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {
                 MaxValue = 100,
-                Value = Model.GetImmunityIssuesScore(),
+                Value = Model.GetImmunityIssuesScore().InvertScore(),
                 Title = Dictionary.ImmuneSystem,
                 BackgroundColor = $"rgb({immunityColor}, 0.33)",
                 StrokeColor = $"rgb({immunityColor})",
-                Units = $"{Model.GetImmunityIssuesScore()}%",
+                Units = $"{Model.GetImmunityIssuesScore().InvertScore()}%",
             })
         </div>
     </div>
@@ -117,22 +117,22 @@
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {
                 MaxValue = 100,
-                Value = Model.GetDentalHealthScore(),
+                Value = Model.GetDentalHealthScore().InvertScore(),
                 Title = Dictionary.DentalHealth,
                 BackgroundColor = $"rgb({dentalIssuesColor}, 0.33)",
                 StrokeColor = $"rgb({dentalIssuesColor})",
-                Units = $"{Model.GetDentalHealthScore()}%",
+                Units = $"{Model.GetDentalHealthScore().InvertScore()}%",
             })
         </div>
         <div class="col-xs-6 col-sm-3 col-md-2">
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {
                 MaxValue = 100,
-                Value = Model.GetNeurologicalScore(),
+                Value = Model.GetNeurologicalScore().InvertScore(),
                 Title = Dictionary.NeurologicalHealth,
                 BackgroundColor = $"rgb({neurologicalColor}, 0.33)",
                 StrokeColor = $"rgb({neurologicalColor})",
-                Units = $"{Model.GetNeurologicalScore()}%",
+                Units = $"{Model.GetNeurologicalScore().InvertScore()}%",
             })
         </div>
     </div>
