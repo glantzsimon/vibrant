@@ -3238,4 +3238,7 @@
   <data name="YearlyCycleEnergy" xml:space="preserve">
     <value>Yearly Cycle Energy</value>
   </data>
+  <data name="IsLGBTQPlusLabel" xml:space="preserve">
+    <value>Are you LGBTQ+?</value>
+  </data>
 </root>

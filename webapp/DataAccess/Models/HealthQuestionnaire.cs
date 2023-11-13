@@ -373,6 +373,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GenderLabel)]
         public EGender? Gender { get; set; }
 
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsLGBTQPlusLabel)]
+        public EYesNo? IsIsLGBTQPlus { get; set; }
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DateOfBirthLabel)]
         public DateTime? DateOfBirth { get; set; }
 

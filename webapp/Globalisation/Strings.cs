@@ -107,6 +107,7 @@
             public const string CurrencyLabel = "CurrencyLabel";
             public const string CustomerEmailLabel = "CustomerEmailLabel";
             public const string GenderLabel = "GenderLabel";
+            public const string IsLGBTQPlusLabel = "IsLGBTQPlusLabel";
             public const string DateOfBirthLabel = "DateOfBirthLabel";
             public const string SummaryLabel = "SummaryLabel";
             public const string OverviewLabel = "OverviewLabel";

@@ -4156,6 +4156,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you LGBTQ+?.
+        /// </summary>
+        public static string IsLGBTQPlusLabel {
+            get {
+                return ResourceManager.GetString("IsLGBTQPlusLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Go-Live Date.
         /// </summary>
         public static string IsLiveOnLabel {

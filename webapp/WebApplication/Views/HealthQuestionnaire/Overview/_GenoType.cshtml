@@ -8,8 +8,7 @@
 
 @{
     var genoType = Model.CalculateGenotype();
-    var strengthTestResults = Model.GetGenoTypesStrengthTestResults();
-    var strengthTestGroupResults = Model.GetGroupedStrengthTestResults();
+    var strengthTestResults = Model.GetGroupedStrengthTestResults();
 }
 
 <div class="well">
@@ -46,18 +45,19 @@
         </div>
     </div>
     <div class="row">
-        @foreach (var group in strengthTestGroupResults)
-        {
+        @foreach (var result in strengthTestResults.Results)
+        {           
+
             <div class="col-xs-6 col-sm-3 col-md-2">
                 @Html.Partial("Controls/_Gauge", new GaugeOptions
-                {
-                    MaxValue = strengthTestResults.Count(),
-                    Value = (int) group.Count,
-                    Title = group.GenoTypeName,
-                    BackgroundColor = $"rgb({group.Color}, 0.33)",
-                    StrokeColor = $"rgb({group.Color})",
-                    Units = "%",
-                })
+               {
+                   MaxValue = 100,
+                   Value = (int)strengthTestResults.GetGaugaeValue(result),
+                   Title = result.GenoTypeName,
+                   BackgroundColor = $"rgb({result.Color}, 0.33)",
+                   StrokeColor = $"rgb({result.Color})",
+                   Units = $"{strengthTestResults.GetResultAsPercentage(result)}%",
+               })
             </div>
         }
 

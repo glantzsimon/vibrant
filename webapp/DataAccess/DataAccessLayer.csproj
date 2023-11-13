@@ -552,10 +552,15 @@
     <Compile Include="Migrations\202311120526423_SulfphitesAndMsg.Designer.cs">
       <DependentUpon>202311120526423_SulfphitesAndMsg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311130652322_AddLGBTQPlus.cs" />
+    <Compile Include="Migrations\202311130652322_AddLGBTQPlus.Designer.cs">
+      <DependentUpon>202311130652322_AddLGBTQPlus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
     <Compile Include="Models\Doshas.cs" />
     <Compile Include="Models\GenoTypeStrengthTestResult.cs" />
+    <Compile Include="Models\GenoTypeStrengthTestResults.cs" />
     <Compile Include="Models\HealthQuestionnaireFoodItem.cs" />
     <Compile Include="Models\ZodiacModel.cs" />
     <Compile Include="Models\NineStarKiModel.cs" />
@@ -840,6 +845,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311120526423_SulfphitesAndMsg.resx">
       <DependentUpon>202311120526423_SulfphitesAndMsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311130652322_AddLGBTQPlus.resx">
+      <DependentUpon>202311130652322_AddLGBTQPlus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

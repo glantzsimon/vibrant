@@ -21,6 +21,8 @@ namespace K9.DataAccessLayer.Models
 
         public int Count { get; set; }
 
+        public int Max => Count > 20 ? Count : 20;
+        
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StrengthLabel)]
         public EStrength Strength => GetStrength();
 

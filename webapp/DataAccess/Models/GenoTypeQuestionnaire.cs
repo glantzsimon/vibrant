@@ -14,20 +14,24 @@ namespace K9.DataAccessLayer.Models
             var genotypes = CalculateGenoTypes();
 
             return GetGroupedStrengthTestResults()
+                .Results
                 .Where(e => genotypes.Contains(e.GenoType))
                 .First();
         }
 
-        public List<GenoTypeStrengthTestResult> GetGroupedStrengthTestResults()
+        public GenoTypeStrengthTestResults GetGroupedStrengthTestResults()
         {
-            return GetGenoTypesStrengthTestResults()
-                .GroupBy(e => e).Select(group => new GenoTypeStrengthTestResult
-                {
-                    GenoType = @group.Key,
-                    Count = @group.Count()
-                })
-                .OrderByDescending(e => e.Count)
-                .ToList();
+            return new GenoTypeStrengthTestResults
+            {
+                Results = GetGenoTypesStrengthTestResults()
+                    .GroupBy(e => e).Select(group => new GenoTypeStrengthTestResult
+                    {
+                        GenoType = @group.Key,
+                        Count = @group.Count(),
+                    })
+                    .OrderByDescending(e => e.Count)
+                    .ToList()
+            };
         }
 
         public List<EGenoType> GetGenoTypesStrengthTestResults()
@@ -1676,7 +1680,7 @@ namespace K9.DataAccessLayer.Models
                             {
                                 if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    if (Gender == EGender.Male)
+                                    if (Gender == EGender.Male && IsIsLGBTQPlus != EYesNo.Yes)
                                     {
                                         genotypes.AddRange(new[]
                                         {
@@ -1696,7 +1700,7 @@ namespace K9.DataAccessLayer.Models
                                 {
                                     if (RhesusFactor == ERhesusFactor.Positive)
                                     {
-                                        if (Gender == EGender.Male)
+                                        if (Gender == EGender.Male && IsIsLGBTQPlus != EYesNo.Yes)
                                         {
                                             genotypes.AddRange(new[]
                                             {
@@ -1714,7 +1718,7 @@ namespace K9.DataAccessLayer.Models
                                     }
                                     else if (RhesusFactor == ERhesusFactor.Negative)
                                     {
-                                        if (Gender == EGender.Male)
+                                        if (Gender == EGender.Male && IsIsLGBTQPlus != EYesNo.Yes)
                                         {
                                             genotypes.AddRange(new[]
                                             {
@@ -2710,7 +2714,7 @@ namespace K9.DataAccessLayer.Models
                             {
                                 if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    if (Gender == EGender.Male)
+                                    if (Gender == EGender.Male && IsIsLGBTQPlus != EYesNo.Yes)
                                     {
                                         genotypes.AddRange(new[]
                                         {
