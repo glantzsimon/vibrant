@@ -74,6 +74,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Detoxification)]
         public bool Detoxification { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.DentalHealth)]
+        public bool DentalHealth { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NourishesYin)]
         public bool NourishesYin { get; set; }
 

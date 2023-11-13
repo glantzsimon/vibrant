@@ -16,7 +16,7 @@ using K9.DataAccessLayer.Helpers;
 namespace K9.DataAccessLayer.Models
 {
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Ingredients, PluralName = Globalisation.Strings.Names.Ingredients, Name = Globalisation.Strings.Names.Ingredient)]
-    public class Ingredient : ObjectBase, ICategorisable
+    public class Ingredient : GenoTypeBase, ICategorisable
 	{
 	    [UIHint("IngredientCategory")]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CategoryLabel)]

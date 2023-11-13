@@ -15,7 +15,7 @@ using System.Web.Mvc;
 namespace K9.DataAccessLayer.Models
 {
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Protocols, PluralName = Globalisation.Strings.Names.Protocols, Name = Globalisation.Strings.Names.Protocol)]
-    public class Protocol : ObjectBase
+    public class Protocol : GenoTypeBase
     {
         public Guid ExternalId { get; set; }
 

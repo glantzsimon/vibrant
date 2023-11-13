@@ -16,6 +16,7 @@ namespace K9.DataAccessLayer.Database
         public DbSet<MembershipOption> MembershipOptions { get; set; }
         public DbSet<PromoCode> PromoCodes { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<FoodItem> FoodItems { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<ProductIngredient> ProductIngredients { get; set; }
         public DbSet<ProductIngredientSubstitute> ProductIngredientSubstitutes { get; set; }

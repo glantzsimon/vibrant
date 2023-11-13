@@ -21,7 +21,7 @@ using System.Web.Mvc;
 namespace K9.DataAccessLayer.Models
 {
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Products, PluralName = Globalisation.Strings.Names.Products, Name = Globalisation.Strings.Names.Product)]
-    public class Product : ObjectBase, ICategorisable
+    public class Product : GenoTypeBase, ICategorisable
     {
         public const int ProductLabelBenefitsCount = 9;
 

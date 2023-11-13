@@ -16,7 +16,7 @@ using K9.SharedLibrary.Models;
 namespace K9.DataAccessLayer.Models
 {
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.ProductPacks, PluralName = Globalisation.Strings.Names.ProductPacks, Name = Globalisation.Strings.Names.ProductPack)]
-    public class ProductPack : ObjectBase
+    public class ProductPack : GenoTypeBase
     {
         public Guid ExternalId { get; set; }
 

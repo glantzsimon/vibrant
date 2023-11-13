@@ -1925,6 +1925,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dental Health.
+        /// </summary>
+        public static string DentalHealth {
+            get {
+                return ResourceManager.GetString("DentalHealth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you have any other dental or oral health issues? If so, please provide details.
         /// </summary>
         public static string DentalIssuesLabel {

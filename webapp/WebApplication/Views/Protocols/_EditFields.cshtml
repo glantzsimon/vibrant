@@ -80,6 +80,10 @@
     @Html.BootstrapEditorFor(model => model.VideoFileSource)
 </div>
 
+<hr />
+
+@Html.Partial("_GenoTypeBaseEditFields")
+
 <script type="text/javascript">
     $(function () {
         $("#Frequency").change(function () {
@@ -110,7 +114,7 @@
             let type = $("#Type").find("option:selected").val();
             let $optionalContainer = $("#optional-fields-container");
             let $frequencyContainer = $("#frequency-container");
-            
+
             if (type === "@((int)EProtocolType.Default)") {
                 $optionalContainer.show();
                 $frequencyContainer.show();
@@ -123,7 +127,7 @@
         $("#Duration").change(function () {
             let dufation = $("#Duration").find("option:selected").val();
             let $customDurationContainer = $("#custom-days-duration");
-            
+
             if (dufation === "@((int)EProtocolDuration.Custom)") {
                 $customDurationContainer.show();
             } else {

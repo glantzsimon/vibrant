@@ -563,6 +563,14 @@
     <Compile Include="Migrations\202311131056113_Magic.Designer.cs">
       <DependentUpon>202311131056113_Magic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311131122025_DentalHealth.cs" />
+    <Compile Include="Migrations\202311131122025_DentalHealth.Designer.cs">
+      <DependentUpon>202311131122025_DentalHealth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311131128134_AddGenoTypeColumns.cs" />
+    <Compile Include="Migrations\202311131128134_AddGenoTypeColumns.Designer.cs">
+      <DependentUpon>202311131128134_AddGenoTypeColumns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
@@ -859,6 +867,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311131056113_Magic.resx">
       <DependentUpon>202311131056113_Magic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311131122025_DentalHealth.resx">
+      <DependentUpon>202311131122025_DentalHealth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311131128134_AddGenoTypeColumns.resx">
+      <DependentUpon>202311131128134_AddGenoTypeColumns.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

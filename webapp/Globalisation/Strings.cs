@@ -638,6 +638,7 @@
             public const string HormoneBalance = "HormoneBalance";
             public const string StressRelief = "StressRelief";
             public const string Detoxification = "Detoxification";
+            public const string DentalHealth = "DentalHealth";
             public const string NourishesYin = "NourishesYin";
             public const string NourishesYang = "NourishesYang";
             public const string Unspecified = "Unspecified";
