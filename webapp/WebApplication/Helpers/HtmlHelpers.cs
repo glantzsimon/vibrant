@@ -97,14 +97,6 @@ namespace K9.WebApplication.Helpers
             if (!(WebSecurity.IsAuthenticated && showContent))
             {
                 div.MergeAttribute(Attributes.Style, "display: none !important;");
-
-                if (model != null)
-                {
-                    if (isMembership)
-                    {
-                        // SessionHelper.SetLastSomething(model as MembershipModel);
-                    }
-                }
             }
 
             if (!silent)
@@ -122,8 +114,6 @@ namespace K9.WebApplication.Helpers
                         html.ViewContext.Writer.WriteLine(html.BootstrapActionLinkButton(
                             Dictionary.UpgradeMembershipText,
                             "Index", "Membership", null, "fa-level-up-alt", EButtonClass.Large));
-                        html.ViewContext.Writer.WriteLine(
-                            $"<div class=\"inline\" data-toggle=\"tooltip\" title=\"{Dictionary.CreditsDescriptionUI}\">{html.BootstrapActionLinkButton(Dictionary.PurchaseCredits, "PurchaseCreditsStart", "Membership", null, "fa-money-bill-alt", EButtonClass.Large, EButtonClass.Info)}</div>");
                     }
                 }
                 else
@@ -133,6 +123,33 @@ namespace K9.WebApplication.Helpers
                         EButtonClass.Large));
                 }
 
+                html.ViewContext.Writer.WriteLine(centerDiv.ToString(TagRenderMode.EndTag));
+            }
+
+            html.ViewContext.Writer.WriteLine(div.ToString(TagRenderMode.StartTag));
+            return new TagCloser(html, Tags.Div);
+        }
+
+        public static IDisposable LogInToPurchase(this HtmlHelper html, string returnUrl, Func<bool> condition = null, bool silent = false)
+        {
+            var baseController = html.ViewContext.Controller as BasePureController;
+            var showContent = condition?.Invoke() ?? true;
+
+            var div = new TagBuilder(Tags.Div);
+            if (!(WebSecurity.IsAuthenticated && showContent))
+            {
+                div.MergeAttribute(Attributes.Style, "display: none !important;");
+            }
+
+            if (!silent)
+            {
+                var centerDiv = new TagBuilder(Tags.Div);
+                centerDiv.MergeAttribute(Attributes.Class,
+                    "upgrade-container center-block");
+                html.ViewContext.Writer.WriteLine(centerDiv.ToString(TagRenderMode.StartTag));
+                html.ViewContext.Writer.WriteLine(html.BootstrapActionLinkButton(
+                    Dictionary.LogIntoYourAccountToPurchase, "Login", "Account", new { returnUrl }, "fa fa-sign-in",
+                    EButtonClass.Large));
                 html.ViewContext.Writer.WriteLine(centerDiv.ToString(TagRenderMode.EndTag));
             }
 

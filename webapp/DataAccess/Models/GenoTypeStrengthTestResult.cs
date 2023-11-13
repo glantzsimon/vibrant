@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using K9.DataAccessLayer.Attributes;
 using K9.DataAccessLayer.Enums;
 using K9.Globalisation;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -9,6 +11,13 @@ namespace K9.DataAccessLayer.Models
         [UIHint("BloodGroup")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GenoTypeLabel)]
         public EGenoType GenoType { get; set; }
+
+        public GenoTypeEnumMetaDataAttribute GenoTypeEnumMetaDataAttribute() =>
+            GenoType.GetAttribute<GenoTypeEnumMetaDataAttribute>();
+
+        public string GenoTypeName => GenoTypeEnumMetaDataAttribute().GetDescription();
+        
+        public string Color => GenoTypeEnumMetaDataAttribute().Color;
 
         public int Count { get; set; }
 

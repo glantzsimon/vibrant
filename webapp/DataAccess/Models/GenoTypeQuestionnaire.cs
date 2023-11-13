@@ -13,7 +13,26 @@ namespace K9.DataAccessLayer.Models
         {
             var genotypes = CalculateGenoTypes();
 
-            var strengthTestResults = GetGenoTypeFromSpaceBetweenThighs()
+            return GetGroupedStrengthTestResults()
+                .Where(e => genotypes.Contains(e.GenoType))
+                .First();
+        }
+
+        public List<GenoTypeStrengthTestResult> GetGroupedStrengthTestResults()
+        {
+            return GetGenoTypesStrengthTestResults()
+                .GroupBy(e => e).Select(group => new GenoTypeStrengthTestResult
+                {
+                    GenoType = @group.Key,
+                    Count = @group.Count()
+                })
+                .OrderByDescending(e => e.Count)
+                .ToList();
+        }
+
+        public List<EGenoType> GetGenoTypesStrengthTestResults()
+        {
+            var genoTypesStrengthTestResults = GetGenoTypeFromSpaceBetweenThighs()
                 .Concat(GetGenoTypeFromTendonsAndSinewsAndMuscles())
                 .Concat(GetGenoTypeFromGonialAngle())
                 .Concat(GetGenoTypeFromHeadShape())
@@ -24,15 +43,9 @@ namespace K9.DataAccessLayer.Models
                 .Concat(GetGenoTypesFromFamilyHistory())
                 .Concat(GetGenoTypeFromHandedness())
                 .Concat(GetGenoTypesFromIncisorShovelling())
-                .Concat(GetGenoTypeFromFingerprints())
-                .Where(e => genotypes.Contains(e))
-                .GroupBy(e => e).Select(group => new GenoTypeStrengthTestResult
-                {
-                    GenoType = group.Key,
-                    Count = group.Count()
-                });
+                .Concat(GetGenoTypeFromFingerprints());
 
-            return strengthTestResults.OrderByDescending(e => e.Count).First();
+            return genoTypesStrengthTestResults.ToList();
         }
 
         #region Blood Analysis
@@ -198,13 +211,17 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsLeftIndexFingerLongerThanLeftRingFingerLabel)]
         public bool IsIndexFingerLongerThanRingFingerLeft() => IndexFingerLengthLeft >= RingFingerLengthLeft;
 
+        [Display(ResourceType = typeof(Dictionary),
+            Name = Strings.Labels.IsRightIndexFingerLongerThanRightRingFingerLabel)]
+        public bool RightIndexFingerIsLongerThanRingFinger => IsIndexFingerLongerThanRingFingerRight();
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsRightIndexFingerLongerThanRightRingFingerLabel)]
         public bool IsIndexFingerLongerThanRingFingerRight() => IndexFingerLengthRight >= RingFingerLengthRight;
 
-        public bool IndexFingersAreLongerThanRingFingersOnBothHands() =>
+        public bool IndexFingersAreLongerThanRingFingersOnBothHands =>
             IsIndexFingerLongerThanRingFingerLeft() && IsIndexFingerLongerThanRingFingerRight();
 
-        public bool RingFingersAreLongerThanIndexFingersOnBothHands() =>
+        public bool RingFingersAreLongerThanIndexFingersOnBothHands =>
             !IsIndexFingerLongerThanRingFingerLeft() && !IsIndexFingerLongerThanRingFingerRight();
 
         [UIHint("GapSize")]
@@ -931,7 +948,7 @@ namespace K9.DataAccessLayer.Models
             {
                 if (IsLowerLegLengthGreaterThanUpperLegLength())
                 {
-                    if (IndexFingersAreLongerThanRingFingersOnBothHands())
+                    if (IndexFingersAreLongerThanRingFingersOnBothHands)
                     {
                         if (BloodGroup == EBloodGroup.NotSure)
                         {
@@ -1061,7 +1078,7 @@ namespace K9.DataAccessLayer.Models
                             }
                         }
                     }
-                    else if (RingFingersAreLongerThanIndexFingersOnBothHands())
+                    else if (RingFingersAreLongerThanIndexFingersOnBothHands)
                     {
                         if (BloodGroup == EBloodGroup.NotSure)
                         {
@@ -1338,7 +1355,7 @@ namespace K9.DataAccessLayer.Models
                 else
                 // Upper leg is longer
                 {
-                    if (IndexFingersAreLongerThanRingFingersOnBothHands())
+                    if (IndexFingersAreLongerThanRingFingersOnBothHands)
                     {
                         if (BloodGroup == EBloodGroup.NotSure)
                         {
@@ -1354,11 +1371,50 @@ namespace K9.DataAccessLayer.Models
                         {
                             if (BloodGroup == EBloodGroup.A)
                             {
-                                genotypes.AddRange(new[]
+                                if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    EGenoType.Teacher,
-                                    EGenoType.Explorer
-                                });
+                                    genotypes.AddRange(new[]
+                                    {
+                                        EGenoType.Teacher,
+                                        EGenoType.Explorer
+                                    });
+                                }
+                                else if (RhesusFactor == ERhesusFactor.Positive)
+                                {
+                                    if (Gender == EGender.Male)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Teacher,
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                    else
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Teacher
+                                        });
+                                    }
+                                }
+                                else if (RhesusFactor == ERhesusFactor.Negative)
+                                {
+                                    if (Gender == EGender.Male)
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                    else
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Teacher,
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                }
                             }
                             else if (BloodGroup == EBloodGroup.AB)
                             {
@@ -1443,10 +1499,21 @@ namespace K9.DataAccessLayer.Models
                             {
                                 if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    genotypes.AddRange(new[]
+                                    if (Gender == EGender.Female)
                                     {
-                                        EGenoType.Gatherer
-                                    });
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Gatherer,
+                                            EGenoType.Explorer
+                                        });
+                                    }
+                                    else
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Gatherer
+                                        });
+                                    }
                                 }
                                 else
                                 {
@@ -1469,12 +1536,13 @@ namespace K9.DataAccessLayer.Models
                             }
                         }
                     }
-                    else if (RingFingersAreLongerThanIndexFingersOnBothHands())
+                    else if (RingFingersAreLongerThanIndexFingersOnBothHands)
                     {
                         if (BloodGroup == EBloodGroup.NotSure)
                         {
                             genotypes.AddRange(new[]
                             {
+
                                 EGenoType.Hunter,
                                 EGenoType.Teacher,
                                 EGenoType.Explorer,
@@ -1608,11 +1676,21 @@ namespace K9.DataAccessLayer.Models
                             {
                                 if (RhesusFactor == ERhesusFactor.NotSure)
                                 {
-                                    genotypes.AddRange(new[]
+                                    if (Gender == EGender.Male)
                                     {
-                                        EGenoType.Hunter,
-                                        EGenoType.Explorer
-                                    });
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Hunter
+                                        });
+                                    }
+                                    else
+                                    {
+                                        genotypes.AddRange(new[]
+                                        {
+                                            EGenoType.Hunter,
+                                            EGenoType.Explorer
+                                        });
+                                    }
                                 }
                                 else
                                 {
@@ -1793,7 +1871,7 @@ namespace K9.DataAccessLayer.Models
             {
                 if (IsLowerLegLengthGreaterThanUpperLegLength())
                 {
-                    if (IndexFingersAreLongerThanRingFingersOnBothHands())
+                    if (IndexFingersAreLongerThanRingFingersOnBothHands)
                     {
                         if (BloodGroup == EBloodGroup.NotSure)
                         {
@@ -1975,7 +2053,7 @@ namespace K9.DataAccessLayer.Models
                             }
                         }
                     }
-                    else if (RingFingersAreLongerThanIndexFingersOnBothHands())
+                    else if (RingFingersAreLongerThanIndexFingersOnBothHands)
                     {
                         if (BloodGroup == EBloodGroup.NotSure)
                         {
@@ -2267,7 +2345,7 @@ namespace K9.DataAccessLayer.Models
                 else
                 // Upper leg is longer
                 {
-                    if (IndexFingersAreLongerThanRingFingersOnBothHands())
+                    if (IndexFingersAreLongerThanRingFingersOnBothHands)
                     {
                         if (BloodGroup == EBloodGroup.NotSure)
                         {
@@ -2450,7 +2528,7 @@ namespace K9.DataAccessLayer.Models
                             }
                         }
                     }
-                    else if (RingFingersAreLongerThanIndexFingersOnBothHands())
+                    else if (RingFingersAreLongerThanIndexFingersOnBothHands)
                     {
                         if (BloodGroup == EBloodGroup.NotSure)
                         {

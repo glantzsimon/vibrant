@@ -10,71 +10,73 @@
 }
 
 
-<div class="row">
-    <div class="col-xs-12">
-        <h3 class="section-title">@Dictionary.NineStarKi</h3>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.NineStarKi</h3>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-xs-4 col-sm-3 col-md-2">
-        @Html.BootstrapDisplayFor(e => nineStarKiModel.MainEnergy)
+    <div class="row">
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.MainEnergy)
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.CharacterEnergy)
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.SurfaceEnergy)
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.YearlyCycleEnergy)
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.MonthlyCycleEnergy)
+        </div>
     </div>
-    <div class="col-xs-4 col-sm-3 col-md-2">
-        @Html.BootstrapDisplayFor(e => nineStarKiModel.CharacterEnergy)
-    </div>
-    <div class="col-xs-4 col-sm-3 col-md-2">
-        @Html.BootstrapDisplayFor(e => nineStarKiModel.SurfaceEnergy)
-    </div>
-    <div class="col-xs-4 col-sm-3 col-md-2">
-        @Html.BootstrapDisplayFor(e => nineStarKiModel.YearlyCycleEnergy)
-    </div>
-    <div class="col-xs-4 col-sm-3 col-md-2">
-        @Html.BootstrapDisplayFor(e => nineStarKiModel.MonthlyCycleEnergy)
-    </div>
-</div>
 
-<hr />
+    <hr />
 
-<div class="row">
-    <div class="col-xs-12">
-        <h3 class="section-title">@Dictionary.StrongOrgans</h3>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.StrongOrgans</h3>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-xs-12">
-        @Html.Raw(Dictionary.StrongOrgansDescription)
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.Raw(Dictionary.StrongOrgansDescription)
+        </div>
     </div>
-</div>
 
-<br />
+    <br />
 
-<div class="row">
-    <div class="col-xs-4 col-sm-3 col-md-2">
-        @Html.BootstrapDisplayFor(e => nineStarKiModel.StrongYinOrgans)
+    <div class="row">
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.StrongYinOrgans)
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.StrongYangOrgans)
+        </div>
     </div>
-    <div class="col-xs-4 col-sm-3 col-md-2">
-        @Html.BootstrapDisplayFor(e => nineStarKiModel.StrongYangOrgans)
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-xs-12">
-        <h3 class="section-title">@Dictionary.WeakOrgans</h3>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.WeakOrgans</h3>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-xs-12">
-        @Html.Raw(Dictionary.WeakOrgansDescription)
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.Raw(Dictionary.WeakOrgansDescription)
+        </div>
     </div>
-</div>
 
-<br />
+    <br />
 
-<div class="row">
-    <div class="col-xs-4 col-sm-3 col-md-2">
-        @Html.BootstrapDisplayFor(e => nineStarKiModel.WeakYinOrgans)
-    </div>
-    <div class="col-xs-4 col-sm-3 col-md-2">
-        @Html.BootstrapDisplayFor(e => nineStarKiModel.WeakYangOrgans)
+    <div class="row">
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.WeakYinOrgans)
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.WeakYangOrgans)
+        </div>
     </div>
 </div>

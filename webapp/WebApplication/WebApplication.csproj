@@ -1637,6 +1637,8 @@
     <Content Include="Views\Shared\DisplayTemplates\Organs.cshtml" />
     <Content Include="Views\HealthQuestionnaire\Overview\_GenoType.cshtml" />
     <Content Include="Views\HealthQuestionnaire\Overview\_Page2GenoType.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\Overview\_Biometrics.cshtml" />
+    <Content Include="Views\Shared\Controls\_Gauge.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

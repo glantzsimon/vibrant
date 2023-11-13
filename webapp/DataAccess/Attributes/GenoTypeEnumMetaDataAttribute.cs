@@ -11,19 +11,20 @@ namespace K9.DataAccessLayer.Attributes
         public Type ResourceType { get; set; }
         public string Name { get; set; }
         public EGenoTypeStrategy Strategy { get; set; }
-    
+        public string Color { get; set; }
+
         public string GetDescription()
         {
             return ResourceType.GetValueFromResource(Name);
         }
-        
+
         public string GetStrategy()
         {
             var attr = Strategy.GetAttribute<EnumDescriptionAttribute>();
             return attr.GetDescription();
         }
-        
-        
+
+
     }
 
 }

@@ -3076,6 +3076,9 @@
   <data name="GenoType" xml:space="preserve">
     <value>GenoType</value>
   </data>
+  <data name="GenoTypeDetails" xml:space="preserve">
+    <value>GenoType Details</value>
+  </data>
   <data name="GenoTypeLabel" xml:space="preserve">
     <value>GenoType</value>
   </data>
@@ -3162,6 +3165,9 @@
   </data>
   <data name="StrengthLabel" xml:space="preserve">
     <value>Strength</value>
+  </data>
+  <data name="StrengthTestResults" xml:space="preserve">
+    <value>Strength Test Results</value>
   </data>
   <data name="StressAnxiousLabel" xml:space="preserve">
     <value>When stressed, I tend to feel anxious and even fearful</value>
