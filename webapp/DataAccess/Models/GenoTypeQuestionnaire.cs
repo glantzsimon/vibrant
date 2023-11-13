@@ -11,11 +11,8 @@ namespace K9.DataAccessLayer.Models
     {
         public GenoTypeStrengthTestResult CalculateGenotype()
         {
-            var genotypes = CalculateGenoTypes();
-
             return GetGroupedStrengthTestResults()
                 .Results
-                .Where(e => genotypes.Contains(e.GenoType))
                 .First();
         }
 
@@ -23,11 +20,12 @@ namespace K9.DataAccessLayer.Models
         {
             return new GenoTypeStrengthTestResults
             {
+                GenoTypes = CalculateGenoTypes(),
                 Results = GetGenoTypesStrengthTestResults()
                     .GroupBy(e => e).Select(group => new GenoTypeStrengthTestResult
                     {
-                        GenoType = @group.Key,
-                        Count = @group.Count(),
+                        GenoType = group.Key,
+                        Count = group.Count(),
                     })
                     .OrderByDescending(e => e.Count)
                     .ToList()
@@ -944,7 +942,7 @@ namespace K9.DataAccessLayer.Models
 
         #endregion
 
-        private List<EGenoType> CalculateGenoTypes()
+        public List<EGenoType> CalculateGenoTypes()
         {
             var genotypes = new List<EGenoType>();
 

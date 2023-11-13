@@ -6,4 +6,6 @@
 @using K9.SharedLibrary.Extensions
 @model EStrength?
 
-@(Model.HasValue? Model.GetAttribute<EnumDescriptionAttribute>().GetDescription() : "")
+<div>
+    @(Model.HasValue ? Model.GetAttribute<EnumDescriptionAttribute>().GetDescription() : "")
+</div>

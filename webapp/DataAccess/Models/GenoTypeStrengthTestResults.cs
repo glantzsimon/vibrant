@@ -1,4 +1,5 @@
-﻿using System;
+﻿using K9.DataAccessLayer.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,7 +7,12 @@ namespace K9.DataAccessLayer.Models
 {
     public class GenoTypeStrengthTestResults
     {
+        public List<EGenoType> GenoTypes { get; set; }
+
         public List<GenoTypeStrengthTestResult> Results { get; set; }
+
+        public List<GenoTypeStrengthTestResult> FilteredResults =>
+            Results?.Where(e => GenoTypes.Contains(e.GenoType)).ToList();
 
         public double GetMaxValue() => Results.Max(e => e.Max);
 
