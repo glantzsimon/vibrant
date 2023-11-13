@@ -23,6 +23,7 @@ namespace K9.DataAccessLayer.Models
 
         public int Max => Count > 20 ? Count : 20;
         
+        [UIHint("Strength")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StrengthLabel)]
         public EStrength Strength => GetStrength();
 

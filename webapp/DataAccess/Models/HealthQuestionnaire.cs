@@ -423,7 +423,7 @@ namespace K9.DataAccessLayer.Models
             return DateOfBirth.HasValue ? (DateTime.Now.Year - DateOfBirth.Value.Year) - (DateTime.Now.DayOfYear < DateOfBirth.Value.DayOfYear ? 1 : 0) : (int?)null;
         }
 
-        public bool IsPersonalInformationComplete() => DateOfBirth.HasValue && Gender.HasValue;
+        public bool IsPersonalInformationComplete() => DateOfBirth.HasValue && Gender.HasValue && IsIsLGBTQPlus.HasValue;
 
         #endregion
 

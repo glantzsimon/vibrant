@@ -728,9 +728,8 @@
             public const string Ideal = "Ideal";
             public const string High = "High";
             public const string VeryHigh = "VeryHigh";
-            public const string Average = "Average";
-
             public const string VeryStrong = "VeryStrong";
+            public const string Average = "Average";
             public const string Strong = "Strong";
 
             public const string Small = "Small";
