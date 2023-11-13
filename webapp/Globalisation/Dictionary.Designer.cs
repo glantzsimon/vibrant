@@ -9727,6 +9727,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Yang Imbalance.
+        /// </summary>
+        public static string YangImbalance {
+            get {
+                return ResourceManager.GetString("YangImbalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Year.
         /// </summary>
         public static string Year {
@@ -9768,6 +9777,15 @@ namespace K9.Globalisation {
         public static string YinAndYang {
             get {
                 return ResourceManager.GetString("YinAndYang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yin Imbalance.
+        /// </summary>
+        public static string YinImbalance {
+            get {
+                return ResourceManager.GetString("YinImbalance", resourceCulture);
             }
         }
         

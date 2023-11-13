@@ -14,6 +14,8 @@
     var cbsColor = Model.GetColorFromScore(Model.GetCbsScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var digestionColor = Model.GetColorFromScore(Model.GetDigestionIssuesScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var immunityColor = Model.GetColorFromScore(Model.GetImmunityIssuesScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var yinColor = Model.GetColorFromScore(Model.GetYinImbalanceScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var yangColor = Model.GetColorFromScore(Model.GetYangImbalanceScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 }
 
 <div class="well">
@@ -78,9 +80,30 @@
                 Units = $"{Model.GetImmunityIssuesScore()}%",
             })
         </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = Model.GetYinImbalanceScore(),
+                Title = Dictionary.YinImbalance,
+                BackgroundColor = $"rgb({yinColor}, 0.33)",
+                StrokeColor = $"rgb({yinColor})",
+                Units = $"{Model.GetYinImbalanceScore()}%",
+            })
+        </div>
     </div>
     <div class="row">
-
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = Model.GetYangImbalanceScore(),
+                Title = Dictionary.YangImbalance,
+                BackgroundColor = $"rgb({yangColor}, 0.33)",
+                StrokeColor = $"rgb({yangColor})",
+                Units = $"{Model.GetYangImbalanceScore()}%",
+            })
+        </div>
     </div>
 </div>
 

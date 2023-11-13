@@ -6,40 +6,42 @@
 @model HealthQuestionnaire
 
 <ul class="nav nav-pills">
-    <li class="active"><a data-toggle="pill" href="#ninestarki">@Dictionary.NineStarKi</a></li>
+    <li class="active"><a data-toggle="pill" href="#personal-details">@Dictionary.PersonalDetails</a></li>
+
+    <li><a data-toggle="pill" href="#scores">@Dictionary.Scores</a></li>
+
+    <li><a data-toggle="pill" href="#ninestarki">@Dictionary.NineStarKi</a></li>
 
     <li><a data-toggle="pill" href="#genotype">@Dictionary.GenoType</a></li>
 
-    <li><a data-toggle="pill" href="#scores">@Dictionary.Scores</a></li>
-    
-    <li><a data-toggle="pill" href="#family-history">@Dictionary.FamilyHistory</a></li>
-
     <li><a data-toggle="pill" href="#cbs-methylation">@Dictionary.CbsAndMethylation</a></li>
-
+    
     <li><a data-toggle="pill" href="#doshas">@Dictionary.Doshas</a></li>
 
+    <li><a data-toggle="pill" href="#family-history">@Dictionary.FamilyHistory</a></li>
+
     <li><a data-toggle="pill" href="#general-health">@Dictionary.GeneralHealth</a></li>
-    
+
     <li><a data-toggle="pill" href="#recommendations">@Dictionary.RecommendationsLabel</a></li>
 </ul>
 
 <div class="tab-content">
-    <div id="ninestarki" class="tab-pane fade active in padding-top-15">
-        @Html.Partial("Overview/_Page1NineStarKi")
+    <div id="personal-details" class="tab-pane fade active in padding-top-15">
+        @Html.Partial("Overview/_Page1PersonalDetails")
+    </div>
+    
+    <div id="scores" class="tab-pane fade padding-top-15">
+        @Html.Partial("Overview/_Page2Scores")
+    </div>
+
+    <div id="ninestarki" class="tab-pane fade padding-top-15">
+        @Html.Partial("Overview/_Page3NineStarKi")
     </div>
 
     <div id="genotype" class="tab-pane fade padding-top-15">
-        @Html.Partial("Overview/_Page2GenoType")
+        @Html.Partial("Overview/_Page4GenoType")
     </div>
-
-    <div id="scores" class="tab-pane fade padding-top-15">
-        @Html.Partial("Overview/_Page3Scores")
-    </div>
-
-    <div id="family-history" class="tab-pane fade padding-top-15">
-        @Html.Partial("Overview/_Page4FamilyHistory")
-    </div>
-
+    
     <div id="cbs-methylation" class="tab-pane fade padding-top-15">
         @Html.Partial("Overview/_Page5CbsMethylation")
     </div>
@@ -47,12 +49,16 @@
     <div id="doshas" class="tab-pane fade padding-top-15">
         @Html.Partial("Overview/_Page6Doshas")
     </div>
+    
+    <div id="family-history" class="tab-pane fade padding-top-15">
+        @Html.Partial("Overview/_Page7FamilyHistory")
+    </div>
 
     <div id="general-health" class="tab-pane fade padding-top-15">
-        @Html.Partial("Overview/_Page7GeneralHealth")
+        @Html.Partial("Overview/_Page8GeneralHealth")
     </div>
 
     <div id="recommendations" class="tab-pane fade padding-top-15">
-        @Html.Partial("Overview/_Page8Recommendations")
+        @Html.Partial("Overview/_Page9Recommendations")
     </div>
 </div>

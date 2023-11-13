@@ -598,7 +598,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CandidaFungusLabel)]
         public EYesNo? CandidaAndFungus { get; set; }
 
-        public int GetYinDiseaseScore()
+        public int GetYinImbalanceScore()
         {
             double totalScore = 4;
             double score = 0;
@@ -638,10 +638,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HighBloodPressureLabel)]
         public EYesNo? HighBloodPressure { get; set; }
 
-        public double GetInflammationScore()
+        public int GetYangImbalanceScore()
         {
-            var totalScore = 3;
-            var score = 0;
+            double totalScore = 3;
+            double score = 0;
 
             if (JointInflammation == EYesNo.Yes)
             {
@@ -658,7 +658,7 @@ namespace K9.DataAccessLayer.Models
                 score++;
             }
 
-            return score / totalScore;
+            return (int)Math.Ceiling((score / totalScore) * 100);
         }
 
         #endregion
