@@ -633,7 +633,7 @@ namespace K9.DataAccessLayer.Models
         #endregion
 
         
-        #region Cardiovascular Health{
+        #region Cardiovascular Health
 
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
