@@ -19,6 +19,7 @@
     var yangColor = Model.GetColorFromScore(Model.GetYangImbalanceScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var dentalIssuesColor = Model.GetColorFromScore(Model.GetDentalHealthScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var neurologicalColor = Model.GetColorFromScore(Model.GetNeurologicalScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var cardiovascularColor = Model.GetColorFromScore(Model.GetCardiovascularScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 
     var currentHealthColor = Model.GetColorFromScore(Model.GetCurrentHealthScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var expertiseColor = Model.GetColorFromScore(Model.GetNutritionExpertiseScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
@@ -31,6 +32,28 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = Model.GetCurrentHealthScore(),
+                Title = Dictionary.CurrentHealthLevel,
+                BackgroundColor = $"rgb({currentHealthColor}, 0.33)",
+                StrokeColor = $"rgb({currentHealthColor})",
+                Units = $"{Model.GetCurrentHealthScore()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = Model.GetNutritionExpertiseScore(),
+                Title = Dictionary.NutritionExpertise,
+                BackgroundColor = $"rgb({expertiseColor}, 0.33)",
+                StrokeColor = $"rgb({expertiseColor})",
+                Units = $"{Model.GetNutritionExpertiseScore()}%",
+            })
+        </div>
         <div class="col-xs-6 col-sm-3 col-md-2">
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {
@@ -64,6 +87,11 @@
                 Units = $"{Model.GetCbsScore()}%",
             })
         </div>
+    </div>
+</div>
+
+<div class="well">
+    <div class="row">
         <div class="col-xs-6 col-sm-3 col-md-2">
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {
@@ -86,33 +114,6 @@
                 Units = $"{Model.GetImmunityIssuesScore().InvertScore()}%",
             })
         </div>
-    </div>
-</div>
-
-<div class="well">
-    <div class="row">
-        <div class="col-xs-6 col-sm-3 col-md-2">
-            @Html.Partial("Controls/_Gauge", new GaugeOptions
-            {
-                MaxValue = 100,
-                Value = Model.GetCurrentHealthScore(),
-                Title = Dictionary.CurrentHealthLevel,
-                BackgroundColor = $"rgb({currentHealthColor}, 0.33)",
-                StrokeColor = $"rgb({currentHealthColor})",
-                Units = $"{Model.GetCurrentHealthScore()}%",
-            })
-        </div>
-        <div class="col-xs-6 col-sm-3 col-md-2">
-            @Html.Partial("Controls/_Gauge", new GaugeOptions
-            {
-                MaxValue = 100,
-                Value = Model.GetNutritionExpertiseScore(),
-                Title = Dictionary.NutritionExpertise,
-                BackgroundColor = $"rgb({expertiseColor}, 0.33)",
-                StrokeColor = $"rgb({expertiseColor})",
-                Units = $"{Model.GetNutritionExpertiseScore()}%",
-            })
-        </div>
         <div class="col-xs-6 col-sm-3 col-md-2">
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {
@@ -133,6 +134,17 @@
                 BackgroundColor = $"rgb({neurologicalColor}, 0.33)",
                 StrokeColor = $"rgb({neurologicalColor})",
                 Units = $"{Model.GetNeurologicalScore().InvertScore()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = Model.GetCardiovascularScore().InvertScore(),
+                Title = Dictionary.CardiovascularHealth,
+                BackgroundColor = $"rgb({cardiovascularColor}, 0.33)",
+                StrokeColor = $"rgb({cardiovascularColor})",
+                Units = $"{Model.GetCardiovascularScore().InvertScore()}%",
             })
         </div>
     </div>

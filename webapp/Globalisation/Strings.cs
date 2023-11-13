@@ -265,6 +265,10 @@
             public const string EmotionalTraumaLabel = "EmotionalTraumaLabel";
             public const string AmalgamFillingsLabel = "AmalgamFillingsLabel";
             public const string AmalgamFillingsHistoryLabel = "AmalgamFillingsHistoryLabel";
+            public const string ToothPainLabel = "ToothPainLabel";
+            public const string TMJLabel = "TMJLabel";
+            public const string CrackedTeeth = "CrackedTeeth";
+            public const string Cavities = "Cavities";
             public const string RootCanalsLabel = "RootCanalsLabel";
             public const string DentalIssuesLabel = "DentalIssuesLabel";
             public const string PhotoOfEyesLabel = "PhotoOfEyesLabel";

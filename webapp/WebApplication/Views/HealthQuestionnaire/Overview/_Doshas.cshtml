@@ -1,4 +1,5 @@
-﻿@using K9.Base.WebApplication.Helpers
+﻿@using K9.Base.DataAccessLayer.Attributes
+@using K9.Base.WebApplication.Helpers
 @using K9.DataAccessLayer.Attributes
 @using K9.DataAccessLayer.Enums
 @using K9.SharedLibrary.Extensions
@@ -10,6 +11,7 @@
 
 @{
     var doshas = Model.GetDoshas();
+    var doshaName = doshas.GetDosha().GetAttribute<EnumDescriptionAttribute>().GetDescription();
     var vataColor = Model.GetColorFromScore(doshas.GetVataDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var pittaColor = Model.GetColorFromScore(doshas.GetPittaDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var kaphaColor = Model.GetColorFromScore(doshas.GetKaphaDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
@@ -58,3 +60,11 @@
     </div>
 </div>
 
+
+<div class="well">
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.Raw(typeof(Dictionary).GetValueFromResource($"{doshaName}Details"))
+        </div>
+    </div>
+</div>

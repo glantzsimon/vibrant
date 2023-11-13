@@ -1024,6 +1024,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you have any cavities?.
+        /// </summary>
+        public static string Cavities {
+            get {
+                return ResourceManager.GetString("Cavities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CBS.
         /// </summary>
         public static string Cbs {
@@ -1651,6 +1660,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you have any cracked teeth?.
+        /// </summary>
+        public static string CrackedTeeth {
+            get {
+                return ResourceManager.GetString("CrackedTeeth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you ever experience cramps, tremors or twitches anywhere on your body?.
         /// </summary>
         public static string CrampsTremorsTwitchesLabel {
@@ -1799,7 +1817,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Health Score.
+        ///   Looks up a localized string similar to Current Health.
         /// </summary>
         public static string CurrentHealthLevel {
             get {
@@ -4570,11 +4588,53 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
+        ///
+        ///&lt;h4&gt;Hunter Strengths&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Logical&lt;/li&gt;
+        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
+        ///    &lt;li&gt;Handles stress well when well-rested an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string KaphaDetails {
+            get {
+                return ResourceManager.GetString("KaphaDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kapha Dosha.
         /// </summary>
         public static string KaphaDosha {
             get {
                 return ResourceManager.GetString("KaphaDosha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
+        ///
+        ///&lt;h4&gt;Hunter Strengths&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Logical&lt;/li&gt;
+        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
+        ///    &lt;li&gt;Handles stress well when well-rested an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string KaphaVataDetails {
+            get {
+                return ResourceManager.GetString("KaphaVataDetails", resourceCulture);
             }
         }
         
@@ -5758,7 +5818,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nutrition Score.
+        ///   Looks up a localized string similar to Health Expertise.
         /// </summary>
         public static string NutritionExpertise {
             get {
@@ -6289,11 +6349,53 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
+        ///
+        ///&lt;h4&gt;Hunter Strengths&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Logical&lt;/li&gt;
+        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
+        ///    &lt;li&gt;Handles stress well when well-rested an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string PittaDetails {
+            get {
+                return ResourceManager.GetString("PittaDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pitta Dosha.
         /// </summary>
         public static string PittaDosha {
             get {
                 return ResourceManager.GetString("PittaDosha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
+        ///
+        ///&lt;h4&gt;Hunter Strengths&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Logical&lt;/li&gt;
+        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
+        ///    &lt;li&gt;Handles stress well when well-rested an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string PittaKaphaDetails {
+            get {
+                return ResourceManager.GetString("PittaKaphaDetails", resourceCulture);
             }
         }
         
@@ -9045,6 +9147,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you experience neuralgia or TMJ issues?.
+        /// </summary>
+        public static string TMJLabel {
+            get {
+                return ResourceManager.GetString("TMJLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tolerant.
         /// </summary>
         public static string Tolerant {
@@ -9060,6 +9171,15 @@ namespace K9.Globalisation {
         public static string TolerantDescription {
             get {
                 return ResourceManager.GetString("TolerantDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you have any pain in your teeth or jaw?.
+        /// </summary>
+        public static string ToothPainLabel {
+            get {
+                return ResourceManager.GetString("ToothPainLabel", resourceCulture);
             }
         }
         
@@ -9231,6 +9351,27 @@ namespace K9.Globalisation {
         public static string Tridoshic {
             get {
                 return ResourceManager.GetString("Tridoshic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
+        ///
+        ///&lt;h4&gt;Hunter Strengths&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Logical&lt;/li&gt;
+        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
+        ///    &lt;li&gt;Handles stress well when well-rested an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string TridoshicDetails {
+            get {
+                return ResourceManager.GetString("TridoshicDetails", resourceCulture);
             }
         }
         
@@ -9543,11 +9684,53 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
+        ///
+        ///&lt;h4&gt;Hunter Strengths&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Logical&lt;/li&gt;
+        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
+        ///    &lt;li&gt;Handles stress well when well-rested an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string VataDetails {
+            get {
+                return ResourceManager.GetString("VataDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vata Dosha.
         /// </summary>
         public static string VataDosha {
             get {
                 return ResourceManager.GetString("VataDosha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
+        ///
+        ///&lt;h4&gt;Hunter Strengths&lt;/h4&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;Logical&lt;/li&gt;
+        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
+        ///    &lt;li&gt;Handles stress well when well-rested an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string VataPittaDetails {
+            get {
+                return ResourceManager.GetString("VataPittaDetails", resourceCulture);
             }
         }
         

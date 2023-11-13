@@ -58,9 +58,11 @@ namespace K9.DataAccessLayer.Models
                    IsTasterStatusComplete();
         }
 
+
+
         public int GetDentalHealthScore()
         {
-            double totalScore = 6;
+            double totalScore = 11;
             double score = 0;
 
             if (CoatedTongue == EYesNo.Yes)
@@ -77,6 +79,27 @@ namespace K9.DataAccessLayer.Models
             if (AmalgamFillingsHistory == EYesNo.Yes || AmalgamFillings == EYesNo.Yes)
             {
                 score++;
+                score++;
+            }
+
+            if (ToothPain == EYesNo.Yes)
+            {
+                score++;
+                score++;
+            }
+
+            if (TMJ == EYesNo.Yes)
+            {
+                score++;
+            }
+            
+            if (CrackedTeeth == EYesNo.Yes)
+            {
+                score++;
+            }
+            
+            if (Cavities == EYesNo.Yes)
+            {
                 score++;
             }
             
@@ -142,6 +165,30 @@ namespace K9.DataAccessLayer.Models
                 score++;
             }
 
+            return (int)Math.Ceiling((score / totalScore) * 100);
+        }
+
+        public int GetCardiovascularScore()
+        {
+            double totalScore = 6;
+            double score = 0;
+
+            if (FamilyHistoryOfHeartDiseaseStrokeOrDiabetes == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (HighBloodPressure == EYesNo.Yes)
+            {
+                score++;
+                score++;
+            }
+
+            if (SpiderVeins == EYesNo.Yes)
+            {
+                score++;
+            }
+            
             return (int)Math.Ceiling((score / totalScore) * 100);
         }
 
@@ -881,6 +928,26 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ToothPainLabel)]
+        public EYesNo? ToothPain { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TMJLabel)]
+        public EYesNo? TMJ { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CrackedTeeth)]
+        public EYesNo? CrackedTeeth { get; set; }
+        
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Cavities)]
+        public EYesNo? Cavities { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RootCanalsLabel)]
         public EYesNo? RootCanals { get; set; }
 
@@ -924,6 +991,12 @@ namespace K9.DataAccessLayer.Models
                    DrinksAlcohol.HasValue &&
                   AmalgamFillings.HasValue &&
                   AmalgamFillingsHistory.HasValue &&
+                  
+                   ToothPain.HasValue &&
+                   TMJ.HasValue &&
+                   CrackedTeeth.HasValue &&
+                   Cavities.HasValue &&
+                   RootCanals.HasValue &&
 
                    SkinIssues == EYesNo.Yes
                 ? !string.IsNullOrEmpty(SkinIssuesDetails)

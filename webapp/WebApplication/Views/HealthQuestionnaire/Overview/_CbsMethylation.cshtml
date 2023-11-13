@@ -8,12 +8,26 @@
 @using K9.WebApplication.Options
 @model HealthQuestionnaire
 
+@{
+    var cbsColor = Model.GetColorFromScore(Model.GetCbsScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+}
 
 <div class="well">
     <div class="row">
         <div class="col-xs-12">
             <h3 class="section-title">@Dictionary.CbsAndMethylation</h3>
         </div>
+    </div>
+    <div class="col-xs-12">
+        @Html.Partial("Controls/_Gauge", new GaugeOptions
+        {
+            MaxValue = 100,
+            Value = Model.GetCbsScore(),
+            Title = Dictionary.CbsAndMethylation,
+            BackgroundColor = $"rgb({cbsColor}, 0.33)",
+            StrokeColor = $"rgb({cbsColor})",
+            Units = $"{Model.GetCbsScore()}%",
+        })
     </div>
     <div class="row">
         <div class="col-xs-12">

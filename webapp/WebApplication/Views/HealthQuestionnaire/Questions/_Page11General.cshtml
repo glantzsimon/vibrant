@@ -311,6 +311,128 @@
 
     <div class="row">
         <div class="col-xs-12">
+            @Html.BootstrapEditorFor(e => e.PhysicalTraumaDetails)
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.LabelFor(e => e.EmotionalTrauma)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.EmotionalTrauma, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.LabelFor(e => e.AmalgamFillings)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.AmalgamFillings, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.LabelFor(e => e.AmalgamFillingsHistory)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.AmalgamFillingsHistory, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.LabelFor(e => e.ToothPain)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.ToothPain, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.LabelFor(e => e.TMJ)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.TMJ, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.LabelFor(e => e.CrackedTeeth)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.CrackedTeeth, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.LabelFor(e => e.Cavities)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.Cavities, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.LabelFor(e => e.RootCanals)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.RootCanals, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="col-xs-12">
             @Html.BootstrapEditorFor(e => e.PrescriptionMedication)
         </div>
     </div>
@@ -348,6 +470,12 @@
             {
                 Label = ""
             })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.BootstrapEditorFor(e => e.SurgeryDetails)
         </div>
     </div>
 

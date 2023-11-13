@@ -3244,14 +3244,20 @@
   <data name="CardiovascularHealth" xml:space="preserve">
     <value>Cardiovascular Health</value>
   </data>
+  <data name="Cavities" xml:space="preserve">
+    <value>Do you have any cavities?</value>
+  </data>
   <data name="Cbs" xml:space="preserve">
     <value>CBS</value>
+  </data>
+  <data name="CrackedTeeth" xml:space="preserve">
+    <value>Do you have any cracked teeth?</value>
   </data>
   <data name="CurrentHealthIssues" xml:space="preserve">
     <value>Current Health Issues</value>
   </data>
   <data name="CurrentHealthLevel" xml:space="preserve">
-    <value>Health Score</value>
+    <value>Current Health</value>
   </data>
   <data name="DentalHealth" xml:space="preserve">
     <value>Dental Health</value>
@@ -3301,6 +3307,12 @@
   <data name="IsLGBTQPlusLabel" xml:space="preserve">
     <value>Are you LGBTQ+?</value>
   </data>
+  <data name="KaphaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>doshas\en-gb\kaphadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="KaphaVataDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>doshas\en-gb\kaphavatadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="NeurologicalHealth" xml:space="preserve">
     <value>Neurological Health</value>
   </data>
@@ -3314,10 +3326,16 @@
     <value>Nourishes Yin</value>
   </data>
   <data name="NutritionExpertise" xml:space="preserve">
-    <value>Nutrition Score</value>
+    <value>Health Expertise</value>
   </data>
   <data name="PhysicalTrauma" xml:space="preserve">
     <value>Details of Major Physical Trauma</value>
+  </data>
+  <data name="PittaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>doshas\en-gb\pittadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PittaKaphaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>doshas\en-gb\pittakaphadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="PrescriptionMedication" xml:space="preserve">
     <value>Details of Prescription Medication</value>
@@ -3340,11 +3358,26 @@
   <data name="TeacherDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>genotypes\en-gb\teacherdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="TMJLabel" xml:space="preserve">
+    <value>Do you experience neuralgia or TMJ issues?</value>
+  </data>
+  <data name="ToothPainLabel" xml:space="preserve">
+    <value>Do you have any pain in your teeth or jaw?</value>
+  </data>
   <data name="Treatment" xml:space="preserve">
     <value>Treatment</value>
   </data>
+  <data name="TridoshicDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>doshas\en-gb\tridoshicdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="UrologicalHealth" xml:space="preserve">
     <value>Urological Health</value>
+  </data>
+  <data name="VataDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>doshas\en-gb\vatadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="VataPittaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>doshas\en-gb\vatapittadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="WarriorDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>genotypes\en-gb\warriordetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
