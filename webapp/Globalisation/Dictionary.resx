@@ -3238,14 +3238,26 @@
   <data name="YearlyCycleEnergy" xml:space="preserve">
     <value>Yearly Cycle Energy</value>
   </data>
+  <data name="AllergiesAndSensitivities" xml:space="preserve">
+    <value>Allergies &amp; Sensitivities</value>
+  </data>
   <data name="CardiovascularHealth" xml:space="preserve">
     <value>Cardiovascular Health</value>
   </data>
   <data name="Cbs" xml:space="preserve">
     <value>CBS</value>
   </data>
+  <data name="CurrentHealthIssues" xml:space="preserve">
+    <value>Current Health Issues</value>
+  </data>
+  <data name="CurrentHealthLevel" xml:space="preserve">
+    <value>Health Score</value>
+  </data>
   <data name="DentalHealth" xml:space="preserve">
     <value>Dental Health</value>
+  </data>
+  <data name="DentalIssues" xml:space="preserve">
+    <value>Dental Issues</value>
   </data>
   <data name="DigestiveHealth" xml:space="preserve">
     <value>Digestive Health</value>
@@ -3253,11 +3265,26 @@
   <data name="Elements" xml:space="preserve">
     <value>Elements</value>
   </data>
+  <data name="Exercise" xml:space="preserve">
+    <value>Physical Exercise</value>
+  </data>
+  <data name="ExplorerDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>genotypes\en-gb\explorerdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GathererDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>genotypes\en-gb\gathererdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="GenoTypes" xml:space="preserve">
     <value>GenoTypes</value>
   </data>
+  <data name="HealthGoals" xml:space="preserve">
+    <value>Health Goals</value>
+  </data>
   <data name="HormoneBalance" xml:space="preserve">
     <value>Hormone Balance</value>
+  </data>
+  <data name="HunterDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>genotypes\en-gb\hunterdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Imbalances" xml:space="preserve">
     <value>Imbalances</value>
@@ -3265,11 +3292,17 @@
   <data name="Immunity" xml:space="preserve">
     <value>Immunity</value>
   </data>
+  <data name="InfectionSeverity" xml:space="preserve">
+    <value>Typical Infection Severity</value>
+  </data>
   <data name="IsLGBTQPlusLabel" xml:space="preserve">
     <value>Are you LGBTQ+?</value>
   </data>
   <data name="NeurologicalHealth" xml:space="preserve">
     <value>Neurological Health</value>
+  </data>
+  <data name="NomadDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>genotypes\en-gb\nomaddetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="NourishesYang" xml:space="preserve">
     <value>Nourishes Yang</value>
@@ -3277,17 +3310,41 @@
   <data name="NourishesYin" xml:space="preserve">
     <value>Nourishes Yin</value>
   </data>
+  <data name="NutritionExpertise" xml:space="preserve">
+    <value>Nutrition Score</value>
+  </data>
+  <data name="PhysicalTrauma" xml:space="preserve">
+    <value>Details of Major Physical Trauma</value>
+  </data>
+  <data name="PrescriptionMedication" xml:space="preserve">
+    <value>Details of Prescription Medication</value>
+  </data>
   <data name="Scores" xml:space="preserve">
     <value>Scores</value>
   </data>
+  <data name="SkinIssues" xml:space="preserve">
+    <value>Skin Issues</value>
+  </data>
   <data name="StressRelief" xml:space="preserve">
     <value>Stress Relief</value>
+  </data>
+  <data name="Supplements" xml:space="preserve">
+    <value>Details of Supplements Taken</value>
+  </data>
+  <data name="SurgeryDetails" xml:space="preserve">
+    <value>Details of Surgery</value>
+  </data>
+  <data name="TeacherDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>genotypes\en-gb\teacherdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Treatment" xml:space="preserve">
     <value>Treatment</value>
   </data>
   <data name="UrologicalHealth" xml:space="preserve">
     <value>Urological Health</value>
+  </data>
+  <data name="WarriorDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>genotypes\en-gb\warriordetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="YangImbalance" xml:space="preserve">
     <value>Yang Imbalance</value>

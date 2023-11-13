@@ -17,6 +17,8 @@ namespace K9.DataAccessLayer.Models
 
         public string GenoTypeName => GenoTypeEnumMetaDataAttribute().GetDescription();
         
+        public string GenoTypeDetailsName => $"{GenoTypeName}Details";
+        
         public string Color => GenoTypeEnumMetaDataAttribute().Color;
 
         public int Count { get; set; }

@@ -284,3 +284,7 @@ li.divider {
 .display-inline-block {
     display: inline-block;
 }
+
+.form-range {
+    width: 100%;
+}

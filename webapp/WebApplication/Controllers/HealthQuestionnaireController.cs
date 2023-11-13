@@ -5,6 +5,7 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Services;
 using System.Web.Mvc;
+using K9.Base.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using WebMatrix.WebData;
 
@@ -16,19 +17,32 @@ namespace K9.WebApplication.Controllers
     public class HealthQuestionnaireController : BasePureController
     {
         private readonly IQuestionnaireService _questionnaireService;
+        private readonly IRepository<User> _usresRepository;
+        private readonly IClientService _clientService;
 
-        public HealthQuestionnaireController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IMembershipService membershipService, IQuestionnaireService questionnaireService) : base(controllerPackage.Logger, controllerPackage.DataSetsHelper, controllerPackage.Roles, controllerPackage.Authentication, controllerPackage.FileSourceHelper, membershipService)
+        public HealthQuestionnaireController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IMembershipService membershipService, IQuestionnaireService questionnaireService, IRepository<User> usresRepository, IClientService clientService) : base(controllerPackage.Logger, controllerPackage.DataSetsHelper, controllerPackage.Roles, controllerPackage.Authentication, controllerPackage.FileSourceHelper, membershipService)
         {
             _questionnaireService = questionnaireService;
+            _usresRepository = usresRepository;
+            _clientService = clientService;
         }
         
         [Route("genetic-profile/questionnaire/overview")]
         public ActionResult GeneticProfileTestOverview(int? clientId = null)
         {
             HealthQuestionnaire hq;
-
+            
             if (clientId.HasValue)
             {
+                if (!Roles.CurrentUserIsInRoles(RoleNames.Administrators))
+                {
+                    var client = _clientService.Find(clientId.Value);
+                    if (client.UserId != WebSecurity.CurrentUserId)
+                    {
+                        return HttpForbidden();
+                    }
+                }
+
                 hq = _questionnaireService.GetHealthQuestionnaireForClient(clientId.Value);
             }
             else
@@ -56,6 +70,15 @@ namespace K9.WebApplication.Controllers
 
             if (clientId.HasValue)
             {
+                if (!Roles.CurrentUserIsInRoles(RoleNames.Administrators))
+                {
+                    var client = _clientService.Find(clientId.Value);
+                    if (client.UserId != WebSecurity.CurrentUserId)
+                    {
+                        return HttpForbidden();
+                    }
+                }
+
                 hq = _questionnaireService.GetHealthQuestionnaireForClient(clientId.Value);
             }
             else

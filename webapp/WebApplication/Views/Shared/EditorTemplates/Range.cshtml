@@ -1,6 +1,4 @@
 ﻿@using System.Globalization
 @model Object
 
-<div class="input-group">
-    <input type="range" class="form-range w-50" min="1" max="10">
-</div>
+@Html.TextBoxFor(e => Model, new { type = "range", @class = "form-range", min = 1, max = 10 })

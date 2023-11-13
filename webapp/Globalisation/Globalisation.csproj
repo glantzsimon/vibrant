@@ -112,7 +112,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GenoTypes\en-gb\Hunter.htm" />
+    <Content Include="GenoTypes\en-gb\NomadDetails.htm" />
+    <Content Include="GenoTypes\en-gb\GathererDetails.htm" />
+    <Content Include="GenoTypes\en-gb\WarriorDetails.htm" />
+    <Content Include="GenoTypes\en-gb\TeacherDetails.htm" />
+    <Content Include="GenoTypes\en-gb\ExplorerDetails.htm" />
+    <Content Include="GenoTypes\en-gb\HunterDetails.htm" />
     <Content Include="Questionnaires\en-gb\DoshasDescription.htm" />
     <Content Include="Questionnaires\en-gb\CBSMethylationDescription.htm" />
     <Content Include="Questionnaires\en-gb\WristCircumferenceTestInstructions.htm" />

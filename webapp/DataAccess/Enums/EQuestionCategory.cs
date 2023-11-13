@@ -3,6 +3,7 @@
     public enum EQuestionCategory
     {
         Cbs,
-        FamilyHistory
+        FamilyHistory,
+        GeneralHealth
     }
 }

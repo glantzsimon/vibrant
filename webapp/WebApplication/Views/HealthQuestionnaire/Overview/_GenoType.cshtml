@@ -20,6 +20,14 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-xs-12">
+            @Html.Raw(typeof(Dictionary).GetValueFromResource(genoType.GenoTypeDetailsName))
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
         <div class="col-xs-4 col-sm-3 col-md-2">
             @Html.BootstrapDisplayFor(e => genoType.GenoType)
         </div>

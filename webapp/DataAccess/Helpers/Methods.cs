@@ -14,6 +14,11 @@ namespace K9.DataAccessLayer.Helpers
     {
         public static readonly Random RandomGenerator = new Random();
 
+        public static int InvertScore(this int score)
+        {
+            return 100 - score;
+        }
+
         public static double ToInternationalPrice(this double value)
         {
             if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName != Strings.LanguageCodes.Thai)

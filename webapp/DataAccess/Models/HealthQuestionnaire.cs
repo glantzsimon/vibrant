@@ -3,15 +3,20 @@ using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Enums;
 using K9.Base.DataAccessLayer.Extensions;
 using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Attributes;
 using K9.DataAccessLayer.Constants;
 using K9.DataAccessLayer.Enums;
 using K9.Globalisation;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Enums;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Reflection;
 using System.Web.Script.Serialization;
 
 namespace K9.DataAccessLayer.Models
@@ -429,6 +434,9 @@ namespace K9.DataAccessLayer.Models
 
         #region General Health 
 
+        public List<PropertyInfo> GeneralHealthProperties() => this
+            .GetProperties().Where(e => e.GetAttribute<QuestionCategoryAttribute>()?.Category == EQuestionCategory.GeneralHealth).ToList();
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CurrentHealthIssuesLabel)]
         [StringLength(1111)]
         [DataType(DataType.MultilineText)]
@@ -445,11 +453,15 @@ namespace K9.DataAccessLayer.Models
         [Max(10)]
         public int? CurrentHealthLevel { get; set; }
 
+        public int GetCurrentHealthScore() => CurrentHealthLevel.HasValue ? CurrentHealthLevel.Value * 10 : 0;
+
         [UIHint("Range")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NutritionExpertiseLevelLabel)]
         [Min(1)]
         [Max(10)]
         public int? NutritionExpertiseLevel { get; set; }
+
+        public int GetNutritionExpertiseScore() => NutritionExpertiseLevel.HasValue ? NutritionExpertiseLevel.Value * 10 : 0;
 
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnjoysCookingLabel)]
@@ -462,26 +474,32 @@ namespace K9.DataAccessLayer.Models
         #region Digestion
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BloatingLabel)]
         public EYesNo? Bloating { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GasLabel)]
         public EYesNo? Gas { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LooseStoolLabel)]
         public EYesNo? LooseStool { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ConstipationLabel)]
         public EYesNo? Constipation { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AbdominalPainOrCrampingLabel)]
         public EYesNo? AbdominalPainOrCramping { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinIssuesLabel)]
         public EYesNo? SkinIssues { get; set; }
 
@@ -491,6 +509,7 @@ namespace K9.DataAccessLayer.Models
         public string SkinIssuesDetails { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CoatedTongueLabel)]
         public EYesNo? CoatedTongue { get; set; }
 
@@ -551,6 +570,7 @@ namespace K9.DataAccessLayer.Models
         public string AllergiesAndSensitivitiesDetails { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.UTILabel)]
         public EYesNo? UTI { get; set; }
 
@@ -587,14 +607,17 @@ namespace K9.DataAccessLayer.Models
         #region Yin Disease
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColdExtremitiesLabel)]
         public EYesNo? ColdExtremities { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColdIntolerantLabel)]
         public EYesNo? ColdIntolerant { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CandidaFungusLabel)]
         public EYesNo? CandidaAndFungus { get; set; }
 
@@ -631,10 +654,12 @@ namespace K9.DataAccessLayer.Models
         #region Inflammation
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.JointInflammationLabel)]
         public EYesNo? JointInflammation { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HighBloodPressureLabel)]
         public EYesNo? HighBloodPressure { get; set; }
 
@@ -681,10 +706,12 @@ namespace K9.DataAccessLayer.Models
         public string Supplements { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SmokeLabel)]
         public EYesNo? Smoke { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DrinksAlcoholLabel)]
         public EYesNo? DrinksAlcohol { get; set; }
 
@@ -702,6 +729,7 @@ namespace K9.DataAccessLayer.Models
         public string PhysicalTraumaDetails { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DrinksAlcoholLabel)]
         public EYesNo? EmotionalTrauma { get; set; }
 
@@ -710,14 +738,17 @@ namespace K9.DataAccessLayer.Models
         #region Teeth
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmalgamFillingsLabel)]
         public EYesNo? AmalgamFillings { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmalgamFillingsHistoryLabel)]
         public EYesNo? AmalgamFillingsHistory { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RootCanalsLabel)]
         public EYesNo? RootCanals { get; set; }
 
