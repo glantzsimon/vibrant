@@ -644,6 +644,7 @@
             public const string UrologicalHealth = "UrologicalHealth";
             public const string HormoneBalance = "HormoneBalance";
             public const string AntiInflammatory = "AntiInflammatory";
+            public const string CellularHealth = "CellularHealth";
             public const string StressRelief = "StressRelief";
             public const string Detoxification = "Detoxification";
             public const string DentalHealth = "DentalHealth";

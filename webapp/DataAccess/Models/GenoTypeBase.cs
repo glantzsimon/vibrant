@@ -71,6 +71,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.AntiInflammatory)]
         public bool AntiInflammatory { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.CellularHealth)]
+        public bool CellularHealth { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.StressRelief)]
         public bool StressRelief { get; set; }
 

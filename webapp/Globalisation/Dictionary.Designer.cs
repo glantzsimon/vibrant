@@ -1113,6 +1113,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cellular Health.
+        /// </summary>
+        public static string CellularHealth {
+            get {
+                return ResourceManager.GetString("CellularHealth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Using your tape measure, measure from the top of the seat of the chair straight down to the ground.
         ///&lt;/p&gt;

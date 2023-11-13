@@ -583,6 +583,10 @@
     <Compile Include="Migrations\202311131440489_MoreFields.Designer.cs">
       <DependentUpon>202311131440489_MoreFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311131456048_CellularHealth.cs" />
+    <Compile Include="Migrations\202311131456048_CellularHealth.Designer.cs">
+      <DependentUpon>202311131456048_CellularHealth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
@@ -894,6 +898,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311131440489_MoreFields.resx">
       <DependentUpon>202311131440489_MoreFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311131456048_CellularHealth.resx">
+      <DependentUpon>202311131456048_CellularHealth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
