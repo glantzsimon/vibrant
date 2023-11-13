@@ -58,6 +58,106 @@ namespace K9.DataAccessLayer.Models
                    IsTasterStatusComplete();
         }
 
+        public int GetDentalHealthScore()
+        {
+            double totalScore = 7;
+            double score = 0;
+
+            if (CoatedTongue == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (Smoke == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (DrinksAlcohol == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (RootCanals == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (AmalgamFillingsHistory == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (AmalgamFillings == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (!string.IsNullOrEmpty(DentalIssues))
+            {
+                score++;
+            }
+
+            return (int)Math.Ceiling((score / totalScore) * 100);
+        }
+
+        public int GetNeurologicalScore()
+        {
+            double totalScore = 13;
+            double score = 0;
+
+            if (FamilyHistoryOfNeurologicalDisease == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (DepressionAnxiety == EYesNo.Yes)
+            {
+                score++;
+                score++;
+            }
+
+            if (BrainFog == EYesNo.Yes)
+            {
+                score++;
+                score++;
+            }
+
+            if (Insomnia == EYesNo.Yes)
+            {
+                score++;
+                score++;
+            }
+            
+            if (RacingThoughts == EYesNo.Yes)
+            {
+                score++;
+                score++;
+            }
+            
+            if (InnerTension == EYesNo.Yes)
+            {
+                score++;
+            }
+            
+            if (LoudNoisesBrightLights == EYesNo.Yes)
+            {
+                score++;
+            }
+            
+            if (OCD == EYesNo.Yes)
+            {
+                score++;
+            }
+            
+            if (Irritability == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            return (int)Math.Ceiling((score / totalScore) * 100);
+        }
+
         #region Css
 
         public bool IsPersonalDetailsActive() => !IsPersonalInformationComplete();
@@ -576,10 +676,15 @@ namespace K9.DataAccessLayer.Models
 
         public int GetImmunityIssuesScore()
         {
-            double totalScore = 4;
+            double totalScore = 6;
             double score = 0;
 
             if (InfectionSeverity == ESeverity.MoreSevere)
+            {
+                score++;
+            }
+            
+            if (Herpes == EYesNo.Yes)
             {
                 score++;
             }
@@ -590,6 +695,11 @@ namespace K9.DataAccessLayer.Models
             }
 
             if (UTI == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (ChronicViralInfections == EYesNo.Yes)
             {
                 score++;
             }
@@ -623,7 +733,7 @@ namespace K9.DataAccessLayer.Models
 
         public int GetYinImbalanceScore()
         {
-            double totalScore = 4;
+            double totalScore = 9;
             double score = 0;
 
             if (ColdExtremities == EYesNo.Yes)
@@ -642,6 +752,36 @@ namespace K9.DataAccessLayer.Models
             }
 
             if (UTI == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (Anaemia == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (PostExertionalMalaise == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (HistoryOfchronicFatigueOrFibromyalgia == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (DepressionAnxiety == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (NightSweats == EYesNo.Yes)
+            {
+                score++;
+            }
+
+            if (LowMorningEnergy == EYesNo.Yes)
             {
                 score++;
             }
@@ -665,7 +805,7 @@ namespace K9.DataAccessLayer.Models
 
         public int GetYangImbalanceScore()
         {
-            double totalScore = 3;
+            double totalScore = 4;
             double score = 0;
 
             if (JointInflammation == EYesNo.Yes)
@@ -679,6 +819,11 @@ namespace K9.DataAccessLayer.Models
             }
 
             if (SkinIssues == EYesNo.Yes)
+            {
+                score++;
+            }
+            
+            if (Irritability == EYesNo.Yes)
             {
                 score++;
             }
@@ -755,7 +900,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DentalIssuesLabel)]
         [StringLength(1111)]
         [DataType(DataType.MultilineText)]
-        public string DentalIssuesLabel { get; set; }
+        public string DentalIssues { get; set; }
 
         #endregion
 

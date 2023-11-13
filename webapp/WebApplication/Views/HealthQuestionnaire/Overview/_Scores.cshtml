@@ -17,6 +17,8 @@
     var immunityColor = Model.GetColorFromScore(Model.GetImmunityIssuesScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var yinColor = Model.GetColorFromScore(Model.GetYinImbalanceScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var yangColor = Model.GetColorFromScore(Model.GetYangImbalanceScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var dentalIssuesColor = Model.GetColorFromScore(Model.GetDentalHealthScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var neurologicalColor = Model.GetColorFromScore(Model.GetNeurologicalScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     
     var currentHealthColor = Model.GetColorFromScore(Model.GetCurrentHealthScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var expertiseColor = Model.GetColorFromScore(Model.GetNutritionExpertiseScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
@@ -106,6 +108,28 @@
                 BackgroundColor = $"rgb({expertiseColor}, 0.33)",
                 StrokeColor = $"rgb({expertiseColor})",
                 Units = $"{Model.GetNutritionExpertiseScore()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = Model.GetDentalHealthScore(),
+                Title = Dictionary.DentalHealth,
+                BackgroundColor = $"rgb({dentalIssuesColor}, 0.33)",
+                StrokeColor = $"rgb({dentalIssuesColor})",
+                Units = $"{Model.GetDentalHealthScore()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = Model.GetNeurologicalScore(),
+                Title = Dictionary.NeurologicalHealth,
+                BackgroundColor = $"rgb({neurologicalColor}, 0.33)",
+                StrokeColor = $"rgb({neurologicalColor})",
+                Units = $"{Model.GetNeurologicalScore()}%",
             })
         </div>
     </div>
