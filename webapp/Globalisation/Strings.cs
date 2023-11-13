@@ -656,6 +656,9 @@
             public const string Pregnancy = "Pregnancy";
             public const string Vitality = "Vitality";
             public const string Fertility = "Fertility";
+            public const string Mood = "Cognition";
+            public const string Cognition = "Cognition";
+            public const string Sleep = "Sleep";
             public const string NourishesYin = "NourishesYin";
             public const string NourishesYang = "NourishesYang";
             public const string Unspecified = "Unspecified";

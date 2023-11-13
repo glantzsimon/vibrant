@@ -3265,6 +3265,9 @@
   <data name="ChestPainLabel" xml:space="preserve">
     <value>Do you ever experience chest pain when you exert yourself?</value>
   </data>
+  <data name="Cognition" xml:space="preserve">
+    <value>Cognition</value>
+  </data>
   <data name="ConcentrationIssues" xml:space="preserve">
     <value>Concentration Issues</value>
   </data>
@@ -3351,6 +3354,9 @@
   </data>
   <data name="MensHealth" xml:space="preserve">
     <value>Men's Health</value>
+  </data>
+  <data name="Mood" xml:space="preserve">
+    <value>Mood</value>
   </data>
   <data name="NeurologicalHealth" xml:space="preserve">
     <value>Neurological Health</value>

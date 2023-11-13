@@ -1323,6 +1323,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cognition.
+        /// </summary>
+        public static string Cognition {
+            get {
+                return ResourceManager.GetString("Cognition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cold Exposure.
         /// </summary>
         public static string ColdExposure {
@@ -5531,6 +5540,15 @@ namespace K9.Globalisation {
         public static string Months {
             get {
                 return ResourceManager.GetString("Months", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mood.
+        /// </summary>
+        public static string Mood {
+            get {
+                return ResourceManager.GetString("Mood", resourceCulture);
             }
         }
         
