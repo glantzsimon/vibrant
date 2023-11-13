@@ -651,6 +651,11 @@
             public const string StressRelief = "StressRelief";
             public const string Detoxification = "Detoxification";
             public const string DentalHealth = "DentalHealth";
+            public const string MensHealth = "MensHealth";
+            public const string WomensHealth = "WomensHealth";
+            public const string Pregnancy = "Pregnancy";
+            public const string Vitality = "Vitality";
+            public const string Fertility = "Fertility";
             public const string NourishesYin = "NourishesYin";
             public const string NourishesYang = "NourishesYang";
             public const string Unspecified = "Unspecified";

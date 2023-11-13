@@ -3178,6 +3178,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fertiliy.
+        /// </summary>
+        public static string Fertility {
+            get {
+                return ResourceManager.GetString("Fertility", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File Url.
         /// </summary>
         public static string File1Label {
@@ -5319,6 +5328,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Men&apos;s Health.
+        /// </summary>
+        public static string MensHealth {
+            get {
+                return ResourceManager.GetString("MensHealth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mesocephalic (medium-headed).
         /// </summary>
         public static string Mesocephalic {
@@ -6607,6 +6625,15 @@ namespace K9.Globalisation {
         public static string Powder {
             get {
                 return ResourceManager.GetString("Powder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pregnancy.
+        /// </summary>
+        public static string Pregnancy {
+            get {
+                return ResourceManager.GetString("Pregnancy", resourceCulture);
             }
         }
         
@@ -10002,6 +10029,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vitality.
+        /// </summary>
+        public static string Vitality {
+            get {
+                return ResourceManager.GetString("Vitality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vitamin.
         /// </summary>
         public static string Vitamin {
@@ -10354,6 +10390,15 @@ namespace K9.Globalisation {
         public static string WithOrWithoutFood {
             get {
                 return ResourceManager.GetString("WithOrWithoutFood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Women&apos;s Health.
+        /// </summary>
+        public static string WomensHealth {
+            get {
+                return ResourceManager.GetString("WomensHealth", resourceCulture);
             }
         }
         

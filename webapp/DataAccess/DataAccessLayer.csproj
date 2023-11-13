@@ -591,6 +591,14 @@
     <Compile Include="Migrations\202311131518558_CardioVascular.Designer.cs">
       <DependentUpon>202311131518558_CardioVascular.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311131536537_Pregnancy.cs" />
+    <Compile Include="Migrations\202311131536537_Pregnancy.Designer.cs">
+      <DependentUpon>202311131536537_Pregnancy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311131542393_Vitality.cs" />
+    <Compile Include="Migrations\202311131542393_Vitality.Designer.cs">
+      <DependentUpon>202311131542393_Vitality.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
@@ -908,6 +916,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311131518558_CardioVascular.resx">
       <DependentUpon>202311131518558_CardioVascular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311131536537_Pregnancy.resx">
+      <DependentUpon>202311131536537_Pregnancy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311131542393_Vitality.resx">
+      <DependentUpon>202311131542393_Vitality.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
