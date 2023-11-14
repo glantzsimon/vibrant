@@ -28,6 +28,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         private readonly Mock<IRepository<Protocol>> _protocolsRepository = new Mock<IRepository<Protocol>>();
         private readonly Mock<IRepository<IngredientSubstitute>> _ingredientSubstitutesRepository = new Mock<IRepository<IngredientSubstitute>>();
         private readonly Mock<IRepository<ProductPackProduct>> _productPackProductsRepository = new Mock<IRepository<ProductPackProduct>>();
+        private readonly Mock<IRepository<FoodItem>> _foodItemsRepository = new Mock<IRepository<FoodItem>>();
 
         private readonly Mock<IIngredientService> _ingredientService = new Mock<IIngredientService>();
 
@@ -143,6 +144,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 _ingredientSubstitutesRepository.Object,
                 _activitiesRepository.Object,
                 _dietaryRecommendationsRepository.Object,
+                _foodItemsRepository.Object,
                 _productPackProductsRepository.Object);
 
             _products = new List<Product>
