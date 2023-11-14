@@ -42,6 +42,8 @@ namespace K9.DataAccessLayer.Attributes
         public bool Cognition {get;set;}
         public bool Sleep {get;set;}
         public EDietaryPreference? DietaryPreference {get;set;}
+        public bool BloodBuilding { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool Restorative { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 
 }

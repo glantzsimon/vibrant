@@ -130,6 +130,17 @@ namespace K9.WebApplication.Services
                 }
             }
 
+            // Custom scores
+            var scores = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(s => s.GetTypes())
+                .Where(p => typeof(IScore).IsAssignableFrom(p)).ToList();
+
+            foreach (var scoreImplementation in scores)
+            {
+                var instance = Activator.CreateInstance(scoreImplementation) as IScore;
+                score += instance.GetScore(hq, genoType, item);
+            }
+
             return score;
         }
 

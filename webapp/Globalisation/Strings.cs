@@ -110,6 +110,8 @@
             public const string IsLGBTQPlusLabel = "IsLGBTQPlusLabel";
             public const string DietaryPreferenceQuestionLabel = "DietaryPreferenceQuestionLabel";
             public const string DietaryPreference = "DietaryPreference";
+            public const string BloodBuilding = "BloodBuilding";
+            public const string Restorative = "Restorative";
             public const string DateOfBirthLabel = "DateOfBirthLabel";
             public const string SummaryLabel = "SummaryLabel";
             public const string OverviewLabel = "OverviewLabel";

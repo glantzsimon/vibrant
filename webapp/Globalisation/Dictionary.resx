@@ -3250,6 +3250,9 @@
   <data name="AutoImmunityLabel" xml:space="preserve">
     <value>Do you have any autoimmune or inflammatory conditions?</value>
   </data>
+  <data name="BloodBuilding" xml:space="preserve">
+    <value>Blood Building</value>
+  </data>
   <data name="CardiovascularHealth" xml:space="preserve">
     <value>Cardiovascular Health</value>
   </data>
@@ -3417,6 +3420,9 @@
   </data>
   <data name="PrescriptionMedication" xml:space="preserve">
     <value>Details of Prescription Medication</value>
+  </data>
+  <data name="Restorative" xml:space="preserve">
+    <value>Restorative</value>
   </data>
   <data name="Scores" xml:space="preserve">
     <value>Scores</value>

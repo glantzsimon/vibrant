@@ -772,6 +772,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blood Building.
+        /// </summary>
+        public static string BloodBuilding {
+            get {
+                return ResourceManager.GetString("BloodBuilding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;A person&apos;s blood group is one of the most significant physical markers related to health that we have. It holds important information about their metabolism, genetics and the susceptibility to certain imbalances and diseases. The blood group also influences how our immune system reacts to certain lectins, glutens, etc. present in food, which affects levels of inflammation in the body. It also influences how our immune system responds to pathogens and other substances.&lt;/p&gt;
         ///&lt;p&gt;
         ///    The Rhesus (or Rh) blo [rest of string was truncated]&quot;;.
@@ -7800,6 +7809,15 @@ namespace K9.Globalisation {
         public static string ResearchLabel {
             get {
                 return ResourceManager.GetString("ResearchLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restorative.
+        /// </summary>
+        public static string Restorative {
+            get {
+                return ResourceManager.GetString("Restorative", resourceCulture);
             }
         }
         

@@ -54,6 +54,10 @@ namespace K9.DataAccessLayer.Models
 
         bool Detoxification { get; set; }
 
+        bool BloodBuilding { get; set; }
+
+        bool Restorative { get; set; }
+
         bool DentalHealth { get; set; }
 
         bool MensHealth { get; set; }

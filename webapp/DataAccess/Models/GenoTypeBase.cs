@@ -115,5 +115,11 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DietaryPreference)]
         public EDietaryPreference? DietaryPreference { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DietaryPreference)]
+        public bool BloodBuilding { get; set; }
+        
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DietaryPreference)]
+        public bool Restorative { get; set; }
     }
 }
