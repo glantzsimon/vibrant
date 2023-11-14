@@ -1681,6 +1681,7 @@
     <Content Include="Views\Shared\EditorTemplates\DietaryPreference.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\CompatibilityLevel.cshtml" />
     <Content Include="Views\Protocols\_SummaryFoods.cshtml" />
+    <Content Include="Views\Protocols\_SummaryRecommendedFoods.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

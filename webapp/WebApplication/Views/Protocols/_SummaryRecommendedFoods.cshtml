@@ -1,0 +1,66 @@
+﻿@using K9.Base.DataAccessLayer.Attributes;
+@using K9.Base.WebApplication.Helpers
+@using K9.DataAccessLayer.Enums
+@using K9.DataAccessLayer.Helpers
+@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Helpers
+@model Protocol
+
+<div>
+    @Html.Raw(Dictionary.RecommendedFoods)
+</div>
+
+@if (Model.RecommendedFoods.Any())
+{
+    var levels = new List<ECompatibilityLevel>
+{
+ECompatibilityLevel.Excellent,
+ECompatibilityLevel.Good,
+ECompatibilityLevel.Minimise,
+ECompatibilityLevel.Avoid
+};
+
+    foreach (var level in levels)
+    {
+        var filteredItems = Model.RecommendedFoods.Where(e => e.FoodItem.ExplorerCompatibilityLevel == level ||
+                                                              e.FoodItem.GathererCompatibilityLevel == level ||
+                                                              e.FoodItem.HunterCompatibilityLevel == level ||
+                                                              e.FoodItem.NomadCompatibilityLevel == level ||
+                                                              e.FoodItem.TeacherCompatibilityLevel == level ||
+                                                              e.FoodItem.WarriorCompatibilityLevel == level).ToList();
+
+        var levelName = level.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+
+        for (int i = 0; i < filteredItems.Count; i++)
+        {
+            var recommendedFood = Model.RecommendedFoods[i].FoodItem;
+            var isLast = i == Model.RecommendedFoods.Count - 1;
+
+            <div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4>@levelName</h4>
+                    </div>
+                </div>
+                @if (!string.IsNullOrEmpty(recommendedFood.Recommendations))
+                {
+                    <div class="row">
+                        <div class="col-xs-6">
+                            @recommendedFood.Name))
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            @recommendedFood.ShortDescription))
+                        </div>
+                    </div>
+                }
+
+                @if (!isLast)
+                {
+                    <hr />
+                }
+            </div>
+        }
+    }
+}

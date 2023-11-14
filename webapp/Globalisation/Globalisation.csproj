@@ -125,6 +125,7 @@
     <Content Include="GenoTypes\en-gb\TeacherDetails.htm" />
     <Content Include="GenoTypes\en-gb\HunterDetails.htm" />
     <Content Include="GenoTypes\en-gb\ExplorerDetails.htm" />
+    <Content Include="Questionnaires\en-gb\DietaryAdviceGuidelines.htm" />
     <Content Include="Questionnaires\en-gb\DoshasDescription.htm" />
     <Content Include="Questionnaires\en-gb\CBSMethylationDescription.htm" />
     <Content Include="Questionnaires\en-gb\WristCircumferenceTestInstructions.htm" />
