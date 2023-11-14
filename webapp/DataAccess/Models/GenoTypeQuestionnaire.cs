@@ -1,13 +1,13 @@
 ﻿using K9.Base.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Attributes;
 using K9.DataAccessLayer.Enums;
 using K9.Globalisation;
+using K9.SharedLibrary.Extensions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
-using K9.DataAccessLayer.Attributes;
-using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -933,21 +933,25 @@ namespace K9.DataAccessLayer.Models
 
         #region Family History
 
+        [Score(NeurologicalHealth = true, Cognition = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.FamilyHistory)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfNeurologicalDiseaseLabel)]
         public EYesNo? FamilyHistoryOfNeurologicalDisease { get; set; }
 
+        [Score(CardioVascularHealth = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.FamilyHistory)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel)]
         public EYesNo? FamilyHistoryOfHeartDiseaseStrokeOrDiabetes { get; set; }
 
+        [Score(DNAIntegrity = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.FamilyHistory)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfCancerLabel)]
         public EYesNo? FamilyHistoryOfCancer { get; set; }
 
+        [Score(AntiInflammatory = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.FamilyHistory)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfAutoimmuneDiseaseLabel)]

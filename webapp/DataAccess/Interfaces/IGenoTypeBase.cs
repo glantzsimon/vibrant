@@ -77,5 +77,7 @@ namespace K9.DataAccessLayer.Models
         bool Sleep { get; set; }
 
         EDietaryPreference? DietaryPreference { get; set; }
+        
+        bool DNAIntegrity { get; set; }
     }
 }

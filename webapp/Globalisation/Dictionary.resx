@@ -3304,6 +3304,9 @@
   <data name="DigestiveHealth" xml:space="preserve">
     <value>Digestive Health</value>
   </data>
+  <data name="DNAIntegrity" xml:space="preserve">
+    <value>DNA Integrity</value>
+  </data>
   <data name="EasilyOutOfBreathLabel" xml:space="preserve">
     <value>Do you get easily out of breath?</value>
   </data>

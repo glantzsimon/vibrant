@@ -2301,6 +2301,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DNA Integrity.
+        /// </summary>
+        public static string DNAIntegrity {
+            get {
+                return ResourceManager.GetString("DNAIntegrity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dolichocephalic (long-headed).
         /// </summary>
         public static string Dolichocephalic {

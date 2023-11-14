@@ -630,6 +630,10 @@
     <Compile Include="Migrations\202311141130537_RemoveRequiredfields.Designer.cs">
       <DependentUpon>202311141130537_RemoveRequiredfields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311141142484_DNA.cs" />
+    <Compile Include="Migrations\202311141142484_DNA.Designer.cs">
+      <DependentUpon>202311141142484_DNA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
@@ -974,6 +978,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311141130537_RemoveRequiredfields.resx">
       <DependentUpon>202311141130537_RemoveRequiredfields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311141142484_DNA.resx">
+      <DependentUpon>202311141142484_DNA.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
