@@ -14,11 +14,14 @@ namespace K9.WebApplication.Services
         Protocol Duplicate(int id);
         Protocol GetProtocolWithProtocolSections(int id);
         Protocol GetProtocolWithProtocolSections(Guid id);
+        Protocol AutoGenerateProtocolFromGeneticProfile(int clientId, bool saveToDb = false);
+
         void DeleteChildRecords(int id);
         void AddDefaultSections(int id);
         void UpdateSectionDetails(Protocol protocol);
         void UpdateProtocolProductsAndProductPackQuantities(Protocol protocol);
         void CheckProductsAndProductPacksDoNotOverlap(Protocol protocol);
+
 
         List<Protocol> List(bool retrieveFullProtocol = false);
     }

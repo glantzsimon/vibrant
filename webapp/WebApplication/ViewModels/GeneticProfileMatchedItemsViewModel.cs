@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace K9.WebApplication.ViewModels
 {
-    public class GenoTypeBaseItemsViewModel
+    public class GeneticProfileMatchedItemsViewModel
     {
         public List<Protocol> Protocols { get; set; }
         public List<ProductPack> ProductPacks { get; set; }

@@ -18,7 +18,20 @@ namespace K9.WebApplication.Services
         private readonly IRepository<IngredientSubstitute> _ingredientSubstituesRepository;
         private readonly IRepository<ProductPackProduct> _productPackProductsRepository;
 
-        public IngredientService(ILogger logger, IRepository<Ingredient> ingredientsRepository, IRepository<IngredientSubstitute> ingredientSubstituesRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository, IRepository<ProductPackProduct> productPackProductsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository)
+        public IngredientService(
+            ILogger logger, 
+            IRepository<Ingredient> ingredientsRepository, 
+            IRepository<IngredientSubstitute> ingredientSubstituesRepository, 
+            IRepository<Product> productsRepository, 
+            IRepository<ProductPack> productPackRepository, 
+            IRepository<Protocol> protocolsRepository, 
+            IRepository<IngredientSubstitute> ingredientSubstitutesRepository, 
+            IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, 
+            IRepository<Activity> activitiesRepository, 
+            IRepository<DietaryRecommendation> dietaryRecommendationsRepository, 
+            IRepository<FoodItem> foodItemsRepository, 
+            IRepository<ProductPackProduct> productPackProductsRepository) 
+            : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository, foodItemsRepository)
         {
             _logger = logger;
             _ingredientsRepository = ingredientsRepository;

@@ -28,12 +28,34 @@ namespace K9.WebApplication.Services
         private readonly IRepository<ProtocolActivity> _protocolActivitiesRepository;
         private readonly IRepository<Activity> _activitiesRepository;
         private readonly IRepository<ProductPackProduct> _productPackProductsRepository;
+        private readonly IQuestionnaireService _questionnaireService;
         private readonly IRepository<ProtocolDietaryRecommendation> _protocolDietaryRecommendationRepository;
         private readonly IRepository<DietaryRecommendation> _dietaryRecommendationRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public ProtocolService(ILogger logger, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Client> clientsRepository, IRepository<User> usersRepository, IRepository<Protocol> protocolsRepository, IRepository<ProtocolProduct> protocolProductsRepository, IRepository<ProtocolProductPack> protocolProductPackRepository, IRepository<ProtocolSection> protocolProtocolSectionRepository, IRepository<Section> protocolSectionRepository, IRepository<ProtocolSectionProduct> protocolProtocolSectionProductsRepository, IRepository<ProductPackProduct> productPackProductRepository, IRepository<ProtocolActivity> protocolActivitiesRepository, IRepository<ProtocolDietaryRecommendation> protocolDietaryRecommendationRepository, IRepository<DietaryRecommendation> dietaryRecommendationRepository, IRepository<Ingredient> ingredientsRepository,
-            IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository, IRepository<ProductPackProduct> productPackProductsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository)
+        public ProtocolService(ILogger logger, IRepository<Product> productsRepository,
+            IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues,
+            IRepository<Client> clientsRepository, IRepository<User> usersRepository,
+            IRepository<Protocol> protocolsRepository, IRepository<ProtocolProduct> protocolProductsRepository,
+            IRepository<ProtocolProductPack> protocolProductPackRepository,
+            IRepository<ProtocolSection> protocolProtocolSectionRepository,
+            IRepository<Section> protocolSectionRepository,
+            IRepository<ProtocolSectionProduct> protocolProtocolSectionProductsRepository,
+            IRepository<ProductPackProduct> productPackProductRepository,
+            IRepository<ProtocolActivity> protocolActivitiesRepository,
+            IRepository<ProtocolDietaryRecommendation> protocolDietaryRecommendationRepository,
+            IRepository<DietaryRecommendation> dietaryRecommendationRepository,
+            IRepository<Ingredient> ingredientsRepository,
+            IRepository<IngredientSubstitute> ingredientSubstitutesRepository,
+            IRepository<ProductIngredient> productIngredientsRepository,
+            IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository,
+            IRepository<Activity> activitiesRepository,
+            IRepository<DietaryRecommendation> dietaryRecommendationsRepository,
+            IRepository<FoodItem> foodItemsRepository,
+            IRepository<ProductPackProduct> productPackProductsRepository, IQuestionnaireService questionnaireService) :
+            base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository,
+                ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository,
+                activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository, foodItemsRepository)
         {
 
             _logger = logger;
@@ -51,6 +73,7 @@ namespace K9.WebApplication.Services
             _protocolActivitiesRepository = protocolActivitiesRepository;
             _activitiesRepository = activitiesRepository;
             _productPackProductsRepository = productPackProductsRepository;
+            _questionnaireService = questionnaireService;
             _protocolDietaryRecommendationRepository = protocolDietaryRecommendationRepository;
             _dietaryRecommendationRepository = dietaryRecommendationRepository;
             _defaultValues = defaultValues.Value;
@@ -74,7 +97,9 @@ namespace K9.WebApplication.Services
 
         public Protocol FindNext(int id)
         {
-            var protocol = _protocolsRepository.Find(e => e.Id > id).OrderBy(e => e.Id).FirstOrDefault() ?? _protocolsRepository.GetQuery("SELECT TOP 1 * FROM [Protocol] ORDER BY [Id]").FirstOrDefault();
+            var protocol = _protocolsRepository.Find(e => e.Id > id).OrderBy(e => e.Id).FirstOrDefault() ??
+                           _protocolsRepository.GetQuery("SELECT TOP 1 * FROM [Protocol] ORDER BY [Id]")
+                               .FirstOrDefault();
             if (protocol != null)
             {
                 protocol = GetFullProtocol(protocol);
@@ -85,7 +110,9 @@ namespace K9.WebApplication.Services
 
         public Protocol FindPrevious(int id)
         {
-            var protocol = _protocolsRepository.Find(e => e.Id < id).OrderByDescending(e => e.Id).FirstOrDefault() ?? _protocolsRepository.GetQuery("SELECT TOP 1 * FROM [Protocol] ORDER BY [Id] DESC").FirstOrDefault();
+            var protocol = _protocolsRepository.Find(e => e.Id < id).OrderByDescending(e => e.Id).FirstOrDefault() ??
+                           _protocolsRepository.GetQuery("SELECT TOP 1 * FROM [Protocol] ORDER BY [Id] DESC")
+                               .FirstOrDefault();
             if (protocol != null)
             {
                 protocol = GetFullProtocol(protocol);
@@ -140,7 +167,8 @@ namespace K9.WebApplication.Services
             protocol.ProductPacks = _protocolProductPackRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
             foreach (var protocolProductPack in protocol.ProductPacks)
             {
-                protocolProductPack.ProductPack = GetProductPacks().FirstOrDefault(e => e.Id == protocolProductPack.ProductPackId);
+                protocolProductPack.ProductPack =
+                    GetProductPacks().FirstOrDefault(e => e.Id == protocolProductPack.ProductPackId);
 
                 protocolProductPack.ProductPack.Products =
                     _productPackProductRepository.Find(e => e.ProductPackId == protocolProductPack.ProductPack.Id)
@@ -148,7 +176,8 @@ namespace K9.WebApplication.Services
 
                 foreach (var productPackProduct in protocolProductPack.ProductPack.Products)
                 {
-                    productPackProduct.Product = GetProducts().FirstOrDefault(e => e.Id == productPackProduct.ProductId);
+                    productPackProduct.Product =
+                        GetProducts().FirstOrDefault(e => e.Id == productPackProduct.ProductId);
                 }
             }
 
@@ -213,7 +242,8 @@ namespace K9.WebApplication.Services
                             ProtocolSectionId = protocolProtocolSection.Id,
                             ProductId = protocolProduct.ProductId,
                             Product = protocolProduct.Product,
-                            IsVisible = protocolProduct.Product.CheckRecommendations(protocolProtocolSection.Section.Recommendations)
+                            IsVisible = protocolProduct.Product.CheckRecommendations(protocolProtocolSection.Section
+                                .Recommendations)
                         };
                         protocolProtocolSection.ProtocolSectionProducts.Add(protocolSectionProduct);
                     }
@@ -239,7 +269,8 @@ namespace K9.WebApplication.Services
                                 ProtocolSectionId = protocolProtocolSection.Id,
                                 ProductId = productPackProduct.ProductId,
                                 Product = productPackProduct.Product,
-                                IsVisible = productPackProduct.Product.CheckRecommendations(protocolProtocolSection.Section.Recommendations)
+                                IsVisible = productPackProduct.Product.CheckRecommendations(protocolProtocolSection
+                                    .Section.Recommendations)
                             };
                             protocolProtocolSection.ProtocolSectionProducts.Add(protocolSectionProduct);
                         }
@@ -280,6 +311,7 @@ namespace K9.WebApplication.Services
             {
                 protocol = GetFullProtocolNoCache(protocol);
             }
+
             var newProtocolExternalId = Guid.NewGuid();
 
             var newProtocol = new Protocol
@@ -396,11 +428,13 @@ namespace K9.WebApplication.Services
                         .Where(e => e.ProductId == protocolProduct.ProductId).ToList();
 
                     var numberOfProductDosesRequiredPerDay = productSectionProducts.Sum(e => e.Amount);
-                    var numberPerDuration = protocol.GetNumberOfDaysOnPerDuration() * numberOfProductDosesRequiredPerDay;
+                    var numberPerDuration =
+                        protocol.GetNumberOfDaysOnPerDuration() * numberOfProductDosesRequiredPerDay;
 
                     if (numberPerDuration > 0)
                     {
-                        protocolProduct.AmountRequired = (int)Math.Ceiling((decimal)numberPerDuration / (decimal)protocolProduct.Product.Amount);
+                        protocolProduct.AmountRequired =
+                            (int)Math.Ceiling((decimal)numberPerDuration / (decimal)protocolProduct.Product.Amount);
                         protocolProduct.Amount = protocolProduct.AmountRequired;
                     }
                 }
@@ -417,11 +451,14 @@ namespace K9.WebApplication.Services
                             .Where(e => e.ProductId == productPackProduct.ProductId).ToList();
 
                         var numberOfProductDosesRequiredPerDay = productSectionProducts.Sum(e => e.Amount);
-                        var numberPerDuration = protocol.GetNumberOfDaysOnPerDuration() * numberOfProductDosesRequiredPerDay;
+                        var numberPerDuration =
+                            protocol.GetNumberOfDaysOnPerDuration() * numberOfProductDosesRequiredPerDay;
 
                         if (numberPerDuration > 0)
                         {
-                            productPackProduct.AmountRequired = (int)Math.Ceiling((decimal)numberPerDuration / (decimal)productPackProduct.Product.Amount);
+                            productPackProduct.AmountRequired =
+                                (int)Math.Ceiling((decimal)numberPerDuration /
+                                                   (decimal)productPackProduct.Product.Amount);
                         }
                     }
                 }
@@ -443,6 +480,7 @@ namespace K9.WebApplication.Services
                     {
                         continue;
                     }
+
                     if (protocolProduct.Amount > 0 && !items.Any())
                     {
                         // Create new
@@ -456,16 +494,20 @@ namespace K9.WebApplication.Services
                         var sectionMessage =
                             $"ProductName: {product.Name}, {nameof(ProtocolSection.SectionName)}: {protocolProtocolSection.Section.Name}";
                         var acceptableMessage = string.Format(Globalisation.Dictionary.AcceptableValuesMessage,
-                        product.MinDosage, product.MaxDosage);
+                            product.MinDosage, product.MaxDosage);
 
                         if (newItem.Amount > product.MaxDosage)
                         {
-                            throw new ArgumentOutOfRangeException("Amount", $"{Globalisation.Dictionary.ValueTooHighException} {acceptableMessage} {sectionMessage}"); ;
+                            throw new ArgumentOutOfRangeException("Amount",
+                                $"{Globalisation.Dictionary.ValueTooHighException} {acceptableMessage} {sectionMessage}");
+                            ;
                         }
 
                         if (newItem.Amount < product.MinDosage)
                         {
-                            throw new ArgumentOutOfRangeException("Amount", $"{Globalisation.Dictionary.ValueTooLowException} {acceptableMessage} {sectionMessage}"); ;
+                            throw new ArgumentOutOfRangeException("Amount",
+                                $"{Globalisation.Dictionary.ValueTooLowException} {acceptableMessage} {sectionMessage}");
+                            ;
                         }
 
                         _protocolProtocolSectionProductsRepository.Create(newItem);
@@ -543,7 +585,8 @@ namespace K9.WebApplication.Services
 
         public void CheckProductsAndProductPacksDoNotOverlap(Protocol protocol)
         {
-            if (protocol.ProtocolProductPacks != null && protocol.ProtocolProductPacks.Any() && protocol.ProtocolProducts != null && protocol.ProtocolProducts.Any())
+            if (protocol.ProtocolProductPacks != null && protocol.ProtocolProductPacks.Any() &&
+                protocol.ProtocolProducts != null && protocol.ProtocolProducts.Any())
             {
                 // Check that the products in the product packs don't duplicate the products and raise an error if so!
                 if (protocol.ProtocolProductPacks.SelectMany(e => e.ProductPack.Products).Select(e => e.ProductId)
@@ -552,6 +595,90 @@ namespace K9.WebApplication.Services
                     throw new Exception(Globalisation.Dictionary.ProtocolProductsAndProductPacksOverlap);
                 }
             }
+        }
+
+        public Protocol AutoGenerateProtocolFromGeneticProfile(int clientId, bool saveToDb = false)
+        {
+            var hq = _questionnaireService.GetHealthQuestionnaireForClient(clientId);
+            if (hq == null)
+            {
+                return null;
+            }
+
+            var externalId = Guid.NewGuid();
+            var protocol = new Protocol
+            {
+                Name = K9.Globalisation.Dictionary.GeneticProfileProtocol,
+                ShortDescription = K9.Globalisation.Dictionary.GeneticProfileProtocolDescription,
+                ClientId = clientId,
+                Client = _clientsRepository.Find(clientId),
+                ExternalId = externalId,
+                Type = EProtocolType.AutoGenerated,
+                Period = EPeriod.Days,
+                ProtocolFrequency = EProtocolFrequency.Daily,
+                NumberOfPeriodsOff = 1,
+                Duration = EProtocolDuration.ThreeMonths
+            };
+
+            if (saveToDb)
+            {
+                _protocolsRepository.Create(protocol);
+                protocol = _protocolsRepository.Find(e => e.ExternalId == externalId).First();
+            }
+
+            var matchedItems = _questionnaireService.GetGeneticProfileMatchedItems(hq.Id);
+
+            protocol.Activities = matchedItems.Activities.Select(e => new ProtocolActivity
+            {
+                ProtocolId = protocol.Id,
+                Protocol = protocol,
+                ActivityId = e.ActivityId,
+                Activity = GetActivities().FirstOrDefault(a => a.Id == e.ActivityId)
+            }).ToList();
+
+            protocol.DietaryRecommendations = matchedItems.DietaryRecommendations.Select(e =>
+                new ProtocolDietaryRecommendation
+                {
+                    ProtocolId = protocol.Id,
+                    Protocol = protocol,
+                    DietaryRecommendationId = e.DietaryRecommendationId,
+                    DietaryRecommendation =
+                        GetDietaryRecommendations().FirstOrDefault(a => a.Id == e.DietaryRecommendationId)
+                }).ToList();
+
+            protocol.RecommendedFoods = matchedItems.Foods.Select(e => new ProtocolFoodItem
+            {
+                ProtocolId = protocol.Id,
+                Protocol = protocol,
+                FoodItemId = e.FoodItemId,
+                FoodItem = GetFoodItems().FirstOrDefault(a => a.Id == e.FoodItemId)
+            }).ToList();
+
+            protocol.Products = matchedItems.Products.Select(e => new ProtocolProduct
+            {
+                ProtocolId = protocol.Id,
+                Protocol = protocol,
+                ProductId = e.ProductId,
+                Product = GetProducts().FirstOrDefault(a => a.Id == e.ProductId)
+            }).ToList();
+
+            protocol.ProductPacks = matchedItems.ProductPacks.Select(e => new ProtocolProductPack
+            {
+                ProtocolId = protocol.Id,
+                Protocol = protocol,
+                ProductPackId = e.ProductPackId,
+                ProductPack = GetProductPacks().FirstOrDefault(a => a.Id == e.ProductPackId)
+            }).ToList();
+
+            if (saveToDb)
+            {
+                _protocolActivitiesRepository.CreateBatch(protocol.Activities);
+                _protocolDietaryRecommendationRepository.CreateBatch(protocol.DietaryRecommendations);
+                _protocolProductsRepository.CreateBatch(protocol.Products);
+                _protocolProductPackRepository.CreateBatch(protocol.ProductPacks);
+            }
+
+            return protocol;
         }
 
         private void AddDefaultSections(Protocol protocol)
@@ -573,5 +700,6 @@ namespace K9.WebApplication.Services
                 }
             }
         }
+
     }
 }

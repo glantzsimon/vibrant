@@ -26,7 +26,27 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Country> _countriesRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public OrderService(ILogger logger, IRepository<Order> ordersRepository, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPacksRepository, IRepository<Product> productsRepository, IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<Client> clientsRepository, IRepository<User> usersRepository, IRepository<RepCommission> repCommissionsRepository, IRepository<Ingredient> ingredientsRepository, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository, IRepository<ProductPackProduct> productPackProductsRepository, IRepository<Country> countriesRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository)
+        public OrderService(
+            ILogger logger, 
+            IRepository<Order> ordersRepository, 
+            IRepository<OrderProduct> orderProductsRepository, 
+            IRepository<OrderProductPack> orderProductPacksRepository, 
+            IRepository<Product> productsRepository, 
+            IRepository<ProductPack> productPackRepository, 
+            IOptions<DefaultValuesConfiguration> defaultValues, 
+            IRepository<Client> clientsRepository, 
+            IRepository<User> usersRepository, 
+            IRepository<RepCommission> repCommissionsRepository, 
+            IRepository<Ingredient> ingredientsRepository, 
+            IRepository<Protocol> protocolsRepository, 
+            IRepository<IngredientSubstitute> ingredientSubstitutesRepository, 
+            IRepository<ProductIngredient> productIngredientsRepository, 
+            IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, 
+            IRepository<Activity> activitiesRepository, 
+            IRepository<DietaryRecommendation> dietaryRecommendationsRepository, 
+            IRepository<ProductPackProduct> productPackProductsRepository, 
+            IRepository<Country> countriesRepository, 
+            IRepository<FoodItem> foodItemsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository, foodItemsRepository)
         {
             _logger = logger;
             _ordersRepository = ordersRepository;

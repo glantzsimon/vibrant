@@ -38,27 +38,27 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Nomad)]
         public bool Nomad { get; set; }
         
-        [UIHint("GenoTypeScore")]
+        [UIHint("CompatibilityLevel")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.HunterCompatibilityLevel)]
         public ECompatibilityLevel HunterCompatibilityLevel { get; set; }
 
-        [UIHint("GenoTypeScore")]
+        [UIHint("CompatibilityLevel")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.GathererCompatibilityLevel)]
         public ECompatibilityLevel GathererCompatibilityLevel { get; set; }
 
-        [UIHint("GenoTypeScore")]
+        [UIHint("CompatibilityLevel")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.TeacherCompatibilityLevel)]
         public ECompatibilityLevel TeacherCompatibilityLevel { get; set; }
 
-        [UIHint("GenoTypeScore")]
+        [UIHint("CompatibilityLevel")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ExplorerCompatibilityLevel)]
         public ECompatibilityLevel ExplorerCompatibilityLevel { get; set; }
 
-        [UIHint("GenoTypeScore")]
+        [UIHint("CompatibilityLevel")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.WarriorCompatibilityLevel)]
         public ECompatibilityLevel WarriorCompatibilityLevel { get; set; }
 
-        [UIHint("GenoTypeScore")]
+        [UIHint("CompatibilityLevel")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NomadCompatibilityLevel)]
         public ECompatibilityLevel NomadCompatibilityLevel { get; set; }
         

@@ -658,6 +658,7 @@
     <Compile Include="Models\GenoTypeStrengthTestResult.cs" />
     <Compile Include="Models\GenoTypeStrengthTestResults.cs" />
     <Compile Include="Models\HealthQuestionnaireFoodItem.cs" />
+    <Compile Include="Models\ProtocolFoods.cs" />
     <Compile Include="Models\ZodiacModel.cs" />
     <Compile Include="Models\NineStarKiModel.cs" />
     <Compile Include="Models\FoodItem.cs" />

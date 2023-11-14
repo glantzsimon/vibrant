@@ -1,13 +1,13 @@
-﻿using K9.DataAccessLayer.Interfaces;
+﻿using K9.DataAccessLayer.Helpers;
+using K9.DataAccessLayer.Interfaces;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Models;
 using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using K9.DataAccessLayer.Helpers;
-using K9.DataAccessLayer.Models;
-using K9.WebApplication.Models;
 using Activity = K9.DataAccessLayer.Models.Activity;
 
 namespace K9.WebApplication.Services
@@ -25,8 +25,9 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Activity> _activitiesRepository;
         private readonly IRepository<DietaryRecommendation> _dietaryRecommendationsRepository;
         private readonly IRepository<ProductPackProduct> _productPackProductsRepository;
+        private readonly IRepository<FoodItem> _foodItemsRepository;
 
-        public CacheableServiceBase(IRepository<Product> productsRepository, IRepository<ProductPack> productPacksRepository, IRepository<Ingredient> ingredientsRepository, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository, IRepository<ProductPackProduct> productPackProductsRepository)
+        public CacheableServiceBase(IRepository<Product> productsRepository, IRepository<ProductPack> productPacksRepository, IRepository<Ingredient> ingredientsRepository, IRepository<Protocol> protocolsRepository, IRepository<IngredientSubstitute> ingredientSubstitutesRepository, IRepository<ProductIngredient> productIngredientsRepository, IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, IRepository<Activity> activitiesRepository, IRepository<DietaryRecommendation> dietaryRecommendationsRepository, IRepository<ProductPackProduct> productPackProductsRepository, IRepository<FoodItem> foodItemsRepository)
         {
             _productsRepository = productsRepository;
             _productPacksRepository = productPacksRepository;
@@ -38,6 +39,7 @@ namespace K9.WebApplication.Services
             _activitiesRepository = activitiesRepository;
             _dietaryRecommendationsRepository = dietaryRecommendationsRepository;
             _productPackProductsRepository = productPackProductsRepository;
+            _foodItemsRepository = foodItemsRepository;
         }
 
 #if DEBUG
@@ -66,6 +68,15 @@ namespace K9.WebApplication.Services
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
                 return _dietaryRecommendationsRepository.List();
+            });
+        }
+
+        public List<FoodItem> GetFoodItems()
+        {
+            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            {
+                entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
+                return _foodItemsRepository.List();
             });
         }
 

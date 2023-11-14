@@ -80,6 +80,11 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         public List<ProtocolDietaryRecommendation> DietaryRecommendations { get; set; }
 
+        public virtual IEnumerable<ProtocolFoodItem> ProtocolFoodItems { get; set; }
+
+        [NotMapped]
+        public List<ProtocolFoodItem> RecommendedFoods{ get; set; }
+
         public virtual IEnumerable<ProtocolProduct> ProtocolProducts { get; set; }
 
         public ProtocolProduct GetProtocolProductByProductId(int productId) =>
@@ -200,7 +205,7 @@ namespace K9.DataAccessLayer.Models
                        ?.SelectMany(e => e.ProductPack.Products.Select(p => p.Product))
                        .FirstOrDefault(e => e.ProductId == 35);
         }
-
+        
         private int GetDaysDuration()
         {
             switch (Duration)

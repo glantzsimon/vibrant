@@ -69,7 +69,7 @@ namespace K9.WebApplication.Services
             return GetHealthQuestionnaireForClient(client);
         }
 
-        public GenoTypeBaseItemsViewModel GetGenoTypeBaseItems(int id)
+        public GeneticProfileMatchedItemsViewModel GetGeneticProfileMatchedItems(int id)
         {
             var hq = _healthQuestionnaireRepository.Find(id);
             if (hq == null)
@@ -79,7 +79,7 @@ namespace K9.WebApplication.Services
 
             var genoType = hq.CalculateGenotype();
 
-            return new GenoTypeBaseItemsViewModel
+            return new GeneticProfileMatchedItemsViewModel
             {
                 Products = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Product>(_productsRepository.List()), 5),
                 ProductPacks = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<ProductPack>(_productPacksRepository.List()), 3),

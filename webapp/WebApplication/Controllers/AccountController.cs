@@ -7,6 +7,7 @@ using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.Models;
 using K9.Base.WebApplication.Options;
 using K9.Base.WebApplication.Services;
+using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
@@ -19,9 +20,9 @@ using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Enums;
 using WebMatrix.WebData;
 using UserRole = K9.Base.DataAccessLayer.Models.UserRole;
 
@@ -45,9 +46,10 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<Role> _rolesRepository;
         private readonly IOrderService _orderService;
         private readonly IQuestionnaireService _questionnaireService;
+        private readonly IProtocolService _protocolService;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IClientService clientService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<UserProtocol> userProtocolsRepository, IRepository<Protocol> protocolsRepository, IRepository<UserRole> userRolesRepository, IRepository<Role> rolesRepository, IOrderService orderService, IQuestionnaireService questionnaireService)
+        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IClientService clientService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<UserProtocol> userProtocolsRepository, IRepository<Protocol> protocolsRepository, IRepository<UserRole> userRolesRepository, IRepository<Role> rolesRepository, IOrderService orderService, IQuestionnaireService questionnaireService, IProtocolService protocolService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _userRepository = userRepository;
@@ -66,6 +68,7 @@ namespace K9.WebApplication.Controllers
             _rolesRepository = rolesRepository;
             _orderService = orderService;
             _questionnaireService = questionnaireService;
+            _protocolService = protocolService;
             _recaptchaConfig = recaptchaConfig.Value;
 
             websiteConfig.Value.RegistrationEmailTemplateText = Globalisation.Dictionary.WelcomeEmail;
@@ -405,7 +408,7 @@ namespace K9.WebApplication.Controllers
             var protocols = _protocolsRepository.Find(e => userProtocolIds.Contains(e.Id))
                 .ToList();
 
-            return View(new MyAccountViewModel
+            var model = new MyAccountViewModel
             {
                 User = user,
                 Client = clientRecord,
@@ -413,7 +416,28 @@ namespace K9.WebApplication.Controllers
                 Protocols = protocols,
                 Orders = _orderService.ListForClient(clientRecord.Id).Where(e => e.OrderType != EOrderType.ShoppingCart).ToList(),
                 HealthQuestionnaire = _questionnaireService.GetHealthQuestionnaireForUser(WebSecurity.CurrentUserId)
-            });
+            };
+
+            var hq = _questionnaireService.GetHealthQuestionnaireForClient(clientRecord.Id);
+            if (hq != null)
+            {
+                var matchedItems = _questionnaireService.GetGeneticProfileMatchedItems(hq.Id);
+                model.SuggestedProtocols = matchedItems.Protocols;
+
+                if (model.Protocols != null & model.Protocols.Any())
+                {
+                    model.Protocols.Add(_protocolService.AutoGenerateProtocolFromGeneticProfile(clientRecord.Id));
+                }
+                else
+                {
+                    model.Protocols = new List<Protocol>
+                    {
+                        _protocolService.AutoGenerateProtocolFromGeneticProfile(clientRecord.Id)
+                    };
+                }
+            }
+
+            return View(model);
         }
 
         [Authorize]

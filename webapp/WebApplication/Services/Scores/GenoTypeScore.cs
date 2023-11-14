@@ -9,11 +9,16 @@ namespace K9.WebApplication.Services
         {
             var score = 0;
 
-            if (genoType == EGenoType.Hunter && item.AntiInflammatory)
+            if (genoType == EGenoType.Hunter)
             {
-                if (genoType == EGenoType.Hunter)
+                if (item.Hunter)
                 {
                     score += 7;
+
+                    if (item.HunterCompatibilityLevel == ECompatibilityLevel.Excellent)
+                    {
+                        score += 5;
+                    }
                 }
                 else if (item.AntiInflammatory || item.StressRelief || item.AntiOxidant)
                 {
@@ -21,25 +26,82 @@ namespace K9.WebApplication.Services
                 }
             }
 
-            if (item.Gatherer && genoType == EGenoType.Gatherer)
+
+            if (genoType == EGenoType.Gatherer)
             {
-                score += 7;
+                if (item.Gatherer)
+                {
+                    score += 7;
+
+                    if (item.GathererCompatibilityLevel == ECompatibilityLevel.Excellent)
+                    {
+                        score += 5;
+                    }
+                }
             }
-            if (item.Teacher && genoType == EGenoType.Teacher)
+
+            if (genoType == EGenoType.Teacher)
             {
-                score += 7;
+                if (item.Teacher)
+                {
+                    score += 7;
+
+                    if (item.TeacherCompatibilityLevel == ECompatibilityLevel.Excellent)
+                    {
+                        score += 5;
+                    }
+                }
             }
-            if (item.Explorer && genoType == EGenoType.Explorer)
+
+            if (genoType == EGenoType.Explorer)
             {
-                score += 7;
+                if (item.Explorer)
+                {
+                    score += 7;
+
+                    if (item.ExplorerCompatibilityLevel == ECompatibilityLevel.Excellent)
+                    {
+                        score += 5;
+                    }
+                }
+                else if (item.BloodBuilding || item.Restorative || item.Detoxification)
+                {
+                    score += 3;
+                }
             }
-            if (item.Warrior && genoType == EGenoType.Warrior)
+
+            if (genoType == EGenoType.Warrior)
             {
-                score += 7;
+                if (item.Warrior)
+                {
+                    score += 7;
+
+                    if (item.WarriorCompatibilityLevel == ECompatibilityLevel.Excellent)
+                    {
+                        score += 5;
+                    }
+                }
+                else if (item.AntiOxidant)
+                {
+                    score += 3;
+                }
             }
-            if (item.Nomad && genoType == EGenoType.Nomad)
+
+            if (genoType == EGenoType.Nomad)
             {
-                score += 7;
+                if (item.Nomad)
+                {
+                    score += 7;
+
+                    if (item.NomadCompatibilityLevel == ECompatibilityLevel.Excellent)
+                    {
+                        score += 5;
+                    }
+                }
+                else if (item.Immunity)
+                {
+                    score += 3;
+                }
             }
 
             return score;

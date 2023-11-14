@@ -265,6 +265,7 @@
     <Compile Include="Controllers\HealthQuestionnaireController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\HealthQuestionnaireFoodItemsController.cs" />
+    <Compile Include="Controllers\ProtocolFoodItemsController.cs" />
     <Compile Include="Controllers\ShoppingCartControllerAjax.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\RepCommissionsController.cs" />
@@ -402,7 +403,7 @@
     <Compile Include="Services\QrCodeService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\IUserService.cs" />
-    <Compile Include="ViewModels\GenoTypeBaseItemsViewModel.cs" />
+    <Compile Include="ViewModels\GeneticProfileMatchedItemsViewModel.cs" />
     <Compile Include="ViewModels\ProtocolReviewViewModel.cs" />
     <Compile Include="ViewModels\RepCommissionViewModel.cs" />
     <Compile Include="ViewModels\OrdersReviewViewModel.cs" />
@@ -1678,7 +1679,8 @@
     <Content Include="Views\FoodItems\Edit.cshtml" />
     <Content Include="Views\FoodItems\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DietaryPreference.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\GenoTypeScore.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CompatibilityLevel.cshtml" />
+    <Content Include="Views\Protocols\_SummaryFoods.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

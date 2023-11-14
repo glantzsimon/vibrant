@@ -36,6 +36,7 @@ namespace K9.DataAccessLayer.Database
         public DbSet<ProtocolSectionProduct> ProtocolSectionProducts { get; set; }
         public DbSet<ProtocolActivity> ProtocolActivities { get; set; }
         public DbSet<ProtocolDietaryRecommendation> ProtocolDietaryRecommendations { get; set; }
+        public DbSet<ProtocolFoodItem> ProtocolFoodItems { get; set; }
         public DbSet<RepCommission> RepCommissions { get; set; }
 
         public DbSet<Models.HealthQuestionnaire> HealthQuestionnaires { get; set; }
