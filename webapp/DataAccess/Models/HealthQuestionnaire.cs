@@ -57,7 +57,7 @@ namespace K9.DataAccessLayer.Models
                    IsDermatoglyphicsComplete() ||
                    IsTasterStatusComplete();
         }
-        
+
         public int GetDentalHealthScore()
         {
             double totalScore = 11;
@@ -67,7 +67,7 @@ namespace K9.DataAccessLayer.Models
             {
                 score++;
             }
-            
+
             if (RootCanals == EYesNo.Yes)
             {
                 score++;
@@ -90,17 +90,17 @@ namespace K9.DataAccessLayer.Models
             {
                 score++;
             }
-            
+
             if (CrackedTeeth == EYesNo.Yes)
             {
                 score++;
             }
-            
+
             if (Cavities == EYesNo.Yes)
             {
                 score++;
             }
-            
+
             if (!string.IsNullOrEmpty(DentalIssues))
             {
                 score++;
@@ -146,28 +146,28 @@ namespace K9.DataAccessLayer.Models
                 score++;
                 score++;
             }
-            
+
             if (RacingThoughts == EYesNo.Yes)
             {
                 score++;
                 score++;
             }
-            
+
             if (InnerTension == EYesNo.Yes)
             {
                 score++;
             }
-            
+
             if (LoudNoisesBrightLights == EYesNo.Yes)
             {
                 score++;
             }
-            
+
             if (OCD == EYesNo.Yes)
             {
                 score++;
             }
-            
+
             if (Irritability == EYesNo.Yes)
             {
                 score++;
@@ -219,7 +219,7 @@ namespace K9.DataAccessLayer.Models
             {
                 score++;
             }
-            
+
             return (int)Math.Ceiling((score / totalScore) * 100);
         }
 
@@ -254,7 +254,7 @@ namespace K9.DataAccessLayer.Models
             {
                 score++;
             }
-            
+
             return (int)Math.Ceiling((score / totalScore) * 100);
         }
 
@@ -582,6 +582,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsLGBTQPlusLabel)]
         public EYesNo? IsIsLGBTQPlus { get; set; }
 
+        [UIHint("DietaryPreference")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DietaryPreference)]
+        public EDietaryPreference? DietaryPreference { get; set; }
+
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DateOfBirthLabel)]
         public DateTime? DateOfBirth { get; set; }
 
@@ -590,7 +594,7 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.MultilineText)]
         public string GenderName => Gender?.GetLocalisedLanguageName();
 
-        public string GenderPossessivePronoun => Gender == EGender.Male ? Dictionary.His : Gender == EGender.Female ?  Dictionary.Hers : Dictionary.Theirs;
+        public string GenderPossessivePronoun => Gender == EGender.Male ? Dictionary.His : Gender == EGender.Female ? Dictionary.Hers : Dictionary.Theirs;
 
         public string GenderPronoun => Gender == EGender.Male ? Dictionary.He : Gender == EGender.Female ? Dictionary.She : Dictionary.They;
 
@@ -628,11 +632,11 @@ namespace K9.DataAccessLayer.Models
             return DateOfBirth.HasValue ? (DateTime.Now.Year - DateOfBirth.Value.Year) - (DateTime.Now.DayOfYear < DateOfBirth.Value.DayOfYear ? 1 : 0) : (int?)null;
         }
 
-        public bool IsPersonalInformationComplete() => DateOfBirth.HasValue && Gender.HasValue && IsIsLGBTQPlus.HasValue;
+        public bool IsPersonalInformationComplete() => DateOfBirth.HasValue && Gender.HasValue && IsIsLGBTQPlus.HasValue && DietaryPreference.HasValue;
 
         #endregion
 
-        
+
         #region Cardiovascular Health
 
         [UIHint("YesNo")]
@@ -649,12 +653,12 @@ namespace K9.DataAccessLayer.Models
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PalpitationsLabel)]
         public EYesNo? Palpitations { get; set; }
-        
+
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EasilyOutOfBreathLabel)]
         public EYesNo? EasilyOutOfBreath { get; set; }
-        
+
         #endregion
 
 
@@ -809,7 +813,7 @@ namespace K9.DataAccessLayer.Models
             {
                 score++;
             }
-            
+
             if (Herpes == EYesNo.Yes)
             {
                 score++;
@@ -923,7 +927,7 @@ namespace K9.DataAccessLayer.Models
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.JointInflammationLabel)]
         public EYesNo? JointInflammation { get; set; }
-        
+
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AutoImmunityLabel)]
@@ -953,7 +957,7 @@ namespace K9.DataAccessLayer.Models
             {
                 score++;
             }
-            
+
             if (Irritability == EYesNo.Yes)
             {
                 score++;
@@ -1037,7 +1041,7 @@ namespace K9.DataAccessLayer.Models
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CrackedTeeth)]
         public EYesNo? CrackedTeeth { get; set; }
-        
+
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Cavities)]

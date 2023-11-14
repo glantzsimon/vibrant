@@ -1,5 +1,6 @@
 ﻿using K9.Base.DataAccessLayer.Models;
 using System.ComponentModel.DataAnnotations;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -107,10 +108,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Sleep)]
         public bool Sleep { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NourishesYin)]
-        public bool NourishesYin { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NourishesYang)]
-        public bool NourishesYang { get; set; }
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DietaryPreference)]
+        public EDietaryPreference? DietaryPreference { get; set; }
     }
 }

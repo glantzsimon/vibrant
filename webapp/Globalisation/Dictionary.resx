@@ -3253,6 +3253,9 @@
   <data name="CardiovascularHealth" xml:space="preserve">
     <value>Cardiovascular Health</value>
   </data>
+  <data name="Carnivore" xml:space="preserve">
+    <value>Carnivore</value>
+  </data>
   <data name="Cavities" xml:space="preserve">
     <value>Do you have any cavities?</value>
   </data>
@@ -3289,6 +3292,12 @@
   <data name="DentalIssues" xml:space="preserve">
     <value>Dental Issues</value>
   </data>
+  <data name="DietaryPreferenceQuestionLabel" xml:space="preserve">
+    <value>Which of the following most accurately describes your dietary preferences?</value>
+  </data>
+  <data name="DietaryPreferences" xml:space="preserve">
+    <value>Dietary Preferences</value>
+  </data>
   <data name="DigestiveHealth" xml:space="preserve">
     <value>Digestive Health</value>
   </data>
@@ -3306,6 +3315,12 @@
   </data>
   <data name="Fertility" xml:space="preserve">
     <value>Fertiliy</value>
+  </data>
+  <data name="Flexible" xml:space="preserve">
+    <value>Flexible</value>
+  </data>
+  <data name="Fruitarian" xml:space="preserve">
+    <value>Fruitarian</value>
   </data>
   <data name="GathererDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>genotypes\en-gb\gathererdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -3361,6 +3376,9 @@
   <data name="NeurologicalHealth" xml:space="preserve">
     <value>Neurological Health</value>
   </data>
+  <data name="NineStarKiHealthAdvice" xml:space="preserve">
+    <value>Nine Star Ki Health Advice</value>
+  </data>
   <data name="NomadDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>genotypes\en-gb\nomaddetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -3373,8 +3391,14 @@
   <data name="NutritionExpertise" xml:space="preserve">
     <value>Health Expertise</value>
   </data>
+  <data name="Omnivore" xml:space="preserve">
+    <value>Omnivore</value>
+  </data>
   <data name="PalpitationsLabel" xml:space="preserve">
     <value>Do you ever get palpitations?</value>
+  </data>
+  <data name="Pescatarian" xml:space="preserve">
+    <value>Pescatarian</value>
   </data>
   <data name="PhysicalTrauma" xml:space="preserve">
     <value>Details of Major Physical Trauma</value>
@@ -3435,6 +3459,12 @@
   </data>
   <data name="VataPittaDoshaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>doshas\en-gb\vatapittadoshadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Vegan" xml:space="preserve">
+    <value>Vegan</value>
+  </data>
+  <data name="Vegetarian" xml:space="preserve">
+    <value>Vegetarian</value>
   </data>
   <data name="Vitality" xml:space="preserve">
     <value>Vitality</value>

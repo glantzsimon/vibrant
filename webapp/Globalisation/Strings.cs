@@ -108,6 +108,8 @@
             public const string CustomerEmailLabel = "CustomerEmailLabel";
             public const string GenderLabel = "GenderLabel";
             public const string IsLGBTQPlusLabel = "IsLGBTQPlusLabel";
+            public const string DietaryPreferenceQuestionLabel = "DietaryPreferenceQuestionLabel";
+            public const string DietaryPreference = "DietaryPreference";
             public const string DateOfBirthLabel = "DateOfBirthLabel";
             public const string SummaryLabel = "SummaryLabel";
             public const string OverviewLabel = "OverviewLabel";
@@ -289,6 +291,7 @@
             public const string StrongYangOrgans = "StrongYangOrgans";
             public const string WeakYinOrgans = "WeakYinOrgans";
             public const string WeakYangOrgans = "WeakYangOrgans";
+            public const string NineStarKiHealthAdvice = "NineStarKiHealthAdvice";
 
             public const string CurrentHealthIssuesLabel = "CurrentHealthIssuesLabel";
             public const string HealthGoalsLabel = "HealthGoalsLabel";
@@ -497,6 +500,13 @@
             public const string Gallbladder = "Gallbladder";
             public const string SmallIntestine = "SmallIntestine";
 
+            public const string Omnivore = "Omnivore";
+            public const string Vegetarian = "Vegetarian";
+            public const string Vegan = "Vegan";
+            public const string Fruitarian = "Fruitarian";
+            public const string Carnivore = "Carnivore";
+            public const string Pescatarian = "Pescatarian";
+            
             public const string VataDosha = "VataDosha";
             public const string PittaDosha = "PittaDosha";
             public const string KaphaDosha = "KaphaDosha";
@@ -656,7 +666,7 @@
             public const string Pregnancy = "Pregnancy";
             public const string Vitality = "Vitality";
             public const string Fertility = "Fertility";
-            public const string Mood = "Cognition";
+            public const string Mood = "Mood";
             public const string Cognition = "Cognition";
             public const string Sleep = "Sleep";
             public const string NourishesYin = "NourishesYin";

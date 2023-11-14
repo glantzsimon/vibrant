@@ -113,6 +113,16 @@ namespace K9.WebApplication.Controllers
                 ModelState.AddModelError(nameof(HealthQuestionnaire.Gender), Base.Globalisation.Dictionary.FieldIsRequired);
             }
 
+            if (!model.IsIsLGBTQPlus.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.IsIsLGBTQPlus), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.DietaryPreference.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.DietaryPreference), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
             #endregion
 
             #region Blood
@@ -311,8 +321,7 @@ namespace K9.WebApplication.Controllers
             }
             
             #endregion
-
-
+            
             #region Dentition
 
             if (!model.IncisorShovelling.HasValue)
@@ -359,7 +368,7 @@ namespace K9.WebApplication.Controllers
             }
             
             #endregion
-
+            
             #region Cbs Methylation
 
             if (!model.WhiteSpotsOnNails.HasValue)
@@ -461,12 +470,7 @@ namespace K9.WebApplication.Controllers
             {
                 ModelState.AddModelError(nameof(HealthQuestionnaire.OCD), Base.Globalisation.Dictionary.FieldIsRequired);
             }
-
-            if (!model.OCD.HasValue)
-            {
-                ModelState.AddModelError(nameof(HealthQuestionnaire.OCD), Base.Globalisation.Dictionary.FieldIsRequired);
-            }
-
+            
             if (!model.ChronicViralInfections.HasValue)
             {
                 ModelState.AddModelError(nameof(HealthQuestionnaire.ChronicViralInfections), Base.Globalisation.Dictionary.FieldIsRequired);
@@ -499,6 +503,144 @@ namespace K9.WebApplication.Controllers
 
             #endregion
 
+            #region General Health
+
+            if (!model.CurrentHealthLevel.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.CurrentHealthLevel), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (!model.NutritionExpertiseLevel.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.NutritionExpertiseLevel), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (!model.EnjoysCooking.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.EnjoysCooking), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (!model.CookingFrequency.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.CookingFrequency), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (!model.Bloating.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.Bloating), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            if (!model.Gas.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.Gas), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.LooseStool.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.LooseStool), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.Constipation.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.Constipation), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.AbdominalPainOrCramping.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.AbdominalPainOrCramping), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.SkinIssues.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.SkinIssues), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.CoatedTongue.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.CoatedTongue), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.InfectionSeverity.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.InfectionSeverity), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.UTI.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.UTI), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.ColdExtremities.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.ColdExtremities), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.ColdIntolerant.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.ColdIntolerant), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.CandidaAndFungus.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.CandidaAndFungus), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.JointInflammation.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.JointInflammation), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.Autoimmunity.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.Autoimmunity), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.Smoke.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.Smoke), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.DrinksAlcohol.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.DrinksAlcohol), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.AmalgamFillings.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.AmalgamFillings), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.AmalgamFillingsHistory.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.AmalgamFillingsHistory), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.ToothPain.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.ToothPain), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.TMJ.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.TMJ), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.CrackedTeeth.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.CrackedTeeth), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.Cavities.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.Cavities), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+
+            if (!model.RootCanals.HasValue)
+            {
+                ModelState.AddModelError(nameof(HealthQuestionnaire.RootCanals), Base.Globalisation.Dictionary.FieldIsRequired);
+            }
+            
+            #endregion
 
             if (model.IsComplete() && ModelState.IsValid)
             {

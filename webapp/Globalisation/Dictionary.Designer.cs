@@ -1033,6 +1033,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Carnivore.
+        /// </summary>
+        public static string Carnivore {
+            get {
+                return ResourceManager.GetString("Carnivore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Category.
         /// </summary>
         public static string Category {
@@ -2184,6 +2193,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Which of the following most accurately describes your dietary preferences?.
+        /// </summary>
+        public static string DietaryPreferenceQuestionLabel {
+            get {
+                return ResourceManager.GetString("DietaryPreferenceQuestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dietary Preferences.
+        /// </summary>
+        public static string DietaryPreferences {
+            get {
+                return ResourceManager.GetString("DietaryPreferences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dietary Recommendation.
         /// </summary>
         public static string DietaryRecommendation {
@@ -3305,6 +3332,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Flexible.
+        /// </summary>
+        public static string Flexible {
+            get {
+                return ResourceManager.GetString("Flexible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Food.
         /// </summary>
         public static string FoodItem {
@@ -3382,6 +3418,15 @@ namespace K9.Globalisation {
         public static string FrizzyHairTypeLabel {
             get {
                 return ResourceManager.GetString("FrizzyHairTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fruitarian.
+        /// </summary>
+        public static string Fruitarian {
+            get {
+                return ResourceManager.GetString("Fruitarian", resourceCulture);
             }
         }
         
@@ -5707,6 +5752,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nine Star Ki Health Advice.
+        /// </summary>
+        public static string NineStarKiHealthAdvice {
+            get {
+                return ResourceManager.GetString("NineStarKiHealthAdvice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         public static string No {
@@ -6012,6 +6066,15 @@ namespace K9.Globalisation {
         public static string OilySkin {
             get {
                 return ResourceManager.GetString("OilySkin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Omnivore.
+        /// </summary>
+        public static string Omnivore {
+            get {
+                return ResourceManager.GetString("Omnivore", resourceCulture);
             }
         }
         
@@ -6444,6 +6507,15 @@ namespace K9.Globalisation {
         public static string PersonalUse {
             get {
                 return ResourceManager.GetString("PersonalUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pescatarian.
+        /// </summary>
+        public static string Pescatarian {
+            get {
+                return ResourceManager.GetString("Pescatarian", resourceCulture);
             }
         }
         
@@ -9912,6 +9984,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vegan.
+        /// </summary>
+        public static string Vegan {
+            get {
+                return ResourceManager.GetString("Vegan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vegan or Omnivore.
         /// </summary>
         public static string VeganOrOmni {
@@ -9926,6 +10007,15 @@ namespace K9.Globalisation {
         public static string Vegetables {
             get {
                 return ResourceManager.GetString("Vegetables", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vegetarian.
+        /// </summary>
+        public static string Vegetarian {
+            get {
+                return ResourceManager.GetString("Vegetarian", resourceCulture);
             }
         }
         

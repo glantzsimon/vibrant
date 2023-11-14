@@ -18,12 +18,12 @@
 
     <div class="row">
         <div class="col-xs-12">
-            @foreach (var property in Model.GetCbsProperties())
+            @foreach (var property in Model.GeneralHealthProperties())
             {
                 var value = Model.GetProperty(property);
                 if (value != null)
                 {
-                    if ((EYesNo) value == EYesNo.Yes)
+                    if ((EYesNo)value == EYesNo.Yes)
                     {
                         <span class="summary-item">@property.Name.SplitOnCapitalLetter()</span>
                     }
@@ -31,6 +31,8 @@
             }
         </div>
     </div>
+
+    <br />
 
     <div class="row">
         <div class="col-xs-12 col-md-6">
@@ -71,11 +73,13 @@
         </div>
     }
 
-    <div class="col-xs-4 col-sm-3 col-md-2">
-        @Html.BootstrapDisplayFor(e => e.InfectionSeverity, new EditorOptions
-        {
-            Label = Dictionary.InfectionSeverity
-        })
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            @Html.BootstrapDisplayFor(e => e.InfectionSeverity, new EditorOptions
+            {
+                Label = Dictionary.InfectionSeverity
+            })
+        </div>
     </div>
 
     <div class="row">

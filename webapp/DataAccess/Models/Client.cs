@@ -83,7 +83,7 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Html)]
         [AllowHtml]
         public string Notes { get; set; }
-
+        
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsUnsubscribedLabel)]
         public bool IsUnsubscribed { get; set; }
 

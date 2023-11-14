@@ -1,6 +1,7 @@
 ﻿using K9.DataAccessLayer.Enums;
 using K9.Globalisation;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 using K9.DataAccessLayer.Attributes;
 using K9.SharedLibrary.Extensions;
 
@@ -27,6 +28,11 @@ namespace K9.DataAccessLayer.Models
         [UIHint("NineStarKiEnergy")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MonthlyCycleEnergy)]
         public ENineStarKiEnergy MonthlyCycleEnergy { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NineStarKiHealthAdvice)]
+        [DataType(DataType.Html)]
+        [AllowHtml]
+        public string HealthAdvice {get; set; }
 
         [UIHint("Organ")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StrongYinOrgans)]
