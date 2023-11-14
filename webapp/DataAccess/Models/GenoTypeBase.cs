@@ -1,11 +1,16 @@
 ﻿using K9.Base.DataAccessLayer.Models;
-using System.ComponentModel.DataAnnotations;
 using K9.DataAccessLayer.Enums;
+using K9.SharedLibrary.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace K9.DataAccessLayer.Models
 {
-    public abstract class GenoTypeBase : ObjectBase
+    public abstract class GenoTypeBase : ObjectBase, IObjectBase
     {
+        [NotMapped]
+        public int Score { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VataDosha)]
         public bool VataDosha { get; set; }
 

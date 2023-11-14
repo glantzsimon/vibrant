@@ -3292,11 +3292,11 @@
   <data name="DentalIssues" xml:space="preserve">
     <value>Dental Issues</value>
   </data>
+  <data name="DietaryPreference" xml:space="preserve">
+    <value>Dietary Preferences</value>
+  </data>
   <data name="DietaryPreferenceQuestionLabel" xml:space="preserve">
     <value>Which of the following most accurately describes your dietary preferences?</value>
-  </data>
-  <data name="DietaryPreferences" xml:space="preserve">
-    <value>Dietary Preferences</value>
   </data>
   <data name="DigestiveHealth" xml:space="preserve">
     <value>Digestive Health</value>

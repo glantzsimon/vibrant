@@ -2193,20 +2193,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dietary Preferences.
+        /// </summary>
+        public static string DietaryPreference {
+            get {
+                return ResourceManager.GetString("DietaryPreference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Which of the following most accurately describes your dietary preferences?.
         /// </summary>
         public static string DietaryPreferenceQuestionLabel {
             get {
                 return ResourceManager.GetString("DietaryPreferenceQuestionLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Dietary Preferences.
-        /// </summary>
-        public static string DietaryPreferences {
-            get {
-                return ResourceManager.GetString("DietaryPreferences", resourceCulture);
             }
         }
         

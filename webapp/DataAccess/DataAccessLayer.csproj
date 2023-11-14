@@ -616,6 +616,10 @@
     <Compile Include="Migrations\202311140808450_DietaryPreference.Designer.cs">
       <DependentUpon>202311140808450_DietaryPreference.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311140855563_FoodItemRemoveRequiredFields.cs" />
+    <Compile Include="Migrations\202311140855563_FoodItemRemoveRequiredFields.Designer.cs">
+      <DependentUpon>202311140855563_FoodItemRemoveRequiredFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
@@ -951,6 +955,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311140808450_DietaryPreference.resx">
       <DependentUpon>202311140808450_DietaryPreference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311140855563_FoodItemRemoveRequiredFields.resx">
+      <DependentUpon>202311140855563_FoodItemRemoveRequiredFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
