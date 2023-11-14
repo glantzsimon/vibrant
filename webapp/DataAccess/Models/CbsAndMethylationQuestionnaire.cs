@@ -21,12 +21,13 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WhiteSpotsOnNailsLabel)]
         public EYesNo? WhiteSpotsOnNails { get; set; }
 
-        [Score(CardioVascularHealth = true)]
+        [Score(CardioVascularHealth = true, BloodBuilding = true, Restorative = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AnaemiaLabel)]
         public EYesNo? Anaemia { get; set; }
 
+        [Score(Restorative = true, )]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PostExertionalMalaiseLabel)]

@@ -375,6 +375,17 @@
     <Compile Include="Services\IShoppingCartService.cs" />
     <Compile Include="Services\IQuestionnaireService.cs" />
     <Compile Include="Services\HealthQuestionnaireService.cs" />
+    <Compile Include="Services\Scores\DigestionScore.cs" />
+    <Compile Include="Services\Scores\DetoxScore.cs" />
+    <Compile Include="Services\Scores\ImmunityScore.cs" />
+    <Compile Include="Services\Scores\InflammationScore.cs" />
+    <Compile Include="Services\Scores\CardiovascularScore.cs" />
+    <Compile Include="Services\Scores\NeurologicalScore.cs" />
+    <Compile Include="Services\Scores\DentalHealthScore.cs" />
+    <Compile Include="Services\Scores\DoshasScore.cs" />
+    <Compile Include="Services\Scores\FiveElementScore.cs" />
+    <Compile Include="Services\Scores\CbsScore.cs" />
+    <Compile Include="Services\Scores\GenoTypeScore.cs" />
     <Compile Include="Services\Scores\IScore.cs" />
     <Compile Include="Services\ShoppingCartService.cs" />
     <Compile Include="Services\ProtocolService.cs" />
