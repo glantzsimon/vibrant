@@ -1,5 +1,4 @@
 ﻿using K9.Base.DataAccessLayer.Models;
-using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -112,18 +111,29 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Sleep)]
         public bool Sleep { get; set; }
-
-        [UIHint("DietaryPreference")]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DietaryPreference)]
-        public EDietaryPreference? DietaryPreference { get; set; }
-
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BloodBuilding)]
         public bool BloodBuilding { get; set; }
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.Restorative)]
         public bool Restorative { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DNAIntegrity)]
         public bool DNAIntegrity { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Vegetarian)]
+        public bool Vegetarian { get; set; }
+        
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Vegan)]
+        public bool Vegan { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Fruitarian)]
+        public bool Fruitarian { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Carnivore)]
+        public bool Carnivore { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Pescatarian)]
+        public bool Pescatarian { get; set; }
     }
 }

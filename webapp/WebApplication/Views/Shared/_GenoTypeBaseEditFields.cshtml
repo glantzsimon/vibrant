@@ -5,8 +5,27 @@
 
 <div class="well">
     <div class="row">
+        <div class="col-xs-12">
+            <h4 class="section-title">@Dictionary.DietaryRecommendation</h4>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-4 col-xs-6">
-            @Html.BootstrapEditorFor(model => model.DietaryPreference)
+            @Html.BootstrapEditorFor(model => model.Vegetarian)
+        </div>
+        <div class="col-sm-4 col-xs-6">
+            @Html.BootstrapEditorFor(model => model.Vegan)
+        </div>
+        <div class="col-sm-4 col-xs-6">
+            @Html.BootstrapEditorFor(model => model.Fruitarian)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-xs-6">
+            @Html.BootstrapEditorFor(model => model.Carnivore)
+        </div>
+        <div class="col-sm-4 col-xs-6">
+            @Html.BootstrapEditorFor(model => model.Pescatarian)
         </div>
     </div>
 </div>

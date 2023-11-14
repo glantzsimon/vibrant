@@ -1,6 +1,4 @@
-﻿using K9.DataAccessLayer.Enums;
-
-namespace K9.DataAccessLayer.Models
+﻿namespace K9.DataAccessLayer.Models
 {
     public interface IGenoTypeBase 
     {
@@ -75,9 +73,17 @@ namespace K9.DataAccessLayer.Models
         bool Cognition { get; set; }
 
         bool Sleep { get; set; }
-
-        EDietaryPreference? DietaryPreference { get; set; }
         
         bool DNAIntegrity { get; set; }
+
+        bool Vegetarian { get; set; }
+        
+        bool Vegan { get; set; }
+
+        bool Fruitarian { get; set; }
+
+        bool Carnivore { get; set; }
+
+        bool Pescatarian { get; set; }
     }
 }

@@ -117,8 +117,44 @@ namespace K9.WebApplication.Services
         private int GetGenoTypeItemScore(HealthQuestionnaire hq, EGenoType genoType, GenoTypeBase item)
         {
             var score = 0;
-            var scoredProperties = hq.GetPropertiesWithAttribute(typeof(ScoreAttribute)).ToList();
 
+            if (hq.DietaryPreference == EDietaryPreference.Vegetarian)
+            {
+                if (item.Carnivore || item.Pescatarian)
+                {
+                    return 0;
+                }
+            }
+            if (hq.DietaryPreference == EDietaryPreference.Vegan)
+            {
+                if (item.Vegetarian || item.Carnivore || item.Pescatarian)
+                {
+                    return 0;
+                }
+            }
+            if (hq.DietaryPreference == EDietaryPreference.Fruitarian)
+            {
+                if (item.Vegan || item.Vegetarian || item.Carnivore || item.Pescatarian)
+                {
+                    return 0;
+                }
+            }
+            if (hq.DietaryPreference == EDietaryPreference.Carnivore)
+            {
+                if (item.Vegan || item.Vegetarian || item.Fruitarian)
+                {
+                    return 0;
+                }
+            }
+            if (hq.DietaryPreference == EDietaryPreference.Pescatarian)
+            {
+                if (item.Carnivore)
+                {
+                    return 0;
+                }
+            }
+
+            var scoredProperties = hq.GetPropertiesWithAttribute(typeof(ScoreAttribute)).ToList();
             foreach (var scoredProperty in scoredProperties)
             {
                 var attributeValue = hq.GetProperty(scoredProperty.Name);

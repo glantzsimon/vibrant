@@ -41,10 +41,14 @@ namespace K9.DataAccessLayer.Attributes
         public bool Mood { get; set; }
         public bool Cognition { get; set; }
         public bool Sleep { get; set; }
-        public EDietaryPreference? DietaryPreference { get; set; }
         public bool BloodBuilding { get; set; }
         public bool Restorative { get; set; }
         public bool DNAIntegrity { get; set; }
+        public bool Vegetarian { get; set; }
+        public bool Vegan { get; set; }
+        public bool Fruitarian { get; set; }
+        public bool Carnivore { get; set; }
+        public bool Pescatarian { get; set; }
     }
 
 }
