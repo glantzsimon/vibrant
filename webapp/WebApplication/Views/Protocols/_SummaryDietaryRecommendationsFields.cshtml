@@ -17,26 +17,38 @@
                     <h4>@dietaryRecommendation.Name</h4>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.Recommendations), dietaryRecommendation.Recommendations, true)
+            @if (!string.IsNullOrEmpty(dietaryRecommendation.Recommendations))
+            {
+                <div class="row">
+                    <div class="col-xs-12">
+                        @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.Recommendations), dietaryRecommendation.Recommendations, true)
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.Benefits), dietaryRecommendation.Benefits)
+            }
+
+            @if (!string.IsNullOrEmpty(dietaryRecommendation.Recommendations))
+            {
+                <div class="row">
+                    <div class="col-xs-12">
+                        @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.Benefits), dietaryRecommendation.Benefits)
+                    </div>
                 </div>
-            </div>
+            }
+
             <div class="row">
                 <div class="col-xs-12">
                     @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.ShortDescription), dietaryRecommendation.ShortDescription)
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.Body), dietaryRecommendation.Body)
+
+            @if (!string.IsNullOrEmpty(dietaryRecommendation.Body))
+            {
+                <div class="row">
+                    <div class="col-xs-12">
+                        @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.Body), dietaryRecommendation.Body)
+                    </div>
                 </div>
-            </div>
+            }
 
             @if (!isLast)
             {

@@ -28,21 +28,18 @@ namespace K9.DataAccessLayer.Models
         public string ShortDescription { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DetailsLabel)]
-        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [StringLength(int.MaxValue)]
         [DataType(DataType.Html)]
         [AllowHtml]
         public string Body { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BenefitsLabel)]
-        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [StringLength(int.MaxValue)]
         [DataType(DataType.Html)]
         [AllowHtml]
         public string Benefits { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RecommendationsLabel)]
-        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [StringLength(int.MaxValue)]
         [DataType(DataType.Html)]
         [AllowHtml]
