@@ -21,9 +21,7 @@ namespace K9.DataAccessLayer.Models
         bool Warrior { get; set; }
 
         bool Nomad { get; set; }
-
-        EGenoTypeScore GenoTypeScore { get; set; }
-
+        
         bool Water { get; set; }
 
         bool Earth { get; set; }

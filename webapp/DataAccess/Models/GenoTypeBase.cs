@@ -34,14 +34,34 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Warrior)]
         public bool Warrior { get; set; }
-        
-        [UIHint("GenoTypeScore")]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.GenoTypeScore)]
-        public EGenoTypeScore GenoTypeScore { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Nomad)]
         public bool Nomad { get; set; }
+        
+        [UIHint("GenoTypeScore")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.HunterCompatibilityLevel)]
+        public ECompatibilityLevel HunterCompatibilityLevel { get; set; }
 
+        [UIHint("GenoTypeScore")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.GathererCompatibilityLevel)]
+        public ECompatibilityLevel GathererCompatibilityLevel { get; set; }
+
+        [UIHint("GenoTypeScore")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.TeacherCompatibilityLevel)]
+        public ECompatibilityLevel TeacherCompatibilityLevel { get; set; }
+
+        [UIHint("GenoTypeScore")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ExplorerCompatibilityLevel)]
+        public ECompatibilityLevel ExplorerCompatibilityLevel { get; set; }
+
+        [UIHint("GenoTypeScore")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.WarriorCompatibilityLevel)]
+        public ECompatibilityLevel WarriorCompatibilityLevel { get; set; }
+
+        [UIHint("GenoTypeScore")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NomadCompatibilityLevel)]
+        public ECompatibilityLevel NomadCompatibilityLevel { get; set; }
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Water)]
         public bool Water { get; set; }
 

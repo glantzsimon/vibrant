@@ -768,6 +768,11 @@
             public const string MountainMonth = "mountain_month";
             public const string FireMonth = "fire_month";
 
+            public const string Good = "Good";
+            public const string Excellent = "Excellent";
+            public const string Minimise = "Minimise";
+            public const string Avoid = "Avoid";
+
             public const string VeryLow = "VeryLow";
             public const string Low = "Low";
             public const string Medium = "Low";
@@ -811,6 +816,14 @@
             public const string Explorer = "Explorer";
             public const string Warrior = "Warrior";
             public const string Nomad = "Nomad";
+
+            public const string HunterCompatibilityLevel = "HunterCompatibilityLevel";
+            public const string GathererCompatibilityLevel = "GathererCompatibilityLevel";
+            public const string TeacherCompatibilityLevel = "TeacherCompatibilityLevel";
+            public const string ExplorerCompatibilityLevel = "ExplorerCompatibilityLevel";
+            public const string WarriorCompatibilityLevel = "WarriorCompatibilityLevel";
+            public const string NomadCompatibilityLevel = "NomadCompatibilityLevel";
+
             public const string GenoTypeScore = "GenoTypeScore";
 
             public const string AlmondShaped = "AlmondShaped";

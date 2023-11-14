@@ -2,13 +2,14 @@
 
 namespace K9.DataAccessLayer.Enums
 {
-    public enum EGenoTypeScore
+    public enum ECompatibilityLevel
     {
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Low)]
-        Low,
+        Good,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Medium)]
-        Medium,
+        Excellent,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.High)]
-        High,
+        Minimise,
+        Avoid
     }
 }

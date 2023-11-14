@@ -37,7 +37,15 @@
 
     <div class="row">
         <div class="col-xs-12">
-            @Html.BootstrapDisplayFor(e => nineStarKiModel.HealthAdvice)
+            <h3 class="section-title">@Dictionary.NineStarKiHealthAdvice</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.HealthAdvice, new EditorOptions
+            {
+                Label = ""
+            })
         </div>
     </div>
 

@@ -77,9 +77,27 @@
             @Html.BootstrapDisplayFor(model => model.Nomad)
         </div>
     </div>
+    <br />
     <div class="row">
         <div class="col-sm-4 col-xs-6">
-            @Html.BootstrapDisplayFor(model => model.GenoTypeScore)
+            @Html.BootstrapDisplayFor(model => model.HunterCompatibilityLevel)
+        </div>
+        <div class="col-sm-4 col-xs-6">
+            @Html.BootstrapDisplayFor(model => model.GathererCompatibilityLevel)
+        </div>
+        <div class="col-sm-4 col-xs-6">
+            @Html.BootstrapDisplayFor(model => model.TeacherCompatibilityLevel)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-xs-6">
+            @Html.BootstrapDisplayFor(model => model.ExplorerCompatibilityLevel)
+        </div>
+        <div class="col-sm-4 col-xs-6">
+            @Html.BootstrapDisplayFor(model => model.WarriorCompatibilityLevel)
+        </div>
+        <div class="col-sm-4 col-xs-6">
+            @Html.BootstrapDisplayFor(model => model.NomadCompatibilityLevel)
         </div>
     </div>
 </div>

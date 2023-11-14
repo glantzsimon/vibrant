@@ -13,6 +13,7 @@
     AllowEdit = true,
     AllowDelete = ((BaseController<ProductPack>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     Controller = "ProductPacks",
+    SelectAllColumns = false,
     Action = "List",
     VisibleColumns = new List<string>
     {

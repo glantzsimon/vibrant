@@ -205,7 +205,7 @@
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
     <Compile Include="Enums\EDosha.cs" />
-    <Compile Include="Enums\EGenoTypeScore.cs" />
+    <Compile Include="Enums\ECompatibilityLevel.cs" />
     <Compile Include="Enums\EQuestionCategory.cs" />
     <Compile Include="Enums\EColor.cs" />
     <Compile Include="Enums\EOrgan.cs" />
@@ -647,6 +647,10 @@
     <Compile Include="Migrations\202311141222288_GenoTypeScoreProperty.Designer.cs">
       <DependentUpon>202311141222288_GenoTypeScoreProperty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311141305139_CompatibilityLevels.cs" />
+    <Compile Include="Migrations\202311141305139_CompatibilityLevels.Designer.cs">
+      <DependentUpon>202311141305139_CompatibilityLevels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
@@ -1003,6 +1007,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311141222288_GenoTypeScoreProperty.resx">
       <DependentUpon>202311141222288_GenoTypeScoreProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311141305139_CompatibilityLevels.resx">
+      <DependentUpon>202311141305139_CompatibilityLevels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

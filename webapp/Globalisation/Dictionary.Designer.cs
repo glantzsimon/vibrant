@@ -544,6 +544,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Antioxidant.
+        /// </summary>
+        public static string AntiOxidant {
+            get {
+                return ResourceManager.GetString("AntiOxidant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arch.
         /// </summary>
         public static string Arch {
@@ -639,6 +648,15 @@ namespace K9.Globalisation {
         public static string Average {
             get {
                 return ResourceManager.GetString("Average", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Avoid.
+        /// </summary>
+        public static string Avoid {
+            get {
+                return ResourceManager.GetString("Avoid", resourceCulture);
             }
         }
         
@@ -3076,6 +3094,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Excellent.
+        /// </summary>
+        public static string Excellent {
+            get {
+                return ResourceManager.GetString("Excellent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Physical Exercise.
         /// </summary>
         public static string Exercise {
@@ -3099,6 +3126,15 @@ namespace K9.Globalisation {
         public static string Explorer {
             get {
                 return ResourceManager.GetString("Explorer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Explorer Compatibility Level.
+        /// </summary>
+        public static string ExplorerCompatibilityLevel {
+            get {
+                return ResourceManager.GetString("ExplorerCompatibilityLevel", resourceCulture);
             }
         }
         
@@ -3548,6 +3584,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gatherer Compatibility Level.
+        /// </summary>
+        public static string GathererCompatibilityLevel {
+            get {
+                return ResourceManager.GetString("GathererCompatibilityLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
         ///&lt;/p&gt;
@@ -3742,6 +3787,15 @@ namespace K9.Globalisation {
         public static string GonialAngleQuestionLabel {
             get {
                 return ResourceManager.GetString("GonialAngleQuestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Good.
+        /// </summary>
+        public static string Good {
+            get {
+                return ResourceManager.GetString("Good", resourceCulture);
             }
         }
         
@@ -4041,6 +4095,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to High.
+        /// </summary>
+        public static string High {
+            get {
+                return ResourceManager.GetString("High", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Have you ever been diagnosed with high blood pressure?.
         /// </summary>
         public static string HighBloodPressureLabel {
@@ -4172,6 +4235,15 @@ namespace K9.Globalisation {
         public static string Hunter {
             get {
                 return ResourceManager.GetString("Hunter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hunter Compatibility Level.
+        /// </summary>
+        public static string HunterCompatibilityLevel {
+            get {
+                return ResourceManager.GetString("HunterCompatibilityLevel", resourceCulture);
             }
         }
         
@@ -5315,6 +5387,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Medium.
+        /// </summary>
+        public static string Medium {
+            get {
+                return ResourceManager.GetString("Medium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Medium Angle.
         /// </summary>
         public static string MediumAngle {
@@ -5540,6 +5621,15 @@ namespace K9.Globalisation {
         public static string Minerals {
             get {
                 return ResourceManager.GetString("Minerals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimise.
+        /// </summary>
+        public static string Minimise {
+            get {
+                return ResourceManager.GetString("Minimise", resourceCulture);
             }
         }
         
@@ -5811,6 +5901,15 @@ namespace K9.Globalisation {
         public static string Nomad {
             get {
                 return ResourceManager.GetString("Nomad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nomad Compatibility Level.
+        /// </summary>
+        public static string NomadCompatibilityLevel {
+            get {
+                return ResourceManager.GetString("NomadCompatibilityLevel", resourceCulture);
             }
         }
         
@@ -9233,6 +9332,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Teacher Compatibility Level.
+        /// </summary>
+        public static string TeacherCompatibilityLevel {
+            get {
+                return ResourceManager.GetString("TeacherCompatibilityLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
         ///&lt;/p&gt;
@@ -10255,6 +10363,15 @@ namespace K9.Globalisation {
         public static string Warrior {
             get {
                 return ResourceManager.GetString("Warrior", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warrior Compatibility Level.
+        /// </summary>
+        public static string WarriorCompatibilityLevel {
+            get {
+                return ResourceManager.GetString("WarriorCompatibilityLevel", resourceCulture);
             }
         }
         

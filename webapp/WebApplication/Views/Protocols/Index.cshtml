@@ -12,6 +12,7 @@
     AllowCreate = true,
     AllowEdit = true,
     AllowDelete = ((BaseController<Protocol>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    SelectAllColumns = false,
     VisibleColumns = new List<string>
     {
         "Name",

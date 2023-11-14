@@ -3244,11 +3244,17 @@
   <data name="AntiInflammatory" xml:space="preserve">
     <value>Anti-inflammatory</value>
   </data>
+  <data name="AntiOxidant" xml:space="preserve">
+    <value>Antioxidant</value>
+  </data>
   <data name="Autoimmunity" xml:space="preserve">
     <value>Autoimmunity</value>
   </data>
   <data name="AutoImmunityLabel" xml:space="preserve">
     <value>Do you have any autoimmune or inflammatory conditions?</value>
+  </data>
+  <data name="Avoid" xml:space="preserve">
+    <value>Avoid</value>
   </data>
   <data name="BloodBuilding" xml:space="preserve">
     <value>Blood Building</value>
@@ -3313,8 +3319,14 @@
   <data name="Elements" xml:space="preserve">
     <value>Elements</value>
   </data>
+  <data name="Excellent" xml:space="preserve">
+    <value>Excellent</value>
+  </data>
   <data name="Exercise" xml:space="preserve">
     <value>Physical Exercise</value>
+  </data>
+  <data name="ExplorerCompatibilityLevel" xml:space="preserve">
+    <value>Explorer Compatibility Level</value>
   </data>
   <data name="ExplorerDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>genotypes\en-gb\explorerdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -3328,6 +3340,9 @@
   <data name="Fruitarian" xml:space="preserve">
     <value>Fruitarian</value>
   </data>
+  <data name="GathererCompatibilityLevel" xml:space="preserve">
+    <value>Gatherer Compatibility Level</value>
+  </data>
   <data name="GathererDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>genotypes\en-gb\gathererdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -3337,14 +3352,23 @@
   <data name="GenoTypeScore" xml:space="preserve">
     <value>GenoType Score</value>
   </data>
+  <data name="Good" xml:space="preserve">
+    <value>Good</value>
+  </data>
   <data name="HealthGoals" xml:space="preserve">
     <value>Health Goals</value>
   </data>
   <data name="HereditaryRisk" xml:space="preserve">
     <value>Hereditary Risk</value>
   </data>
+  <data name="High" xml:space="preserve">
+    <value>High</value>
+  </data>
   <data name="HormoneBalance" xml:space="preserve">
     <value>Hormone Balance</value>
+  </data>
+  <data name="HunterCompatibilityLevel" xml:space="preserve">
+    <value>Hunter Compatibility Level</value>
   </data>
   <data name="HunterDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>genotypes\en-gb\hunterdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -3370,6 +3394,9 @@
   <data name="KaphaVataDoshaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>doshas\en-gb\kaphavatadoshadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Medium" xml:space="preserve">
+    <value>Medium</value>
+  </data>
   <data name="MemoryIssues" xml:space="preserve">
     <value>Memory Issues</value>
   </data>
@@ -3379,6 +3406,9 @@
   <data name="MensHealth" xml:space="preserve">
     <value>Men's Health</value>
   </data>
+  <data name="Minimise" xml:space="preserve">
+    <value>Minimise</value>
+  </data>
   <data name="Mood" xml:space="preserve">
     <value>Mood</value>
   </data>
@@ -3387,6 +3417,9 @@
   </data>
   <data name="NineStarKiHealthAdvice" xml:space="preserve">
     <value>Nine Star Ki Health Advice</value>
+  </data>
+  <data name="NomadCompatibilityLevel" xml:space="preserve">
+    <value>Nomad Compatibility Level</value>
   </data>
   <data name="NomadDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>genotypes\en-gb\nomaddetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -3445,6 +3478,9 @@
   <data name="SurgeryDetails" xml:space="preserve">
     <value>Details of Surgery</value>
   </data>
+  <data name="TeacherCompatibilityLevel" xml:space="preserve">
+    <value>Teacher Compatibility Level</value>
+  </data>
   <data name="TeacherDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>genotypes\en-gb\teacherdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -3480,6 +3516,9 @@
   </data>
   <data name="Vitality" xml:space="preserve">
     <value>Vitality</value>
+  </data>
+  <data name="WarriorCompatibilityLevel" xml:space="preserve">
+    <value>Warrior Compatibility Level</value>
   </data>
   <data name="WarriorDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>genotypes\en-gb\warriordetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

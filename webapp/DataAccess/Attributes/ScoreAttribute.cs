@@ -16,7 +16,6 @@ namespace K9.DataAccessLayer.Attributes
         public bool Explorer { get; set; }
         public bool Warrior { get; set; }
         public bool Nomad { get; set; }
-        public EGenoTypeScore GenoTypeScore { get; set; }
         public bool Water { get; set; }
         public bool Earth { get; set; }
         public bool Tree { get; set; }
@@ -30,7 +29,7 @@ namespace K9.DataAccessLayer.Attributes
         public bool UrologicalHealth { get; set; }
         public bool HormoneBalance { get; set; }
         public bool AntiInflammatory { get; set; }
-        public bool AntiOxidant{ get; set; }
+        public bool AntiOxidant { get; set; }
         public bool CellularHealth { get; set; }
         public bool StressRelief { get; set; }
         public bool Detoxification { get; set; }
