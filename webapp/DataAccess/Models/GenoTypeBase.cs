@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace K9.DataAccessLayer.Models
 {
-    public abstract class GenoTypeBase : ObjectBase, IObjectBase
+    public abstract class GenoTypeBase : ObjectBase, IObjectBase, IGenoTypeBase
     {
         [NotMapped]
         public int Score { get; set; }

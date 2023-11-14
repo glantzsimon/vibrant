@@ -15,6 +15,7 @@ namespace K9.DataAccessLayer.Models
 
         #region Cbs
 
+        [Score(Cbs = true, Cognition = true, Mood = true, StressRelief = true, NeurologicalHealth = true, Immunity = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WhiteSpotsOnNailsLabel)]

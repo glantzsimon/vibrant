@@ -191,6 +191,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\ScoreAttribute.cs" />
     <Compile Include="Attributes\QuestionCategoryAttribute.cs" />
     <Compile Include="Attributes\DoshaEnumMetaDataAttribute.cs" />
     <Compile Include="Attributes\GenoTypeEnumMetaDataAttribute.cs" />
@@ -251,6 +252,7 @@
     <Compile Include="Enums\EProductType.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
     <Compile Include="Helpers\Methods.cs" />
+    <Compile Include="Interfaces\IGenoTypeBase.cs" />
     <Compile Include="Interfaces\ICategorisable.cs" />
     <Compile Include="Migrations\202211280432073_InitialCreate.cs" />
     <Compile Include="Migrations\202211280432073_InitialCreate.designer.cs">

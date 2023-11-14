@@ -6,6 +6,8 @@ using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using K9.DataAccessLayer.Attributes;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Services
 {
@@ -79,9 +81,9 @@ namespace K9.WebApplication.Services
 
             return new GenoTypeBaseItemsViewModel
             {
-                Products = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Product>(_productsRepository.List())),
-                ProductPacks = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<ProductPack>(_productPacksRepository.List())),
-                Protocols = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Protocol>(_protocolsRepository.List())),
+                Products = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Product>(_productsRepository.List()), 5),
+                ProductPacks = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<ProductPack>(_productPacksRepository.List()), 3),
+                Protocols = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Protocol>(_protocolsRepository.List()), 3),
                 DietaryRecommendations = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<DietaryRecommendation>(_dietaryRecommendationsRepository.List())),
                 Activities = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Activity>(_activitiesRepository.List())),
                 Foods = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<FoodItem>(_foodItemsRepository.List()))
@@ -93,27 +95,39 @@ namespace K9.WebApplication.Services
             _healthQuestionnaireRepository.Update(model);
         }
 
-        private List<T> GetGenoTypeFilteredItems<T>(HealthQuestionnaire hq, EGenoType genoType, List<T> items) where T : GenoTypeBase
+        private List<T> GetGenoTypeFilteredItems<T>(HealthQuestionnaire hq, EGenoType genoType, List<T> items, int take = -1) where T : GenoTypeBase
         {
             foreach (var item in items)
             {
                 item.Score = GetGenoTypeItemScore(hq, genoType, item);
             }
 
-            return items.OrderByDescending(e => e.Score).ToList();
+            var results = items
+                    .Where(e => e.Score > 0)
+                    .OrderByDescending(e => e.Score).ToList();
+
+            if (take > 0)
+            {
+                results = results.Take(take).ToList();
+            }
+
+            return results;
         }
 
         private int GetGenoTypeItemScore(HealthQuestionnaire hq, EGenoType genoType, GenoTypeBase item)
         {
             var score = 0;
-            var scores = AppDomain.CurrentDomain.GetAssemblies()
-                .SelectMany(s => s.GetTypes())
-                .Where(p => typeof(IScore).IsAssignableFrom(p)).ToList();
+            var scoredProperties = hq.GetPropertiesWithAttribute(typeof(ScoreAttribute)).ToList();
 
-            foreach (var scoreItem in scores)
+            foreach (var scoredProperty in scoredProperties)
             {
-                var instance = Activator.CreateInstance(scoreItem) as IScore;
-                score += instance.GetScore(hq, genoType, item);
+                var attributeValue = hq.GetProperty(scoredProperty.Name);
+                var itemValue = item.GetProperty(scoredProperty.Name);
+
+                if (attributeValue == itemValue)
+                {
+                    score++;
+                }
             }
 
             return score;
