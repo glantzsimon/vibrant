@@ -3695,6 +3695,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GenoType Score.
+        /// </summary>
+        public static string GenoTypeScore {
+            get {
+                return ResourceManager.GetString("GenoTypeScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gift.
         /// </summary>
         public static string Gift {

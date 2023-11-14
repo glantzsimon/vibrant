@@ -9,10 +9,18 @@ namespace K9.WebApplication.Services
         {
             var score = 0;
 
-            if (item.Hunter && genoType == EGenoType.Hunter)
+            if (genoType == EGenoType.Hunter && item.AntiInflammatory)
             {
-                score += 7;
+                if (genoType == EGenoType.Hunter)
+                {
+                    score += 7;
+                }
+                else if (item.AntiInflammatory || item.StressRelief || item.AntiOxidant)
+                {
+                    score += 3;
+                }
             }
+
             if (item.Gatherer && genoType == EGenoType.Gatherer)
             {
                 score += 7;

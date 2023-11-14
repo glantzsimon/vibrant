@@ -2,6 +2,7 @@
 using K9.SharedLibrary.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -9,7 +10,7 @@ namespace K9.DataAccessLayer.Models
     {
         [NotMapped]
         public int Score { get; set; }
-
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VataDosha)]
         public bool VataDosha { get; set; }
 
@@ -33,6 +34,10 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Warrior)]
         public bool Warrior { get; set; }
+        
+        [UIHint("GenoTypeScore")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.GenoTypeScore)]
+        public EGenoTypeScore GenoTypeScore { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Nomad)]
         public bool Nomad { get; set; }
@@ -75,6 +80,9 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.AntiInflammatory)]
         public bool AntiInflammatory { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.AntiOxidant)]
+        public bool AntiOxidant{ get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.CellularHealth)]
         public bool CellularHealth { get; set; }

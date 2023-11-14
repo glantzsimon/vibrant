@@ -1,4 +1,6 @@
-﻿namespace K9.DataAccessLayer.Models
+﻿using K9.DataAccessLayer.Enums;
+
+namespace K9.DataAccessLayer.Models
 {
     public interface IGenoTypeBase 
     {
@@ -19,6 +21,8 @@
         bool Warrior { get; set; }
 
         bool Nomad { get; set; }
+
+        EGenoTypeScore GenoTypeScore { get; set; }
 
         bool Water { get; set; }
 
@@ -45,6 +49,8 @@
         bool HormoneBalance { get; set; }
 
         bool AntiInflammatory { get; set; }
+        
+        bool AntiOxidant { get; set; }
 
         bool CellularHealth { get; set; }
 

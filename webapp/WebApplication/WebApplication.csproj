@@ -1678,6 +1678,7 @@
     <Content Include="Views\FoodItems\Edit.cshtml" />
     <Content Include="Views\FoodItems\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DietaryPreference.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\GenoTypeScore.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -3334,6 +3334,9 @@
   <data name="GenoTypes" xml:space="preserve">
     <value>GenoTypes</value>
   </data>
+  <data name="GenoTypeScore" xml:space="preserve">
+    <value>GenoType Score</value>
+  </data>
   <data name="HealthGoals" xml:space="preserve">
     <value>Health Goals</value>
   </data>
