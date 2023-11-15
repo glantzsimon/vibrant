@@ -3565,4 +3565,13 @@
   <data name="RecommendedProtocols" xml:space="preserve">
     <value>Other Recommended Protocols </value>
   </data>
+  <data name="TakeTheGeneticProfileTest" xml:space="preserve">
+    <value>Take the Genetic Profile Test</value>
+  </data>
+  <data name="WhyWeNeedGenderAndSexuality" xml:space="preserve">
+    <value>Why do we ask about your gender and sexuality?</value>
+  </data>
+  <data name="WhyWeNeedGenderAndSexualityAnswer" xml:space="preserve">
+    <value>In studies, it has been observed that there is a clear correlaton between gender and sexuality and the levels of specific hormones and growth factors to which the foetus is exposed. This influences a number of important factors which help to determine the genetic profile of an individual.</value>
+  </data>
 </root>

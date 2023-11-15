@@ -1,4 +1,5 @@
-﻿using K9.SharedLibrary.Helpers;
+﻿using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
@@ -6,8 +7,7 @@ using K9.WebApplication.ViewModels;
 using NLog;
 using System;
 using System.Web.Mvc;
-using K9.SharedLibrary.Extensions;
-using K9.WebApplication.Helpers;
+using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Controllers
 {
@@ -17,8 +17,8 @@ namespace K9.WebApplication.Controllers
         private readonly ILogger _logger;
         private readonly IMembershipService _membershipService;
 
-        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IPureControllerPackage pureControllerPackage)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, pureControllerPackage)
         {
             _logger = logger;
             _membershipService = membershipService;

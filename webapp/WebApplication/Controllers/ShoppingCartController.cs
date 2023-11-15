@@ -19,9 +19,7 @@ namespace K9.WebApplication.Controllers
         private readonly IOrderService _orderService;
         private readonly IClientService _clientService;
         private readonly ILogger _logger;
-
-        public Order GetShoppingCart() => WebSecurity.IsAuthenticated ? _shoppingCartService.GetShoppingCart(WebSecurity.CurrentUserId) : null;
-
+        
         public ShoppingCartController(IControllerPackage<Order> controllerPackage, IShoppingCartService shoppingCartService, IOrderService orderService, IClientService clientService, ILogger logger) : base(controllerPackage)
         {
             _shoppingCartService = shoppingCartService;
@@ -29,6 +27,12 @@ namespace K9.WebApplication.Controllers
             _clientService = clientService;
             _logger = logger;
         }
+
+        public Order GetShoppingCart()
+        {
+            return WebSecurity.IsAuthenticated ? _shoppingCartService.GetShoppingCart(WebSecurity.CurrentUserId) : null;
+        }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -53,25 +57,11 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Checkout");
         }
 
-
         public ActionResult ViewCart()
         {
             return View(GetShoppingCart());
         }
-
-        [ChildActionOnly]
-        public ActionResult ShoppingCartMenuItem()
-        {
-            var cart = _shoppingCartService.GetShoppingCart(WebSecurity.CurrentUserId);
-            if (cart == null)
-            {
-                return new EmptyResult();
-            }
-
-            return PartialView("_MenuItem", cart);
-        }
-
-
+        
         [Route("shop/checkout")]
         public ActionResult Checkout()
         {

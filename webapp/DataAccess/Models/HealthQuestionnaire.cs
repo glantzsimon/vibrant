@@ -1093,10 +1093,7 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsGeneralHealthComplete()
         {
-            return !string.IsNullOrEmpty(CurrentHealthIssues) &&
-                   !string.IsNullOrEmpty(HealthGoals) &&
-
-                   CurrentHealthLevel.HasValue &&
+            return CurrentHealthLevel.HasValue &&
                    NutritionExpertiseLevel.HasValue &&
                    EnjoysCooking.HasValue &&
                    CookingFrequency.HasValue &&
@@ -1107,7 +1104,6 @@ namespace K9.DataAccessLayer.Models
                    AbdominalPainOrCramping.HasValue &&
                    InfectionSeverity.HasValue &&
 
-                 !string.IsNullOrEmpty(AllergiesAndSensitivitiesDetails) &&
 
                    HighBloodPressure.HasValue &&
                    ChestPain.HasValue &&
@@ -1130,9 +1126,9 @@ namespace K9.DataAccessLayer.Models
                    Cavities.HasValue &&
                    RootCanals.HasValue &&
 
-                   SkinIssues == EYesNo.Yes
+                   (SkinIssues == EYesNo.Yes
                 ? !string.IsNullOrEmpty(SkinIssuesDetails)
-                : SkinIssues.HasValue &&
+                : SkinIssues.HasValue) &&
 
                   InfectionSeverity.HasValue;
             ;

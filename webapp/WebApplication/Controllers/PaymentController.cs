@@ -7,6 +7,7 @@ using K9.WebApplication.Services.Stripe;
 using NLog;
 using System;
 using System.Web.Mvc;
+using K9.WebApplication.Packages;
 using StripeConfiguration = K9.WebApplication.Config.StripeConfiguration;
 
 namespace K9.WebApplication.Controllers
@@ -19,8 +20,8 @@ namespace K9.WebApplication.Controllers
         private readonly IUserService _userService;
         private readonly StripeConfiguration _stripeConfig;
 
-        public PaymentsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IMembershipService membershipService, IClientService clientService, IUserService userService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public PaymentsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IMembershipService membershipService, IClientService clientService, IUserService userService, IPureControllerPackage pureControllerPackage)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, pureControllerPackage)
         {
             _logger = logger;
             _stripeService = stripeService;

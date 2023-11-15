@@ -78,7 +78,7 @@
         <div class="col-xs-3">
             @if (ingredientIsInStock)
             {
-                if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
+                if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
                 {
                     <a data-id="@productIngredient.Ingredient.Id" href="#" class="btn btn-info out-of-stock">@Dictionary.MarkOutOfStock</a>
                 }

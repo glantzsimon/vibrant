@@ -7,6 +7,7 @@ using NLog;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using K9.WebApplication.Packages;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -19,8 +20,8 @@ namespace K9.WebApplication.Controllers
         private readonly IHealthQuestionnaireService _healthQuestionnaireService;
         private readonly IClientService _clientService;
 
-        public ProtocolArticlesController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Product> productsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProductService productService, IProtocolService protocolService, IHealthQuestionnaireService healthQuestionnaireService, IClientService clientService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public ProtocolArticlesController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Product> productsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProductService productService, IProtocolService protocolService, IHealthQuestionnaireService healthQuestionnaireService, IClientService clientService, IPureControllerPackage pureControllerPackage)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, pureControllerPackage)
         {
             _productsRepository = productsRepository;
             _productService = productService;

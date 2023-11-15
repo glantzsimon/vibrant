@@ -1,11 +1,12 @@
-﻿using System.Linq;
+﻿using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Services;
+using System.Linq;
 using System.Web.Mvc;
-using K9.Base.DataAccessLayer.Models;
+using K9.WebApplication.Packages;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -21,7 +22,8 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<Client> _clientsRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public OrderController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPackRepository, IOrderService orderService, IProductService productService, IMembershipService membershipService, IRepository<User> usersRepository, IRepository<Client> clientsRepository) : base(controllerPackage.Logger, controllerPackage.DataSetsHelper, controllerPackage.Roles, controllerPackage.Authentication, controllerPackage.FileSourceHelper, membershipService)
+        public OrderController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPackRepository, IOrderService orderService, IProductService productService, IMembershipService membershipService, IRepository<User> usersRepository, IRepository<Client> clientsRepository, IPureControllerPackage pureControllerPackage) : 
+            base(controllerPackage.Logger, controllerPackage.DataSetsHelper, controllerPackage.Roles, controllerPackage.Authentication, controllerPackage.FileSourceHelper, pureControllerPackage)
         {
             _orderProductsRepository = orderProductsRepository;
             _orderProductPackRepository = orderProductPackRepository;

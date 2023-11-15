@@ -9,6 +9,12 @@
 @model Protocol
 
 <div class="well">
-    @Html.Partial("../Protocols/Summary")
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.RecommendationsLabel</h3>
+        </div>
+    </div>
+
+    @Html.Partial("../Protocols/SummaryPartial")
 </div>
 

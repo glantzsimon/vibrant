@@ -2,15 +2,15 @@
 @using K9.SharedLibrary.Authentication
 @using K9.WebApplication.Config
 @using K9.WebApplication.Enums
+@using K9.WebApplication.Extensions
 @using K9.WebApplication.Models
 @{
-    var roles = this.GetRoles();
     var deviceType = new BrowserInfo(Request.Headers["User-Agent"]).DeviceType;
     var whatsAppLink = (deviceType == EDeviceType.Desktop ? "https://web.whatsapp.com/send?phone=" : "https://wa.me/") + DefaultValuesConfiguration.Instance.WhatsAppSupportNumber;
 }
 <div id="account-header">
     <div id="account-controls">
-        @if (roles.CurrentUserIsInRoles(K9.WebApplication.Constants.Constants.ProductionUser))
+        @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsProductionUser())
         {
             <ul class="admin-menu ">
                 <li class="dropdown">
@@ -51,7 +51,7 @@
                 </li>
             </ul>
         }
-        @if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
+        @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
         {
             <ul class="admin-menu ">
                 <li class="dropdown">
@@ -177,11 +177,15 @@
                 {
                     <li class="@ViewContext.GetActiveClass("MyAccount", "Account")"><a title="@K9.Base.Globalisation.Dictionary.MyAccountTitle" href="@Url.Action("MyAccount", "Account")"><i class="fa fa-user-circle"></i><span class="site-controls-text"> @K9.Base.Globalisation.Dictionary.MyAccountTitle</span></a></li>
 
-                    @Html.Action("ShoppingCartMenuItem", "ShoppingCart")
+                    var cart = this.GetShoppingCart();
+                    if (cart != null)
+                    {
+                        @Html.Partial("_MenuItem", cart)
+                    }
                 }
                 @Html.LoginLogout()
 
-                @if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
+                @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
                 {
                     @Html.Partial("Controls/_LanguageSelector")
                 }

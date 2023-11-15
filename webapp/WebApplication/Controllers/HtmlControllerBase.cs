@@ -1,13 +1,22 @@
 ﻿using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.UnitsOfWork;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Helpers;
+using K9.WebApplication.Packages;
+using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
-    public class HtmlControllerBase<T> : BaseController<T> where T : class, IObjectBase
+    public class HtmlControllerBase<T> : BaseController<T>, IShoppingCartController where T : class, IObjectBase
     {
+        private readonly IPureControllerPackage _pureControllerPackage;
+
+        public Order ShoppingCart => WebSecurity.IsAuthenticated
+            ? _pureControllerPackage.ShoppingCartService.GetShoppingCart(WebSecurity.CurrentUserId)
+            : null;
+
         public HtmlControllerBase(IControllerPackage<T> controllerPackage) : base(controllerPackage)
         {
             RecordBeforeCreated += HtmlControllerBase_RecordBeforeCreated;

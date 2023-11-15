@@ -2,10 +2,10 @@
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Services;
 using NLog;
 using System.Linq;
 using System.Web.Mvc;
+using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Controllers
 {
@@ -13,8 +13,8 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IRepository<Article> _articlesRepository;
 
-        public ArticleController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Article> articlesRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public ArticleController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Article> articlesRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IPureControllerPackage pureControllerPackage)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, pureControllerPackage)
         {
             _articlesRepository = articlesRepository;
         }

@@ -23,13 +23,13 @@
 {
     <div class="row">
         <div class="col-sm-3">
-            @if (this.GetRoles().CurrentUserIsInRoles(RoleNames.Administrators))
+            @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
             {
                 <a target="_blank" href="@Url.Action("Edit", "Products", new {id = Model.Products[i].ProductId})">
                     @Html.DisplayFor(e => Model.Products[i].Product.Name)
                 </a>
             }
-            else if (this.GetRoles().CurrentUserIsInRoles(Constants.UnicornUser))
+            else if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsUnicornUser())
             {
                 <a target="_blank" href="@Url.Action("Link", "Product", new {id = Model.Products[i].Product.ExternalId})">
                     @Html.DisplayFor(e => Model.Products[i].Product.Name)

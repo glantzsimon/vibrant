@@ -6,6 +6,7 @@ using K9.WebApplication.Services;
 using NLog;
 using System.Linq;
 using System.Web.Mvc;
+using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Controllers
 {
@@ -13,8 +14,8 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IRepository<Ingredient> _ingredientsRepository;
 
-        public IngredientController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Ingredient> ingredientsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public IngredientController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Ingredient> ingredientsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IPureControllerPackage pureControllerPackage)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, pureControllerPackage)
         {
             _ingredientsRepository = ingredientsRepository;
         }

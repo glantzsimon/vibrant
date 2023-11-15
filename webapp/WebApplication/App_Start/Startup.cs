@@ -13,6 +13,7 @@ using K9.DataAccessLayer.Database;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.Services.Stripe;
 using NLog;
@@ -51,6 +52,7 @@ namespace K9.WebApplication
             builder.RegisterType<PostedFileHelper>().As<IPostedFileHelper>().InstancePerRequest();
             builder.RegisterType<FileSourceHelper>().As<IFileSourceHelper>().InstancePerRequest();
             builder.RegisterGeneric(typeof(ControllerPackage<>)).As(typeof(IControllerPackage<>)).InstancePerRequest();
+            builder.RegisterType<PureControllerPackage>().As<IPureControllerPackage>().InstancePerRequest();
             builder.RegisterType<AccountService>().As<IAccountService>().InstancePerRequest();
             builder.RegisterType<ShopService>().As<IShopService>().InstancePerRequest();
             builder.RegisterType<FacebookService>().As<IFacebookService>().InstancePerRequest();

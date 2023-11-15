@@ -58,7 +58,7 @@ namespace K9.WebApplication.Services
             return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
-                return _activitiesRepository.List();
+                return _activitiesRepository.List().ToList();
             });
         }
 

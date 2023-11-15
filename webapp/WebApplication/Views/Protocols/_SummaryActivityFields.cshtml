@@ -17,6 +17,13 @@
                     <h4>@activity.Name</h4>
                 </div>
             </div>
+            
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.Raw(activity.ShortDescription)
+                </div>
+            </div>
+
             @if (!string.IsNullOrEmpty(activity.Recommendations))
             {
                 <div class="row">
@@ -34,12 +41,6 @@
                     </div>
                 </div>
             }
-
-            <div class="row">
-                <div class="col-xs-12">
-                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => activity.ShortDescription), activity.ShortDescription)
-                </div>
-            </div>
 
             @if (!string.IsNullOrEmpty(activity.Body))
             {

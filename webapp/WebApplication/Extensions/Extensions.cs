@@ -1,4 +1,5 @@
 ﻿using K9.DataAccessLayer.Models;
+using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Controllers;
 using K9.WebApplication.Models;
 using System;
@@ -30,13 +31,25 @@ namespace K9.WebApplication.Extensions
             var abbrevationSuffix = canBeAbbreviated ? "..." : string.Empty;
             return $"{substring}{abbrevationSuffix}";
         }
-
         public static UserMembership GetActiveUserMembership(this WebViewPage view)
         {
             try
             {
                 var baseController = view.ViewContext.Controller as BasePureController;
                 return baseController?.GetActiveUserMembership();
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public static Order GetShoppingCart(this WebViewPage view)
+        {
+            try
+            {
+                var baseController = view.ViewContext.Controller as IShoppingCartController;
+                return baseController.ShoppingCart;
             }
             catch (Exception e)
             {

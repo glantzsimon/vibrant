@@ -8,6 +8,7 @@ using K9.WebApplication.Services;
 using NLog;
 using System;
 using System.Web.Mvc;
+using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Controllers
 {
@@ -17,8 +18,8 @@ namespace K9.WebApplication.Controllers
         private readonly IConsultationService _consultationService;
         private readonly IClientService _clientService;
 
-        public ConsultationController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService,  IConsultationService consultationService, IClientService clientService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public ConsultationController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService,  IConsultationService consultationService, IClientService clientService, IPureControllerPackage pureControllerPackage)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, pureControllerPackage)
         {
             _logger = logger;
             _consultationService = consultationService;

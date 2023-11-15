@@ -6,6 +6,7 @@ using K9.WebApplication.Services;
 using NLog;
 using System;
 using System.Web.Mvc;
+using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Controllers
 {
@@ -15,7 +16,7 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IProtocolService _protocolService;
 
-        public ProtocolController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Product> productsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProtocolService protocolService) : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public ProtocolController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Product> productsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProtocolService protocolService, IPureControllerPackage pureControllerPackage) : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, pureControllerPackage)
         {
             _protocolService = protocolService;
         }

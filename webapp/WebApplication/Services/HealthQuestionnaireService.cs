@@ -1,17 +1,19 @@
 ﻿using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Attributes;
 using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Config;
 using K9.WebApplication.ViewModels;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using K9.DataAccessLayer.Attributes;
-using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Services
 {
-    public class HealthQuestionnaireService : IHealthQuestionnaireService
+    public class HealthQuestionnaireService : CacheableServiceBase<HealthQuestionnaire>, IHealthQuestionnaireService
     {
         private readonly IRepository<HealthQuestionnaire> _healthQuestionnaireRepository;
         private readonly IRepository<User> _usersRepository;
@@ -23,13 +25,39 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Activity> _activitiesRepository;
         private readonly IRepository<DietaryRecommendation> _dietaryRecommendationsRepository;
         private readonly IRepository<FoodItem> _foodItemsRepository;
+        private readonly IRepository<ProtocolActivity> _protocolActivitiesRepository;
+        private readonly IRepository<ProtocolDietaryRecommendation> _protocolDietaryRecommendationRepository;
+        private readonly IRepository<ProtocolFoodItem> _protocolFoodItemsRepository;
+        private readonly IRepository<ProtocolProductPack> _protocolProductPackRepository;
+        private readonly IRepository<ProtocolProduct> _protocolProductsRepository;
+        private readonly IProtocolService _protocolService;
 
-        public HealthQuestionnaireService(IRepository<HealthQuestionnaire> healthQuestionnaireRepository,
-            IRepository<User> usersRepository, IRepository<Client> clientsRepository, IClientService clientService,
-            IRepository<Product> productsRepository, IRepository<ProductPack> productPacksRepository,
+        public HealthQuestionnaireService(ILogger logger,
+            IRepository<Product> productsRepository,
+            IRepository<ProductPack> productPackRepository, IOptions<DefaultValuesConfiguration> defaultValues,
+            IRepository<HealthQuestionnaire> healthQuestionnaireRepository,
+            IRepository<User> usersRepository,
+            IRepository<Client> clientsRepository,
+            IClientService clientService,
+            IRepository<ProductPack> productPacksRepository,
             IRepository<Protocol> protocolsRepository, IRepository<Activity> activitiesRepository,
             IRepository<DietaryRecommendation> dietaryRecommendationsRepository,
-            IRepository<FoodItem> foodItemsRepository)
+            IRepository<FoodItem> foodItemsRepository,
+            IRepository<Ingredient> ingredientsRepository,
+            IRepository<IngredientSubstitute> ingredientSubstitutesRepository,
+            IRepository<ProtocolActivity> protocolActivitiesRepository,
+            IRepository<ProductIngredient> productIngredientsRepository,
+            IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository,
+            IRepository<ProtocolDietaryRecommendation> protocolDietaryRecommendationRepository,
+            IRepository<ProtocolFoodItem> protocolFoodItemsRepository,
+            IRepository<ProtocolProductPack> protocolProductPackRepository,
+            IRepository<ProductPackProduct> productPackProductsRepository,
+            IRepository<ProtocolProduct> protocolProductsRepository,
+            IProtocolService protocolService) :
+            base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository,
+                ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository,
+                activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository,
+                foodItemsRepository)
         {
             _healthQuestionnaireRepository = healthQuestionnaireRepository;
             _usersRepository = usersRepository;
@@ -41,6 +69,12 @@ namespace K9.WebApplication.Services
             _activitiesRepository = activitiesRepository;
             _dietaryRecommendationsRepository = dietaryRecommendationsRepository;
             _foodItemsRepository = foodItemsRepository;
+            _protocolActivitiesRepository = protocolActivitiesRepository;
+            _protocolDietaryRecommendationRepository = protocolDietaryRecommendationRepository;
+            _protocolFoodItemsRepository = protocolFoodItemsRepository;
+            _protocolProductPackRepository = protocolProductPackRepository;
+            _protocolProductsRepository = protocolProductsRepository;
+            _protocolService = protocolService;
         }
 
         public HealthQuestionnaire GetHealthQuestionnaireForUser(int userId)
@@ -81,10 +115,14 @@ namespace K9.WebApplication.Services
 
             return new GeneticProfileMatchedItemsViewModel
             {
-                Products = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Product>(_productsRepository.List()), 5),
-                ProductPacks = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<ProductPack>(_productPacksRepository.List()), 3),
-                DietaryRecommendations = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<DietaryRecommendation>(_dietaryRecommendationsRepository.List())),
-                Activities = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Activity>(_activitiesRepository.List())),
+                Products = GetGenoTypeFilteredItems(hq, genoType.GenoType,
+                    new List<Product>(_productsRepository.List()), 5),
+                ProductPacks = GetGenoTypeFilteredItems(hq, genoType.GenoType,
+                    new List<ProductPack>(_productPacksRepository.List()), 3),
+                DietaryRecommendations = GetGenoTypeFilteredItems(hq, genoType.GenoType,
+                    new List<DietaryRecommendation>(_dietaryRecommendationsRepository.List())),
+                Activities =
+                    GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Activity>(_activitiesRepository.List())),
                 Foods = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<FoodItem>(_foodItemsRepository.List()))
             };
         }
@@ -105,6 +143,143 @@ namespace K9.WebApplication.Services
         public void Save(HealthQuestionnaire model)
         {
             _healthQuestionnaireRepository.Update(model);
+        }
+
+        public Protocol GetAutoGeneratedProtocolFromGeneticProfile(int clientId)
+        {
+            var hq = GetHealthQuestionnaireForClient(clientId);
+            if (hq != null)
+            {
+                return GetAutoGeneratedProtocolFromGeneticProfile(hq);
+            }
+
+            return null;
+        }
+
+        public Protocol GetAutoGeneratedProtocolFromGeneticProfile(HealthQuestionnaire hq)
+        {
+            var protocol = _protocolsRepository
+                .Find(e => e.Type == EProtocolType.AutoGenerated && e.ClientId == hq.ClientId).FirstOrDefault();
+            if (protocol != null)
+            {
+                return _protocolService.Find(protocol.Id);
+            }
+
+            return null;
+        }
+
+        public void AutoGenerateProtocolFromGeneticProfile(int clientId)
+        {
+            var hq = GetHealthQuestionnaireForClient(clientId);
+            if (hq != null)
+            {
+                AutoGenerateProtocolFromGeneticProfile(hq);
+            }
+        }
+
+        public void AutoGenerateProtocolFromGeneticProfile(HealthQuestionnaire hq)
+        {
+            var protocol = _protocolsRepository
+                .Find(e => e.Type == EProtocolType.AutoGenerated && e.ClientId == hq.ClientId).FirstOrDefault();
+
+            if (protocol == null)
+            {
+                // Create new one
+                var externalId = Guid.NewGuid();
+                protocol = new Protocol
+                {
+                    Name = Globalisation.Dictionary.GenoTypePersonalisedProtocol,
+                    ShortDescription = K9.Globalisation.Dictionary.GeneticProfileProtocolDescription,
+                    ClientId = hq.ClientId,
+                    ExternalId = externalId,
+                    Type = EProtocolType.AutoGenerated,
+                    Period = EPeriod.Days,
+                    ProtocolFrequency = EProtocolFrequency.Daily,
+                    NumberOfPeriodsOff = 1,
+                    Duration = EProtocolDuration.ThreeMonths
+                };
+
+                _protocolsRepository.Create(protocol);
+                protocol = _protocolsRepository.Find(e => e.ExternalId == externalId).First();
+            }
+
+            DeleteProtocolChildRecords(protocol.Id);
+            RecreateChildRecords(hq, protocol);
+        }
+
+        private void RecreateChildRecords(HealthQuestionnaire hq, Protocol protocol)
+        {
+            var matchedItems = GetGeneticProfileMatchedItems(hq.Id);
+
+            protocol.Activities = matchedItems.Activities.Select(e => new ProtocolActivity
+            {
+                ProtocolId = protocol.Id,
+                ActivityId = e.ActivityId
+            }).ToList();
+
+            protocol.DietaryRecommendations = matchedItems.DietaryRecommendations.Select(e =>
+                new ProtocolDietaryRecommendation
+                {
+                    ProtocolId = protocol.Id,
+                    DietaryRecommendationId = e.DietaryRecommendationId
+                }).ToList();
+
+            protocol.RecommendedFoods = matchedItems.Foods.Select(e => new ProtocolFoodItem
+            {
+                ProtocolId = protocol.Id,
+                FoodItemId = e.FoodItemId,
+            }).ToList();
+
+            protocol.Products = matchedItems.Products.Select(e => new ProtocolProduct
+            {
+                ProtocolId = protocol.Id,
+                ProductId = e.ProductId,
+            }).ToList();
+
+            protocol.ProductPacks = matchedItems.ProductPacks.Select(e => new ProtocolProductPack
+            {
+                ProtocolId = protocol.Id,
+                ProductPackId = e.ProductPackId,
+            }).ToList();
+
+            _protocolActivitiesRepository.CreateBatch(protocol.Activities);
+            _protocolDietaryRecommendationRepository.CreateBatch(protocol.DietaryRecommendations);
+            _protocolFoodItemsRepository.CreateBatch(protocol.RecommendedFoods);
+            _protocolProductsRepository.CreateBatch(protocol.Products);
+            _protocolProductPackRepository.CreateBatch(protocol.ProductPacks);
+        }
+
+        private void DeleteProtocolChildRecords(int id)
+        {
+            var activities = _protocolActivitiesRepository.Find(e => e.ProtocolId == id).ToList();
+            if (activities != null)
+            {
+                _protocolActivitiesRepository.DeleteBatch(activities);
+            }
+
+            var dietaryRecommendations = _protocolDietaryRecommendationRepository.Find(e => e.ProtocolId == id).ToList();
+            if (dietaryRecommendations != null)
+            {
+                _protocolDietaryRecommendationRepository.DeleteBatch(dietaryRecommendations);
+            }
+
+            var recommendedFoods = _protocolFoodItemsRepository.Find(e => e.ProtocolId == id).ToList();
+            if (recommendedFoods != null)
+            {
+                _protocolFoodItemsRepository.DeleteBatch(recommendedFoods);
+            }
+
+            var products = _protocolProductsRepository.Find(e => e.ProtocolId == id).ToList();
+            if (products != null)
+            {
+                _protocolProductsRepository.DeleteBatch(products);
+            }
+
+            var productPacks = _protocolProductPackRepository.Find(e => e.ProtocolId == id).ToList();
+            if (productPacks != null)
+            {
+                _protocolProductPackRepository.DeleteBatch(productPacks);
+            }
         }
 
         private List<T> GetGenoTypeFilteredItems<T>(HealthQuestionnaire hq, EGenoType genoType, List<T> items, int take = -1) where T : GenoTypeBase
@@ -174,7 +349,7 @@ namespace K9.WebApplication.Services
                 foreach (var attributeProperty in attributeProperties.Where(e => item.HasProperty(e.Name)))
                 {
                     var attributeValue = scoredAttribute.GetProperty(attributeProperty);
-                    var itemValue = item.GetProperty(attributeProperty.Name);    
+                    var itemValue = item.GetProperty(attributeProperty.Name);
 
                     if (attributeValue == itemValue)
                     {
@@ -218,7 +393,6 @@ namespace K9.WebApplication.Services
             }
 
             hq.Client = client;
-
             return hq;
         }
 

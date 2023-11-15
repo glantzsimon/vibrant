@@ -15,6 +15,11 @@
         public const string SomethingStoredOn = "SomethingStoredOn";
         public const string ArticleId = "ArticleId";
         public const string ShoppingCartId = "ShoppingCartId";
+        
+        public const string CurrentUserIsAdmin = "CurrentUserIsAdmin";
+        public const string CurrentUserIsClientUser = "CurrentUserIsClientUser";
+        public const string CurrentUserIsProductionUser = "CurrentUserIsProductionUser";
+        public const string CurrentUserIsUnicornUser = "CurrentUserIsUnicornUser";
     }
     
 }

@@ -9406,6 +9406,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Take the Genetic Profile Test.
+        /// </summary>
+        public static string TakeTheGeneticProfileTest {
+            get {
+                return ResourceManager.GetString("TakeTheGeneticProfileTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tapping.
         /// </summary>
         public static string Tapping {
@@ -10708,6 +10717,24 @@ namespace K9.Globalisation {
         public static string Whorl {
             get {
                 return ResourceManager.GetString("Whorl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Why do we ask about your gender and sexuality?.
+        /// </summary>
+        public static string WhyWeNeedGenderAndSexuality {
+            get {
+                return ResourceManager.GetString("WhyWeNeedGenderAndSexuality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In studies, it has been observed that there is a clear correlaton between gender and sexuality and the levels of specific hormones and growth factors to which the foetus is exposed. This influences a number of important factors which help to determine the genetic profile of an individual..
+        /// </summary>
+        public static string WhyWeNeedGenderAndSexualityAnswer {
+            get {
+                return ResourceManager.GetString("WhyWeNeedGenderAndSexualityAnswer", resourceCulture);
             }
         }
         

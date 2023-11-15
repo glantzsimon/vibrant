@@ -17,6 +17,13 @@
                     <h4>@dietaryRecommendation.Name</h4>
                 </div>
             </div>
+            
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.Raw(dietaryRecommendation.ShortDescription)
+                </div>
+            </div>
+
             @if (!string.IsNullOrEmpty(dietaryRecommendation.Recommendations))
             {
                 <div class="row">
@@ -34,13 +41,7 @@
                     </div>
                 </div>
             }
-
-            <div class="row">
-                <div class="col-xs-12">
-                    @Html.CollapsiblePanel(Html.GetDisplayNameFor(e => dietaryRecommendation.ShortDescription), dietaryRecommendation.ShortDescription)
-                </div>
-            </div>
-
+            
             @if (!string.IsNullOrEmpty(dietaryRecommendation.Body))
             {
                 <div class="row">

@@ -1,12 +1,12 @@
-﻿using K9.SharedLibrary.Helpers;
+﻿using K9.Base.WebApplication.Filters;
+using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Extensions;
 using K9.WebApplication.Services;
 using NLog;
 using System.Web.Mvc;
-using K9.Base.WebApplication.Filters;
-using K9.SharedLibrary.Authentication;
-using K9.SharedLibrary.Constants;
-using K9.WebApplication.Extensions;
+using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Controllers
 {
@@ -18,8 +18,8 @@ namespace K9.WebApplication.Controllers
         private readonly IOrderService _orderService;
         private readonly IQrCodeService _qrCodeService;
 
-        public SharedController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProductService productService, IIngredientService ingredientService, IOrderService orderService, IQrCodeService qrCodeService)
-            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
+        public SharedController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProductService productService, IIngredientService ingredientService, IOrderService orderService, IQrCodeService qrCodeService, IPureControllerPackage pureControllerPackage)
+            : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, pureControllerPackage)
         {
             _authentication = authentication;
             _productService = productService;

@@ -11,18 +11,27 @@ using K9.WebApplication.Services;
 using NLog;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using K9.WebApplication.Packages;
+using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
-    public class BasePureController : BaseController
+    public class BasePureController : BaseController, IShoppingCartController
     {
+        private readonly IRoles _roles;
         private readonly IMembershipService _membershipService;
+        private readonly IPureControllerPackage _pureControllerPackage;
+
+        public Order ShoppingCart => WebSecurity.IsAuthenticated
+            ? _pureControllerPackage.ShoppingCartService.GetShoppingCart(WebSecurity.CurrentUserId)
+            : null;
 
         public BasePureController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles,
-            IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService)
+            IAuthentication authentication, IFileSourceHelper fileSourceHelper, IPureControllerPackage pureControllerPackage)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
-            _membershipService = membershipService;
+            _roles = roles;
+            _membershipService = pureControllerPackage.MembershipService;
             SetBetaWarningSessionVariable();
 
             var acceptableCultureCodes = new List<string>
