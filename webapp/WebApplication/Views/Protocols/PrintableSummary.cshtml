@@ -23,29 +23,69 @@
         <br />
         <br />
 
-        @Html.Partial("../Protocols/_SummaryFields")
+        @Html.Partial("../Protocols/_SupplementsList")
     }
 </div>
 
-@if (Model.DietaryRecommendations.Any())
+@if (Model.DietaryRecommendations != null && Model.DietaryRecommendations.Any())
 {
     using (Html.BeginForm())
     {
         using (Html.BeginBootstrapForm())
         {
-            @Html.Partial("../Protocols/_SummaryDietaryRecommendationsFields")
+            <div class="row margin-top-0">
+                <div class="col-xs-12">
+                    <h3 class="margin-top-0">@Dictionary.DietaryAdvice</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.Partial("../Protocols/_DietaryRecommendationsSummary")
+                </div>
+            </div>
         }
     }
-} }
 }
 
-@if (Model.Activities.Any())
+@if (Model.Activities != null && Model.Activities.Any())
 {
     using (Html.BeginForm())
     {
         using (Html.BeginBootstrapForm())
         {
-            @Html.Partial("../Protocols/_SummaryActivityFields")
+            <div class="row margin-top-0">
+                <div class="col-xs-12">
+                    <h3 class="margin-top-0">@Dictionary.RecommendedActivitties</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.Partial("../Protocols/_ActivitiesSummary")
+                </div>
+            </div>
+        }
+    }
+}
+
+@if (Model.RecommendedFoods != null && Model.RecommendedFoods.Any())
+{
+    using (Html.BeginForm())
+    {
+        using (Html.BeginBootstrapForm())
+        {
+            <div class="row margin-top-0">
+                <div class="col-xs-12">
+                    <h3 class="margin-top-0">@Dictionary.RecommendedFoods</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.Partial("../Protocols/_SummaryRecommendedFoods")
+                </div>
+            </div>
         }
     }
 }

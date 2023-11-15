@@ -39,11 +39,15 @@
             </div>
         }
 
-        @Html.Partial("../Protocols/_Schedule")
+        if (Model.ProtocolSections.Any())
+        {
+            @Html.Partial("../Protocols/_Schedule")
+        }
+
 
         if (Model.Type == EProtocolType.Default)
         {
-            @Html.Partial("../Protocols/_SummaryFields")
+            @Html.Partial("../Protocols/_SupplementsList")
         }
     }
 }
@@ -90,6 +94,27 @@
     }
 }
 
+@if (Model.RecommendedFoods != null && Model.RecommendedFoods.Any())
+{
+    using (Html.BeginForm())
+    {
+        using (Html.BeginBootstrapForm())
+        {
+            <div class="row margin-top-0">
+                <div class="col-xs-12">
+                    <h3 class="margin-top-0">@Dictionary.RecommendedFoods</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.Partial("../Protocols/_RecommendedFoods")
+                </div>
+            </div>
+        }
+    }
+}
+
 @if (Model.DietaryRecommendations != null && Model.DietaryRecommendations.Any())
 {
     using (Html.BeginForm())
@@ -102,12 +127,11 @@
                 </div>
             </div>
 
-            if (Model.RecommendedFoods != null && Model.RecommendedFoods.Any())
-            {
-                @Html.Partial("../Protocols/_SummaryRecommendedFoods")
-            }
-
-            @Html.Partial("../Protocols/_SummaryDietaryRecommendationsFields")
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.Partial("../Protocols/_DietaryRecommendationsFields")
+                </div>
+            </div>
         }
     }
 }
@@ -124,7 +148,11 @@
                 </div>
             </div>
 
-            @Html.Partial("../Protocols/_SummaryActivityFields")
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.Partial("../Protocols/_ActivityFields")
+                </div>
+            </div>
         }
     }
 }

@@ -1507,11 +1507,11 @@
     <Content Include="Views\Protocols\EditSectionDetails.cshtml" />
     <Content Include="Views\Protocols\_EditSectionDetailsFields.cshtml" />
     <Content Include="Views\Protocols\Summary.cshtml" />
-    <Content Include="Views\Protocols\_SummaryFields.cshtml" />
+    <Content Include="Views\Protocols\_SupplementsList.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Activity.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Activity.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ProtocolSection.cshtml" />
-    <Content Include="Views\Protocols\_SummaryActivityFields.cshtml" />
+    <Content Include="Views\Protocols\_ActivityFields.cshtml" />
     <Content Include="Views\Activities\_DisplayFields.cshtml" />
     <Content Include="Views\Activities\_DisplaySummary.cshtml" />
     <Content Include="Views\Activities\_EditFields.cshtml" />
@@ -1542,7 +1542,7 @@
     <Content Include="Views\DietaryRecommendations\Details.cshtml" />
     <Content Include="Views\DietaryRecommendations\Edit.cshtml" />
     <Content Include="Views\DietaryRecommendations\Index.cshtml" />
-    <Content Include="Views\Protocols\_SummaryDietaryRecommendationsFields.cshtml" />
+    <Content Include="Views\Protocols\_DietaryRecommendationsFields.cshtml" />
     <Content Include="Views\Protocols\DuplicateProtocol.cshtml" />
     <Content Include="Views\Ingredients\_SubstitutesSummary.cshtml" />
     <Content Include="Views\Ingredients\_CollectionsButtons.cshtml" />
@@ -1689,6 +1689,8 @@
     <Content Include="Views\Protocols\_SummaryRecommendedFoods.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\InfectionSeverity.cshtml" />
     <Content Include="Views\Protocols\_SummaryPartial.cshtml" />
+    <Content Include="Views\Protocols\_DietaryMoreInfo.cshtml" />
+    <Content Include="Views\Protocols\_ActivityMoreInfo.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
