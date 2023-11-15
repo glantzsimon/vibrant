@@ -16,6 +16,7 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using NLog;
@@ -23,7 +24,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using K9.WebApplication.Packages;
 using WebMatrix.WebData;
 using UserRole = K9.Base.DataAccessLayer.Models.UserRole;
 
@@ -113,12 +113,7 @@ namespace K9.WebApplication.Controllers
                             break;
                         }
 
-                        SessionHelper.SetCurrentUserRoles(
-                                Roles.CurrentUserIsInRoles(RoleNames.Administrators),
-                                Roles.CurrentUserIsInRoles(Constants.Constants.ClientUser),
-                                Roles.CurrentUserIsInRoles(Constants.Constants.ProductionUser),
-                                Roles.CurrentUserIsInRoles(Constants.Constants.UnicornUser)
-                            );
+                        SetSessionRoles(user);
 
                         if (TempData["ReturnUrl"] != null)
                         {
@@ -752,6 +747,23 @@ namespace K9.WebApplication.Controllers
         public override string GetObjectName()
         {
             return typeof(User).Name;
+        }
+
+        private void SetSessionRoles(User user)
+        {
+            var adminRole = _rolesRepository.Find(e => e.Name == Constants.Constants.Administrator).First();
+            var powerUserRole = _rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
+            var clientRole = _rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
+            var practitionerUser = _rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
+            var unicornRole = _rolesRepository.Find(e => e.Name == Constants.Constants.UnicornUser).First();
+            
+            var isAmin = _userRolesRepository.Exists(e => e.UserId == user.Id && e.RoleId == adminRole.Id);
+            var isPower = _userRolesRepository.Exists(e => e.UserId == user.Id && e.RoleId == powerUserRole.Id);
+            var isClient = _userRolesRepository.Exists(e => e.UserId == user.Id && e.RoleId == clientRole.Id);
+            var isPractitioner = _userRolesRepository.Exists(e => e.UserId == user.Id && e.RoleId == practitionerUser.Id);
+            var isUnicorn = _userRolesRepository.Exists(e => e.UserId == user.Id && e.RoleId == unicornRole.Id);
+
+            SessionHelper.SetCurrentUserRoles(isAmin, isPower, isClient, isPractitioner, isUnicorn);
         }
 
         #endregion

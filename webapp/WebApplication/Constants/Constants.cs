@@ -5,10 +5,14 @@ namespace K9.WebApplication.Constants
 {
     public static class Constants
     {
-        public const string UnicornUser = "Unicorn User";
+        public const string Administrator = "Administrator";
+        public const string PowerUser = "PowerUser";
+        public const string DefaultUser = "DefaultUser";
         public const string ClientUser = "Client User";
+        public const string PractitionerUser = "PractitionerUsers";
+        public const string UnicornUser = "Unicorn User";
         public const string ProductionUser = "Production User";
-
+        
         public const int CategoryGap = 100000;
         public const int ItemCodeGap = 222;
         public const int OneWeek = 604800;

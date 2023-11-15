@@ -1,5 +1,4 @@
-﻿using K9.WebApplication.Constants;
-using System;
+﻿using System;
 
 namespace K9.WebApplication.Helpers
 {
@@ -35,17 +34,19 @@ namespace K9.WebApplication.Helpers
             return false;
         }
 
-        public static void SetCurrentUserRoles(bool isAdmin = false, bool isClient = false, bool isProduction = false, bool isUnicorn = false)
+        public static void SetCurrentUserRoles(bool isAdmin = false, bool isPower = false, bool isClient = false, bool isPractitioner = false, bool isUnicorn = false)
         {
-            Base.WebApplication.Helpers.SessionHelper.SetValue(SessionConstants.CurrentUserIsAdmin, isAdmin);
-            Base.WebApplication.Helpers.SessionHelper.SetValue(SessionConstants.CurrentUserIsClientUser, isClient);
-            Base.WebApplication.Helpers.SessionHelper.SetValue(SessionConstants.CurrentUserIsProductionUser, isProduction);
-            Base.WebApplication.Helpers.SessionHelper.SetValue(SessionConstants.CurrentUserIsUnicornUser, isUnicorn);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.Constants.Administrator, isAdmin);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.Constants.PowerUser, isPower);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.Constants.ClientUser, isClient);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.Constants.PractitionerUser, isPractitioner);
+            Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.Constants.UnicornUser, isUnicorn);
         }
 
-        public static bool CurrentUserIsAdmin() => GetBooleanValue(SessionConstants.CurrentUserIsAdmin);
-        public static bool CurrentUserIsClientUser() => GetBooleanValue(SessionConstants.CurrentUserIsClientUser);
-        public static bool CurrentUserIsProductionUser() => GetBooleanValue(SessionConstants.CurrentUserIsProductionUser);
-        public static bool CurrentUserIsUnicornUser() => GetBooleanValue(SessionConstants.CurrentUserIsUnicornUser);
+        public static bool CurrentUserIsAdmin() => GetBooleanValue(Constants.Constants.Administrator);
+        public static bool CurrentUserIsPowertUser() => GetBooleanValue(Constants.Constants.PowerUser);
+        public static bool CurrentUserIsClientUser() => GetBooleanValue(Constants.Constants.ClientUser);
+        public static bool CurrentUserIsPractitionerUser() => GetBooleanValue(Constants.Constants.PractitionerUser);
+        public static bool CurrentUserIsUnicornUser() => GetBooleanValue(Constants.Constants.PractitionerUser);
     }
 }
