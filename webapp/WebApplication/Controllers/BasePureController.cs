@@ -5,13 +5,12 @@ using K9.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Enums;
+using K9.WebApplication.Models;
 using K9.WebApplication.Services;
 using NLog;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.Web.Mvc;
-using K9.WebApplication.Enums;
-using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Controllers
 {

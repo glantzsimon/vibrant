@@ -13,6 +13,7 @@
     var hqIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any());
     var accountIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any() && !hqIsActive);
     var protocolsIsActive = (Model.Protocols != null && Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any());
+    var suggestedProtocolsIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any());
 
     var hqTabClass = hqIsActive ? activeTabClass : inactiveTabClass;
     var hqPaneClass = hqIsActive ? activePaneClass : inactivePaneClass;
@@ -20,6 +21,8 @@
     var accontPaneClass = accountIsActive ? activePaneClass : inactivePaneClass;
     var protocolsTabClass = protocolsIsActive ? activeTabClass : inactiveTabClass;
     var protocolsPaneClass = protocolsIsActive ? activePaneClass : inactivePaneClass;
+    var suggestedProtocolsPaneClass = suggestedProtocolsIsActive ? activePaneClass : inactivePaneClass;
+    var suggestedProtocolsTabClass = suggestedProtocolsIsActive ? activeTabClass : inactiveTabClass;
 }
 @using (Html.BeginBootstrapForm())
 {
@@ -28,7 +31,7 @@
         {
             <li class="@activeTabClass"><a data-toggle="tab" href="#orders">@Dictionary.YourOrders</a></li>
         }
-        
+
         <li class="@hqTabClass"><a data-toggle="tab" href="#health-questionnaire">@Dictionary.GeneticProfileTest</a></li>
 
 
@@ -39,9 +42,9 @@
 
         @if (Model.SuggestedProtocols != null && Model.SuggestedProtocols.Any())
         {
-            <li class="@protocolsTabClass"><a data-toggle="tab" href="#suggested-protocols">@Dictionary.RecommendedProtocols</a></li>
+            <li class="@suggestedProtocolsTabClass"><a data-toggle="tab" href="#suggested-protocols">@Dictionary.RecommendedProtocols</a></li>
         }
-      
+
         <li class="@accontTabClass"><a data-toggle="tab" href="#account">@Dictionary.UpdateYourDetails</a></li>
     </ul>
 
@@ -78,7 +81,7 @@
 
         @if (Model.SuggestedProtocols != null && Model.SuggestedProtocols.Any())
         {
-            <div id="suggested-protocols" class="tab-pane fade @protocolsPaneClass">
+            <div id="suggested-protocols" class="tab-pane fade @suggestedProtocolsPaneClass">
                 @Html.Partial("_UserProtocols", Model.SuggestedProtocols)
             </div>
         }
