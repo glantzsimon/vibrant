@@ -28,7 +28,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<ProtocolActivity> _protocolActivitiesRepository;
         private readonly IRepository<Activity> _activitiesRepository;
         private readonly IRepository<ProductPackProduct> _productPackProductsRepository;
-        private readonly IQuestionnaireService _questionnaireService;
+        private readonly IHealthQuestionnaireService _healthQuestionnaireService;
         private readonly IRepository<ProtocolDietaryRecommendation> _protocolDietaryRecommendationRepository;
         private readonly IRepository<DietaryRecommendation> _dietaryRecommendationRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
@@ -52,7 +52,7 @@ namespace K9.WebApplication.Services
             IRepository<Activity> activitiesRepository,
             IRepository<DietaryRecommendation> dietaryRecommendationsRepository,
             IRepository<FoodItem> foodItemsRepository,
-            IRepository<ProductPackProduct> productPackProductsRepository, IQuestionnaireService questionnaireService) :
+            IRepository<ProductPackProduct> productPackProductsRepository, IHealthQuestionnaireService healthQuestionnaireService) :
             base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository,
                 ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository,
                 activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository, foodItemsRepository)
@@ -73,7 +73,7 @@ namespace K9.WebApplication.Services
             _protocolActivitiesRepository = protocolActivitiesRepository;
             _activitiesRepository = activitiesRepository;
             _productPackProductsRepository = productPackProductsRepository;
-            _questionnaireService = questionnaireService;
+            _healthQuestionnaireService = healthQuestionnaireService;
             _protocolDietaryRecommendationRepository = protocolDietaryRecommendationRepository;
             _dietaryRecommendationRepository = dietaryRecommendationRepository;
             _defaultValues = defaultValues.Value;
@@ -599,7 +599,7 @@ namespace K9.WebApplication.Services
 
         public Protocol AutoGenerateProtocolFromGeneticProfile(int clientId, bool saveToDb = false)
         {
-            var hq = _questionnaireService.GetHealthQuestionnaireForClient(clientId);
+            var hq = _healthQuestionnaireService.GetHealthQuestionnaireForClient(clientId);
             if (hq == null)
             {
                 return null;
@@ -626,7 +626,7 @@ namespace K9.WebApplication.Services
                 protocol = _protocolsRepository.Find(e => e.ExternalId == externalId).First();
             }
 
-            var matchedItems = _questionnaireService.GetGeneticProfileMatchedItems(hq.Id);
+            var matchedItems = _healthQuestionnaireService.GetGeneticProfileMatchedItems(hq.Id);
 
             protocol.Activities = matchedItems.Activities.Select(e => new ProtocolActivity
             {

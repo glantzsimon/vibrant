@@ -28,14 +28,20 @@
         {
             <li class="@activeTabClass"><a data-toggle="tab" href="#orders">@Dictionary.YourOrders</a></li>
         }
+        
+        <li class="@hqTabClass"><a data-toggle="tab" href="#health-questionnaire">@Dictionary.GeneticProfileTest</a></li>
+
 
         @if (Model.Protocols != null && Model.Protocols.Any())
         {
             <li class="@protocolsTabClass"><a data-toggle="tab" href="#protocols">@Dictionary.YourProtocols</a></li>
         }
 
-        <li class="@hqTabClass"><a data-toggle="tab" href="#health-questionnaire">@Dictionary.GeneticProfileTest</a></li>
-
+        @if (Model.SuggestedProtocols != null && Model.SuggestedProtocols.Any())
+        {
+            <li class="@protocolsTabClass"><a data-toggle="tab" href="#suggested-protocols">@Dictionary.RecommendedProtocols</a></li>
+        }
+      
         <li class="@accontTabClass"><a data-toggle="tab" href="#account">@Dictionary.UpdateYourDetails</a></li>
     </ul>
 
@@ -44,12 +50,6 @@
         {
             <div id="orders" class="tab-pane fade @activePaneClass">
                 @Html.Partial("_UserOrders", Model.Orders)
-            </div>
-        }
-        @if (Model.Protocols != null && Model.Protocols.Any())
-        {
-            <div id="protocols" class="tab-pane fade @protocolsPaneClass">
-                @Html.Partial("_UserProtocols", Model.Protocols)
             </div>
         }
 
@@ -68,6 +68,20 @@
                 @Html.BootstrapActionLinkButton(Dictionary.ViewHealthQuestionnaireResults, "GeneticProfileTestOverview", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Success)
             }
         </div>
+
+        @if (Model.Protocols != null && Model.Protocols.Any())
+        {
+            <div id="protocols" class="tab-pane fade @protocolsPaneClass">
+                @Html.Partial("_UserProtocols", Model.Protocols)
+            </div>
+        }
+
+        @if (Model.SuggestedProtocols != null && Model.SuggestedProtocols.Any())
+        {
+            <div id="suggested-protocols" class="tab-pane fade @protocolsPaneClass">
+                @Html.Partial("_UserProtocols", Model.SuggestedProtocols)
+            </div>
+        }
 
         <div id="account" class="tab-pane fade @accontPaneClass">
             @Html.Partial("_AccountDetails", Model.User)

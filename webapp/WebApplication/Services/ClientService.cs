@@ -88,6 +88,11 @@ namespace K9.WebApplication.Services
             return null;
         }
 
+        public Client FindFromUser(int userId)
+        {
+            return _clientsRepository.Find(e => e.UserId == userId).FirstOrDefault();
+        }
+
         public Client Find(int id)
         {
             return _clientsRepository.Find(id);

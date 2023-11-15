@@ -3556,4 +3556,10 @@
   <data name="RecommendedFoods" xml:space="preserve">
     <value>Re</value>
   </data>
+  <data name="RecommendedForYou" xml:space="preserve">
+    <value>Recommended for You</value>
+  </data>
+  <data name="RecommendedProtocols" xml:space="preserve">
+    <value>Other Recommended Protocols </value>
+  </data>
 </root>

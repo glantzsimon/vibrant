@@ -45,11 +45,11 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<UserRole> _userRolesRepository;
         private readonly IRepository<Role> _rolesRepository;
         private readonly IOrderService _orderService;
-        private readonly IQuestionnaireService _questionnaireService;
+        private readonly IHealthQuestionnaireService _healthQuestionnaireService;
         private readonly IProtocolService _protocolService;
         private readonly RecaptchaConfiguration _recaptchaConfig;
 
-        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IClientService clientService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<UserProtocol> userProtocolsRepository, IRepository<Protocol> protocolsRepository, IRepository<UserRole> userRolesRepository, IRepository<Role> rolesRepository, IOrderService orderService, IQuestionnaireService questionnaireService, IProtocolService protocolService)
+        public AccountController(IRepository<User> userRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService, IMembershipService membershipService, IClientService clientService, IUserService userService, IRepository<PromoCode> promoCodesRepository, IOptions<RecaptchaConfiguration> recaptchaConfig, IRecaptchaService recaptchaService, IRepository<UserProtocol> userProtocolsRepository, IRepository<Protocol> protocolsRepository, IRepository<UserRole> userRolesRepository, IRepository<Role> rolesRepository, IOrderService orderService, IHealthQuestionnaireService healthQuestionnaireService, IProtocolService protocolService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, membershipService)
         {
             _userRepository = userRepository;
@@ -67,7 +67,7 @@ namespace K9.WebApplication.Controllers
             _userRolesRepository = userRolesRepository;
             _rolesRepository = rolesRepository;
             _orderService = orderService;
-            _questionnaireService = questionnaireService;
+            _healthQuestionnaireService = healthQuestionnaireService;
             _protocolService = protocolService;
             _recaptchaConfig = recaptchaConfig.Value;
 
@@ -415,14 +415,14 @@ namespace K9.WebApplication.Controllers
                 Membership = _membershipService.GetActiveUserMembership(user?.Id),
                 Protocols = protocols,
                 Orders = _orderService.ListForClient(clientRecord.Id).Where(e => e.OrderType != EOrderType.ShoppingCart).ToList(),
-                HealthQuestionnaire = _questionnaireService.GetHealthQuestionnaireForUser(WebSecurity.CurrentUserId)
+                HealthQuestionnaire = _healthQuestionnaireService.GetHealthQuestionnaireForUser(WebSecurity.CurrentUserId)
             };
 
-            var hq = _questionnaireService.GetHealthQuestionnaireForClient(clientRecord.Id);
+            var hq = _healthQuestionnaireService.GetHealthQuestionnaireForClient(clientRecord.Id);
             if (hq != null)
             {
-                var matchedItems = _questionnaireService.GetGeneticProfileMatchedItems(hq.Id);
-                model.SuggestedProtocols = matchedItems.Protocols;
+                var matchedItems = _healthQuestionnaireService.GetGeneticProfileMatchedProtocols(clientRecord.Id);
+                model.SuggestedProtocols = matchedItems;
 
                 if (model.Protocols != null & model.Protocols.Any())
                 {

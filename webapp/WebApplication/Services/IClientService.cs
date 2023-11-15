@@ -10,6 +10,7 @@ namespace K9.WebApplication.Services
             int? userId = null);
         Client GetOrCreateClientFromUser(User user);
         Client Find(int id);
+        Client FindFromUser(int userId);
         Client Find(string emailAddress);
         List<Client> ListClients();
         bool Unsubscribe(string code);

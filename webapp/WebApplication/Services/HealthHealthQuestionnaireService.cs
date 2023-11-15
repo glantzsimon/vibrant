@@ -11,7 +11,7 @@ using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Services
 {
-    public class HealthQuestionnaireService : IQuestionnaireService
+    public class HealthHealthQuestionnaireService : IHealthQuestionnaireService
     {
         private readonly IRepository<HealthQuestionnaire> _healthQuestionnaireRepository;
         private readonly IRepository<User> _usersRepository;
@@ -24,7 +24,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<DietaryRecommendation> _dietaryRecommendationsRepository;
         private readonly IRepository<FoodItem> _foodItemsRepository;
 
-        public HealthQuestionnaireService(IRepository<HealthQuestionnaire> healthQuestionnaireRepository,
+        public HealthHealthQuestionnaireService(IRepository<HealthQuestionnaire> healthQuestionnaireRepository,
             IRepository<User> usersRepository, IRepository<Client> clientsRepository, IClientService clientService,
             IRepository<Product> productsRepository, IRepository<ProductPack> productPacksRepository,
             IRepository<Protocol> protocolsRepository, IRepository<Activity> activitiesRepository,
@@ -83,11 +83,23 @@ namespace K9.WebApplication.Services
             {
                 Products = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Product>(_productsRepository.List()), 5),
                 ProductPacks = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<ProductPack>(_productPacksRepository.List()), 3),
-                Protocols = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Protocol>(_protocolsRepository.List()), 3),
                 DietaryRecommendations = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<DietaryRecommendation>(_dietaryRecommendationsRepository.List())),
                 Activities = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Activity>(_activitiesRepository.List())),
                 Foods = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<FoodItem>(_foodItemsRepository.List()))
             };
+        }
+
+        public List<Protocol> GetGeneticProfileMatchedProtocols(int clientId)
+        {
+            var hq = GetHealthQuestionnaireForClient(clientId);
+            if (hq == null)
+            {
+                return null;
+            }
+
+            var genoType = hq.CalculateGenotype();
+
+            return GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Protocol>(_protocolsRepository.List()), 3);
         }
 
         public void Save(HealthQuestionnaire model)

@@ -2230,10 +2230,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Sensitivity to medications, alcohol, caffeine and environmental chemicals is a sign of &quot;slow acetylation&quot;, which is an important factor, influencing many aspects of our metabolim, especially in regards to hepatitc detoxification pathways.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Fast acetylators, on the other hand, whilst they have relatively fewer problems with hepatic detoxification, may encounter other issues, such as a relatively lesser ability to detoxify certain carcinogens, especially those found in meat.
+        ///    When considering the dietary advice contained in this section, it&apos;s important to remember that ut’s what you eat, not what you avoid, that moves you forward, so try not to focus on all the things you need to void, and place your attention on the foods that are most beneficial to you.
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -7886,6 +7883,24 @@ namespace K9.Globalisation {
         public static string RecommendedFoods {
             get {
                 return ResourceManager.GetString("RecommendedFoods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recommended for You.
+        /// </summary>
+        public static string RecommendedForYou {
+            get {
+                return ResourceManager.GetString("RecommendedForYou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other Recommended Protocols .
+        /// </summary>
+        public static string RecommendedProtocols {
+            get {
+                return ResourceManager.GetString("RecommendedProtocols", resourceCulture);
             }
         }
         

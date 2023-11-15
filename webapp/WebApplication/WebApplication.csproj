@@ -374,8 +374,8 @@
     <Compile Include="Services\IProtocolService.cs" />
     <Compile Include="Services\IOrderService.cs" />
     <Compile Include="Services\IShoppingCartService.cs" />
-    <Compile Include="Services\IQuestionnaireService.cs" />
-    <Compile Include="Services\HealthQuestionnaireService.cs" />
+    <Compile Include="Services\IHealthQuestionnaireService.cs" />
+    <Compile Include="Services\HealthHealthQuestionnaireService.cs" />
     <Compile Include="Services\Scores\DigestionScore.cs" />
     <Compile Include="Services\Scores\DetoxScore.cs" />
     <Compile Include="Services\Scores\ImmunityScore.cs" />
@@ -403,6 +403,7 @@
     <Compile Include="Services\QrCodeService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\IUserService.cs" />
+    <Compile Include="ViewModels\ProtocolsViewModel.cs" />
     <Compile Include="ViewModels\GeneticProfileMatchedItemsViewModel.cs" />
     <Compile Include="ViewModels\ProtocolReviewViewModel.cs" />
     <Compile Include="ViewModels\RepCommissionViewModel.cs" />

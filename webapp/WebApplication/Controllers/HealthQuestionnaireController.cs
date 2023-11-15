@@ -16,13 +16,13 @@ namespace K9.WebApplication.Controllers
     [Route("genetic-profile")]
     public class HealthQuestionnaireController : BasePureController
     {
-        private readonly IQuestionnaireService _questionnaireService;
+        private readonly IHealthQuestionnaireService _healthQuestionnaireService;
         private readonly IRepository<User> _usresRepository;
         private readonly IClientService _clientService;
 
-        public HealthQuestionnaireController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IMembershipService membershipService, IQuestionnaireService questionnaireService, IRepository<User> usresRepository, IClientService clientService) : base(controllerPackage.Logger, controllerPackage.DataSetsHelper, controllerPackage.Roles, controllerPackage.Authentication, controllerPackage.FileSourceHelper, membershipService)
+        public HealthQuestionnaireController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IMembershipService membershipService, IHealthQuestionnaireService healthQuestionnaireService, IRepository<User> usresRepository, IClientService clientService) : base(controllerPackage.Logger, controllerPackage.DataSetsHelper, controllerPackage.Roles, controllerPackage.Authentication, controllerPackage.FileSourceHelper, membershipService)
         {
-            _questionnaireService = questionnaireService;
+            _healthQuestionnaireService = healthQuestionnaireService;
             _usresRepository = usresRepository;
             _clientService = clientService;
         }
@@ -43,11 +43,11 @@ namespace K9.WebApplication.Controllers
                     }
                 }
 
-                hq = _questionnaireService.GetHealthQuestionnaireForClient(clientId.Value);
+                hq = _healthQuestionnaireService.GetHealthQuestionnaireForClient(clientId.Value);
             }
             else
             {
-                hq = _questionnaireService.GetHealthQuestionnaireForUser(WebSecurity.CurrentUserId);
+                hq = _healthQuestionnaireService.GetHealthQuestionnaireForUser(WebSecurity.CurrentUserId);
             }
             
             if (hq == null)
@@ -79,11 +79,11 @@ namespace K9.WebApplication.Controllers
                     }
                 }
 
-                hq = _questionnaireService.GetHealthQuestionnaireForClient(clientId.Value);
+                hq = _healthQuestionnaireService.GetHealthQuestionnaireForClient(clientId.Value);
             }
             else
             {
-                hq = _questionnaireService.GetHealthQuestionnaireForUser(WebSecurity.CurrentUserId);
+                hq = _healthQuestionnaireService.GetHealthQuestionnaireForUser(WebSecurity.CurrentUserId);
             }
             
             if (hq == null)
@@ -99,7 +99,7 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult GeneticProfileTest(HealthQuestionnaire model)
         {
-            _questionnaireService.Save(model);
+            _healthQuestionnaireService.Save(model);
 
             #region Personal Details
 
