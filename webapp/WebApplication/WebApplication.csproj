@@ -262,8 +262,8 @@
     <Compile Include="Constants\SessionConstants.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Controllers\IShoppingCartController.cs" />
-    <Compile Include="Packages\PureControllerPackage.cs" />
-    <Compile Include="Packages\IPureControllerPackage.cs" />
+    <Compile Include="ControllerPackages\PureControllerPackage.cs" />
+    <Compile Include="ControllerPackages\IPureControllerPackage.cs" />
     <Compile Include="Controllers\FoodItemsController.cs" />
     <Compile Include="Controllers\HealthQuestionnaireController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
