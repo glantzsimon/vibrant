@@ -122,7 +122,6 @@ namespace K9.DataAccessLayer.Models
         public string ShortDescription { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BodyLabel)]
-        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [StringLength(int.MaxValue)]
         [DataType(DataType.Html)]
         [AllowHtml]

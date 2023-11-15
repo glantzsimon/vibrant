@@ -375,7 +375,7 @@
     <Compile Include="Services\IOrderService.cs" />
     <Compile Include="Services\IShoppingCartService.cs" />
     <Compile Include="Services\IHealthQuestionnaireService.cs" />
-    <Compile Include="Services\HealthHealthQuestionnaireService.cs" />
+    <Compile Include="Services\HealthQuestionnaireService.cs" />
     <Compile Include="Services\Scores\DigestionScore.cs" />
     <Compile Include="Services\Scores\DetoxScore.cs" />
     <Compile Include="Services\Scores\ImmunityScore.cs" />

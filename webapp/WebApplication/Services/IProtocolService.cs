@@ -14,7 +14,7 @@ namespace K9.WebApplication.Services
         Protocol Duplicate(int id);
         Protocol GetProtocolWithProtocolSections(int id);
         Protocol GetProtocolWithProtocolSections(Guid id);
-        Protocol AutoGenerateProtocolFromGeneticProfile(int clientId, bool saveToDb = false);
+        Protocol AutoGenerateProtocolFromGeneticProfile(int clientId, bool refresh = false);
 
         void DeleteChildRecords(int id);
         void AddDefaultSections(int id);

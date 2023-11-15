@@ -655,6 +655,10 @@
     <Compile Include="Migrations\202311141607190_LatestUpdates1.Designer.cs">
       <DependentUpon>202311141607190_LatestUpdates1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311150529067_RemoveRequiredFromProtocolBody.cs" />
+    <Compile Include="Migrations\202311150529067_RemoveRequiredFromProtocolBody.Designer.cs">
+      <DependentUpon>202311150529067_RemoveRequiredFromProtocolBody.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
@@ -1018,6 +1022,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311141607190_LatestUpdates1.resx">
       <DependentUpon>202311141607190_LatestUpdates1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311150529067_RemoveRequiredFromProtocolBody.resx">
+      <DependentUpon>202311150529067_RemoveRequiredFromProtocolBody.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -209,11 +209,11 @@ namespace K9.WebApplication.Controllers
                     ModelState.AddModelError("PromoCode", Globalisation.Dictionary.PromoCodeInUse);
                     return View(model);
                 };
-                
+
                 var user = _userRepository.Find(e => e.Username == model.Username).First();
 
                 try
-                {  
+                {
                     _userService.UsePromoCode(user.Id, model.PromoCode);
                 }
                 catch (Exception e)
@@ -426,7 +426,7 @@ namespace K9.WebApplication.Controllers
 
                 if (model.Protocols != null & model.Protocols.Any())
                 {
-                    model.Protocols.Add(_protocolService.AutoGenerateProtocolFromGeneticProfile(clientRecord.Id));
+                    model.Protocols.Add(_protocolService.AutoGenerateProtocolFromGeneticProfile(clientRecord.Id, true));
                 }
                 else
                 {

@@ -3761,6 +3761,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Personalised Protocol for Your Genetic Profile.
+        /// </summary>
+        public static string GenoTypePersonalisedProtocol {
+            get {
+                return ResourceManager.GetString("GenoTypePersonalisedProtocol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GenoType Questionnaire.
         /// </summary>
         public static string GenoTypeQuestionnaire {

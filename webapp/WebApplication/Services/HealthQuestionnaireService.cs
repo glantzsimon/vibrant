@@ -11,7 +11,7 @@ using K9.SharedLibrary.Extensions;
 
 namespace K9.WebApplication.Services
 {
-    public class HealthHealthQuestionnaireService : IHealthQuestionnaireService
+    public class HealthQuestionnaireService : IHealthQuestionnaireService
     {
         private readonly IRepository<HealthQuestionnaire> _healthQuestionnaireRepository;
         private readonly IRepository<User> _usersRepository;
@@ -24,7 +24,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<DietaryRecommendation> _dietaryRecommendationsRepository;
         private readonly IRepository<FoodItem> _foodItemsRepository;
 
-        public HealthHealthQuestionnaireService(IRepository<HealthQuestionnaire> healthQuestionnaireRepository,
+        public HealthQuestionnaireService(IRepository<HealthQuestionnaire> healthQuestionnaireRepository,
             IRepository<User> usersRepository, IRepository<Client> clientsRepository, IClientService clientService,
             IRepository<Product> productsRepository, IRepository<ProductPack> productPacksRepository,
             IRepository<Protocol> protocolsRepository, IRepository<Activity> activitiesRepository,
@@ -169,19 +169,23 @@ namespace K9.WebApplication.Services
             var scoredProperties = hq.GetPropertiesWithAttribute(typeof(ScoreAttribute)).ToList();
             foreach (var scoredProperty in scoredProperties)
             {
-                var attributeValue = hq.GetProperty(scoredProperty.Name);
-                var itemValue = item.GetProperty(scoredProperty.Name);
-
-                if (attributeValue == itemValue)
+                var scoredAttribute = scoredProperty.GetAttribute<ScoreAttribute>();
+                var attributeProperties = scoredAttribute.GetProperties();
+                foreach (var attributeProperty in attributeProperties.Where(e => item.HasProperty(e.Name)))
                 {
-                    score++;
+                    var attributeValue = scoredAttribute.GetProperty(attributeProperty);
+                    var itemValue = item.GetProperty(attributeProperty.Name);    
+
+                    if (attributeValue == itemValue)
+                    {
+                        score++;
+                    }
                 }
             }
 
             // Custom scores
-            var scores = AppDomain.CurrentDomain.GetAssemblies()
-                .SelectMany(s => s.GetTypes())
-                .Where(p => typeof(IScore).IsAssignableFrom(p)).ToList();
+            var scores = GetType().Assembly.GetTypes()
+                .Where(p => p.IsClass && typeof(IScore).IsAssignableFrom(p)).ToList();
 
             foreach (var scoreImplementation in scores)
             {
