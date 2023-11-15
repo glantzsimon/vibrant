@@ -7905,6 +7905,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Recommended Product Packs.
+        /// </summary>
+        public static string RecommendedProductPacks {
+            get {
+                return ResourceManager.GetString("RecommendedProductPacks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recommended Products.
+        /// </summary>
+        public static string RecommendedProducts {
+            get {
+                return ResourceManager.GetString("RecommendedProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Other Recommended Protocols .
         /// </summary>
         public static string RecommendedProtocols {

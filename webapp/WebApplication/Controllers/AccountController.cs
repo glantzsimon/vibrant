@@ -112,9 +112,7 @@ namespace K9.WebApplication.Controllers
                             ModelState.AddModelError("", Dictionary.AccountNotActivatedError);
                             break;
                         }
-
-                        SetSessionRoles(user);
-
+                        
                         if (TempData["ReturnUrl"] != null)
                         {
                             return Redirect(TempData["ReturnUrl"].ToString());
@@ -748,24 +746,7 @@ namespace K9.WebApplication.Controllers
         {
             return typeof(User).Name;
         }
-
-        private void SetSessionRoles(User user)
-        {
-            var adminRole = _rolesRepository.Find(e => e.Name == Constants.Constants.Administrator).First();
-            var powerUserRole = _rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
-            var clientRole = _rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
-            var practitionerUser = _rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
-            var unicornRole = _rolesRepository.Find(e => e.Name == Constants.Constants.UnicornUser).First();
-            
-            var isAmin = _userRolesRepository.Exists(e => e.UserId == user.Id && e.RoleId == adminRole.Id);
-            var isPower = _userRolesRepository.Exists(e => e.UserId == user.Id && e.RoleId == powerUserRole.Id);
-            var isClient = _userRolesRepository.Exists(e => e.UserId == user.Id && e.RoleId == clientRole.Id);
-            var isPractitioner = _userRolesRepository.Exists(e => e.UserId == user.Id && e.RoleId == practitionerUser.Id);
-            var isUnicorn = _userRolesRepository.Exists(e => e.UserId == user.Id && e.RoleId == unicornRole.Id);
-
-            SessionHelper.SetCurrentUserRoles(isAmin, isPower, isClient, isPractitioner, isUnicorn);
-        }
-
+        
         #endregion
 
     }

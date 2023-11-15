@@ -1,9 +1,10 @@
-﻿using System;
-using K9.Base.WebApplication.UnitsOfWork;
+﻿using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -14,7 +15,7 @@ namespace K9.WebApplication.Controllers
 	    private readonly IRepository<RepCommission> _repCommissionsRepository;
 	    private readonly IOrderService _orderService;
 
-	    public RepCommissionsController(IControllerPackage<RepCommission> controllerPackage, IRepository<RepCommission> repCommissionsRepository, IOrderService orderService) : base(controllerPackage)
+	    public RepCommissionsController(IControllerPackage<RepCommission> controllerPackage, IRepository<RepCommission> repCommissionsRepository, IOrderService orderService, IPureControllerPackage pureControllerPackage) : base(controllerPackage, pureControllerPackage)
 	    {
 	        _repCommissionsRepository = repCommissionsRepository;
 	        _orderService = orderService;

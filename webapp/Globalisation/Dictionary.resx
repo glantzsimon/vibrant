@@ -3574,4 +3574,10 @@
   <data name="WhyWeNeedGenderAndSexualityAnswer" xml:space="preserve">
     <value>In studies, it has been observed that there is a clear correlaton between gender and sexuality and the levels of specific hormones and growth factors to which the foetus is exposed. This influences a number of important factors which help to determine the genetic profile of an individual.</value>
   </data>
+  <data name="RecommendedProductPacks" xml:space="preserve">
+    <value>Recommended Product Packs</value>
+  </data>
+  <data name="RecommendedProducts" xml:space="preserve">
+    <value>Recommended Products</value>
+  </data>
 </root>

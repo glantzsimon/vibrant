@@ -3,6 +3,7 @@ using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
+using K9.WebApplication.Packages;
 using System;
 using System.Web.Mvc;
 
@@ -12,7 +13,7 @@ namespace K9.WebApplication.Controllers
     [RequirePermissions(Role = RoleNames.Administrators)]
     public class FoodItemsController : HtmlControllerBase<FoodItem>
     {
-        public FoodItemsController(IControllerPackage<FoodItem> controllerPackage) : base(controllerPackage)
+        public FoodItemsController(IControllerPackage<FoodItem> controllerPackage, IPureControllerPackage pureControllerPackage) : base(controllerPackage, pureControllerPackage)
         {
             RecordBeforeCreated += FoodItemsController_RecordBeforeCreated;
             RecordBeforeUpdated += FoodItemsController_RecordBeforeUpdated;

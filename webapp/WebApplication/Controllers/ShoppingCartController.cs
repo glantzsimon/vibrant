@@ -3,11 +3,12 @@ using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
+using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using NLog;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -20,7 +21,7 @@ namespace K9.WebApplication.Controllers
         private readonly IClientService _clientService;
         private readonly ILogger _logger;
         
-        public ShoppingCartController(IControllerPackage<Order> controllerPackage, IShoppingCartService shoppingCartService, IOrderService orderService, IClientService clientService, ILogger logger) : base(controllerPackage)
+        public ShoppingCartController(IControllerPackage<Order> controllerPackage, IShoppingCartService shoppingCartService, IOrderService orderService, IClientService clientService, ILogger logger, IPureControllerPackage pureControllerPackage) : base(controllerPackage, pureControllerPackage)
         {
             _shoppingCartService = shoppingCartService;
             _orderService = orderService;

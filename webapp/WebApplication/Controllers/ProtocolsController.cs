@@ -3,6 +3,7 @@ using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using K9.WebApplication.ViewModels;
 using System;
@@ -16,7 +17,7 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IProtocolService _protocolService;
 
-        public ProtocolsController(IControllerPackage<Protocol> controllerPackage, IProtocolService protocolService) : base(controllerPackage)
+        public ProtocolsController(IControllerPackage<Protocol> controllerPackage, IProtocolService protocolService, IPureControllerPackage pureControllerPackage) : base(controllerPackage, pureControllerPackage)
         {
             _protocolService = protocolService;
             RecordCreated += ProtocolsController_RecordCreated;

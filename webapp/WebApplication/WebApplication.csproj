@@ -1686,11 +1686,12 @@
     <Content Include="Views\FoodItems\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DietaryPreference.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\CompatibilityLevel.cshtml" />
-    <Content Include="Views\Protocols\_SummaryRecommendedFoods.cshtml" />
+    <Content Include="Views\Protocols\_RecommendedFoods.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\InfectionSeverity.cshtml" />
     <Content Include="Views\Protocols\_SummaryPartial.cshtml" />
     <Content Include="Views\Protocols\_DietaryMoreInfo.cshtml" />
     <Content Include="Views\Protocols\_ActivityMoreInfo.cshtml" />
+    <Content Include="Views\Protocols\_RecommendedProducts.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

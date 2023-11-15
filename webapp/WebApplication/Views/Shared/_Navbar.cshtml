@@ -180,7 +180,7 @@
                     var cart = this.GetShoppingCart();
                     if (cart != null)
                     {
-                        @Html.Partial("_MenuItem", cart)
+                        @Html.Partial("../ShoppingCart/_MenuItem", cart)
                     }
                 }
                 @Html.LoginLogout()

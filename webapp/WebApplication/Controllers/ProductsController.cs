@@ -8,6 +8,7 @@ using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Helpers;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using ServiceStack.Text;
 using System;
@@ -26,7 +27,7 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<Ingredient> _ingredientsRepository;
         private readonly IIngredientService _ingredientService;
 
-        public ProductsController(IControllerPackage<Product> controllerPackage, IProductService productService, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository, IIngredientService ingredientService) : base(controllerPackage)
+        public ProductsController(IControllerPackage<Product> controllerPackage, IProductService productService, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository, IIngredientService ingredientService, IPureControllerPackage pureControllerPackage) : base(controllerPackage, pureControllerPackage)
         {
             _productService = productService;
             _productIngredientsRepository = productIngredientsRepository;

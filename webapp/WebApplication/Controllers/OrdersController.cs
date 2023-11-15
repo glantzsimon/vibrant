@@ -1,21 +1,22 @@
 ﻿using K9.Base.WebApplication.EventArgs;
+using K9.Base.WebApplication.Extensions;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
+using K9.DataAccessLayer.Attributes;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
+using K9.WebApplication.ViewModels;
+using ServiceStack.Text;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using K9.Base.WebApplication.Extensions;
-using K9.DataAccessLayer.Attributes;
-using K9.WebApplication.ViewModels;
-using ServiceStack.Text;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -30,7 +31,7 @@ namespace K9.WebApplication.Controllers
         private readonly IProductService _productService;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public OrdersController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPackRepository, IOrderService orderService, IProductService productService) : base(controllerPackage)
+        public OrdersController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPackRepository, IOrderService orderService, IProductService productService, IPureControllerPackage pureControllerPackage) : base(controllerPackage, pureControllerPackage)
         {
             _orderProductsRepository = orderProductsRepository;
             _orderProductPackRepository = orderProductPackRepository;

@@ -4,6 +4,7 @@ using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Extensions;
+using K9.WebApplication.Packages;
 using Microsoft.Ajax.Utilities;
 using System;
 using System.Web.Mvc;
@@ -15,7 +16,7 @@ namespace K9.WebApplication.Controllers
     [RequirePermissions(Role = RoleNames.Administrators)]
 	public class ArticlesController : HtmlControllerBase<Article>
 	{
-		public ArticlesController(IControllerPackage<Article> controllerPackage) : base(controllerPackage)
+		public ArticlesController(IControllerPackage<Article> controllerPackage, IPureControllerPackage pureControllerPackage) : base(controllerPackage, pureControllerPackage)
 		{
 		    RecordBeforeCreate += ArticlesController_RecordBeforeCreate;
             RecordBeforeCreated += ArticlesController_RecordBeforeCreated;
