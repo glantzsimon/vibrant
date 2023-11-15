@@ -1,12 +1,12 @@
-﻿using K9.Base.WebApplication.Filters;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
+using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Services;
 using System.Web.Mvc;
-using K9.Base.DataAccessLayer.Models;
-using K9.SharedLibrary.Authentication;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -19,12 +19,14 @@ namespace K9.WebApplication.Controllers
         private readonly IHealthQuestionnaireService _healthQuestionnaireService;
         private readonly IRepository<User> _usresRepository;
         private readonly IClientService _clientService;
+        private readonly IProtocolService _protocolService;
 
-        public HealthQuestionnaireController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IMembershipService membershipService, IHealthQuestionnaireService healthQuestionnaireService, IRepository<User> usresRepository, IClientService clientService) : base(controllerPackage.Logger, controllerPackage.DataSetsHelper, controllerPackage.Roles, controllerPackage.Authentication, controllerPackage.FileSourceHelper, membershipService)
+        public HealthQuestionnaireController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IMembershipService membershipService, IHealthQuestionnaireService healthQuestionnaireService, IRepository<User> usresRepository, IClientService clientService, IProtocolService protocolService) : base(controllerPackage.Logger, controllerPackage.DataSetsHelper, controllerPackage.Roles, controllerPackage.Authentication, controllerPackage.FileSourceHelper, membershipService)
         {
             _healthQuestionnaireService = healthQuestionnaireService;
             _usresRepository = usresRepository;
             _clientService = clientService;
+            _protocolService = protocolService;
         }
         
         [Route("genetic-profile/questionnaire/overview")]
@@ -59,6 +61,8 @@ namespace K9.WebApplication.Controllers
             {
                 return RedirectToAction("GeneticProfileTest");
             }
+
+            var profile = _protocolService.AutoGenerateProtocolFromGeneticProfile(hq);
             
             return View(hq);
         }

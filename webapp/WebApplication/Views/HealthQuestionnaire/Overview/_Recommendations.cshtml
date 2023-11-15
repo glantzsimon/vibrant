@@ -6,20 +6,9 @@
 @using K9.WebApplication.Enums
 @using K9.WebApplication.Helpers
 @using K9.WebApplication.Options
-@model HealthQuestionnaire
-
-@{
-    
-}
+@model Protocol
 
 <div class="well">
-    <div class="row">
-        <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.GeneralHealth @Dictionary.Scores</h3>
-        </div>
-    </div>
-    <div class="row">
-        
-    </div>
+    @Html.Partial("../Protocols/Summary")
 </div>
 

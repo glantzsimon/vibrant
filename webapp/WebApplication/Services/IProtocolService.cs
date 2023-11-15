@@ -15,6 +15,7 @@ namespace K9.WebApplication.Services
         Protocol GetProtocolWithProtocolSections(int id);
         Protocol GetProtocolWithProtocolSections(Guid id);
         Protocol AutoGenerateProtocolFromGeneticProfile(int clientId, bool refresh = false);
+        Protocol AutoGenerateProtocolFromGeneticProfile(HealthQuestionnaire hq, bool refresh = false);
 
         void DeleteChildRecords(int id);
         void AddDefaultSections(int id);

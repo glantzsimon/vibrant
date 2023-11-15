@@ -403,6 +403,7 @@
     <Compile Include="Services\QrCodeService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\IUserService.cs" />
+    <Compile Include="ViewModels\HealthQuestionnaireViewModel.cs" />
     <Compile Include="ViewModels\ProtocolsViewModel.cs" />
     <Compile Include="ViewModels\GeneticProfileMatchedItemsViewModel.cs" />
     <Compile Include="ViewModels\ProtocolReviewViewModel.cs" />
@@ -1683,6 +1684,7 @@
     <Content Include="Views\Shared\EditorTemplates\CompatibilityLevel.cshtml" />
     <Content Include="Views\Protocols\_SummaryFoods.cshtml" />
     <Content Include="Views\Protocols\_SummaryRecommendedFoods.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\InfectionSeverity.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
