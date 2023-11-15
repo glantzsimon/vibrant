@@ -116,9 +116,9 @@ namespace K9.WebApplication.Services
             return new GeneticProfileMatchedItemsViewModel
             {
                 Products = GetGenoTypeFilteredItems(hq, genoType.GenoType,
-                    new List<Product>(_productsRepository.List()), 5),
+                    new List<Product>(_productsRepository.List()), 7),
                 ProductPacks = GetGenoTypeFilteredItems(hq, genoType.GenoType,
-                    new List<ProductPack>(_productPacksRepository.List()), 3),
+                    new List<ProductPack>(_productPacksRepository.List()), 5),
                 DietaryRecommendations = GetGenoTypeFilteredItems(hq, genoType.GenoType,
                     new List<DietaryRecommendation>(_dietaryRecommendationsRepository.List())),
                 Activities =
