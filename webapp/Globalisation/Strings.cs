@@ -596,6 +596,24 @@
             public const string Never = "Never";
             public const string Custom = "Custom";
 
+            public const string AsNeeded = "AsNeeded";
+            public const string OneToTwoTimesDaily = "OneToTwoTimesDaily";
+            public const string OnwToFiveTimesDaily = "OnwToFiveTimesDaily";
+            public const string TwoToThreeTimesDaily = "TwoToThreeTimesDaily";
+            public const string TwoToFourTimesDaily = "TwoToFourTimesDaily";
+            public const string ThreeTimesDaily = "ThreeTimesDaily";
+            public const string FourToFiveTimesDaily = "FourToFiveTimesDaily";
+            public const string TwoToFourTimesWeekly = "TwoToFourTimesWeekly";
+            public const string TwoToFiveTimesWeekly = "TwoToFiveTimesWeekly";
+            public const string ThreeTimesWeekly = "ThreeTimesWeekly";
+            public const string FourTimesWeekly = "FourTimesWeekly";
+            public const string AtLeastFourTimesWeekly = "AtLeastFourTimesWeekly";
+            public const string ThreeToFiveTimesWeekly = "ThreeToFiveTimesWeekly";
+            public const string ThreeToSixTimesWeekly = "ThreeToSixTimesWeekly";
+            public const string ThreeToSevenTimesWeekly = "ThreeToSevenTimesWeekly";
+            public const string ThreeToNineTimesWeekly = "ThreeToNineTimesWeekly";
+            public const string SevenToNineTimesWeekly = "SevenToNineTimesWeekly";
+
             public const string Default = "Default";
             public const string ParasiteCleanse = "ParasiteCleanse";
             public const string ParasiteCleanseMaintenance = "ParasiteCleanseMaintenance";
@@ -828,20 +846,13 @@
             public const string ExplorerCompatibilityLevel = "ExplorerCompatibilityLevel";
             public const string WarriorCompatibilityLevel = "WarriorCompatibilityLevel";
             public const string NomadCompatibilityLevel = "NomadCompatibilityLevel";
-
-            public const string HunterMinTimesPerWeek = "HunterMinTimesPerWeek";
-            public const string GathererMinTimesPerWeek = "GathererMinTimesPerWeek";
-            public const string TeacherMinTimesPerWeek = "TeacherMinTimesPerWeek";
-            public const string ExplorerMinTimesPerWeek = "ExplorerMinTimesPerWeek";
-            public const string WarriorMinTimesPerWeek = "WarriorMinTimesPerWeek";
-            public const string NomadMinTimesPerWeek = "NomadMinTimesPerWeek";
-
-            public const string HunterMaxTimesPerWeek = "HunterMaxTimesPerWeek";
-            public const string GathererMaxTimesPerWeek = "GathererMaxTimesPerWeek";
-            public const string TeacherMaxTimesPerWeek = "TeacherMaxTimesPerWeek";
-            public const string ExplorerMaxTimesPerWeek = "ExplorerMaxTimesPerWeek";
-            public const string WarriorMaxTimesPerWeek = "WarriorMaxTimesPerWeek";
-            public const string NomadMaxTimesPerWeek = "NomadMaxTimesPerWeek";
+            
+            public const string HunterFrequency = "HunterFrequency";
+            public const string GathererFrequency = "GathererFrequency";
+            public const string TeacherFrequency = "TeacherFrequency";
+            public const string ExplorerFrequency = "ExplorerFrequency";
+            public const string WarriorFrequency = "WarriorFrequency";
+            public const string NomadFrequency = "NomadFrequency";
 
             public const string GenoTypeScore = "GenoTypeScore";
 

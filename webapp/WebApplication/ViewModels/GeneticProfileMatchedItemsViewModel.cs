@@ -7,6 +7,7 @@ namespace K9.WebApplication.ViewModels
     {
         public List<ProductPack> ProductPacks { get; set; }
         public List<Product> Products { get; set; }
+        public List<Ingredient> Ingredients { get; set; }
         public List<Activity> Activities { get; set; }
         public List<DietaryRecommendation> DietaryRecommendations { get; set; }
         public List<FoodItem> Foods { get; set; }

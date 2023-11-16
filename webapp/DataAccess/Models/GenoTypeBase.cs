@@ -62,41 +62,29 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NomadCompatibilityLevel)]
         public ECompatibilityLevel NomadCompatibilityLevel { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.HunterMinTimesPerWeek)]
-        public int HunterMinTimesPerWeek { get; set; }
+        [UIHint("FoodFrequency")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.HunterFrequency)]
+        public EFoodFrequency? HunterFrequency { get; set; }
+        
+        [UIHint("FoodFrequency")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.GathererFrequency)]
+        public EFoodFrequency? GathererFrequency { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.HunterMaxTimesPerWeek)]
-        public int HunterMaxTimesPerWeek { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.GathererMinTimesPerWeek)]
-        public int GathererMinTimesPerWeek { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.GathererMaxTimesPerWeek)]
-        public int GathererMaxTimesPerWeek { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.TeacherMinTimesPerWeek)]
-        public int TeacherMinTimesPerWeek { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.TeacherMaxTimesPerWeek)]
-        public int TeacherMaxTimesPerWeek { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ExplorerMinTimesPerWeek)]
-        public int ExplorerMinTimesPerWeek { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ExplorerMaxTimesPerWeek)]
-        public int ExplorerMaxTimesPerWeek { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.WarriorMinTimesPerWeek)]
-        public int WarriorMinTimesPerWeek { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.WarriorMaxTimesPerWeek)]
-        public int WarriorMaxTimesPerWeek { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NomadMinTimesPerWeek)]
-        public int NomadMinTimesPerWeek { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NomadMaxTimesPerWeek)]
-        public int NomadMaxTimesPerWeek { get; set; }
+        [UIHint("FoodFrequency")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.TeacherFrequency)]
+        public EFoodFrequency? TeacherFrequency { get; set; }
+        
+        [UIHint("FoodFrequency")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ExplorerFrequency)]
+        public EFoodFrequency? ExplorerFrequency { get; set; }
+        
+        [UIHint("FoodFrequency")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.WarriorFrequency)]
+        public EFoodFrequency? WarriorFrequency { get; set; }
+        
+        [UIHint("FoodFrequency")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NomadFrequency)]
+        public EFoodFrequency? NomadFrequency { get; set; }
         
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Water)]
         public bool Water { get; set; }

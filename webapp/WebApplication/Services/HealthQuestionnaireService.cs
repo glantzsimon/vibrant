@@ -21,6 +21,8 @@ namespace K9.WebApplication.Services
         private readonly IClientService _clientService;
         private readonly IRepository<Product> _productsRepository;
         private readonly IRepository<ProductPack> _productPacksRepository;
+        private readonly IRepository<Ingredient> _ingredientsRepository;
+        private readonly IRepository<ProductIngredient> _productIingredientsRepository;
         private readonly IRepository<Protocol> _protocolsRepository;
         private readonly IRepository<Activity> _activitiesRepository;
         private readonly IRepository<DietaryRecommendation> _dietaryRecommendationsRepository;
@@ -44,9 +46,9 @@ namespace K9.WebApplication.Services
             IRepository<DietaryRecommendation> dietaryRecommendationsRepository,
             IRepository<FoodItem> foodItemsRepository,
             IRepository<Ingredient> ingredientsRepository,
+            IRepository<ProductIngredient> productIngredientsRepository,
             IRepository<IngredientSubstitute> ingredientSubstitutesRepository,
             IRepository<ProtocolActivity> protocolActivitiesRepository,
-            IRepository<ProductIngredient> productIngredientsRepository,
             IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository,
             IRepository<ProtocolDietaryRecommendation> protocolDietaryRecommendationRepository,
             IRepository<ProtocolFoodItem> protocolFoodItemsRepository,
@@ -66,6 +68,8 @@ namespace K9.WebApplication.Services
             _productsRepository = productsRepository;
             _productPacksRepository = productPacksRepository;
             _protocolsRepository = protocolsRepository;
+            _ingredientsRepository = ingredientsRepository;
+            _productIingredientsRepository = productIngredientsRepository;
             _activitiesRepository = activitiesRepository;
             _dietaryRecommendationsRepository = dietaryRecommendationsRepository;
             _foodItemsRepository = foodItemsRepository;
@@ -115,10 +119,12 @@ namespace K9.WebApplication.Services
 
             return new GeneticProfileMatchedItemsViewModel
             {
-                Products = GetGenoTypeFilteredItems(hq, genoType.GenoType,
-                    new List<Product>(_productsRepository.List()), 7),
+                Products = GetGenoTypeFilteredProducts(hq, genoType.GenoType,
+                    new List<Product>(_productsRepository.List())),
                 ProductPacks = GetGenoTypeFilteredItems(hq, genoType.GenoType,
-                    new List<ProductPack>(_productPacksRepository.List()), 5),
+                    new List<ProductPack>(_productPacksRepository.List()), 7),
+                Ingredients = GetGenoTypeFilteredItems(hq, genoType.GenoType,
+                    new List<Ingredient>(_ingredientsRepository.List())),
                 DietaryRecommendations = GetGenoTypeFilteredItems(hq, genoType.GenoType,
                     new List<DietaryRecommendation>(_dietaryRecommendationsRepository.List())),
                 Activities =
@@ -206,7 +212,7 @@ namespace K9.WebApplication.Services
             DeleteProtocolChildRecords(protocol.Id);
             RecreateChildRecords(hq, protocol);
         }
-        
+
         private void RecreateChildRecords(HealthQuestionnaire hq, Protocol protocol)
         {
             var matchedItems = GetGeneticProfileMatchedItems(hq.Id);
@@ -301,41 +307,68 @@ namespace K9.WebApplication.Services
             return results;
         }
 
+        private List<T> GetGenoTypeFilteredProducts<T>(HealthQuestionnaire hq, EGenoType genoType, List<T> products) where T : GenoTypeBase
+        {
+            foreach (var product in products)
+            {
+                var productScore = GetGenoTypeItemScore(hq, genoType, product);
+                var maxIngredientScore = GetMaxIngredientScore(product.Id);
+
+                product.Score = maxIngredientScore > productScore ? maxIngredientScore : productScore;
+            }
+
+            var results = products
+                .Where(e => e.Score > 0)
+                .OrderByDescending(e => e.Score).ToList();
+
+            return results;
+        }
+
+        private int GetMaxIngredientScore(int productId)
+        {
+            var sql = $"SELECT TOP 1 i.* [{nameof(Ingredient.Score)}] FROM [{nameof(Ingredient)}] i " +
+                      $"JOIN [{nameof(ProductIngredient)}] pi ON i.{nameof(Ingredient.Id)} = pi.{nameof(ProductIngredient.IngredientId)} " +
+                      $"WHERE pi.{nameof(ProductIngredient.ProductId)} = {productId} " +
+                      $"ORDER BY DESC [{nameof(Ingredient.Score)}]";
+
+            return _productIingredientsRepository.CustomQuery<Ingredient>(sql).FirstOrDefault().Score;
+        }
+
         private int GetGenoTypeItemScore(HealthQuestionnaire hq, EGenoType genoType, GenoTypeBase item)
         {
             var score = 0;
 
             if (hq.DietaryPreference == EDietaryPreference.Vegetarian)
             {
-                if (item.Carnivore || item.Pescatarian)
+                if (!item.Vegetarian)
                 {
                     return 0;
                 }
             }
             if (hq.DietaryPreference == EDietaryPreference.Vegan)
             {
-                if (item.Vegetarian || item.Carnivore || item.Pescatarian)
+                if (!item.Vegan)
                 {
                     return 0;
                 }
             }
             if (hq.DietaryPreference == EDietaryPreference.Fruitarian)
             {
-                if (item.Vegan || item.Vegetarian || item.Carnivore || item.Pescatarian)
+                if (!item.Fruitarian)
                 {
                     return 0;
                 }
             }
             if (hq.DietaryPreference == EDietaryPreference.Carnivore)
             {
-                if (item.Vegan || item.Vegetarian || item.Fruitarian)
+                if (!item.Carnivore)
                 {
                     return 0;
                 }
             }
             if (hq.DietaryPreference == EDietaryPreference.Pescatarian)
             {
-                if (item.Carnivore)
+                if (!item.Pescatarian)
                 {
                     return 0;
                 }

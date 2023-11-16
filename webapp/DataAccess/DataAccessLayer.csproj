@@ -206,6 +206,7 @@
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
     <Compile Include="Enums\EDosha.cs" />
     <Compile Include="Enums\ECompatibilityLevel.cs" />
+    <Compile Include="Enums\EFoodFrequency.cs" />
     <Compile Include="Enums\EQuestionCategory.cs" />
     <Compile Include="Enums\EColor.cs" />
     <Compile Include="Enums\EOrgan.cs" />
@@ -659,6 +660,10 @@
     <Compile Include="Migrations\202311150529067_RemoveRequiredFromProtocolBody.Designer.cs">
       <DependentUpon>202311150529067_RemoveRequiredFromProtocolBody.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311160816142_FoodFrequency.cs" />
+    <Compile Include="Migrations\202311160816142_FoodFrequency.Designer.cs">
+      <DependentUpon>202311160816142_FoodFrequency.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
@@ -1025,6 +1030,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311150529067_RemoveRequiredFromProtocolBody.resx">
       <DependentUpon>202311150529067_RemoveRequiredFromProtocolBody.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311160816142_FoodFrequency.resx">
+      <DependentUpon>202311160816142_FoodFrequency.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

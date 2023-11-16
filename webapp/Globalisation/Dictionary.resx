@@ -3586,6 +3586,12 @@
   <data name="VegetableProtein" xml:space="preserve">
     <value>Vegetable Protein</value>
   </data>
+  <data name="AsNeeded" xml:space="preserve">
+    <value>As Needed</value>
+  </data>
+  <data name="AtLeastFourTimesWeekly" xml:space="preserve">
+    <value>At Least 4 Times Weekly</value>
+  </data>
   <data name="Beverages" xml:space="preserve">
     <value>Beverages</value>
   </data>
@@ -3598,6 +3604,9 @@
   <data name="EggsAndRoes" xml:space="preserve">
     <value>Eggs &amp; Roes</value>
   </data>
+  <data name="ExplorerFrequency" xml:space="preserve">
+    <value>Explorer Frequency</value>
+  </data>
   <data name="ExplorerMaxTimesPerWeek" xml:space="preserve">
     <value>Explorer Max Times per Week</value>
   </data>
@@ -3607,11 +3616,23 @@
   <data name="FatsAndOils" xml:space="preserve">
     <value>Fats &amp; Oils</value>
   </data>
+  <data name="FourTimesWeekly" xml:space="preserve">
+    <value>4 Times Weekly</value>
+  </data>
+  <data name="FourToFiveTimesDaily" xml:space="preserve">
+    <value>4 - 5 Times Daily</value>
+  </data>
+  <data name="GathererFrequency" xml:space="preserve">
+    <value>Gatherer Frequency</value>
+  </data>
   <data name="GathererMaxTimesPerWeek" xml:space="preserve">
     <value>Gatherer Max Times per Week</value>
   </data>
   <data name="GathererMinTimesPerWeek" xml:space="preserve">
     <value>Gatherer Min Times per Week</value>
+  </data>
+  <data name="HunterFrequency" xml:space="preserve">
+    <value>Hunter Frequency</value>
   </data>
   <data name="HunterMaxTimesPerWeek" xml:space="preserve">
     <value>Hunter Max Times per Week</value>
@@ -3622,11 +3643,20 @@
   <data name="LiveFoods" xml:space="preserve">
     <value>Live Foods</value>
   </data>
+  <data name="NomadFrequency" xml:space="preserve">
+    <value>Nomad Frequency</value>
+  </data>
   <data name="NomadMaxTimesPerWeek" xml:space="preserve">
     <value>Nomad Max Times per Week</value>
   </data>
   <data name="NomadMinTimesPerWeek" xml:space="preserve">
     <value>Nomad Min Times per Week</value>
+  </data>
+  <data name="OneToTwoTimesDaily" xml:space="preserve">
+    <value>1 - 2 Times Daily</value>
+  </data>
+  <data name="OnwToFiveTimesDaily" xml:space="preserve">
+    <value>1 - 5 Times Daily</value>
   </data>
   <data name="OrganMeat" xml:space="preserve">
     <value>Organ Meat</value>
@@ -3634,11 +3664,50 @@
   <data name="RedMeat" xml:space="preserve">
     <value>Red Meat</value>
   </data>
+  <data name="SevenToNineTimesWeekly" xml:space="preserve">
+    <value>7 - 9 Times Weekly</value>
+  </data>
+  <data name="TeacherFrequency" xml:space="preserve">
+    <value>Teacher Frequency</value>
+  </data>
   <data name="TeacherMaxTimesPerWeek" xml:space="preserve">
     <value>Teacher Max Times per Week</value>
   </data>
   <data name="TeacherMinTimesPerWeek" xml:space="preserve">
     <value>Teacher Min Times per Week</value>
+  </data>
+  <data name="ThreeTimesDaily" xml:space="preserve">
+    <value>3 Times Daily</value>
+  </data>
+  <data name="ThreeTimesWeekly" xml:space="preserve">
+    <value>3 Times Weekly</value>
+  </data>
+  <data name="ThreeToFiveTimesWeekly" xml:space="preserve">
+    <value>3 - 5 Times Weekly</value>
+  </data>
+  <data name="ThreeToNineTimesWeekly" xml:space="preserve">
+    <value>3 - 9 Times Weekly</value>
+  </data>
+  <data name="ThreeToSevenTimesWeekly" xml:space="preserve">
+    <value>3 - 7 Times Weekly</value>
+  </data>
+  <data name="ThreeToSixTimesWeekly" xml:space="preserve">
+    <value>3 - 6 Times Weekly</value>
+  </data>
+  <data name="TwoToFiveTimesWeekly" xml:space="preserve">
+    <value>2 - 5 Times Weekly</value>
+  </data>
+  <data name="TwoToFourTimesDaily" xml:space="preserve">
+    <value>2 - 4 Times Daily</value>
+  </data>
+  <data name="TwoToFourTimesWeekly" xml:space="preserve">
+    <value>2 - 4 Times Weekly</value>
+  </data>
+  <data name="TwoToThreeTimesDaily" xml:space="preserve">
+    <value>2 - 3 Times Daily</value>
+  </data>
+  <data name="WarriorFrequency" xml:space="preserve">
+    <value>Warrior Frequency</value>
   </data>
   <data name="WarriorMaxTimesPerWeek" xml:space="preserve">
     <value>Warrior Max Times per Week</value>

@@ -1694,6 +1694,7 @@
     <Content Include="Views\Protocols\_ActivityMoreInfo.cshtml" />
     <Content Include="Views\Protocols\_RecommendedProducts.cshtml" />
     <Content Include="Views\Protocols\_RecommendedProductPacks.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\FoodFrequency.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
