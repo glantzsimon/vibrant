@@ -11,19 +11,20 @@ namespace K9.WebApplication.Services
     public class MaintenanceService : IMaintenanceService
     {
         private readonly IRepository<FoodItem> _foodItemsRepository;
+        private readonly IRepository<Activity> _activitiesRepository;
         private readonly ILogger _logger;
 
-        public MaintenanceService(IRepository<FoodItem> foodItemsRepository, ILogger logger)
+        public MaintenanceService(IRepository<FoodItem> foodItemsRepository, IRepository<Activity> activitiesRepository, ILogger logger)
         {
             _foodItemsRepository = foodItemsRepository;
+            _activitiesRepository = activitiesRepository;
             _logger = logger;
         }
 
         public void AddFoodItems()
         {
-
             AddHunterFoodItems();
-
+            AddGathererFoods();
         }
 
         private void AddHunterFoodItems()
@@ -47,7 +48,7 @@ namespace K9.WebApplication.Services
             CreateFoodItem("Pork", EGenoType.Hunter, ECompatibilityLevel.Avoid, EFoodCategory.RedMeat, null);
 
             CreateFoodItem("Chicken", EGenoType.Hunter, ECompatibilityLevel.Good, EFoodCategory.Poultry, EFoodFrequency.TwoToFourTimesWeekly);
-            CreateFoodItem("Comish Hen", EGenoType.Hunter, ECompatibilityLevel.Good, EFoodCategory.Poultry, EFoodFrequency.TwoToFourTimesWeekly);
+            CreateFoodItem("Cornish Hen", EGenoType.Hunter, ECompatibilityLevel.Good, EFoodCategory.Poultry, EFoodFrequency.TwoToFourTimesWeekly);
             CreateFoodItem("Duck", EGenoType.Hunter, ECompatibilityLevel.Excellent, EFoodCategory.Poultry, EFoodFrequency.TwoToFourTimesWeekly);
             CreateFoodItem("Grouse", EGenoType.Hunter, ECompatibilityLevel.Good, EFoodCategory.Poultry, EFoodFrequency.TwoToFourTimesWeekly);
             CreateFoodItem("Pheasant", EGenoType.Hunter, ECompatibilityLevel.Good, EFoodCategory.Poultry, EFoodFrequency.TwoToFourTimesWeekly);
@@ -218,7 +219,7 @@ namespace K9.WebApplication.Services
             CreateFoodItem("Pistachio", EGenoType.Hunter, ECompatibilityLevel.Minimise, EFoodCategory.VegetableProtein, null);
             CreateFoodItem("Poppy Seed", EGenoType.Hunter, ECompatibilityLevel.Avoid, EFoodCategory.VegetableProtein, null);
             CreateFoodItem("Soy", EGenoType.Hunter, ECompatibilityLevel.Avoid, EFoodCategory.VegetableProtein, null);
-            CreateFoodItem("Tempte", EGenoType.Hunter, ECompatibilityLevel.Avoid, EFoodCategory.VegetableProtein, null);
+            CreateFoodItem("Tempeh", EGenoType.Hunter, ECompatibilityLevel.Avoid, EFoodCategory.VegetableProtein, null);
             CreateFoodItem("Tofu", EGenoType.Hunter, ECompatibilityLevel.Avoid, EFoodCategory.VegetableProtein, null);
             CreateFoodItem("Sunflower Seed", EGenoType.Hunter, ECompatibilityLevel.Avoid, EFoodCategory.VegetableProtein, null);
             CreateFoodItem("Tamarind", EGenoType.Hunter, ECompatibilityLevel.Avoid, EFoodCategory.VegetableProtein, null);
@@ -505,6 +506,21 @@ namespace K9.WebApplication.Services
             CreateFoodItem("Vinegar (All Types)", EGenoType.Hunter, ECompatibilityLevel.Avoid, EFoodCategory.Condiments, null);
             CreateFoodItem("Worcestershire Sauce", EGenoType.Hunter, ECompatibilityLevel.Avoid, EFoodCategory.Condiments, null);
             CreateFoodItem("White Sugar", EGenoType.Hunter, ECompatibilityLevel.Avoid, EFoodCategory.Condiments, null);
+
+            CreateActivity("Asana", EGenoType.Hunter, ECompatibilityLevel.Excellent);
+            CreateActivity("Vigorous Walking", EGenoType.Hunter, ECompatibilityLevel.Excellent);
+            CreateActivity("Moderate Competitive Sports", EGenoType.Hunter, ECompatibilityLevel.Excellent, "Sports such as tennis, badminton, volleyball, etc.");
+            CreateActivity("Resistance Training", EGenoType.Hunter, ECompatibilityLevel.Excellent);
+            CreateActivity("Intense Competitive Sports", EGenoType.Hunter, ECompatibilityLevel.Excellent);
+            CreateActivity("Dancing", EGenoType.Hunter, ECompatibilityLevel.Excellent);
+            CreateActivity("Gymnastics", EGenoType.Hunter, ECompatibilityLevel.Excellent);
+            CreateActivity("Running", EGenoType.Hunter, ECompatibilityLevel.Excellent);
+            CreateActivity("Meditation", EGenoType.Hunter, ECompatibilityLevel.Excellent);
+        }
+
+        private void AddGathererFoods()
+        {
+
         }
 
         private void CreateFoodItem(string name, EGenoType genoType, ECompatibilityLevel level, EFoodCategory category, EFoodFrequency? frequency = null)
@@ -568,6 +584,58 @@ namespace K9.WebApplication.Services
             else
             {
                 _foodItemsRepository.Create(foodItem);
+            }
+        }
+
+        private void CreateActivity(string name, EGenoType genoType, ECompatibilityLevel level, string description = "")
+        {
+            var activity = _activitiesRepository.Find(e => e.Name == name).FirstOrDefault();
+
+            if (activity == null)
+            {
+                activity = new Activity();
+            }
+
+            activity.ShortDescription = description;
+
+            if (genoType == EGenoType.Hunter)
+            {
+                activity.Hunter = true;
+                activity.HunterCompatibilityLevel = level;
+            }
+            if (genoType == EGenoType.Gatherer)
+            {
+                activity.Gatherer = true;
+                activity.GathererCompatibilityLevel = level;
+            }
+            if (genoType == EGenoType.Teacher)
+            {
+                activity.Teacher = true;
+                activity.TeacherCompatibilityLevel = level;
+            }
+            if (genoType == EGenoType.Explorer)
+            {
+                activity.Explorer = true;
+                activity.ExplorerCompatibilityLevel = level;
+            }
+            if (genoType == EGenoType.Warrior)
+            {
+                activity.Warrior = true;
+                activity.WarriorCompatibilityLevel = level;
+            }
+            if (genoType == EGenoType.Nomad)
+            {
+                activity.Nomad = true;
+                activity.NomadCompatibilityLevel = level;
+            }
+
+            if (activity.Id == 0)
+            {
+                _activitiesRepository.Update(activity);
+            }
+            else
+            {
+                _activitiesRepository.Create(activity);
             }
         }
     }

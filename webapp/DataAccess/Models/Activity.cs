@@ -21,7 +21,6 @@ namespace K9.DataAccessLayer.Models
         public int ActivityId => Id;
         
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SummaryLabel)]
-        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         [StringLength(int.MaxValue)]
         [DataType(DataType.Html)]
         [AllowHtml]

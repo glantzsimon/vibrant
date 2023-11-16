@@ -664,6 +664,10 @@
     <Compile Include="Migrations\202311160816142_FoodFrequency.Designer.cs">
       <DependentUpon>202311160816142_FoodFrequency.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311161009016_RemoveRequiredFromActivityShortDescription.cs" />
+    <Compile Include="Migrations\202311161009016_RemoveRequiredFromActivityShortDescription.Designer.cs">
+      <DependentUpon>202311161009016_RemoveRequiredFromActivityShortDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
@@ -1033,6 +1037,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311160816142_FoodFrequency.resx">
       <DependentUpon>202311160816142_FoodFrequency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311161009016_RemoveRequiredFromActivityShortDescription.resx">
+      <DependentUpon>202311161009016_RemoveRequiredFromActivityShortDescription.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
