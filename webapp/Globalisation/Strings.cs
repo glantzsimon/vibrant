@@ -580,6 +580,7 @@
             public const string Capsules = "Capsules";
             public const string Powder = "Powder";
             public const string Liquid = "Liquid";
+            public const string Oil = "Oil";
 
             public const string OnEmptyStomach = "OnEmptyStomach";
             public const string WithOrWithoutFood = "WithOrWithoutFood";

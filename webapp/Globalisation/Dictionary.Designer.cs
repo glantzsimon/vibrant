@@ -6433,6 +6433,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Oil.
+        /// </summary>
+        public static string Oil {
+            get {
+                return ResourceManager.GetString("Oil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Oils.
         /// </summary>
         public static string Oils {

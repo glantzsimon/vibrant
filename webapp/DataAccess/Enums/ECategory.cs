@@ -13,6 +13,8 @@ namespace K9.DataAccessLayer.Enums
         Vitamin = 300000,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Phytonutrient)]
         Phytonutrient = 400000,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Oil)]
+        Oil = 450000,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Herb)]
         Herb = 500000,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Superfood)]

@@ -23,6 +23,7 @@ namespace K9.WebApplication.Constants
             ECategory.Vitamin,
             ECategory.Mineral,
             ECategory.Phytonutrient,
+            ECategory.Oil,
             ECategory.Herb,
             ECategory.Superfood,
             ECategory.Other

@@ -3652,6 +3652,9 @@
   <data name="NomadMinTimesPerWeek" xml:space="preserve">
     <value>Nomad Min Times per Week</value>
   </data>
+  <data name="Oil" xml:space="preserve">
+    <value>Oil</value>
+  </data>
   <data name="OneToTwoTimesDaily" xml:space="preserve">
     <value>1 - 2 Times Daily</value>
   </data>

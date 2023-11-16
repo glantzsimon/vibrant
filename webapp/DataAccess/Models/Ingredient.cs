@@ -23,7 +23,7 @@ namespace K9.DataAccessLayer.Models
 	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 	    public ECategory Category { get; set; }
 
-	    public string CategoryText => Category.GetAttribute<EnumDescriptionAttribute>().GetDescription().Pluralise();
+	    public string CategoryText => Category.GetAttribute<EnumDescriptionAttribute>()?.GetDescription()?.Pluralise();
 
 	    /// <summary>
 	    /// Used for labels in production

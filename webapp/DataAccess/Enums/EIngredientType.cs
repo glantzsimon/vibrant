@@ -7,6 +7,8 @@ namespace K9.DataAccessLayer.Enums
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Powder)]
         Powder = 1,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Liquid)]
-        Liquid
+        Liquid,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Oil)]
+        Oil
     }
 }

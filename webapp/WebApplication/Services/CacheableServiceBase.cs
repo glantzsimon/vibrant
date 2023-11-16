@@ -240,9 +240,8 @@ namespace K9.WebApplication.Services
                 throw new Exception(Globalisation.Dictionary.NewItemCodeNotAvailable);
             }
 
-            if (previousItem == null)
+            else if (previousItem == null && nextItem != null)
             {
-                // This will become the first in the list. Get Index half way between nextItem and beginning of category
                 var newItemCode = (int)model.Category + (int)Math.Round((double)(nextItem.DisplayIndex - (int)model.Category) / 2, 0);
 
                 while (newItemCode >= (int)model.Category)
@@ -250,7 +249,7 @@ namespace K9.WebApplication.Services
                     if (itemsInCategory.Any(e => e.DisplayIndex == newItemCode))
                     {
                         // ItemCode already taken, decrease it
-                        newItemCode++;
+                        newItemCode--;
                     }
                     else
                     {
@@ -261,7 +260,7 @@ namespace K9.WebApplication.Services
                 throw new Exception(Globalisation.Dictionary.NewItemCodeNotAvailable);
             }
 
-            if (nextItem == null)
+            else if (nextItem == null && previousItem != null)
             {
                 // This will become the last in the list. Increment index by ItemCodeGap
                 var newItemCode = previousItem.DisplayIndex + Constants.Constants.ItemCodeGap;
@@ -279,6 +278,13 @@ namespace K9.WebApplication.Services
                     }
                 }
             }
+
+            else if (nextItem == null && previousItem == null)
+            {
+                // Create the first in the list!
+                return (int)model.Category;
+            }
+
 
             throw new Exception(Globalisation.Dictionary.NewItemCodeNotAvailable);
         }
