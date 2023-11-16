@@ -111,6 +111,7 @@
             public const string DietaryPreferenceQuestionLabel = "DietaryPreferenceQuestionLabel";
             public const string DietaryPreference = "DietaryPreference";
             public const string DNAIntegrity = "DNAIntegrity";
+            public const string WeightLoss = "WeightLoss";
             public const string BloodBuilding = "BloodBuilding";
             public const string Restorative = "Restorative";
             public const string DateOfBirthLabel = "DateOfBirthLabel";
@@ -685,6 +686,7 @@
             public const string HormoneBalance = "HormoneBalance";
             public const string AntiInflammatory = "AntiInflammatory";
             public const string AntiOxidant = "AntiOxidant";
+            public const string Longevity = "Longevity";
             public const string CellularHealth = "CellularHealth";
             public const string StressRelief = "StressRelief";
             public const string Detoxification = "Detoxification";

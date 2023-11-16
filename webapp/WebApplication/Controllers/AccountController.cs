@@ -248,6 +248,8 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult Register(string promoCode = null)
         {
+            return RedirectToAction("Login");
+
             ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
 
             if (WebSecurity.IsAuthenticated)

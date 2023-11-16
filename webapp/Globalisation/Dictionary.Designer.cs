@@ -3216,7 +3216,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Muscular, quirky and adventurous, the Explorer is a biological problem-solver with an impressive ability to adapt to environmental changes and a better-than-average capacity for gene repair. 
+        ///    Muscular, quirky and adventurous, the Explorer is a biological problem-solver with an impressive ability to adapt to environmental changes and a better-than-average capacity for gene repair.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    The Explorer’s vulnerability to hormonal imbalances and brain strain can be overcome with a balanced diet and lifestyle.
@@ -3226,7 +3226,7 @@ namespace K9.Globalisation {
         ///&lt;h4&gt;Explorer Strengths&lt;/h4&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Lateral thinker conerned with changing concepts and perception&lt;/li&gt;
-        ///  [rest of string was truncated]&quot;;.
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ExplorerDetails {
             get {
@@ -3732,7 +3732,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    
+        ///
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    Gatherers often have wonderful, warm, sensuous personalities. An affinity for home, hearth, people, and food makes them beloved friends and partners.
@@ -3744,7 +3744,7 @@ namespace K9.Globalisation {
         ///
         ///&lt;h4&gt;Gatherer Strengths&lt;/h4&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;Phenomenal capacity fo [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Phenomenal capacity for pr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GathererDetails {
             get {
@@ -5411,6 +5411,15 @@ namespace K9.Globalisation {
         public static string LogIntoYourAccountToView {
             get {
                 return ResourceManager.GetString("LogIntoYourAccountToView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Longevity.
+        /// </summary>
+        public static string Longevity {
+            get {
+                return ResourceManager.GetString("Longevity", resourceCulture);
             }
         }
         
@@ -9732,7 +9741,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Teachers are typically sinewy and flexible, with an amazing adaptability, the Teacher is a balance between opposing and often contradictory forces. 
+        ///    Teachers are typically sinewy and flexible, with an amazing adaptability, the Teacher is a balance between opposing and often contradictory forces.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    Blessed with a tolerant immune system, the Teacher can be burdened by excess altruism, leading to problems finding and dealing with the bad guys.
@@ -9743,7 +9752,7 @@ namespace K9.Globalisation {
         ///&lt;ul&gt;
         ///    &lt;li&gt;Natural exuberance&lt;/li&gt;
         ///    &lt;li&gt;Calm and steady nature&lt;/li&gt;
-        ///    &lt;li&gt;Soul  [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Soul o [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TeacherDetails {
             get {
@@ -10893,7 +10902,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Warrior are long, lean, and healthy in youth, but typically subject to a bodily rebellion in midlife. 
+        ///    Warrior are long, lean, and healthy in youth, but typically subject to a bodily rebellion in midlife.
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    With the optimal diet and lifestyle, the Warrior can overcome the quick-aging metabolic genes and experience a second &quot;silver age&quot; of health.
@@ -10905,7 +10914,7 @@ namespace K9.Globalisation {
         ///    &lt;li&gt;Charismatic&lt;/li&gt;
         ///    &lt;li&gt;Quick, nimble, computer-like mind&lt;/li&gt;
         ///    &lt;li&gt;Great determination&lt;/li&gt;
-        ///    &lt;li&gt;Ox-like strength [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Ox-like strength&lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string WarriorDetails {
             get {
@@ -11063,6 +11072,15 @@ namespace K9.Globalisation {
         public static string WeightGainQuestionLabel {
             get {
                 return ResourceManager.GetString("WeightGainQuestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weight Loss.
+        /// </summary>
+        public static string WeightLoss {
+            get {
+                return ResourceManager.GetString("WeightLoss", resourceCulture);
             }
         }
         

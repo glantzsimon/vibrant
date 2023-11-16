@@ -3643,6 +3643,9 @@
   <data name="LiveFoods" xml:space="preserve">
     <value>Live Foods</value>
   </data>
+  <data name="Longevity" xml:space="preserve">
+    <value>Longevity</value>
+  </data>
   <data name="NomadFrequency" xml:space="preserve">
     <value>Nomad Frequency</value>
   </data>
@@ -3717,5 +3720,8 @@
   </data>
   <data name="WarriorMinTimesPerWeek" xml:space="preserve">
     <value>Warrior Min Times per Week</value>
+  </data>
+  <data name="WeightLoss" xml:space="preserve">
+    <value>Weight Loss</value>
   </data>
 </root>
