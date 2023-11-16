@@ -323,7 +323,6 @@
     <Compile Include="Controllers\ProductIngredientsController.cs" />
     <Compile Include="Enums\EDeviceType.cs" />
     <Compile Include="Extensions\Extensions.cs" />
-    <Compile Include="Helpers\RolesHelper.cs" />
     <Compile Include="Helpers\HtmlParser.cs" />
     <Compile Include="Helpers\General.cs" />
     <Compile Include="Helpers\ViewBagHelper.cs" />
@@ -372,6 +371,8 @@
     <Compile Include="Options\PaymentsOptions.cs" />
     <Compile Include="Services\CacheableServiceBase.cs" />
     <Compile Include="Services\%28CacheableService.cs" />
+    <Compile Include="Services\IMaintenanceService.cs" />
+    <Compile Include="Services\MaintenanceService.cs" />
     <Compile Include="Services\ICategorisableService.cs" />
     <Compile Include="Services\IIngredientService.cs" />
     <Compile Include="Services\IngredientService.cs" />

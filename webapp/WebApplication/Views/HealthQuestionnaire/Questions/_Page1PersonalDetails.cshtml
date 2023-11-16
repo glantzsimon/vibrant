@@ -29,17 +29,20 @@
             @Html.BootstrapEditorFor(e => e.Gender)
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            @Html.BootstrapEditorFor(e => e.IsIsLGBTQPlus)
+    @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
+    {
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                @Html.BootstrapEditorFor(e => e.IsIsLGBTQPlus)
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <h4>@Dictionary.WhyWeNeedGenderAndSexuality</h4>
-            @Dictionary.WhyWeNeedGenderAndSexualityAnswer
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>@Dictionary.WhyWeNeedGenderAndSexuality</h4>
+                @Dictionary.WhyWeNeedGenderAndSexualityAnswer
+            </div>
         </div>
-    </div>
+    }
 </div>
 
 <hr />

@@ -206,7 +206,7 @@ namespace K9.WebApplication.Services
             DeleteProtocolChildRecords(protocol.Id);
             RecreateChildRecords(hq, protocol);
         }
-
+        
         private void RecreateChildRecords(HealthQuestionnaire hq, Protocol protocol)
         {
             var matchedItems = GetGeneticProfileMatchedItems(hq.Id);

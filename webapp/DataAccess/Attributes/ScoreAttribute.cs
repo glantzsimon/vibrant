@@ -1,10 +1,9 @@
-﻿using K9.DataAccessLayer.Enums;
-using K9.DataAccessLayer.Models;
+﻿using K9.DataAccessLayer.Models;
 using System;
 
 namespace K9.DataAccessLayer.Attributes
 {
-    [AttributeUsage(AttributeTargets.Property)]
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
     public class ScoreAttribute : Attribute, IGenoTypeBase
     {
         public bool VataDosha { get; set; }

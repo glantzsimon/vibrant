@@ -724,6 +724,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Beverages.
+        /// </summary>
+        public static string Beverages {
+            get {
+                return ResourceManager.GetString("Beverages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Binaural Beats.
         /// </summary>
         public static string BinauralBeats {
@@ -1047,6 +1056,15 @@ namespace K9.Globalisation {
         public static string CapsulesDosageLabel {
             get {
                 return ResourceManager.GetString("CapsulesDosageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Carbohydrates.
+        /// </summary>
+        public static string Carbohydrates {
+            get {
+                return ResourceManager.GetString("Carbohydrates", resourceCulture);
             }
         }
         
@@ -2006,6 +2024,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dairy.
+        /// </summary>
+        public static string Dairy {
+            get {
+                return ResourceManager.GetString("Dairy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date Of Birth.
         /// </summary>
         public static string DateOfBirthLabel {
@@ -2917,6 +2944,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Eggs &amp; Roes.
+        /// </summary>
+        public static string EggsAndRoes {
+            get {
+                return ResourceManager.GetString("EggsAndRoes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Electromedicine.
         /// </summary>
         public static string Electromedicine {
@@ -3180,6 +3216,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Explorer Max Times per Week.
+        /// </summary>
+        public static string ExplorerMaxTimesPerWeek {
+            get {
+                return ResourceManager.GetString("ExplorerMaxTimesPerWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Explorer Min Times per Week.
+        /// </summary>
+        public static string ExplorerMinTimesPerWeek {
+            get {
+                return ResourceManager.GetString("ExplorerMinTimesPerWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to External Link.
         /// </summary>
         public static string ExternalLink {
@@ -3266,6 +3320,15 @@ namespace K9.Globalisation {
         public static string Fats {
             get {
                 return ResourceManager.GetString("Fats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fats &amp; Oils.
+        /// </summary>
+        public static string FatsAndOils {
+            get {
+                return ResourceManager.GetString("FatsAndOils", resourceCulture);
             }
         }
         
@@ -3640,6 +3703,24 @@ namespace K9.Globalisation {
         public static string GathererDetails {
             get {
                 return ResourceManager.GetString("GathererDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gatherer Max Times per Week.
+        /// </summary>
+        public static string GathererMaxTimesPerWeek {
+            get {
+                return ResourceManager.GetString("GathererMaxTimesPerWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gatherer Min Times per Week.
+        /// </summary>
+        public static string GathererMinTimesPerWeek {
+            get {
+                return ResourceManager.GetString("GathererMinTimesPerWeek", resourceCulture);
             }
         }
         
@@ -4322,6 +4403,24 @@ namespace K9.Globalisation {
         public static string HunterDetails {
             get {
                 return ResourceManager.GetString("HunterDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hunter Max Times per Week.
+        /// </summary>
+        public static string HunterMaxTimesPerWeek {
+            get {
+                return ResourceManager.GetString("HunterMaxTimesPerWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hunter Min Times per Week.
+        /// </summary>
+        public static string HunterMinTimesPerWeek {
+            get {
+                return ResourceManager.GetString("HunterMinTimesPerWeek", resourceCulture);
             }
         }
         
@@ -5198,6 +5297,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Live Foods.
+        /// </summary>
+        public static string LiveFoods {
+            get {
+                return ResourceManager.GetString("LiveFoods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I am often lively, enthusiastic and drawn to change.
         /// </summary>
         public static string LivelyDispositionLabel {
@@ -5991,6 +6099,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nomad Max Times per Week.
+        /// </summary>
+        public static string NomadMaxTimesPerWeek {
+            get {
+                return ResourceManager.GetString("NomadMaxTimesPerWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nomad Min Times per Week.
+        /// </summary>
+        public static string NomadMinTimesPerWeek {
+            get {
+                return ResourceManager.GetString("NomadMinTimesPerWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to None.
         /// </summary>
         public static string None {
@@ -6450,6 +6576,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Organ Meat.
+        /// </summary>
+        public static string OrganMeat {
+            get {
+                return ResourceManager.GetString("OrganMeat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Other.
         /// </summary>
         public static string Other {
@@ -6888,6 +7023,15 @@ namespace K9.Globalisation {
         public static string POTSLabel {
             get {
                 return ResourceManager.GetString("POTSLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Poultry.
+        /// </summary>
+        public static string Poultry {
+            get {
+                return ResourceManager.GetString("Poultry", resourceCulture);
             }
         }
         
@@ -7964,6 +8108,15 @@ namespace K9.Globalisation {
         public static string RedeemedOnLabel {
             get {
                 return ResourceManager.GetString("RedeemedOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Red Meat.
+        /// </summary>
+        public static string RedMeat {
+            get {
+                return ResourceManager.GetString("RedMeat", resourceCulture);
             }
         }
         
@@ -9490,6 +9643,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Teacher Max Times per Week.
+        /// </summary>
+        public static string TeacherMaxTimesPerWeek {
+            get {
+                return ResourceManager.GetString("TeacherMaxTimesPerWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Teacher Min Times per Week.
+        /// </summary>
+        public static string TeacherMinTimesPerWeek {
+            get {
+                return ResourceManager.GetString("TeacherMinTimesPerWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to When you relax your arm and look at the skin around your wrists, can you see the outline of your tendons?.
         /// </summary>
         public static string TendonsAndSinewsVisibleLabel {
@@ -10274,6 +10445,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vegetable Protein.
+        /// </summary>
+        public static string VegetableProtein {
+            get {
+                return ResourceManager.GetString("VegetableProtein", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vegetables.
         /// </summary>
         public static string Vegetables {
@@ -10522,6 +10702,24 @@ namespace K9.Globalisation {
         public static string WarriorDetails {
             get {
                 return ResourceManager.GetString("WarriorDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warrior Max Times per Week.
+        /// </summary>
+        public static string WarriorMaxTimesPerWeek {
+            get {
+                return ResourceManager.GetString("WarriorMaxTimesPerWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warrior Min Times per Week.
+        /// </summary>
+        public static string WarriorMinTimesPerWeek {
+            get {
+                return ResourceManager.GetString("WarriorMinTimesPerWeek", resourceCulture);
             }
         }
         

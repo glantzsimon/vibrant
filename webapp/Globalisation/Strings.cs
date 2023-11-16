@@ -191,6 +191,7 @@
             public const string ItemCodeLabel = "ItemCodeLabel";
             public const string CategoryLabel = "CategoryLabel";
             public const string ActivityLabel = "Activity";
+            
             public const string DietaryRecommendationLabel = "DietaryRecommendation";
             public const string FoodLabel = "FoodLabel";
             public const string ProtocolLabel = "Protocol";
@@ -828,6 +829,20 @@
             public const string WarriorCompatibilityLevel = "WarriorCompatibilityLevel";
             public const string NomadCompatibilityLevel = "NomadCompatibilityLevel";
 
+            public const string HunterMinTimesPerWeek = "HunterMinTimesPerWeek";
+            public const string GathererMinTimesPerWeek = "GathererMinTimesPerWeek";
+            public const string TeacherMinTimesPerWeek = "TeacherMinTimesPerWeek";
+            public const string ExplorerMinTimesPerWeek = "ExplorerMinTimesPerWeek";
+            public const string WarriorMinTimesPerWeek = "WarriorMinTimesPerWeek";
+            public const string NomadMinTimesPerWeek = "NomadMinTimesPerWeek";
+
+            public const string HunterMaxTimesPerWeek = "HunterMaxTimesPerWeek";
+            public const string GathererMaxTimesPerWeek = "GathererMaxTimesPerWeek";
+            public const string TeacherMaxTimesPerWeek = "TeacherMaxTimesPerWeek";
+            public const string ExplorerMaxTimesPerWeek = "ExplorerMaxTimesPerWeek";
+            public const string WarriorMaxTimesPerWeek = "WarriorMaxTimesPerWeek";
+            public const string NomadMaxTimesPerWeek = "NomadMaxTimesPerWeek";
+
             public const string GenoTypeScore = "GenoTypeScore";
 
             public const string AlmondShaped = "AlmondShaped";
@@ -852,18 +867,24 @@
             public const string NutsAndSeeds = "NutsAndSeeds";
             public const string Fungi = "Fungi";
             public const string Legumes = "Legumes";
-            public const string Meat = "Meat";
+            public const string RedMeat = "RedMeat";
+            public const string OrganMeat = "OrganMeat";
+            public const string Poultry = "Poultry";
             public const string FishAndSeafood = "FishAndSeafood";
-            public const string EggsAndDairy = "EggsAndDairy";
+            public const string EggsAndRoes = "FishAndSeafood";
+            public const string Dairy = "Dairy";
+            public const string VegetableProtein = "VegetableProtein";
             public const string Grains = "Grains";
-            public const string NoodlesAndPasta = "NoodlesAndPasta";
+            public const string Carbohydrates = "Carbohydrates";
             public const string HerbsAndSpices = "HerbsAndSpices";
             public const string Deserts = "Deserts";
             public const string Confectionery = "Confectionery";
             public const string Snacks = "Snacks";
-            public const string Oils = "Oils";
+            public const string FatsAndOils = "FatsAndOils";
             public const string Condiments = "Condiments";
+            public const string Beverages = "Beverages";
             public const string FermentedFoods = "FermentedFoods";
+            public const string LiveFoods = "LiveFoods";
         }
 
         public static class Constants

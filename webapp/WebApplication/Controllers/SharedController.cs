@@ -1,12 +1,13 @@
 ﻿using K9.Base.WebApplication.Filters;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Extensions;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using NLog;
 using System.Web.Mvc;
-using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Controllers
 {
@@ -17,8 +18,11 @@ namespace K9.WebApplication.Controllers
         private readonly IIngredientService _ingredientService;
         private readonly IOrderService _orderService;
         private readonly IQrCodeService _qrCodeService;
+        private readonly IMaintenanceService _maintenanceService;
+        private readonly IHealthQuestionnaireService _healthQuestionnaireService;
+        private readonly IRepository<FoodItem> _foodItemsRepository;
 
-        public SharedController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProductService productService, IIngredientService ingredientService, IOrderService orderService, IQrCodeService qrCodeService, IPureControllerPackage pureControllerPackage)
+        public SharedController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProductService productService, IIngredientService ingredientService, IOrderService orderService, IQrCodeService qrCodeService, IMaintenanceService maintenanceService, IPureControllerPackage pureControllerPackage, IHealthQuestionnaireService healthQuestionnaireService, IRepository<FoodItem> foodItemsRepository)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, pureControllerPackage)
         {
             _authentication = authentication;
@@ -26,6 +30,9 @@ namespace K9.WebApplication.Controllers
             _ingredientService = ingredientService;
             _orderService = orderService;
             _qrCodeService = qrCodeService;
+            _maintenanceService = maintenanceService;
+            _healthQuestionnaireService = healthQuestionnaireService;
+            _foodItemsRepository = foodItemsRepository;
         }
 
         public override string GetObjectName()
@@ -40,7 +47,9 @@ namespace K9.WebApplication.Controllers
             //_productService.UpdateProductCategories();
             //_ingredientService.UpdateIngredientCategories();
             //_orderService.UpdateFullName();
-            _ingredientService.UpdateIngredientCategories();
+            //_ingredientService.UpdateIngredientCategories();
+
+            _maintenanceService.AddFoodItems();
 
             return RedirectToAction("MaintenanceComplete");
         }
@@ -62,5 +71,7 @@ namespace K9.WebApplication.Controllers
 
             return new EmptyResult();
         }
+
+        
     }
 }

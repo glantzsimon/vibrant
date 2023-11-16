@@ -1,42 +1,143 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
+using K9.DataAccessLayer.Attributes;
 
 namespace K9.DataAccessLayer.Enums
 {
     public enum EFoodCategory
     {
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Fruits)]
-        Fruits,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Vegetables)]
-        Vegetables,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NutsAndSeeds)]
-        NutsAndSeeds,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Legumes)]
-        Legumes,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Fungi)]
-        Fungi,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Meat)]
-        Meat,
+        [Score(
+            Carnivore = true,
+            Vegan = false,
+            Vegetarian = false,
+            Fruitarian = false,
+            Pescatarian = false)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.RedMeat)]
+        RedMeat,
+
+        [Score(
+            Carnivore = true,
+            Vegan = false,
+            Vegetarian = false,
+            Fruitarian = false,
+            Pescatarian = false)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Poultry)]
+        Poultry,
+
+        [Score(
+            Carnivore = true,
+            Vegan = false,
+            Vegetarian = false,
+            Fruitarian = false,
+            Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.FishAndSeafood)]
         FishAndSeafood,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.EggsAndDairy)]
-        EggsAndDairy,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.EggsAndDairy)]
-        Grains,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NoodlesAndPasta)]
-        NoodlesAndPasta,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Deserts)]
-        Deserts,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Confectionery)]
-        Confectionery,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Confectionery)]
-        Snacks,
+
+        [Score(
+            Carnivore = true,
+            Vegan = false,
+            Vegetarian = true,
+            Fruitarian = false,
+            Pescatarian = true)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.EggsAndRoes)]
+        EggsAndRoes,
+
+        [Score(
+            Carnivore = true,
+            Vegan = false,
+            Vegetarian = true,
+            Fruitarian = false,
+            Pescatarian = false)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Dairy)]
+        Dairy,
+
+        [Score(
+            Carnivore = false,
+            Vegan = true,
+            Vegetarian = true,
+            Fruitarian = true,
+            Pescatarian = true)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VegetableProtein)]
+        VegetableProtein,
+
+        [Score(
+            Carnivore = true,
+            Vegan = true,
+            Vegetarian = true,
+            Fruitarian = false,
+            Pescatarian = true)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.FatsAndOils)]
+        FatsAndOils,
+
+        [Score(
+            Carnivore = false,
+            Vegan = true,
+            Vegetarian = true,
+            Fruitarian = false,
+            Pescatarian = true)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Carbohydrates)]
+        Carbohydrates,
+
+        [Score(
+            Carnivore = false,
+            Vegan = true,
+            Vegetarian = true,
+            Fruitarian = true,
+            Pescatarian = true)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Vegetables)]
+        Vegetables,
+
+        [Score(
+            Carnivore = false,
+            Vegan = true,
+            Vegetarian = true,
+            Fruitarian = false,
+            Pescatarian = true)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Fungi)]
+        Fungi,
+
+        [Score(
+            Carnivore = true,
+            Vegan = true,
+            Vegetarian = true,
+            Fruitarian = true,
+            Pescatarian = true)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Fruits)]
+        Fruits,
+
+        [Score(
+            Carnivore = true,
+            Vegan = true,
+            Vegetarian = true,
+            Fruitarian = true,
+            Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.HerbsAndSpices)]
         HerbsAndSpices,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.HerbsAndSpices)]
-        Oils,
+
+        [Score(
+            Carnivore = true,
+            Vegan = true,
+            Vegetarian = true,
+            Fruitarian = true,
+            Pescatarian = true)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Beverages)]
+        Beverages,
+
+        [Score(
+            Carnivore = true,
+            Vegan = true,
+            Vegetarian = true,
+            Fruitarian = false,
+            Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Condiments)]
         Condiments,
+
+        [Score(
+            Carnivore = true,
+            Vegan = true,
+            Vegetarian = true,
+            Fruitarian = false,
+            Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.FermentedFoods)]
-        FermentedFoods,
+        FermentedFoods
     }
 }

@@ -19,7 +19,7 @@ namespace K9.DataAccessLayer.Models
         [UIHint("FoodCategory")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ActivityLabel)]
         public EFoodCategory Category { get; set; }
-
+        
         [NotMapped]
         [UIHint("FoodItem")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ActivityLabel)]
