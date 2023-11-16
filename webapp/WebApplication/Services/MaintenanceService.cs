@@ -525,7 +525,7 @@ namespace K9.WebApplication.Services
 
         private void CreateFoodItem(string name, EGenoType genoType, ECompatibilityLevel level, EFoodCategory category, EFoodFrequency? frequency = null)
         {
-            FoodItem foodItem = _foodItemsRepository.Find(e => e.Name == name).FirstOrDefault();
+            FoodItem foodItem = _foodItemsRepository.Find(e => e.Name == name || (e.Name == $"{name}s") || ($"{e.Name}s" == name)).FirstOrDefault();
 
             if (foodItem == null)
             {
@@ -589,8 +589,8 @@ namespace K9.WebApplication.Services
 
         private void CreateActivity(string name, EGenoType genoType, ECompatibilityLevel level, string description = "")
         {
-            var activity = _activitiesRepository.Find(e => e.Name == name).FirstOrDefault();
-
+            var activity = _activitiesRepository.Find(e => e.Name == name || (e.Name == $"{name}s") || ($"{e.Name}s" == name)).FirstOrDefault();
+            
             if (activity == null)
             {
                 activity = new Activity();
