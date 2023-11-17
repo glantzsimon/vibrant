@@ -11,11 +11,11 @@ namespace K9.DataAccessLayer.Attributes
         public Type ResourceType { get; set; }
         public string Name { get; set; }
         public ENineStarKiElement Element { get; set; }
-        public EOrgan StrongYinOrgans { get; set; }
-        public EOrgan StrongYangOrgans { get; set; }
-        public EOrgan[] WeakYinOrgans { get; set; }
-        public EOrgan[] WeakYangOrgans { get; set; }
-    
+        public EOrgan StrongYinOrgans => GetStrongYinOrgans();
+        public EOrgan StrongYangOrgans => GetStrongYangOrgans();
+        public EOrgan[] WeakYinOrgans => GetWeakYinOrgans();
+        public EOrgan[] WeakYangOrgans => GetWeakYangOrgans();
+
         public string GetDescription()
         {
             return ResourceType.GetValueFromResource(Name);
@@ -25,6 +25,26 @@ namespace K9.DataAccessLayer.Attributes
         {
             var attr = Element.GetAttribute<EnumDescriptionAttribute>();
             return attr.GetDescription();
+        }
+
+        public EOrgan GetStrongYinOrgans()
+        {
+            return Element.GetAttribute<ENineStarKiElementEnumMetaDataAttribute>().StrongYinOrgans;
+        }
+
+        public EOrgan GetStrongYangOrgans()
+        {
+            return Element.GetAttribute<ENineStarKiElementEnumMetaDataAttribute>().StrongYangOrgans;
+        }
+
+        public EOrgan[] GetWeakYinOrgans()
+        {
+            return Element.GetAttribute<ENineStarKiElementEnumMetaDataAttribute>().WeakYinOrgans;
+        }
+
+        public EOrgan[] GetWeakYangOrgans()
+        {
+            return Element.GetAttribute<ENineStarKiElementEnumMetaDataAttribute>().WeakYangOrgans;
         }
         
         private string GetEnergytNumberAndName(ENineStarKiEnergy energy)

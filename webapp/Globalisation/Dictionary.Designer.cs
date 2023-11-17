@@ -625,6 +625,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Astringent.
+        /// </summary>
+        public static string Astringent {
+            get {
+                return ResourceManager.GetString("Astringent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to At Least 4 Times Weekly.
         /// </summary>
         public static string AtLeastFourTimesWeekly {
@@ -666,6 +675,15 @@ namespace K9.Globalisation {
         public static string AutoRenewLabel {
             get {
                 return ResourceManager.GetString("AutoRenewLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autumn.
+        /// </summary>
+        public static string Autumn {
+            get {
+                return ResourceManager.GetString("Autumn", resourceCulture);
             }
         }
         
@@ -795,6 +813,15 @@ namespace K9.Globalisation {
         public static string BiometricsTitle {
             get {
                 return ResourceManager.GetString("BiometricsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitter.
+        /// </summary>
+        public static string Bitter {
+            get {
+                return ResourceManager.GetString("Bitter", resourceCulture);
             }
         }
         
@@ -1539,7 +1566,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Condiments.
+        ///   Looks up a localized string similar to Condiments &amp; Additives.
         /// </summary>
         public static string Condiments {
             get {
@@ -3497,6 +3524,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 5 - 7 Times Weekly.
+        /// </summary>
+        public static string FiveToSevenTimesWeekly {
+            get {
+                return ResourceManager.GetString("FiveToSevenTimesWeekly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Flexible.
         /// </summary>
         public static string Flexible {
@@ -3556,6 +3592,15 @@ namespace K9.Globalisation {
         public static string FourToFiveTimesDaily {
             get {
                 return ResourceManager.GetString("FourToFiveTimesDaily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 4 - 6 Times Weekly.
+        /// </summary>
+        public static string FourToSixTimesWeekly {
+            get {
+                return ResourceManager.GetString("FourToSixTimesWeekly", resourceCulture);
             }
         }
         
@@ -6505,6 +6550,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1 - 3 Times Weekly.
+        /// </summary>
+        public static string OneToThreeTimesWeekly {
+            get {
+                return ResourceManager.GetString("OneToThreeTimesWeekly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 1 - 2 Times Daily.
         /// </summary>
         public static string OneToTwoTimesDaily {
@@ -7824,6 +7878,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pungent.
+        /// </summary>
+        public static string Pungent {
+            get {
+                return ResourceManager.GetString("Pungent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purchased Cancelled.
         /// </summary>
         public static string PurchaseCancelled {
@@ -8500,6 +8563,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Salty.
+        /// </summary>
+        public static string Salty {
+            get {
+                return ResourceManager.GetString("Salty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Saturday.
         /// </summary>
         public static string Saturday {
@@ -8680,6 +8752,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 7 - 10 Times Weekly.
+        /// </summary>
+        public static string SevenToTenTimesWeekly {
+            get {
+                return ResourceManager.GetString("SevenToTenTimesWeekly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A few times per month.
         /// </summary>
         public static string SeveralTimesAMonth {
@@ -8832,6 +8913,15 @@ namespace K9.Globalisation {
         public static string SixMonths {
             get {
                 return ResourceManager.GetString("SixMonths", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 6 - 9 Times Weekly.
+        /// </summary>
+        public static string SixToNineTimesWeekly {
+            get {
+                return ResourceManager.GetString("SixToNineTimesWeekly", resourceCulture);
             }
         }
         
@@ -9010,6 +9100,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sour.
+        /// </summary>
+        public static string Sour {
+            get {
+                return ResourceManager.GetString("Sour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to What is the size of the gap between your thighs?.
         /// </summary>
         public static string SpaceBetweenThighsLabel {
@@ -9042,6 +9141,15 @@ namespace K9.Globalisation {
         public static string SpleenPancreas {
             get {
                 return ResourceManager.GetString("SpleenPancreas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spring.
+        /// </summary>
+        public static string Spring {
+            get {
+                return ResourceManager.GetString("Spring", resourceCulture);
             }
         }
         
@@ -9650,6 +9758,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sweet.
+        /// </summary>
+        public static string Sweet {
+            get {
+                return ResourceManager.GetString("Sweet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Switch.
         /// </summary>
         public static string Switch {
@@ -9914,6 +10031,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 3 or More Times Daily.
+        /// </summary>
+        public static string ThreeOrMoreTimesDaily {
+            get {
+                return ResourceManager.GetString("ThreeOrMoreTimesDaily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 3 Times Daily.
         /// </summary>
         public static string ThreeTimesDaily {
@@ -9937,6 +10063,15 @@ namespace K9.Globalisation {
         public static string ThreeToFiveTimesWeekly {
             get {
                 return ResourceManager.GetString("ThreeToFiveTimesWeekly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3 - 4 Times Weekly.
+        /// </summary>
+        public static string ThreeToFourTimesWeekly {
+            get {
+                return ResourceManager.GetString("ThreeToFourTimesWeekly", resourceCulture);
             }
         }
         
@@ -10318,6 +10453,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 2 - 3 Times Weekly.
+        /// </summary>
+        public static string TwoToThreeTimesWeekly {
+            get {
+                return ResourceManager.GetString("TwoToThreeTimesWeekly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unavailable.
         /// </summary>
         public static string Unavailable {
@@ -10469,6 +10613,15 @@ namespace K9.Globalisation {
         public static string UpperLegLengthTitle {
             get {
                 return ResourceManager.GetString("UpperLegLengthTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Up to 10 Times Weekly.
+        /// </summary>
+        public static string UpToTwoTimesWeekly {
+            get {
+                return ResourceManager.GetString("UpToTwoTimesWeekly", resourceCulture);
             }
         }
         
@@ -11204,6 +11357,15 @@ namespace K9.Globalisation {
         public static string Wind {
             get {
                 return ResourceManager.GetString("Wind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Winter.
+        /// </summary>
+        public static string Winter {
+            get {
+                return ResourceManager.GetString("Winter", resourceCulture);
             }
         }
         

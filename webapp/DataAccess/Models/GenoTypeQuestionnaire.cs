@@ -54,7 +54,7 @@ namespace K9.DataAccessLayer.Models
             return genoTypesStrengthTestResults.ToList();
         }
 
-        public EColor GetColorFromScore(int score)
+        public EDisplayColor GetColorFromScore(int score)
         {
             double factor = 100f / 7f;
             double index = 0;
@@ -72,7 +72,7 @@ namespace K9.DataAccessLayer.Models
                 index = (int)Math.Floor(score / factor);
             }
 
-            return (EColor)index;
+            return (EDisplayColor)index;
         }
 
         #region Blood Analysis
@@ -872,14 +872,14 @@ namespace K9.DataAccessLayer.Models
 
         #region Taster Status
 
-        [UIHint("Taste")]
+        [UIHint("PropTaste")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CruciferousVegetablesVeryBitterLabel)]
-        public ETaste? CruciferousVegetablesTasteVeryBitter { get; set; }
+        public EPropTaste? CruciferousVegetablesTasteVeryBitter { get; set; }
 
         public List<EGenoType> GetGenoTypeFromTasterStatus()
         {
             var results = new List<EGenoType>();
-            if (CruciferousVegetablesTasteVeryBitter == ETaste.NoticeablyBitter)
+            if (CruciferousVegetablesTasteVeryBitter == EPropTaste.NoticeablyBitter)
             {
                 results.Add(EGenoType.Hunter);
                 results.Add(EGenoType.Hunter);
@@ -894,7 +894,7 @@ namespace K9.DataAccessLayer.Models
                 results.Add(EGenoType.Explorer);
             }
 
-            else if (CruciferousVegetablesTasteVeryBitter == ETaste.NotBitter)
+            else if (CruciferousVegetablesTasteVeryBitter == EPropTaste.NotBitter)
             {
                 results.Add(EGenoType.Gatherer);
                 results.Add(EGenoType.Gatherer);
@@ -909,7 +909,7 @@ namespace K9.DataAccessLayer.Models
                 results.Add(EGenoType.Warrior);
             }
 
-            else if (CruciferousVegetablesTasteVeryBitter == ETaste.SlightlyBitter)
+            else if (CruciferousVegetablesTasteVeryBitter == EPropTaste.SlightlyBitter)
             {
                 results.Add(EGenoType.Teacher);
                 results.Add(EGenoType.Teacher);

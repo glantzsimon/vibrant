@@ -2,7 +2,7 @@
 
 namespace K9.DataAccessLayer.Enums
 {
-    public enum EColor
+    public enum EDisplayColor
     {
         [GenoTypeEnumMetaData(ResourceType = typeof(Globalisation.Dictionary), Color = "102, 255, 255")]
         Color1,

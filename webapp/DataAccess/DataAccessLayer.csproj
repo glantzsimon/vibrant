@@ -191,6 +191,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\ENineStarKiElementEnumMetaDataAttribute.cs" />
     <Compile Include="Attributes\ScoreAttribute.cs" />
     <Compile Include="Attributes\QuestionCategoryAttribute.cs" />
     <Compile Include="Attributes\DoshaEnumMetaDataAttribute.cs" />
@@ -204,11 +205,13 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\ETaste.cs" />
+    <Compile Include="Enums\ESeason.cs" />
     <Compile Include="Enums\EDosha.cs" />
     <Compile Include="Enums\ECompatibilityLevel.cs" />
     <Compile Include="Enums\EFoodFrequency.cs" />
     <Compile Include="Enums\EQuestionCategory.cs" />
-    <Compile Include="Enums\EColor.cs" />
+    <Compile Include="Enums\EDisplayColor.cs" />
     <Compile Include="Enums\EOrgan.cs" />
     <Compile Include="Enums\EHairType.cs" />
     <Compile Include="Enums\EDisposition.cs" />
@@ -227,7 +230,7 @@
     <Compile Include="Enums\EHeadShape.cs" />
     <Compile Include="Enums\EGonialAngle.cs" />
     <Compile Include="Enums\EStrength.cs" />
-    <Compile Include="Enums\ETaste.cs" />
+    <Compile Include="Enums\EPropTaste.cs" />
     <Compile Include="Enums\ESeverity.cs" />
     <Compile Include="Enums\ESkinType.cs" />
     <Compile Include="Enums\EZodiacElement.cs" />

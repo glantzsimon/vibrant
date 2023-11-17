@@ -515,6 +515,11 @@
             public const string Carnivore = "Carnivore";
             public const string Pescatarian = "Pescatarian";
             
+            public const string Spring = "Spring";
+            public const string Summer = "Summer";
+            public const string Autumn = "Autumn";
+            public const string Winter = "Winter";
+
             public const string VataDosha = "VataDosha";
             public const string PittaDosha = "PittaDosha";
             public const string KaphaDosha = "KaphaDosha";
@@ -605,7 +610,11 @@
             public const string TwoToFourTimesDaily = "TwoToFourTimesDaily";
             public const string ThreeTimesDaily = "ThreeTimesDaily";
             public const string FourToFiveTimesDaily = "FourToFiveTimesDaily";
+            public const string OneToThreeTimesWeekly = "OneToThreeTimesWeekly";
+            public const string UpToTwoTimesWeekly = "UpToTwoTimesWeekly";
+            public const string TwoToThreeTimesWeekly = "TwoToThreeTimesWeekly";
             public const string TwoToFourTimesWeekly = "TwoToFourTimesWeekly";
+            public const string ThreeToFourTimesWeekly = "ThreeToFourTimesWeekly";
             public const string TwoToFiveTimesWeekly = "TwoToFiveTimesWeekly";
             public const string ThreeTimesWeekly = "ThreeTimesWeekly";
             public const string FourTimesWeekly = "FourTimesWeekly";
@@ -615,6 +624,11 @@
             public const string ThreeToSevenTimesWeekly = "ThreeToSevenTimesWeekly";
             public const string ThreeToNineTimesWeekly = "ThreeToNineTimesWeekly";
             public const string SevenToNineTimesWeekly = "SevenToNineTimesWeekly";
+            public const string SevenToTenTimesWeekly = "SevenToTenTimesWeekly";
+            public const string SixToNineTimesWeekly = "SixToNineTimesWeekly";
+            public const string FourToSixTimesWeekly = "FourToSixTimesWeekly";
+            public const string FiveToSevenTimesWeekly = "FiveToSevenTimesWeekly";
+            public const string ThreeOrMoreTimesDaily = "ThreeOrMoreTimesDaily";
 
             public const string Default = "Default";
             public const string ParasiteCleanse = "ParasiteCleanse";
@@ -653,6 +667,13 @@
             public const string MoreSevere = "MoreSevere";
             public const string LessSevere = "LessSevere";
             public const string AboutAverage = "AboutAverage";
+
+            public const string Astringent = "Astringent";
+            public const string Sour = "Sour";
+            public const string Bitter = "Bitter";
+            public const string Sweet = "Sweet";
+            public const string Pungent = "Pungent";
+            public const string Salty = "Salty";
 
             public const string NoticeablyBitter = "NoticeablyBitter";
             public const string SlightlyBitter = "SlightlyBitter";
@@ -754,7 +775,6 @@
             public const string Pragmatist = "Pragmatist";
             public const string Communicator = "Communicator";
 
-            public const string Winter = "Winter";
             public const string WinterToSpring = "WinterToSpring";
             public const string EarlySpring = "EarlySpring";
             public const string LateSpring = "LateSpring";
@@ -762,8 +782,7 @@
             public const string EarlyAutumn = "EarlyAutumn";
             public const string LateAutumn = "LateAutumn";
             public const string AutumnToWinter = "AutumnToWinter";
-            public const string Summer = "Summer";
-
+            
             public const string Hibernation = "Hibernation";
             public const string Planning = "Planning";
             public const string Sprouting = "Sprouting";

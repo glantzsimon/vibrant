@@ -2,6 +2,6 @@
 @using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
 @using K9.DataAccessLayer.Enums
-@model ETaste
+@model EPropTaste?
 
-@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectListFromEnum<ETaste>(Convert.ToInt32(Model), true))
+@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectListFromEnum<EPropTaste>(Convert.ToInt32(Model), true))

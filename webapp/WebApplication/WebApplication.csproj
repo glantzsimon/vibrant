@@ -1634,7 +1634,7 @@
     <Content Include="Views\Shared\EditorTemplates\Handedness.cshtml" />
     <Content Include="Views\HealthQuestionnaire\Questions\_Page6Dentition.cshtml" />
     <Content Include="Views\HealthQuestionnaire\Questions\_Page7TasterStatus.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Taste.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PropTaste.cshtml" />
     <Content Include="Views\HealthQuestionnaire\Questions\_Page8FamilyHistory.cshtml" />
     <Content Include="Views\HealthQuestionnaire\Questions\_Page9CbsMethylation.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Severity.cshtml" />
@@ -1695,6 +1695,7 @@
     <Content Include="Views\Protocols\_RecommendedProducts.cshtml" />
     <Content Include="Views\Protocols\_RecommendedProductPacks.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\FoodFrequency.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Taste.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

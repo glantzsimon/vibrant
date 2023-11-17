@@ -138,6 +138,15 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = false,
             Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.FermentedFoods)]
-        FermentedFoods
+        FermentedFoods,
+
+        [Score(
+            Carnivore = true,
+            Vegan = true,
+            Vegetarian = true,
+            Fruitarian = true,
+            Pescatarian = true)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Other)]
+        Other
     }
 }

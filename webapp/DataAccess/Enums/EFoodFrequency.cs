@@ -16,10 +16,20 @@ namespace K9.DataAccessLayer.Enums
         OneToFiveTImesDaily,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ThreeTimesDaily)]
         ThreeTimesDaily,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ThreeOrMoreTimesDaily)]
+        ThreeOrMoreTimesDaily,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.FourToFiveTimesDaily)]
         FourToFiveTimesDaily,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.OneToThreeTimesWeekly)]
+        OneToThreeTimesWeekly,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.UpToTwoTimesWeekly)]
+        UpToTwoTimesWeekly,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.TwoToThreeTimesWeekly)]
+        TwoToThreeTimesWeekly,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.TwoToFourTimesWeekly)]
         TwoToFourTimesWeekly,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ThreeToFourTimesWeekly)]
+        ThreeToFourTimesWeekly,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.TwoToFiveTimesWeekly)]
         TwoToFiveTimesWeekly,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ThreeTimesWeekly)]
@@ -36,7 +46,15 @@ namespace K9.DataAccessLayer.Enums
         ThreeToSevenTimesWeekly,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ThreeToNineTimesWeekly)]
         ThreeToNineTimesWeekly,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.FourToSixTimesWeekly)]
+        FourToSixTimesWeekly,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.FiveToSevenTimesWeekly)]
+        FiveToSevenTimesWeekly,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.SixToNineTimesWeekly)]
+        SixToNineTimesWeekly,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.SevenToNineTimesWeekly)]
-        SevenToNineTimesWeekly
+        SevenToNineTimesWeekly,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.SevenToTenTimesWeekly)]
+        SevenToTenTimesWeekly
     }
 }
