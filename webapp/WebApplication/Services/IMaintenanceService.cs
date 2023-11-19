@@ -2,6 +2,6 @@
 {
     public interface IMaintenanceService
     {
-        void AddFoodItems();
+        void AddFoodItemsAndActivities();
     }
 }

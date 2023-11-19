@@ -49,7 +49,7 @@ namespace K9.WebApplication.Controllers
             //_orderService.UpdateFullName();
             //_ingredientService.UpdateIngredientCategories();
 
-            _maintenanceService.AddFoodItems();
+            _maintenanceService.AddFoodItemsAndActivities();();
 
             return RedirectToAction("MaintenanceComplete");
         }
