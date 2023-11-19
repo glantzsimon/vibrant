@@ -20,6 +20,8 @@ namespace K9.DataAccessLayer.Enums
         ThreeOrMoreTimesDaily,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.FourToFiveTimesDaily)]
         FourToFiveTimesDaily,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.OncePerWeek)]
+        OncePerWeek,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.OneToThreeTimesWeekly)]
         OneToThreeTimesWeekly,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.UpToTwoTimesWeekly)]

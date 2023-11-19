@@ -733,6 +733,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bark.
+        /// </summary>
+        public static string Bark {
+            get {
+                return ResourceManager.GetString("Bark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Batch Size.
         /// </summary>
         public static string BatchSizeLabel {
@@ -1056,6 +1065,15 @@ namespace K9.Globalisation {
         public static string CandidaFungusLabel {
             get {
                 return ResourceManager.GetString("CandidaFungusLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Can Be Eaten Raw.
+        /// </summary>
+        public static string CanEatRawLabel {
+            get {
+                return ResourceManager.GetString("CanEatRawLabel", resourceCulture);
             }
         }
         
@@ -3542,6 +3560,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Flower.
+        /// </summary>
+        public static string Flower {
+            get {
+                return ResourceManager.GetString("Flower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Food.
         /// </summary>
         public static string FoodItem {
@@ -3655,6 +3682,15 @@ namespace K9.Globalisation {
         public static string FrizzyHairTypeLabel {
             get {
                 return ResourceManager.GetString("FrizzyHairTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fruit.
+        /// </summary>
+        public static string Fruit {
+            get {
+                return ResourceManager.GetString("Fruit", resourceCulture);
             }
         }
         
@@ -4871,6 +4907,78 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Astringent.
+        /// </summary>
+        public static string IsAstringentLabel {
+            get {
+                return ResourceManager.GetString("IsAstringentLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autumn.
+        /// </summary>
+        public static string IsAutumnLabel {
+            get {
+                return ResourceManager.GetString("IsAutumnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beige.
+        /// </summary>
+        public static string IsBeigeLabel {
+            get {
+                return ResourceManager.GetString("IsBeigeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitter.
+        /// </summary>
+        public static string IsBitterLabel {
+            get {
+                return ResourceManager.GetString("IsBitterLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Black.
+        /// </summary>
+        public static string IsBlackLabel {
+            get {
+                return ResourceManager.GetString("IsBlackLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blue.
+        /// </summary>
+        public static string IsBlueLabel {
+            get {
+                return ResourceManager.GetString("IsBlueLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brown.
+        /// </summary>
+        public static string IsBrownLabel {
+            get {
+                return ResourceManager.GetString("IsBrownLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Citrus Fruit.
+        /// </summary>
+        public static string IsCitrusFruitLabel {
+            get {
+                return ResourceManager.GetString("IsCitrusFruitLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is Complete.
         /// </summary>
         public static string IsCompleteLabel {
@@ -4880,11 +4988,56 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Earth Element.
+        /// </summary>
+        public static string IsEarthElementLabel {
+            get {
+                return ResourceManager.GetString("IsEarthElementLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fire Element.
+        /// </summary>
+        public static string IsFireElementLabel {
+            get {
+                return ResourceManager.GetString("IsFireElementLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Green.
+        /// </summary>
+        public static string IsGreenLabel {
+            get {
+                return ResourceManager.GetString("IsGreenLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is Hidden.
         /// </summary>
         public static string IsHiddenLabel {
             get {
                 return ResourceManager.GetString("IsHiddenLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kapha Dosha.
+        /// </summary>
+        public static string IsKaphaDoshaLabel {
+            get {
+                return ResourceManager.GetString("IsKaphaDoshaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Late Summer.
+        /// </summary>
+        public static string IsLateSummerLabel {
+            get {
+                return ResourceManager.GetString("IsLateSummerLabel", resourceCulture);
             }
         }
         
@@ -4925,6 +5078,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Low Carb.
+        /// </summary>
+        public static string IsLowCarbLabel {
+            get {
+                return ResourceManager.GetString("IsLowCarbLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lower Leg Length is Greater than Upper Leg Length.
         /// </summary>
         public static string IsLowerLegLengthGreaterThanUpperLegLengthLabel {
@@ -4952,11 +5114,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Metal Element.
+        /// </summary>
+        public static string IsMetalElementLabel {
+            get {
+                return ResourceManager.GetString("IsMetalElementLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deadly Nightade.
+        /// </summary>
+        public static string IsNightshadeLabel {
+            get {
+                return ResourceManager.GetString("IsNightshadeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is On Hold.
         /// </summary>
         public static string IsOnHoldLabel {
             get {
                 return ResourceManager.GetString("IsOnHoldLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orange.
+        /// </summary>
+        public static string IsOrangeLabel {
+            get {
+                return ResourceManager.GetString("IsOrangeLabel", resourceCulture);
             }
         }
         
@@ -4979,11 +5168,65 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pitta Dosha.
+        /// </summary>
+        public static string IsPittaDoshaLabel {
+            get {
+                return ResourceManager.GetString("IsPittaDoshaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pungent.
+        /// </summary>
+        public static string IsPungentLabel {
+            get {
+                return ResourceManager.GetString("IsPungentLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purple.
+        /// </summary>
+        public static string IsPurpleLabel {
+            get {
+                return ResourceManager.GetString("IsPurpleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Red.
+        /// </summary>
+        public static string IsRedLabel {
+            get {
+                return ResourceManager.GetString("IsRedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Right Index Finger is Longer than Right Ring Finger.
         /// </summary>
         public static string IsRightIndexFingerLongerThanRightRingFingerLabel {
             get {
                 return ResourceManager.GetString("IsRightIndexFingerLongerThanRightRingFingerLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Root.
+        /// </summary>
+        public static string IsRootLabel {
+            get {
+                return ResourceManager.GetString("IsRootLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salty.
+        /// </summary>
+        public static string IsSaltyLabel {
+            get {
+                return ResourceManager.GetString("IsSaltyLabel", resourceCulture);
             }
         }
         
@@ -4997,11 +5240,101 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sour.
+        /// </summary>
+        public static string IsSourLabel {
+            get {
+                return ResourceManager.GetString("IsSourLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spring.
+        /// </summary>
+        public static string IsSpringLabel {
+            get {
+                return ResourceManager.GetString("IsSpringLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is Started.
         /// </summary>
         public static string IsStartedLabel {
             get {
                 return ResourceManager.GetString("IsStartedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Summer.
+        /// </summary>
+        public static string IsSummerLabel {
+            get {
+                return ResourceManager.GetString("IsSummerLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sweet.
+        /// </summary>
+        public static string IsSweetLabel {
+            get {
+                return ResourceManager.GetString("IsSweetLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tree Element.
+        /// </summary>
+        public static string IsTreeElementLabel {
+            get {
+                return ResourceManager.GetString("IsTreeElementLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vata Dosha.
+        /// </summary>
+        public static string IsVataDoshaLabel {
+            get {
+                return ResourceManager.GetString("IsVataDoshaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Water Element.
+        /// </summary>
+        public static string IsWaterElementLabel {
+            get {
+                return ResourceManager.GetString("IsWaterElementLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to White.
+        /// </summary>
+        public static string IsWhiteLabel {
+            get {
+                return ResourceManager.GetString("IsWhiteLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Winter.
+        /// </summary>
+        public static string IsWinterLabel {
+            get {
+                return ResourceManager.GetString("IsWinterLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yellow.
+        /// </summary>
+        public static string IsYellowLabel {
+            get {
+                return ResourceManager.GetString("IsYellowLabel", resourceCulture);
             }
         }
         
@@ -5225,6 +5558,15 @@ namespace K9.Globalisation {
         public static string Learn {
             get {
                 return ResourceManager.GetString("Learn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leaves.
+        /// </summary>
+        public static string Leaves {
+            get {
+                return ResourceManager.GetString("Leaves", resourceCulture);
             }
         }
         
@@ -6523,6 +6865,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Once per Week.
+        /// </summary>
+        public static string OncePerWeek {
+            get {
+                return ResourceManager.GetString("OncePerWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to One Hour.
         /// </summary>
         public static string OneHour {
@@ -7114,6 +7465,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Part of Plant.
+        /// </summary>
+        public static string PlantPartLabel {
+            get {
+                return ResourceManager.GetString("PlantPartLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;membership-summary&quot;&gt;
         ///    &lt;h4&gt;&lt;strong&gt;Annual Platinum Subscription:&lt;/strong&gt;&lt;/h4&gt;
         ///    &lt;p&gt;
@@ -7159,6 +7519,15 @@ namespace K9.Globalisation {
         public static string PleaseSelect {
             get {
                 return ResourceManager.GetString("PleaseSelect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pod.
+        /// </summary>
+        public static string Pod {
+            get {
+                return ResourceManager.GetString("Pod", resourceCulture);
             }
         }
         
@@ -8527,6 +8896,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Root.
+        /// </summary>
+        public static string Root {
+            get {
+                return ResourceManager.GetString("Root", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you have any root canals?.
         /// </summary>
         public static string RootCanalsLabel {
@@ -8568,6 +8946,15 @@ namespace K9.Globalisation {
         public static string Salty {
             get {
                 return ResourceManager.GetString("Salty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sap.
+        /// </summary>
+        public static string Sap {
+            get {
+                return ResourceManager.GetString("Sap", resourceCulture);
             }
         }
         
@@ -8658,6 +9045,15 @@ namespace K9.Globalisation {
         public static string SeeAllProducts {
             get {
                 return ResourceManager.GetString("SeeAllProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seed.
+        /// </summary>
+        public static string Seed {
+            get {
+                return ResourceManager.GetString("Seed", resourceCulture);
             }
         }
         
@@ -9253,6 +9649,15 @@ namespace K9.Globalisation {
         public static string StatusLabel {
             get {
                 return ResourceManager.GetString("StatusLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stem.
+        /// </summary>
+        public static string Stem {
+            get {
+                return ResourceManager.GetString("Stem", resourceCulture);
             }
         }
         

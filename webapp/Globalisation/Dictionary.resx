@@ -3757,20 +3757,155 @@
   <data name="Astringent" xml:space="preserve">
     <value>Astringent</value>
   </data>
+  <data name="Bark" xml:space="preserve">
+    <value>Bark</value>
+  </data>
   <data name="Bitter" xml:space="preserve">
     <value>Bitter</value>
+  </data>
+  <data name="CanEatRawLabel" xml:space="preserve">
+    <value>Can Be Eaten Raw</value>
   </data>
   <data name="FiveToSevenTimesWeekly" xml:space="preserve">
     <value>5 - 7 Times Weekly</value>
   </data>
+  <data name="Flower" xml:space="preserve">
+    <value>Flower</value>
+  </data>
+  <data name="Fruit" xml:space="preserve">
+    <value>Fruit</value>
+  </data>
+  <data name="IsAstringentLabel" xml:space="preserve">
+    <value>Astringent</value>
+  </data>
+  <data name="IsAutumnLabel" xml:space="preserve">
+    <value>Autumn</value>
+  </data>
+  <data name="IsBeigeLabel" xml:space="preserve">
+    <value>Beige</value>
+  </data>
+  <data name="IsBitterLabel" xml:space="preserve">
+    <value>Bitter</value>
+  </data>
+  <data name="IsBlackLabel" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="IsBlueLabel" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="IsBrownLabel" xml:space="preserve">
+    <value>Brown</value>
+  </data>
+  <data name="IsCitrusFruitLabel" xml:space="preserve">
+    <value>Citrus Fruit</value>
+  </data>
+  <data name="IsEarthElementLabel" xml:space="preserve">
+    <value>Earth Element</value>
+  </data>
+  <data name="IsFireElementLabel" xml:space="preserve">
+    <value>Fire Element</value>
+  </data>
+  <data name="IsGreenLabel" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="IsKaphaDoshaLabel" xml:space="preserve">
+    <value>Kapha Dosha</value>
+  </data>
+  <data name="IsLateSummerLabel" xml:space="preserve">
+    <value>Late Summer</value>
+  </data>
+  <data name="IsLowCarbLabel" xml:space="preserve">
+    <value>Low Carb</value>
+  </data>
+  <data name="IsMetalElementLabel" xml:space="preserve">
+    <value>Metal Element</value>
+  </data>
+  <data name="IsNightshadeLabel" xml:space="preserve">
+    <value>Deadly Nightade</value>
+  </data>
+  <data name="IsOrangeLabel" xml:space="preserve">
+    <value>Orange</value>
+  </data>
+  <data name="IsPittaDoshaLabel" xml:space="preserve">
+    <value>Pitta Dosha</value>
+  </data>
+  <data name="IsPungentLabel" xml:space="preserve">
+    <value>Pungent</value>
+  </data>
+  <data name="IsPurpleLabel" xml:space="preserve">
+    <value>Purple</value>
+  </data>
+  <data name="IsRedLabel" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="IsRootLabel" xml:space="preserve">
+    <value>Root</value>
+  </data>
+  <data name="IsSaltyLabel" xml:space="preserve">
+    <value>Salty</value>
+  </data>
+  <data name="IsSourLabel" xml:space="preserve">
+    <value>Sour</value>
+  </data>
+  <data name="IsSpringLabel" xml:space="preserve">
+    <value>Spring</value>
+  </data>
+  <data name="IsSummerLabel" xml:space="preserve">
+    <value>Summer</value>
+  </data>
+  <data name="IsSweetLabel" xml:space="preserve">
+    <value>Sweet</value>
+  </data>
+  <data name="IsTreeElementLabel" xml:space="preserve">
+    <value>Tree Element</value>
+  </data>
+  <data name="IsVataDoshaLabel" xml:space="preserve">
+    <value>Vata Dosha</value>
+  </data>
+  <data name="IsWaterElementLabel" xml:space="preserve">
+    <value>Water Element</value>
+  </data>
+  <data name="IsWhiteLabel" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="IsWinterLabel" xml:space="preserve">
+    <value>Winter</value>
+  </data>
+  <data name="IsYellowLabel" xml:space="preserve">
+    <value>Yellow</value>
+  </data>
+  <data name="Leaves" xml:space="preserve">
+    <value>Leaves</value>
+  </data>
+  <data name="OncePerWeek" xml:space="preserve">
+    <value>Once per Week</value>
+  </data>
+  <data name="PlantPartLabel" xml:space="preserve">
+    <value>Part of Plant</value>
+  </data>
+  <data name="Pod" xml:space="preserve">
+    <value>Pod</value>
+  </data>
   <data name="Pungent" xml:space="preserve">
     <value>Pungent</value>
+  </data>
+  <data name="Root" xml:space="preserve">
+    <value>Root</value>
   </data>
   <data name="Salty" xml:space="preserve">
     <value>Salty</value>
   </data>
+  <data name="Sap" xml:space="preserve">
+    <value>Sap</value>
+  </data>
+  <data name="Seed" xml:space="preserve">
+    <value>Seed</value>
+  </data>
   <data name="Sour" xml:space="preserve">
     <value>Sour</value>
+  </data>
+  <data name="Stem" xml:space="preserve">
+    <value>Stem</value>
   </data>
   <data name="Sweet" xml:space="preserve">
     <value>Sweet</value>

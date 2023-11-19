@@ -118,6 +118,47 @@
             public const string SummaryLabel = "SummaryLabel";
             public const string OverviewLabel = "OverviewLabel";
             public const string ColourLabel = "Colour";
+            
+            public const string IsWhiteLabel = "IsWhiteLabel";
+            public const string IsBeigeLabel = "IsBeigeLabel";
+            public const string IsBlueLabel = "IsBlueLabel";
+            public const string IsGreenLabel = "IsGreenLabel";
+            public const string IsYellowLabel = "IsYellowLabel";
+            public const string IsOrangeLabel = "IsOrangeLabel";
+            public const string IsRedLabel = "IsRedLabel";
+            public const string IsPurpleLabel = "IsPurpleLabel";
+            public const string IsBrownLabel = "IsBrownLabel";
+            public const string IsBlackLabel = "IsBlackLabel";
+
+            public const string CanEatRawLabel = "CanEatRawLabel";
+            public const string IsCitrusFruitLabel = "IsCitrusFruitLabel";
+            public const string IsLowCarbLabel = "IsLowCarbLabel";
+            public const string IsNightshadeLabel = "IsNightshadeLabel";
+            public const string PlantPartLabel = "PlantPartLabel";
+
+            public const string IsBitterLabel = "IsBitterLabel";
+            public const string IsSweetLabel = "IsSweetLabel";
+            public const string IsPungentLabel = "IsPungentLabel";
+            public const string IsSaltyLabel = "IsSaltyLabel";
+            public const string IsSourLabel = "IsSourLabel";
+            public const string IsAstringentLabel = "IsAstringentLabel";
+
+            public const string IsSpringLabel = "IsSpringLabel";
+            public const string IsSummerLabel = "IsSummerLabel";
+            public const string IsLateSummerLabel = "IsLateSummerLabel";
+            public const string IsAutumnLabel = "IsAutumnLabel";
+            public const string IsWinterLabel = "IsWinterLabel";
+            
+            public const string IsWaterElementLabel = "IsWaterElementLabel";
+            public const string IsTreeElementLabel = "IsTreeElementLabel";
+            public const string IsFireElementLabel = "IsFireElementLabel";
+            public const string IsEarthElementLabel = "IsEarthElementLabel";
+            public const string IsMetalElementLabel = "IsMetalElementLabel";
+            
+            public const string IsVataDoshaLabel = "IsVataDoshaLabel";
+            public const string IsPittaDoshaLabel = "IsPittaDoshaLabel";
+            public const string IsKaphaDoshaLabel = "IsKaphaDoshaLabel";
+
             public const string DescriptiveNameLabel = "DescriptiveNameLabel";
             public const string HealthLabel = "HealthLabel";
             public const string ExamplesLabel = "ExamplesLabel";
@@ -430,6 +471,17 @@
             public const string Herbal = "Herbal";
             public const string Alchemy = "Alchemy";
             public const string Mineral = "Mineral";
+
+            public const string Root = "Root";
+            public const string Stem = "Stem";
+            public const string Bark = "Bark";
+            public const string Leaves = "Leaves";
+            public const string Sap = "Sap";
+            public const string Fruit = "Fruit";
+            public const string Pod = "Pod";
+            public const string Seed = "Seed";
+            public const string Flower = "Flower";
+
             public const string Product = "Product";
             public const string DietarySupplement = "DietarySupplement";
             public const string PersonalCare = "PersonalCare";
@@ -611,6 +663,7 @@
             public const string ThreeTimesDaily = "ThreeTimesDaily";
             public const string FourToFiveTimesDaily = "FourToFiveTimesDaily";
             public const string OneToThreeTimesWeekly = "OneToThreeTimesWeekly";
+            public const string OncePerWeek = "OncePerWeek";
             public const string UpToTwoTimesWeekly = "UpToTwoTimesWeekly";
             public const string TwoToThreeTimesWeekly = "TwoToThreeTimesWeekly";
             public const string TwoToFourTimesWeekly = "TwoToFourTimesWeekly";
