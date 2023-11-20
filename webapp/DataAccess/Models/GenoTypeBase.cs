@@ -18,17 +18,17 @@ namespace K9.DataAccessLayer.Models
         {
             if (RelativeScore > 90)
             {
-                return "<i>fa fa-heart</i><i>fa fa-heart</i>";
+                return "<i class=\"fa fa-heart\"</i><i class=\"fa fa-heart\"</i>";
             }
 
             if (RelativeScore > 80)
             {
-                return "<i>fa fa-heart</i>";
+                return "<i class=\"fa fa-heart\"</i>";
             }
 
             if (RelativeScore > 70)
             {
-                return "<i>fa fa-heart-o</i>";
+                return "<i class=\"fa fa-heart-o\"</i>";
             }
 
             return "";

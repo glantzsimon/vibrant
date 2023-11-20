@@ -53,8 +53,10 @@
                                     for (int j = 0; j < filteredFoods.Count; j++)
                                     {
                                         var recommendedFood = filteredFoods[j];
-                                        <span>@recommendedFood.GetRelativeScoreHtml()</span>
-                                        <span class="summary-item" style="background-color: @levelColor !important;">@recommendedFood.Name</span>
+                                        <span class="summary-item" style="background-color: @levelColor !important;">
+                                            @recommendedFood.Name
+                                            @Html.Raw(recommendedFood.GetRelativeScoreHtml())
+                                        </span>
                                     }
                                 }
                             </div>
