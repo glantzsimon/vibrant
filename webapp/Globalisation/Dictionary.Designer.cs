@@ -8662,6 +8662,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Redeem Commission.
+        /// </summary>
+        public static string RedeemCommission {
+            get {
+                return ResourceManager.GetString("RedeemCommission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Redeemed On.
         /// </summary>
         public static string RedeemedOnLabel {

@@ -3895,6 +3895,9 @@
   <data name="Pungent" xml:space="preserve">
     <value>Pungent</value>
   </data>
+  <data name="RedeemCommission" xml:space="preserve">
+    <value>Redeem Commission</value>
+  </data>
   <data name="Root" xml:space="preserve">
     <value>Root</value>
   </data>

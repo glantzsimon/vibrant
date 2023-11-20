@@ -10,6 +10,9 @@ namespace K9.DataAccessLayer.Models
     {
         [NotMapped]
         public int Score { get; set; }
+
+        [NotMapped]
+        public int RelativeScore { get; set; }
         
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VataDosha)]
         public bool VataDosha { get; set; }

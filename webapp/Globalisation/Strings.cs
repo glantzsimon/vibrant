@@ -34,6 +34,7 @@
             public const string IsSelectedLabel = "IsSelectedLabel";
             public const string IsOnHoldLabel = "IsOnHoldLabel";
             public const string OrderLabel = "OrderLabel";
+            public const string ProductsOnlyLabel = "ProductsOnlyLabel";
             public const string OrderNumberLabel = "OrderNumberLabel";
             public const string OrderItemLabel = "OrderItemLabel";
             public const string OrderItemsLabel = "OrderItemsLabel";
@@ -457,6 +458,7 @@
             public const string GenoTypeQuestionnaires = "GenoTypeQuestionnaires";
             public const string Consultation = "Consultation";
             public const string ShoppingCart = "ShoppingCart";
+            public const string RedeemCommission = "RedeemCommission";
             public const string Consultations = "Consultations";
             public const string UserProtocol = "UserProtocol";
             public const string UserProtocols = "UserProtocols";

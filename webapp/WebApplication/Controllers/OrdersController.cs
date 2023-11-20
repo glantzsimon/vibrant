@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using K9.DataAccessLayer.Enums;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -123,7 +124,7 @@ namespace K9.WebApplication.Controllers
 
             var order = index == 1 ? _orderService.FindNext(selectedOrderId) : index == -1 ? _orderService.FindPrevious(selectedOrderId) : _orderService.Find(selectedOrderId);
 
-            var allOrders = _orderService.List(true).Where(e => !e.IsOnHold).ToList();
+            var allOrders = _orderService.List(true).Where(e => !e.IsOnHold && e.OrderType != EOrderType.ShoppingCart).ToList();
             var ordersViewModel = new OrdersReviewViewModel(allOrders);
 
             order = order ?? ordersViewModel.GetOrdersToMake().FirstOrDefault();
@@ -285,9 +286,11 @@ namespace K9.WebApplication.Controllers
 
         private void OrdersController_RecordCreated(object sender, CrudEventArgs e)
         {
+            Order order = e.Item as Order;
+
             e.IsRedirect = true;
             e.Controller = typeof(OrdersController).GetControllerName();
-            e.Action = nameof(EditProductPacks);
+            e.Action = order.IsProductsOnly ? nameof(EditProducts) : nameof(EditProductPacks);
             e.RouteValues = new { id = e.Item.Id };
 
             _orderService.ClearCache();

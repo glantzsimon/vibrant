@@ -14,5 +14,7 @@ namespace K9.DataAccessLayer.Enums
         Consultation = 4,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ShoppingCart)]
         ShoppingCart = 5,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.RedeemCommission)]
+        RedeemCommission
     }
 }

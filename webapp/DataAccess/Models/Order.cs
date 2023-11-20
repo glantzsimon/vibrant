@@ -28,6 +28,10 @@ namespace K9.DataAccessLayer.Models
 
         public Guid ExternalId { get; set; }
 
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProductsOnlyLabel)]
+        public bool IsProductsOnly { get; set; }
+
         [StringLength(9)]
         [Index(IsUnique = true)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]

@@ -4352,6 +4352,13 @@ namespace K9.WebApplication.Services
             {
                 foodItem = new FoodItem();
                 foodItem.ExternalId = System.Guid.NewGuid();
+                foodItem.Name = name;
+                foodItem.Vegetarian = category.GetAttribute<ScoreAttribute>().Vegetarian;
+                foodItem.Vegan = category.GetAttribute<ScoreAttribute>().Vegan;
+                foodItem.Fruitarian = category.GetAttribute<ScoreAttribute>().Fruitarian;
+                foodItem.Carnivore = category.GetAttribute<ScoreAttribute>().Carnivore;
+                foodItem.Pescatarian = category.GetAttribute<ScoreAttribute>().Pescatarian;
+                foodItem.Category = category;
             }
 
             if (genoType == EGenoType.Hunter)
@@ -4393,18 +4400,28 @@ namespace K9.WebApplication.Services
 
             if (foodItem.Id > 0)
             {
-                _foodItemsRepository.Update(foodItem);
+                _foodItemsRepository.GetQuery($"UPDATE [{nameof(FoodItem)}] SET " +
+                                              $"Hunter = {(foodItem.Hunter ? 1 : 0)}, " +
+                                              $"HunterCompatibilityLevel = {foodItem.HunterCompatibilityLevel}, " +
+                                              $"HunterFrequency = {foodItem.HunterFrequency}, " +
+                                              $"Gatherer = {(foodItem.Gatherer ? 1 : 0)}, " +
+                                              $"GathererCompatibilityLevel = {foodItem.GathererCompatibilityLevel}, " +
+                                              $"GathererHunterFrequency = {foodItem.GathererFrequency}, " +
+                                              $"Teacher = {(foodItem.Teacher ? 1 : 0)}, " +
+                                              $"TeacherCompatibilityLevel = {foodItem.TeacherCompatibilityLevel}, " +
+                                              $"TeacherFrequency = {foodItem.TeacherFrequency}, " +
+                                              $"Explorer = {(foodItem.Explorer ? 1 : 0)}, " +
+                                              $"ExplorerCompatibilityLevel = {foodItem.ExplorerCompatibilityLevel}, " +
+                                              $"ExplorerFrequency = {foodItem.ExplorerFrequency}, " +
+                                              $"Warrior = {(foodItem.Warrior ? 1 : 0)}, " +
+                                              $"WarriorCompatibilityLevel = {foodItem.WarriorCompatibilityLevel}, " +
+                                              $"WarriorFrequency = {foodItem.WarriorFrequency}, " +
+                                              $"Nomad = {(foodItem.Nomad ? 1 : 0)}, " +
+                                              $"NomadCompatibilityLevel = {foodItem.NomadCompatibilityLevel}, " +
+                                              $"NomadFrequency = {foodItem.NomadFrequency}");
             }
             else
             {
-                foodItem.Name = name;
-                foodItem.Vegetarian = category.GetAttribute<ScoreAttribute>().Vegetarian;
-                foodItem.Vegan = category.GetAttribute<ScoreAttribute>().Vegan;
-                foodItem.Fruitarian = category.GetAttribute<ScoreAttribute>().Fruitarian;
-                foodItem.Carnivore = category.GetAttribute<ScoreAttribute>().Carnivore;
-                foodItem.Pescatarian = category.GetAttribute<ScoreAttribute>().Pescatarian;
-                foodItem.Category = category;
-
                 _foodItemsRepository.Create(foodItem);
             }
         }
@@ -4471,14 +4488,10 @@ namespace K9.WebApplication.Services
             bool isWater, bool isEarth, bool isTree, bool isMetal, bool isFire)
         {
             FoodItem foodItem = _foodItemsRepository.Find(e => e.Name == name).FirstOrDefault();
-
+            
             if (foodItem == null)
             {
                 foodItem = new FoodItem();
-            }
-
-            if (foodItem.Id > 0)
-            {
                 foodItem.Name = name;
                 foodItem.Vegetarian = category.GetAttribute<ScoreAttribute>().Vegetarian;
                 foodItem.Vegan = category.GetAttribute<ScoreAttribute>().Vegan;
@@ -4486,6 +4499,80 @@ namespace K9.WebApplication.Services
                 foodItem.Carnivore = category.GetAttribute<ScoreAttribute>().Carnivore;
                 foodItem.Pescatarian = category.GetAttribute<ScoreAttribute>().Pescatarian;
                 foodItem.Category = category;
+            }
+
+            foodItem.IsWhite = isWhite;
+            foodItem.IsBeige = isBeige;
+            foodItem.IsBlue = isBlue;
+            foodItem.IsGreen = isGreen;
+            foodItem.IsYellow = isYellow;
+            foodItem.IsOrange = isOrange;
+            foodItem.IsRed = isRed;
+            foodItem.IsPurple = isPurple;
+            foodItem.IsBrown = isBrown;
+            foodItem.IsBlack = isBlack;
+            foodItem.CanBeEatenRaw = isRaw;
+            foodItem.IsCitrusFruit = isCitrus;
+            foodItem.IsLowCarb = isLowCarb;
+            foodItem.IsNightshade = isNightshade;
+            foodItem.PlantPart = isRoot ? EPlantPart.Root : EPlantPart.Undefined;
+            foodItem.IsBitter = isBitter;
+            foodItem.IsSweet = isSweet;
+            foodItem.IsPungent = isPungent;
+            foodItem.IsSalty = isSalty;
+            foodItem.IsSour = isSour;
+            foodItem.IsAstringent = isAstringent;
+            foodItem.IsSpring = isSpring;
+            foodItem.IsSummer = isSummer;
+            foodItem.IsLateSummer = isLateSummer;
+            foodItem.IsAutumn = isAutumn;
+            foodItem.IsWinter = isWinter;
+            foodItem.IsVataDosha = isVata;
+            foodItem.IsPittaDosha = isPitta;
+            foodItem.IsKaphaDosha = isKapha;
+            foodItem.IsWaterElement = isWater;
+            foodItem.IsEarthlElement = isEarth;
+            foodItem.IsTreeElement = isTree;
+            foodItem.IsMetalElement = isMetal;
+            foodItem.IsFireElement = isFire;
+            
+            if (foodItem.Id > 0)
+            {
+                _foodItemsRepository.GetQuery($"UPDATE [{nameof(FoodItem)}] SET " +
+                                                $"IsWhite = {(foodItem.IsWhite ? 1 : 0)}, " +
+                                                $"IsBeige = {(foodItem.IsBeige? 1 : 0)}, " +
+                                                $"IsBlue = {(foodItem.IsBlue? 1 : 0)}, " +
+                                                $"IsGreen = {(foodItem.IsGreen? 1 : 0)}, " +
+                                                $"IsYellow = {(foodItem.IsYellow? 1 : 0)}, " +
+                                                $"IsOrange = {(foodItem.IsOrange? 1 : 0)}, " +
+                                                $"IsRed = {(foodItem.IsRed? 1 : 0)}, " +
+                                                $"IsPurple = {(foodItem.IsPurple? 1 : 0)}, " +
+                                                $"IsBrown = {(foodItem.IsBrown? 1 : 0)}, " +
+                                                $"IsBlack = {(foodItem.IsBlack? 1 : 0)}, " +
+                                                $"CanBeEatenRaw = {(foodItem.CanBeEatenRaw? 1 : 0)}, " +
+                                                $"IsCitrusFruit = {(foodItem.IsCitrusFruit? 1 : 0)}, " +
+                                                $"IsLowCarb = {(foodItem.IsLowCarb? 1 : 0)}, " +
+                                                $"IsNightshade = {(foodItem.IsNightshade? 1 : 0)}, " +
+                                                $"PlantPart = {foodItem.PlantPart}, " +
+                                                $"IsBitter = {(foodItem.IsBitter? 1 : 0)}, " +
+                                                $"IsSweet = {(foodItem.IsSweet? 1 : 0)}, " +
+                                                $"IsPungent = {(foodItem.IsPungent? 1 : 0)}, " +
+                                                $"IsSalty = {(foodItem.IsSalty? 1 : 0)}, " +
+                                                $"IsSour = {(foodItem.IsSour? 1 : 0)}, " +
+                                                $"IsAstringent = {(foodItem.IsAstringent? 1 : 0)}, " +
+                                                $"IsSpring = {(foodItem.IsSpring? 1 : 0)}, " +
+                                                $"IsSummer = {(foodItem.IsSummer? 1 : 0)}, " +
+                                                $"IsLateSummer = {(foodItem.IsLateSummer? 1 : 0)}, " +
+                                                $"IsAutumn = {(foodItem.IsAutumn? 1 : 0)}, " +
+                                                $"IsWinter = {(foodItem.IsWinter? 1 : 0)}, " +
+                                                $"IsVataDosha = {(foodItem.IsVataDosha? 1 : 0)}, " +
+                                                $"IsPittaDosha = {(foodItem.IsPittaDosha? 1 : 0)}, " +
+                                                $"IsKaphaDosha = {(foodItem.IsKaphaDosha? 1 : 0)}, " +
+                                                $"IsWaterElement = {(foodItem.IsWaterElement? 1 : 0)}, " +
+                                                $"IsEarthlElement = {(foodItem.IsEarthlElement? 1 : 0)}, " +
+                                                $"IsTreeElement = {(foodItem.IsTreeElement? 1 : 0)}, " +
+                                                $"IsMetalElement = {(foodItem.IsMetalElement? 1 : 0)}, " +
+                                                $"IsFireElement = {(foodItem.IsFireElement? 1 : 0)}");
 
                 _foodItemsRepository.Update(foodItem);
             }

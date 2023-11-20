@@ -117,7 +117,7 @@ namespace K9.WebApplication.Services
 
             var genoType = hq.CalculateGenotype();
 
-            return new GeneticProfileMatchedItemsViewModel
+            var result = new GeneticProfileMatchedItemsViewModel
             {
                 Products = GetGenoTypeFilteredProducts(hq, genoType.GenoType,
                     new List<Product>(_productsRepository.List())),
@@ -132,6 +132,10 @@ namespace K9.WebApplication.Services
                 
                 Foods = GetGenoTypeFilteredFoodItems(hq, genoType.GenoType, new List<FoodItem>(_foodItemsRepository.List()))
             };
+
+            result.UpdateRelativeScores();
+
+            return result;
         }
 
         public List<Protocol> GetGeneticProfileMatchedProtocols(int clientId)

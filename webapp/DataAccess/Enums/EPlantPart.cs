@@ -4,6 +4,7 @@ namespace K9.DataAccessLayer.Enums
 {
     public enum EPlantPart
     {
+        Undefined,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Root)]
         Root,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Stem)]

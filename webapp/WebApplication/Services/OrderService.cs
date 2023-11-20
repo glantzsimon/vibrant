@@ -1,4 +1,5 @@
 ﻿using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
@@ -320,9 +321,11 @@ namespace K9.WebApplication.Services
         public RepCommissionViewModel CalculateRepCommission(int repId)
         {
             var redeemedCommissions = _repCommissionsRepository.Find(e => e.RepId == repId).ToList();
-            var repOrders = List(true).Where(e => e.RepId == repId || e.ClientId == repId).ToList();
+            var repOrders = List(true).Where(e => (e.RepId == repId || e.ClientId == repId) && !e.IsOnHold && !e.PaidOn.HasValue).ToList();
 
-            var totalRedeemed = redeemedCommissions.Sum(e => e.AmountRedeemed);
+            var totalRedeemed = redeemedCommissions.Sum(e => e.AmountRedeemed) +
+                                repOrders.Where(e => e.OrderType == EOrderType.RedeemCommission).Sum(e => e.TotalPrice);
+
             var totalPrice = repOrders.SelectMany(e => e.Products).Sum(e => e.TotalPrice) +
                              repOrders.SelectMany(e => e.ProductPacks).Sum(e => e.TotalPrice);
 
@@ -359,7 +362,18 @@ namespace K9.WebApplication.Services
             {
                 var lastOrder = _ordersRepository.CustomQuery<Order>($"SELECT TOP 1 * FROM [{nameof(Order)}] ORDER BY [Id] DESC").FirstOrDefault();
                 var orderNumberCount = lastOrder?.Id + 3 + Order.OrderNumberRoot;
-                order.OrderNumber = $"PA-{orderNumberCount}";
+                var newOrderNumber = $"PA-{orderNumberCount}";
+                var maxTries = 11;
+                var tryIndex = 0;
+                
+                while(_ordersRepository.Exists(e => e.OrderNumber == newOrderNumber) && tryIndex <= maxTries)
+                {
+                    orderNumberCount++;
+                    newOrderNumber = $"PA-{orderNumberCount}";
+                    tryIndex++;
+                }
+
+                order.OrderNumber = newOrderNumber;
             }
         }
     }
