@@ -321,10 +321,11 @@ namespace K9.WebApplication.Services
         public RepCommissionViewModel CalculateRepCommission(int repId)
         {
             var redeemedCommissions = _repCommissionsRepository.Find(e => e.RepId == repId).ToList();
-            var repOrders = List(true).Where(e => (e.RepId == repId || e.ClientId == repId) && !e.IsOnHold && !e.PaidOn.HasValue).ToList();
+            var repOrders = List(true).Where(e => (e.RepId == repId) && !e.IsOnHold && e.PaidOn.HasValue).ToList();
+            var redeemedOrders = List(true).Where(e => (e.RepId == repId || e.ClientId == repId) && !e.IsOnHold && e.OrderType == EOrderType.RedeemCommission).ToList();
 
             var totalRedeemed = redeemedCommissions.Sum(e => e.AmountRedeemed) +
-                                repOrders.Where(e => e.OrderType == EOrderType.RedeemCommission).Sum(e => e.TotalPrice);
+                                redeemedOrders.Where(e => e.OrderType == EOrderType.RedeemCommission).Sum(e => e.TotalPrice);
 
             var totalPrice = repOrders.SelectMany(e => e.Products).Sum(e => e.TotalPrice) +
                              repOrders.SelectMany(e => e.ProductPacks).Sum(e => e.TotalPrice);
@@ -337,7 +338,8 @@ namespace K9.WebApplication.Services
                 AmountRedeemed = totalRedeemed,
                 RepId = repId,
                 Rep = _clientsRepository.Find(repId),
-                RepCommissions = redeemedCommissions
+                RepCommissions = redeemedCommissions,
+                RedeemedOrders = redeemedOrders
             };
         }
 

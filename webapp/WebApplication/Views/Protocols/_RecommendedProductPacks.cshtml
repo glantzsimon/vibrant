@@ -15,19 +15,19 @@
             @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
             {
                 <a target="_blank" href="@Url.Action("Edit", "ProductPacks", new {id = Model.ProductPacks[i].ProductPackId})">
-                    @Html.DisplayFor(e => Model.ProductPacks[i].ProductPackName)
+                    @Html.DisplayFor(e => Model.ProductPacks[i].ProductPack.Name)
                 </a>
             }
             else if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsUnicornUser())
             {
                 <a target="_blank" href="@Url.Action("Link", "Product", new {id = Model.ProductPacks[i].ProductPack.ExternalId})">
-                    @Html.DisplayFor(e => Model.ProductPacks[i].ProductPackName)
+                    @Html.DisplayFor(e => Model.ProductPacks[i].ProductPack.Name)
                 </a>
             }
             else
             {
                 <a target="_blank" href="@Url.Action("Details", "Product", new {seoFriendlyId = Model.ProductPacks[i].ProductPack.SeoFriendlyId})">
-                    @Html.DisplayFor(e => Model.ProductPacks[i].ProductPackName)
+                    @Html.DisplayFor(e => Model.ProductPacks[i].ProductPack.Name)
                 </a>
             }
         </div>

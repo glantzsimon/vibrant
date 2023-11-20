@@ -8,10 +8,12 @@ namespace K9.WebApplication.ViewModels
     public class OrdersReviewViewModel
     {
         public readonly List<Order> AllOrders;
+        public readonly List<Order> AllOrdersNotOnHold;
 
         public OrdersReviewViewModel(List<Order> allOrders)
         {
             AllOrders = allOrders;
+            AllOrdersNotOnHold = allOrders.Where(e => !e.IsOnHold).ToList();
         }
 
         public Order SelectedOrder { get; set; }
@@ -20,11 +22,15 @@ namespace K9.WebApplication.ViewModels
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
         public int SelectedOrderId => SelectedOrder?.Id ?? 0;
 
-        public List<Order> GetIncompleteOrders() => AllOrders.Where(e => !e.IsComplete).ToList();
-        
-        public List<Order> GetOrdersToMake() => AllOrders.Where(e => !e.IsMade).ToList();
+        public List<Order> GetOrdersOnHold() => AllOrders.Where(e => e.IsOnHold).ToList();
 
-        public List<Order> GetOrdersToSend() => AllOrders.Where(e => e.IsMade && !e.IsComplete).ToList();
+        public List<Order> GetIncompleteOrders() => AllOrdersNotOnHold.Where(e => !e.IsComplete).ToList();
+        
+        public List<Order> GetCompleteOrders() => AllOrdersNotOnHold.Where(e => e.IsComplete).ToList();
+        
+        public List<Order> GetOrdersToMake() => AllOrdersNotOnHold.Where(e => !e.IsMade).ToList();
+
+        public List<Order> GetOrdersToSend() => AllOrdersNotOnHold.Where(e => e.IsMade && !e.IsComplete).ToList();
 
         public List<OrderProduct> GetCombinedOrderProducts() => GetCombinedGroupedProducts();
 

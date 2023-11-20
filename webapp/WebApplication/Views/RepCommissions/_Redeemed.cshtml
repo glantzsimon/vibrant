@@ -35,5 +35,20 @@
             </div>
         }
 
+        foreach (var order in Model.RedeemedOrders)
+        {
+            <div class="row">
+                <div class="col-xs-4">
+                    @Html.BootstrapDisplayFor(e => order.OrderNumber)
+                </div>
+                <div class="col-xs-4">
+                    @Html.BootstrapDisplayFor(e => order.GrandTotal)
+                </div>
+                <div class="col-xs-4">
+                    @Html.BootstrapDisplayFor(e => order.CreatedOn)
+                </div>
+            </div>
+        }
+
     }
 }

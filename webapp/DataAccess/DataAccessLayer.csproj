@@ -695,6 +695,14 @@
     <Compile Include="Migrations\202311200854260_SaveScoreAndRelativeScoreToDb.Designer.cs">
       <DependentUpon>202311200854260_SaveScoreAndRelativeScoreToDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311201220118_AddScoreToProtocol.cs" />
+    <Compile Include="Migrations\202311201220118_AddScoreToProtocol.Designer.cs">
+      <DependentUpon>202311201220118_AddScoreToProtocol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311201435378_AddScoresToDb.cs" />
+    <Compile Include="Migrations\202311201435378_AddScoresToDb.Designer.cs">
+      <DependentUpon>202311201435378_AddScoresToDb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
@@ -1082,6 +1090,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311200854260_SaveScoreAndRelativeScoreToDb.resx">
       <DependentUpon>202311200854260_SaveScoreAndRelativeScoreToDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311201220118_AddScoreToProtocol.resx">
+      <DependentUpon>202311201220118_AddScoreToProtocol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311201435378_AddScoresToDb.resx">
+      <DependentUpon>202311201435378_AddScoresToDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

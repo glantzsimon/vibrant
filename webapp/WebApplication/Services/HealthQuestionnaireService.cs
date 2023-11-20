@@ -206,11 +206,17 @@ namespace K9.WebApplication.Services
                     Period = EPeriod.Days,
                     ProtocolFrequency = EProtocolFrequency.Daily,
                     NumberOfPeriodsOff = 1,
-                    Duration = EProtocolDuration.ThreeMonths
+                    Duration = EProtocolDuration.ThreeMonths,
+                    GenoType = hq.CalculateGenotype().GenoType
                 };
 
                 _protocolsRepository.Create(protocol);
                 protocol = _protocolsRepository.Find(e => e.ExternalId == externalId).First();
+            }
+            else
+            {
+                protocol.GenoType = hq.CalculateGenotype().GenoType;
+                _protocolsRepository.Update(protocol);
             }
 
             DeleteProtocolChildRecords(protocol.Id);
@@ -226,32 +232,42 @@ namespace K9.WebApplication.Services
             protocol.Activities = matchedItems.Activities.Select(e => new ProtocolActivity
             {
                 ProtocolId = protocol.Id,
-                ActivityId = e.ActivityId
+                ActivityId = e.ActivityId,
+                Score = e.Score,
+                RelativeScore = e.RelativeScore
             }).ToList();
 
             protocol.DietaryRecommendations = matchedItems.DietaryRecommendations.Select(e =>
                 new ProtocolDietaryRecommendation
                 {
                     ProtocolId = protocol.Id,
-                    DietaryRecommendationId = e.DietaryRecommendationId
+                    DietaryRecommendationId = e.DietaryRecommendationId,
+                    Score = e.Score,
+                    RelativeScore = e.RelativeScore
                 }).ToList();
 
             protocol.RecommendedFoods = matchedItems.Foods.Select(e => new ProtocolFoodItem
             {
                 ProtocolId = protocol.Id,
                 FoodItemId = e.FoodItemId,
+                Score = e.Score,
+                RelativeScore = e.RelativeScore
             }).ToList();
 
             protocol.Products = matchedItems.Products.Select(e => new ProtocolProduct
             {
                 ProtocolId = protocol.Id,
                 ProductId = e.ProductId,
+                Score = e.Score,
+                RelativeScore = e.RelativeScore
             }).ToList();
 
             protocol.ProductPacks = matchedItems.ProductPacks.Select(e => new ProtocolProductPack
             {
                 ProtocolId = protocol.Id,
                 ProductPackId = e.ProductPackId,
+                Score = e.Score,
+                RelativeScore = e.RelativeScore
             }).ToList();
 
             _protocolActivitiesRepository.CreateBatch(protocol.Activities);

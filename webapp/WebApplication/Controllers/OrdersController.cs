@@ -52,6 +52,14 @@ namespace K9.WebApplication.Controllers
             RecordDeleted += OrdersController_RecordDeleted;
         }
 
+        public override ActionResult Index()
+        {
+            var allOrders = _orderService.List(true).Where(e => e.OrderType != EOrderType.ShoppingCart).ToList();
+            var ordersViewModel = new OrdersReviewViewModel(allOrders);
+
+            return View(ordersViewModel);
+        }
+
         public ActionResult EditProducts(int id = 0)
         {
             return RedirectToAction("EditProductsForOrder", "OrderProducts", new { id });
@@ -124,7 +132,7 @@ namespace K9.WebApplication.Controllers
 
             var order = index == 1 ? _orderService.FindNext(selectedOrderId) : index == -1 ? _orderService.FindPrevious(selectedOrderId) : _orderService.Find(selectedOrderId);
 
-            var allOrders = _orderService.List(true).Where(e => !e.IsOnHold && e.OrderType != EOrderType.ShoppingCart).ToList();
+            var allOrders = _orderService.List(true).Where(e => e.OrderType != EOrderType.ShoppingCart).ToList();
             var ordersViewModel = new OrdersReviewViewModel(allOrders);
 
             order = order ?? ordersViewModel.GetOrdersToMake().FirstOrDefault();
@@ -231,7 +239,7 @@ namespace K9.WebApplication.Controllers
 
             return new EmptyResult();
         }
-        
+
         private void OrdersController_RecordBeforeCreated(object sender, CrudEventArgs e)
         {
             var order = e.Item as Order;

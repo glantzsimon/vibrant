@@ -10,6 +10,9 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.ProtocolProductPacks, PluralName = Globalisation.Strings.Names.ProtocolProductPacks, Name = Globalisation.Strings.Names.ProtocolProductPack)]
     public class ProtocolProductPack : ObjectBase
     {
+        public int Score { get; set; }
+        public int RelativeScore { get; set; }
+
         [UIHint("Protocol")]
         [ForeignKey("Protocol")]
         public int ProtocolId { get; set; }

@@ -1455,7 +1455,7 @@
     <Content Include="Views\Orders\Delete.cshtml" />
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
-    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Orders\Table.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ProductRecommendations.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Country.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Country.cshtml" />
@@ -1698,6 +1698,8 @@
     <Content Include="Views\Protocols\_RecommendedProductPacks.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\FoodFrequency.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Taste.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Orders\_TableCollectionsButtons.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

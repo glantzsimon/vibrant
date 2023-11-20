@@ -48,12 +48,12 @@
                         <br />
                         <div class="row">
                             <div class="col-xs-12">
-                                @if (filteredFoods.Any())
+                                @if (filteredFoods != null && filteredFoods.Any())
                                 {
-
                                     for (int j = 0; j < filteredFoods.Count; j++)
                                     {
                                         var recommendedFood = filteredFoods[j];
+                                        <span>@recommendedFood.GetRelativeScoreHtml()</span>
                                         <span class="summary-item" style="background-color: @levelColor !important;">@recommendedFood.Name</span>
                                     }
                                 }

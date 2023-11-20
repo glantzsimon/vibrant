@@ -18,6 +18,8 @@ namespace K9.DataAccessLayer.Models
     public class Protocol : GenoTypeBase
     {
         public Guid ExternalId { get; set; }
+        
+        public EGenoType GenoType { get; set; }
 
         [NotMapped]
         [UIHint("Protocol")]
@@ -83,7 +85,7 @@ namespace K9.DataAccessLayer.Models
         public virtual IEnumerable<ProtocolFoodItem> ProtocolFoodItems { get; set; }
 
         [NotMapped]
-        public List<ProtocolFoodItem> RecommendedFoods{ get; set; }
+        public List<ProtocolFoodItem> RecommendedFoods { get; set; }
 
         public virtual IEnumerable<ProtocolProduct> ProtocolProducts { get; set; }
 
@@ -192,7 +194,7 @@ namespace K9.DataAccessLayer.Models
                 case EProtocolFrequency.Fortnightly:
                 case EProtocolFrequency.Monthly:
                     return numberOfPeriodsPerDuration * (NumberOfPeriodsOn);
-                    
+
                 default:
                     return 0;
             }
@@ -204,7 +206,7 @@ namespace K9.DataAccessLayer.Models
                        ?.SelectMany(e => e.ProductPack.Products.Select(p => p.Product))
                        .FirstOrDefault(e => e.ProductId == 35);
         }
-        
+
         private int GetDaysDuration()
         {
             switch (Duration)

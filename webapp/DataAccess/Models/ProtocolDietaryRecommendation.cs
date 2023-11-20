@@ -10,6 +10,9 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.ProtocolDietaryRecommendations, PluralName = Globalisation.Strings.Names.ProtocolDietaryRecommendations, Name = Globalisation.Strings.Names.ProtocolDietaryRecommendation)]
     public class ProtocolDietaryRecommendation : ObjectBase
     {
+        public int Score { get; set; }
+        public int RelativeScore { get; set; }
+
         [UIHint("Protocol")]
         [ForeignKey("Protocol")]
         public int ProtocolId { get; set; }

@@ -18,6 +18,8 @@ namespace K9.WebApplication.ViewModels
 
         public List<RepCommission> RepCommissions { get; set; }
 
+        public List<Order> RedeemedOrders { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountRedeemableLabel)]
         [DataType(DataType.Currency)]
         public double AmountRedeemable { get; set; }

@@ -335,12 +335,9 @@
     margin-bottom: 11px;
 }
 
-.schedule-print-container {
+.schedule-print-container hr {
+    margin: 7px !important;
 }
-
-    .schedule-print-container hr {
-        margin: 7px !important;
-    }
 
 .table-row {
     border-bottom: 1px solid #d9d9d9;
@@ -348,7 +345,7 @@
     padding-bottom: 6px;
 }
 
-    .table-row button, .table-row a.btn {
+    .table-row button {
         margin-top: -4px !important;
         margin-bottom: 0 !important;
     }

@@ -1557,6 +1557,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Completed Orders.
+        /// </summary>
+        public static string CompleteOrders {
+            get {
+                return ResourceManager.GetString("CompleteOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Concentration Issues.
         /// </summary>
         public static string ConcentrationIssues {
@@ -4660,6 +4669,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Incomplete Orders.
+        /// </summary>
+        public static string IncompleteOrders {
+            get {
+                return ResourceManager.GetString("IncompleteOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    Index-to-ring-finger or D2:D4 ratio is an excellent marker for sex hormone exposure. Higher levels of exposure to androgens in the womb correlates with longer ring fingers, whereas higher estrogen correlates with longer index fingers. The ration of hormones holds key information about a person&apos;s health and their ideal diet and lifestyle.
         ///&lt;/p&gt;
@@ -7069,6 +7087,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Orders On-Hold.
+        /// </summary>
+        public static string OrdersOnHold {
+            get {
+                return ResourceManager.GetString("OrdersOnHold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Orders Pick Slip.
         /// </summary>
         public static string OrdersPickSlip {
@@ -8435,7 +8462,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your health questionnaire has been successfully completed and uploaded to our system. We will contact you soon, pending analysis of the questions..
+        ///   Looks up a localized string similar to Thank you. You have successfully completed the Genetic Profile Test. We will contact you soon, pending analysis of the answers given..
         /// </summary>
         public static string QuestionnairecompletedSuccessfully {
             get {

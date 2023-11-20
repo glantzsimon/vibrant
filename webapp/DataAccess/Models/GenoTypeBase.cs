@@ -2,14 +2,37 @@
 using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Models;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace K9.DataAccessLayer.Models
 {
     public abstract class GenoTypeBase : ObjectBase, IObjectBase, IGenoTypeBase
     {
+        [NotMapped]
         public int Score { get; set; }
         
+        [NotMapped]
         public int RelativeScore { get; set; }
+
+        public string GetRelativeScoreHtml()
+        {
+            if (RelativeScore > 90)
+            {
+                return "<i>fa fa-heart</i><i>fa fa-heart</i>";
+            }
+
+            if (RelativeScore > 80)
+            {
+                return "<i>fa fa-heart</i>";
+            }
+
+            if (RelativeScore > 70)
+            {
+                return "<i>fa fa-heart-o</i>";
+            }
+
+            return "";
+        }
         
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VataDosha)]
         public bool VataDosha { get; set; }

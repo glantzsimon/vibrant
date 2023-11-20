@@ -9,6 +9,8 @@ namespace K9.WebApplication.ViewModels
 {
     public class RecommendedFoodsViewModel
     {
+        public EGenoType GenoType { get; set; }
+
         public List<ECompatibilityLevel> Levels => new List<ECompatibilityLevel>
         {
             ECompatibilityLevel.Optimal,
@@ -34,14 +36,40 @@ namespace K9.WebApplication.ViewModels
 
         public List<FoodItem> GetRecommendedFoodsForLevelAndGroup(EFoodGroup foodGroup, ECompatibilityLevel level)
         {
-            return RecommendedFoods?.Where(e =>
-                                                     e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
-                                                     (e.ExplorerCompatibilityLevel == level ||
-                                                     e.GathererCompatibilityLevel == level ||
-                                                     e.HunterCompatibilityLevel == level ||
-                                                     e.NomadCompatibilityLevel == level ||
-                                                     e.TeacherCompatibilityLevel == level ||
-                                                     e.WarriorCompatibilityLevel == level)).ToList();
+            switch (GenoType)
+            {
+                case EGenoType.Hunter:
+                    return RecommendedFoods?.Where(e =>
+                        e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
+                        (e.HunterCompatibilityLevel == level)).ToList();
+
+                case EGenoType.Gatherer:
+                    return RecommendedFoods?.Where(e =>
+                        e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
+                        (e.GathererCompatibilityLevel == level)).ToList();
+
+                case EGenoType.Teacher:
+                    return RecommendedFoods?.Where(e =>
+                        e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
+                        (e.TeacherCompatibilityLevel == level)).ToList();
+
+                case EGenoType.Explorer:
+                    return RecommendedFoods?.Where(e =>
+                        e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
+                        (e.ExplorerCompatibilityLevel == level)).ToList();
+
+                case EGenoType.Warrior:
+                    return RecommendedFoods?.Where(e =>
+                        e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
+                        (e.WarriorCompatibilityLevel == level)).ToList();
+
+                case EGenoType.Nomad:
+                    return RecommendedFoods?.Where(e =>
+                        e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
+                        (e.NomadCompatibilityLevel == level)).ToList();
+            }
+
+            return null;
         }
     }
 }

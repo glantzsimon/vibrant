@@ -3,82 +3,179 @@
 @using K9.SharedLibrary.Authentication
 @using K9.SharedLibrary.Models
 @using EButtonType = K9.SharedLibrary.Models.EButtonType
-@model Order
+@model K9.WebApplication.ViewModels.OrdersReviewViewModel
 @{
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+    ViewBag.Title = Dictionary.Orders;
+    ViewBag.SubTitle = Dictionary.Orders;
+
+    var incompleteOrders = Model.GetIncompleteOrders();
+    var completeOrders = Model.GetCompleteOrders();
+    var ordersOnHold = Model.GetOrdersOnHold();
 }
 
-<script language="javascript">
-    $(function () {
-        customOrder = [[3, "desc"]];
-    });
-</script>
+<div class="row">
+    <div class="col-xs-12 padding-0">
+        @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.CreateNew, "Create", "Orders", null, "fa fa-plus-circle", EButtonClass.Primary)
+    </div>
+</div>
 
-@Html.BootstrapTable(new DataTableOptions<Order>
-{
-    AllowCreate = true,
-    AllowEdit = true,
-    AllowDelete = ((BaseController<Order>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
-    VisibleColumns = new List<string>
+<br />
+
+<div class="well">
+    <div class="row table-row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.IncompleteOrders</h3>
+        </div>
+    </div>
+
+    <div class="row table-row">
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].FullName)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].RepId)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].ClientId)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].RequestedOn)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].PaidOn)</strong>
+        </div>
+        <div class="col-xs-2">
+        </div>
+    </div>
+
+    @foreach (var item in incompleteOrders)
     {
-        "FullName",
-        "UserName",
-        "ClientName",
-        "RequestedOn",
-        "PaidOn",
-        "CompletedOn",
-        "IsOnHold"
-    },
-    CustomButtons = new List<IButton>
-    {
-        new Button
-        {
-            Action = "EditProducts",
-            Text = Dictionary.EditProducts,
-            ButtonType = EButtonType.Primary,
-            IconCssClass = "fa fa-pencil"
-        },
-        new Button
-        {
-            Action = "EditProductQuantities",
-            Text = Dictionary.EditProductQuantities,
-            ButtonType = EButtonType.Primary,
-            IconCssClass = "fa fa-pencil"
-        },
-        new Button
-        {
-            Action = "EditProductPacks",
-            Text = Dictionary.EditProductPacks,
-            ButtonType = EButtonType.Primary,
-            IconCssClass = "fa fa-pencil"
-        },
-        new Button
-        {
-            Action = "EditProductPackQuantities",
-            Text = Dictionary.EditProductPackQuantities,
-            ButtonType = EButtonType.Primary,
-            IconCssClass = "fa fa-pencil"
-        },
-        new Button
-        {
-            Action = "DuplicateOrder",
-            Text = Dictionary.DuplicateOrder,
-            ButtonType = EButtonType.Primary,
-            IconCssClass = "fa fa-copy"
-        },
-        new Button
-        {
-            Action = "OrderReview",
-            Text = Dictionary.OrderReview,
-            ButtonType = EButtonType.Info,
-            IconCssClass = "fa fa-eye"
-        },
-        new Button
-        {
-            Action = "DownloadOrderCsv",
-            Text = Dictionary.DownloadAsCsv,
-            ButtonType = EButtonType.Success,
-            IconCssClass = "fa fa-download"
-        }
+        <div class="row table-row">
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.FullName)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.RepId)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.ClientId)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.RequestedOn)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.PaidOn)
+            </div>
+            <div class="col-xs-2">
+                @Html.Partial("_TableCollectionsButtons", item)
+            </div>
+        </div>
     }
-})
+</div>
+
+<div class="well">
+    <div class="row table-row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.CompleteOrders</h3>
+        </div>
+    </div>
+
+    <div class="row table-row">
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].FullName)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].RepId)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].ClientId)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].RequestedOn)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].PaidOn)</strong>
+        </div>
+        <div class="col-xs-2">
+        </div>
+    </div>
+
+    @foreach (var item in completeOrders)
+    {
+        <div class="row table-row">
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.FullName)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.RepId)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.ClientId)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.RequestedOn)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.PaidOn)
+            </div>
+            <div class="col-xs-2">
+                @Html.Partial("_TableCollectionsButtons", item)
+            </div>
+        </div>
+    }
+</div>
+
+<div class="well">
+    <div class="row table-row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.OrdersOnHold</h3>
+        </div>
+    </div>
+
+    <div class="row table-row">
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].FullName)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].RepId)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].ClientId)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].RequestedOn)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].PaidOn)</strong>
+        </div>
+        <div class="col-xs-2">
+        </div>
+    </div>
+
+    @foreach (var item in ordersOnHold)
+    {
+        <div class="row table-row">
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.FullName)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.RepId)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.ClientId)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.RequestedOn)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.PaidOn)
+            </div>
+            <div class="col-xs-2">
+                @Html.Partial("_TableCollectionsButtons", item)
+            </div>
+        </div>
+    }
+</div>
+
+

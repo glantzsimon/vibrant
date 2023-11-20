@@ -22,7 +22,7 @@ namespace K9.DataAccessLayer.Enums
         [ECompatibilityEnumMetaData(
             ResourceType = typeof(Globalisation.Dictionary), 
             Name = Globalisation.Strings.Names.Optimal, 
-            Color = "#55acee",
+            Color = "#1bb9fc",
             Description = Globalisation.Strings.Names.OptimalDescription)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Optimal)]
         Optimal,
