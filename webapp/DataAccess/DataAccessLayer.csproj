@@ -207,6 +207,7 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\EScore.cs" />
     <Compile Include="Enums\EFoodGroup.cs" />
     <Compile Include="Enums\EPlantPart.cs" />
     <Compile Include="Enums\ETaste.cs" />

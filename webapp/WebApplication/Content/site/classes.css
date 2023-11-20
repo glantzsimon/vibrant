@@ -288,3 +288,8 @@ li.divider {
 .form-range {
     width: 100%;
 }
+
+.food-item-icon {
+    font-size: 1em;
+    font-color: #87ceeb;
+}

@@ -14,21 +14,48 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         public int RelativeScore { get; set; }
 
+        public EScore GetScore()
+        {
+            if (RelativeScore >= 90)
+            {
+                return EScore.VeryHigh;
+            }
+
+            if (RelativeScore >= 80)
+            {
+                return EScore.High;
+            }
+
+            if (RelativeScore >= 70)
+            {
+                return EScore.High;
+            }
+
+            if (RelativeScore >= 50)
+            {
+                return EScore.Medium;
+            }
+
+            return EScore.Low;
+        }
+
         public string GetRelativeScoreHtml()
         {
-            if (RelativeScore > 90)
+            var score = GetScore();
+
+            if (score == EScore.VeryHigh)
             {
-                return "<i class=\"fa fa-heart\"</i><i class=\"fa fa-heart\"</i>";
+                return "<i class=\"fa fa-heart food-item-icon\"></i><i class=\"fa fa-heart food-item-icon\"></i>";
             }
 
-            if (RelativeScore > 80)
+            if (score == EScore.High)
             {
-                return "<i class=\"fa fa-heart\"</i>";
+                return "<i class=\"fa fa-heart food-item-icon\"></i>";
             }
 
-            if (RelativeScore > 70)
+            if (score == EScore.Medium)
             {
-                return "<i class=\"fa fa-heart-o\"</i>";
+                return "<i class=\"fa fa-heart-o food-item-icon\"></i>";
             }
 
             return "";
