@@ -119,8 +119,8 @@ namespace K9.WebApplication.Services
 
             var result = new GeneticProfileMatchedItemsViewModel
             {
-                Products = GetGenoTypeFilteredItems(hq, genoType.GenoType,
-                    new List<Product>(_productsRepository.List())),
+                Products =  GetGenoTypeFilteredItems(hq, genoType.GenoType,
+                    new List<Product>(_productsRepository.List()), 9),
                 ProductPacks = GetGenoTypeFilteredItems(hq, genoType.GenoType,
                     new List<ProductPack>(_productPacksRepository.List()), 7),
                 Ingredients = GetGenoTypeFilteredItems(hq, genoType.GenoType,
@@ -129,10 +129,9 @@ namespace K9.WebApplication.Services
                     new List<DietaryRecommendation>(_dietaryRecommendationsRepository.List())),
                 Activities =
                     GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Activity>(_activitiesRepository.List())),
-                
-                Foods = GetGenoTypeFilteredFoodItems(hq, genoType.GenoType, new List<FoodItem>(_foodItemsRepository.List()))
+                Foods = GetGenoTypeFilteredFoodItems(hq, genoType.GenoType)
             };
-
+            
             result.UpdateRelativeScores();
 
             return result;
@@ -312,12 +311,41 @@ namespace K9.WebApplication.Services
             return results;
         }
         
-        private List<T> GetGenoTypeFilteredFoodItems<T>(HealthQuestionnaire hq, EGenoType genoType, List<T> foodItems) where T : GenoTypeBase
+        private List<FoodItem> GetGenoTypeFilteredFoodItems(HealthQuestionnaire hq, EGenoType genoType) 
         {
+            var foodItems = new List<FoodItem>();
+            switch (genoType)
+            {
+                case EGenoType.Hunter:
+                    foodItems = _foodItemsRepository.Find(e => e.Hunter == true);
+                    break;
+
+                case EGenoType.Gatherer:
+                    foodItems = _foodItemsRepository.Find(e => e.Gatherer == true);
+                    break;
+
+                case EGenoType.Teacher:
+                    foodItems = _foodItemsRepository.Find(e => e.Teacher == true);
+                    break;
+
+                case EGenoType.Explorer:
+                    foodItems = _foodItemsRepository.Find(e => e.Explorer == true);
+                    break;
+
+                case EGenoType.Warrior:
+                    foodItems = _foodItemsRepository.Find(e => e.Warrior == true);
+                    break;
+
+                case EGenoType.Nomad:
+                    foodItems = _foodItemsRepository.Find(e => e.Nomad == true);
+                    break;
+            }
+
             foreach (var foodItem in foodItems)
             {
                 var foodScore = GetGenoTypeItemScore(hq, genoType, foodItem);
                 foodScore += new SeasonScore().GetScore(hq, hq.CurrentSeason, foodItem);
+                foodItem.Score = foodScore;
             }
 
             var results = foodItems
@@ -325,16 +353,6 @@ namespace K9.WebApplication.Services
                 .OrderByDescending(e => e.Score).ToList();
 
             return results;
-        }
-
-        private int GetMaxIngredientScore(int productId)
-        {
-            var sql = $"SELECT TOP 1 i.* [{nameof(Ingredient.Score)}] FROM [{nameof(Ingredient)}] i " +
-                      $"JOIN [{nameof(ProductIngredient)}] pi ON i.{nameof(Ingredient.Id)} = pi.{nameof(ProductIngredient.IngredientId)} " +
-                      $"WHERE pi.{nameof(ProductIngredient.ProductId)} = {productId} " +
-                      $"ORDER BY DESC [{nameof(Ingredient.Score)}]";
-
-            return _productIingredientsRepository.CustomQuery<Ingredient>(sql).FirstOrDefault().Score;
         }
 
         private int GetGenoTypeItemScore(HealthQuestionnaire hq, EGenoType genoType, GenoTypeBase item)

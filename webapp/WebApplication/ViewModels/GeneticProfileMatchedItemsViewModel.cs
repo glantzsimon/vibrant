@@ -29,10 +29,13 @@ namespace K9.WebApplication.ViewModels
 
         private void UpdateRelativeScores<T>(List<T> items)  where T : GenoTypeBase
         {
-            var maxScore = items.Max(e => e.Score);
-            foreach (var item in items)
+            if (items != null & items.Any())
             {
-                item.RelativeScore = (int)Math.Ceiling(((double)item.Score / maxScore) * 100);
+                var maxScore = items.Max(e => e.Score);
+                foreach (var item in items)
+                {
+                    item.RelativeScore = (int)Math.Ceiling(((double)item.Score / maxScore) * 100);
+                }
             }
         }
     }
