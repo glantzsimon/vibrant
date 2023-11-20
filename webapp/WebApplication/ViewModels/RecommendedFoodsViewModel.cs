@@ -50,6 +50,11 @@ namespace K9.WebApplication.ViewModels
                         {
                             recommendedFood.HunterCompatibilityLevel = ECompatibilityLevel.Excellent;
                         }
+                        else if (recommendedFood.RelativeScore >= 70 && (recommendedFood.HunterCompatibilityLevel == ECompatibilityLevel.Suboptimal || recommendedFood.HunterCompatibilityLevel == ECompatibilityLevel.Unsuitable))
+
+                        {
+                            recommendedFood.RelativeScore = 0;
+                        }
                     }
 
                     return RecommendedFoods?.Where(e =>
@@ -67,6 +72,11 @@ namespace K9.WebApplication.ViewModels
                         else if (recommendedFood.RelativeScore >= 80 && recommendedFood.GathererCompatibilityLevel == ECompatibilityLevel.Neutral)
                         {
                             recommendedFood.GathererCompatibilityLevel = ECompatibilityLevel.Excellent;
+                        }
+                        else if (recommendedFood.RelativeScore >= 70 && (recommendedFood.GathererCompatibilityLevel == ECompatibilityLevel.Suboptimal || recommendedFood.GathererCompatibilityLevel == ECompatibilityLevel.Unsuitable))
+
+                        {
+                            recommendedFood.RelativeScore = 0;
                         }
                     }
 
@@ -86,6 +96,11 @@ namespace K9.WebApplication.ViewModels
                         {
                             recommendedFood.TeacherCompatibilityLevel = ECompatibilityLevel.Excellent;
                         }
+                        else if (recommendedFood.RelativeScore >= 70 && (recommendedFood.TeacherCompatibilityLevel == ECompatibilityLevel.Suboptimal || recommendedFood.TeacherCompatibilityLevel == ECompatibilityLevel.Unsuitable))
+
+                        {
+                            recommendedFood.RelativeScore = 0;
+                        }
                     }
 
                     return RecommendedFoods?.Where(e =>
@@ -103,6 +118,11 @@ namespace K9.WebApplication.ViewModels
                         else if (recommendedFood.RelativeScore >= 80 && recommendedFood.ExplorerCompatibilityLevel == ECompatibilityLevel.Neutral)
                         {
                             recommendedFood.ExplorerCompatibilityLevel = ECompatibilityLevel.Excellent;
+                        }
+                        else if (recommendedFood.RelativeScore >= 70 && (recommendedFood.ExplorerCompatibilityLevel == ECompatibilityLevel.Suboptimal || recommendedFood.ExplorerCompatibilityLevel == ECompatibilityLevel.Unsuitable))
+
+                        {
+                            recommendedFood.RelativeScore = 0;
                         }
                     }
 
@@ -122,6 +142,11 @@ namespace K9.WebApplication.ViewModels
                         {
                             recommendedFood.WarriorCompatibilityLevel = ECompatibilityLevel.Excellent;
                         }
+                        else if (recommendedFood.RelativeScore >= 70 && (recommendedFood.WarriorCompatibilityLevel == ECompatibilityLevel.Suboptimal || recommendedFood.WarriorCompatibilityLevel == ECompatibilityLevel.Unsuitable))
+
+                        {
+                            recommendedFood.RelativeScore = 0;
+                        }
                     }
 
                     return RecommendedFoods?.Where(e =>
@@ -139,6 +164,11 @@ namespace K9.WebApplication.ViewModels
                         else if (recommendedFood.RelativeScore >= 80 && recommendedFood.NomadCompatibilityLevel == ECompatibilityLevel.Neutral)
                         {
                             recommendedFood.NomadCompatibilityLevel = ECompatibilityLevel.Excellent;
+                        }
+                        else if (recommendedFood.RelativeScore >= 70 && (recommendedFood.NomadCompatibilityLevel == ECompatibilityLevel.Suboptimal || recommendedFood.NomadCompatibilityLevel == ECompatibilityLevel.Unsuitable))
+
+                        {
+                            recommendedFood.RelativeScore = 0;
                         }
                     }
 
