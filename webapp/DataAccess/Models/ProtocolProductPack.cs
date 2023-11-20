@@ -1,5 +1,4 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
-using K9.Base.DataAccessLayer.Models;
 using K9.SharedLibrary.Attributes;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,11 +7,8 @@ namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.ProtocolProductPacks, PluralName = Globalisation.Strings.Names.ProtocolProductPacks, Name = Globalisation.Strings.Names.ProtocolProductPack)]
-    public class ProtocolProductPack : ObjectBase
+    public class ProtocolProductPack : ScorableBase
     {
-        public int Score { get; set; }
-        public int RelativeScore { get; set; }
-
         [UIHint("Protocol")]
         [ForeignKey("Protocol")]
         public int ProtocolId { get; set; }

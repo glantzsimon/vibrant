@@ -31,7 +31,7 @@ namespace K9.WebApplication.ViewModels
             EFoodGroup.HerbsAndSpices,
             EFoodGroup.Other
         };
-
+        
         public List<FoodItem> RecommendedFoods { get; set; }
 
         public List<FoodItem> GetRecommendedFoodsForLevelAndGroup(EFoodGroup foodGroup, ECompatibilityLevel level)

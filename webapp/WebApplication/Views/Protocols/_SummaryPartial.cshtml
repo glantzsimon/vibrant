@@ -135,7 +135,13 @@
                             @Html.Partial("../Protocols/_RecommendedFoods", new RecommendedFoodsViewModel
                             {
                                 GenoType =  Model.GenoType,
-                                RecommendedFoods = Model.RecommendedFoods.Select(e => e.FoodItem).ToList()
+                                RecommendedFoods = Model.RecommendedFoods.Select(e =>
+                                {
+                                    var foodItem = e.FoodItem;
+                                    foodItem.Score = e.Score;
+                                    foodItem.RelativeScore = e.RelativeScore;
+                                    return foodItem;
+                                }).ToList()
                             })
                         </div>
                     </div>

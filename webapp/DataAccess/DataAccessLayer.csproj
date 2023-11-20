@@ -261,6 +261,7 @@
     <Compile Include="Enums\EProductType.cs" />
     <Compile Include="Enums\EConsultationDuration.cs" />
     <Compile Include="Helpers\Methods.cs" />
+    <Compile Include="Interfaces\IScorableBase.cs" />
     <Compile Include="Interfaces\IGenoTypeBase.cs" />
     <Compile Include="Interfaces\ICategorisable.cs" />
     <Compile Include="Migrations\202211280432073_InitialCreate.cs" />
@@ -703,6 +704,7 @@
     <Compile Include="Migrations\202311201435378_AddScoresToDb.Designer.cs">
       <DependentUpon>202311201435378_AddScoresToDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ScorableBase.cs" />
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
