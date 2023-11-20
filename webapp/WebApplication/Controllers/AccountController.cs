@@ -112,7 +112,7 @@ namespace K9.WebApplication.Controllers
                             ModelState.AddModelError("", Dictionary.AccountNotActivatedError);
                             break;
                         }
-                        
+
                         if (TempData["ReturnUrl"] != null)
                         {
                             return Redirect(TempData["ReturnUrl"].ToString());
@@ -248,8 +248,6 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult Register(string promoCode = null)
         {
-            return RedirectToAction("Login");
-
             ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
 
             if (WebSecurity.IsAuthenticated)
@@ -305,60 +303,72 @@ namespace K9.WebApplication.Controllers
 
             if (ModelState.IsValid)
             {
-                var result = _accountService.Register(model.RegisterModel);
-
-                if (result.IsSuccess)
+                var clientRecord = _clientService.Find(model.RegisterModel.EmailAddress);
+                if (clientRecord == null)
                 {
-                    var user = _userRepository.Find(e => e.Username == model.RegisterModel.UserName).FirstOrDefault();
+                    ModelState.AddModelError("EmailAddress", Dictionary.UserNotFoundError);
+                }
+                else
+                {
+                    var result = _accountService.Register(model.RegisterModel);
 
-                    if (!string.IsNullOrEmpty(model.PromoCode))
+                    if (result.IsSuccess)
                     {
-                        if (user?.Id > 0)
-                        {
-                            try
-                            {
-                                _userService.UsePromoCode(user.Id, model.PromoCode);
-                            }
-                            catch (Exception e)
-                            {
-                                ModelState.AddModelError("PromoCode", e.Message);
-                            }
+                        var user = _userRepository.Find(e => e.Username == model.RegisterModel.UserName)
+                            .FirstOrDefault();
 
-                            _membershipService.ProcessPurchaseWithPromoCode(user.Id, model.PromoCode);
+                        if (!string.IsNullOrEmpty(model.PromoCode))
+                        {
+                            if (user?.Id > 0)
+                            {
+                                try
+                                {
+                                    _userService.UsePromoCode(user.Id, model.PromoCode);
+                                }
+                                catch (Exception e)
+                                {
+                                    ModelState.AddModelError("PromoCode", e.Message);
+                                }
+
+                                _membershipService.ProcessPurchaseWithPromoCode(user.Id, model.PromoCode);
+                            }
+                            else
+                            {
+                                _logger.Error("AccountController => Register => Promo code used but UserId is 0");
+                                return RedirectToAction("AccountCreated", "Account",
+                                    new { additionalError = Globalisation.Dictionary.PromoCodeNotUsed });
+                            }
+                        }
+
+                        // Add to client users
+                        var clientUserRole = _rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser)
+                            .FirstOrDefault();
+                        var userRole = new UserRole
+                        {
+                            UserId = user.Id,
+                            RoleId = clientUserRole.Id
+                        };
+                        _userRolesRepository.Create(userRole);
+
+                        // Create / update client record
+                        _clientService.GetOrCreateClient("", user.FullName, user.EmailAddress, user.PhoneNumber,
+                            user.Id);
+
+                        return RedirectToAction("AccountCreated", "Account");
+                    }
+
+                    foreach (var registrationError in result.Errors)
+                    {
+                        if (registrationError.Exception != null && registrationError.Exception.IsDuplicateIndexError())
+                        {
+                            var user = registrationError.Data.MapTo<User>();
+                            var serviceError = registrationError.Exception.GetServiceErrorFromException(user);
+                            ModelState.AddModelError("", serviceError.ErrorMessage);
                         }
                         else
                         {
-                            _logger.Error("AccountController => Register => Promo code used but UserId is 0");
-                            return RedirectToAction("AccountCreated", "Account", new { additionalError = Globalisation.Dictionary.PromoCodeNotUsed });
+                            ModelState.AddModelError(registrationError.FieldName, registrationError.ErrorMessage);
                         }
-                    }
-
-                    // Add to client users
-                    var clientUserRole = _rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).FirstOrDefault();
-                    var userRole = new UserRole
-                    {
-                        UserId = user.Id,
-                        RoleId = clientUserRole.Id
-                    };
-                    _userRolesRepository.Create(userRole);
-
-                    // Create client record
-                    _clientService.GetOrCreateClient("", user.FullName, user.EmailAddress, user.PhoneNumber, user.Id);
-
-                    return RedirectToAction("AccountCreated", "Account");
-                }
-
-                foreach (var registrationError in result.Errors)
-                {
-                    if (registrationError.Exception != null && registrationError.Exception.IsDuplicateIndexError())
-                    {
-                        var user = registrationError.Data.MapTo<User>();
-                        var serviceError = registrationError.Exception.GetServiceErrorFromException(user);
-                        ModelState.AddModelError("", serviceError.ErrorMessage);
-                    }
-                    else
-                    {
-                        ModelState.AddModelError(registrationError.FieldName, registrationError.ErrorMessage);
                     }
                 }
             }
@@ -748,7 +758,7 @@ namespace K9.WebApplication.Controllers
         {
             return typeof(User).Name;
         }
-        
+
         #endregion
 
     }

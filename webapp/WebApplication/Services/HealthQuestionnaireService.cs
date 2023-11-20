@@ -119,7 +119,7 @@ namespace K9.WebApplication.Services
 
             var result = new GeneticProfileMatchedItemsViewModel
             {
-                Products = GetGenoTypeFilteredProducts(hq, genoType.GenoType,
+                Products = GetGenoTypeFilteredItems(hq, genoType.GenoType,
                     new List<Product>(_productsRepository.List())),
                 ProductPacks = GetGenoTypeFilteredItems(hq, genoType.GenoType,
                     new List<ProductPack>(_productPacksRepository.List()), 7),
@@ -311,24 +311,7 @@ namespace K9.WebApplication.Services
 
             return results;
         }
-
-        private List<T> GetGenoTypeFilteredProducts<T>(HealthQuestionnaire hq, EGenoType genoType, List<T> products) where T : GenoTypeBase
-        {
-            foreach (var product in products)
-            {
-                var productScore = GetGenoTypeItemScore(hq, genoType, product);
-                var maxIngredientScore = GetMaxIngredientScore(product.Id);
-
-                product.Score = maxIngredientScore > productScore ? maxIngredientScore : productScore;
-            }
-
-            var results = products
-                .Where(e => e.Score > 0)
-                .OrderByDescending(e => e.Score).ToList();
-
-            return results;
-        }
-
+        
         private List<T> GetGenoTypeFilteredFoodItems<T>(HealthQuestionnaire hq, EGenoType genoType, List<T> foodItems) where T : GenoTypeBase
         {
             foreach (var foodItem in foodItems)

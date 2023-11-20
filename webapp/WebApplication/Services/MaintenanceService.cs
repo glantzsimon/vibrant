@@ -29,7 +29,7 @@ namespace K9.WebApplication.Services
             //AddExplorerFoodsAndActivities();
             //AddWarriorFoodsAndActivities();
             //AddNomadFoodsAndActivities();
-            UpdateFoodItems();
+            //UpdateFoodItems();
         }
 
         private void AddHunterFoodItemsAndActivities()
@@ -4572,7 +4572,7 @@ namespace K9.WebApplication.Services
                                                 $"IsCitrusFruit = {(foodItem.IsCitrusFruit? 1 : 0)}, " +
                                                 $"IsLowCarb = {(foodItem.IsLowCarb? 1 : 0)}, " +
                                                 $"IsNightshade = {(foodItem.IsNightshade? 1 : 0)}, " +
-                                                $"PlantPart = {foodItem.PlantPart}, " +
+                                                $"PlantPart = {(int)foodItem.PlantPart}, " +
                                                 $"IsBitter = {(foodItem.IsBitter? 1 : 0)}, " +
                                                 $"IsSweet = {(foodItem.IsSweet? 1 : 0)}, " +
                                                 $"IsPungent = {(foodItem.IsPungent? 1 : 0)}, " +
