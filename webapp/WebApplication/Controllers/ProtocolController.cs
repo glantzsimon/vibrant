@@ -25,6 +25,7 @@ namespace K9.WebApplication.Controllers
         {
             var protocol = _protocolService.Find(id);
             protocol = _protocolService.GetProtocolWithProtocolSections(protocol.Id);
+            ViewBag.ProtocolView = true;
             return View("../Protocols/Summary", protocol);
         }
 

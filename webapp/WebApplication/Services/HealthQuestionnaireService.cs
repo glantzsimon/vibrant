@@ -313,36 +313,10 @@ namespace K9.WebApplication.Services
             return results;
         }
         
-        private List<FoodItem> GetGenoTypeFilteredFoodItems(HealthQuestionnaire hq, EGenoType genoType) 
+        private List<FoodItem> GetGenoTypeFilteredFoodItems(HealthQuestionnaire hq, EGenoType genoType)
         {
-            var foodItems = new List<FoodItem>();
-            switch (genoType)
-            {
-                case EGenoType.Hunter:
-                    foodItems = _foodItemsRepository.Find(e => e.Hunter == true);
-                    break;
-
-                case EGenoType.Gatherer:
-                    foodItems = _foodItemsRepository.Find(e => e.Gatherer == true);
-                    break;
-
-                case EGenoType.Teacher:
-                    foodItems = _foodItemsRepository.Find(e => e.Teacher == true);
-                    break;
-
-                case EGenoType.Explorer:
-                    foodItems = _foodItemsRepository.Find(e => e.Explorer == true);
-                    break;
-
-                case EGenoType.Warrior:
-                    foodItems = _foodItemsRepository.Find(e => e.Warrior == true);
-                    break;
-
-                case EGenoType.Nomad:
-                    foodItems = _foodItemsRepository.Find(e => e.Nomad == true);
-                    break;
-            }
-
+            var foodItems = _foodItemsRepository.List();
+            
             foreach (var foodItem in foodItems)
             {
                 var foodScore = GetGenoTypeItemScore(hq, genoType, foodItem);
@@ -351,7 +325,6 @@ namespace K9.WebApplication.Services
             }
 
             var results = foodItems
-                .Where(e => e.Score > 0)
                 .OrderByDescending(e => e.Score).ToList();
 
             return results;
