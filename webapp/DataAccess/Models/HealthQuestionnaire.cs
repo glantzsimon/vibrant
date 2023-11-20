@@ -25,8 +25,77 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.HealthQuestionnaires, PluralName = Strings.Names.HealthQuestionnaires, Name = Strings.Names.HealthQuestionnaire)]
     public partial class HealthQuestionnaire : ObjectBase
     {
+        public HealthQuestionnaire()
+        {
+            CurrentSeason = GetCurrentSeasonInNorthernHemisphere();
+        }
+
         [Required]
         public Guid ExternalId { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DietaryPreference)]
+        public ESeason CurrentSeason { get; set; }
+
+        public ESeason GetCurrentSeasonInNorthernHemisphere()
+        {
+            var today = DateTime.Today;
+            if (today.Month >= 1 && today.Month <= 2)
+            {
+                return ESeason.Winter;
+            }
+            else if (today.Month == 3)
+            {
+                if (today.Day < 21)
+                {
+                    return ESeason.Winter;
+                }
+                else
+                {
+                    return ESeason.Spring;
+                }
+            }
+            else if (today.Month >= 4 && today.Month <= 5)
+            {
+                return ESeason.Spring;
+            }
+            else if (today.Month == 6)
+            {
+                if (today.Day < 21)
+                {
+                    return ESeason.Spring;
+                }
+                else
+                {
+                    return ESeason.Summer;
+                }
+            }
+            else if (today.Month >= 7 && today.Month <= 8)
+            {
+                return ESeason.Summer;
+            }
+            else if (today.Month == 9)
+            {
+                if (today.Day < 21)
+                {
+                    return ESeason.LateSummer;
+                }
+                else
+                {
+                    return ESeason.Autumn;
+                }
+            }
+            else if (today.Month >= 10 && today.Month <= 11)
+            {
+                return ESeason.Autumn;
+            }
+            else if (today.Month == 12)
+            {
+                return ESeason.Winter;
+            }
+
+            return ESeason.Spring;
+        }
 
         public bool IsComplete()
         {

@@ -2033,6 +2033,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Current Season.
+        /// </summary>
+        public static string CurrentSeason {
+            get {
+                return ResourceManager.GetString("CurrentSeason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Custom.
         /// </summary>
         public static string Custom {
@@ -5549,6 +5558,15 @@ namespace K9.Globalisation {
         public static string LargeIntestine {
             get {
                 return ResourceManager.GetString("LargeIntestine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Late Summer.
+        /// </summary>
+        public static string LateSummer {
+            get {
+                return ResourceManager.GetString("LateSummer", resourceCulture);
             }
         }
         

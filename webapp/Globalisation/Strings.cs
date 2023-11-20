@@ -110,6 +110,7 @@
             public const string IsLGBTQPlusLabel = "IsLGBTQPlusLabel";
             public const string DietaryPreferenceQuestionLabel = "DietaryPreferenceQuestionLabel";
             public const string DietaryPreference = "DietaryPreference";
+            public const string CurrentSeason = "CurrentSeason";
             public const string DNAIntegrity = "DNAIntegrity";
             public const string WeightLoss = "WeightLoss";
             public const string BloodBuilding = "BloodBuilding";
@@ -569,6 +570,7 @@
             
             public const string Spring = "Spring";
             public const string Summer = "Summer";
+            public const string LateSummer = "LateSummer";
             public const string Autumn = "Autumn";
             public const string Winter = "Winter";
 

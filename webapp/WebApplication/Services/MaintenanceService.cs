@@ -4351,6 +4351,7 @@ namespace K9.WebApplication.Services
             if (foodItem == null)
             {
                 foodItem = new FoodItem();
+                foodItem.ExternalId = System.Guid.NewGuid();
             }
 
             if (genoType == EGenoType.Hunter)
@@ -4392,6 +4393,10 @@ namespace K9.WebApplication.Services
 
             if (foodItem.Id > 0)
             {
+                _foodItemsRepository.Update(foodItem);
+            }
+            else
+            {
                 foodItem.Name = name;
                 foodItem.Vegetarian = category.GetAttribute<ScoreAttribute>().Vegetarian;
                 foodItem.Vegan = category.GetAttribute<ScoreAttribute>().Vegan;
@@ -4400,10 +4405,6 @@ namespace K9.WebApplication.Services
                 foodItem.Pescatarian = category.GetAttribute<ScoreAttribute>().Pescatarian;
                 foodItem.Category = category;
 
-                _foodItemsRepository.Update(foodItem);
-            }
-            else
-            {
                 _foodItemsRepository.Create(foodItem);
             }
         }
@@ -4415,6 +4416,7 @@ namespace K9.WebApplication.Services
             if (activity == null)
             {
                 activity = new Activity();
+                activity.ExternalId = System.Guid.NewGuid();
             }
 
             activity.ShortDescription = description;

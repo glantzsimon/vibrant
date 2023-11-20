@@ -3766,6 +3766,9 @@
   <data name="CanEatRawLabel" xml:space="preserve">
     <value>Can Be Eaten Raw</value>
   </data>
+  <data name="CurrentSeason" xml:space="preserve">
+    <value>Current Season</value>
+  </data>
   <data name="FiveToSevenTimesWeekly" xml:space="preserve">
     <value>5 - 7 Times Weekly</value>
   </data>
@@ -3873,6 +3876,9 @@
   </data>
   <data name="IsYellowLabel" xml:space="preserve">
     <value>Yellow</value>
+  </data>
+  <data name="LateSummer" xml:space="preserve">
+    <value>Late Summer</value>
   </data>
   <data name="Leaves" xml:space="preserve">
     <value>Leaves</value>

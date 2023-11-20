@@ -383,6 +383,7 @@
     <Compile Include="Services\HealthQuestionnaireService.cs" />
     <Compile Include="Services\Scores\DigestionScore.cs" />
     <Compile Include="Services\Scores\DetoxScore.cs" />
+    <Compile Include="Services\Scores\SeasonScore.cs" />
     <Compile Include="Services\Scores\ImmunityScore.cs" />
     <Compile Include="Services\Scores\InflammationScore.cs" />
     <Compile Include="Services\Scores\CardiovascularScore.cs" />

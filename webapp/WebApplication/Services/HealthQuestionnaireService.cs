@@ -129,7 +129,8 @@ namespace K9.WebApplication.Services
                     new List<DietaryRecommendation>(_dietaryRecommendationsRepository.List())),
                 Activities =
                     GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Activity>(_activitiesRepository.List())),
-                Foods = GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<FoodItem>(_foodItemsRepository.List()))
+                
+                Foods = GetGenoTypeFilteredFoodItems(hq, genoType.GenoType, new List<FoodItem>(_foodItemsRepository.List()))
             };
         }
 
@@ -318,6 +319,21 @@ namespace K9.WebApplication.Services
             }
 
             var results = products
+                .Where(e => e.Score > 0)
+                .OrderByDescending(e => e.Score).ToList();
+
+            return results;
+        }
+
+        private List<T> GetGenoTypeFilteredFoodItems<T>(HealthQuestionnaire hq, EGenoType genoType, List<T> foodItems) where T : GenoTypeBase
+        {
+            foreach (var foodItem in foodItems)
+            {
+                var foodScore = GetGenoTypeItemScore(hq, genoType, foodItem);
+                foodScore += new SeasonScore().GetScore(hq, hq.CurrentSeason, foodItem);
+            }
+
+            var results = foodItems
                 .Where(e => e.Score > 0)
                 .OrderByDescending(e => e.Score).ToList();
 

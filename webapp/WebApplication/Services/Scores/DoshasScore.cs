@@ -9,12 +9,7 @@ namespace K9.WebApplication.Services
         {
             var score = 0;
             var dosha = hq.GetDoshas().GetDosha();
-
-            if (dosha == EDosha.Tridoshic)
-            {
-                score += 7;
-            }
-
+            
             if (item.VataDosha && dosha == EDosha.Vata || dosha == EDosha.KaphaVata || dosha == EDosha.VataPitta )
             {
                 score += 7;
