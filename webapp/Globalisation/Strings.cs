@@ -958,6 +958,9 @@
             public const string MesoEndomorph = "MesoEndomorph";
             public const string Endomorph = "Endomorph";
 
+            public const string Proteins = "Proteins";
+            
+
             public const string Fruits = "Fruits";
             public const string Vegetables = "Vegetables";
             public const string NutsAndSeeds = "NutsAndSeeds";

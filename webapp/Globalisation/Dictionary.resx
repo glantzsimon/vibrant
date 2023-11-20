@@ -3403,9 +3403,6 @@
   <data name="KaphaDoshaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>doshas\en-gb\kaphadoshadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="KaphaVataDoshaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>doshas\en-gb\kaphavatadoshadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Medium" xml:space="preserve">
     <value>Medium</value>
   </data>
@@ -3460,12 +3457,6 @@
   <data name="PittaDoshaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>doshas\en-gb\pittadoshadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="PittaKaphaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>doshas\en-gb\pittakaphadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="PittaKaphaDetails1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>doshas\en-gb\pittakaphadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Pregnancy" xml:space="preserve">
     <value>Pregnancy</value>
   </data>
@@ -3511,20 +3502,11 @@
   <data name="Treatment" xml:space="preserve">
     <value>Treatment</value>
   </data>
-  <data name="TridoshicDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>doshas\en-gb\tridoshicdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="TridoshicDetails1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>doshas\en-gb\tridoshicdetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="UrologicalHealth" xml:space="preserve">
     <value>Urological Health</value>
   </data>
   <data name="VataDoshaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>doshas\en-gb\vatadoshadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="VataPittaDoshaDetails" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>doshas\en-gb\vatapittadoshadetails.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Vegan" xml:space="preserve">
     <value>Vegan</value>
@@ -3557,7 +3539,7 @@
     <value>Personalised Protocol for Your Genetic Profile</value>
   </data>
   <data name="RecommendedFoods" xml:space="preserve">
-    <value>Re</value>
+    <value>Recommended Foods</value>
   </data>
   <data name="RecommendedForYou" xml:space="preserve">
     <value>Recommended for You</value>
@@ -3940,6 +3922,9 @@
   <data name="OptimalDescription" xml:space="preserve">
     <value>These foods are optimal for your type. Prioritise these foods over all others</value>
   </data>
+  <data name="ProductsOnlyLabel" xml:space="preserve">
+    <value>Products Only</value>
+  </data>
   <data name="Suboptimal" xml:space="preserve">
     <value>Suboptimal</value>
   </data>
@@ -3951,5 +3936,8 @@
   </data>
   <data name="UnsuitableDescription" xml:space="preserve">
     <value>These foods are not suitable for your type and should be avoided</value>
+  </data>
+  <data name="Proteins" xml:space="preserve">
+    <value>Proteins</value>
   </data>
 </root>

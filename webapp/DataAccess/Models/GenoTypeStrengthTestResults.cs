@@ -13,7 +13,7 @@ namespace K9.DataAccessLayer.Models
 
         public List<GenoTypeStrengthTestResult> FilteredResults =>
             Results?.Where(e => GenoTypes.Contains(e.GenoType)).ToList().Concat(
-            Results?.Where(e => e.Strength == EStrength.VeryStrong).ToList()).ToList();
+            Results?.Where(e => e.Strength == EStrength.VeryStrong).ToList()).Distinct().ToList();
 
         public double GetMaxValue() => Results.Max(e => e.Max);
 

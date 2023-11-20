@@ -409,6 +409,7 @@
     <Compile Include="Services\QrCodeService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\IUserService.cs" />
+    <Compile Include="ViewModels\RecommendedFoodsViewModel.cs" />
     <Compile Include="ViewModels\HealthQuestionnaireViewModel.cs" />
     <Compile Include="ViewModels\ProtocolsViewModel.cs" />
     <Compile Include="ViewModels\GeneticProfileMatchedItemsViewModel.cs" />

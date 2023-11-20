@@ -191,6 +191,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\EFoodGroupMetaDataAttribute.cs" />
     <Compile Include="Attributes\ENineStarKiElementEnumMetaDataAttribute.cs" />
     <Compile Include="Attributes\ECompatibilityEnumMetaDataAttribute.cs" />
     <Compile Include="Attributes\ScoreAttribute.cs" />
@@ -206,6 +207,7 @@
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\MembershipOptionsSeeder.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
+    <Compile Include="Enums\EFoodGroup.cs" />
     <Compile Include="Enums\EPlantPart.cs" />
     <Compile Include="Enums\ETaste.cs" />
     <Compile Include="Enums\ESeason.cs" />

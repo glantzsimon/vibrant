@@ -11,10 +11,27 @@
 
 @{
     var doshas = Model.GetDoshas();
-    var doshaName = doshas.GetDosha().GetAttribute<EnumDescriptionAttribute>().Name;
+    var dosha = doshas.GetDosha();
+    var doshaName = dosha.GetAttribute<EnumDescriptionAttribute>().Name;
     var vataColor = Model.GetColorFromScore(doshas.GetVataDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var pittaColor = Model.GetColorFromScore(doshas.GetPittaDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var kaphaColor = Model.GetColorFromScore(doshas.GetKaphaDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+
+    var activePaneClass = $"{Strings.CssClasses.ActivePanelClass} padding-top-20";
+    var inactivePaneClass = "padding-bottom-0";
+    var activeTabClass = Strings.CssClasses.ActiveTabClass;
+    var inactiveTabClass = "";
+
+    var vataActive = (dosha == EDosha.Vata || dosha == EDosha.KaphaVata || dosha == EDosha.VataPitta || dosha == EDosha.Tridoshic);
+    var pittaActive = !vataActive && (dosha == EDosha.Pitta || dosha == EDosha.PittaKapha || dosha == EDosha.VataPitta || dosha == EDosha.Tridoshic);
+    var kaphaActive = !pittaActive && (dosha == EDosha.Kapha || dosha == EDosha.PittaKapha || dosha == EDosha.KaphaVata || dosha == EDosha.Tridoshic);
+
+    var vataActiveTabClass = vataActive ? activeTabClass : inactiveTabClass;
+    var vataActivePaneClass = vataActive ? activePaneClass : activeTabClass;
+    var pittaActiveTabClass = pittaActive ? activeTabClass : inactiveTabClass;
+    var pittaActivePaneClass = pittaActive ? activePaneClass : activeTabClass;
+    var kaphaActiveTabClass = kaphaActive ? activeTabClass : inactiveTabClass;
+    var kaphaActivePaneClass = kaphaActive ? activePaneClass : activeTabClass;
 }
 
 <div class="well">
@@ -64,7 +81,42 @@
 <div class="well">
     <div class="row">
         <div class="col-xs-12">
-            @Html.Raw(typeof(Dictionary).GetValueFromResource($"{doshaName}Details"))
+            <ul class="nav nav-pills">
+                @if (dosha == EDosha.Vata || dosha == EDosha.KaphaVata || dosha == EDosha.VataPitta || dosha == EDosha.Tridoshic)
+                {
+                    <li class="@vataActiveTabClass"><a data-toggle="pill" href="#vata-dosha">@Dictionary.VataDosha</a></li>
+                }
+                @if (dosha == EDosha.Pitta || dosha == EDosha.PittaKapha || dosha == EDosha.VataPitta || dosha == EDosha.Tridoshic)
+                {
+                    <li class="@pittaActiveTabClass"><a data-toggle="pill" href="#pitta-dosha">@Dictionary.PittaDosha</a></li>
+                }
+                @if (dosha == EDosha.Kapha || dosha == EDosha.PittaKapha || dosha == EDosha.KaphaVata || dosha == EDosha.Tridoshic)
+                {
+                    <li class="@kaphaActiveTabClass"><a data-toggle="pill" href="#kapha-dosha">@Dictionary.KaphaDosha</a></li>
+                }
+            </ul>
+
+            <div class="tab-content">
+
+                @if (dosha == EDosha.Vata || dosha == EDosha.KaphaVata || dosha == EDosha.VataPitta || dosha == EDosha.Tridoshic)
+                {
+                    <div id="vata-dosha" class="tab-pane fade @vataActivePaneClass padding-top-15">
+                        @Html.Raw(Dictionary.VataDoshaDetails)
+                    </div>
+                }
+                @if (dosha == EDosha.Pitta || dosha == EDosha.PittaKapha || dosha == EDosha.VataPitta || dosha == EDosha.Tridoshic)
+                {
+                    <div id="pitta-dosha" class="tab-pane fade @pittaActivePaneClass padding-top-15">
+                        @Html.Raw(Dictionary.PittaDoshaDetails)
+                    </div>
+                }
+                @if (dosha == EDosha.Kapha || dosha == EDosha.PittaKapha || dosha == EDosha.KaphaVata || dosha == EDosha.Tridoshic)
+                {
+                    <div id="kapha-dosha" class="tab-pane fade @kaphaActivePaneClass padding-top-15">
+                        @Html.Raw(Dictionary.KaphaDoshaDetails)
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </div>

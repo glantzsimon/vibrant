@@ -5465,19 +5465,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h3 class=&quot;section-title&quot;&gt;Kapha Dosha&lt;/h3&gt;
         ///
-        ///&lt;h4&gt;Hunter Strengths&lt;/h4&gt;
-        ///&lt;ul&gt;
-        ///    &lt;li&gt;Logical&lt;/li&gt;
-        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
-        ///    &lt;li&gt;Handles stress well when well-rested an [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;
+        ///    kapha dosha is made up of the elements water and earth. It is a stabilising energy that keeps things together and provides support. Kapha dosha people experience life in a slow, intentional manner, rarely becoming upset and usually thinking before they act. Their demeanor is typically calm, caring and empathetic, patient, positive, and romantic. Physically, their stability is represented by a strong frame, healthy hair, and clear and smooth skin. Their  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string KaphaDoshaDetails {
             get {
@@ -5491,27 +5482,6 @@ namespace K9.Globalisation {
         public static string KaphaVataDosha {
             get {
                 return ResourceManager.GetString("KaphaVataDosha", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
-        ///
-        ///&lt;h4&gt;Hunter Strengths&lt;/h4&gt;
-        ///&lt;ul&gt;
-        ///    &lt;li&gt;Logical&lt;/li&gt;
-        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
-        ///    &lt;li&gt;Handles stress well when well-rested an [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string KaphaVataDoshaDetails {
-            get {
-                return ResourceManager.GetString("KaphaVataDoshaDetails", resourceCulture);
             }
         }
         
@@ -7477,53 +7447,19 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Pitta Dosha&lt;/h4&gt;.
+        ///   Looks up a localized string similar to &lt;h3 class=&quot;section-title&quot;&gt;Pitta Dosha&lt;/h3&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Pitta dosha is made up of fire and water and rules digestion and emotions. It is correlated with summer season, Pitta body types are usually medium build, athletic and muscular. THey often have oily and / or freckled skin and straight hair. Pitta people often have sharp intellects and are typically quite driven, making them confident and strong leaders.
+        ///&lt;/p&gt;
+        ///
+        ///&lt;h4 class=&quot;bold&quot;&gt;Vulnerabilities&lt;/h4&gt;
+        ///&lt;p&gt;
+        ///    When pitta is imbalanced, people often exper [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PittaDoshaDetails {
             get {
                 return ResourceManager.GetString("PittaDoshaDetails", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
-        ///
-        ///&lt;h4&gt;Hunter Strengths&lt;/h4&gt;
-        ///&lt;ul&gt;
-        ///    &lt;li&gt;Logical&lt;/li&gt;
-        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
-        ///    &lt;li&gt;Handles stress well when well-rested an [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string PittaKaphaDetails {
-            get {
-                return ResourceManager.GetString("PittaKaphaDetails", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
-        ///
-        ///&lt;h4&gt;Hunter Strengths&lt;/h4&gt;
-        ///&lt;ul&gt;
-        ///    &lt;li&gt;Logical&lt;/li&gt;
-        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
-        ///    &lt;li&gt;Handles stress well when well-rested an [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string PittaKaphaDetails1 {
-            get {
-                return ResourceManager.GetString("PittaKaphaDetails1", resourceCulture);
             }
         }
         
@@ -7981,6 +7917,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Products Only.
+        /// </summary>
+        public static string ProductsOnlyLabel {
+            get {
+                return ResourceManager.GetString("ProductsOnlyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Products Summary.
         /// </summary>
         public static string ProductSummary {
@@ -8117,6 +8062,15 @@ namespace K9.Globalisation {
         public static string PromoCodes {
             get {
                 return ResourceManager.GetString("PromoCodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proteins.
+        /// </summary>
+        public static string Proteins {
+            get {
+                return ResourceManager.GetString("Proteins", resourceCulture);
             }
         }
         
@@ -8644,7 +8598,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Re.
+        ///   Looks up a localized string similar to Recommended Foods.
         /// </summary>
         public static string RecommendedFoods {
             get {
@@ -10852,48 +10806,6 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
-        ///
-        ///&lt;h4&gt;Hunter Strengths&lt;/h4&gt;
-        ///&lt;ul&gt;
-        ///    &lt;li&gt;Logical&lt;/li&gt;
-        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
-        ///    &lt;li&gt;Handles stress well when well-rested an [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string TridoshicDetails {
-            get {
-                return ResourceManager.GetString("TridoshicDetails", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
-        ///
-        ///&lt;h4&gt;Hunter Strengths&lt;/h4&gt;
-        ///&lt;ul&gt;
-        ///    &lt;li&gt;Logical&lt;/li&gt;
-        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
-        ///    &lt;li&gt;Handles stress well when well-rested an [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string TridoshicDetails1 {
-            get {
-                return ResourceManager.GetString("TridoshicDetails1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Tuesday.
         /// </summary>
         public static string Tuesday {
@@ -11283,38 +11195,14 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Hunters are often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h3 class=&quot;section-title&quot;&gt;Vata Dosha&lt;/h3&gt;
         ///
-        ///&lt;h4&gt;Hunter Strengths&lt;/h4&gt;
-        ///&lt;ul&gt;
-        ///    &lt;li&gt;Logical&lt;/li&gt;
-        ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
-        ///    &lt;li&gt;Handles stress well when well-rested an [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;
+        ///    Vata dosha is made up of air and space. It is responsible for all movement in the body, including that of the autonomous nervous system. Vata dosha people are typically flexibile and creative. Physically, vata body types are typically slim or even lanky and typically have dry skin and often have thin or frizzy hair. Vata types usually dislike cold and dry climates. When imbalanced, vata dosha can lead to scattered and racing thoughts. When in balance, ho [rest of string was truncated]&quot;;.
         /// </summary>
         public static string VataDoshaDetails {
             get {
                 return ResourceManager.GetString("VataDoshaDetails", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;Vata-Pitta Dosha&lt;/h4&gt;
-        ///
-        ///&lt;p&gt;
-        ///    Vata-Pitta people are often very creative and constantly full of new ideas. However, they also tend to be a bit extreme. This applies to challenges in life or also, for example, to their preferred sports.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The Vata-Pitta or Pitta-Vata types are permanently under pressure and define themselves in large part by very strong (internal) tension. This permanently high-strung machine successively leads people into a burnout or corresponding depressive tendencies [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string VataPittaDoshaDetails {
-            get {
-                return ResourceManager.GetString("VataPittaDoshaDetails", resourceCulture);
             }
         }
         

@@ -9,6 +9,7 @@ namespace K9.DataAccessLayer.Attributes
         public Type ResourceType { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public string Color { get; set; }
 
         public string GetName()
         {

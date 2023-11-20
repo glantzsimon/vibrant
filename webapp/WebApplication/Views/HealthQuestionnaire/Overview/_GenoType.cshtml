@@ -36,30 +36,33 @@
     </div>
 </div>
 
-<div class="well">
-    <div class="row">
-        <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.StrengthTestResults</h3>
+@if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
+{
+    <div class="well">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="section-title">@Dictionary.StrengthTestResults</h3>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var result in strengthTestResults.FilteredResults)
+            {
+
+                <div class="col-xs-6 col-sm-3 col-md-2">
+                    @Html.Partial("Controls/_Gauge", new GaugeOptions
+                    {
+                        MaxValue = 100,
+                        Value = (int) strengthTestResults.GetGaugaeValue(result),
+                        Title = result.GenoTypeName,
+                        BackgroundColor = $"rgb({result.Color}, 0.33)",
+                        StrokeColor = $"rgb({result.Color})",
+                        Units = $"{strengthTestResults.GetResultAsPercentage(result)}%",
+                    })
+                </div>
+            }
         </div>
     </div>
-    <div class="row">
-        @foreach (var result in strengthTestResults.FilteredResults)
-        {
-
-            <div class="col-xs-6 col-sm-3 col-md-2">
-                @Html.Partial("Controls/_Gauge", new GaugeOptions
-                {
-                    MaxValue = 100,
-                    Value = (int)strengthTestResults.GetGaugaeValue(result),
-                    Title = result.GenoTypeName,
-                    BackgroundColor = $"rgb({result.Color}, 0.33)",
-                    StrokeColor = $"rgb({result.Color})",
-                    Units = $"{strengthTestResults.GetResultAsPercentage(result)}%",
-                })
-            </div>
-        }
-    </div>
-</div>
+}
 
 <div class="well">
     <div class="row">

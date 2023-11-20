@@ -12,6 +12,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = false,
             Pescatarian = false)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.RedMeat)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.Proteins)]
         RedMeat,
 
         [Score(
@@ -21,6 +22,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = false,
             Pescatarian = false)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Poultry)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.Proteins)]
         Poultry,
 
         [Score(
@@ -30,6 +32,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = false,
             Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.FishAndSeafood)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.Proteins)]
         FishAndSeafood,
 
         [Score(
@@ -39,6 +42,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = false,
             Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.EggsAndRoes)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.Proteins)]
         EggsAndRoes,
 
         [Score(
@@ -48,6 +52,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = false,
             Pescatarian = false)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Dairy)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.Dairy)]
         Dairy,
 
         [Score(
@@ -57,6 +62,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = true,
             Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VegetableProtein)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.Proteins)]
         VegetableProtein,
 
         [Score(
@@ -66,6 +72,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = false,
             Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.FatsAndOils)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.FatsAndOils)]
         FatsAndOils,
 
         [Score(
@@ -75,6 +82,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = false,
             Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Carbohydrates)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.Carbohydrates)]
         Carbohydrates,
 
         [Score(
@@ -84,6 +92,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = true,
             Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Vegetables)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.Vegetables)]
         Vegetables,
 
         [Score(
@@ -93,6 +102,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = false,
             Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Fungi)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.Other)]
         Fungi,
 
         [Score(
@@ -102,6 +112,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = true,
             Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Fruits)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.Fruits)]
         Fruits,
 
         [Score(
@@ -111,6 +122,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = true,
             Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.HerbsAndSpices)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.HerbsAndSpices)]
         HerbsAndSpices,
 
         [Score(
@@ -120,6 +132,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = true,
             Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Beverages)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.Other)]
         Beverages,
 
         [Score(
@@ -129,6 +142,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = false,
             Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Condiments)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.Other)]
         Condiments,
 
         [Score(
@@ -138,6 +152,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = false,
             Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.FermentedFoods)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.Other)]
         FermentedFoods,
 
         [Score(
@@ -147,6 +162,7 @@ namespace K9.DataAccessLayer.Enums
             Fruitarian = true,
             Pescatarian = true)]
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Other)]
+        [EFoodGroupMetaData(FoodGroup = EFoodGroup.Other)]
         Other
     }
 }

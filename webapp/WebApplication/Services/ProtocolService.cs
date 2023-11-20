@@ -172,10 +172,18 @@ namespace K9.WebApplication.Services
 
             protocol.DietaryRecommendations = _protocolDietaryRecommendationRepository
                 .Find(e => e.ProtocolId == protocol.Id).ToList();
-            foreach (var protocolActivity in protocol.DietaryRecommendations)
+            foreach (var protocolDietaryRecommendation in protocol.DietaryRecommendations)
             {
-                protocolActivity.DietaryRecommendation =
-                    GetDietaryRecommendations().FirstOrDefault(e => e.Id == protocolActivity.DietaryRecommendationId);
+                protocolDietaryRecommendation.DietaryRecommendation =
+                    GetDietaryRecommendations().FirstOrDefault(e => e.Id == protocolDietaryRecommendation.DietaryRecommendationId);
+            }
+
+            protocol.RecommendedFoods = _protocolFoodItemsRepository
+                .Find(e => e.ProtocolId == protocol.Id).ToList();
+            foreach (var protocolFoodItem in protocol.RecommendedFoods)
+            {
+                protocolFoodItem.FoodItem =
+                    GetFoodItems().FirstOrDefault(e => e.Id == protocolFoodItem.FoodItemId);
             }
 
             protocol.Products = _protocolProductsRepository.Find(e => e.ProtocolId == protocol.Id).ToList();

@@ -5,66 +5,67 @@
 @using K9.DataAccessLayer.Helpers
 @using K9.SharedLibrary.Extensions
 @using K9.WebApplication.Helpers
-@model Protocol
+@model K9.WebApplication.ViewModels.RecommendedFoodsViewModel
 
-<div>
-    @Html.Raw(Dictionary.RecommendedFoods)
-</div>
 
 @if (Model.RecommendedFoods.Any())
 {
-    var levels = new List<ECompatibilityLevel>
-{
-    ECompatibilityLevel.Optimal,
-    ECompatibilityLevel.Excellent,
-    ECompatibilityLevel.Neutral,
-    ECompatibilityLevel.Suboptimal,
-    ECompatibilityLevel.Unsuitable
-};
-
-    foreach (var level in levels)
-    {
-        var filteredItems = Model.RecommendedFoods.Where(e => e.FoodItem.ExplorerCompatibilityLevel == level ||
-                                                              e.FoodItem.GathererCompatibilityLevel == level ||
-                                                              e.FoodItem.HunterCompatibilityLevel == level ||
-                                                              e.FoodItem.NomadCompatibilityLevel == level ||
-                                                              e.FoodItem.TeacherCompatibilityLevel == level ||
-                                                              e.FoodItem.WarriorCompatibilityLevel == level).ToList();
-
-        var levelName = level.GetAttribute<EnumDescriptionAttribute>().GetDescription();
-        var levelDescription = level.GetAttribute<ECompatibilityEnumMetaDataAttribute>().GetDescription();
-
-        for (int i = 0; i < filteredItems.Count; i++)
+    <ul class="nav nav-pills">
+        @for (int i = 0; i < Model.FoodGroups.Count; i++)
         {
-            var recommendedFood = Model.RecommendedFoods[i].FoodItem;
-            var isLast = i == Model.RecommendedFoods.Count - 1;
+            var foodGroup = Model.FoodGroups[i];
+            var foodGroupName = foodGroup.ToString();
+            var foodGroupDescription = foodGroup.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+            var activeClass = i == 0 ? "active" : "";
 
-            <div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h4>@levelName</h4>
-                        <p><i>@levelDescription</i></p>
-                    </div>
-                </div>
-                @if (!string.IsNullOrEmpty(recommendedFood.Recommendations))
+            <li class="@activeClass"><a data-toggle="pill" href="#@foodGroupName">@foodGroupDescription</a></li>
+        }
+    </ul>
+
+    <div class="tab-content">
+        @for (int i = 0; i < Model.FoodGroups.Count; i++)
+        {
+            var foodGroup = Model.FoodGroups[i];
+            var foodGroupName = foodGroup.ToString();
+            var activeClass = i == 0 ? "active in" : "";
+
+            <div id="@foodGroupName" class="tab-pane fade @activeClass padding-top-15">
+                @foreach (var level in Model.Levels)
                 {
-                    <div class="row">
-                        <div class="col-xs-6">
-                            @recommendedFood.Name))
+                    var levelName = level.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+                    var compatibilityEnumMetaDataAttribute = level.GetAttribute<ECompatibilityEnumMetaDataAttribute>();
+                    var levelDescription = compatibilityEnumMetaDataAttribute.GetDescription();
+                    var levelColor = compatibilityEnumMetaDataAttribute.Color;
+                    var filteredFoods = Model.GetRecommendedFoodsForLevelAndGroup(foodGroup, level);
+
+                    <div class="well">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>@levelName</h4>
+                                <p><i>@levelDescription</i></p>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-xs-12">
+                                @if (filteredFoods.Any())
+                                {
+
+                                    for (int j = 0; j < filteredFoods.Count; j++)
+                                    {
+                                        var recommendedFood = filteredFoods[j];
+                                        <span class="summary-item" style="color: @levelColor">@recommendedFood.Name</span>
+                                    }
+                                }
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            @recommendedFood.ShortDescription))
-                        </div>
-                    </div>
-                }
-
-                @if (!isLast)
-                {
-                    <hr />
                 }
             </div>
         }
-    }
+    </div>
 }
+
+
+
+
