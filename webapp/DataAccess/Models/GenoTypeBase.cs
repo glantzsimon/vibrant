@@ -1,17 +1,14 @@
 ﻿using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Models;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using K9.DataAccessLayer.Enums;
 
 namespace K9.DataAccessLayer.Models
 {
     public abstract class GenoTypeBase : ObjectBase, IObjectBase, IGenoTypeBase
     {
-        [NotMapped]
         public int Score { get; set; }
-
-        [NotMapped]
+        
         public int RelativeScore { get; set; }
         
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VataDosha)]

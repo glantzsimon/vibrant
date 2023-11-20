@@ -10,7 +10,7 @@
 {
     <div class="row">
         <div class="col-sm-4">
-            @Html.LabelFor(e => Model.ProductPacks[i].ProductPackName)
+            @Html.LabelFor(e => Model.ProductPacks[i].ProductPack.Name)
             
             @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
             {

@@ -575,7 +575,7 @@
             public const string LateSummer = "LateSummer";
             public const string Autumn = "Autumn";
             public const string Winter = "Winter";
-
+            
             public const string VataDosha = "VataDosha";
             public const string PittaDosha = "PittaDosha";
             public const string KaphaDosha = "KaphaDosha";

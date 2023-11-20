@@ -689,6 +689,10 @@
     <Compile Include="Migrations\202311191249512_FoodItemClassificationColumns.Designer.cs">
       <DependentUpon>202311191249512_FoodItemClassificationColumns.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311200854260_SaveScoreAndRelativeScoreToDb.cs" />
+    <Compile Include="Migrations\202311200854260_SaveScoreAndRelativeScoreToDb.Designer.cs">
+      <DependentUpon>202311200854260_SaveScoreAndRelativeScoreToDb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
     <Compile Include="Models\CbsAndMethylationQuestionnaire.cs" />
@@ -1073,6 +1077,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311191249512_FoodItemClassificationColumns.resx">
       <DependentUpon>202311191249512_FoodItemClassificationColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311200854260_SaveScoreAndRelativeScoreToDb.resx">
+      <DependentUpon>202311200854260_SaveScoreAndRelativeScoreToDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

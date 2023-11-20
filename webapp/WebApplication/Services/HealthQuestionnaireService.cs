@@ -215,6 +215,8 @@ namespace K9.WebApplication.Services
 
             DeleteProtocolChildRecords(protocol.Id);
             RecreateChildRecords(hq, protocol);
+            
+            ClearCache();
         }
 
         private void RecreateChildRecords(HealthQuestionnaire hq, Protocol protocol)
