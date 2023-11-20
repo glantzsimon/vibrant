@@ -1,5 +1,6 @@
 ﻿@using K9.Base.DataAccessLayer.Attributes;
 @using K9.Base.WebApplication.Helpers
+@using K9.DataAccessLayer.Attributes
 @using K9.DataAccessLayer.Enums
 @using K9.DataAccessLayer.Helpers
 @using K9.SharedLibrary.Extensions
@@ -14,10 +15,11 @@
 {
     var levels = new List<ECompatibilityLevel>
 {
-ECompatibilityLevel.Excellent,
-ECompatibilityLevel.Good,
-ECompatibilityLevel.Minimise,
-ECompatibilityLevel.Avoid
+    ECompatibilityLevel.Optimal,
+    ECompatibilityLevel.Excellent,
+    ECompatibilityLevel.Neutral,
+    ECompatibilityLevel.Suboptimal,
+    ECompatibilityLevel.Unsuitable
 };
 
     foreach (var level in levels)
@@ -30,6 +32,7 @@ ECompatibilityLevel.Avoid
                                                               e.FoodItem.WarriorCompatibilityLevel == level).ToList();
 
         var levelName = level.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+        var levelDescription = level.GetAttribute<ECompatibilityEnumMetaDataAttribute>().GetDescription();
 
         for (int i = 0; i < filteredItems.Count; i++)
         {
@@ -40,6 +43,7 @@ ECompatibilityLevel.Avoid
                 <div class="row">
                     <div class="col-xs-12">
                         <h4>@levelName</h4>
+                        <p><i>@levelDescription</i></p>
                     </div>
                 </div>
                 @if (!string.IsNullOrEmpty(recommendedFood.Recommendations))

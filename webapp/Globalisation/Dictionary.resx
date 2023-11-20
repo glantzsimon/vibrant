@@ -3922,4 +3922,34 @@
   <data name="TwoToThreeTimesWeekly" xml:space="preserve">
     <value>2 - 3 Times Weekly</value>
   </data>
+  <data name="ExcellentDescription" xml:space="preserve">
+    <value>These foods are very healthy choices for your type and can be eaten often</value>
+  </data>
+  <data name="GoodDescription" xml:space="preserve">
+    <value>These foods are very healthy choices for your type and can be eaten often</value>
+  </data>
+  <data name="Neutral" xml:space="preserve">
+    <value>Neutral</value>
+  </data>
+  <data name="NeutralDescription" xml:space="preserve">
+    <value>These foods are acceptable choices, but they are not optimum for your type and should be replaced by better choices where appropriate</value>
+  </data>
+  <data name="Optimal" xml:space="preserve">
+    <value>Optimal</value>
+  </data>
+  <data name="OptimalDescription" xml:space="preserve">
+    <value>These foods are optimal for your type. Prioritise these foods over all others</value>
+  </data>
+  <data name="Suboptimal" xml:space="preserve">
+    <value>Suboptimal</value>
+  </data>
+  <data name="SuboptimalDescription" xml:space="preserve">
+    <value>These foods are not ideal for your type and should be minimised as much as possible</value>
+  </data>
+  <data name="Unsuitable" xml:space="preserve">
+    <value>Unsuitable</value>
+  </data>
+  <data name="UnsuitableDescription" xml:space="preserve">
+    <value>These foods are not suitable for your type and should be avoided</value>
+  </data>
 </root>

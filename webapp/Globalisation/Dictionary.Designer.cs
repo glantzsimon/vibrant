@@ -3233,6 +3233,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to These foods are very healthy choices for your type and can be eaten often.
+        /// </summary>
+        public static string ExcellentDescription {
+            get {
+                return ResourceManager.GetString("ExcellentDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Physical Exercise.
         /// </summary>
         public static string Exercise {
@@ -4079,6 +4088,15 @@ namespace K9.Globalisation {
         public static string Good {
             get {
                 return ResourceManager.GetString("Good", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to These foods are very healthy choices for your type and can be eaten often.
+        /// </summary>
+        public static string GoodDescription {
+            get {
+                return ResourceManager.GetString("GoodDescription", resourceCulture);
             }
         }
         
@@ -6421,6 +6439,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Neutral.
+        /// </summary>
+        public static string Neutral {
+            get {
+                return ResourceManager.GetString("Neutral", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to These foods are acceptable choices, but they are not optimum for your type and should be replaced by better choices where appropriate.
+        /// </summary>
+        public static string NeutralDescription {
+            get {
+                return ResourceManager.GetString("NeutralDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Never.
         /// </summary>
         public static string Never {
@@ -6942,6 +6978,24 @@ namespace K9.Globalisation {
         public static string OnwToFiveTimesDaily {
             get {
                 return ResourceManager.GetString("OnwToFiveTimesDaily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optimal.
+        /// </summary>
+        public static string Optimal {
+            get {
+                return ResourceManager.GetString("Optimal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to These foods are optimal for your type. Prioritise these foods over all others.
+        /// </summary>
+        public static string OptimalDescription {
+            get {
+                return ResourceManager.GetString("OptimalDescription", resourceCulture);
             }
         }
         
@@ -9860,6 +9914,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Suboptimal.
+        /// </summary>
+        public static string Suboptimal {
+            get {
+                return ResourceManager.GetString("Suboptimal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to These foods are not ideal for your type and should be minimised as much as possible.
+        /// </summary>
+        public static string SuboptimalDescription {
+            get {
+                return ResourceManager.GetString("SuboptimalDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subscribed.
         /// </summary>
         public static string Subscribed {
@@ -10944,6 +11016,24 @@ namespace K9.Globalisation {
         public static string UnsubscribeSuccess {
             get {
                 return ResourceManager.GetString("UnsubscribeSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unsuitable.
+        /// </summary>
+        public static string Unsuitable {
+            get {
+                return ResourceManager.GetString("Unsuitable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to These foods are not suitable for your type and should be avoided.
+        /// </summary>
+        public static string UnsuitableDescription {
+            get {
+                return ResourceManager.GetString("UnsuitableDescription", resourceCulture);
             }
         }
         

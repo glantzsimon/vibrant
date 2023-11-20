@@ -192,6 +192,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\ENineStarKiElementEnumMetaDataAttribute.cs" />
+    <Compile Include="Attributes\ECompatibilityEnumMetaDataAttribute.cs" />
     <Compile Include="Attributes\ScoreAttribute.cs" />
     <Compile Include="Attributes\QuestionCategoryAttribute.cs" />
     <Compile Include="Attributes\DoshaEnumMetaDataAttribute.cs" />

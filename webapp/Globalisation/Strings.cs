@@ -870,10 +870,16 @@
             public const string MountainMonth = "mountain_month";
             public const string FireMonth = "fire_month";
 
-            public const string Good = "Good";
+            public const string Neutral = "Neutral";
+            public const string NeutralDescription = "NeutralDescription";
             public const string Excellent = "Excellent";
-            public const string Minimise = "Minimise";
-            public const string Avoid = "Avoid";
+            public const string ExcellentDescription = "ExcellentDescription";
+            public const string Optimal = "Optimal";
+            public const string OptimalDescription = "OptimalDescription";
+            public const string Suboptimal = "Suboptimal";
+            public const string SuboptimalDescription = "SuboptimalDescription";
+            public const string Unsuitable = "Unsuitable";
+            public const string UnsuitableDescription = "UnsuitableDescription";
 
             public const string VeryLow = "VeryLow";
             public const string Low = "Low";
