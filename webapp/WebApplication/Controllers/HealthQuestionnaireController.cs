@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Models;
+﻿using System.Web.Hosting;
+using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
@@ -658,8 +659,9 @@ namespace K9.WebApplication.Controllers
 
             if (model.IsComplete() && ModelState.IsValid)
             {
-                _healthQuestionnaireService.AutoGenerateProtocolFromGeneticProfile(model);
-
+                HostingEnvironment.QueueBackgroundWorkItem(e =>
+                    _healthQuestionnaireService.AutoGenerateProtocolFromGeneticProfileAsync(model));
+                
                 return RedirectToAction("QuestionnaireCompletedSuccess");
             }
 

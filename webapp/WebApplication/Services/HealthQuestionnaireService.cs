@@ -10,6 +10,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace K9.WebApplication.Services
 {
@@ -119,7 +120,7 @@ namespace K9.WebApplication.Services
 
             var result = new GeneticProfileMatchedItemsViewModel
             {
-                Products =  GetGenoTypeFilteredItems(hq, genoType.GenoType,
+                Products = GetGenoTypeFilteredItems(hq, genoType.GenoType,
                     new List<Product>(_productsRepository.List()), 9),
                 ProductPacks = GetGenoTypeFilteredItems(hq, genoType.GenoType,
                     new List<ProductPack>(_productPacksRepository.List()), 7),
@@ -131,7 +132,7 @@ namespace K9.WebApplication.Services
                     GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Activity>(_activitiesRepository.List())),
                 Foods = GetGenoTypeFilteredFoodItems(hq, genoType.GenoType)
             };
-            
+
             result.UpdateRelativeScores();
 
             return result;
@@ -187,6 +188,11 @@ namespace K9.WebApplication.Services
             }
         }
 
+        public async Task AutoGenerateProtocolFromGeneticProfileAsync(HealthQuestionnaire hq)
+        {
+            await Task.Run(() => AutoGenerateProtocolFromGeneticProfile(hq));
+        }
+
         public void AutoGenerateProtocolFromGeneticProfile(HealthQuestionnaire hq)
         {
             var protocol = _protocolsRepository
@@ -221,7 +227,7 @@ namespace K9.WebApplication.Services
 
             DeleteProtocolChildRecords(protocol.Id);
             RecreateChildRecords(hq, protocol);
-            
+
             ClearCache();
         }
 
@@ -328,11 +334,11 @@ namespace K9.WebApplication.Services
 
             return results;
         }
-        
+
         private List<FoodItem> GetGenoTypeFilteredFoodItems(HealthQuestionnaire hq, EGenoType genoType)
         {
             var foodItems = _foodItemsRepository.List();
-            
+
             foreach (var foodItem in foodItems)
             {
                 var foodScore = GetGenoTypeItemScore(hq, genoType, foodItem);
