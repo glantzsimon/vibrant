@@ -12,9 +12,9 @@
     var inactiveTabClass = "";
 
     var hqIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any());
-    var accountIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any() && !hqIsActive);
-    var protocolsIsActive = (Model.Protocols != null && Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any());
-    var suggestedProtocolsIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any());
+    var protocolsIsActive = (Model.Protocols != null && Model.Protocols.Any()) && (Model.Orders == null && !Model.Orders.Any());
+    var suggestedProtocolsIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any()) && !protocolsIsActive && !hqIsActive;
+    var accountIsActive = (Model.Protocols == null || !Model.Protocols.Any()) && (Model.Orders == null || !Model.Orders.Any()) && !hqIsActive && !suggestedProtocolsIsActive;
 
     var hqTabClass = hqIsActive ? activeTabClass : inactiveTabClass;
     var hqPaneClass = hqIsActive ? activePaneClass : inactivePaneClass;

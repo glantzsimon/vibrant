@@ -3949,4 +3949,7 @@
   <data name="Proteins" xml:space="preserve">
     <value>Proteins</value>
   </data>
+  <data name="ThisWillTakeTime" xml:space="preserve">
+    <value>Please note: once you submit the genetic profile test, it can take several minutes for the data to be processed. Please do not close your browser window until the process is complete (which is shown on screen).</value>
+  </data>
 </root>

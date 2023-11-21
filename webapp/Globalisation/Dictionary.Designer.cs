@@ -10507,6 +10507,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please note: once you submit the genetic profile test, it can take several minutes for the data to be processed. Please do not close your browser window until the process is complete (which is shown on screen)..
+        /// </summary>
+        public static string ThisWillTakeTime {
+            get {
+                return ResourceManager.GetString("ThisWillTakeTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Three Months.
         /// </summary>
         public static string ThreeMonths {

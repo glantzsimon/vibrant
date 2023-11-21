@@ -659,9 +659,11 @@ namespace K9.WebApplication.Controllers
 
             if (model.IsComplete() && ModelState.IsValid)
             {
-                HostingEnvironment.QueueBackgroundWorkItem(e =>
-                    _healthQuestionnaireService.AutoGenerateProtocolFromGeneticProfileAsync(model));
-                
+                //HostingEnvironment.QueueBackgroundWorkItem(e =>
+                //    _healthQuestionnaireService.AutoGenerateProtocolFromGeneticProfileAsync(model));
+
+                _healthQuestionnaireService.AutoGenerateProtocolFromGeneticProfile(model);
+
                 return RedirectToAction("QuestionnaireCompletedSuccess");
             }
 
