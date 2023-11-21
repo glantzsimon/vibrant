@@ -3935,7 +3935,7 @@
     <value>Unsuitable</value>
   </data>
   <data name="UnsuitableDescription" xml:space="preserve">
-    <value>These foods are not suitable for your type and should be avoided</value>
+    <value>These foods are the least optimal for your type and should be minimised as much as possible, especially if you are suffering from any symptoms of imbalance.</value>
   </data>
   <data name="CompleteOrders" xml:space="preserve">
     <value>Completed Orders</value>

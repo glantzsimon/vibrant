@@ -10977,7 +10977,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to These foods are not suitable for your type and should be avoided.
+        ///   Looks up a localized string similar to These foods are the least optimal for your type and should be minimised as much as possible, especially if you are suffering from any symptoms of imbalance..
         /// </summary>
         public static string UnsuitableDescription {
             get {
