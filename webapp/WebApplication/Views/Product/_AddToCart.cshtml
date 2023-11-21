@@ -3,7 +3,7 @@
 @using K9.WebApplication.Helpers
 @model Product
 
-@using (Html.LogInToPurchase(Request.Url.ToString()))
+@if (WebSecurity.IsAuthenticated)
 {
     <button data-id="@Model.Id" class="add-to-cart-button btn btn btn-primary btn-lg"><i class="fa fa-cart-plus"></i> @Dictionary.AddToCart</button>
 }
