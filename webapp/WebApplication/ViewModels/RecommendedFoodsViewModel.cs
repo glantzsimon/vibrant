@@ -57,6 +57,13 @@ namespace K9.WebApplication.ViewModels
                         }
                     }
 
+                    if (foodGroup == EFoodGroup.Other)
+                    {
+                        return RecommendedFoods?.Where(e =>
+                            e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
+                            (e.HunterCompatibilityLevel == level && level != ECompatibilityLevel.Neutral)).ToList();
+                    }
+
                     return RecommendedFoods?.Where(e =>
                         e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
                         (e.HunterCompatibilityLevel == level)).ToList();
@@ -78,6 +85,13 @@ namespace K9.WebApplication.ViewModels
                         {
                             recommendedFood.RelativeScore = 0;
                         }
+                    }
+
+                    if (foodGroup == EFoodGroup.Other)
+                    {
+                        return RecommendedFoods?.Where(e =>
+                            e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
+                            (e.GathererCompatibilityLevel == level && level != ECompatibilityLevel.Neutral)).ToList();
                     }
 
                     return RecommendedFoods?.Where(e =>
@@ -103,6 +117,13 @@ namespace K9.WebApplication.ViewModels
                         }
                     }
 
+                    if (foodGroup == EFoodGroup.Other)
+                    {
+                        return RecommendedFoods?.Where(e =>
+                            e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
+                            (e.TeacherCompatibilityLevel == level && level != ECompatibilityLevel.Neutral)).ToList();
+                    }
+
                     return RecommendedFoods?.Where(e =>
                         e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
                         (e.TeacherCompatibilityLevel == level)).ToList();
@@ -124,6 +145,13 @@ namespace K9.WebApplication.ViewModels
                         {
                             recommendedFood.RelativeScore = 0;
                         }
+                    }
+
+                    if (foodGroup == EFoodGroup.Other)
+                    {
+                        return RecommendedFoods?.Where(e =>
+                            e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
+                            (e.ExplorerCompatibilityLevel == level && level != ECompatibilityLevel.Neutral)).ToList();
                     }
 
                     return RecommendedFoods?.Where(e =>
@@ -149,6 +177,13 @@ namespace K9.WebApplication.ViewModels
                         }
                     }
 
+                    if (foodGroup == EFoodGroup.Other)
+                    {
+                        return RecommendedFoods?.Where(e =>
+                            e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
+                            (e.WarriorCompatibilityLevel == level && level != ECompatibilityLevel.Neutral)).ToList();
+                    }
+
                     return RecommendedFoods?.Where(e =>
                         e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
                         (e.WarriorCompatibilityLevel == level)).ToList();
@@ -170,6 +205,13 @@ namespace K9.WebApplication.ViewModels
                         {
                             recommendedFood.RelativeScore = 0;
                         }
+                    }
+
+                    if (foodGroup == EFoodGroup.Other)
+                    {
+                        return RecommendedFoods?.Where(e =>
+                            e.Category.GetAttribute<EFoodGroupMetaDataAttribute>().FoodGroup == foodGroup &&
+                            (e.NomadCompatibilityLevel == level && level != ECompatibilityLevel.Neutral)).ToList();
                     }
 
                     return RecommendedFoods?.Where(e =>
