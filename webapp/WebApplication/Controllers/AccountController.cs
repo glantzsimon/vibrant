@@ -433,7 +433,7 @@ namespace K9.WebApplication.Controllers
             };
 
             var hq = _healthQuestionnaireService.GetHealthQuestionnaireForClient(clientRecord.Id);
-            if (hq != null)
+            if (hq != null && hq.IsComplete())
             {
                 var matchedItems = _healthQuestionnaireService.GetGeneticProfileMatchedProtocols(clientRecord.Id);
                 model.SuggestedProtocols = matchedItems;

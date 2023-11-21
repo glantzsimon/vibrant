@@ -32,7 +32,7 @@
         {
             <li class="@activeTabClass"><a data-toggle="tab" href="#orders">@Dictionary.YourOrders</a></li>
         }
-
+        
         <li class="@hqTabClass"><a data-toggle="tab" href="#health-questionnaire">@Dictionary.GeneticProfileTest</a></li>
 
 
@@ -58,18 +58,21 @@
         }
 
         <div id="health-questionnaire" class="tab-pane fade @hqPaneClass">
-            @if (Model.HealthQuestionnaire.IsStarted())
+            @if (Model.HealthQuestionnaire != null)
             {
-                @Html.BootstrapActionLinkButton(Dictionary.TakeTheGeneticProfileTest, "GeneticProfileTest", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Primary)
-            }
-            else
-            {
-                @Html.BootstrapActionLinkButton(Dictionary.AnswerHealthQuestionnaire, "GeneticProfileTest", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Primary)
-            }
-
-            @if (Model.HealthQuestionnaire.IsComplete() && K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
-            {
-                @Html.BootstrapActionLinkButton(Dictionary.ViewHealthQuestionnaireResults, "GeneticProfileTestOverview", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Success)
+                if (Model.HealthQuestionnaire.IsStarted())
+                {
+                    @Html.BootstrapActionLinkButton(Dictionary.TakeTheGeneticProfileTest, "GeneticProfileTest", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Primary)
+                }
+                else
+                {
+                    @Html.BootstrapActionLinkButton(Dictionary.AnswerHealthQuestionnaire, "GeneticProfileTest", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Primary)
+                }
+                
+                if (Model.HealthQuestionnaire.IsComplete() && K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
+                {
+                    @Html.BootstrapActionLinkButton(Dictionary.ViewHealthQuestionnaireResults, "GeneticProfileTestOverview", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Success)
+                }
             }
         </div>
 

@@ -7,6 +7,7 @@
     var orderItems = this.GetDropdownData().GetDataSet<Order>(true, "FullName");
     var completeOrders = orderItems.Where(e => e.Name.Contains("Complete")).Select(e => e.Id).ToList();
     var orderedItems = orderItems
+        .Where(e => !e.Name.Contains("Shopping Cart"))
         .OrderBy(e => completeOrders.Contains(e.Id))
         .ThenByDescending(e => e.Id);
 }

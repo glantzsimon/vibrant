@@ -15,9 +15,9 @@ namespace K9.DataAccessLayer.Models
     {
         public GenoTypeStrengthTestResult CalculateGenotype()
         {
-            return GetGroupedStrengthTestResults()
+            return GetGroupedStrengthTestResults()?
                 .FilteredResults
-                .First();
+                .FirstOrDefault();
         }
 
         public GenoTypeStrengthTestResults GetGroupedStrengthTestResults()

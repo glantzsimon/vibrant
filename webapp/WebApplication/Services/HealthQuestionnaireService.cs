@@ -111,12 +111,16 @@ namespace K9.WebApplication.Services
         public GeneticProfileMatchedItemsViewModel GetGeneticProfileMatchedItems(int id)
         {
             var hq = _healthQuestionnaireRepository.Find(id);
-            if (hq == null)
+            if (hq == null || !hq.IsComplete())
             {
                 return null;
             }
 
             var genoType = hq.CalculateGenotype();
+            if (genoType == null)
+            {
+                return null;
+            }
 
             var result = new GeneticProfileMatchedItemsViewModel
             {
@@ -147,6 +151,10 @@ namespace K9.WebApplication.Services
             }
 
             var genoType = hq.CalculateGenotype();
+            if (genoType == null)
+            {
+                return null;
+            }
 
             return GetGenoTypeFilteredItems(hq, genoType.GenoType, new List<Protocol>(_protocolsRepository.List()), 3);
         }
@@ -235,52 +243,55 @@ namespace K9.WebApplication.Services
         {
             var matchedItems = GetGeneticProfileMatchedItems(hq.Id);
 
-            protocol.Activities = matchedItems.Activities.Select(e => new ProtocolActivity
+            if (matchedItems != null)
             {
-                ProtocolId = protocol.Id,
-                ActivityId = e.ActivityId,
-                Score = e.Score,
-                RelativeScore = e.RelativeScore
-            }).ToList();
-
-            protocol.DietaryRecommendations = matchedItems.DietaryRecommendations.Select(e =>
-                new ProtocolDietaryRecommendation
+                protocol.Activities = matchedItems.Activities.Select(e => new ProtocolActivity
                 {
                     ProtocolId = protocol.Id,
-                    DietaryRecommendationId = e.DietaryRecommendationId,
+                    ActivityId = e.ActivityId,
                     Score = e.Score,
                     RelativeScore = e.RelativeScore
                 }).ToList();
 
-            protocol.RecommendedFoods = matchedItems.Foods.Select(e => new ProtocolFoodItem
-            {
-                ProtocolId = protocol.Id,
-                FoodItemId = e.FoodItemId,
-                Score = e.Score,
-                RelativeScore = e.RelativeScore
-            }).ToList();
+                protocol.DietaryRecommendations = matchedItems.DietaryRecommendations.Select(e =>
+                    new ProtocolDietaryRecommendation
+                    {
+                        ProtocolId = protocol.Id,
+                        DietaryRecommendationId = e.DietaryRecommendationId,
+                        Score = e.Score,
+                        RelativeScore = e.RelativeScore
+                    }).ToList();
 
-            protocol.Products = matchedItems.Products.Select(e => new ProtocolProduct
-            {
-                ProtocolId = protocol.Id,
-                ProductId = e.ProductId,
-                Score = e.Score,
-                RelativeScore = e.RelativeScore
-            }).ToList();
+                protocol.RecommendedFoods = matchedItems.Foods.Select(e => new ProtocolFoodItem
+                {
+                    ProtocolId = protocol.Id,
+                    FoodItemId = e.FoodItemId,
+                    Score = e.Score,
+                    RelativeScore = e.RelativeScore
+                }).ToList();
 
-            protocol.ProductPacks = matchedItems.ProductPacks.Select(e => new ProtocolProductPack
-            {
-                ProtocolId = protocol.Id,
-                ProductPackId = e.ProductPackId,
-                Score = e.Score,
-                RelativeScore = e.RelativeScore
-            }).ToList();
+                protocol.Products = matchedItems.Products.Select(e => new ProtocolProduct
+                {
+                    ProtocolId = protocol.Id,
+                    ProductId = e.ProductId,
+                    Score = e.Score,
+                    RelativeScore = e.RelativeScore
+                }).ToList();
 
-            _protocolActivitiesRepository.CreateBatch(protocol.Activities);
-            _protocolDietaryRecommendationRepository.CreateBatch(protocol.DietaryRecommendations);
-            _protocolFoodItemsRepository.CreateBatch(protocol.RecommendedFoods);
-            _protocolProductsRepository.CreateBatch(protocol.Products);
-            _protocolProductPackRepository.CreateBatch(protocol.ProductPacks);
+                protocol.ProductPacks = matchedItems.ProductPacks.Select(e => new ProtocolProductPack
+                {
+                    ProtocolId = protocol.Id,
+                    ProductPackId = e.ProductPackId,
+                    Score = e.Score,
+                    RelativeScore = e.RelativeScore
+                }).ToList();
+
+                _protocolActivitiesRepository.CreateBatch(protocol.Activities);
+                _protocolDietaryRecommendationRepository.CreateBatch(protocol.DietaryRecommendations);
+                _protocolFoodItemsRepository.CreateBatch(protocol.RecommendedFoods);
+                _protocolProductsRepository.CreateBatch(protocol.Products);
+                _protocolProductPackRepository.CreateBatch(protocol.ProductPacks);
+            }
         }
 
         private void DeleteProtocolChildRecords(int id)
@@ -434,8 +445,7 @@ namespace K9.WebApplication.Services
                 {
                     ExternalId = hqId,
                     ClientId = client.Id,
-                    Name = $"{client.Name} - {Globalisation.Dictionary.HealthQuestionnaire}",
-                    CookingFrequency = EFrequency.SeveralTimesAWeek,
+                    Name = $"{client.Name} - {Globalisation.Dictionary.HealthQuestionnaire}"
                 };
 
                 _healthQuestionnaireRepository.Create(hq);
