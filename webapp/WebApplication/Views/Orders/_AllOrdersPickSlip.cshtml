@@ -21,35 +21,35 @@
         foreach (var order in incompleteOrders)
         {
             <div class="padding-5 padding-top-15 row">
-                <div class="col-sm-5 valign-top">
+                <div class="col-sm-4 valign-top">
                     <p><strong>@order.Client.FullName</strong></p>
                     <p>
                         @order.Client.Address
                         @order.Client.Country.Name
                     </p>
                 </div>
-                <div class="col-sm-7">
+                <div class="col-sm-8">
                     <div class="row">
-                        <div class="col-xs-7">
+                        <div class="col-xs-6">
                             @Html.LabelFor(e => order.Products[0].ProductName)
                         </div>
                         <div class="col-xs-3">
                             @Html.LabelFor(e => order.Products[0].Amount)
                         </div>
-                        <div class="col-xs-2">
-                            @Html.ValueFor(e => order.Products[0].AmountCompleted)
+                        <div class="col-xs-3">
+                            @Html.LabelFor(e => order.Products[0].AmountCompleted)
                         </div>
                     </div>
                     @foreach (var item in order.GetCombinedGroupedProducts())
                     {
                         <div class="row">
-                            <div class="col-xs-7">
+                            <div class="col-xs-6">
                                 @Html.ValueFor(e => item.Product.Name)
                             </div>
                             <div class="col-xs-3">
                                 @Html.ValueFor(e => item.Amount)
                             </div>
-                            <div class="col-xs-2">
+                            <div class="col-xs-3">
                                 @Html.BootstrapEditorFor(e => item.AmountCompleted, new EditorOptions
                                 {
                                     Label = ""

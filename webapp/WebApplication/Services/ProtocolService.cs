@@ -209,8 +209,8 @@ namespace K9.WebApplication.Services
                 }
             }
 
-            protocol.ProtocolSections = _protocolProtocolSectionRepository.Find(e => e.ProtocolId == protocol.Id)
-                .OrderBy(e => e.Section.DisplayOrder).ToList();
+            protocol.ProtocolSections = _protocolProtocolSectionRepository.Find(e => e.ProtocolId == protocol.Id);
+            
             foreach (var section in protocol.ProtocolSections)
             {
                 section.Section = _protocolSectionRepository.Find(section.SectionId);
@@ -227,6 +227,8 @@ namespace K9.WebApplication.Services
                         protocolProtocolSectionProduct.GetFormattedAmount();
                 }
             }
+
+            protocol.ProtocolSections = protocol.ProtocolSections.OrderBy(e => e.Section.DisplayOrder).ToList();
 
             protocol.Client = _clientsRepository.Find(protocol.ClientId ?? 0);
             protocol.ClientName = protocol.Client?.FullName;
