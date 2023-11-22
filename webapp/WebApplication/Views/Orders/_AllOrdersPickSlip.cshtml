@@ -31,20 +31,29 @@
                 <div class="col-sm-7">
                     <div class="row">
                         <div class="col-xs-7">
-                            @Html.LabelFor(e => order.Client.Name)
+                            @Html.LabelFor(e => order.Products[0].ProductName)
                         </div>
-                        <div class="col-xs-5">
+                        <div class="col-xs-3">
                             @Html.LabelFor(e => order.Products[0].Amount)
+                        </div>
+                        <div class="col-xs-2">
+                            @Html.ValueFor(e => order.Products[0].AmountCompleted)
                         </div>
                     </div>
                     @foreach (var item in order.GetCombinedGroupedProducts())
                     {
                         <div class="row">
-                            <div class="col-xs-8">
+                            <div class="col-xs-7">
                                 @Html.ValueFor(e => item.Product.Name)
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-3">
                                 @Html.ValueFor(e => item.Amount)
+                            </div>
+                            <div class="col-xs-2">
+                                @Html.BootstrapEditorFor(e => item.AmountCompleted, new EditorOptions
+                                {
+                                    Label = ""
+                                })
                             </div>
                         </div>
                     }

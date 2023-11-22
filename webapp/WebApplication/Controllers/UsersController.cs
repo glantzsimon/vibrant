@@ -31,28 +31,13 @@ namespace K9.WebApplication.Controllers
             _rolesRepository = rolesRepository;
             RecordCreated += UsersController_RecordCreated;
             RecordBeforeDeleted += UsersController_RecordBeforeDeleted;
-            RecordCreated += UsersController_RecordCreated1;
         }
 
         public ActionResult EditProtocols(int id = 0)
         {
             return RedirectToAction("EditProtocolsForUser", "UserProtocols", new { id });
         }
-
-        private void UsersController_RecordCreated1(object sender, CrudEventArgs e)
-        {
-            var user = e.Item as User;
-
-            // Add client user role
-            var clientUserRole = _rolesRepository.Find(_ => _.Name == Constants.Constants.ClientUser).FirstOrDefault();
-            var userRole = new UserRole
-            {
-                UserId = user.Id,
-                RoleId = clientUserRole.Id
-            };
-            _userRolesRepository.Create(userRole);
-        }
-
+        
         private void UsersController_RecordBeforeDeleted(object sender, CrudEventArgs e)
         {
             var user = e.Item as User;
@@ -72,7 +57,9 @@ namespace K9.WebApplication.Controllers
         {
             var user = e.Item as User;
             WebSecurity.CreateAccount(user.Username, $"{user.Username}1234");
+            
             _roles.AddUserToRole(user.Username, RoleNames.DefaultUsers);
+            _roles.AddUserToRole(user.Username, Constants.Constants.ClientUser);
         }
 
     }

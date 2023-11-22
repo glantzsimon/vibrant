@@ -78,9 +78,9 @@ namespace K9.WebApplication.Controllers
         public void SetSessionRoles(int userId)
         {
             var adminRole =  _pureControllerPackage.RolesRepository.Find(e => e.Name == Constants.Constants.Administrator).First();
-            var powerUserRole = _pureControllerPackage.RolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
+            var powerUserRole = _pureControllerPackage.RolesRepository.Find(e => e.Name == Constants.Constants.PowerUser).First();
             var clientRole = _pureControllerPackage.RolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
-            var practitionerUser = _pureControllerPackage.RolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
+            var practitionerUser = _pureControllerPackage.RolesRepository.Find(e => e.Name == Constants.Constants.PractitionerUser).First();
             var unicornRole = _pureControllerPackage.RolesRepository.Find(e => e.Name == Constants.Constants.UnicornUser).First();
             
             var isAmin = _pureControllerPackage.UserRolesRepository.Exists(e => e.UserId == userId && e.RoleId == adminRole.Id);
