@@ -970,7 +970,7 @@
             public const string OrganMeat = "OrganMeat";
             public const string Poultry = "Poultry";
             public const string FishAndSeafood = "FishAndSeafood";
-            public const string EggsAndRoes = "FishAndSeafood";
+            public const string EggsAndRoes = "EggsAndRoes";
             public const string Dairy = "Dairy";
             public const string VegetableProtein = "VegetableProtein";
             public const string Grains = "Grains";
