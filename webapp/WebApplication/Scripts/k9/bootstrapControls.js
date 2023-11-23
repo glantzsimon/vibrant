@@ -52,7 +52,7 @@
     function initBootstrapSortable() {
         let $ulSortables = $("ul.sortable");
         for (var j = 0; j < $ulSortables.length; j++) {
-            var $sortableList = $($ulSortables[i]);
+            var $sortableList = $($ulSortables[j]);
             var displayIndexFieldName = $sortableList.data("displayIndexFieldName");
 
             if ($sortableList.length > 0) {

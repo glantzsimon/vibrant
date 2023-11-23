@@ -86,6 +86,8 @@ namespace K9.WebApplication.Controllers
                 _orderProductsRepository.Update(item);
             }
 
+            _orderService.ClearCache();
+
             return RedirectToAction("Index");
         }
 
@@ -99,6 +101,7 @@ namespace K9.WebApplication.Controllers
             var order = _orderService.Find(id);
             order = _orderService.UpdatePricesForClient(order);
             order = _orderService.FillZeroQuantities(order);
+            _orderService.ClearCache();
             return View(order);
         }
 

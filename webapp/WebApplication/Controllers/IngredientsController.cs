@@ -35,6 +35,18 @@ namespace K9.WebApplication.Controllers
             RecordBeforeCreated += IngredientsController_RecordBeforeCreated;
             RecordBeforeUpdated += IngredientsController_RecordBeforeUpdated;
             RecordBeforeDetails += IngredientsController_RecordBeforeDetails;
+            RecordUpdated += IngredientsController_RecordUpdated;
+            RecordCreated += IngredientsController_RecordCreated;
+        }
+
+        private void IngredientsController_RecordCreated(object sender, CrudEventArgs e)
+        {
+            _ingredientService.ClearCache();
+        }
+
+        private void IngredientsController_RecordUpdated(object sender, CrudEventArgs e)
+        {
+            _ingredientService.ClearCache();
         }
 
         public ActionResult EditList()
