@@ -289,7 +289,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         [DataType(DataType.Currency)]
-        public double GetDiscountAmount() => (TotalPriceMinusShipping * (Discount / 100 ?? 0) + ShippingCost);
+        public double GetDiscountAmount() => ((TotalPriceMinusShipping * (Discount / 100 ?? 0)) + ShippingCost);
 
         [UIHint("InternationalCurrency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
@@ -362,7 +362,7 @@ namespace K9.DataAccessLayer.Models
         public string GetFormattedDiscount() => GetDiscountAmount().ToCurrency();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
-        public string GetFormattedTotalDiscount() => (GetDiscountAmount() + GetTotalTierDiscount()).ToCurrency();
+        public string GetFormattedTotalDiscount() => (GetDiscountAmount() + GetTotalTierDiscount() - ShippingCost).ToCurrency();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         public string GetFormattedGrandTotal() => GetGrandTotal().ToCurrency();
