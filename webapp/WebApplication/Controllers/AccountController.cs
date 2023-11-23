@@ -414,7 +414,7 @@ namespace K9.WebApplication.Controllers
         [Authorize]
         public ActionResult MyAccount()
         {
-            var user = _userRepository.Find(u => u.Username == User.Identity.Name).FirstOrDefault();
+            var user = _userRepository.Find(WebSecurity.CurrentUserId);
             var clientRecord = _clientService.GetOrCreateClientFromUser(user);
             var userProtocolIds = _userProtocolsRepository.Find(e => e.UserId == user.Id)
                 .Select(e => e.ProtocolId)
