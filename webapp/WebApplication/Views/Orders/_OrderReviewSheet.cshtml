@@ -4,6 +4,15 @@
 @using K9.WebApplication.ViewModels
 @model OrdersReviewViewModel
 
+@{
+    var productsActive = Model.SelectedOrder.Products != null && Model.SelectedOrder.Products.Any();
+    var productPacksActive = !productsActive && Model.SelectedOrder.ProductPacks != null && Model.SelectedOrder.ProductPacks.Any();
+    var productsTabClass = productsActive ? K9.Globalisation.Strings.CssClasses.ActiveTabClass : "";
+    var productPacksTabClass = productPacksActive ? K9.Globalisation.Strings.CssClasses.ActiveTabClass : "";
+    var productsPaneClass = productsActive ? K9.Globalisation.Strings.CssClasses.ActivePanelClass : "";
+    var productPacksPaneClass = productPacksActive ? K9.Globalisation.Strings.CssClasses.ActivePanelClass : "";
+}
+
 <div class="row">
     <div class="col-xs-12">
         <h3 class="margin-top-0">@Dictionary.Order @Model.SelectedOrder.OrderNumber - @Model.SelectedOrder.Name</h3>
@@ -13,8 +22,8 @@
 <div class="row">
     <div class="col-xs-12">
         <ul class="nav nav-pills">
-            <li class="active"><a data-toggle="pill" href="#products">@Dictionary.Products</a></li>
-            <li><a data-toggle="pill" href="#productpacks">@Dictionary.ProductPacks</a></li>
+            <li class="@productsTabClass"><a data-toggle="pill" href="#products">@Dictionary.Products</a></li>
+            <li class="@productPacksTabClass"><a data-toggle="pill" href="#productpacks">@Dictionary.ProductPacks</a></li>
             <li>
                 <div class="padding-left-16 margin-bottom-10">
                     @Html.BootstrapEditorFor(e => Model.SelectedOrder.ShowCompleted)
@@ -23,10 +32,10 @@
         </ul>
 
         <div class="tab-content">
-            <div id="products" class="tab-pane fade in active padding-top-15">
+            <div id="products" class="tab-pane fade @productsPaneClass padding-top-15">
                 @Html.Partial("_ProductsReview", Model.SelectedOrder)
             </div>
-            <div id="productpacks" class="tab-pane fade padding-top-15">
+            <div id="productpacks" class="tab-pane fade @productPacksPaneClass padding-top-15">
                 @Html.Partial("_ProductPacksReview", Model.SelectedOrder)
             </div>
         </div>

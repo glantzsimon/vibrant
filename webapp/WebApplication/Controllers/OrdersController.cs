@@ -179,8 +179,21 @@ namespace K9.WebApplication.Controllers
                     foreach (var orderProductPackProduct in pack.ProductPackProducts)
                     {
                         var original = _orderProductPackProductsRepository.Find(orderProductPackProduct.Id);
-                        original.AmountCompleted = orderProductPackProduct.AmountCompleted;
-                        _orderProductPackProductsRepository.Update(original);
+                        if (original != null)
+                        {
+                            original.AmountCompleted = orderProductPackProduct.AmountCompleted;
+                            _orderProductPackProductsRepository.Update(original);
+                        }
+                        else
+                        {
+                            var newItem = new OrderProductPackProduct
+                            {
+                                OrderProductPackId = pack.Id,
+                                ProductId = orderProductPackProduct.ProductId,
+                                AmountCompleted = orderProductPackProduct.AmountCompleted
+                            };
+                            _orderProductPackProductsRepository.Create(newItem);
+                        }
                     }
                 }
             }
@@ -192,7 +205,7 @@ namespace K9.WebApplication.Controllers
                 Repository.Update(item);
             }
 
-            return RedirectToAction("OrderReview", new { orderId = order.Id });
+            return RedirectToAction("OrderReview", new { id = order.Id });
         }
 
         [NoCache]

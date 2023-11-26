@@ -452,7 +452,9 @@ namespace K9.DataAccessLayer.Models
                                     groupOrderProductPacks.Sum(e => e.OrderProductPack.Amount * e.Products.Sum(p => p.Amount)),
 
                             CompleteCount = groupOrderProducts.Sum(e => e.AmountCompleted) +
-                                            groupOrderProductPacks.Sum(e => e.OrderProductPack.AmountCompleted * e.Products.Sum(p => p.Amount)),
+                                            groupOrderProductPacks.Sum(e => e.OrderProductPack.AmountCompleted * e.Products.Sum(p => p.Amount)) +
+                                            groupOrderProductPacks.SelectMany(e => e.OrderProductPack.ProductPackProducts)
+                                                .Where(p => p.ProductId == group.Key).Sum(e => e.AmountCompleted)
                         };
 
                         return groupItem;
