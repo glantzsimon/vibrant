@@ -176,7 +176,7 @@ namespace K9.WebApplication.Controllers
                     _orderProductPackRepository.Update(item);
 
                     // Order product pack products
-                    foreach (var orderProductPackProduct in pack.OrderProductPackProducts)
+                    foreach (var orderProductPackProduct in pack.ProductPackProducts)
                     {
                         var original = _orderProductPackProductsRepository.Find(orderProductPackProduct.Id);
                         original.AmountCompleted = orderProductPackProduct.AmountCompleted;

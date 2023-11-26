@@ -71,8 +71,8 @@ namespace K9.WebApplication.ViewModels
                                     groupOrderProductPacks.Sum(e => e.OrderProductPack.Amount * e.Products.Sum(p => p.Amount)),
 
                             CompleteCount = groupOrderProducts.Sum(e => e.AmountCompleted) + 
-                                            groupOrderProductPacks.Sum(e => e.OrderProductPack.AmountCompleted * e.Products.Sum(p => p.Amount)),
-                        };
+                                            groupOrderProductPacks.Sum(e => e.OrderProductPack.AmountCompleted * e.Products.Sum(p => p.Amount)) + 
+                                            groupOrderProductPacks.SelectMany(e => e.OrderProductPack.ProductPackProducts.Where(p => p.ProductId == group.Key)).Sum(o => o.AmountCompleted)};
 
                         return groupItem;
                     })

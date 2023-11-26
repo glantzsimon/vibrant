@@ -165,6 +165,8 @@ namespace K9.WebApplication.Services
                     if (orderProductPackProduct != null)
                     {
                         orderProductPackProduct.Product = product;
+                        orderProductPackProduct.OrderProductPack = orderProductPack;
+                        orderProductPackProduct.Amount = productPackProduct.Amount * orderProductPack.Amount;
                     }
                     else
                     {
@@ -174,16 +176,11 @@ namespace K9.WebApplication.Services
                             OrderProductPack = orderProductPack,
                             ProductId = product.Id,
                             Product = product,
-                            Amount = productPackProduct.Amount
+                            Amount = productPackProduct.Amount * orderProductPack.Amount
                         };
 
                         orderProductPack.ProductPackProducts.Add(orderProductPackProduct);
                     }
-                }
-
-                foreach (var orderProductPackProduct in orderProductPack.OrderProductPackProducts)
-                {
-                    orderProductPackProduct.Product = GetProducts().FirstOrDefault(e => e.ProductId == orderProductPackProduct.ProductId);
                 }
             }
 

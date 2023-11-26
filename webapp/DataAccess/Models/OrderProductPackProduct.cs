@@ -31,7 +31,7 @@ namespace K9.DataAccessLayer.Models
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public int AmountCompleted { get; set; }
 
-        public int? GetAmountRemaining() => OrderProductPack?.ProductPack?.Products?.Where(e => e.ProductId == Product.Id).FirstOrDefault().Amount - AmountCompleted;
+        public int? GetAmountRemaining() => Amount - AmountCompleted;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountRemainingLabel)]
         public int? AmountRemaining => GetAmountRemaining();

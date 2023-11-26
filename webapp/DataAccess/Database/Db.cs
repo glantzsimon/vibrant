@@ -24,7 +24,7 @@ namespace K9.DataAccessLayer.Database
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderProduct> OrderProducts { get; set; }
         public DbSet<OrderProductPack> OrderProductPacks { get; set; }
-        public DbSet<OrderProductPackProduct> OrderProductPackProducts { get; set; }
+        public DbSet<Models.OrderProductPackProduct> OrderProductPackProducts { get; set; }
         public DbSet<ClientProduct> ClientProducts { get; set; }
         public DbSet<ProductPack> ProductPacks { get; set; }
         public DbSet<ProductPackProduct> ProductPackProducts { get; set; }
