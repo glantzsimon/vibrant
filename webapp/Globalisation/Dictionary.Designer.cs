@@ -283,6 +283,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Products.
+        /// </summary>
+        public static string AllProducts {
+            get {
+                return ResourceManager.GetString("AllProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Almond Shaped.
         /// </summary>
         public static string AlmondShaped {

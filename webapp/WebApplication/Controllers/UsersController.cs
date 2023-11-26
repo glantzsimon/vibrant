@@ -7,7 +7,6 @@ using K9.Base.WebApplication.UnitsOfWork;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using System;
-using System.Linq;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 
@@ -29,8 +28,15 @@ namespace K9.WebApplication.Controllers
             _roles = roles;
             _userRolesRepository = userRolesRepository;
             _rolesRepository = rolesRepository;
+            RecordBeforeCreate += UsersController_RecordBeforeCreate;
             RecordCreated += UsersController_RecordCreated;
             RecordBeforeDeleted += UsersController_RecordBeforeDeleted;
+        }
+
+        private void UsersController_RecordBeforeCreate(object sender, CrudEventArgs e)
+        {
+            var user = e.Item as User;
+            user.BirthDate = new DateTime(1970, 1, 1);
         }
 
         public ActionResult EditProtocols(int id = 0)

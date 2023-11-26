@@ -18,6 +18,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Order> _ordersRepository;
         private readonly IRepository<OrderProduct> _orderProductsRepository;
         private readonly IRepository<OrderProductPack> _orderProductPacksRepository;
+        private readonly IRepository<OrderProductPackProduct> _orderProductPackProductsRepository;
         private readonly IRepository<Product> _productsRepository;
         private readonly IRepository<ProductPack> _productPackRepository;
         private readonly IRepository<Client> _clientsRepository;
@@ -28,31 +29,33 @@ namespace K9.WebApplication.Services
         private readonly DefaultValuesConfiguration _defaultValues;
 
         public OrderService(
-            ILogger logger, 
-            IRepository<Order> ordersRepository, 
-            IRepository<OrderProduct> orderProductsRepository, 
-            IRepository<OrderProductPack> orderProductPacksRepository, 
-            IRepository<Product> productsRepository, 
-            IRepository<ProductPack> productPackRepository, 
-            IOptions<DefaultValuesConfiguration> defaultValues, 
-            IRepository<Client> clientsRepository, 
-            IRepository<User> usersRepository, 
-            IRepository<RepCommission> repCommissionsRepository, 
-            IRepository<Ingredient> ingredientsRepository, 
-            IRepository<Protocol> protocolsRepository, 
-            IRepository<IngredientSubstitute> ingredientSubstitutesRepository, 
-            IRepository<ProductIngredient> productIngredientsRepository, 
-            IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository, 
-            IRepository<Activity> activitiesRepository, 
-            IRepository<DietaryRecommendation> dietaryRecommendationsRepository, 
-            IRepository<ProductPackProduct> productPackProductsRepository, 
-            IRepository<Country> countriesRepository, 
-            IRepository<FoodItem> foodItemsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository, foodItemsRepository)
+            ILogger logger,
+            IRepository<Order> ordersRepository,
+            IRepository<OrderProduct> orderProductsRepository,
+            IRepository<OrderProductPack> orderProductPacksRepository,
+            IRepository<Product> productsRepository,
+            IRepository<ProductPack> productPackRepository,
+            IOptions<DefaultValuesConfiguration> defaultValues,
+            IRepository<Client> clientsRepository,
+            IRepository<User> usersRepository,
+            IRepository<RepCommission> repCommissionsRepository,
+            IRepository<Ingredient> ingredientsRepository,
+            IRepository<Protocol> protocolsRepository,
+            IRepository<IngredientSubstitute> ingredientSubstitutesRepository,
+            IRepository<ProductIngredient> productIngredientsRepository,
+            IRepository<ProductIngredientSubstitute> productIngredientSubstitutesRepository,
+            IRepository<Activity> activitiesRepository,
+            IRepository<DietaryRecommendation> dietaryRecommendationsRepository,
+            IRepository<ProductPackProduct> productPackProductsRepository,
+            IRepository<Country> countriesRepository,
+            IRepository<FoodItem> foodItemsRepository,
+            IRepository<OrderProductPackProduct> orderProductPackProductsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository, foodItemsRepository)
         {
             _logger = logger;
             _ordersRepository = ordersRepository;
             _orderProductsRepository = orderProductsRepository;
             _orderProductPacksRepository = orderProductPacksRepository;
+            _orderProductPackProductsRepository = orderProductPackProductsRepository;
             _productsRepository = productsRepository;
             _productPackRepository = productPackRepository;
             _clientsRepository = clientsRepository;
@@ -142,9 +145,45 @@ namespace K9.WebApplication.Services
                 orderProductPack.ProductPack.Products = GetProductPackProducts()
                     .Where(e => e.ProductPackId == orderProductPack.ProductPackId).ToList();
 
+                orderProductPack.ProductPackProducts = _orderProductPackProductsRepository
+                    .Find(e => e.OrderProductPackId == orderProductPack.Id).ToList();
+
+                if (orderProductPack.ProductPackProducts == null)
+                {
+                    orderProductPack.ProductPackProducts = new List<OrderProductPackProduct>();
+                }
+
                 foreach (var productPackProduct in orderProductPack.ProductPack.Products)
                 {
-                    productPackProduct.Product = GetProducts().FirstOrDefault(e => e.ProductId == productPackProduct.ProductId);
+                    var product = GetProducts().FirstOrDefault(e => e.ProductId == productPackProduct.ProductId);
+
+                    productPackProduct.Product = product;
+
+                    var orderProductPackProduct =
+                        orderProductPack.ProductPackProducts.FirstOrDefault(e => e.ProductId == product.Id);
+
+                    if (orderProductPackProduct != null)
+                    {
+                        orderProductPackProduct.Product = product;
+                    }
+                    else
+                    {
+                        orderProductPackProduct = new OrderProductPackProduct
+                        {
+                            OrderProductPackId = orderProductPack.Id,
+                            OrderProductPack = orderProductPack,
+                            ProductId = product.Id,
+                            Product = product,
+                            Amount = productPackProduct.Amount
+                        };
+
+                        orderProductPack.ProductPackProducts.Add(orderProductPackProduct);
+                    }
+                }
+
+                foreach (var orderProductPackProduct in orderProductPack.OrderProductPackProducts)
+                {
+                    orderProductPackProduct.Product = GetProducts().FirstOrDefault(e => e.ProductId == orderProductPackProduct.ProductId);
                 }
             }
 
@@ -367,8 +406,8 @@ namespace K9.WebApplication.Services
                 var newOrderNumber = $"PA-{orderNumberCount}";
                 var maxTries = 11;
                 var tryIndex = 0;
-                
-                while(_ordersRepository.Exists(e => e.OrderNumber == newOrderNumber) && tryIndex <= maxTries)
+
+                while (_ordersRepository.Exists(e => e.OrderNumber == newOrderNumber) && tryIndex <= maxTries)
                 {
                     orderNumberCount++;
                     newOrderNumber = $"PA-{orderNumberCount}";

@@ -1,0 +1,31 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model OrderProductPack
+
+@for (int i = 0; i < Model.ProductPackProducts.Count; i++)
+{
+    var isVisible = Model.ProductPackProducts[i].AmountRemaining > 0;
+    var visible = isVisible ? "" : "none";
+    var visibleClass = isVisible ? "" : "complete-rows";
+
+    @Html.HiddenFor(e => Model.ProductPackProducts[i].Id)
+
+    <div class="padding-5 padding-top-15 row @visibleClass" style="display: @visible">
+        <div class="col-sm-4">
+            @Html.LabelFor(e => Model.ProductPackProducts[i].Product.Name)
+            <a tabindex="-1" target="_blank" href="@Url.Action("LabSheet", "Products", new {id = Model.ProductPackProducts[i].ProductId, batchSize = Model.ProductPackProducts[i].AmountRemaining})">
+                @Html.DisplayFor(e => Model.ProductPackProducts[i].Product.Name)
+            </a>
+        </div>
+        <div class="col-sm-2">
+            @Html.BootstrapDisplayFor(e => Model.ProductPackProducts[i].Amount)
+        </div>
+        <div class="col-sm-3">
+            @Html.BootstrapEditorFor(e => Model.ProductPackProducts[i].AmountCompleted)
+        </div>
+        <div class="col-sm-3">
+            @Html.BootstrapDisplayFor(e => Model.ProductPackProducts[i].AmountRemaining)
+        </div>
+    </div>
+}

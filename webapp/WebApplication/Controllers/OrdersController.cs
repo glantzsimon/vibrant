@@ -3,6 +3,7 @@ using K9.Base.WebApplication.Extensions;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Attributes;
+using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Helpers;
@@ -17,7 +18,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Enums;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -28,14 +28,16 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IRepository<OrderProduct> _orderProductsRepository;
         private readonly IRepository<OrderProductPack> _orderProductPackRepository;
+        private readonly IRepository<OrderProductPackProduct> _orderProductPackProductsRepository;
         private readonly IOrderService _orderService;
         private readonly IProductService _productService;
         private readonly DefaultValuesConfiguration _defaultValues;
 
-        public OrdersController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPackRepository, IOrderService orderService, IProductService productService, IPureControllerPackage pureControllerPackage) : base(controllerPackage, pureControllerPackage)
+        public OrdersController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPackRepository, IRepository<OrderProductPackProduct> orderProductPackProductsRepository, IOrderService orderService, IProductService productService, IPureControllerPackage pureControllerPackage) : base(controllerPackage, pureControllerPackage)
         {
             _orderProductsRepository = orderProductsRepository;
             _orderProductPackRepository = orderProductPackRepository;
+            _orderProductPackProductsRepository = orderProductPackProductsRepository;
             _orderService = orderService;
             _productService = productService;
             _defaultValues = defaultValues.Value;
@@ -172,6 +174,14 @@ namespace K9.WebApplication.Controllers
                     var item = _orderProductPackRepository.Find(pack.Id);
                     item.AmountCompleted = pack.AmountCompleted;
                     _orderProductPackRepository.Update(item);
+
+                    // Order product pack products
+                    foreach (var orderProductPackProduct in pack.OrderProductPackProducts)
+                    {
+                        var original = _orderProductPackProductsRepository.Find(orderProductPackProduct.Id);
+                        original.AmountCompleted = orderProductPackProduct.AmountCompleted;
+                        _orderProductPackProductsRepository.Update(original);
+                    }
                 }
             }
 

@@ -1,11 +1,12 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
-using K9.SharedLibrary.Attributes;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Helpers;
+using K9.SharedLibrary.Attributes;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -32,6 +33,11 @@ namespace K9.DataAccessLayer.Models
 
         public virtual Order Order { get; set; }
         
+        public virtual IEnumerable<OrderProductPackProduct> OrderProductPackProducts { get; set; }
+
+        [NotMapped]
+        public List<OrderProductPackProduct> ProductPackProducts { get; set; }
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
         [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
         public int Amount { get; set; }
@@ -46,6 +52,21 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double GetPrice() => GetPriceWithDiscount();
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalPrice => Amount * GetPrice();
+
+        [UIHint("InternationalCurrency")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalInternationalPrice => TotalPrice.ToInternationalPrice();
+
+        public string GetFormattedAmount() => $"{Amount} {GetPackageType()}";
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double FullTotalPrice => Amount * ProductPack?.Price ?? 0;
+        
         private double GetPriceWithDiscount()
         {
             if (ProductPack != null)
@@ -65,21 +86,6 @@ namespace K9.DataAccessLayer.Models
 
             return 0;
         }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
-        [DataType(DataType.Currency)]
-        public double TotalPrice => Amount * GetPrice();
-
-        [UIHint("InternationalCurrency")]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
-        [DataType(DataType.Currency)]
-        public double TotalInternationalPrice => TotalPrice.ToInternationalPrice();
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
-        [DataType(DataType.Currency)]
-        public double FullTotalPrice => Amount * ProductPack?.Price ?? 0;
-        
-        public string GetFormattedAmount() => $"{Amount} {GetPackageType()}";
 
         private string GetPackageType() => GetPackageTypeText();
 

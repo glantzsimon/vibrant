@@ -705,6 +705,11 @@
     <Compile Include="Migrations\202311201435378_AddScoresToDb.Designer.cs">
       <DependentUpon>202311201435378_AddScoresToDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311260745398_OrderProductPackProduct.cs" />
+    <Compile Include="Migrations\202311260745398_OrderProductPackProduct.Designer.cs">
+      <DependentUpon>202311260745398_OrderProductPackProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ScorableBase.cs" />
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
@@ -1099,6 +1104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311201435378_AddScoresToDb.resx">
       <DependentUpon>202311201435378_AddScoresToDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311260745398_OrderProductPackProduct.resx">
+      <DependentUpon>202311260745398_OrderProductPackProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
