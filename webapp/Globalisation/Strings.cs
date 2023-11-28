@@ -619,6 +619,10 @@
             public const string FineHairTypeLabel = "FineHairTypeLabel";
             public const string HairTypeQuestionLabel = "HairTypeQuestionLabel";
 
+            public const string NervousnessLabel = "NervousnessLabel";
+            public const string SpasmsLabel = "SpasmsLabel";
+            public const string LowVigourLabel = "LowVigourLabel";
+
             public const string MembershipOption = "MembershipOption";
             public const string ProfileReading = "ProfileReading";
             public const string CompatibilityReading = "CompatibilityReading";

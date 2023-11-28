@@ -42,6 +42,26 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.HairTypeQuestionLabel)]
         public EHairType? HairType { get; set; }
 
+        #region Signs Of Vata Imbalance
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.NervousnessLabel)]
+        public EYesNo? Nervousness { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.SpasmsLabel)]
+        public EYesNo? Spasms { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.LowVigourLabel)]
+        public EYesNo? LowVigour { get; set; }
+
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.LowVigourLabel)]
+        public EYesNo? WeightLoss { get; set; }
+
+        #endregion
+
         public bool IsDoshasComplete()
         {
             return SkinType.HasValue &&

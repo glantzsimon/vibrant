@@ -3946,11 +3946,20 @@
   <data name="IncompleteOrders" xml:space="preserve">
     <value>Incomplete Orders</value>
   </data>
+  <data name="LowVigourLabel" xml:space="preserve">
+    <value>Do you currently experience low vigour, fatigue or sluggishness?</value>
+  </data>
+  <data name="NervousnessLabel" xml:space="preserve">
+    <value>Do you currently experience anxiety, fear, panic attacks or nervousness?</value>
+  </data>
   <data name="OrdersOnHold" xml:space="preserve">
     <value>Orders On-Hold</value>
   </data>
   <data name="Proteins" xml:space="preserve">
     <value>Proteins</value>
+  </data>
+  <data name="SpasmsLabel" xml:space="preserve">
+    <value>Do you currently experience muscle spasms anywhere in the body?</value>
   </data>
   <data name="ThisWillTakeTime" xml:space="preserve">
     <value>Please note: once you submit the genetic profile test, it can take several minutes for the data to be processed. Please do not close your browser window until the process is complete (which is shown on screen).</value>

@@ -709,6 +709,10 @@
     <Compile Include="Migrations\202311260745398_OrderProductPackProduct.Designer.cs">
       <DependentUpon>202311260745398_OrderProductPackProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311281201478_ProductObligatoryFields.cs" />
+    <Compile Include="Migrations\202311281201478_ProductObligatoryFields.Designer.cs">
+      <DependentUpon>202311281201478_ProductObligatoryFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ScorableBase.cs" />
     <Compile Include="Models\GenoTypeBase.cs" />
@@ -1107,6 +1111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311260745398_OrderProductPackProduct.resx">
       <DependentUpon>202311260745398_OrderProductPackProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311281201478_ProductObligatoryFields.resx">
+      <DependentUpon>202311281201478_ProductObligatoryFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

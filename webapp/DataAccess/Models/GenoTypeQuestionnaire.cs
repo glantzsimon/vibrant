@@ -655,23 +655,23 @@ namespace K9.DataAccessLayer.Models
         {
             var total = 0;
 
-            if (LeftThumprintType == RightThumprintType)
+            if (LeftThumprintType == RightThumprintType && LeftThumprintType != EFingerprintType.NotSure)
             {
                 total++;
             }
-            if (LeftIndexFingerprintType == RightIndexFingerprintType)
+            if (LeftIndexFingerprintType == RightIndexFingerprintType && LeftIndexFingerprintType != EFingerprintType.NotSure)
             {
                 total++;
             }
-            if (LeftMiddleFingerprintType == RightMiddleFingerprintType)
+            if (LeftMiddleFingerprintType == RightMiddleFingerprintType && LeftMiddleFingerprintType != EFingerprintType.NotSure)
             {
                 total++;
             }
-            if (LeftRingFingerprintType == RightRingFingerprintType)
+            if (LeftRingFingerprintType == RightRingFingerprintType && LeftRingFingerprintType != EFingerprintType.NotSure)
             {
                 total++;
             }
-            if (LeftLittleFingerprintType == RightLittleFingerprintType)
+            if (LeftLittleFingerprintType == RightLittleFingerprintType && LeftLittleFingerprintType != EFingerprintType.NotSure)
             {
                 total++;
             }
@@ -680,7 +680,7 @@ namespace K9.DataAccessLayer.Models
         }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IndexFingersMatchLabel)]
-        public bool IndexFingerprintsMatch => LeftIndexFingerprintType == RightIndexFingerprintType;
+        public bool IndexFingerprintsMatch => LeftIndexFingerprintType == RightIndexFingerprintType && LeftIndexFingerprintType != EFingerprintType.NotSure;
 
         [UIHint("FingerPrint")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftThumprintLabel)]

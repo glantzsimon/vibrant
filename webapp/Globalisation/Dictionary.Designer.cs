@@ -5919,6 +5919,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you currently experience low vigour, fatigue or sluggishness?.
+        /// </summary>
+        public static string LowVigourLabel {
+            get {
+                return ResourceManager.GetString("LowVigourLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lungs.
         /// </summary>
         public static string Lungs {
@@ -6423,6 +6432,15 @@ namespace K9.Globalisation {
         public static string Negative {
             get {
                 return ResourceManager.GetString("Negative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you currently experience anxiety, fear, panic attacks or nervousness?.
+        /// </summary>
+        public static string NervousnessLabel {
+            get {
+                return ResourceManager.GetString("NervousnessLabel", resourceCulture);
             }
         }
         
@@ -9590,6 +9608,15 @@ namespace K9.Globalisation {
         public static string SpaceBetweenThighsTitle {
             get {
                 return ResourceManager.GetString("SpaceBetweenThighsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you currently experience muscle spasms anywhere in the body?.
+        /// </summary>
+        public static string SpasmsLabel {
+            get {
+                return ResourceManager.GetString("SpasmsLabel", resourceCulture);
             }
         }
         
