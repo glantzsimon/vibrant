@@ -41,7 +41,14 @@
             @Html.DisplayFor(e => Model.ProductPacks[i].Amount)
         </div>
         <div class="col-sm-4">
-            @Html.DisplayFor(e => Model.ProductPacks[i].TotalInternationalPrice)
+            @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
+            {
+                @Html.DisplayFor(e => Model.ProductPacks[i].TotalPrice)
+            }
+            else
+            {
+                @Html.DisplayFor(e => Model.ProductPacks[i].TotalInternationalPrice)
+            }
         </div>
     </div>
 
@@ -55,6 +62,14 @@
         <strong>@Model.GetTotalProductPacks()</strong>
     </div>
     <div class="col-sm-4">
-        <strong>@Html.DisplayFor(e => Model.TotalInternationalProductPacksPrice)</strong>
+        @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
+        {
+            <strong>@Html.DisplayFor(e => Model.TotalProductPacksPrice)</strong>
+        }
+        else
+        {
+            <strong>@Html.DisplayFor(e => Model.TotalInternationalProductPacksPrice)</strong>
+        }
+
     </div>
 </div>

@@ -71,7 +71,14 @@
     <div class="col-sm-3">
     </div>
     <div class="col-sm-3">
-        <strong>@Html.DisplayFor(e => Model.TotalInternationalProductsPrice)</strong>
+        @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
+        {
+            <strong>@Html.DisplayFor(e => Model.TotalProductsPrice)</strong>
+        }
+        else
+        {
+            <strong>@Html.DisplayFor(e => Model.TotalInternationalProductsPrice)</strong> 
+        }
     </div>
 </div>
 
