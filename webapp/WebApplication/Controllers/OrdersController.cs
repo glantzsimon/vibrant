@@ -205,6 +205,8 @@ namespace K9.WebApplication.Controllers
                 Repository.Update(item);
             }
 
+            _orderService.ClearCache();
+
             return RedirectToAction("OrderReview", new { id = order.Id });
         }
 
