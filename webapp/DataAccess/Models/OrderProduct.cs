@@ -54,26 +54,31 @@ namespace K9.DataAccessLayer.Models
 
         private double GetPriceWithDiscount()
         {
-            switch (PriceTier)
+            if (Product != null)
             {
-                case EPriceTier.Discount1:
-                    return Product.PriceDiscount1;
+                switch (PriceTier)
+                {
+                    case EPriceTier.Discount1:
+                        return Product.PriceDiscount1;
 
-                case EPriceTier.Discount2:
-                    return Product.PriceDiscount2;
+                    case EPriceTier.Discount2:
+                        return Product.PriceDiscount2;
 
-                case EPriceTier.SmallPack:
-                    return Product.PriceSmallPack;
+                    case EPriceTier.SmallPack:
+                        return Product.PriceSmallPack;
 
-                case EPriceTier.SmallPackDiscount1:
-                    return Product.PriceSmallPackDiscount1;
+                    case EPriceTier.SmallPackDiscount1:
+                        return Product.PriceSmallPackDiscount1;
 
-                case EPriceTier.SmallPackDiscount2:
-                    return Product.PriceSmallPackDiscount2;
+                    case EPriceTier.SmallPackDiscount2:
+                        return Product.PriceSmallPackDiscount2;
 
-                default:
-                    return Product?.Price ?? 0;
+                    default:
+                        return Product?.Price ?? 0;
+                }
             }
+
+            return 0;
         }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
