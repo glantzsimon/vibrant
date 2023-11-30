@@ -133,14 +133,14 @@ namespace K9.WebApplication.Services
             foreach (var orderProduct in order.Products)
             {
                 orderProduct.Product = GetProducts().FirstOrDefault(e => e.Id == orderProduct.ProductId);
-                orderProduct.PriceTier = order.Client.PriceTier;
+                orderProduct.PriceTier = orderProduct.PriceTier != EPriceTier.Regular ? orderProduct.PriceTier : order.Client.PriceTier;
             }
 
             order.ProductPacks = _orderProductPacksRepository.Find(e => e.OrderId == order.Id).ToList();
             foreach (var orderProductPack in order.ProductPacks)
             {
                 orderProductPack.ProductPack = GetProductPacks().FirstOrDefault(e => e.Id == orderProductPack.ProductPackId);
-                orderProductPack.PriceTier = order.Client.PriceTier;
+                orderProductPack.PriceTier = orderProductPack.PriceTier != EPriceTier.Regular ? orderProductPack.PriceTier : order.Client.PriceTier;
 
                 orderProductPack.ProductPack.Products = GetProductPackProducts()
                     .Where(e => e.ProductPackId == orderProductPack.ProductPackId).ToList();
