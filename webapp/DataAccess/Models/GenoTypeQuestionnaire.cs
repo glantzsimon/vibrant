@@ -78,6 +78,7 @@ namespace K9.DataAccessLayer.Models
         #region Blood Analysis
 
         [UIHint("BloodGroup")]
+        [QuestionCategory(Category = EQuestionCategory.BloodAnalysis)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BloodGroupQuestionLabel)]
         public EBloodGroup? BloodGroup { get; set; }
 
@@ -86,6 +87,7 @@ namespace K9.DataAccessLayer.Models
         public EBloodGroup? BloodGroupDisplay => BloodGroup;
 
         [UIHint("RhesusFactor")]
+        [QuestionCategory(Category = EQuestionCategory.BloodAnalysis)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RhesusFactorQuestionLabel)]
         public ERhesusFactor? RhesusFactor { get; set; }
 
@@ -109,29 +111,38 @@ namespace K9.DataAccessLayer.Models
             return results;
         }
 
-        public bool IsBloodAnalysisComplete() =>
-            BloodGroup.HasValue && RhesusFactor.HasValue;
+        public bool IsBloodAnalysisComplete() => IsCategoryComplete(e => e.Category == EQuestionCategory.BloodAnalysis);
 
         #endregion
 
         #region Acetylation
 
+        [Score(IsAcetylation = true)]
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Acetylation)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MedicationSensitivityLabel)]
         public EYesNo? SensitivityToMedications { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Acetylation)]
+        [Score(IsAcetylation = true)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CaffeineSensitivityLabel)]
         public EYesNo? SensitiveToCaffeine { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Acetylation)]
+        [Score(IsAcetylation = true)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CaffeineAffectsSleepLabel)]
         public EYesNo? CaffeineAffectsSleep { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Acetylation)]
+        [Score(IsAcetylation = true)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SensitiveToMoldLabel)]
         public EYesNo? SensitiveToMold { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.Acetylation)]
+        [Score(IsAcetylation = true)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SensitiveToEnvironmentalChemicalsLabel)]
         public EYesNo? SensitiveToEnvironmentalChemicals { get; set; }
@@ -163,44 +174,11 @@ namespace K9.DataAccessLayer.Models
             return results;
         }
 
-        public bool IsAcetylationStatusComplete() =>
-            SensitivityToMedications.HasValue &&
-            SensitiveToCaffeine.HasValue &&
-            CaffeineAffectsSleep.HasValue &&
-            SensitiveToMold.HasValue &&
-            SensitiveToEnvironmentalChemicals.HasValue;
+        public bool IsAcetylationStatusComplete() => IsCategoryComplete(e => e.Category == EQuestionCategory.Acetylation);
 
         public int GetAcetulationScore()
         {
-            double max = 5;
-            double score = 0;
-
-            if (SensitivityToMedications == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (SensitiveToCaffeine == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (CaffeineAffectsSleep == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (SensitiveToMold == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (SensitiveToEnvironmentalChemicals == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            return (int)Math.Ceiling(score / 5 * 100);
+            return GetScore(e => e.IsAcetylation);
         }
 
         #endregion
@@ -208,30 +186,37 @@ namespace K9.DataAccessLayer.Models
         #region Biometrics
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StandingHeightLabel)]
         public double StandingHeight { get; set; }
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SittingHeightLabel)]
         public double SittingHeight { get; set; }
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChairHeightLabel)]
         public double ChairHeight { get; set; }
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TorsoLengthLabel)]
         public double TorsoLength => SittingHeight - ChairHeight;
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TotalLegLengthLabel)]
         public double TotalLegLength => StandingHeight - TorsoLength;
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LowerLegLengthLabel)]
         public double LowerLegLength { get; set; }
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.UpperLegLengthLabel)]
         public double UpperLegLength { get; set; }
 
@@ -249,23 +234,26 @@ namespace K9.DataAccessLayer.Models
         public bool IsLowerLegLengthGreaterThanUpperLegLength() => LowerLegLength >= UpperLegLength;
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftIndexFingerLengthQuestionLabel)]
         public double IndexFingerLengthLeft { get; set; }
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightIndexFingerLengthQuestionLabel)]
         public double IndexFingerLengthRight { get; set; }
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftRingFingerLengthQuestionLabel)]
         public double RingFingerLengthLeft { get; set; }
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightRingFingerLengthQuestionLabel)]
         public double RingFingerLengthRight { get; set; }
 
-        [Display(ResourceType = typeof(Dictionary),
-            Name = Strings.Labels.IsLeftIndexFingerLongerThanLeftRingFingerLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsLeftIndexFingerLongerThanLeftRingFingerLabel)]
         public bool LeftIndexFingerIsLongerThanRingFinger => IsIndexFingerLongerThanRingFingerLeft();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsLeftIndexFingerLongerThanLeftRingFingerLabel)]
@@ -285,6 +273,7 @@ namespace K9.DataAccessLayer.Models
             !IsIndexFingerLongerThanRingFingerLeft() && !IsIndexFingerLongerThanRingFingerRight();
 
         [UIHint("GapSize")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SpaceBetweenThighsLabel)]
         public EGapSize? SpaceBetweenThighs { get; set; }
 
@@ -324,10 +313,12 @@ namespace K9.DataAccessLayer.Models
         }
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WaistSizeLabel)]
         public double WaistSize { get; set; }
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HipSizeLabel)]
         public double HipSize { get; set; }
 
@@ -402,6 +393,7 @@ namespace K9.DataAccessLayer.Models
         }
 
         [UIHint("GonialAngle")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GonialAngleQuestionLabel)]
         public EGonialAngle? GonialAngle { get; set; }
 
@@ -458,10 +450,12 @@ namespace K9.DataAccessLayer.Models
         }
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HeadWidthQuestionLabel)]
         public double HeadWidth { get; set; }
 
         [UIHint("Measurement")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, MustBeGreaterThanZero = true )]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HeadLengthQuestionLabel)]
         public double HeadLength { get; set; }
 
@@ -497,14 +491,17 @@ namespace K9.DataAccessLayer.Models
         }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TendonsAndSinewsVisibleLabel)]
         public EYesNo? TendonsAndSinewsVisible { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WristsAndAnklesPaddedLabel)]
         public EYesNo? WristsAndAnklesLookPadded { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GainsMuscleEasilyLabel)]
         public EYesNo? GainsMuscleEasily { get; set; }
 
@@ -549,10 +546,12 @@ namespace K9.DataAccessLayer.Models
         }
 
         [UIHint("SomatoType")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SomatoTypeQuestionLabel)]
         public ESomatoType? SomatoType { get; set; }
 
         [UIHint("WristCircumference")]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WristCircumferenceQuestionLabel)]
         public EWristCircumference? WristCircumference { get; set; }
 
@@ -616,32 +615,7 @@ namespace K9.DataAccessLayer.Models
             return results;
         }
 
-        public bool IsBiometricsComplete() =>
-            StandingHeight > 0 &&
-            SittingHeight > 0 &&
-            ChairHeight > 0 &&
-            TorsoLength > 0 &&
-            TotalLegLength > 0 &&
-            LowerLegLength > 0 &&
-            UpperLegLength > 0 &&
-            IndexFingerLengthLeft > 0 &&
-            IndexFingerLengthRight > 0 &&
-            RingFingerLengthLeft > 0 &&
-            RingFingerLengthRight > 0 &&
-            WaistSize > 0 &&
-            HipSize > 0 &&
-            HeadWidth > 0 &&
-            HeadLength > 0 &&
-
-            TendonsAndSinewsVisible.HasValue &&
-            WristsAndAnklesLookPadded.HasValue &&
-            GainsMuscleEasily.HasValue &&
-
-            SpaceBetweenThighs.HasValue &&
-
-            GonialAngle.HasValue &&
-
-            SomatoType.HasValue;
+        public bool IsBiometricsComplete() => IsCategoryComplete(e => e.Category == EQuestionCategory.Biometrics);
 
         #endregion
 
@@ -683,46 +657,57 @@ namespace K9.DataAccessLayer.Models
         public bool IndexFingerprintsMatch => LeftIndexFingerprintType == RightIndexFingerprintType && LeftIndexFingerprintType != EFingerprintType.NotSure;
 
         [UIHint("FingerPrint")]
+        [QuestionCategory(Category = EQuestionCategory.Dermatoglyphics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftThumprintLabel)]
         public EFingerprintType? LeftThumprintType { get; set; }
 
         [UIHint("FingerPrint")]
+        [QuestionCategory(Category = EQuestionCategory.Dermatoglyphics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftIndexFingerprintLabel)]
         public EFingerprintType? LeftIndexFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
+        [QuestionCategory(Category = EQuestionCategory.Dermatoglyphics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftMiddleFingerprintLabel)]
         public EFingerprintType? LeftMiddleFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
+        [QuestionCategory(Category = EQuestionCategory.Dermatoglyphics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftRingFingerprintLabel)]
         public EFingerprintType? LeftRingFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
+        [QuestionCategory(Category = EQuestionCategory.Dermatoglyphics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeftLittleFingerprintLabel)]
         public EFingerprintType? LeftLittleFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
+        [QuestionCategory(Category = EQuestionCategory.Dermatoglyphics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightThumprintLabel)]
         public EFingerprintType? RightThumprintType { get; set; }
 
         [UIHint("FingerPrint")]
+        [QuestionCategory(Category = EQuestionCategory.Dermatoglyphics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightIndexFingerprintLabel)]
         public EFingerprintType? RightIndexFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
+        [QuestionCategory(Category = EQuestionCategory.Dermatoglyphics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightMiddleFingerprintLabel)]
         public EFingerprintType? RightMiddleFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
+        [QuestionCategory(Category = EQuestionCategory.Dermatoglyphics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightRingFingerprintLabel)]
         public EFingerprintType? RightRingFingerprintType { get; set; }
 
         [UIHint("FingerPrint")]
+        [QuestionCategory(Category = EQuestionCategory.Dermatoglyphics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RightLittleFingerprintLabel)]
         public EFingerprintType? RightLittleFingerprintType { get; set; }
 
         [UIHint("Handedness")]
+        [QuestionCategory(Category = EQuestionCategory.Dermatoglyphics)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HandednessLabel)]
         public EHandedness? Handedness { get; set; }
 
@@ -825,25 +810,14 @@ namespace K9.DataAccessLayer.Models
             return fingerPrints.Count(e => e == type);
         }
 
-        public bool IsDermatoglyphicsComplete() =>
-            LeftThumprintType.HasValue &&
-            LeftIndexFingerprintType.HasValue &&
-            LeftMiddleFingerprintType.HasValue &&
-            LeftRingFingerprintType.HasValue &&
-            LeftLittleFingerprintType.HasValue &&
-            RightThumprintType.HasValue &&
-            RightIndexFingerprintType.HasValue &&
-            RightMiddleFingerprintType.HasValue &&
-            RightRingFingerprintType.HasValue &&
-            RightLittleFingerprintType.HasValue &&
-
-            Handedness.HasValue;
+        public bool IsDermatoglyphicsComplete() => IsCategoryComplete(e => e.Category == EQuestionCategory.Dermatoglyphics);
 
         #endregion
 
         #region Dentition
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Dentition)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IncisorShovellingLabel)]
         public EYesNo? IncisorShovelling { get; set; }
 
@@ -865,14 +839,14 @@ namespace K9.DataAccessLayer.Models
             return results;
         }
 
-        public bool IsDentitionComplete() =>
-            IncisorShovelling.HasValue;
+        public bool IsDentitionComplete() => IsCategoryComplete(e => e.Category == EQuestionCategory.Dentition);
 
         #endregion
 
         #region Taster Status
 
         [UIHint("PropTaste")]
+        [QuestionCategory(Category = EQuestionCategory.TasterStatus)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CruciferousVegetablesVeryBitterLabel)]
         public EPropTaste? CruciferousVegetablesTasteVeryBitter { get; set; }
 
@@ -927,36 +901,37 @@ namespace K9.DataAccessLayer.Models
             return results;
         }
 
-        public bool IsTasterStatusComplete() => CruciferousVegetablesTasteVeryBitter.HasValue;
+        public bool IsTasterStatusComplete() => IsCategoryComplete(e => e.Category == EQuestionCategory.TasterStatus);
 
         #endregion
 
         #region Family History
 
-        [Score(NeurologicalHealth = true, Cognition = true)]
+        [Score(NeurologicalHealth = true, Cognition = true, IsFamilyHistory = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.FamilyHistory)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfNeurologicalDiseaseLabel)]
         public EYesNo? FamilyHistoryOfNeurologicalDisease { get; set; }
 
-        [Score(CardioVascularHealth = true)]
+        [Score(CardioVascularHealth = true, IsFamilyHistory = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.FamilyHistory)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfHeartDiseaseStrokeOrDiabetesLabel)]
         public EYesNo? FamilyHistoryOfHeartDiseaseStrokeOrDiabetes { get; set; }
 
-        [Score(DNAIntegrity = true)]
+        [Score(DNAIntegrity = true, IsFamilyHistory = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.FamilyHistory)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfCancerLabel)]
         public EYesNo? FamilyHistoryOfCancer { get; set; }
 
-        [Score(AntiInflammatory = true)]
+        [Score(AntiInflammatory = true, IsFamilyHistory = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.FamilyHistory)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfAutoimmuneDiseaseLabel)]
         public EYesNo? FamilyHistoryOfAutoimmuneDisease { get; set; }
 
+        [Score(IsFamilyHistory = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.FamilyHistory)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FamilyHistoryOfSubstanceDependencyLabel)]
@@ -1000,44 +975,11 @@ namespace K9.DataAccessLayer.Models
             return results;
         }
 
-        public bool IsFamilyHistoryComplete() =>
-            FamilyHistoryOfNeurologicalDisease.HasValue &&
-            FamilyHistoryOfHeartDiseaseStrokeOrDiabetes.HasValue &&
-            FamilyHistoryOfCancer.HasValue &&
-            FamilyHistoryOfAutoimmuneDisease.HasValue &&
-            FamilyHistoryOfSubstanceDependency.HasValue;
+        public bool IsFamilyHistoryComplete() => IsCategoryComplete(e => e.Category == EQuestionCategory.FamilyHistory);
 
         public int GetFamilyHistoryScore()
         {
-            double max = 5;
-            double score = 0;
-
-            if (FamilyHistoryOfNeurologicalDisease == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (FamilyHistoryOfHeartDiseaseStrokeOrDiabetes == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (FamilyHistoryOfCancer == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (FamilyHistoryOfAutoimmuneDisease == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (FamilyHistoryOfSubstanceDependency == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            return (int)Math.Ceiling(score / 5 * 100);
+            return GetScore(e => e.IsFamilyHistory);
         }
 
         public List<PropertyInfo> FamilyHistoryProperties() => this

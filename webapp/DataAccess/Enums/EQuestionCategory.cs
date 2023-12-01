@@ -4,6 +4,14 @@
     {
         Cbs,
         FamilyHistory,
-        GeneralHealth
+        GeneralHealth,
+        PersonalDetails,
+        Dentition,
+        Acetylation,
+        Biometrics,
+        BloodAnalysis,
+        Dermatoglyphics,
+        Doshas,
+        TasterStatus
     }
 }

@@ -262,6 +262,7 @@
             public const string ProductPackLabel = "ProductPackLabel";
             public const string ProductPacksLabel = "ProductPacksLabel";
 
+            public const string IrritableBowerlLabel = "IrritableBowerlLabel";
             public const string BloatingLabel = "BloatingLabel";
             public const string GasLabel = "GasLabel";
             public const string LooseStoolLabel ="LooseStoolLabel";
@@ -622,6 +623,13 @@
             public const string NervousnessLabel = "NervousnessLabel";
             public const string SpasmsLabel = "SpasmsLabel";
             public const string LowVigourLabel = "LowVigourLabel";
+            public const string WeightLossLabel = "WeightLossLabel";
+            public const string NeuropathicPainLabel = "NeuropathicPainLabel";
+            public const string DryFlakySkinLabel = "DryFlakySkinLabel";
+            public const string IrregularDigestionLabel = "IrregularDigestionLabel";
+            public const string TroubleFallingAsleepLabel = "TroubleFallingAsleepLabel";
+            public const string FrettingLabel = "FrettingLabel";
+            public const string UlcersAcidRefluxLabel = "FrettingLabel";
 
             public const string MembershipOption = "MembershipOption";
             public const string ProfileReading = "ProfileReading";

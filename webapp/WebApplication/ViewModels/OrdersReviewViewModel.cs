@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.ViewModels
 {
@@ -38,7 +39,7 @@ namespace K9.WebApplication.ViewModels
 
         public List<OrderProductPack> GetOrderProductPacksForProductPack(int productPackId) => AllOrderProductPacks.Where(e => e.ProductPackId == productPackId).ToList();
 
-        private List<OrderProduct> AllOrderProducts => GetOrdersToMake().SelectMany(e => e.Products).ToList();
+        private List<OrderProduct> AllOrderProducts => GetOrdersToMake().SelectMany(e => e.Products.Where(p => p.Product.ProductType != EProductType.Other)).ToList();
         
         private List<Product> GetAllProducts() => AllOrderProducts?.Select(e => e.Product).ToList() ?? new List<Product>();
         

@@ -8,23 +8,50 @@ namespace K9.WebApplication.Services
         public int GetScore(HealthQuestionnaire hq, EGenoType genoType, GenoTypeBase item)
         {
             var score = 0;
-            var dosha = hq.GetDoshas().GetDosha();
-            
-            if (item.VataDosha && dosha == EDosha.Vata || dosha == EDosha.KaphaVata || dosha == EDosha.VataPitta )
+            var threshold = 22;
+            var prakrutiDoshas = hq.GetPrakrutiDoshas();
+            var prakruti = prakrutiDoshas.GetDosha();
+            var vikruti = hq.GetVikrutiDoshas();
+
+            if (item.VataDosha)
             {
-                score += 7;
+                if (prakruti == EDosha.Vata || prakruti == EDosha.KaphaVata || prakruti == EDosha.VataPitta)
+                {
+                    score += 7;
+                }
+
+                if (vikruti.VataDoshaScore - prakrutiDoshas.VataDoshaScore > threshold)
+                {
+                    score += 7;
+                }
             }
 
-            if (item.PittaDosha && dosha == EDosha.Pitta || dosha == EDosha.PittaKapha || dosha == EDosha.VataPitta )
+            if (item.PittaDosha)
             {
-                score += 7;
+                if (prakruti == EDosha.Pitta || prakruti == EDosha.PittaKapha || prakruti == EDosha.VataPitta)
+                {
+                    score += 7;
+                }
+
+                if (vikruti.PittaDoshaScore - prakrutiDoshas.PittaDoshaScore > threshold)
+                {
+                    score += 7;
+                }
             }
 
-            if (item.KaphaDosha && dosha == EDosha.Kapha || dosha == EDosha.KaphaVata || dosha == EDosha.PittaKapha )
+            if (item.KaphaDosha)
             {
-                score += 7;
+                if (prakruti == EDosha.Kapha || prakruti == EDosha.KaphaVata || prakruti == EDosha.PittaKapha)
+                {
+                    score += 7;
+                }
+                
+                if (vikruti.KaphaDoshaScore - prakrutiDoshas.KaphaDoshaScore > threshold)
+                {
+                    score += 7;
+                }
             }
-            
+
             return score;
         }
     }

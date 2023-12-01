@@ -7,5 +7,7 @@ namespace K9.DataAccessLayer.Attributes
     public class QuestionCategoryAttribute : Attribute
     {
         public EQuestionCategory Category { get; set; }
+        public bool AllowNull { get; set; }
+        public bool MustBeGreaterThanZero { get; set; }
     }
 }

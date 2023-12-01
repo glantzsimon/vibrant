@@ -20,13 +20,13 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WhiteSpotsOnNailsLabel)]
         public EYesNo? WhiteSpotsOnNails { get; set; }
 
-        [Score(CardioVascularHealth = true, BloodBuilding = true, Restorative = true)]
+        [Score(CardioVascularHealth = true, BloodBuilding = true, Restorative = true, IsYin = true, VataDosha = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AnaemiaLabel)]
         public EYesNo? Anaemia { get; set; }
 
-        [Score(Restorative = true)]
+        [Score(Restorative = true, VataDosha = true, IsYin = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PostExertionalMalaiseLabel)]
@@ -38,6 +38,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CrampsTremorsTwitchesLabel)]
         public EYesNo? CrampsTremorsTwitches { get; set; }
 
+        [Score(VataDosha = true, IsYin = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HistoryOfchronicFatigueOrFibromyalgiaLabel)]
@@ -54,13 +55,14 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.POTSLabel)]
         public EYesNo? POTS { get; set; }
 
-        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, HormoneBalance = true,  AntiInflammatory = true, Vitality = true, Restorative = true)]
+        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, HormoneBalance = true,  AntiInflammatory = true, Vitality = true, Restorative = true,
+            IsYin = true, VataDosha = true, ScoreFactor = 2)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DepressionAnxietyLabel)]
         public EYesNo? DepressionAnxiety { get; set; }
 
-        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, Detoxification = true, StressRelief = true, CellularHealth = true)]
+        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, Detoxification = true, StressRelief = true, CellularHealth = true, VataDosha = true, IsYin = true, ScoreFactor = 2)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MemoryProblemsLabel)]
@@ -72,25 +74,25 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ConcentrationProblemsLabel)]
         public EYesNo? ConcentrationProblems { get; set; }
 
-        [Score(Cognition = true, NeurologicalHealth = true, Mood = true)]
+        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, VataDosha = true, IsYin = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BrainFogLabel)]
         public EYesNo? BrainFog { get; set; }
 
-        [Score(Sleep = true, StressRelief = true, Cognition = true)]
+        [Score(Sleep = true, StressRelief = true, Cognition = true, NeurologicalHealth = true, VataDosha = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InsomniaLabel)]
         public EYesNo? Insomnia { get; set; }
 
-        [Score(Restorative = true, Detoxification = true, UrologicalHealth = true, Immunity = true)]
+        [Score(Restorative = true, Detoxification = true, UrologicalHealth = true, Immunity = true, IsYin = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NightSweatsLabel)]
         public EYesNo? NightSweats { get; set; }
 
-        [Score(HormoneBalance = true, StressRelief = true, Restorative = true, Sleep = true)]
+        [Score(HormoneBalance = true, StressRelief = true, Restorative = true, Sleep = true, VataDosha = true, IsYin = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LowMorningEnergyLabel)]
@@ -108,6 +110,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InnerTensionLabel)]
         public EYesNo? InnerTension { get; set; }
 
+        [Score(NeurologicalHealth = true, VataDosha = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LoudNoisesBrightLightsLabel)]
@@ -168,13 +171,13 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FrequentNighttimeUrinationLabel)]
         public EYesNo? FrequentNighttimeUrination { get; set; }
 
-        [Score(Immunity = true)]
+        [Score(Immunity = true, IsYang = true, PittaDosha = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HerpesLabel)]
         public EYesNo? Herpes { get; set; }
 
-        [Score(Cognition = true, Mood = true, Sleep = true, NeurologicalHealth = true)]
+        [Score(Cognition = true, Mood = true, Sleep = true, NeurologicalHealth = true, PittaDosha = true, IsYang = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IrritabilityLabel)]
@@ -343,35 +346,6 @@ namespace K9.DataAccessLayer.Models
 
         #endregion
 
-        public bool IsCbsAndMethylationComplete() =>
-            WhiteSpotsOnNails.HasValue &&
-            Anaemia.HasValue &&
-            PostExertionalMalaise.HasValue &&
-            CrampsTremorsTwitches.HasValue &&
-            HistoryOfchronicFatigueOrFibromyalgia.HasValue &&
-            Migraines.HasValue &&
-            POTS.HasValue &&
-            DepressionAnxiety.HasValue &&
-            BrainFog.HasValue &&
-            Insomnia.HasValue &&
-            NightSweats.HasValue &&
-            LowMorningEnergy.HasValue &&
-            RacingThoughts.HasValue &&
-            InnerTension.HasValue &&
-            LoudNoisesBrightLights.HasValue &&
-            CoarseThinEyebrows.HasValue &&
-            AmmoniaSmell.HasValue &&
-            OCD.HasValue &&
-            SugarCrashes.HasValue &&
-            ChronicViralInfections.HasValue &&
-            SpiderVeins.HasValue &&
-            StretchMarks.HasValue &&
-            FrequentNighttimeUrination.HasValue &&
-            Herpes.HasValue &&
-            SulfiteSensitivity.HasValue &&
-            MsgSensitivity.HasValue &&
-            MemoryProblems.HasValue &&
-            ConcentrationProblems.HasValue &&
-            Irritability.HasValue;
+        public bool IsCbsAndMethylationComplete() => IsCategoryComplete(e => e.Category == EQuestionCategory.Cbs);
     }
 }

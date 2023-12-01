@@ -10,7 +10,7 @@
 @model HealthQuestionnaire
 
 @{
-    var doshas = Model.GetDoshas();
+    var doshas = Model.GetPrakrutiDoshas();
     var dosha = doshas.GetDosha();
     var doshaName = dosha.GetAttribute<EnumDescriptionAttribute>().Name;
     var vataColor = Model.GetColorFromScore(doshas.GetVataDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;

@@ -3943,14 +3943,29 @@
   <data name="CompleteOrders" xml:space="preserve">
     <value>Completed Orders</value>
   </data>
+  <data name="DryFlakySkinLabel" xml:space="preserve">
+    <value>Do you have any dry, flaxy skin or weak, pealing or cracked nails?</value>
+  </data>
+  <data name="FrettingLabel" xml:space="preserve">
+    <value>Do you often find yourself ruminating, fretting or overthinking?</value>
+  </data>
   <data name="IncompleteOrders" xml:space="preserve">
     <value>Incomplete Orders</value>
   </data>
+  <data name="IrregularDigestionLabel" xml:space="preserve">
+    <value>Is your digestion irregular and unpredictable?</value>
+  </data>
+  <data name="IrritableBowerlLabel" xml:space="preserve">
+    <value>Do you experience symptoms of IBS?</value>
+  </data>
   <data name="LowVigourLabel" xml:space="preserve">
-    <value>Do you currently experience low vigour, fatigue or sluggishness?</value>
+    <value>Do you experience low vigour, fatigue or sluggishness?</value>
   </data>
   <data name="NervousnessLabel" xml:space="preserve">
-    <value>Do you currently experience anxiety, fear, panic attacks or nervousness?</value>
+    <value>Do you experience anxiety, fear, panic attacks or nervousness?</value>
+  </data>
+  <data name="NeuropathicPainLabel" xml:space="preserve">
+    <value>Do you experience any numbness, tingling or neuropathic pain anywhere in the body?</value>
   </data>
   <data name="OrdersOnHold" xml:space="preserve">
     <value>Orders On-Hold</value>
@@ -3959,9 +3974,15 @@
     <value>Proteins</value>
   </data>
   <data name="SpasmsLabel" xml:space="preserve">
-    <value>Do you currently experience muscle spasms anywhere in the body?</value>
+    <value>Do you experience muscle spasms or twitches anywhere in the body?</value>
   </data>
   <data name="ThisWillTakeTime" xml:space="preserve">
     <value>Please note: once you submit the genetic profile test, it can take several minutes for the data to be processed. Please do not close your browser window until the process is complete (which is shown on screen).</value>
+  </data>
+  <data name="TroubleFallingAsleepLabel" xml:space="preserve">
+    <value>Do you have difficulty falling asleep and / or do you frequently wake up in the early hours, epsecially between 2 and 6?</value>
+  </data>
+  <data name="WeightLossLabel" xml:space="preserve">
+    <value>Do you find it difficult to put on weight and do you lose it easily, especially when stressed?</value>
   </data>
 </root>

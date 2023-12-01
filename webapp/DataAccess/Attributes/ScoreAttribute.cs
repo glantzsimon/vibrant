@@ -49,6 +49,13 @@ namespace K9.DataAccessLayer.Attributes
         public bool Fruitarian { get; set; }
         public bool Carnivore { get; set; }
         public bool Pescatarian { get; set; }
+
+        public int ScoreFactor { get; set; } = 1;
+        public bool IsYin { get; set; }
+        public bool IsYang { get; set; }
+        public bool IsInflammation { get; set; }
+        public bool IsAcetylation { get; set; }
+        public bool IsFamilyHistory { get; set; }
     }
 
 }

@@ -2747,6 +2747,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you have any dry, flaxy skin or weak, pealing or cracked nails?.
+        /// </summary>
+        public static string DryFlakySkinLabel {
+            get {
+                return ResourceManager.GetString("DryFlakySkinLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dry, rough, brittle or thin.
         /// </summary>
         public static string DrySkin {
@@ -3700,6 +3709,15 @@ namespace K9.Globalisation {
         public static string FrequentNighttimeUrinationLabel {
             get {
                 return ResourceManager.GetString("FrequentNighttimeUrinationLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you often find yourself ruminating, fretting or overthinking?.
+        /// </summary>
+        public static string FrettingLabel {
+            get {
+                return ResourceManager.GetString("FrettingLabel", resourceCulture);
             }
         }
         
@@ -4943,11 +4961,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is your digestion irregular and unpredictable?.
+        /// </summary>
+        public static string IrregularDigestionLabel {
+            get {
+                return ResourceManager.GetString("IrregularDigestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you often feel irritable?.
         /// </summary>
         public static string IrritabilityLabel {
             get {
                 return ResourceManager.GetString("IrritabilityLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you experience symptoms of IBS?.
+        /// </summary>
+        public static string IrritableBowerlLabel {
+            get {
+                return ResourceManager.GetString("IrritableBowerlLabel", resourceCulture);
             }
         }
         
@@ -5919,7 +5955,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you currently experience low vigour, fatigue or sluggishness?.
+        ///   Looks up a localized string similar to Do you experience low vigour, fatigue or sluggishness?.
         /// </summary>
         public static string LowVigourLabel {
             get {
@@ -6436,7 +6472,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you currently experience anxiety, fear, panic attacks or nervousness?.
+        ///   Looks up a localized string similar to Do you experience anxiety, fear, panic attacks or nervousness?.
         /// </summary>
         public static string NervousnessLabel {
             get {
@@ -6450,6 +6486,15 @@ namespace K9.Globalisation {
         public static string NeurologicalHealth {
             get {
                 return ResourceManager.GetString("NeurologicalHealth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you experience any numbness, tingling or neuropathic pain anywhere in the body?.
+        /// </summary>
+        public static string NeuropathicPainLabel {
+            get {
+                return ResourceManager.GetString("NeuropathicPainLabel", resourceCulture);
             }
         }
         
@@ -9612,7 +9657,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you currently experience muscle spasms anywhere in the body?.
+        ///   Looks up a localized string similar to Do you experience muscle spasms or twitches anywhere in the body?.
         /// </summary>
         public static string SpasmsLabel {
             get {
@@ -10878,6 +10923,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you have difficulty falling asleep and / or do you frequently wake up in the early hours, epsecially between 2 and 6?.
+        /// </summary>
+        public static string TroubleFallingAsleepLabel {
+            get {
+                return ResourceManager.GetString("TroubleFallingAsleepLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tuesday.
         /// </summary>
         public static string Tuesday {
@@ -11716,6 +11770,15 @@ namespace K9.Globalisation {
         public static string WeightLoss {
             get {
                 return ResourceManager.GetString("WeightLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you find it difficult to put on weight and do you lose it easily, especially when stressed?.
+        /// </summary>
+        public static string WeightLossLabel {
+            get {
+                return ResourceManager.GetString("WeightLossLabel", resourceCulture);
             }
         }
         
