@@ -4,17 +4,17 @@ namespace K9.DataAccessLayer.Models
 {
     public class Doshas
     {
-        private const double triDoshaBoundary = 0.31;
-        private const double dualBoundary = 0.42;
-        private const double singleBoundary = 0.54;
+        private const double triDoshaBoundary = 31;
+        private const double dualBoundary = 42;
+        private const double singleBoundary = 54;
 
         public double VataDoshaScore { get; set; }
         public double PittaDoshaScore { get; set; }
         public double KaphaDoshaScore { get; set; }
 
-        public int GetVataDoshaPercentage() => (int)(VataDoshaScore * 100);
-        public int GetPittaDoshaPercentage() => (int)(PittaDoshaScore * 100);
-        public int GetKaphaDoshaPercentage() => (int)(KaphaDoshaScore * 100);
+        public int GetVataDoshaPercentage() => (int)(VataDoshaScore );
+        public int GetPittaDoshaPercentage() => (int)(PittaDoshaScore );
+        public int GetKaphaDoshaPercentage() => (int)(KaphaDoshaScore);
 
         public EDosha GetDosha()
         {

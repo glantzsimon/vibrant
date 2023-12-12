@@ -157,7 +157,7 @@ namespace K9.DataAccessLayer.Models
                 }
             }
 
-            var score = yesses.Count > 0 ? totalYesses / totalAnswers : 0;
+            var score = yesses.Count > 0 ? (((double)totalYesses / (double)totalAnswers)) : 0;
 
             return (int)Math.Ceiling((double)score * 100);
         }
@@ -888,7 +888,7 @@ namespace K9.DataAccessLayer.Models
 
         public static List<PropertyInfo> GetPropertiesWithScoreAttribute()
         {
-            return typeof(HealthQuestionnaire).GetProperties().Where(e => e.GetAttribute<ScoreAttribute>() != null && e.PropertyType == typeof(EYesNo)).ToList();
+            return typeof(HealthQuestionnaire).GetProperties().Where(e => e.GetAttribute<ScoreAttribute>() != null && e.PropertyType == typeof(EYesNo?) || e.PropertyType == typeof(EYesNo)).ToList();
         }
 
         public static List<PropertyInfo> GetPropertiesWithQuestionCategoryAttribute()

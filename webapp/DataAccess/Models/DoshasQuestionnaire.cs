@@ -250,9 +250,9 @@ namespace K9.DataAccessLayer.Models
 
             return new Doshas
             {
-                VataDoshaScore = vataCount > 0 ? (double)vataCount / totalDoshas : 0,
-                PittaDoshaScore = pittaCount > 0 ? (double)pittaCount / totalDoshas : 0,
-                KaphaDoshaScore = kaphaCount > 0 ? (double)kaphaCount / totalDoshas : 0
+                VataDoshaScore = vataCount > 0 ? (double)vataCount / totalDoshas * 100 : 0,
+                PittaDoshaScore = pittaCount > 0 ? (double)pittaCount / totalDoshas * 100: 0,
+                KaphaDoshaScore = kaphaCount > 0 ? (double)kaphaCount / totalDoshas * 100: 0
             };
         }
 
