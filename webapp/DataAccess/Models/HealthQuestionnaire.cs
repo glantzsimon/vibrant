@@ -888,7 +888,7 @@ namespace K9.DataAccessLayer.Models
 
         public static List<PropertyInfo> GetPropertiesWithScoreAttribute()
         {
-            return typeof(HealthQuestionnaire).GetProperties().Where(e => e.GetAttribute<ScoreAttribute>() != null).ToList();
+            return typeof(HealthQuestionnaire).GetProperties().Where(e => e.GetAttribute<ScoreAttribute>() != null && e.PropertyType == typeof(EYesNo)).ToList();
         }
 
         public static List<PropertyInfo> GetPropertiesWithQuestionCategoryAttribute()
