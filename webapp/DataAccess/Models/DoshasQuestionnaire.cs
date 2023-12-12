@@ -113,8 +113,114 @@ namespace K9.DataAccessLayer.Models
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.Doshas)]
         [Score(PittaDosha = true)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.FrettingLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UlcersAcidRefluxLabel)]
         public EYesNo? UlcersAcidReflux { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.NauseaLabel)]
+        public EYesNo? Nausea { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.AcneLabel)]
+        public EYesNo? Acne { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.HyperMetabolismLabel)]
+        public EYesNo? HyperMetabolism { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.ExcessBodyHeatLabel)]
+        public EYesNo? ExcessBodyHeat { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.AngerFrustrationLabel)]
+        public EYesNo? AngerFrustration { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.ImpatientIdealisticLabel)]
+        public EYesNo? ImpatientIdealistic { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.RedEyesLabel)]
+        public EYesNo? RedEyes { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.LightSensitiveLabel)]
+        public EYesNo? SensitiveToLight { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.HighLibidoLabel)]
+        public EYesNo? HighLibido { get; set; }
+
+        #endregion
+
+        #region Signs of Kapha Dosha Imbalance
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.ExcessMucousLabel)]
+        public EYesNo? ExcessMucous { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.SlowInfrequentBowelMovementsLabel)]
+        public EYesNo? SlowInfrequentBowelMovements { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.MoodDrivenEatingLabel)]
+        public EYesNo? MoodDrivenEating { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.EasyWeightGainLabel)]
+        public EYesNo? EasyWeightGain { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.HardToWakeUpLabel)]
+        public EYesNo? HardToWakeUp { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.LethargicLabel)]
+        public EYesNo? Lethargic { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.PossessiveLabel)]
+        public EYesNo? Possessive { get; set; }
+
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.Doshas)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.ObstinacyLabel)]
+        public EYesNo? Obstinacy { get; set; }
 
         #endregion
 
@@ -163,6 +269,6 @@ namespace K9.DataAccessLayer.Models
                 KaphaDoshaScore = kaphaDoshaScore
             };
         }
-
+        
     }
 }

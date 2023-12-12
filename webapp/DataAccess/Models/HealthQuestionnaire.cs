@@ -131,11 +131,16 @@ namespace K9.DataAccessLayer.Models
         public int GetScore(Func<ScoreAttribute, bool> condition, Func<bool> condition2 = null, int condition2ScoreFactor = 1)
         {
             var answers = GetPropertiesWithScoreAttribute()
-                .Where(e => condition(e.Key))
                 .Select(e => new
                 {
-                    value = (EYesNo?)this.GetProperty(e.Value),
-                    scoreFactor = e.Key.ScoreFactor
+                    PropertyInfo = e,
+                    ScoreAttribute = e.GetAttribute<ScoreAttribute>()
+                })
+                .Where(e => condition(e.ScoreAttribute))
+                .Select(e => new
+                {
+                    value = (EYesNo?)this.GetProperty(e.PropertyInfo),
+                    scoreFactor = e.ScoreAttribute.ScoreFactor
                 }).ToList();
 
             var yesses = answers.Where(e => e.value.HasValue && e.value.Value == EYesNo.Yes).ToList();
@@ -502,6 +507,7 @@ namespace K9.DataAccessLayer.Models
         public EGender? Gender { get; set; }
 
         [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.PersonalDetails)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsLGBTQPlusLabel)]
         public EYesNo? IsIsLGBTQPlus { get; set; }
 
@@ -652,7 +658,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GasLabel)]
         public EYesNo? Gas { get; set; }
 
-        [Score(DigestiveHealth = true)]
+        [Score(DigestiveHealth = true, PittaDosha = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LooseStoolLabel)]
@@ -682,7 +688,7 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.MultilineText)]
         public string SkinIssuesDetails { get; set; }
 
-        [Score(DigestiveHealth = true, Immunity = true, Detoxification = true, DentalHealth = true)]
+        [Score(DigestiveHealth = true, Immunity = true, Detoxification = true, DentalHealth = true, KaphaDosha = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CoatedTongueLabel)]
@@ -880,24 +886,38 @@ namespace K9.DataAccessLayer.Models
 
         #endregion
 
-        private static Dictionary<ScoreAttribute, PropertyInfo> GetPropertiesWithScoreAttribute()
+        public static List<PropertyInfo> GetPropertiesWithScoreAttribute()
         {
-            return typeof(HealthQuestionnaire).GetPropertiesAndAttributesWithAttribute<ScoreAttribute>();
+            return typeof(HealthQuestionnaire).GetProperties().Where(e => e.GetAttribute<ScoreAttribute>() != null).ToList();
         }
 
-        private static Dictionary<QuestionCategoryAttribute, PropertyInfo> GetPropertiesWithWithQuestionCategoryAttribute()
+        public static List<PropertyInfo> GetPropertiesWithQuestionCategoryAttribute()
         {
-            return typeof(HealthQuestionnaire).GetPropertiesAndAttributesWithAttribute<QuestionCategoryAttribute>();
+            return typeof(HealthQuestionnaire).GetProperties().Where(e => e.GetAttribute<QuestionCategoryAttribute>() != null).ToList();
         }
 
         private bool IsCategoryComplete(Func<QuestionCategoryAttribute, bool> condition)
         {
-            return GetPropertiesWithWithQuestionCategoryAttribute()
-                .Where(e => condition(e.Key))
+            var categoryQuestions = GetPropertiesWithQuestionCategoryAttribute()
+                .Select(e => new
+                {
+                    PropertyInfo = e,
+                    QuestionCategoryAttribute = e.GetAttribute<QuestionCategoryAttribute>()
+                })
+                .Where(e => condition(e.QuestionCategoryAttribute)).ToList();
+
+            return categoryQuestions
                 .All(e =>
                        {
-                           var value = this.GetProperty(e.Value);   
-                           return value != null && e.Key.MustBeGreaterThanZero ? (int)value > 0 : true || e.Key.AllowNull;
+                           var value = this.GetProperty(e.PropertyInfo);
+                           var valueIsNull = value == null;
+                           var isComplete = !valueIsNull 
+                                    && (e.QuestionCategoryAttribute.MustBeGreaterThanZero 
+                                        ? double.Parse(value.ToString()) > 0 
+                                        : true )
+                                    || e.QuestionCategoryAttribute.AllowNull;
+
+                           return isComplete;
                        });
         }
     }

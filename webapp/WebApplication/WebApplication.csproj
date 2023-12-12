@@ -371,6 +371,9 @@
     <Compile Include="Options\PaymentsOptions.cs" />
     <Compile Include="Services\CacheableServiceBase.cs" />
     <Compile Include="Services\%28CacheableService.cs" />
+    <Compile Include="Services\HealthQuestionnaireServiceBase.cs" />
+    <Compile Include="Services\HealthQuestionnaireServiceAsync.cs" />
+    <Compile Include="Services\IHealthQuestionnaireServiceAsync.cs" />
     <Compile Include="Services\IMaintenanceService.cs" />
     <Compile Include="Services\MaintenanceService.cs" />
     <Compile Include="Services\ICategorisableService.cs" />
@@ -409,6 +412,7 @@
     <Compile Include="Services\QrCodeService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\IUserService.cs" />
+    <Compile Include="ViewModels\DoshasViewModel.cs" />
     <Compile Include="ViewModels\RecommendedFoodsViewModel.cs" />
     <Compile Include="ViewModels\HealthQuestionnaireViewModel.cs" />
     <Compile Include="ViewModels\ProtocolsViewModel.cs" />

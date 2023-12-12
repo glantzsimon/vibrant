@@ -51,6 +51,7 @@ namespace K9.DataAccessLayer.Attributes
         public bool Pescatarian { get; set; }
 
         public int ScoreFactor { get; set; } = 1;
+
         public bool IsYin { get; set; }
         public bool IsYang { get; set; }
         public bool IsInflammation { get; set; }

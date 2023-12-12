@@ -629,7 +629,24 @@
             public const string IrregularDigestionLabel = "IrregularDigestionLabel";
             public const string TroubleFallingAsleepLabel = "TroubleFallingAsleepLabel";
             public const string FrettingLabel = "FrettingLabel";
-            public const string UlcersAcidRefluxLabel = "FrettingLabel";
+            public const string UlcersAcidRefluxLabel = "UlcersAcidRefluxLabel";
+            public const string NauseaLabel = "NauseaLabel";
+            public const string AcneLabel = "AcneLabel";
+            public const string HyperMetabolismLabel = "HyperMetabolismLabel";
+            public const string ExcessBodyHeatLabel = "ExcessBodyHeatLabel";
+            public const string AngerFrustrationLabel = "AngerFrustrationLabel";
+            public const string ImpatientIdealisticLabel = "ImpatientIdealisticLabel";
+            public const string RedEyesLabel = "RedEyesLabel";
+            public const string LightSensitiveLabel = "LightSensitiveLabel";
+            public const string HighLibidoLabel = "HighLibidoLabel";
+            public const string ExcessMucousLabel = "ExcessMucousLabel";
+            public const string SlowInfrequentBowelMovementsLabel = "SlowInfrequentBowelMovementsLabel";
+            public const string MoodDrivenEatingLabel = "MoodDrivenEatingLabel";
+            public const string EasyWeightGainLabel = "EasyWeightGainLabel";
+            public const string HardToWakeUpLabel = "HardToWakeUpLabel";
+            public const string LethargicLabel = "LethargicLabel";
+            public const string PossessiveLabel = "PossessiveLabel";
+            public const string ObstinacyLabel = "ObstinacyLabel";
 
             public const string MembershipOption = "MembershipOption";
             public const string ProfileReading = "ProfileReading";

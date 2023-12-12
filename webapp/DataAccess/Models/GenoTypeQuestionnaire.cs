@@ -546,7 +546,7 @@ namespace K9.DataAccessLayer.Models
         }
 
         [UIHint("SomatoType")]
-        [QuestionCategory(Category = EQuestionCategory.Biometrics)]
+        [QuestionCategory(Category = EQuestionCategory.Biometrics, AllowNull = true)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SomatoTypeQuestionLabel)]
         public ESomatoType? SomatoType { get; set; }
 

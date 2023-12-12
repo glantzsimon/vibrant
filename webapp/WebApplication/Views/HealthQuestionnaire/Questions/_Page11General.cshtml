@@ -115,6 +115,20 @@
 
     <div class="row">
         <div class="col-xs-12">
+            @Html.LabelFor(e => e.IBS)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.IBS, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
             @Html.LabelFor(e => e.LooseStool)
         </div>
     </div>

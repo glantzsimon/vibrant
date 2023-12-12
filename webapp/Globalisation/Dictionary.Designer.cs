@@ -157,6 +157,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you experience acne?.
+        /// </summary>
+        public static string AcneLabel {
+            get {
+                return ResourceManager.GetString("AcneLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Activities.
         /// </summary>
         public static string Activities {
@@ -504,6 +513,15 @@ namespace K9.Globalisation {
         public static string AnaemiaLabel {
             get {
                 return ResourceManager.GetString("AnaemiaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you often experience feelings of anger or frustration?.
+        /// </summary>
+        public static string AngerFrustrationLabel {
+            get {
+                return ResourceManager.GetString("AngerFrustrationLabel", resourceCulture);
             }
         }
         
@@ -2882,6 +2900,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you gain weight easily and do you find it hard to lose?.
+        /// </summary>
+        public static string EasyWeightGainLabel {
+            get {
+                return ResourceManager.GetString("EasyWeightGainLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ecto-mesomorph.
         /// </summary>
         public static string Ectomesomorph {
@@ -3265,6 +3292,24 @@ namespace K9.Globalisation {
         public static string ExcellentDescription {
             get {
                 return ResourceManager.GetString("ExcellentDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you experience excessive body heat?.
+        /// </summary>
+        public static string ExcessBodyHeatLabel {
+            get {
+                return ResourceManager.GetString("ExcessBodyHeatLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you experience mucous in the sinuses, throat, chest or in the stool?.
+        /// </summary>
+        public static string ExcessMucousLabel {
+            get {
+                return ResourceManager.GetString("ExcessMucousLabel", resourceCulture);
             }
         }
         
@@ -4191,6 +4236,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Does it take you a long time to wake up in the morning or after a nap?.
+        /// </summary>
+        public static string HardToWakeUpLabel {
+            get {
+                return ResourceManager.GetString("HardToWakeUpLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to He.
         /// </summary>
         public static string He {
@@ -4450,6 +4504,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you have a very high libido?.
+        /// </summary>
+        public static string HighLibidoLabel {
+            get {
+                return ResourceManager.GetString("HighLibidoLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Him.
         /// </summary>
         public static string Him {
@@ -4633,6 +4696,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you often have a voracious, almost insatiable appetite?.
+        /// </summary>
+        public static string HyperMetabolismLabel {
+            get {
+                return ResourceManager.GetString("HyperMetabolismLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ideal.
         /// </summary>
         public static string Ideal {
@@ -4683,6 +4755,15 @@ namespace K9.Globalisation {
         public static string Immunity {
             get {
                 return ResourceManager.GetString("Immunity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you often feel impatient, especially about things not going smoothly or being up to standard?.
+        /// </summary>
+        public static string ImpatientIdealisticLabel {
+            get {
+                return ResourceManager.GetString("ImpatientIdealisticLabel", resourceCulture);
             }
         }
         
@@ -5790,6 +5871,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you often feel heavy, sluggish, lethargic or dull?.
+        /// </summary>
+        public static string LethargicLabel {
+            get {
+                return ResourceManager.GetString("LethargicLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Does bright light bother you?.
+        /// </summary>
+        public static string LightSensitiveLabel {
+            get {
+                return ResourceManager.GetString("LightSensitiveLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I am a light sleeper and wake up easily.
         /// </summary>
         public static string LightSleep {
@@ -6418,6 +6517,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you often find yourself comfort eating?.
+        /// </summary>
+        public static string MoodDrivenEatingLabel {
+            get {
+                return ResourceManager.GetString("MoodDrivenEatingLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to More Details.
         /// </summary>
         public static string MoreDetails {
@@ -6459,6 +6567,15 @@ namespace K9.Globalisation {
         public static string NarrowAngle {
             get {
                 return ResourceManager.GetString("NarrowAngle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you experience nausea?.
+        /// </summary>
+        public static string NauseaLabel {
+            get {
+                return ResourceManager.GetString("NauseaLabel", resourceCulture);
             }
         }
         
@@ -6930,6 +7047,15 @@ namespace K9.Globalisation {
         public static string O {
             get {
                 return ResourceManager.GetString("O", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you often obstinate, stubbornly adhering to an opinion, purpose, or course of action?.
+        /// </summary>
+        public static string ObstinacyLabel {
+            get {
+                return ResourceManager.GetString("ObstinacyLabel", resourceCulture);
             }
         }
         
@@ -7648,6 +7774,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you often feel possessive or overly attached to certain people, things or experiences and experiences?.
+        /// </summary>
+        public static string PossessiveLabel {
+            get {
+                return ResourceManager.GetString("PossessiveLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you ever experience post-exertional malaise? (In other words, do you feel exhausted after physical activity?.
         /// </summary>
         public static string PostExertionalMalaiseLabel {
@@ -7680,6 +7815,15 @@ namespace K9.Globalisation {
         public static string Powder {
             get {
                 return ResourceManager.GetString("Powder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prakruti - Constitution.
+        /// </summary>
+        public static string PrakrutiTitle {
+            get {
+                return ResourceManager.GetString("PrakrutiTitle", resourceCulture);
             }
         }
         
@@ -8787,6 +8931,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you often get red or bloodshot eyes?.
+        /// </summary>
+        public static string RedEyesLabel {
+            get {
+                return ResourceManager.GetString("RedEyesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Red Meat.
         /// </summary>
         public static string RedMeat {
@@ -9524,6 +9677,15 @@ namespace K9.Globalisation {
         public static string SlightlyBitter {
             get {
                 return ResourceManager.GetString("SlightlyBitter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you regularly experience slow, infrequent bowel movements?.
+        /// </summary>
+        public static string SlowInfrequentBowelMovementsLabel {
+            get {
+                return ResourceManager.GetString("SlowInfrequentBowelMovementsLabel", resourceCulture);
             }
         }
         
@@ -11004,6 +11166,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you have any ulcers or experience acid reflux or heartburn?.
+        /// </summary>
+        public static string UlcersAcidRefluxLabel {
+            get {
+                return ResourceManager.GetString("UlcersAcidRefluxLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unavailable.
         /// </summary>
         public static string Unavailable {
@@ -11491,6 +11662,15 @@ namespace K9.Globalisation {
         public static string ViewSummary {
             get {
                 return ResourceManager.GetString("ViewSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vikruti - Current Condition / Imbalances.
+        /// </summary>
+        public static string VikrutiTitle {
+            get {
+                return ResourceManager.GetString("VikrutiTitle", resourceCulture);
             }
         }
         

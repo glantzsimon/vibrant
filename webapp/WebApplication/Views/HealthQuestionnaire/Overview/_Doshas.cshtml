@@ -10,34 +10,30 @@
 @model HealthQuestionnaire
 
 @{
-    var doshas = Model.GetPrakrutiDoshas();
-    var dosha = doshas.GetDosha();
-    var doshaName = dosha.GetAttribute<EnumDescriptionAttribute>().Name;
-    var vataColor = Model.GetColorFromScore(doshas.GetVataDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var pittaColor = Model.GetColorFromScore(doshas.GetPittaDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var kaphaColor = Model.GetColorFromScore(doshas.GetKaphaDoshaPercentage()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var prakrutiDoshas = Model.GetPrakrutiDoshas();
+    var prakruti = prakrutiDoshas.GetDosha();
+    var prakrutiViewModel = new K9.WebApplication.ViewModels.DoshasViewModel(
+        Model,
+        prakruti,
+        prakrutiDoshas.GetVataDoshaPercentage(),
+        prakrutiDoshas.GetPittaDoshaPercentage(),
+        prakrutiDoshas.GetKaphaDoshaPercentage());
 
-    var activePaneClass = $"{Strings.CssClasses.ActivePanelClass} padding-top-20";
-    var inactivePaneClass = "padding-bottom-0";
-    var activeTabClass = Strings.CssClasses.ActiveTabClass;
-    var inactiveTabClass = "";
-
-    var vataActive = (dosha == EDosha.Vata || dosha == EDosha.KaphaVata || dosha == EDosha.VataPitta || dosha == EDosha.Tridoshic);
-    var pittaActive = !vataActive && (dosha == EDosha.Pitta || dosha == EDosha.PittaKapha || dosha == EDosha.VataPitta || dosha == EDosha.Tridoshic);
-    var kaphaActive = !pittaActive && (dosha == EDosha.Kapha || dosha == EDosha.PittaKapha || dosha == EDosha.KaphaVata || dosha == EDosha.Tridoshic);
-
-    var vataActiveTabClass = vataActive ? activeTabClass : inactiveTabClass;
-    var vataActivePaneClass = vataActive ? activePaneClass : activeTabClass;
-    var pittaActiveTabClass = pittaActive ? activeTabClass : inactiveTabClass;
-    var pittaActivePaneClass = pittaActive ? activePaneClass : activeTabClass;
-    var kaphaActiveTabClass = kaphaActive ? activeTabClass : inactiveTabClass;
-    var kaphaActivePaneClass = kaphaActive ? activePaneClass : activeTabClass;
+    var vikrutiDoshas = Model.GetVikrutiDoshas();
+    var vikruti = vikrutiDoshas.GetDosha();
+    var vikrutiViewModel = new K9.WebApplication.ViewModels.DoshasViewModel(
+        Model,
+        vikruti,
+        vikrutiDoshas.GetVataDoshaPercentage(),
+        vikrutiDoshas.GetPittaDoshaPercentage(),
+        vikrutiDoshas.GetKaphaDoshaPercentage(),
+        true);
 }
 
 <div class="well">
     <div class="row">
         <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.Doshas</h3>
+            <h3 class="section-title">@Dictionary.Doshas - @Dictionary.PrakrutiTitle</h3>
         </div>
     </div>
     <div class="row">
@@ -45,74 +41,116 @@
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {
                 MaxValue = 100,
-                Value = doshas.GetVataDoshaPercentage(),
+                Value = prakrutiDoshas.GetVataDoshaPercentage(),
                 Title = Dictionary.VataDosha,
-                BackgroundColor = $"rgb({vataColor}, 0.33)",
-                StrokeColor = $"rgb({vataColor})",
-                Units = $"{doshas.GetVataDoshaPercentage()}%",
+                BackgroundColor = $"rgb({prakrutiViewModel.VataColor}, 0.33)",
+                StrokeColor = $"rgb({prakrutiViewModel.VataColor})",
+                Units = $"{prakrutiDoshas.GetVataDoshaPercentage()}%",
             })
         </div>
         <div class="col-xs-6 col-sm-3 col-md-2">
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {
                 MaxValue = 100,
-                Value = doshas.GetPittaDoshaPercentage(),
+                Value = prakrutiDoshas.GetPittaDoshaPercentage(),
                 Title = Dictionary.PittaDosha,
-                BackgroundColor = $"rgb({pittaColor}, 0.33)",
-                StrokeColor = $"rgb({pittaColor})",
-                Units = $"{doshas.GetPittaDoshaPercentage()}%",
+                BackgroundColor = $"rgb({prakrutiViewModel.PittaColor}, 0.33)",
+                StrokeColor = $"rgb({prakrutiViewModel.PittaColor})",
+                Units = $"{prakrutiDoshas.GetPittaDoshaPercentage()}%",
             })
         </div>
         <div class="col-xs-6 col-sm-3 col-md-2">
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {
                 MaxValue = 100,
-                Value = doshas.GetKaphaDoshaPercentage(),
+                Value = prakrutiDoshas.GetKaphaDoshaPercentage(),
                 Title = Dictionary.KaphaDosha,
-                BackgroundColor = $"rgb({kaphaColor}, 0.33)",
-                StrokeColor = $"rgb({kaphaColor})",
-                Units = $"{doshas.GetKaphaDoshaPercentage()}%",
+                BackgroundColor = $"rgb({prakrutiViewModel.KaphaColor}, 0.33)",
+                StrokeColor = $"rgb({prakrutiViewModel.KaphaColor})",
+                Units = $"{prakrutiDoshas.GetKaphaDoshaPercentage()}%",
             })
         </div>
     </div>
 </div>
 
+<div class="well">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.Doshas - @Dictionary.VikrutiTitle</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = vikrutiDoshas.GetVataDoshaPercentage(),
+                Title = Dictionary.VataDosha,
+                BackgroundColor = $"rgb({vikrutiViewModel.VataColor}, 0.33)",
+                StrokeColor = $"rgb({vikrutiViewModel.VataColor})",
+                Units = $"{vikrutiDoshas.GetVataDoshaPercentage()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = vikrutiDoshas.GetPittaDoshaPercentage(),
+                Title = Dictionary.PittaDosha,
+                BackgroundColor = $"rgb({vikrutiViewModel.PittaColor}, 0.33)",
+                StrokeColor = $"rgb({vikrutiViewModel.PittaColor})",
+                Units = $"{vikrutiDoshas.GetPittaDoshaPercentage()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = vikrutiDoshas.GetKaphaDoshaPercentage(),
+                Title = Dictionary.KaphaDosha,
+                BackgroundColor = $"rgb({vikrutiViewModel.KaphaColor}, 0.33)",
+                StrokeColor = $"rgb({vikrutiViewModel.KaphaColor})",
+                Units = $"{vikrutiDoshas.GetKaphaDoshaPercentage()}%",
+            })
+        </div>
+    </div>
+</div>
 
 <div class="well">
     <div class="row">
         <div class="col-xs-12">
             <ul class="nav nav-pills">
-                @if (dosha == EDosha.Vata || dosha == EDosha.KaphaVata || dosha == EDosha.VataPitta || dosha == EDosha.Tridoshic)
+                @if (prakruti == EDosha.Vata || prakruti == EDosha.KaphaVata || prakruti == EDosha.VataPitta || prakruti == EDosha.Tridoshic)
                 {
-                    <li class="@vataActiveTabClass"><a data-toggle="pill" href="#vata-dosha">@Dictionary.VataDosha</a></li>
+                    <li class="@prakrutiViewModel.VataActiveTabClass"><a data-toggle="pill" href="#vata-dosha">@Dictionary.VataDosha</a></li>
                 }
-                @if (dosha == EDosha.Pitta || dosha == EDosha.PittaKapha || dosha == EDosha.VataPitta || dosha == EDosha.Tridoshic)
+                @if (prakruti == EDosha.Pitta || prakruti == EDosha.PittaKapha || prakruti == EDosha.VataPitta || prakruti == EDosha.Tridoshic)
                 {
-                    <li class="@pittaActiveTabClass"><a data-toggle="pill" href="#pitta-dosha">@Dictionary.PittaDosha</a></li>
+                    <li class="@prakrutiViewModel.PittaActiveTabClass"><a data-toggle="pill" href="#pitta-dosha">@Dictionary.PittaDosha</a></li>
                 }
-                @if (dosha == EDosha.Kapha || dosha == EDosha.PittaKapha || dosha == EDosha.KaphaVata || dosha == EDosha.Tridoshic)
+                @if (prakruti == EDosha.Kapha || prakruti == EDosha.PittaKapha || prakruti == EDosha.KaphaVata || prakruti == EDosha.Tridoshic)
                 {
-                    <li class="@kaphaActiveTabClass"><a data-toggle="pill" href="#kapha-dosha">@Dictionary.KaphaDosha</a></li>
+                    <li class="@prakrutiViewModel.KaphaActiveTabClass"><a data-toggle="pill" href="#kapha-dosha">@Dictionary.KaphaDosha</a></li>
                 }
             </ul>
 
             <div class="tab-content">
 
-                @if (dosha == EDosha.Vata || dosha == EDosha.KaphaVata || dosha == EDosha.VataPitta || dosha == EDosha.Tridoshic)
+                @if (prakruti == EDosha.Vata || prakruti == EDosha.KaphaVata || prakruti == EDosha.VataPitta || prakruti == EDosha.Tridoshic)
                 {
-                    <div id="vata-dosha" class="tab-pane fade @vataActivePaneClass padding-top-15">
+                    <div id="vata-dosha" class="tab-pane fade @prakrutiViewModel.VataActivePaneClass padding-top-15">
                         @Html.Raw(Dictionary.VataDoshaDetails)
                     </div>
                 }
-                @if (dosha == EDosha.Pitta || dosha == EDosha.PittaKapha || dosha == EDosha.VataPitta || dosha == EDosha.Tridoshic)
+                @if (prakruti == EDosha.Pitta || prakruti == EDosha.PittaKapha || prakruti == EDosha.VataPitta || prakruti == EDosha.Tridoshic)
                 {
-                    <div id="pitta-dosha" class="tab-pane fade @pittaActivePaneClass padding-top-15">
+                    <div id="pitta-dosha" class="tab-pane fade @prakrutiViewModel.PittaActivePaneClass padding-top-15">
                         @Html.Raw(Dictionary.PittaDoshaDetails)
                     </div>
                 }
-                @if (dosha == EDosha.Kapha || dosha == EDosha.PittaKapha || dosha == EDosha.KaphaVata || dosha == EDosha.Tridoshic)
+                @if (prakruti == EDosha.Kapha || prakruti == EDosha.PittaKapha || prakruti == EDosha.KaphaVata || prakruti == EDosha.Tridoshic)
                 {
-                    <div id="kapha-dosha" class="tab-pane fade @kaphaActivePaneClass padding-top-15">
+                    <div id="kapha-dosha" class="tab-pane fade @prakrutiViewModel.KaphaActivePaneClass padding-top-15">
                         @Html.Raw(Dictionary.KaphaDoshaDetails)
                     </div>
                 }

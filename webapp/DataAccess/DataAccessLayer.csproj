@@ -713,6 +713,10 @@
     <Compile Include="Migrations\202311281201478_ProductObligatoryFields.Designer.cs">
       <DependentUpon>202311281201478_ProductObligatoryFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312120950461_MoreDoshaQuestions.cs" />
+    <Compile Include="Migrations\202312120950461_MoreDoshaQuestions.Designer.cs">
+      <DependentUpon>202312120950461_MoreDoshaQuestions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ScorableBase.cs" />
     <Compile Include="Models\GenoTypeBase.cs" />
@@ -1114,6 +1118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311281201478_ProductObligatoryFields.resx">
       <DependentUpon>202311281201478_ProductObligatoryFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312120950461_MoreDoshaQuestions.resx">
+      <DependentUpon>202312120950461_MoreDoshaQuestions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

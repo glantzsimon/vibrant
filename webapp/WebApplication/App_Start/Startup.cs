@@ -74,6 +74,7 @@ namespace K9.WebApplication
             builder.RegisterType<ShoppingCartService>().As<IShoppingCartService>().InstancePerRequest();
             builder.RegisterType<MaintenanceService>().As<IMaintenanceService>().InstancePerRequest();
             builder.RegisterType<HealthQuestionnaireService>().As<IHealthQuestionnaireService>().InstancePerRequest();
+            builder.RegisterType<HealthQuestionnaireServiceAsync>().As<IHealthQuestionnaireServiceAsync>().InstancePerLifetimeScope();
 
             RegisterConfiguration(builder);
 
