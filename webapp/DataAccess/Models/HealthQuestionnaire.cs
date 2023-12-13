@@ -507,7 +507,7 @@ namespace K9.DataAccessLayer.Models
         public EGender? Gender { get; set; }
 
         [UIHint("YesNo")]
-        [QuestionCategory(Category = EQuestionCategory.PersonalDetails)]
+        [QuestionCategory(Category = EQuestionCategory.PersonalDetails, AllowNull = true)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsLGBTQPlusLabel)]
         public EYesNo? IsIsLGBTQPlus { get; set; }
 
