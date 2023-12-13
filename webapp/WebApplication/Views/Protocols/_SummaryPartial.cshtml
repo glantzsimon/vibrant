@@ -52,8 +52,15 @@
             </div>
         }
 
+        <div class="row">
+            <div class="col-xs-12">
+                @Html.Raw(Model.ShortDescription)
+            </div>
+        </div>
+
         if (Model.ProtocolSections.Any())
         {
+            <hr />
             @Html.Partial("../Protocols/_Schedule")
         }
 
