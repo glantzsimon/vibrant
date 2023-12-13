@@ -410,20 +410,7 @@ namespace K9.WebApplication.Controllers
 
             return View(model);
         }
-
-        [RequirePermissions(Role = RoleNames.Administrators)]
-        [Authorize]
-        public ActionResult ClientAccount(int id)
-        {
-            var clientRecord = _clientService.Find(id);
-            if (clientRecord != null && clientRecord.UserId.HasValue)
-            {
-                return RedirectToAction("MyAccount", new { userId = clientRecord.UserId });
-            }
-
-            return HttpNotFound();
-        }
-
+        
         [Authorize]
         public ActionResult MyAccount(int? userId = null)
         {

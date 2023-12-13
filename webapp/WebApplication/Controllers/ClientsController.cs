@@ -25,16 +25,30 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<Donation> _donationRepository;
         private readonly ILogger _logger;
         private readonly IMailChimpService _mailChimpService;
+        private readonly IClientService _clientService;
         private readonly IRepository<Country> _countriesRepository;
         private readonly IOrderService _ordersService;
 
-        public ClientsController(IControllerPackage<Client> controllerPackage, IRepository<Donation> donationRepository, ILogger logger, IMailChimpService mailChimpService, IRepository<Country> countriesRepository, IOrderService ordersService) : base(controllerPackage)
+        public ClientsController(IControllerPackage<Client> controllerPackage, IRepository<Donation> donationRepository, ILogger logger, IMailChimpService mailChimpService, IClientService clientService, IRepository<Country> countriesRepository, IOrderService ordersService) : base(controllerPackage)
         {
             _donationRepository = donationRepository;
             _logger = logger;
             _mailChimpService = mailChimpService;
+            _clientService = clientService;
             _countriesRepository = countriesRepository;
             _ordersService = ordersService;
+        }
+
+        [Authorize]
+        public ActionResult ClientAccount(int id)
+        {
+            var clientRecord = _clientService.Find(id);
+            if (clientRecord != null && clientRecord.UserId.HasValue)
+            {
+                return RedirectToAction("MyAccount", "Account", new { userId = clientRecord.UserId });
+            }
+
+            return HttpNotFound();
         }
 
         public ActionResult ImportClientsFromDonations()
