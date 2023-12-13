@@ -9,6 +9,7 @@
     {
         @Html.HiddenFor(model => model.Id)
         @Html.HiddenFor(e => e.ExternalId)
+        @Html.HiddenFor(e => e.GenoType)
         
         @Html.Partial("_EditFields")
         <hr />
