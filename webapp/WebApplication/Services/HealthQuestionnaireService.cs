@@ -107,6 +107,11 @@ namespace K9.WebApplication.Services
             var client = _clientsRepository.Find(clientId);
             return GetHealthQuestionnaireForClient(client);
         }
+
+        public HealthQuestionnaire GetHealthQuestionnaireById(Guid externalId)
+        {
+            return GetHealthQuestionnaire(externalId);
+        }
         
         public List<Protocol> GetGeneticProfileMatchedProtocols(int clientId)
         {
@@ -187,6 +192,21 @@ namespace K9.WebApplication.Services
 
             hq.Client = client;
             return hq;
+        }
+
+        private HealthQuestionnaire GetHealthQuestionnaire(Guid externalId)
+        {
+            var hq = _healthQuestionnaireRepository.Find(e => e.ExternalId == externalId).FirstOrDefault();
+
+            if (hq != null)
+            {
+                var client = _clientService.Find(hq.ClientId);
+                hq.Client = client;
+                
+                return hq;
+            }
+
+            return null;
         }
 
     }

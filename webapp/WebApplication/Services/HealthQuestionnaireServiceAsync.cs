@@ -183,6 +183,8 @@ namespace K9.WebApplication.Services
                 _protocolProductsRepository.CreateBatch(protocol.Products);
                 _protocolProductPackRepository.CreateBatch(protocol.ProductPacks);
             }
+
+            ClearCache();
         }
 
         private void DeleteProtocolChildRecords(int id)

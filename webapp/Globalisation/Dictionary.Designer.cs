@@ -544,7 +544,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Take the Genetic Profile Test.
+        ///   Looks up a localized string similar to Continue the Genetic Profile Test.
         /// </summary>
         public static string AnswerHealthQuestionnaire {
             get {
