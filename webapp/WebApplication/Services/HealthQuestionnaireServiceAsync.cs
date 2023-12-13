@@ -97,9 +97,12 @@ namespace K9.WebApplication.Services
                 {
                     // Create new one
                     var externalId = Guid.NewGuid();
+
+                    var clientRecord = _clientService.Find(hq.ClientId);
+
                     protocol = new Protocol
                     {
-                        Name = $"{K9.Globalisation.Dictionary.GenoTypePersonalisedProtocol} ({hq.ClientId})",
+                        Name = $"{K9.Globalisation.Dictionary.GenoTypePersonalisedProtocol} - {clientRecord.FullName}",
                         ShortDescription = K9.Globalisation.Dictionary.GenoTypePersonalisedProtocol,
                         ClientId = hq.ClientId,
                         ExternalId = externalId,

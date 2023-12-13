@@ -4039,6 +4039,9 @@
   <data name="UlcersAcidRefluxLabel" xml:space="preserve">
     <value>Do you have any ulcers or experience acid reflux or heartburn?</value>
   </data>
+  <data name="ViewAccount" xml:space="preserve">
+    <value>View Account</value>
+  </data>
   <data name="VikrutiTitle" xml:space="preserve">
     <value>Vikruti - Current Condition / Imbalances</value>
   </data>

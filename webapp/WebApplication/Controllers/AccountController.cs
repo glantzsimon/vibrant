@@ -411,10 +411,23 @@ namespace K9.WebApplication.Controllers
             return View(model);
         }
 
+        [RequirePermissions(Role = RoleNames.Administrators)]
         [Authorize]
-        public ActionResult MyAccount()
+        public ActionResult ClientAccount(int id)
         {
-            var user = _userRepository.Find(WebSecurity.CurrentUserId);
+            var clientRecord = _clientService.Find(id);
+            if (clientRecord != null && clientRecord.UserId.HasValue)
+            {
+                return RedirectToAction("MyAccount", new { userId = clientRecord.UserId });
+            }
+
+            return HttpNotFound();
+        }
+
+        [Authorize]
+        public ActionResult MyAccount(int? userId = null)
+        {
+            var user = _userRepository.Find(userId ?? WebSecurity.CurrentUserId);
             var clientRecord = _clientService.GetOrCreateClientFromUser(user);
             var userProtocolIds = _userProtocolsRepository.Find(e => e.UserId == user.Id)
                 .Select(e => e.ProtocolId)

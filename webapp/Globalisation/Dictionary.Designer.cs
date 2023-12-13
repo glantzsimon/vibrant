@@ -11567,6 +11567,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View Account.
+        /// </summary>
+        public static string ViewAccount {
+            get {
+                return ResourceManager.GetString("ViewAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View Address Label.
         /// </summary>
         public static string ViewClientAddressLabel {
