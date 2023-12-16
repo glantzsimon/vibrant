@@ -4550,7 +4550,7 @@ namespace K9.WebApplication.Services
             foodItem.IsPittaDosha = isPitta;
             foodItem.IsKaphaDosha = isKapha;
             foodItem.IsWaterElement = isWater;
-            foodItem.IsEarthlElement = isEarth;
+            foodItem.IsEarthElement = isEarth;
             foodItem.IsTreeElement = isTree;
             foodItem.IsMetalElement = isMetal;
             foodItem.IsFireElement = isFire;
@@ -4588,7 +4588,7 @@ namespace K9.WebApplication.Services
                                                 $"IsPittaDosha = {(foodItem.IsPittaDosha? 1 : 0)}, " +
                                                 $"IsKaphaDosha = {(foodItem.IsKaphaDosha? 1 : 0)}, " +
                                                 $"IsWaterElement = {(foodItem.IsWaterElement? 1 : 0)}, " +
-                                                $"IsEarthlElement = {(foodItem.IsEarthlElement? 1 : 0)}, " +
+                                                $"IsEarthlElement = {(foodItem.IsEarthElement? 1 : 0)}, " +
                                                 $"IsTreeElement = {(foodItem.IsTreeElement? 1 : 0)}, " +
                                                 $"IsMetalElement = {(foodItem.IsMetalElement? 1 : 0)}, " +
                                                 $"IsFireElement = {(foodItem.IsFireElement? 1 : 0)} WHERE " +

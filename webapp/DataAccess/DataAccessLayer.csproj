@@ -725,6 +725,10 @@
     <Compile Include="Migrations\202312160951350_PromoteDemoteFoodItems.Designer.cs">
       <DependentUpon>202312160951350_PromoteDemoteFoodItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312161157048_FoodCorrections.cs" />
+    <Compile Include="Migrations\202312161157048_FoodCorrections.Designer.cs">
+      <DependentUpon>202312161157048_FoodCorrections.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
@@ -1136,6 +1140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312160951350_PromoteDemoteFoodItems.resx">
       <DependentUpon>202312160951350_PromoteDemoteFoodItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312161157048_FoodCorrections.resx">
+      <DependentUpon>202312161157048_FoodCorrections.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

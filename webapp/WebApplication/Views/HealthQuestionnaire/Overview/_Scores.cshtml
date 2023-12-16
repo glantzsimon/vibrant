@@ -24,7 +24,86 @@
 
     var currentHealthColor = Model.GetColorFromScore(Model.GetCurrentHealthScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var expertiseColor = Model.GetColorFromScore(Model.GetNutritionExpertiseScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+
+    var nineStarKiModel = Model.GetNineStarKiModel();
+
+    var genoType = Model.CalculateGenotype();
+    var strengthTestResults = Model.GetGroupedStrengthTestResults();
 }
+
+<div class="well">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.OverviewLabel</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.MainEnergy)
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.CharacterEnergy)
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.SurfaceEnergy)
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.YearlyCycleEnergy)
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => nineStarKiModel.MonthlyCycleEnergy)
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.GenoType</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => genoType.GenoType)
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => genoType.Strength)
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => Model.BloodGroupDisplay)
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => Model.RhesusFactorDisplay)
+        </div>
+    </div>
+
+    @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
+    {
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="section-title">@Dictionary.StrengthTestResults</h3>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var result in strengthTestResults.FilteredResults)
+            {
+
+                <div class="col-xs-6 col-sm-3 col-md-2">
+                    @Html.Partial("Controls/_Gauge", new GaugeOptions
+                    {
+                        MaxValue = 100,
+                        Value = (int) strengthTestResults.GetGaugaeValue(result),
+                        Title = result.GenoTypeName,
+                        BackgroundColor = $"rgb({result.Color}, 0.33)",
+                        StrokeColor = $"rgb({result.Color})",
+                        Units = $"{strengthTestResults.GetResultAsPercentage(result)}%",
+                    })
+                </div>
+            }
+        </div>
+    }
+    
+    @Html.Partial("Overview/_Doshas")
+</div>
 
 <div class="well">
     <div class="row">

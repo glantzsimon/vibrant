@@ -1706,6 +1706,7 @@
     <Content Include="Views\Shared\EditorTemplates\Taste.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
     <Content Include="Views\Orders\_TableCollectionsButtons.cshtml" />
+    <Content Include="Views\HealthQuestionnaire\Overview\_DoshasDetails.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

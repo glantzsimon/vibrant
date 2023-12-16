@@ -140,7 +140,7 @@ namespace K9.DataAccessLayer.Models
         public bool IsFireElement { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsEarthElementLabel)]
-        public bool IsEarthlElement { get; set; }
+        public bool IsEarthElement { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsMetalElementLabel)]
         public bool IsMetalElement { get; set; }
