@@ -53,22 +53,22 @@
                                     for (int j = 0; j < filteredFoods.Count; j++)
                                     {
                                         var recommendedFood = filteredFoods[j];
-                                <span class="summary-item" style="background-color: @levelColor !important;">
-                                    @recommendedFood.Name
-                                    @Html.Raw(recommendedFood.GetRelativeScoreHtml())
+                                        <span class="summary-item" style="background-color: @levelColor !important;">
+                                            @Html.Raw(recommendedFood.GetRelativeScoreHtml())
+                                            <span>@recommendedFood.Name</span>
 
-                                    @if (Model.ClientId.HasValue)
-                                    {
-                                        if (level < ECompatibilityLevel.Suboptimal)
-                                        {
-                                            <i data-food-id="@recommendedFood.Id" class="fa fa-thumb-down food-item-icon demote-food-item" title="@Dictionary.FoodIsUnsuitableTitle"></i>
-                                        }
-                                        if (level >= ECompatibilityLevel.Suboptimal && recommendedFood.IsDemoted)
-                                        {
-                                            <i data-food-id="@recommendedFood.Id" class="fa fa-thumb-up food-item-icon promote-food-item" title="@Dictionary.FoodIsSuitableTitle"></i>
-                                        }
-                                    }
-                                </span>
+                                            @if (Model.ClientId.HasValue)
+                                            {
+                                                if (level < ECompatibilityLevel.Suboptimal)
+                                                {
+                                                    <i data-food-id="@recommendedFood.Id" class="fa fa-thumbs-down food-item-icon demote-food-item" title="@Dictionary.FoodIsUnsuitableTitle"></i>
+                                                }
+                                                if (level >= ECompatibilityLevel.Suboptimal && recommendedFood.IsDemoted)
+                                                {
+                                                    <i data-food-id="@recommendedFood.Id" class="fa fa-thumbs-up food-item-icon promote-food-item" title="@Dictionary.FoodIsSuitableTitle"></i>
+                                                }
+                                            }
+                                        </span>
                                     }
                                 }
                             </div>
@@ -80,9 +80,9 @@
     </div>
 }
 
-    <script type="text/javascript">
+<script type="text/javascript">
     $(function () {
-        
+
         $("i.demote-food-item").click(function() {
             $("#pageSpinner").show();
             let $el = $(this);
@@ -95,6 +95,10 @@
                 function(result) {
                     $.fn.processResultAndShowPopup(result);
                     $el.parent().fadeOut();
+                    window.setTimeout(function() {
+                            location.reload();
+                        },
+                        500);
                 });
         });
 
@@ -110,8 +114,12 @@
                 function(result) {
                     $.fn.processResultAndShowPopup(result);
                     $el.parent().fadeOut();
+                    window.setTimeout(function () {
+                            location.reload();
+                        },
+                        500);
                 });
         });
 
     })
-    </script>
+</script>
