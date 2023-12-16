@@ -4066,4 +4066,10 @@
   <data name="FoodIsSuitableTitle" xml:space="preserve">
     <value>My body likes this food!</value>
   </data>
+  <data name="HealthQuestionnaireCompleteTitle" xml:space="preserve">
+    <value>Someone has completed the Genetic Profile Test</value>
+  </data>
+  <data name="HealthQuestoinnaireComplete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\healthquestoinnairecomplete.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

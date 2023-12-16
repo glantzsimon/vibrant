@@ -95,10 +95,6 @@
                 function(result) {
                     $.fn.processResultAndShowPopup(result);
                     $el.parent().fadeOut();
-                    window.setTimeout(function() {
-                            location.reload();
-                        },
-                        500);
                 });
         });
 

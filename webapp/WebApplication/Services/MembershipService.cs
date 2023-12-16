@@ -407,8 +407,8 @@ namespace K9.WebApplication.Services
             _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
-                Customer = userCreditPack.User.FullName,
-                CustomerEmail = userCreditPack.User.EmailAddress,
+                Client = userCreditPack.User.FullName,
+                ClientEmail = userCreditPack.User.EmailAddress,
                 userCreditPack.NumberOfCredits,
                 TotalPrice = promoCode.GetFormattedPrice() ?? userCreditPack.GetFormattedPrice(),
                 LinkToCreditPacks = _urlHelper.AbsoluteAction("Index", "UserCreditPacks"),

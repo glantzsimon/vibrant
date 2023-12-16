@@ -167,6 +167,8 @@ namespace K9.WebApplication.Controllers
 
                 _healthQuestionnaireServiceAsync.AutoGenerateProtocolFromGeneticProfile(model);
                 
+
+
                 return RedirectToAction("QuestionnaireCompletedSuccess");
             }
 
@@ -209,6 +211,8 @@ namespace K9.WebApplication.Controllers
                     });
             }
         }
+
+       
     }
 }
 

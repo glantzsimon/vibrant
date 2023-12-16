@@ -1707,12 +1707,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
-        ///
         ///&lt;head&gt;
         ///    &lt;title&gt;{Title}&lt;/title&gt;
         ///&lt;/head&gt;
-        ///
         ///&lt;style type=&quot;text/css&quot;&gt;
+        ///
         ///    html {
         ///        margin: 0;
         ///        padding: 0;
@@ -1724,10 +1723,10 @@ namespace K9.Globalisation {
         ///        color: #333;
         ///    }
         ///&lt;/style&gt;
-        ///
         ///&lt;body&gt;
         ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;We have received a new consultation bookin [rest of string was truncated]&quot;;.
+        ///    &lt;br /&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;We have rece [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ConsultationBookedEmail {
             get {
@@ -1950,12 +1949,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
-        ///
         ///&lt;head&gt;
         ///    &lt;title&gt;{Title}&lt;/title&gt;
         ///&lt;/head&gt;
-        ///
         ///&lt;style type=&quot;text/css&quot;&gt;
+        ///
         ///    html {
         ///        margin: 0;
         ///        padding: 0;
@@ -1967,10 +1965,10 @@ namespace K9.Globalisation {
         ///        color: #333;
         ///    }
         ///&lt;/style&gt;
-        ///
         ///&lt;body&gt;
         ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;We have a new user credit pack purchase fr [rest of string was truncated]&quot;;.
+        ///    &lt;br /&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;We have a ne [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CreditPackPurchased {
             get {
@@ -2586,12 +2584,11 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
-        ///
         ///&lt;head&gt;
         ///    &lt;title&gt;{Title}&lt;/title&gt;
         ///&lt;/head&gt;
-        ///
         ///&lt;style type=&quot;text/css&quot;&gt;
+        ///
         ///    html {
         ///        margin: 0;
         ///        padding: 0;
@@ -2603,10 +2600,10 @@ namespace K9.Globalisation {
         ///        color: #333;
         ///    }
         ///&lt;/style&gt;
-        ///
         ///&lt;body&gt;
         ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;We have received a donation from {Customer [rest of string was truncated]&quot;;.
+        ///    &lt;br /&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;We have rece [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DonationReceivedEmail {
             get {
@@ -4432,11 +4429,50 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Someone has completed the Genetic Profile Test.
+        /// </summary>
+        public static string HealthQuestionnaireCompleteTitle {
+            get {
+                return ResourceManager.GetString("HealthQuestionnaireCompleteTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Health Questionnaires.
         /// </summary>
         public static string HealthQuestionnaires {
             get {
                 return ResourceManager.GetString("HealthQuestionnaires", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///
+        ///    html {
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
+        ///        margin: 0;
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
+        ///    &lt;br /&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;{ClientName} [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string HealthQuestoinnaireComplete {
+            get {
+                return ResourceManager.GetString("HealthQuestoinnaireComplete", resourceCulture);
             }
         }
         
