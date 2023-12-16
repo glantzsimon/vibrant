@@ -5,6 +5,7 @@
 @Html.HiddenFor(model => model.ExternalId)
 @Html.HiddenFor(model => model.OrderNumber)
 @Html.HiddenFor(model => model.UserId)
+@Html.HiddenFor(model => model.TotalPriceMinusShipping)
 
 @Html.ValidationSummary(false)
 
@@ -149,7 +150,7 @@
 
     $(window).on("load", function () {
         $("#Discount").change(function () {
-            var totalPrice = $("#TotalPrice").val();
+            var totalPrice = $("#TotalPriceMinusShipping").val();
             var perc = $("#Discount").val();
             let discountAmount = (totalPrice * (perc / 100));
             var grandTotal = totalPrice - discountAmount;
