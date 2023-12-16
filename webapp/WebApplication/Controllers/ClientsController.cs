@@ -51,6 +51,11 @@ namespace K9.WebApplication.Controllers
             return HttpNotFound();
         }
 
+        public ActionResult EditForbiddenFoods(int id = 0)
+        {
+            return RedirectToAction("EditForbiddenFoodItemsClient", "ClientForbiddenFoods", new { id });
+        }
+
         public ActionResult ImportClientsFromDonations()
         {
             var existing = Repository.List();

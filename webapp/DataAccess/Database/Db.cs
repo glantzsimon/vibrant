@@ -11,6 +11,7 @@ namespace K9.DataAccessLayer.Database
         public DbSet<ArticleSection> ArticleSections { get; set; }
         public DbSet<Consultation> Consultations { get; set; }
         public DbSet<Client> Clients { get; set; }
+        public DbSet<ClientForbiddenFood> ClientForbiddenFoods { get; set; }
         public DbSet<DietaryRecommendation> DietaryRecommendations { get; set; }
         public DbSet<Donation> Donations { get; set; }
         public DbSet<MembershipOption> MembershipOptions { get; set; }

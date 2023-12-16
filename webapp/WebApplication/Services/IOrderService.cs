@@ -25,7 +25,7 @@ namespace K9.WebApplication.Services
         /// </summary>
         void UpdateProductPacksSetDefaultAmountIfZero(int orderId);
 
-        List<Order> List(bool retrieveFullOrder = false);
+        List<Order> List(bool retrieveFullOrder = false, bool retrieveCompleteOrders = false);
         List<Order> ListForClient(int clientId);
     }
 }

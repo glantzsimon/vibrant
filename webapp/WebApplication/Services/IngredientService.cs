@@ -139,7 +139,7 @@ namespace K9.WebApplication.Services
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 
-                var ingredients = _ingredientsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+                var ingredients = _ingredientsRepository.Find(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
 
                 if (usedOnly)
                 {
@@ -169,7 +169,7 @@ namespace K9.WebApplication.Services
             var model = Find(id);
             var existingSubstitutes = _ingredientSubstituesRepository.Find(e => e.IngredientId == id).ToList();
 
-            var selectListItems = _ingredientsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+            var selectListItems = _ingredientsRepository.Find(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
             foreach (var ingredient in selectListItems)
             {
                 ingredient.IsSelected = existingSubstitutes.Exists(e => e.SubstituteIngredientId == ingredient.Id);

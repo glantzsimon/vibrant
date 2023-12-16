@@ -4048,4 +4048,22 @@
   <data name="WeightLossLabel" xml:space="preserve">
     <value>Do you find it difficult to put on weight and do you lose it easily, especially when stressed?</value>
   </data>
+  <data name="ClientForbiddenFood" xml:space="preserve">
+    <value>Client Forbidden Food</value>
+  </data>
+  <data name="ClientForbiddenFoods" xml:space="preserve">
+    <value>Client Forbidden Foods</value>
+  </data>
+  <data name="EditForbiddenFoods" xml:space="preserve">
+    <value>Edit Forbidden Foods List</value>
+  </data>
+  <data name="FoodIsUnsuitableTitle" xml:space="preserve">
+    <value>My body doesn't like this food!</value>
+  </data>
+  <data name="DemoteFoodsDescription" xml:space="preserve">
+    <value>We are all unique. If any of the foods recommended for you do not agree with you, you can remove them by clicking on the thumbs-down button.</value>
+  </data>
+  <data name="FoodIsSuitableTitle" xml:space="preserve">
+    <value>My body likes this food!</value>
+  </data>
 </root>

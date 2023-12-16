@@ -53,10 +53,22 @@
                                     for (int j = 0; j < filteredFoods.Count; j++)
                                     {
                                         var recommendedFood = filteredFoods[j];
-                                        <span class="summary-item" style="background-color: @levelColor !important;">
-                                            @recommendedFood.Name
-                                            @Html.Raw(recommendedFood.GetRelativeScoreHtml())
-                                        </span>
+                                <span class="summary-item" style="background-color: @levelColor !important;">
+                                    @recommendedFood.Name
+                                    @Html.Raw(recommendedFood.GetRelativeScoreHtml())
+
+                                    @if (Model.ClientId.HasValue)
+                                    {
+                                        if (level < ECompatibilityLevel.Suboptimal)
+                                        {
+                                            <i data-food-id="@recommendedFood.Id" class="fa fa-thumb-down food-item-icon demote-food-item" title="@Dictionary.FoodIsUnsuitableTitle"></i>
+                                        }
+                                        if (level >= ECompatibilityLevel.Suboptimal && recommendedFood.IsDemoted)
+                                        {
+                                            <i data-food-id="@recommendedFood.Id" class="fa fa-thumb-up food-item-icon promote-food-item" title="@Dictionary.FoodIsSuitableTitle"></i>
+                                        }
+                                    }
+                                </span>
                                     }
                                 }
                             </div>
@@ -68,6 +80,38 @@
     </div>
 }
 
+    <script type="text/javascript">
+    $(function () {
+        
+        $("i.demote-food-item").click(function() {
+            $("#pageSpinner").show();
+            let $el = $(this);
+            var foodItemId = $el.data("food-id");
+            ajaxcontroller().send("@Url.Action("AddFoodItem", "ClientForbiddenFoods")",
+                {
+                    clientId: @Model.ClientId,
+                    foodItemId: foodItemId
+                }, "POST").done(
+                function(result) {
+                    $.fn.processResultAndShowPopup(result);
+                    $el.parent().fadeOut();
+                });
+        });
 
+        $("i.promote-food-item").click(function() {
+            $("#pageSpinner").show();
+            let $el = $(this);
+            var foodItemId = $el.data("food-id");
+            ajaxcontroller().send("@Url.Action("PromoteFoodItem", "ClientForbiddenFoods")",
+                {
+                    clientId: @Model.ClientId,
+                    foodItemId: foodItemId
+                }, "POST").done(
+                function(result) {
+                    $.fn.processResultAndShowPopup(result);
+                    $el.parent().fadeOut();
+                });
+        });
 
-
+    })
+    </script>

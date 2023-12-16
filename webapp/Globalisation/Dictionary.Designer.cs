@@ -1413,6 +1413,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Client Forbidden Food.
+        /// </summary>
+        public static string ClientForbiddenFood {
+            get {
+                return ResourceManager.GetString("ClientForbiddenFood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client Forbidden Foods.
+        /// </summary>
+        public static string ClientForbiddenFoods {
+            get {
+                return ResourceManager.GetString("ClientForbiddenFoods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
         public static string ClientLabel {
@@ -2222,6 +2240,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to We are all unique. If any of the foods recommended for you do not agree with you, you can remove them by clicking on the thumbs-down button..
+        /// </summary>
+        public static string DemoteFoodsDescription {
+            get {
+                return ResourceManager.GetString("DemoteFoodsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dental Health.
         /// </summary>
         public static string DentalHealth {
@@ -2945,6 +2972,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit Forbidden Foods List.
+        /// </summary>
+        public static string EditForbiddenFoods {
+            get {
+                return ResourceManager.GetString("EditForbiddenFoods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit Ingredient Quantities.
         /// </summary>
         public static string EditIngredientQuantities {
@@ -3655,6 +3691,24 @@ namespace K9.Globalisation {
         public static string Flower {
             get {
                 return ResourceManager.GetString("Flower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My body likes this food!.
+        /// </summary>
+        public static string FoodIsSuitableTitle {
+            get {
+                return ResourceManager.GetString("FoodIsSuitableTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My body doesn&apos;t like this food!.
+        /// </summary>
+        public static string FoodIsUnsuitableTitle {
+            get {
+                return ResourceManager.GetString("FoodIsUnsuitableTitle", resourceCulture);
             }
         }
         

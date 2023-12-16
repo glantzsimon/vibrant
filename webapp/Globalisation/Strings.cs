@@ -238,6 +238,7 @@
             
             public const string DietaryRecommendationLabel = "DietaryRecommendation";
             public const string FoodLabel = "FoodLabel";
+            public const string FoodIsSuitableTitle = "FoodIsSuitableTitle";
             public const string ProtocolLabel = "Protocol";
             public const string FrequencyLabel = "Frequency";
             public const string ProtocolTypeLabel = "ProtocolTypeLabel";
@@ -526,6 +527,8 @@
             public const string ProtocolDietaryRecommendation = "ProtocolDietaryRecommendation";
             public const string ProtocolFoods = "ProtocolFoods ";
             public const string ProtocolFood = "ProtocolFood";
+            public const string ClientForbiddenFoods = "ClientForbiddenFoods ";
+            public const string ClientForbiddenFood = "ClientForbiddenFood";
             public const string ProtocolProductPack = "ProtocolProductPack";
             public const string ProtocolProductPacks = "ProtocolProductPacks";
             public const string ClientProduct = "ClientProduct";

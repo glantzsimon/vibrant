@@ -56,7 +56,7 @@ namespace K9.WebApplication.Controllers
 
         public override ActionResult Index()
         {
-            var allOrders = _orderService.List(true).Where(e => e.OrderType != EOrderType.ShoppingCart).ToList();
+            var allOrders = _orderService.List(false, true).Where(e => e.OrderType != EOrderType.ShoppingCart).ToList();
             var ordersViewModel = new OrdersReviewViewModel(allOrders);
 
             return View(ordersViewModel);

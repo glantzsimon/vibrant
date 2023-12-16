@@ -289,7 +289,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         [DataType(DataType.Currency)]
-        public double GetDiscountAmount() => ((TotalPriceMinusShipping * (Discount / 100 ?? 0)) + ShippingCost);
+        public double GetDiscountAmount() => ((TotalPriceMinusShipping * (Discount / 100 ?? 0)));
 
         [UIHint("InternationalCurrency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]

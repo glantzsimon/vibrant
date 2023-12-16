@@ -125,7 +125,7 @@ namespace K9.WebApplication.Services
         {
             var model = Find(id);
             var existingIngredients = _productIngredientsRepository.Find(e => e.ProductId == id).ToList();
-            var selectListItems = _ingredientsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+            var selectListItems = _ingredientsRepository.Find(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
             foreach (var ingredient in selectListItems)
             {
                 ingredient.IsSelected = existingIngredients.Exists(e => e.IngredientId == ingredient.Id);
@@ -343,13 +343,13 @@ namespace K9.WebApplication.Services
             }
         }
 
-        public List<Product> List(bool retrieveFullProduct = true, bool includeCustomProducts = false)
+        public List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false)
         {
             return MemoryCache.GetOrCreate(GetCacheKey(retrieveFullProduct, includeCustomProducts), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 
-                var products = _productsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+                var products = _productsRepository.Find(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
 
                 if (!includeCustomProducts)
                 {
@@ -373,7 +373,7 @@ namespace K9.WebApplication.Services
 
         public List<ProductItem> ListProductItems()
         {
-            var products = List();
+            var products = List(true);
             var productItems = new List<ProductItem>();
 
             foreach (var product in products)
@@ -404,7 +404,7 @@ namespace K9.WebApplication.Services
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 
                 var fullProductPacks = new List<ProductPack>();
-                var productPacks = _productPackRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+                var productPacks = _productPackRepository.Find(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
 
                 if (retrieveFullProduct)
                 {

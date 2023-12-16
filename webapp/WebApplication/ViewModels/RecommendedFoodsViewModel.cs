@@ -9,6 +9,7 @@ namespace K9.WebApplication.ViewModels
 {
     public class RecommendedFoodsViewModel
     {
+        public int? ClientId { get; set; }
         public EGenoType GenoType { get; set; }
 
         public List<ECompatibilityLevel> Levels => new List<ECompatibilityLevel>

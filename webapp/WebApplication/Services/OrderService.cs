@@ -253,13 +253,15 @@ namespace K9.WebApplication.Services
             });
         }
 
-        public List<Order> List(bool retrieveFullOrder = false)
+        public List<Order> List(bool retrieveFullOrder = false, bool retrieveCompleteOrders = false)
         {
             return MemoryCache.GetOrCreate(GetCacheKey(retrieveFullOrder), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
 
-                var orders = _ordersRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+                var orders = retrieveCompleteOrders
+                    ? _ordersRepository.Find(e => !e.IsDeleted).OrderBy(e => e.Name).ToList()
+                    : _ordersRepository.Find(e => !e.IsDeleted && !e.CompletedOn.HasValue).OrderBy(e => e.Name).ToList();
 
                 if (retrieveFullOrder)
                 {

@@ -717,7 +717,16 @@
     <Compile Include="Migrations\202312120950461_MoreDoshaQuestions.Designer.cs">
       <DependentUpon>202312120950461_MoreDoshaQuestions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312160603093_ClientForbiddenFoods.cs" />
+    <Compile Include="Migrations\202312160603093_ClientForbiddenFoods.Designer.cs">
+      <DependentUpon>202312160603093_ClientForbiddenFoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312160951350_PromoteDemoteFoodItems.cs" />
+    <Compile Include="Migrations\202312160951350_PromoteDemoteFoodItems.Designer.cs">
+      <DependentUpon>202312160951350_PromoteDemoteFoodItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
+    <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
     <Compile Include="Models\GenoTypeBase.cs" />
     <Compile Include="Models\DoshasQuestionnaire.cs" />
@@ -1121,6 +1130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312120950461_MoreDoshaQuestions.resx">
       <DependentUpon>202312120950461_MoreDoshaQuestions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312160603093_ClientForbiddenFoods.resx">
+      <DependentUpon>202312160603093_ClientForbiddenFoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312160951350_PromoteDemoteFoodItems.resx">
+      <DependentUpon>202312160951350_PromoteDemoteFoodItems.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

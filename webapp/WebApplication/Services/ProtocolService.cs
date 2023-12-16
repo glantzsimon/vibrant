@@ -30,6 +30,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<ProtocolFoodItem> _protocolFoodItemsRepository;
         private readonly IRepository<HealthQuestionnaire> _healthQuestionnaiRepository;
         private readonly IRepository<ProductPackProduct> _productPackProductsRepository;
+        private readonly IRepository<ClientForbiddenFood> _clientForbiddenFoodsRepository;
         private readonly IRepository<ProtocolDietaryRecommendation> _protocolDietaryRecommendationRepository;
         private readonly IRepository<DietaryRecommendation> _dietaryRecommendationRepository;
         private readonly DefaultValuesConfiguration _defaultValues;
@@ -55,7 +56,8 @@ namespace K9.WebApplication.Services
             IRepository<FoodItem> foodItemsRepository,
             IRepository<ProtocolFoodItem> protocolFoodItemsRepository,
             IRepository<HealthQuestionnaire> healthQuestionnaiRepository,
-            IRepository<ProductPackProduct> productPackProductsRepository) :
+            IRepository<ProductPackProduct> productPackProductsRepository,
+            IRepository<ClientForbiddenFood> clientForbiddenFoodsRepository) :
             base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository,
                 ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository,
                 activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository, foodItemsRepository)
@@ -78,6 +80,7 @@ namespace K9.WebApplication.Services
             _protocolFoodItemsRepository = protocolFoodItemsRepository;
             _healthQuestionnaiRepository = healthQuestionnaiRepository;
             _productPackProductsRepository = productPackProductsRepository;
+            _clientForbiddenFoodsRepository = clientForbiddenFoodsRepository;
             _protocolDietaryRecommendationRepository = protocolDietaryRecommendationRepository;
             _dietaryRecommendationRepository = dietaryRecommendationRepository;
             _defaultValues = defaultValues.Value;
@@ -178,12 +181,69 @@ namespace K9.WebApplication.Services
                     GetDietaryRecommendations().FirstOrDefault(e => e.Id == protocolDietaryRecommendation.DietaryRecommendationId);
             }
 
+            var clientForbiddenFoods = protocol.ClientId.HasValue
+                ? _clientForbiddenFoodsRepository.Find(e => e.ClientId == protocol.ClientId.Value).ToList()
+                : null;
+
             protocol.RecommendedFoods = _protocolFoodItemsRepository
                 .Find(e => e.ProtocolId == protocol.Id).ToList();
             foreach (var protocolFoodItem in protocol.RecommendedFoods)
             {
                 protocolFoodItem.FoodItem =
                     GetFoodItems().FirstOrDefault(e => e.Id == protocolFoodItem.FoodItemId);
+
+                // Demote items marked by client as unsuitable
+                if (protocol.GenoType != EGenoType.Unspecified && clientForbiddenFoods != null)
+                {
+                    var forbidden =
+                        clientForbiddenFoods.FirstOrDefault(e =>
+                            e.FoodItemId == protocolFoodItem.FoodItem.FoodItemId);
+
+                    if (forbidden != null)
+                    {
+                        if (forbidden.IsPromotion)
+                        {
+                            protocolFoodItem.FoodItem.IsPromoted = true;
+                        }
+                        else
+                        {
+                            protocolFoodItem.FoodItem.IsDemoted = true;
+                        }
+
+                        var compatibilityLevel = forbidden.IsPromotion ? ECompatibilityLevel.Neutral : ECompatibilityLevel.Unsuitable;
+
+                        switch (protocol.GenoType)
+                        {
+                            case EGenoType.Gatherer:
+
+                                protocolFoodItem.FoodItem.GathererCompatibilityLevel = compatibilityLevel;
+                                break;
+
+                            case EGenoType.Hunter:
+                                protocolFoodItem.FoodItem.HunterCompatibilityLevel = compatibilityLevel;
+                                break;
+
+                            case EGenoType.Teacher:
+                                protocolFoodItem.FoodItem.TeacherCompatibilityLevel = compatibilityLevel;
+                                break;
+
+                            case EGenoType.Explorer:
+                                protocolFoodItem.FoodItem.ExplorerCompatibilityLevel = compatibilityLevel;
+                                break;
+
+                            case EGenoType.Warrior:
+                                protocolFoodItem.FoodItem.WarriorCompatibilityLevel = compatibilityLevel;
+                                break;
+
+                            case EGenoType.Nomad:
+                                protocolFoodItem.FoodItem.NomadCompatibilityLevel = compatibilityLevel;
+                                break;
+
+                            default:
+                                break;
+                        }
+                    }
+                }
             }
 
             protocol.Products = _protocolProductsRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
@@ -210,7 +270,7 @@ namespace K9.WebApplication.Services
             }
 
             protocol.ProtocolSections = _protocolProtocolSectionRepository.Find(e => e.ProtocolId == protocol.Id);
-            
+
             foreach (var section in protocol.ProtocolSections)
             {
                 section.Section = _protocolSectionRepository.Find(section.SectionId);
@@ -317,7 +377,7 @@ namespace K9.WebApplication.Services
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 
-                var protocols = _protocolsRepository.List().Where(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
+                var protocols = _protocolsRepository.Find(e => !e.IsDeleted).OrderBy(e => e.Name).ToList();
 
                 if (retrieveFullProtocol)
                 {
@@ -626,7 +686,7 @@ namespace K9.WebApplication.Services
                 }
             }
         }
-        
+
         private void AddDefaultSections(Protocol protocol)
         {
             if (!protocol.ProtocolSections.Any())

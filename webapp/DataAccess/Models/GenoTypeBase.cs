@@ -10,7 +10,7 @@ namespace K9.DataAccessLayer.Models
     {
         [NotMapped]
         public int Score { get; set; }
-        
+
         [NotMapped]
         public int RelativeScore { get; set; }
 
@@ -53,14 +53,9 @@ namespace K9.DataAccessLayer.Models
                 return "<i class=\"fa fa-heart food-item-icon\"></i>";
             }
 
-            if (score == EScore.Medium)
-            {
-                return "<i class=\"fa fa-heart-o food-item-icon\"></i>";
-            }
-
             return "";
         }
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VataDosha)]
         public bool VataDosha { get; set; }
 
@@ -87,7 +82,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Nomad)]
         public bool Nomad { get; set; }
-        
+
         [UIHint("CompatibilityLevel")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.HunterCompatibilityLevel)]
         public ECompatibilityLevel HunterCompatibilityLevel { get; set; }
@@ -112,10 +107,22 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NomadCompatibilityLevel)]
         public ECompatibilityLevel NomadCompatibilityLevel { get; set; }
 
+        /// <summary>
+        /// True when the fooditem has been marked NOT OK by the client as unsuitable
+        /// </summary>
+        [NotMapped]
+        public bool IsDemoted { get; set; }
+
+        /// <summary>
+        /// True when the fooditem has been marked as OK by the client as unsuitable
+        /// </summary>
+        [NotMapped]
+        public bool IsPromoted { get; set; }
+
         [UIHint("FoodFrequency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.HunterFrequency)]
         public EFoodFrequency? HunterFrequency { get; set; }
-        
+
         [UIHint("FoodFrequency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.GathererFrequency)]
         public EFoodFrequency? GathererFrequency { get; set; }
@@ -123,19 +130,19 @@ namespace K9.DataAccessLayer.Models
         [UIHint("FoodFrequency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.TeacherFrequency)]
         public EFoodFrequency? TeacherFrequency { get; set; }
-        
+
         [UIHint("FoodFrequency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ExplorerFrequency)]
         public EFoodFrequency? ExplorerFrequency { get; set; }
-        
+
         [UIHint("FoodFrequency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.WarriorFrequency)]
         public EFoodFrequency? WarriorFrequency { get; set; }
-        
+
         [UIHint("FoodFrequency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NomadFrequency)]
         public EFoodFrequency? NomadFrequency { get; set; }
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Water)]
         public bool Water { get; set; }
 
@@ -176,10 +183,10 @@ namespace K9.DataAccessLayer.Models
         public bool AntiInflammatory { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.AntiOxidant)]
-        public bool AntiOxidant{ get; set; }
+        public bool AntiOxidant { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Longevity)]
-        public bool Longevity{ get; set; }
+        public bool Longevity { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.CellularHealth)]
         public bool CellularHealth { get; set; }
@@ -216,7 +223,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Sleep)]
         public bool Sleep { get; set; }
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BloodBuilding)]
         public bool BloodBuilding { get; set; }
 
@@ -231,7 +238,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Vegetarian)]
         public bool Vegetarian { get; set; }
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Vegan)]
         public bool Vegan { get; set; }
 
