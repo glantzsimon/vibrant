@@ -4546,9 +4546,9 @@ namespace K9.WebApplication.Services
             foodItem.IsLateSummer = isLateSummer;
             foodItem.IsAutumn = isAutumn;
             foodItem.IsWinter = isWinter;
-            foodItem.IsVataDosha = isVata;
-            foodItem.IsPittaDosha = isPitta;
-            foodItem.IsKaphaDosha = isKapha;
+            foodItem.VataDosha = isVata;
+            foodItem.PittaDosha = isPitta;
+            foodItem.KaphaDosha = isKapha;
             foodItem.IsWaterElement = isWater;
             foodItem.IsEarthElement = isEarth;
             foodItem.IsTreeElement = isTree;
@@ -4584,9 +4584,9 @@ namespace K9.WebApplication.Services
                                                 $"IsLateSummer = {(foodItem.IsLateSummer? 1 : 0)}, " +
                                                 $"IsAutumn = {(foodItem.IsAutumn? 1 : 0)}, " +
                                                 $"IsWinter = {(foodItem.IsWinter? 1 : 0)}, " +
-                                                $"IsVataDosha = {(foodItem.IsVataDosha? 1 : 0)}, " +
-                                                $"IsPittaDosha = {(foodItem.IsPittaDosha? 1 : 0)}, " +
-                                                $"IsKaphaDosha = {(foodItem.IsKaphaDosha? 1 : 0)}, " +
+                                                $"IsVataDosha = {(foodItem.VataDosha? 1 : 0)}, " +
+                                                $"IsPittaDosha = {(foodItem.PittaDosha? 1 : 0)}, " +
+                                                $"IsKaphaDosha = {(foodItem.KaphaDosha? 1 : 0)}, " +
                                                 $"IsWaterElement = {(foodItem.IsWaterElement? 1 : 0)}, " +
                                                 $"IsEarthlElement = {(foodItem.IsEarthElement? 1 : 0)}, " +
                                                 $"IsTreeElement = {(foodItem.IsTreeElement? 1 : 0)}, " +

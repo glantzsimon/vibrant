@@ -729,6 +729,22 @@
     <Compile Include="Migrations\202312161157048_FoodCorrections.Designer.cs">
       <DependentUpon>202312161157048_FoodCorrections.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312180813241_NewFoodColumns.cs" />
+    <Compile Include="Migrations\202312180813241_NewFoodColumns.Designer.cs">
+      <DependentUpon>202312180813241_NewFoodColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312180949061_IsBulletProof.cs" />
+    <Compile Include="Migrations\202312180949061_IsBulletProof.Designer.cs">
+      <DependentUpon>202312180949061_IsBulletProof.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312181044298_HighLectinDescription.cs" />
+    <Compile Include="Migrations\202312181044298_HighLectinDescription.Designer.cs">
+      <DependentUpon>202312181044298_HighLectinDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312181301246_HighOmega6Description.cs" />
+    <Compile Include="Migrations\202312181301246_HighOmega6Description.Designer.cs">
+      <DependentUpon>202312181301246_HighOmega6Description.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
@@ -1143,6 +1159,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312161157048_FoodCorrections.resx">
       <DependentUpon>202312161157048_FoodCorrections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312180813241_NewFoodColumns.resx">
+      <DependentUpon>202312180813241_NewFoodColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312180949061_IsBulletProof.resx">
+      <DependentUpon>202312180949061_IsBulletProof.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312181044298_HighLectinDescription.resx">
+      <DependentUpon>202312181044298_HighLectinDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312181301246_HighOmega6Description.resx">
+      <DependentUpon>202312181301246_HighOmega6Description.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -21,6 +21,74 @@ namespace K9.DataAccessLayer.Models
         
         public EGenoType GenoType { get; set; }
 
+        #region Food Choices
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.RedMeat)]
+        public bool EatsRedMeat { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Poultry)]
+        public bool EatsPoultry { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.FishAndSeafood)]
+        public bool EatsFishAndSeafood { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.EggsAndRoes)]
+        public bool EatsEggsAndRoes { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Dairy)]
+        public bool EatsDairy { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Vegetables)]
+        public bool EatsVegetables { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VegetableProtein)]
+        public bool EatsVegetableProtein { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Fungi)]
+        public bool EatsFungi { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Fruit)]
+        public bool EatsFruit { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowOxalateLabel)]
+        public bool IsLowOxalate { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowLectinLabel)]
+        public bool IsLowLectin { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowPhytateLabel)]
+        public bool IsLowPhytate { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowHistamineLabel)]
+        public bool IsLowHistamine { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowMycotoxinLabel)]
+        public bool IsLowMycotoxin { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowOmega6Label)]
+        public bool IsLowOmega6 { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsBulletProofLabel)]
+        public bool IsBulletProof { get; set; }
+
+        #endregion
+
         [NotMapped]
         [UIHint("Protocol")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProtocolLabel)]

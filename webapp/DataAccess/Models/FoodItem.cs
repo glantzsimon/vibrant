@@ -20,6 +20,15 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ActivityLabel)]
         public EFoodCategory Category { get; set; }
 
+        public bool IsRedMeat => Category == EFoodCategory.RedMeat;
+        public bool IsFishAndSeafood => Category == EFoodCategory.FishAndSeafood;
+        public bool IsEggsAndRoes => Category == EFoodCategory.EggsAndRoes;
+        public bool IsDairy => Category == EFoodCategory.Dairy;
+        public bool IsVegetables => Category == EFoodCategory.Vegetables;
+        public bool IsVegetableProtein => Category == EFoodCategory.VegetableProtein;
+        public bool IsFungi => Category == EFoodCategory.Fungi;
+        public bool IsFruit => Category == EFoodCategory.Fruits;
+
         [NotMapped]
         [UIHint("FoodItem")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ActivityLabel)]
@@ -120,16 +129,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsWinterLabel)]
         public bool IsWinter { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsVataDoshaLabel)]
-        public bool IsVataDosha { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsPittaDoshaLabel)]
-        public bool IsPittaDosha { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsKaphaDoshaLabel)]
-        public bool IsKaphaDosha { get; set; }
-
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsWaterElementLabel)]
         public bool IsWaterElement { get; set; }
 
@@ -144,6 +144,31 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsMetalElementLabel)]
         public bool IsMetalElement { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHighOxalateLabel)]
+        public bool IsHighOxalate { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHighLectinLabel)]
+        public bool IsHighLectin { get; set; }
+
+        public string HighLectinDescription{ get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHighPhytateLabel)]
+        public bool IsHighPhytate { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHighHistamineLabel)]
+        public bool IsHighHistamine { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHighMycotoxinLabel)]
+        public bool IsHighMycotoxin { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHighOmega6Label)]
+        public bool IsHighOmega6 { get; set; }
+
+        public string IsHighOmega6Description{ get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BulletProofDietLabel)]
+        public bool IsBulletProof { get; set; }
 
         [FileSourceInfo("upload/fooditems", Filter = EFilesSourceFilter.Images)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]

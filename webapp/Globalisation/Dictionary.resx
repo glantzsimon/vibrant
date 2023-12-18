@@ -1205,7 +1205,7 @@
     <value>Is Hydroscopic</value>
   </data>
   <data name="IsHiddenLabel" xml:space="preserve">
-    <value>Is Hidden</value>
+    <value>Hidden</value>
   </data>
   <data name="SelectedProductLabel" xml:space="preserve">
     <value>Selected Product</value>
@@ -1232,7 +1232,7 @@
     <value>Sulfur Detox</value>
   </data>
   <data name="IsMainLabel" xml:space="preserve">
-    <value>Is Main</value>
+    <value>Main</value>
   </data>
   <data name="IngredientsList" xml:space="preserve">
     <value>Ingredients List</value>
@@ -1424,16 +1424,16 @@
     <value>In Progress</value>
   </data>
   <data name="IsCompleteLabel" xml:space="preserve">
-    <value>Is Complete</value>
+    <value>Complete</value>
   </data>
   <data name="IsMadeLabel" xml:space="preserve">
-    <value>Is Made</value>
+    <value>Made</value>
   </data>
   <data name="IsOverDueLabel" xml:space="preserve">
-    <value>Is Overdue</value>
+    <value>Overdue</value>
   </data>
   <data name="IsPaidLabel" xml:space="preserve">
-    <value>Is Paid</value>
+    <value>Paid</value>
   </data>
   <data name="MadeOnLabel" xml:space="preserve">
     <value>Made On</value>
@@ -1652,7 +1652,7 @@
     <value>Friday</value>
   </data>
   <data name="IsSelectedLabel" xml:space="preserve">
-    <value>Is Selected</value>
+    <value>Selected</value>
   </data>
   <data name="Monday" xml:space="preserve">
     <value>Monday</value>
@@ -2045,10 +2045,10 @@
     <value>Full Price</value>
   </data>
   <data name="IsOnHoldLabel" xml:space="preserve">
-    <value>Is On Hold</value>
+    <value>On Hold</value>
   </data>
   <data name="IsStartedLabel" xml:space="preserve">
-    <value>Is Started</value>
+    <value>Started</value>
   </data>
   <data name="OrdersPickSlip" xml:space="preserve">
     <value>Orders Pick Slip</value>
@@ -2078,7 +2078,7 @@
     <value>International Price</value>
   </data>
   <data name="IsLocalDeliveryLabel" xml:space="preserve">
-    <value>Is Local Delivery</value>
+    <value>Local Delivery</value>
   </data>
   <data name="ShoppingCart" xml:space="preserve">
     <value>Shopping Cart</value>
@@ -4060,8 +4060,26 @@
   <data name="FoodIsUnsuitableTitle" xml:space="preserve">
     <value>My body doesn't like this food!</value>
   </data>
+  <data name="A2MilkOnly" xml:space="preserve">
+    <value>A2 Milk Only</value>
+  </data>
+  <data name="BulletProofDietLabel" xml:space="preserve">
+    <value>Bulletproof Diet</value>
+  </data>
   <data name="DemoteFoodsDescription" xml:space="preserve">
     <value>We are all unique. If any of the foods recommended for you do not agree with you, you can remove them by clicking on the thumbs-down button.</value>
+  </data>
+  <data name="DietaryPreferences" xml:space="preserve">
+    <value>Dietary Preferences</value>
+  </data>
+  <data name="FiveElements" xml:space="preserve">
+    <value>FiveElements</value>
+  </data>
+  <data name="Flavour" xml:space="preserve">
+    <value>Flavour</value>
+  </data>
+  <data name="FoodCategoriesQuestionTitle" xml:space="preserve">
+    <value>Which of the following food groups do you eat?</value>
   </data>
   <data name="FoodIsSuitableTitle" xml:space="preserve">
     <value>My body likes this food!</value>
@@ -4071,5 +4089,59 @@
   </data>
   <data name="HealthQuestoinnaireComplete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\healthquestoinnairecomplete.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="IsBulletProofLabel" xml:space="preserve">
+    <value>Bullet Proof</value>
+  </data>
+  <data name="IsHighHistamineLabel" xml:space="preserve">
+    <value>High in Histamine</value>
+  </data>
+  <data name="IsHighLectinLabel" xml:space="preserve">
+    <value>High in Lectins</value>
+  </data>
+  <data name="IsHighMycotoxinLabel" xml:space="preserve">
+    <value>High Mycotoxin Risk</value>
+  </data>
+  <data name="IsHighOmega6Label" xml:space="preserve">
+    <value>High in Omega 6 Fatty Acids</value>
+  </data>
+  <data name="IsHighOxalateLabel" xml:space="preserve">
+    <value>High in Oxalates</value>
+  </data>
+  <data name="IsHighPhytateLabel" xml:space="preserve">
+    <value>High in Phytate</value>
+  </data>
+  <data name="IsLowHistamineLabel" xml:space="preserve">
+    <value>Low Histamine</value>
+  </data>
+  <data name="IsLowLectinLabel" xml:space="preserve">
+    <value>Low Lectins</value>
+  </data>
+  <data name="IsLowMycotoxinLabel" xml:space="preserve">
+    <value>Low Mycotoxin Risk</value>
+  </data>
+  <data name="IsLowOmega6Label" xml:space="preserve">
+    <value>Low Omega 6 Fatty Acids</value>
+  </data>
+  <data name="IsLowOxalateLabel" xml:space="preserve">
+    <value>Low Oxalates</value>
+  </data>
+  <data name="IsLowPhytateLabel" xml:space="preserve">
+    <value>Low Phytate</value>
+  </data>
+  <data name="OtherDietaryPreferencesQuestionTitle" xml:space="preserve">
+    <value>Please check any of the following dietary preferences that apply:</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="Season" xml:space="preserve">
+    <value>Season</value>
+  </data>
+  <data name="Skin" xml:space="preserve">
+    <value>Skin</value>
+  </data>
+  <data name="TCM" xml:space="preserve">
+    <value>TCM</value>
   </data>
 </root>

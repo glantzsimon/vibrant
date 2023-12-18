@@ -101,6 +101,7 @@ namespace K9.DataAccessLayer.Models
         {
             return IsGeneralHealthComplete() &&
                    IsPersonalInformationComplete() &&
+                   IsDietaryPreferencesComplete() &&
                    IsFamilyHistoryComplete() &&
                    IsDentitionComplete() &&
                    IsAcetylationStatusComplete() &&
@@ -116,6 +117,7 @@ namespace K9.DataAccessLayer.Models
         {
             return IsGeneralHealthComplete() ||
                    IsPersonalInformationComplete() ||
+                   IsDietaryPreferencesComplete() ||
                    IsFamilyHistoryComplete() ||
                    IsAcetylationStatusComplete() ||
                    IsDentitionComplete() ||
@@ -161,7 +163,7 @@ namespace K9.DataAccessLayer.Models
 
             return (int)Math.Ceiling((double)score * 100);
         }
-        
+
         public int GetDentalHealthScore()
         {
             return GetScore(e => e.DentalHealth,
@@ -510,12 +512,7 @@ namespace K9.DataAccessLayer.Models
         [QuestionCategory(Category = EQuestionCategory.PersonalDetails, AllowNull = true)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsLGBTQPlusLabel)]
         public EYesNo? IsIsLGBTQPlus { get; set; }
-
-        [QuestionCategory(Category = EQuestionCategory.PersonalDetails)]
-        [UIHint("DietaryPreference")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DietaryPreference)]
-        public EDietaryPreference? DietaryPreference { get; set; }
-
+        
         [QuestionCategory(Category = EQuestionCategory.PersonalDetails)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DateOfBirthLabel)]
         public DateTime? DateOfBirth { get; set; }
@@ -564,6 +561,80 @@ namespace K9.DataAccessLayer.Models
         }
 
         public bool IsPersonalInformationComplete() => IsCategoryComplete(e => e.Category == EQuestionCategory.PersonalDetails);
+
+        #endregion
+
+        #region Dietary Preferences
+
+        [QuestionCategory(Category = EQuestionCategory.PersonalDetails, AllowNull = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DietaryPreference)]
+        public EDietaryPreference? DietaryPreference { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.RedMeat)]
+        public bool EatsRedMeat { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.Poultry)]
+        public bool EatsPoultry { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.FishAndSeafood)]
+        public bool EatsFishAndSeafood { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.EggsAndRoes)]
+        public bool EatsEggsAndRoes { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.Dairy)]
+        public bool EatsDairy { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.Vegetables)]
+        public bool EatsVegetables { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.VegetableProtein)]
+        public bool EatsVegetableProtein { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.Fungi)]
+        public bool EatsFungi { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.Fruit)]
+        public bool EatsFruit { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowOxalateLabel)]
+        public bool IsLowOxalate { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowLectinLabel)]
+        public bool IsLowLectin { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowPhytateLabel)]
+        public bool IsLowPhytate { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowHistamineLabel)]
+        public bool IsLowHistamine { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowMycotoxinLabel)]
+        public bool IsLowMycotoxin { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowOmega6Label)]
+        public bool IsLowOmega6 { get; set; }
+        
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsBulletProofLabel)]
+        public bool IsBulletProof { get; set; }
+
+        public bool IsDietaryPreferencesComplete() => IsCategoryComplete(e => e.Category == EQuestionCategory.DietaryPreferences);
 
         #endregion
 
@@ -911,10 +982,10 @@ namespace K9.DataAccessLayer.Models
                        {
                            var value = this.GetProperty(e.PropertyInfo);
                            var valueIsNull = value == null;
-                           var isComplete = !valueIsNull 
-                                    && (e.QuestionCategoryAttribute.MustBeGreaterThanZero 
-                                        ? double.Parse(value.ToString()) > 0 
-                                        : true )
+                           var isComplete = !valueIsNull
+                                    && (e.QuestionCategoryAttribute.MustBeGreaterThanZero
+                                        ? double.Parse(value.ToString()) > 0
+                                        : true)
                                     || e.QuestionCategoryAttribute.AllowNull;
 
                            return isComplete;

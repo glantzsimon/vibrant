@@ -21,6 +21,8 @@ namespace K9.DataAccessLayer.Enums
         Pod,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Seed)]
         Seed,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Skin)]
+        Skin,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Flower)]
         Flower
     }

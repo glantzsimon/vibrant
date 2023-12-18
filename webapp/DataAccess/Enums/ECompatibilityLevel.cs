@@ -5,6 +5,7 @@ namespace K9.DataAccessLayer.Enums
 {
     public enum ECompatibilityLevel
     {
+        Unspecified = -1,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Neutral)]
         [ECompatibilityEnumMetaData(
             ResourceType = typeof(Globalisation.Dictionary), 

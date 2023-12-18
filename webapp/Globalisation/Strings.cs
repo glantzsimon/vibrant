@@ -156,6 +156,22 @@
             public const string IsFireElementLabel = "IsFireElementLabel";
             public const string IsEarthElementLabel = "IsEarthElementLabel";
             public const string IsMetalElementLabel = "IsMetalElementLabel";
+
+            public const string IsHighOxalateLabel = "IsHighOxalateLabel";
+            public const string IsHighLectinLabel = "IsHighLectinLabel";
+            public const string IsHighPhytateLabel = "IsHighPhytateLabel";
+            public const string IsHighHistamineLabel = "IsHighHistamineLabel";
+            public const string IsHighMycotoxinLabel = "IsHighMycotoxinLabel";
+            public const string IsHighOmega6Label = "IsHighOmega6Label";
+            public const string IsBulletProofLabel = "IsBulletProofLabel";
+            public const string BulletProofDietLabel = "BulletProofDietLabel";
+
+            public const string IsLowOxalateLabel = "IsLowOxalateLabel";
+            public const string IsLowLectinLabel = "IsLowLectinLabel";
+            public const string IsLowPhytateLabel = "IsLowPhytateLabel";
+            public const string IsLowHistamineLabel = "IsLowHistamineLabel";
+            public const string IsLowMycotoxinLabel = "IsLowMycotoxinLabel";
+            public const string IsLowOmega6Label = "IsLowOmega6Label";
             
             public const string IsVataDoshaLabel = "IsVataDoshaLabel";
             public const string IsPittaDoshaLabel = "IsPittaDoshaLabel";
@@ -485,6 +501,7 @@
             public const string Fruit = "Fruit";
             public const string Pod = "Pod";
             public const string Seed = "Seed";
+            public const string Skin = "Skin";
             public const string Flower = "Flower";
 
             public const string Product = "Product";

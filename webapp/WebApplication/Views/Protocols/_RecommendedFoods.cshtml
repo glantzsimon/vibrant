@@ -10,6 +10,7 @@
 
 @if (Model.RecommendedFoods.Any())
 {
+
     <ul class="nav nav-pills">
         @for (int i = 0; i < Model.FoodGroups.Count; i++)
         {
@@ -53,7 +54,28 @@
                                     for (int j = 0; j < filteredFoods.Count; j++)
                                     {
                                         var recommendedFood = filteredFoods[j];
-                                        <span class="summary-item" style="background-color: @levelColor !important;">
+                                        
+                                        <span 
+                                            data-id="@recommendedFood.Id" 
+
+                                            data-redmeat="@recommendedFood.IsRedMeat" 
+                                            data-fishandseafood="@recommendedFood.IsFishAndSeafood" 
+                                            data-eggsandroes="@recommendedFood.IsEggsAndRoes" 
+                                            data-dairy="@recommendedFood.IsDairy" 
+                                            data-vegetables="@recommendedFood.IsVegetables" 
+                                            data-vegetableprotein="@recommendedFood.IsVegetableProtein" 
+                                            data-fungi="@recommendedFood.IsFungi" 
+                                            data-fruit="@recommendedFood.IsFruit" 
+                                            
+                                            data-high-oxalate="@recommendedFood.IsHighOxalate" 
+                                            data-high-lectin="@recommendedFood.IsHighLectin" 
+                                            data-high-phytate="@recommendedFood.IsHighPhytate" 
+                                            data-high-histamine="@recommendedFood.IsHighHistamine" 
+                                            data-high-mycotoxin="@recommendedFood.IsHighMycotoxin" 
+                                            data-high-omega6="@recommendedFood.IsHighOmega6"  
+                                            
+                                            class="summary-item recommended-food" style="background-color: @levelColor !important;">
+                                            
                                             @Html.Raw(recommendedFood.GetRelativeScoreHtml())
                                             <span>@recommendedFood.Name</span>
 
@@ -63,6 +85,7 @@
                                                 {
                                                     <i data-food-id="@recommendedFood.Id" class="fa fa-thumbs-down food-item-icon demote-food-item" title="@Dictionary.FoodIsUnsuitableTitle"></i>
                                                 }
+
                                                 if (level >= ECompatibilityLevel.Suboptimal && recommendedFood.IsDemoted)
                                                 {
                                                     <i data-food-id="@recommendedFood.Id" class="fa fa-thumbs-up food-item-icon promote-food-item" title="@Dictionary.FoodIsSuitableTitle"></i>

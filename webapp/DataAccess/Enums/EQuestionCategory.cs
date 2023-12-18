@@ -6,6 +6,7 @@
         FamilyHistory,
         GeneralHealth,
         PersonalDetails,
+        DietaryPreferences,
         Dentition,
         Acetylation,
         Biometrics,

@@ -70,6 +70,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A2 Milk Only.
+        /// </summary>
+        public static string A2MilkOnly {
+            get {
+                return ResourceManager.GetString("A2MilkOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to AB.
         /// </summary>
         public static string AB {
@@ -1065,6 +1074,15 @@ namespace K9.Globalisation {
         public static string BulkDiscountLabel {
             get {
                 return ResourceManager.GetString("BulkDiscountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bulletproof Diet.
+        /// </summary>
+        public static string BulletProofDietLabel {
+            get {
+                return ResourceManager.GetString("BulletProofDietLabel", resourceCulture);
             }
         }
         
@@ -2420,6 +2438,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dietary Preferences.
+        /// </summary>
+        public static string DietaryPreferences {
+            get {
+                return ResourceManager.GetString("DietaryPreferences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dietary Recommendation.
         /// </summary>
         public static string DietaryRecommendation {
@@ -3656,6 +3683,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FiveElements.
+        /// </summary>
+        public static string FiveElements {
+            get {
+                return ResourceManager.GetString("FiveElements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The 5 Elements.
         /// </summary>
         public static string FiveElementsTitle {
@@ -3674,6 +3710,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Flavour.
+        /// </summary>
+        public static string Flavour {
+            get {
+                return ResourceManager.GetString("Flavour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Flexible.
         /// </summary>
         public static string Flexible {
@@ -3688,6 +3733,15 @@ namespace K9.Globalisation {
         public static string Flower {
             get {
                 return ResourceManager.GetString("Flower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which of the following food groups do you eat?.
+        /// </summary>
+        public static string FoodCategoriesQuestionTitle {
+            get {
+                return ResourceManager.GetString("FoodCategoriesQuestionTitle", resourceCulture);
             }
         }
         
@@ -5231,6 +5285,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bullet Proof.
+        /// </summary>
+        public static string IsBulletProofLabel {
+            get {
+                return ResourceManager.GetString("IsBulletProofLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Citrus Fruit.
         /// </summary>
         public static string IsCitrusFruitLabel {
@@ -5240,7 +5303,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is Complete.
+        ///   Looks up a localized string similar to Complete.
         /// </summary>
         public static string IsCompleteLabel {
             get {
@@ -5276,11 +5339,65 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is Hidden.
+        ///   Looks up a localized string similar to Hidden.
         /// </summary>
         public static string IsHiddenLabel {
             get {
                 return ResourceManager.GetString("IsHiddenLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High in Histamine.
+        /// </summary>
+        public static string IsHighHistamineLabel {
+            get {
+                return ResourceManager.GetString("IsHighHistamineLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High in Lectins.
+        /// </summary>
+        public static string IsHighLectinLabel {
+            get {
+                return ResourceManager.GetString("IsHighLectinLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High Mycotoxin Risk.
+        /// </summary>
+        public static string IsHighMycotoxinLabel {
+            get {
+                return ResourceManager.GetString("IsHighMycotoxinLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High in Omega 6 Fatty Acids.
+        /// </summary>
+        public static string IsHighOmega6Label {
+            get {
+                return ResourceManager.GetString("IsHighOmega6Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High in Oxalates.
+        /// </summary>
+        public static string IsHighOxalateLabel {
+            get {
+                return ResourceManager.GetString("IsHighOxalateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to High in Phytate.
+        /// </summary>
+        public static string IsHighPhytateLabel {
+            get {
+                return ResourceManager.GetString("IsHighPhytateLabel", resourceCulture);
             }
         }
         
@@ -5330,7 +5447,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is Local Delivery.
+        ///   Looks up a localized string similar to Local Delivery.
         /// </summary>
         public static string IsLocalDeliveryLabel {
             get {
@@ -5357,7 +5474,61 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is Made.
+        ///   Looks up a localized string similar to Low Histamine.
+        /// </summary>
+        public static string IsLowHistamineLabel {
+            get {
+                return ResourceManager.GetString("IsLowHistamineLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low Lectins.
+        /// </summary>
+        public static string IsLowLectinLabel {
+            get {
+                return ResourceManager.GetString("IsLowLectinLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low Mycotoxin Risk.
+        /// </summary>
+        public static string IsLowMycotoxinLabel {
+            get {
+                return ResourceManager.GetString("IsLowMycotoxinLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low Omega 6 Fatty Acids.
+        /// </summary>
+        public static string IsLowOmega6Label {
+            get {
+                return ResourceManager.GetString("IsLowOmega6Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low Oxalates.
+        /// </summary>
+        public static string IsLowOxalateLabel {
+            get {
+                return ResourceManager.GetString("IsLowOxalateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low Phytate.
+        /// </summary>
+        public static string IsLowPhytateLabel {
+            get {
+                return ResourceManager.GetString("IsLowPhytateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Made.
         /// </summary>
         public static string IsMadeLabel {
             get {
@@ -5366,7 +5537,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is Main.
+        ///   Looks up a localized string similar to Main.
         /// </summary>
         public static string IsMainLabel {
             get {
@@ -5393,7 +5564,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is On Hold.
+        ///   Looks up a localized string similar to On Hold.
         /// </summary>
         public static string IsOnHoldLabel {
             get {
@@ -5411,7 +5582,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is Overdue.
+        ///   Looks up a localized string similar to Overdue.
         /// </summary>
         public static string IsOverDueLabel {
             get {
@@ -5420,7 +5591,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is Paid.
+        ///   Looks up a localized string similar to Paid.
         /// </summary>
         public static string IsPaidLabel {
             get {
@@ -5492,7 +5663,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is Selected.
+        ///   Looks up a localized string similar to Selected.
         /// </summary>
         public static string IsSelectedLabel {
             get {
@@ -5519,7 +5690,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is Started.
+        ///   Looks up a localized string similar to Started.
         /// </summary>
         public static string IsStartedLabel {
             get {
@@ -7465,6 +7636,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please check any of the following dietary preferences that apply:.
+        /// </summary>
+        public static string OtherDietaryPreferencesQuestionTitle {
+            get {
+                return ResourceManager.GetString("OtherDietaryPreferencesQuestionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Other Modalities.
         /// </summary>
         public static string OtherHealingTechniques {
@@ -8395,6 +8575,15 @@ namespace K9.Globalisation {
         public static string PromoCodes {
             get {
                 return ResourceManager.GetString("PromoCodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Properties.
+        /// </summary>
+        public static string Properties {
+            get {
+                return ResourceManager.GetString("Properties", resourceCulture);
             }
         }
         
@@ -9381,6 +9570,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Season.
+        /// </summary>
+        public static string Season {
+            get {
+                return ResourceManager.GetString("Season", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to See Full List.
         /// </summary>
         public static string SeeAll {
@@ -9695,6 +9893,15 @@ namespace K9.Globalisation {
         public static string SixToNineTimesWeekly {
             get {
                 return ResourceManager.GetString("SixToNineTimesWeekly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skin.
+        /// </summary>
+        public static string Skin {
+            get {
+                return ResourceManager.GetString("Skin", resourceCulture);
             }
         }
         
@@ -10653,6 +10860,15 @@ namespace K9.Globalisation {
         public static string TasterStatus {
             get {
                 return ResourceManager.GetString("TasterStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TCM.
+        /// </summary>
+        public static string TCM {
+            get {
+                return ResourceManager.GetString("TCM", resourceCulture);
             }
         }
         

@@ -146,6 +146,12 @@ namespace K9.WebApplication.Services
                 foodItem.Score = foodScore;
             }
 
+            // Warn about A1 lectins
+            if (hq.IsLowLectin)
+            {
+                foodItems.Where(e => e.Category == EFoodCategory.Dairy).ToList().ForEach(e => e.Name = $"{e.Name} ({Globalisation.Dictionary.A2MilkOnly})");
+            }
+
             var results = foodItems
                 .OrderByDescending(e => e.Score).ToList();
 
@@ -155,42 +161,6 @@ namespace K9.WebApplication.Services
         internal int GetGenoTypeItemScore(HealthQuestionnaire hq, EGenoType genoType, GenoTypeBase item)
         {
             var score = 0;
-
-            if (hq.DietaryPreference == EDietaryPreference.Vegetarian)
-            {
-                if (!item.Vegetarian)
-                {
-                    return 0;
-                }
-            }
-            if (hq.DietaryPreference == EDietaryPreference.Vegan)
-            {
-                if (!item.Vegan)
-                {
-                    return 0;
-                }
-            }
-            if (hq.DietaryPreference == EDietaryPreference.Fruitarian)
-            {
-                if (!item.Fruitarian)
-                {
-                    return 0;
-                }
-            }
-            if (hq.DietaryPreference == EDietaryPreference.Carnivore)
-            {
-                if (!item.Carnivore)
-                {
-                    return 0;
-                }
-            }
-            if (hq.DietaryPreference == EDietaryPreference.Pescatarian)
-            {
-                if (!item.Pescatarian)
-                {
-                    return 0;
-                }
-            }
 
             var scoredProperties = hq.GetPropertiesWithAttribute(typeof(ScoreAttribute)).ToList();
             foreach (var scoredProperty in scoredProperties)
@@ -221,6 +191,6 @@ namespace K9.WebApplication.Services
 
             return score;
         }
-
+        
     }
 }
