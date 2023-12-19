@@ -63,7 +63,7 @@ namespace K9.WebApplication.Services
 
         public Product Find(int id)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(id), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(id), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
 
@@ -171,7 +171,7 @@ namespace K9.WebApplication.Services
 
         public Product GetFullProduct(Product product)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(product.Id), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(product.Id), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
 
@@ -345,7 +345,7 @@ namespace K9.WebApplication.Services
 
         public List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(retrieveFullProduct, includeCustomProducts), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(retrieveFullProduct, includeCustomProducts), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 
@@ -399,7 +399,7 @@ namespace K9.WebApplication.Services
 
         public List<ProductPack> ListProductPacks(bool retrieveFullProduct = false)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey<ProductPack>(retrieveFullProduct), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey<ProductPack>(retrieveFullProduct), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 
@@ -425,7 +425,7 @@ namespace K9.WebApplication.Services
 
         public ProductPack GetFullProductPack(ProductPack productPack)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey<ProductPack>(productPack.Id), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey<ProductPack>(productPack.Id), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
 
@@ -447,7 +447,7 @@ namespace K9.WebApplication.Services
 
         public ProductPack DuplicateProductPack(int id)
         {
-            MemoryCache.Clear();
+            ClearCache();
 
             var productPack = FindPack(id);
             if (productPack == null)

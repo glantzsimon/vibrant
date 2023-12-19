@@ -607,6 +607,10 @@ namespace K9.DataAccessLayer.Models
         public bool EatsFruit { get; set; }
 
         [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.Grains)]
+        public bool EatsGrains { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowOxalateLabel)]
         public bool IsLowOxalate { get; set; }
 

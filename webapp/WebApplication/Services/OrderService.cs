@@ -237,7 +237,7 @@ namespace K9.WebApplication.Services
 
         public List<Order> ListForClient(int clientId)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(clientId), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(clientId), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
 
@@ -255,7 +255,7 @@ namespace K9.WebApplication.Services
 
         public List<Order> List(bool retrieveFullOrder = false, bool retrieveCompleteOrders = false)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(retrieveFullOrder), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(retrieveFullOrder), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
 

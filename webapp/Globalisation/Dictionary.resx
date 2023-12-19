@@ -4063,6 +4063,9 @@
   <data name="A2MilkOnly" xml:space="preserve">
     <value>A2 Milk Only</value>
   </data>
+  <data name="BulletProofDescription" xml:space="preserve">
+    <value>The Bulletproof Diet, created by Dave Asprey, is a high-fat, low-carbohydrate diet that emphasizes foods high in healthy fats, moderate in protein, and low in carbs, aimed at improving energy and mental clarity. It promotes the consumption of Bulletproof Coffee (coffee mixed with grass-fed butter and MCT oil) as a staple to kickstart the day. The diet's benefits are said to include enhanced cognitive function, weight loss, and stabilized blood sugar levels. It also focuses on reducing inflammation and eliminating toxins by advocating for organic, nutrient-dense foods and avoiding processed foods and common allergens. This diet has garnered attention for its potential to boost overall well-being, particularly in mental performance and energy levels.</value>
+  </data>
   <data name="BulletProofDietLabel" xml:space="preserve">
     <value>Bulletproof Diet</value>
   </data>
@@ -4090,8 +4093,11 @@
   <data name="HealthQuestoinnaireComplete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\healthquestoinnairecomplete.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="HistamineDescription" xml:space="preserve">
+    <value>High histamine levels, particularly problematic for those with histamine intolerance or mast cell activation disorders, can trigger a range of symptoms including headaches, skin irritations, digestive issues, and in severe cases, asthma-like symptoms or anaphylaxis. Chronic high histamine can also contribute to inflammatory conditions and exacerbate existing allergies and immune system disorders.</value>
+  </data>
   <data name="IsBulletProofLabel" xml:space="preserve">
-    <value>Bullet Proof</value>
+    <value>Bulletproof &amp;trade</value>
   </data>
   <data name="IsHighHistamineLabel" xml:space="preserve">
     <value>High in Histamine</value>
@@ -4129,8 +4135,23 @@
   <data name="IsLowPhytateLabel" xml:space="preserve">
     <value>Low-Phytate</value>
   </data>
+  <data name="LectinDescription" xml:space="preserve">
+    <value>Found in high amounts in raw legumes and certain grains, lectins can cause significant digestive disturbances and may interfere with the absorption of nutrients, leading to inflammation, weakened gut barrier function, and autoimmune responses. Overconsumption of lectins has been associated with conditions like leaky gut syndrome and inflammatory bowel diseases.</value>
+  </data>
+  <data name="MycotoxinDescription" xml:space="preserve">
+    <value>Produced by certain types of molds, mycotoxins can cause acute symptoms like nausea and weakened immunity, and long-term exposure can lead to chronic health issues such as cancer, liver and kidney damage, and autoimmune disorders. Mycotoxins are often found in improperly stored grains, nuts, and animal products, posing a significant risk to food safety.</value>
+  </data>
+  <data name="Omega6Description" xml:space="preserve">
+    <value>While essential for health, an imbalance with high intake of omega-6 fatty acids, relative to omega-3s, can promote inflammation, exacerbating conditions like arthritis, cardiovascular diseases, and autoimmune disorders. Commonly found in processed foods, vegetable oils, and certain nuts and seeds, excessive omega-6 consumption can disrupt the body's inflammatory response, contributing to chronic health problems.</value>
+  </data>
   <data name="OtherDietaryPreferencesQuestionTitle" xml:space="preserve">
     <value>Please check any of the following dietary preferences that apply:</value>
+  </data>
+  <data name="OxalateDescription" xml:space="preserve">
+    <value>High levels of oxalates in the diet can lead to the formation of kidney stones and may contribute to joint pain, inflammation, and oxalate toxicity, particularly in individuals with certain health conditions like kidney disorders or inflammatory bowel disease. Excessive oxalate can also impede the absorption of beneficial minerals such as calcium and magnesium, exacerbating issues like osteoporosis and muscle cramps.</value>
+  </data>
+  <data name="PhytateDescription" xml:space="preserve">
+    <value>Predominantly present in grains, seeds, and legumes, phytates can bind to essential minerals such as iron, zinc, and calcium, inhibiting their absorption and potentially leading to deficiencies. These deficiencies can manifest as weakened immune function, impaired wound healing, and bone density issues, contributing to a general decline in overall health.</value>
   </data>
   <data name="Properties" xml:space="preserve">
     <value>Properties</value>
@@ -4143,5 +4164,17 @@
   </data>
   <data name="TCM" xml:space="preserve">
     <value>TCM</value>
+  </data>
+  <data name="UpdatePreferences" xml:space="preserve">
+    <value>Update Preferences</value>
+  </data>
+  <data name="VegetableProteinTitle" xml:space="preserve">
+    <value>Vegetable Proteins (nuts, seeds, legumes, etc.)</value>
+  </data>
+  <data name="WhyOrganicFood" xml:space="preserve">
+    <value>Try to eat organic foods whenever possible. This offers a multitude of health benefits, primarily owing to the reduced exposure to harmful pesticides, herbicides, and synthetic fertilizers commonly used in conventional agriculture. These substances have been linked to a range of health issues, including hormonal imbalances, neurodevelopmental problems in children, and potentially increased cancer risk. Additionally, organic produce often contains higher levels of certain nutrients, antioxidants, and beneficial compounds compared to conventionally grown foods, enhancing overall nutritional intake and supporting better health. Choosing organic can also contribute to environmental sustainability, as organic farming practices are designed to reduce pollution, conserve water, improve soil quality, and protect wildlife.</value>
+  </data>
+  <data name="WhyOrganicFoodTitle" xml:space="preserve">
+    <value>Eat Organic!</value>
   </data>
 </root>

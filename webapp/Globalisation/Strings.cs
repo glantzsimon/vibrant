@@ -1022,6 +1022,7 @@
             public const string EggsAndRoes = "EggsAndRoes";
             public const string Dairy = "Dairy";
             public const string VegetableProtein = "VegetableProtein";
+            public const string VegetableProteinTitle = "VegetableProteinTitle";
             public const string Grains = "Grains";
             public const string Carbohydrates = "Carbohydrates";
             public const string HerbsAndSpices = "HerbsAndSpices";

@@ -749,6 +749,10 @@
     <Compile Include="Migrations\202312190521061_LatestHQ.Designer.cs">
       <DependentUpon>202312190521061_LatestHQ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312190551263_EatsGrains.cs" />
+    <Compile Include="Migrations\202312190551263_EatsGrains.Designer.cs">
+      <DependentUpon>202312190551263_EatsGrains.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
@@ -1178,6 +1182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312190521061_LatestHQ.resx">
       <DependentUpon>202312190521061_LatestHQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312190551263_EatsGrains.resx">
+      <DependentUpon>202312190551263_EatsGrains.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

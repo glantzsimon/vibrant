@@ -48,7 +48,7 @@ namespace K9.DataAccessLayer.Models
         public bool EatsVegetables { get; set; }
 
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VegetableProtein)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VegetableProteinTitle)]
         public bool EatsVegetableProtein { get; set; }
 
         [NotMapped]
@@ -58,6 +58,10 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Fruit)]
         public bool EatsFruit { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Grains)]
+        public bool EatsGrains { get; set; }
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowOxalateLabel)]

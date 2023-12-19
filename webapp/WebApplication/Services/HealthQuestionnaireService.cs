@@ -154,6 +154,7 @@ namespace K9.WebApplication.Services
                     }
                 }
             }
+            ClearCache();
         }
 
         public void SendHealthQuestionnaireCompleteEmailToAdmin(HealthQuestionnaire hq, Client client)

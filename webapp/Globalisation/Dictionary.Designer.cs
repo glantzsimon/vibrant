@@ -1078,6 +1078,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Bulletproof Diet, created by Dave Asprey, is a high-fat, low-carbohydrate diet that emphasizes foods high in healthy fats, moderate in protein, and low in carbs, aimed at improving energy and mental clarity. It promotes the consumption of Bulletproof Coffee (coffee mixed with grass-fed butter and MCT oil) as a staple to kickstart the day. The diet&apos;s benefits are said to include enhanced cognitive function, weight loss, and stabilized blood sugar levels. It also focuses on reducing inflammation and elimi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BulletProofDescription {
+            get {
+                return ResourceManager.GetString("BulletProofDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bulletproof Diet.
         /// </summary>
         public static string BulletProofDietLabel {
@@ -4684,6 +4693,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to High histamine levels, particularly problematic for those with histamine intolerance or mast cell activation disorders, can trigger a range of symptoms including headaches, skin irritations, digestive issues, and in severe cases, asthma-like symptoms or anaphylaxis. Chronic high histamine can also contribute to inflammatory conditions and exacerbate existing allergies and immune system disorders..
+        /// </summary>
+        public static string HistamineDescription {
+            get {
+                return ResourceManager.GetString("HistamineDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you have a history of chronic fatigue, fibromyalgia or burnout?.
         /// </summary>
         public static string HistoryOfchronicFatigueOrFibromyalgiaLabel {
@@ -5285,7 +5303,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bullet Proof.
+        ///   Looks up a localized string similar to Bulletproof &amp;trade.
         /// </summary>
         public static string IsBulletProofLabel {
             get {
@@ -5978,6 +5996,15 @@ namespace K9.Globalisation {
         public static string Leaves {
             get {
                 return ResourceManager.GetString("Leaves", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Found in high amounts in raw legumes and certain grains, lectins can cause significant digestive disturbances and may interfere with the absorption of nutrients, leading to inflammation, weakened gut barrier function, and autoimmune responses. Overconsumption of lectins has been associated with conditions like leaky gut syndrome and inflammatory bowel diseases..
+        /// </summary>
+        public static string LectinDescription {
+            get {
+                return ResourceManager.GetString("LectinDescription", resourceCulture);
             }
         }
         
@@ -6823,6 +6850,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Produced by certain types of molds, mycotoxins can cause acute symptoms like nausea and weakened immunity, and long-term exposure can lead to chronic health issues such as cancer, liver and kidney damage, and autoimmune disorders. Mycotoxins are often found in improperly stored grains, nuts, and animal products, posing a significant risk to food safety..
+        /// </summary>
+        public static string MycotoxinDescription {
+            get {
+                return ResourceManager.GetString("MycotoxinDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Narrow Angle.
         /// </summary>
         public static string NarrowAngle {
@@ -7357,6 +7393,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to While essential for health, an imbalance with high intake of omega-6 fatty acids, relative to omega-3s, can promote inflammation, exacerbating conditions like arthritis, cardiovascular diseases, and autoimmune disorders. Commonly found in processed foods, vegetable oils, and certain nuts and seeds, excessive omega-6 consumption can disrupt the body&apos;s inflammatory response, contributing to chronic health problems..
+        /// </summary>
+        public static string Omega6Description {
+            get {
+                return ResourceManager.GetString("Omega6Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Omnivore.
         /// </summary>
         public static string Omnivore {
@@ -7681,6 +7726,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to High levels of oxalates in the diet can lead to the formation of kidney stones and may contribute to joint pain, inflammation, and oxalate toxicity, particularly in individuals with certain health conditions like kidney disorders or inflammatory bowel disease. Excessive oxalate can also impede the absorption of beneficial minerals such as calcium and magnesium, exacerbating issues like osteoporosis and muscle cramps..
+        /// </summary>
+        public static string OxalateDescription {
+            get {
+                return ResourceManager.GetString("OxalateDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pack.
         /// </summary>
         public static string Pack {
@@ -7920,6 +7974,15 @@ namespace K9.Globalisation {
         public static string PhysicalTraumaLabel {
             get {
                 return ResourceManager.GetString("PhysicalTraumaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Predominantly present in grains, seeds, and legumes, phytates can bind to essential minerals such as iron, zinc, and calcium, inhibiting their absorption and potentially leading to deficiencies. These deficiencies can manifest as weakened immune function, impaired wound healing, and bone density issues, contributing to a general decline in overall health..
+        /// </summary>
+        public static string PhytateDescription {
+            get {
+                return ResourceManager.GetString("PhytateDescription", resourceCulture);
             }
         }
         
@@ -11580,6 +11643,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Update Preferences.
+        /// </summary>
+        public static string UpdatePreferences {
+            get {
+                return ResourceManager.GetString("UpdatePreferences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Update Your Details.
         /// </summary>
         public static string UpdateYourDetails {
@@ -11833,6 +11905,15 @@ namespace K9.Globalisation {
         public static string VegetableProtein {
             get {
                 return ResourceManager.GetString("VegetableProtein", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vegetable Proteins (nuts, seeds, legumes, etc.).
+        /// </summary>
+        public static string VegetableProteinTitle {
+            get {
+                return ResourceManager.GetString("VegetableProteinTitle", resourceCulture);
             }
         }
         
@@ -12361,6 +12442,24 @@ namespace K9.Globalisation {
         public static string Whorl {
             get {
                 return ResourceManager.GetString("Whorl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Try to eat organic foods whenever possible. This offers a multitude of health benefits, primarily owing to the reduced exposure to harmful pesticides, herbicides, and synthetic fertilizers commonly used in conventional agriculture. These substances have been linked to a range of health issues, including hormonal imbalances, neurodevelopmental problems in children, and potentially increased cancer risk. Additionally, organic produce often contains higher levels of certain nutrients, antioxidants, and benefic [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string WhyOrganicFood {
+            get {
+                return ResourceManager.GetString("WhyOrganicFood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eat Organic!.
+        /// </summary>
+        public static string WhyOrganicFoodTitle {
+            get {
+                return ResourceManager.GetString("WhyOrganicFoodTitle", resourceCulture);
             }
         }
         

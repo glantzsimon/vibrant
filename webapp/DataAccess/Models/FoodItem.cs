@@ -21,6 +21,7 @@ namespace K9.DataAccessLayer.Models
         public EFoodCategory Category { get; set; }
 
         public bool IsRedMeat => Category == EFoodCategory.RedMeat;
+        public bool IsPoultry => Category == EFoodCategory.Poultry;
         public bool IsFishAndSeafood => Category == EFoodCategory.FishAndSeafood;
         public bool IsEggsAndRoes => Category == EFoodCategory.EggsAndRoes;
         public bool IsDairy => Category == EFoodCategory.Dairy;
@@ -28,6 +29,7 @@ namespace K9.DataAccessLayer.Models
         public bool IsVegetableProtein => Category == EFoodCategory.VegetableProtein;
         public bool IsFungi => Category == EFoodCategory.Fungi;
         public bool IsFruit => Category == EFoodCategory.Fruits;
+        public bool IsGrains => Category == EFoodCategory.Carbohydrates;
 
         [NotMapped]
         [UIHint("FoodItem")]

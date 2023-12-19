@@ -42,12 +42,6 @@ namespace K9.WebApplication.Services
             _foodItemsRepository = foodItemsRepository;
         }
 
-#if DEBUG
-        protected static MemoryCache MemoryCache = new MemoryCache(new MemoryCacheOptions());
-#else
-        protected static MemoryCache MemoryCache = new MemoryCache(new MemoryCacheOptions());
-#endif
-
         public MemoryCacheEntryOptions GetMemoryCacheEntryOptions(int duration)
         {
             return new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromSeconds(duration));
@@ -55,7 +49,7 @@ namespace K9.WebApplication.Services
 
         public List<Activity> GetActivities()
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
                 return _activitiesRepository.List().ToList();
@@ -64,7 +58,7 @@ namespace K9.WebApplication.Services
 
         public List<DietaryRecommendation> GetDietaryRecommendations()
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
                 return _dietaryRecommendationsRepository.List();
@@ -73,7 +67,7 @@ namespace K9.WebApplication.Services
 
         public List<FoodItem> GetFoodItems()
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
                 return _foodItemsRepository.List();
@@ -82,7 +76,7 @@ namespace K9.WebApplication.Services
 
         public List<Product> GetProducts()
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
                 return _productsRepository.List();
@@ -91,7 +85,7 @@ namespace K9.WebApplication.Services
 
         public List<ProductPack> GetProductPacks()
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
                 return _productPacksRepository.List();
@@ -100,7 +94,7 @@ namespace K9.WebApplication.Services
 
         public List<ProductPackProduct> GetProductPackProducts()
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
                 return _productPackProductsRepository.List();
@@ -109,7 +103,7 @@ namespace K9.WebApplication.Services
 
         public List<Ingredient> GetIngredients()
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
                 return _ingredientsRepository.List();
@@ -118,7 +112,7 @@ namespace K9.WebApplication.Services
 
         public List<IngredientSubstitute> GetIngredientSubstitutes()
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
                 return _ingredientSubstitutesRepository.List();
@@ -127,7 +121,7 @@ namespace K9.WebApplication.Services
 
         public List<ProductIngredient> GetProductIngredients()
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
                 return _productIngredientsRepository.List();
@@ -136,7 +130,7 @@ namespace K9.WebApplication.Services
 
         public List<ProductIngredientSubstitute> GetProductIngredientSubstitutes()
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
                 return _productIngredientSubstitutesRepository.List();
@@ -145,7 +139,7 @@ namespace K9.WebApplication.Services
 
         public List<Protocol> GetProtocols()
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.FiveMinutes));
                 return _protocolsRepository.List();
@@ -154,7 +148,7 @@ namespace K9.WebApplication.Services
 
         public void ClearCache()
         {
-            MemoryCache.Clear();
+            MemoryCacheHelper.ClearCache();
         }
 
         public string GetCacheKey(int id)

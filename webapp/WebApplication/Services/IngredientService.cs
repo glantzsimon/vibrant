@@ -41,7 +41,7 @@ namespace K9.WebApplication.Services
 
         public Ingredient Find(int id)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(id), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(id), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
 
@@ -87,7 +87,7 @@ namespace K9.WebApplication.Services
 
         public Ingredient GetFullIngredient(Ingredient ingredient)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(ingredient.Id), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(ingredient.Id), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(Constants.Constants.OneWeek));
 
@@ -135,7 +135,7 @@ namespace K9.WebApplication.Services
 
         public List<Ingredient> List(bool retrieveFullIngredient = false, bool usedOnly = false)
         {
-            return MemoryCache.GetOrCreate(GetCacheKey(retrieveFullIngredient, usedOnly), entry =>
+            return MemoryCacheHelper.Cache.GetOrCreate(GetCacheKey(retrieveFullIngredient, usedOnly), entry =>
             {
                 entry.SetOptions(GetMemoryCacheEntryOptions(SharedLibrary.Constants.OutputCacheConstants.TenMinutes));
 

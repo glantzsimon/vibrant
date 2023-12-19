@@ -46,6 +46,7 @@ namespace K9.WebApplication.Controllers
             hq.EatsVegetableProtein = model.EatsVegetableProtein;
             hq.EatsFungi = model.EatsFungi;
             hq.EatsFruit = model.EatsFruit;
+            hq.EatsGrains = model.EatsGrains;
             hq.IsLowOxalate = model.IsLowOxalate;
             hq.IsLowLectin = model.IsLowLectin;
             hq.IsLowPhytate = model.IsLowPhytate;
