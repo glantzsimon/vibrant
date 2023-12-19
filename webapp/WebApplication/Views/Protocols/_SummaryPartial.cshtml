@@ -3,6 +3,7 @@
 @using K9.DataAccessLayer.Enums
 @using K9.SharedLibrary.Authentication
 @using K9.WebApplication.Helpers
+@using K9.WebApplication.Options
 @using K9.WebApplication.ViewModels
 @model Protocol
 
@@ -135,14 +136,22 @@
                     <div class="row margin-top-0">
                         <div class="col-xs-12">
                             <h3 class="margin-top-0">@Dictionary.RecommendedFoods</h3>
+                            <hr />
                         </div>
                     </div>
-                    
+
                     <div class="row margin-top-0">
                         <div class="col-xs-12">
                             <div class="alert alert-success">
-                                <h4>Dictionary.WhyOrganicFoodTitle</h4>
-                                <p>@Dictionary.WhyOrganicFood</p>
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <h4>@Dictionary.WhyOrganicFoodTitle</h4>
+                                @Html.ImagePanel(new PanelOptions
+                                {
+                                    ImageLayout = EPanelImageLayout.Cover,
+                                    ImageSrc = "../Images/nutrition/organic-food.jpg",
+                                    ImageSize = EPanelImageSize.Medium
+                                })
+                                <p>@Html.Raw(Dictionary.organicfood)</p>
                             </div>
                         </div>
                     </div>
@@ -153,7 +162,8 @@
                             <div class="col-xs-12">
                                 <div class="alert alert-info">
                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                    <strong>@Dictionary.DemoteFoodsDescription</strong>
+                                    <h4>@Dictionary.WeAreAllUnique</h4>
+                                    <p>@Dictionary.DemoteFoodsDescription</p>
                                 </div>
                             </div>
                         </div>
@@ -168,100 +178,100 @@
                                         @Html.HiddenFor(e => Model.ExternalId)
                                         @Html.HiddenFor(e => Model.ClientId)
 
-                                    <div class="row margin-top-0">
-                                        <div class="col-xs-12">
-                                            <h4 class="margin-top-0">@Dictionary.DietaryPreferences</h4>
-                                            <hr />
-                                        </div>
-
-                                        <div class="col-xs-12">
-                                            <p class="margin-top-0"><strong>@Dictionary.FoodCategoriesQuestionTitle</strong></p>
-                                        </div>
-                                        <div class="col-xs-12 padding-0">
-                                            <div class="col-xs-6 padding-0">
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.EatsRedMeat)
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.EatsPoultry)
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 padding-0">
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.EatsFishAndSeafood)
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.EatsDairy)
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 padding-0">
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.EatsVegetables)
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.EatsFungi)
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 padding-0">
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.EatsFruit)
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.EatsGrains)
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 padding-0">
-                                                <div class="col-xs-12">
-                                                    @Html.BootstrapEditorFor(e => e.EatsVegetableProtein)
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <hr />
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <p class="margin-top-0"><strong>@Dictionary.OtherDietaryPreferencesQuestionTitle</strong></p>
-                                        </div>
-                                        <div class="col-xs-12 padding-0">
-                                            <div class="col-xs-6 padding-0">
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.IsLowOxalate)
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.IsLowLectin)
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 padding-0">
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.IsLowPhytate)
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.IsLowHistamine)
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 padding-0">
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.IsLowMycotoxin)
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.IsLowOmega6)
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    @Html.BootstrapEditorFor(e => e.IsBulletProof)
-                                                </div>
+                                        <div class="row margin-top-0">
+                                            <div class="col-xs-12">
+                                                <h4 class="margin-top-0">@Dictionary.DietaryPreferences</h4>
                                                 <hr />
                                             </div>
+
+                                            <div class="col-xs-12">
+                                                <p class="margin-top-0"><strong>@Dictionary.FoodCategoriesQuestionTitle</strong></p>
+                                            </div>
+                                            <div class="col-xs-12 padding-0">
+                                                <div class="col-xs-6 padding-0">
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.EatsRedMeat)
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.EatsPoultry)
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6 padding-0">
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.EatsFishAndSeafood)
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.EatsDairy)
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6 padding-0">
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.EatsVegetables)
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.EatsFungi)
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6 padding-0">
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.EatsFruit)
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.EatsGrains)
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6 padding-0">
+                                                    <div class="col-xs-12">
+                                                        @Html.BootstrapEditorFor(e => e.EatsVegetableProtein)
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <hr />
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <p class="margin-top-0"><strong>@Dictionary.OtherDietaryPreferencesQuestionTitle</strong></p>
+                                            </div>
+                                            <div class="col-xs-12 padding-0">
+                                                <div class="col-xs-6 padding-0">
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.IsLowOxalate)
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.IsLowLectin)
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6 padding-0">
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.IsLowPhytate)
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.IsLowHistamine)
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6 padding-0">
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.IsLowMycotoxin)
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.IsLowOmega6)
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        @Html.BootstrapEditorFor(e => e.IsBulletProof)
+                                                    </div>
+                                                    <hr />
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                @Html.CollapsiblePanel(K9.Globalisation.Dictionary.MoreDetails, Html.Partial("../Protocols/_DietaryPreferenesMoreInfo").ToString())
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <hr />
+                                            </div>
+                                            <div class="col-xs-12">
+                                                @Html.BootstrapButton(K9.Globalisation.Dictionary.UpdatePreferences, EButtonType.Submit, "fa-save")
+                                            </div>
                                         </div>
-                                        <div class="col-xs-12">
-                                            @Html.CollapsiblePanel(K9.Globalisation.Dictionary.MoreDetails, Html.Partial("_DietaryPreferenesMoreInfo").ToString())
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <hr />
-                                        </div>
-                                        <div class="col-xs-12">
-                                            @Html.BootstrapButton(K9.Globalisation.Dictionary.UpdatePreferences, EButtonType.Submit, "fa-save")
-                                        </div>
-                                    </div>
                                     }
                                 </div>
                             </div>

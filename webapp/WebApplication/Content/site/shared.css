@@ -366,3 +366,8 @@
 .remove-food-item {
     cursor: pointer !important;
 }
+
+.image-fit {
+    width: 100%;
+    height: auto;
+}

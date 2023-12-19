@@ -7663,6 +7663,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;span&gt;
+        ///    Try to eat organic foods whenever possible. This offers a &lt;strong&gt;multitude of health benefits&lt;/strong&gt;, primarily owing to the &lt;strong&gt;reduced exposure to harmful pesticides, herbicides, and synthetic fertilizers&lt;/strong&gt; commonly used in conventional agriculture. &lt;strong&gt;These substances have been linked to a range of health issues&lt;/strong&gt;, including &lt;strong&gt;hormonal imbalances, neurodevelopmental problems in children&lt;/strong&gt;, and &lt;strong&gt;increased cancer risk&lt;/strong&gt;. Additionally, &lt;strong [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string organicfood {
+            get {
+                return ResourceManager.GetString("organicfood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Organ Meat.
         /// </summary>
         public static string OrganMeat {
@@ -12278,6 +12288,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to We are all unique!.
+        /// </summary>
+        public static string WeAreAllUnique {
+            get {
+                return ResourceManager.GetString("WeAreAllUnique", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wednesday.
         /// </summary>
         public static string Wednesday {
@@ -12442,15 +12461,6 @@ namespace K9.Globalisation {
         public static string Whorl {
             get {
                 return ResourceManager.GetString("Whorl", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Try to eat organic foods whenever possible. This offers a multitude of health benefits, primarily owing to the reduced exposure to harmful pesticides, herbicides, and synthetic fertilizers commonly used in conventional agriculture. These substances have been linked to a range of health issues, including hormonal imbalances, neurodevelopmental problems in children, and potentially increased cancer risk. Additionally, organic produce often contains higher levels of certain nutrients, antioxidants, and benefic [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string WhyOrganicFood {
-            get {
-                return ResourceManager.GetString("WhyOrganicFood", resourceCulture);
             }
         }
         

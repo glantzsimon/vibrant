@@ -4144,6 +4144,9 @@
   <data name="Omega6Description" xml:space="preserve">
     <value>While essential for health, an imbalance with high intake of omega-6 fatty acids, relative to omega-3s, can promote inflammation, exacerbating conditions like arthritis, cardiovascular diseases, and autoimmune disorders. Commonly found in processed foods, vegetable oils, and certain nuts and seeds, excessive omega-6 consumption can disrupt the body's inflammatory response, contributing to chronic health problems.</value>
   </data>
+  <data name="organicfood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>nutrition\en-gb\organicfood.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="OtherDietaryPreferencesQuestionTitle" xml:space="preserve">
     <value>Please check any of the following dietary preferences that apply:</value>
   </data>
@@ -4171,8 +4174,8 @@
   <data name="VegetableProteinTitle" xml:space="preserve">
     <value>Vegetable Proteins (nuts, seeds, legumes, etc.)</value>
   </data>
-  <data name="WhyOrganicFood" xml:space="preserve">
-    <value>Try to eat organic foods whenever possible. This offers a multitude of health benefits, primarily owing to the reduced exposure to harmful pesticides, herbicides, and synthetic fertilizers commonly used in conventional agriculture. These substances have been linked to a range of health issues, including hormonal imbalances, neurodevelopmental problems in children, and potentially increased cancer risk. Additionally, organic produce often contains higher levels of certain nutrients, antioxidants, and beneficial compounds compared to conventionally grown foods, enhancing overall nutritional intake and supporting better health. Choosing organic can also contribute to environmental sustainability, as organic farming practices are designed to reduce pollution, conserve water, improve soil quality, and protect wildlife.</value>
+  <data name="WeAreAllUnique" xml:space="preserve">
+    <value>We are all unique!</value>
   </data>
   <data name="WhyOrganicFoodTitle" xml:space="preserve">
     <value>Eat Organic!</value>

@@ -112,6 +112,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Nutrition\en-gb\organicfood.htm" />
     <Content Include="Doshas\en-gb\VataDoshaDetails.htm" />
     <Content Include="Doshas\en-gb\PittaDoshaDetails.htm" />
     <Content Include="Doshas\en-gb\KaphaDoshaDetails.htm" />

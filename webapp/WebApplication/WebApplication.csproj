@@ -775,6 +775,7 @@
     <Content Include="Images\flags\zw.png" />
     <Content Include="Images\icons\android-chrome-144x144.png" />
     <Content Include="Images\icons\logo-med.png" />
+    <Content Include="Images\nutrition\organic-food.jpg" />
     <Content Include="Images\organs\gallbladder.png" />
     <Content Include="Images\organs\heart.png" />
     <Content Include="Images\organs\kidneys.png" />
