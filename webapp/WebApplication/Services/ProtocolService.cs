@@ -315,7 +315,6 @@ namespace K9.WebApplication.Services
                         switch (protocol.GenoType)
                         {
                             case EGenoType.Gatherer:
-
                                 protocolFoodItem.FoodItem.GathererCompatibilityLevel = compatibilityLevel;
                                 break;
 

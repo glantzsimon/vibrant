@@ -43,7 +43,7 @@ namespace K9.WebApplication.ViewModels
                     // Upgrade highest-scoring items
                     foreach (var recommendedFood in RecommendedFoods)
                     {
-                        if (recommendedFood.RelativeScore > 90)
+                        if (recommendedFood.RelativeScore >= 90 && recommendedFood.HunterCompatibilityLevel <= ECompatibilityLevel.Neutral)
                         {
                             recommendedFood.HunterCompatibilityLevel = ECompatibilityLevel.Optimal;
                         }
@@ -73,7 +73,7 @@ namespace K9.WebApplication.ViewModels
                     // Upgrade highest-scoring items
                     foreach (var recommendedFood in RecommendedFoods)
                     {
-                        if (recommendedFood.RelativeScore > 90)
+                        if (recommendedFood.RelativeScore >= 90 && recommendedFood.GathererCompatibilityLevel <= ECompatibilityLevel.Neutral)
                         {
                             recommendedFood.GathererCompatibilityLevel = ECompatibilityLevel.Optimal;
                         }
@@ -103,7 +103,7 @@ namespace K9.WebApplication.ViewModels
                     // Upgrade highest-scoring items
                     foreach (var recommendedFood in RecommendedFoods)
                     {
-                        if (recommendedFood.RelativeScore > 90)
+                        if (recommendedFood.RelativeScore >= 90 && recommendedFood.TeacherCompatibilityLevel <= ECompatibilityLevel.Neutral)
                         {
                             recommendedFood.TeacherCompatibilityLevel = ECompatibilityLevel.Optimal;
                         }
@@ -133,7 +133,7 @@ namespace K9.WebApplication.ViewModels
                     // Upgrade highest-scoring items
                     foreach (var recommendedFood in RecommendedFoods)
                     {
-                        if (recommendedFood.RelativeScore > 90)
+                        if (recommendedFood.RelativeScore >= 90 && recommendedFood.ExplorerCompatibilityLevel <= ECompatibilityLevel.Neutral)
                         {
                             recommendedFood.ExplorerCompatibilityLevel = ECompatibilityLevel.Optimal;
                         }
@@ -163,7 +163,7 @@ namespace K9.WebApplication.ViewModels
                     // Upgrade highest-scoring items
                     foreach (var recommendedFood in RecommendedFoods)
                     {
-                        if (recommendedFood.RelativeScore > 90)
+                        if (recommendedFood.RelativeScore >= 90 && recommendedFood.WarriorCompatibilityLevel <= ECompatibilityLevel.Neutral)
                         {
                             recommendedFood.WarriorCompatibilityLevel = ECompatibilityLevel.Optimal;
                         }
@@ -193,7 +193,7 @@ namespace K9.WebApplication.ViewModels
                     // Upgrade highest-scoring items
                     foreach (var recommendedFood in RecommendedFoods)
                     {
-                        if (recommendedFood.RelativeScore > 90)
+                        if (recommendedFood.RelativeScore >= 90 && recommendedFood.NomadCompatibilityLevel <= ECompatibilityLevel.Neutral)
                         {
                             recommendedFood.NomadCompatibilityLevel = ECompatibilityLevel.Optimal;
                         }
