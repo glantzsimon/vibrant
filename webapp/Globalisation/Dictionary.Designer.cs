@@ -5303,7 +5303,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bulletproof &amp;trade.
+        ///   Looks up a localized string similar to Bulletproof.
         /// </summary>
         public static string IsBulletProofLabel {
             get {

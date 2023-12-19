@@ -11,6 +11,7 @@ namespace K9.WebApplication.ViewModels
     {
         public int? ClientId { get; set; }
         public EGenoType GenoType { get; set; }
+        public Protocol Protocol { get; set; }
 
         public List<ECompatibilityLevel> Levels => new List<ECompatibilityLevel>
         {

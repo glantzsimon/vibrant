@@ -252,7 +252,7 @@
         initBootstrapDateTimePickers();
         initBootstrapSelect();
         initDateTimeValidation();
-        //initToolTips();
+        initToolTips();
         initTextScroller();
         initCollapsiblePanels();
         initQuantityInputs();

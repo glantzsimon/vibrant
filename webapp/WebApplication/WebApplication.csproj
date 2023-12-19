@@ -194,6 +194,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.199\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -1709,7 +1710,7 @@
     <Content Include="Views\Orders\Index.cshtml" />
     <Content Include="Views\Orders\_TableCollectionsButtons.cshtml" />
     <Content Include="Views\HealthQuestionnaire\Overview\_DoshasDetails.cshtml" />
-    <Content Include="Views\Protocols\_DietaryPreferenesMoreInfo.cshtml" />
+    <Content Include="Views\Shared\_DietaryPreferenesMoreInfo.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

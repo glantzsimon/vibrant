@@ -54,28 +54,31 @@
                                     for (int j = 0; j < filteredFoods.Count; j++)
                                     {
                                         var recommendedFood = filteredFoods[j];
-                                        
-                                        <span 
-                                            data-id="@recommendedFood.Id" 
+                                        var isShowInfo = recommendedFood.IsHighOxalate ||
+                                                         recommendedFood.IsHighLectin ||
+                                                         recommendedFood.IsHighPhytate ||
+                                                         recommendedFood.IsHighHistamine ||
+                                                         recommendedFood.IsHighMycotoxin ||
+                                                         recommendedFood.IsHighOmega6 ||
+                                                         recommendedFood.IsBulletProof;
 
-                                            data-redmeat="@recommendedFood.IsRedMeat" 
-                                            data-fishandseafood="@recommendedFood.IsFishAndSeafood" 
-                                            data-eggsandroes="@recommendedFood.IsEggsAndRoes" 
-                                            data-dairy="@recommendedFood.IsDairy" 
-                                            data-vegetables="@recommendedFood.IsVegetables" 
-                                            data-vegetableprotein="@recommendedFood.IsVegetableProtein" 
-                                            data-fungi="@recommendedFood.IsFungi" 
-                                            data-fruit="@recommendedFood.IsFruit" 
-                                            
-                                            data-high-oxalate="@recommendedFood.IsHighOxalate" 
-                                            data-high-lectin="@recommendedFood.IsHighLectin" 
-                                            data-high-phytate="@recommendedFood.IsHighPhytate" 
-                                            data-high-histamine="@recommendedFood.IsHighHistamine" 
-                                            data-high-mycotoxin="@recommendedFood.IsHighMycotoxin" 
-                                            data-high-omega6="@recommendedFood.IsHighOmega6"  
-                                            
-                                            class="summary-item recommended-food" style="background-color: @levelColor !important;">
-                                            
+                                        <span data-id="@recommendedFood.Id"
+                                              data-redmeat="@recommendedFood.IsRedMeat"
+                                              data-fishandseafood="@recommendedFood.IsFishAndSeafood"
+                                              data-eggsandroes="@recommendedFood.IsEggsAndRoes"
+                                              data-dairy="@recommendedFood.IsDairy"
+                                              data-vegetables="@recommendedFood.IsVegetables"
+                                              data-vegetableprotein="@recommendedFood.IsVegetableProtein"
+                                              data-fungi="@recommendedFood.IsFungi"
+                                              data-fruit="@recommendedFood.IsFruit"
+                                              data-high-oxalate="@recommendedFood.IsHighOxalate"
+                                              data-high-lectin="@recommendedFood.IsHighLectin"
+                                              data-high-phytate="@recommendedFood.IsHighPhytate"
+                                              data-high-histamine="@recommendedFood.IsHighHistamine"
+                                              data-high-mycotoxin="@recommendedFood.IsHighMycotoxin"
+                                              data-high-omega6="@recommendedFood.IsHighOmega6"
+                                              class="summary-item recommended-food" style="background-color: @levelColor !important;">
+
                                             @Html.Raw(recommendedFood.GetRelativeScoreHtml())
                                             <span>@recommendedFood.Name</span>
 
@@ -83,12 +86,17 @@
                                             {
                                                 if (level < ECompatibilityLevel.Suboptimal)
                                                 {
-                                                    <i data-food-id="@recommendedFood.Id" class="fa fa-thumbs-down food-item-icon demote-food-item" title="@Dictionary.FoodIsUnsuitableTitle"></i>
+                                                    <i data-food-id="@recommendedFood.Id" data-toggle="tooltip" class="fa fa-thumbs-down food-item-icon demote-food-item" title="@Dictionary.FoodIsUnsuitableTitle"></i>
                                                 }
 
-                                                if (level >= ECompatibilityLevel.Suboptimal && recommendedFood.IsDemoted)
+                                                if (recommendedFood.IsDemoted)
                                                 {
-                                                    <i data-food-id="@recommendedFood.Id" class="fa fa-thumbs-up food-item-icon promote-food-item" title="@Dictionary.FoodIsSuitableTitle"></i>
+                                                    <i data-food-id="@recommendedFood.Id" data-toggle="tooltip" class="fa fa-thumbs-up food-item-icon promote-food-item" title="@Dictionary.FoodIsSuitableTitle"></i>
+                                                }
+
+                                                if (isShowInfo)
+                                                {
+                                                    <i data-food-id="@recommendedFood.Id" data-toggle="tooltip" class="fa fa-info-circle food-item-info" title="@recommendedFood.GetFoodAllergyInfo()"></i>
                                                 }
                                             }
                                         </span>

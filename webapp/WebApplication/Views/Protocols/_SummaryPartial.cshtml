@@ -189,39 +189,39 @@
                                             </div>
                                             <div class="col-xs-12 padding-0">
                                                 <div class="col-xs-6 padding-0">
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.EatsRedMeat)
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.EatsPoultry)
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-6 padding-0">
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.EatsFishAndSeafood)
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.EatsDairy)
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-6 padding-0">
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.EatsVegetables)
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.EatsFungi)
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-6 padding-0">
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.EatsFruit)
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.EatsGrains)
                                                     </div>
                                                 </div>
-                                                <div class="col-xs-6 padding-0">
-                                                    <div class="col-xs-12">
+                                                <div class="col-xs-12 padding-0">
+                                                    <div class="col-xs-11">
                                                         @Html.BootstrapEditorFor(e => e.EatsVegetableProtein)
                                                     </div>
                                                 </div>
@@ -234,36 +234,36 @@
                                             </div>
                                             <div class="col-xs-12 padding-0">
                                                 <div class="col-xs-6 padding-0">
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.IsLowOxalate)
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.IsLowLectin)
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-6 padding-0">
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.IsLowPhytate)
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.IsLowHistamine)
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-6 padding-0">
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.IsLowMycotoxin)
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.IsLowOmega6)
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.IsBulletProof)
                                                     </div>
                                                     <hr />
                                                 </div>
                                             </div>
                                             <div class="col-xs-12">
-                                                @Html.CollapsiblePanel(K9.Globalisation.Dictionary.MoreDetails, Html.Partial("../Protocols/_DietaryPreferenesMoreInfo").ToString())
+                                                @Html.CollapsiblePanel(K9.Globalisation.Dictionary.MoreDetails, Html.Partial("_DietaryPreferenesMoreInfo").ToString())
                                             </div>
                                             <div class="col-xs-12">
                                                 <hr />
@@ -284,6 +284,7 @@
                             {
                                 ClientId = Model.ClientId,
                                 GenoType =  Model.GenoType,
+                                Protocol = Model,
                                 RecommendedFoods = Model.RecommendedFoods.Select(e =>
                                 {
                                     var foodItem = e.FoodItem;

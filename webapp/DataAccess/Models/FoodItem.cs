@@ -7,6 +7,7 @@ using K9.SharedLibrary.Models;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 using System.Web.Mvc;
 
 namespace K9.DataAccessLayer.Models
@@ -131,7 +132,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsWinterLabel)]
         public bool IsWinter { get; set; }
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsWaterElementLabel)]
         public bool IsWaterElement { get; set; }
 
@@ -153,7 +154,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHighLectinLabel)]
         public bool IsHighLectin { get; set; }
 
-        public string HighLectinDescription{ get; set; }
+        public string HighLectinDescription { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHighPhytateLabel)]
         public bool IsHighPhytate { get; set; }
@@ -167,10 +168,52 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHighOmega6Label)]
         public bool IsHighOmega6 { get; set; }
 
-        public string IsHighOmega6Description{ get; set; }
+        public string IsHighOmega6Description { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BulletProofDietLabel)]
         public bool IsBulletProof { get; set; }
+
+        public string GetFoodAllergyInfo()
+        {
+            var sb = new StringBuilder();
+
+            if (IsHighOxalate)
+            {
+                AddHtmlToString(sb, Globalisation.Dictionary.IsHighOxalateLabel);
+            }
+            if (IsHighLectin)
+            {
+                AddHtmlToString(sb, Globalisation.Dictionary.IsHighLectinLabel);
+            }
+            if (IsHighPhytate)
+            {
+                AddHtmlToString(sb, Globalisation.Dictionary.IsHighPhytateLabel);
+            }
+            if (IsHighHistamine)
+            {
+                AddHtmlToString(sb, Globalisation.Dictionary.IsHighHistamineLabel);
+            }
+            if (IsHighMycotoxin)
+            {
+                AddHtmlToString(sb, Globalisation.Dictionary.IsHighMycotoxinLabel);
+            }
+            if (IsHighOmega6)
+            {
+                AddHtmlToString(sb, Globalisation.Dictionary.IsHighOmega6Label);
+            }
+            if (IsBulletProof)
+            {
+                AddHtmlToString(sb, Globalisation.Dictionary.IsBulletProofLabel);
+            }
+
+            return sb.ToString();
+        }
+
+        private static void AddHtmlToString(StringBuilder sb, string value)
+        {
+            var separatorText = sb.Length > 0 ? " | " : "";
+            sb.AppendFormat($"{separatorText}{value}");
+        }
 
         [FileSourceInfo("upload/fooditems", Filter = EFilesSourceFilter.Images)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UploadImages)]

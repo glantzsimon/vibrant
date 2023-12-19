@@ -45,12 +45,12 @@ namespace K9.DataAccessLayer.Models
 
             if (score == EScore.VeryHigh)
             {
-                return "<i class=\"fa fa-heart food-item-icon\"></i><i class=\"fa fa-heart food-item-icon\"></i>";
+                return "<i class=\"fa fa-heart food-item-info\"></i><i class=\"fa fa-heart food-item-info\"></i>";
             }
 
             if (score == EScore.High)
             {
-                return "<i class=\"fa fa-heart food-item-icon\"></i>";
+                return "<i class=\"fa fa-heart food-item-info\"></i>";
             }
 
             return "";

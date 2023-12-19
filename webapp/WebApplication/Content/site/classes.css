@@ -295,3 +295,15 @@ li.divider {
     cursor: pointer;
 }
 
+.food-item-info {
+    font-size: 1em;
+    font-color: #87ceeb;
+}
+
+    .food-item-info span {
+        display: inline-block;
+        padding: 3px;
+        border: 1px solid #87ceeb;
+        border-radius: 3px;
+        background-color: aliceblue;
+    }
