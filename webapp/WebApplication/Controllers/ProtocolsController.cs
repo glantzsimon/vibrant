@@ -81,7 +81,7 @@ namespace K9.WebApplication.Controllers
             var protocol = _protocolService.GetProtocolWithProtocolSections(protocolId ?? id);
             return View(protocol);
         }
-
+        
         public ActionResult ReviewSectionDetails(int id = 0)
         {
             var protocol = _protocolService.GetProtocolWithProtocolSections(id);

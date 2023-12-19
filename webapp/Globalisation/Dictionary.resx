@@ -4112,22 +4112,22 @@
     <value>High in Phytate</value>
   </data>
   <data name="IsLowHistamineLabel" xml:space="preserve">
-    <value>Low Histamine</value>
+    <value>Low-Histamine</value>
   </data>
   <data name="IsLowLectinLabel" xml:space="preserve">
-    <value>Low Lectins</value>
+    <value>Low-Lectin</value>
   </data>
   <data name="IsLowMycotoxinLabel" xml:space="preserve">
-    <value>Low Mycotoxin Risk</value>
+    <value>Low-Mycotoxin</value>
   </data>
   <data name="IsLowOmega6Label" xml:space="preserve">
-    <value>Low Omega 6 Fatty Acids</value>
+    <value>Low-Omega 6</value>
   </data>
   <data name="IsLowOxalateLabel" xml:space="preserve">
-    <value>Low Oxalates</value>
+    <value>Low-Oxalate</value>
   </data>
   <data name="IsLowPhytateLabel" xml:space="preserve">
-    <value>Low Phytate</value>
+    <value>Low-Phytate</value>
   </data>
   <data name="OtherDietaryPreferencesQuestionTitle" xml:space="preserve">
     <value>Please check any of the following dietary preferences that apply:</value>

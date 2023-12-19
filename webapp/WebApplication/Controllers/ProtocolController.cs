@@ -15,10 +15,12 @@ namespace K9.WebApplication.Controllers
     public class ProtocolController : BasePureController
     {
         private readonly IProtocolService _protocolService;
+        private readonly IHealthQuestionnaireService _healthQuestionnaireService;
 
-        public ProtocolController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Product> productsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProtocolService protocolService, IPureControllerPackage pureControllerPackage) : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, pureControllerPackage)
+        public ProtocolController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<Product> productsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IMembershipService membershipService, IProtocolService protocolService, IHealthQuestionnaireService healthQuestionnaireService, IPureControllerPackage pureControllerPackage) : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper, pureControllerPackage)
         {
             _protocolService = protocolService;
+            _healthQuestionnaireService = healthQuestionnaireService;
         }
 
         public ActionResult Summary(Guid id)
@@ -27,6 +29,34 @@ namespace K9.WebApplication.Controllers
             protocol = _protocolService.GetProtocolWithProtocolSections(protocol.Id);
             ViewBag.ProtocolView = true;
             return View("../Protocols/Summary", protocol);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Summary(Protocol model)
+        {
+            var hq = _healthQuestionnaireService.GetHealthQuestionnaireForClient(model.ClientId.Value);
+
+            hq.EatsRedMeat = model.EatsRedMeat;
+            hq.EatsPoultry = model.EatsPoultry;
+            hq.EatsFishAndSeafood = model.EatsFishAndSeafood;
+            hq.EatsEggsAndRoes = model.EatsEggsAndRoes;
+            hq.EatsDairy = model.EatsDairy;
+            hq.EatsVegetables = model.EatsVegetables;
+            hq.EatsVegetableProtein = model.EatsVegetableProtein;
+            hq.EatsFungi = model.EatsFungi;
+            hq.EatsFruit = model.EatsFruit;
+            hq.IsLowOxalate = model.IsLowOxalate;
+            hq.IsLowLectin = model.IsLowLectin;
+            hq.IsLowPhytate = model.IsLowPhytate;
+            hq.IsLowHistamine = model.IsLowHistamine;
+            hq.IsLowMycotoxin = model.IsLowMycotoxin;
+            hq.IsLowOmega6 = model.IsLowOmega6;
+            hq.IsBulletProof = model.IsBulletProof;
+
+            _healthQuestionnaireService.Save(hq);
+
+            return RedirectToAction("Summary", new { id = model.ExternalId });
         }
 
         public ActionResult PrintableSummary(Guid id)

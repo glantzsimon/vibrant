@@ -5474,7 +5474,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Low Histamine.
+        ///   Looks up a localized string similar to Low-Histamine.
         /// </summary>
         public static string IsLowHistamineLabel {
             get {
@@ -5483,7 +5483,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Low Lectins.
+        ///   Looks up a localized string similar to Low-Lectin.
         /// </summary>
         public static string IsLowLectinLabel {
             get {
@@ -5492,7 +5492,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Low Mycotoxin Risk.
+        ///   Looks up a localized string similar to Low-Mycotoxin.
         /// </summary>
         public static string IsLowMycotoxinLabel {
             get {
@@ -5501,7 +5501,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Low Omega 6 Fatty Acids.
+        ///   Looks up a localized string similar to Low-Omega 6.
         /// </summary>
         public static string IsLowOmega6Label {
             get {
@@ -5510,7 +5510,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Low Oxalates.
+        ///   Looks up a localized string similar to Low-Oxalate.
         /// </summary>
         public static string IsLowOxalateLabel {
             get {
@@ -5519,7 +5519,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Low Phytate.
+        ///   Looks up a localized string similar to Low-Phytate.
         /// </summary>
         public static string IsLowPhytateLabel {
             get {

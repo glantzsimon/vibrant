@@ -745,6 +745,10 @@
     <Compile Include="Migrations\202312181301246_HighOmega6Description.Designer.cs">
       <DependentUpon>202312181301246_HighOmega6Description.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312190521061_LatestHQ.cs" />
+    <Compile Include="Migrations\202312190521061_LatestHQ.Designer.cs">
+      <DependentUpon>202312190521061_LatestHQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
@@ -1171,6 +1175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312181301246_HighOmega6Description.resx">
       <DependentUpon>202312181301246_HighOmega6Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312190521061_LatestHQ.resx">
+      <DependentUpon>202312190521061_LatestHQ.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
