@@ -19,8 +19,11 @@
     var yangColor = Model.GetColorFromScore(Model.GetYangImbalanceScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var dentalIssuesColor = Model.GetColorFromScore(Model.GetDentalHealthScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var neurologicalColor = Model.GetColorFromScore(Model.GetNeurologicalScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var respiratoryColor = Model.GetColorFromScore(Model.GetRespiratoryHealthScore).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var cardiovascularColor = Model.GetColorFromScore(Model.GetCardiovascularScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var inflammationColor = Model.GetColorFromScore(Model.GetInflammationScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+
+    var oxalateColor = Model.GetColorFromScore(Model.GetOxalateScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 
     var currentHealthColor = Model.GetColorFromScore(Model.GetCurrentHealthScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var expertiseColor = Model.GetColorFromScore(Model.GetNutritionExpertiseScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
@@ -101,7 +104,7 @@
             }
         </div>
     }
-    
+
     @Html.Partial("Overview/_Doshas")
 </div>
 
@@ -220,6 +223,17 @@
             @Html.Partial("Controls/_Gauge", new GaugeOptions
             {
                 MaxValue = 100,
+                Value = Model.GetRespiratoryHealthScore.InvertScore(),
+                Title = Dictionary.RespiratoryHealth,
+                BackgroundColor = $"rgb({respiratoryColor}, 0.33)",
+                StrokeColor = $"rgb({respiratoryColor})",
+                Units = $"{Model.GetRespiratoryHealthScore.InvertScore()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
                 Value = Model.GetCardiovascularScore().InvertScore(),
                 Title = Dictionary.CardiovascularHealth,
                 BackgroundColor = $"rgb({cardiovascularColor}, 0.33)",
@@ -240,6 +254,23 @@
         </div>
     </div>
 </div>
+
+<div class="well">
+    <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = Model.GetOxalateScore(),
+                Title = Dictionary.OxalateIntolerance,
+                BackgroundColor = $"rgb({oxalateColor}, 0.33)",
+                StrokeColor = $"rgb({oxalateColor})",
+                Units = $"{Model.GetOxalateScore()}%",
+            })
+        </div>
+    </div>
+</div>
+
 
 <div class="well">
     <div class="row">

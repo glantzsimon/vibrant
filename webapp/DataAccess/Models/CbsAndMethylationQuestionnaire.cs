@@ -15,91 +15,96 @@ namespace K9.DataAccessLayer.Models
 
         #region Cbs
 
-        [Score(Cbs = true, ScoreFactor = 2)]
+        [Score(Cbs = true, ScoreFactor = 2, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WhiteSpotsOnNailsLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WhiteSpotsOnNails, Description = Strings.Labels.WhiteSpotsOnNailsLabel)]
         public bool WhiteSpotsOnNails { get; set; }
 
-        [Score(Cbs = true, ScoreFactor = 2)]
-        [Score(CardioVascularHealth = true, BloodBuilding = true, Restorative = true, IsYin = true, VataDosha = true)]
+        [Score(Cbs = true, ScoreFactor = 2, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AnaemiaLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WhiteSpotsOnSkin)]
+        public bool WhiteSpotsOnSkin { get; set; }
+
+        [Score(Cbs = true, ScoreFactor = 2)]
+        [Score(CardioVascularHealth = true, BloodBuilding = true, Restorative = true, IsYin = true, VataDosha = true, IsOxalateIntolerance = true)]
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Anaemia, Description = Strings.Labels.AnaemiaLabel)]
         public bool Anaemia { get; set; }
 
-        [Score(Restorative = true, VataDosha = true, IsYin = true, Cbs = true)]
+        [Score(Restorative = true, VataDosha = true, IsYin = true, Cbs = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PostExertionalMalaiseLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PostExertionalMalaise, Description = Strings.Labels.PostExertionalMalaiseLabel)]
         public bool PostExertionalMalaise { get; set; }
         
         [Score(Restorative = true, IsOxalateIntolerance = true, VataDosha = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CrampsTremorsTwitchesLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CrampsTremorsTwitches)]
         public bool CrampsTremorsTwitches { get; set; }
 
         [Score(Cbs = true, ScoreFactor = 2)]
-        [Score(VataDosha = true, IsYin = true)]
+        [Score(VataDosha = true, IsYin = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HistoryOfchronicFatigueOrFibromyalgiaLabel)]
         public EYesNo? HistoryOfchronicFatigueOrFibromyalgia { get; set; }
         
-        [Score(Cbs = true)]
+        [Score(Cbs = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MigrainesLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Migraines)]
         public bool Migraines { get; set; }
 
         [Score(Cbs = true, ScoreFactor = 2)]
         [Score(Restorative = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.POTSLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.POTS, Description = Strings.Labels.POTSLabel)]
         public bool POTS { get; set; }
 
         [Score(Cbs = true, ScoreFactor = 2)]
         [Score(Cognition = true, NeurologicalHealth = true, Mood = true, HormoneBalance = true,  AntiInflammatory = true, Vitality = true, Restorative = true,
-            IsYin = true, VataDosha = true, ScoreFactor = 2)]
+            IsYin = true, VataDosha = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DepressionAnxietyLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DepressionAnxiety)]
         public bool DepressionAnxiety { get; set; }
 
         [Score(Cognition = true, NeurologicalHealth = true, Mood = true, Detoxification = true, StressRelief = true, CellularHealth = true, VataDosha = true, IsYin = true, ScoreFactor = 2, IsOxalateIntolerance = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MemoryProblemsLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MemoryProblems)]
         public bool MemoryProblems { get; set; }
         
         [Score(Cognition = true, NeurologicalHealth = true, Mood = true, IsOxalateIntolerance = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ConcentrationProblemsLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ConcentrationProblems)]
         public bool ConcentrationProblems { get; set; }
 
         [Score(Cbs = true, ScoreFactor = 2)]
         [Score(Cognition = true, NeurologicalHealth = true, Mood = true, VataDosha = true, IsYin = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BrainFogLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BrainFog)]
         public bool BrainFog { get; set; }
 
         [Score(Sleep = true, StressRelief = true, Cognition = true, NeurologicalHealth = true, VataDosha = true, IsOxalateIntolerance = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InsomniaLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Insomnia)]
         public bool Insomnia { get; set; }
 
         [Score(Restorative = true, Detoxification = true, UrologicalHealth = true, Immunity = true, IsYin = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NightSweatsLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NightSweats)]
         public bool NightSweats { get; set; }
 
         [Score(HormoneBalance = true, StressRelief = true, Restorative = true, Sleep = true, VataDosha = true, IsYin = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LowMorningEnergyLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LowMorningEnergy)]
         public bool LowMorningEnergy { get; set; }
 
         [Score(Cognition = true, Mood = true, Sleep = true, NeurologicalHealth = true, IsOxalateIntolerance = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RacingThoughtsLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RacingThoughts)]
         public bool RacingThoughts { get; set; }
 
         [Score(Cognition = true, Mood = true, Sleep = true, NeurologicalHealth = true, IsOxalateIntolerance = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InnerTensionLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InnerTension)]
         public bool InnerTension { get; set; }
 
         [Score(NeurologicalHealth = true, VataDosha = true, Cbs = true, ScoreFactor = 2)]
@@ -134,7 +139,7 @@ namespace K9.DataAccessLayer.Models
 
         [Score(Restorative = true, HormoneBalance = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SugarCrashesLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SugarCrashes, Description = Strings.Labels.SugarCrashesLabel)]
         public bool SugarCrashes { get; set; }
 
         [Score(Cbs = true, ScoreFactor = 3)]
@@ -144,34 +149,34 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OCDLabel)]
         public EYesNo? OCD { get; set; }
 
-        [Score(Immunity = true, Detoxification = true, Cbs = true)]
+        [Score(Immunity = true, Detoxification = true, Cbs = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChronicViralInfectionsLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChronicViralInfections)]
         public bool ChronicViralInfections { get; set; }
 
         [Score(CardioVascularHealth = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SpiderVeinsLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SpiderVeins)]
         public bool SpiderVeins { get; set; }
 
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [Score(Cbs = true)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StretchMarksLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StretchMarks)]
         public bool StretchMarks { get; set; }
 
         [Score(Restorative = true, UrologicalHealth = true, StressRelief = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FrequentNighttimeUrinationLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FrequentNighttimeUrination)]
         public bool FrequentNighttimeUrination { get; set; }
 
         [Score(Immunity = true, IsYang = true, PittaDosha = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HerpesLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Herpes)]
         public bool Herpes { get; set; }
 
         [Score(Cognition = true, Mood = true, Sleep = true, NeurologicalHealth = true, PittaDosha = true, IsYang = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IrritabilityLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Irritability)]
         public bool Irritability { get; set; }
 
         public List<PropertyInfo> GetCbsProperties() => this

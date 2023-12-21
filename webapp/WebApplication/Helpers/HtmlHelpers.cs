@@ -7,8 +7,16 @@ using K9.WebApplication.Controllers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Options;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
+using K9.Base.WebApplication.Constants;
+using K9.Base.WebApplication.Options;
+using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Models;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Helpers
@@ -133,6 +141,78 @@ namespace K9.WebApplication.Helpers
         public static MvcHtmlString CollapsibleDiv(this HtmlHelper html, string body)
         {
             return html.Partial("Controls/_CollapsibleDiv", body);
+        }
+
+        public static string GetLabelTooltipFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression)
+        {
+            var metaData = ModelMetadata.FromLambdaExpression(expression, html.ViewData);
+            var description = metaData.Description;
+            if (!string.IsNullOrEmpty(description))
+            {
+                return $"<i data-toggle=\"tooltip\" title=\"{description}\" class=\"input-tooltip fa fa-question-circle\"></i>";
+            }
+            return string.Empty;
+        }
+
+        public static MvcHtmlString BootstrapEditorwithInfoFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression, EditorOptions options = null)
+        {
+            var sb = new StringBuilder();
+            var modelMetadata = ModelMetadata.FromLambdaExpression(expression, html.ViewData);
+            var modelType = modelMetadata.ModelType;
+            var propertyName = modelMetadata.PropertyName;
+
+            // Get additional view data for the control
+            var viewDataDictionary = new ViewDataDictionary();
+            options = options ?? new EditorOptions();
+            viewDataDictionary.MergeAttribute(Attributes.Class, options.InputSize.ToCssClass());
+            viewDataDictionary.MergeAttribute(Attributes.Class, options.InputWidth.ToCssClass());
+            viewDataDictionary.MergeAttribute(Attributes.CultureInfo, options.CultureInfo);
+
+            if (modelType != typeof(bool))
+            {
+                viewDataDictionary.MergeAttribute(Attributes.Class, Bootstrap.Classes.FormControl);
+            }
+
+            viewDataDictionary.MergeAttribute(Attributes.PlaceHolder, options.PlaceHolder);
+            viewDataDictionary.MergeAttribute(Attributes.Title, string.Empty);
+            viewDataDictionary.MergeAttribute(Attributes.Label, options.Label);
+
+            // Get container div
+            var div = new TagBuilder(Tags.Div);
+            if (options.IsHidden)
+            {
+                div.MergeAttribute(Attributes.Style, "display: none;");
+            }
+            var attributes = new Dictionary<string, object>();
+            attributes.MergeAttribute(Attributes.Class, !options.IsReadOnly && modelType == typeof(bool) ? Bootstrap.Classes.Checkbox : Bootstrap.Classes.FormGroup);
+            attributes.MergeAttribute(Attributes.DataInputId, propertyName);
+            if (html.GetModelErrorsFor(expression).Any())
+            {
+                attributes.MergeAttribute(Attributes.Class, Bootstrap.Classes.HasError);
+            }
+
+            div.MergeAttributes(attributes);
+            sb.AppendLine(div.ToString(TagRenderMode.StartTag));
+
+            var hideLabelForTypes = new List<Type> { typeof(bool), typeof(FileSource) };
+            if (!hideLabelForTypes.Contains(modelType))
+            {
+                sb.AppendLine(html.LabelFor(expression, options.Label).ToString());
+                sb.Append(html.GetLabelTooltipFor(expression));
+            }
+
+            if (options.IsReadOnly)
+            {
+                sb.AppendLine(html.DisplayFor(expression, new { viewDataDictionary }).ToString());
+            }
+            else
+            {
+                sb.AppendLine(html.EditorFor(expression, new { viewDataDictionary }).ToString());
+                sb.AppendLine(html.ValidationMessageFor(expression).ToString());
+            }
+            sb.AppendLine(div.ToString(TagRenderMode.EndTag));
+
+            return MvcHtmlString.Create(sb.ToString());
         }
     }
 }

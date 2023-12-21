@@ -2798,7 +2798,7 @@
     <value>Do you ever notice a strong ammonia smell in your sweat or urine?</value>
   </data>
   <data name="AnaemiaLabel" xml:space="preserve">
-    <value>Do you ever experience symptoms of anaemia, such as pale skin, low energy, feeling faint, etc.?</value>
+    <value>Common symptoms of anaemia include pale skin, low energy, feeling faint, etc.</value>
   </data>
   <data name="BloatingLabel" xml:space="preserve">
     <value>Do you often experience bloating after a meal or in general?</value>
@@ -2957,7 +2957,7 @@
     <value>Pitta Kapha Dosha</value>
   </data>
   <data name="PostExertionalMalaiseLabel" xml:space="preserve">
-    <value>Do you ever experience post-exertional malaise? (In other words, do you feel exhausted after physical activity?</value>
+    <value>Common symptoms of post-exertional malaise are feeling exhausted and unwell after physical or mental activity and the inability to tolerate tasks that would ordinarily be manageable.</value>
   </data>
   <data name="POTSLabel" xml:space="preserve">
     <value>Do you ever experience dizziness when standing up, after sitting or lying down for some time?</value>
@@ -2999,7 +2999,7 @@
     <value>Do you have any stretchmarks?</value>
   </data>
   <data name="SugarCrashesLabel" xml:space="preserve">
-    <value>Do you ever experience sugar crashes after eating carbohydrates?</value>
+    <value>Reactive hypoglycaemia causes people to suffer sugar crashes after eating carbohydrates, leading to feeling dizzy, weak and unwell for a short time, before recovering.</value>
   </data>
   <data name="SupplementsLabel" xml:space="preserve">
     <value>Please provide details of any supplements you are currently taking (with dosage)</value>
@@ -3032,7 +3032,7 @@
     <value>How easily do you gain weight?</value>
   </data>
   <data name="WhiteSpotsOnNailsLabel" xml:space="preserve">
-    <value>Do you have one or more white flecks anywhere on your fingernails?</value>
+    <value>One or more white flecks anywhere on your fingernails or toenails?</value>
   </data>
   <data name="BodyTemperatureQuestionLabel" xml:space="preserve">
     <value>Which of the following statements best describe your body temperature?</value>
@@ -4063,11 +4063,23 @@
   <data name="A2MilkOnly" xml:space="preserve">
     <value>A2 Milk Only</value>
   </data>
+  <data name="Anaemia" xml:space="preserve">
+    <value>Anaemia</value>
+  </data>
   <data name="AsthmaLabel" xml:space="preserve">
     <value>Do you suffer from asthma?</value>
   </data>
+  <data name="BackPain" xml:space="preserve">
+    <value>Back Pain</value>
+  </data>
   <data name="BackPainLabel" xml:space="preserve">
     <value>Do you suffer from back pain?</value>
+  </data>
+  <data name="BrainFog" xml:space="preserve">
+    <value>Brain Fog</value>
+  </data>
+  <data name="BronchitisLabel" xml:space="preserve">
+    <value>Bronchitis</value>
   </data>
   <data name="BulletProofDescription" xml:space="preserve">
     <value>The Bulletproof Diet, created by Dave Asprey, is a high-fat, low-carbohydrate diet that emphasizes foods high in healthy fats, moderate in protein, and low in carbs, aimed at improving energy and mental clarity. It promotes the consumption of Bulletproof Coffee (coffee mixed with grass-fed butter and MCT oil) as a staple to kickstart the day. The diet's benefits are said to include enhanced cognitive function, weight loss, and stabilized blood sugar levels. It also focuses on reducing inflammation and eliminating toxins by advocating for organic, nutrient-dense foods and avoiding processed foods and common allergens. This diet has garnered attention for its potential to boost overall well-being, particularly in mental performance and energy levels.</value>
@@ -4081,17 +4093,59 @@
   <data name="CacheCleared" xml:space="preserve">
     <value>Cache has been cleared successfully.</value>
   </data>
+  <data name="CarpelTunnel" xml:space="preserve">
+    <value>Carpal Tunnel Syndrome</value>
+  </data>
   <data name="CarpelTunnelLabel" xml:space="preserve">
     <value>Do you suffer from carpal tunnel syndrome?</value>
+  </data>
+  <data name="CataractsLabel" xml:space="preserve">
+    <value>Cataracts</value>
+  </data>
+  <data name="ChronicViralInfections" xml:space="preserve">
+    <value>Chronic Viral Infections</value>
   </data>
   <data name="ClearCache" xml:space="preserve">
     <value>Clear Cache</value>
   </data>
+  <data name="ConcentrationProblems" xml:space="preserve">
+    <value>Inability to Concentrate</value>
+  </data>
+  <data name="COPD" xml:space="preserve">
+    <value>COPD (Chronic Obstructive Pulmonary Disease)</value>
+  </data>
+  <data name="COPDInfo" xml:space="preserve">
+    <value>COPD is an umbrella term used to describe two primary types of obstructive lung disease that used to be classified separately: emphysema and chronic bronchitis</value>
+  </data>
+  <data name="CrampsTremorsTwitches" xml:space="preserve">
+    <value>Cramps, Tremors, Twitches</value>
+  </data>
+  <data name="CysticFibrosis" xml:space="preserve">
+    <value>Cystic fibrosis</value>
+  </data>
+  <data name="CysticFibrosisInfo" xml:space="preserve">
+    <value>Cystic fibrosis (CF) is a condition can cause both breathing and digestive problems because the disease makes the mucus in the body very thick.</value>
+  </data>
   <data name="DemoteFoodsDescription" xml:space="preserve">
     <value>We are all unique. If any of the foods recommended for you do not agree with you, you can remove them by clicking on the thumbs-down button.</value>
   </data>
+  <data name="DepressionAnxiety" xml:space="preserve">
+    <value>Depression / Anxiety</value>
+  </data>
   <data name="DietaryPreferences" xml:space="preserve">
     <value>Dietary Preferences</value>
+  </data>
+  <data name="DifficultyUrinating" xml:space="preserve">
+    <value>Difficulty Urinating</value>
+  </data>
+  <data name="Diverticulitis" xml:space="preserve">
+    <value>Diverticulosis / Diverticulitis</value>
+  </data>
+  <data name="EndometriosisLabel" xml:space="preserve">
+    <value>Endometriosis</value>
+  </data>
+  <data name="EyePainLabel" xml:space="preserve">
+    <value>Eye Pain / Burning Eyes</value>
   </data>
   <data name="FiveElements" xml:space="preserve">
     <value>FiveElements</value>
@@ -4105,17 +4159,50 @@
   <data name="FoodIsSuitableTitle" xml:space="preserve">
     <value>My body likes this food!</value>
   </data>
+  <data name="FrequentNighttimeUrination" xml:space="preserve">
+    <value>Frequent Nighttime Urination</value>
+  </data>
+  <data name="HairLossLabel" xml:space="preserve">
+    <value>Hair Loss</value>
+  </data>
   <data name="HealthQuestionnaireCompleteTitle" xml:space="preserve">
     <value>Someone has completed the Genetic Profile Test</value>
   </data>
   <data name="HealthQuestoinnaireComplete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\healthquestoinnairecomplete.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Hemorrhoids" xml:space="preserve">
+    <value>Hemorrhoids</value>
+  </data>
+  <data name="Herpes" xml:space="preserve">
+    <value>Frequent Herpes Outbreaks</value>
+  </data>
   <data name="HiccupsLabel" xml:space="preserve">
     <value>Do you often experience hiccups?</value>
   </data>
   <data name="HistamineDescription" xml:space="preserve">
     <value>High histamine levels, particularly problematic for those with histamine intolerance or mast cell activation disorders, can trigger a range of symptoms including headaches, skin irritations, digestive issues, and in severe cases, asthma-like symptoms or anaphylaxis. Chronic high histamine can also contribute to inflammatory conditions and exacerbate existing allergies and immune system disorders.</value>
+  </data>
+  <data name="HypoThyroidism" xml:space="preserve">
+    <value>HypoThyroidism</value>
+  </data>
+  <data name="InflammationAndImmunity" xml:space="preserve">
+    <value>Inflammation &amp; Immunity</value>
+  </data>
+  <data name="InnerTension" xml:space="preserve">
+    <value>Inner Tension</value>
+  </data>
+  <data name="Insomnia" xml:space="preserve">
+    <value>Insomnia</value>
+  </data>
+  <data name="InterstitialCystitis" xml:space="preserve">
+    <value>Interstitial Cystitis</value>
+  </data>
+  <data name="InterstitialCystitisInfo" xml:space="preserve">
+    <value>Urinary burning and pain similar to urinary tract infections</value>
+  </data>
+  <data name="Irritability" xml:space="preserve">
+    <value>Irritability</value>
   </data>
   <data name="IsBulletProofLabel" xml:space="preserve">
     <value>Bulletproof</value>
@@ -4156,11 +4243,38 @@
   <data name="IsLowPhytateLabel" xml:space="preserve">
     <value>Low-Phytate</value>
   </data>
+  <data name="KidneyStones" xml:space="preserve">
+    <value>Kidney Stones</value>
+  </data>
+  <data name="LeakyGut" xml:space="preserve">
+    <value>Leaky Gut</value>
+  </data>
   <data name="LectinDescription" xml:space="preserve">
     <value>Found in high amounts in raw legumes and certain grains, lectins can cause significant digestive disturbances and may interfere with the absorption of nutrients, leading to inflammation, weakened gut barrier function, and autoimmune responses. Overconsumption of lectins has been associated with conditions like leaky gut syndrome and inflammatory bowel diseases.</value>
   </data>
+  <data name="LowMorningEnergy" xml:space="preserve">
+    <value>Low Morning Energy</value>
+  </data>
+  <data name="LungCancer" xml:space="preserve">
+    <value>LungCancer</value>
+  </data>
+  <data name="MastCellActivation" xml:space="preserve">
+    <value>Mast Cell Activation Syndrome</value>
+  </data>
+  <data name="MemoryProblems" xml:space="preserve">
+    <value>Memory Problems</value>
+  </data>
+  <data name="Migraines" xml:space="preserve">
+    <value>Migraines</value>
+  </data>
+  <data name="MusclePain" xml:space="preserve">
+    <value>Muscle Pain</value>
+  </data>
   <data name="MycotoxinDescription" xml:space="preserve">
     <value>Produced by certain types of molds, mycotoxins can cause acute symptoms like nausea and weakened immunity, and long-term exposure can lead to chronic health issues such as cancer, liver and kidney damage, and autoimmune disorders. Mycotoxins are often found in improperly stored grains, nuts, and animal products, posing a significant risk to food safety.</value>
+  </data>
+  <data name="NightSweats" xml:space="preserve">
+    <value>Night Sweats</value>
   </data>
   <data name="Omega6Description" xml:space="preserve">
     <value>While essential for health, an imbalance with high intake of omega-6 fatty acids, relative to omega-3s, can promote inflammation, exacerbating conditions like arthritis, cardiovascular diseases, and autoimmune disorders. Commonly found in processed foods, vegetable oils, and certain nuts and seeds, excessive omega-6 consumption can disrupt the body's inflammatory response, contributing to chronic health problems.</value>
@@ -4168,17 +4282,56 @@
   <data name="organicfood" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>nutrition\en-gb\organicfood.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Osteoporosis" xml:space="preserve">
+    <value>Osteoporosis / Osteopenia</value>
+  </data>
+  <data name="OsteoporosisInfo" xml:space="preserve">
+    <value>Osteopenia &amp; Osteoporosis represent a continuum of conditions that present with a decrease in bone mass and disrupted bone microarchitecture most commonly as a result of increased age, menopause, and metabolic abnormalities.</value>
+  </data>
   <data name="OtherDietaryPreferencesQuestionTitle" xml:space="preserve">
     <value>Please check any of the following dietary preferences that apply:</value>
   </data>
   <data name="OxalateDescription" xml:space="preserve">
-    <value>High levels of oxalates in the diet can lead to the formation of kidney stones and may contribute to joint pain, inflammation, and oxalate toxicity, particularly in individuals with certain health conditions like kidney disorders or inflammatory bowel disease. Excessive oxalate can also impede the absorption of beneficial minerals such as calcium and magnesium, exacerbating issues like osteoporosis and muscle cramps.</value>
+    <value>High levels of oxalates in the diet can lead to the formation of kidney stones and may contribute to joint pain, inflammation, and oxalate toxicity, particularly in individuals with certain health conditions like kidney disorders or inflammatory bowel disease. Excessive oxalate can also impede the absorption of beneficial minerals such as calcium and magnesium, exacerbating issues like osteoporosis and muscle cramps and is linked to many chronic inflammatory diseases and mystery illnesses. Factors that may contribute to oxalate toxicity (by impeding its correct metabolism) are: mold exposure, leaky gut, dysbiosis, pesticide exposure, low methylation status, stress, pollution.</value>
+  </data>
+  <data name="OxalateIntolerance" xml:space="preserve">
+    <value>Oxalate Intolerance</value>
+  </data>
+  <data name="PCOS" xml:space="preserve">
+    <value>Polycystic Ovary Syndrome</value>
+  </data>
+  <data name="PCOSInfo" xml:space="preserve">
+    <value>Polycystic ovary syndrome, or polycystic ovarian syndrome, is the most common endocrine disorder in women of reproductive age. The syndrome is named after cysts which form on the ovaries of some people with this condition, though this is not a universal symptom, and not the underlying cause of the disorder.</value>
   </data>
   <data name="PhytateDescription" xml:space="preserve">
     <value>Predominantly present in grains, seeds, and legumes, phytates can bind to essential minerals such as iron, zinc, and calcium, inhibiting their absorption and potentially leading to deficiencies. These deficiencies can manifest as weakened immune function, impaired wound healing, and bone density issues, contributing to a general decline in overall health.</value>
   </data>
+  <data name="Pneumonia" xml:space="preserve">
+    <value>Pneumonia</value>
+  </data>
+  <data name="PostExertionalMalaise" xml:space="preserve">
+    <value>Post-Exertional Malaise</value>
+  </data>
+  <data name="POTS" xml:space="preserve">
+    <value>POTS</value>
+  </data>
   <data name="Properties" xml:space="preserve">
     <value>Properties</value>
+  </data>
+  <data name="PulmonaryFibrosis" xml:space="preserve">
+    <value>Pulmonary Fibrosis</value>
+  </data>
+  <data name="PulmonaryFibrosisInfo" xml:space="preserve">
+    <value>Condition in which the lungs become scarred over time. Symptoms include shortness of breath, a dry cough, feeling tired, weight loss, and nail clubbing. Complications may include pulmonary hypertension, respiratory failure, pneumothorax, and lung cancer</value>
+  </data>
+  <data name="RacingThoughts" xml:space="preserve">
+    <value>Racing Thoughts</value>
+  </data>
+  <data name="RespiratoryHealth" xml:space="preserve">
+    <value>Respiratory Health</value>
+  </data>
+  <data name="SandyEye" xml:space="preserve">
+    <value>Sandy Eye</value>
   </data>
   <data name="Season" xml:space="preserve">
     <value>Season</value>
@@ -4186,11 +4339,23 @@
   <data name="Skin" xml:space="preserve">
     <value>Skin</value>
   </data>
+  <data name="SpiderVeins" xml:space="preserve">
+    <value>Spider Veins</value>
+  </data>
+  <data name="StretchMarks" xml:space="preserve">
+    <value>Stretch Marks</value>
+  </data>
+  <data name="SugarCrashes" xml:space="preserve">
+    <value>Sugar Crashes (Reactive Hypoglycaemia)</value>
+  </data>
   <data name="SymptomCheckerTitle" xml:space="preserve">
-    <value>Please check any of the following items that you experience / have or which apply to you: (please check all that apply)</value>
+    <value>Please check any of the following that apply to you:</value>
   </data>
   <data name="TCM" xml:space="preserve">
     <value>TCM</value>
+  </data>
+  <data name="Tuberculosis" xml:space="preserve">
+    <value>Tuberculosis</value>
   </data>
   <data name="UpdatePreferences" xml:space="preserve">
     <value>Update Preferences</value>
@@ -4200,6 +4365,12 @@
   </data>
   <data name="WeAreAllUnique" xml:space="preserve">
     <value>We are all unique!</value>
+  </data>
+  <data name="WhiteSpotsOnNails" xml:space="preserve">
+    <value>White Spots on Nails</value>
+  </data>
+  <data name="WhiteSpotsOnSkin" xml:space="preserve">
+    <value>White Spots on Skin</value>
   </data>
   <data name="WhyOrganicFoodTitle" xml:space="preserve">
     <value>Eat Organic!</value>

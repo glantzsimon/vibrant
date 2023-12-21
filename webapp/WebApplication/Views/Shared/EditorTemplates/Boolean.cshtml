@@ -1,3 +1,4 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
 @model Boolean
-<label>@Html.CheckBoxFor(model => model)@Html.GetDisplayNameFor(model => model)</label>
+<label>@Html.CheckBoxFor(model => model)@Html.GetDisplayNameFor(model => model) @Html.Raw(Html.GetLabelTooltipFor(e => e))</label>

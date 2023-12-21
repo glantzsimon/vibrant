@@ -64,6 +64,8 @@ namespace K9.DataAccessLayer.Attributes
         public bool IsHistamineIntolerance{ get; set; }
         public bool IsMycotoxinIntolerance{ get; set; }
         public bool IsOmega6Intolerance{ get; set; }
+
+        public bool RespiratoryHealth{ get; set; }
     }
 
 }

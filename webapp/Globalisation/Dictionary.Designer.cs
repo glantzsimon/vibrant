@@ -517,7 +517,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you ever experience symptoms of anaemia, such as pale skin, low energy, feeling faint, etc.?.
+        ///   Looks up a localized string similar to Anaemia.
+        /// </summary>
+        public static string Anaemia {
+            get {
+                return ResourceManager.GetString("Anaemia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Common symptoms of anaemia include pale skin, low energy, feeling faint, etc..
         /// </summary>
         public static string AnaemiaLabel {
             get {
@@ -774,6 +783,15 @@ namespace K9.Globalisation {
         public static string Back {
             get {
                 return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back Pain.
+        /// </summary>
+        public static string BackPain {
+            get {
+                return ResourceManager.GetString("BackPain", resourceCulture);
             }
         }
         
@@ -1060,6 +1078,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Brain Fog.
+        /// </summary>
+        public static string BrainFog {
+            get {
+                return ResourceManager.GetString("BrainFog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you ever experience brain fog or short term memory issues?.
         /// </summary>
         public static string BrainFogLabel {
@@ -1083,6 +1110,15 @@ namespace K9.Globalisation {
         public static string Breathwork {
             get {
                 return ResourceManager.GetString("Breathwork", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bronchitis.
+        /// </summary>
+        public static string BronchitisLabel {
+            get {
+                return ResourceManager.GetString("BronchitisLabel", resourceCulture);
             }
         }
         
@@ -1249,11 +1285,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Carpal Tunnel Syndrome.
+        /// </summary>
+        public static string CarpelTunnel {
+            get {
+                return ResourceManager.GetString("CarpelTunnel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you suffer from carpal tunnel syndrome?.
         /// </summary>
         public static string CarpelTunnelLabel {
             get {
                 return ResourceManager.GetString("CarpelTunnelLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cataracts.
+        /// </summary>
+        public static string CataractsLabel {
+            get {
+                return ResourceManager.GetString("CataractsLabel", resourceCulture);
             }
         }
         
@@ -1445,6 +1499,15 @@ namespace K9.Globalisation {
         public static string ChestPainLabel {
             get {
                 return ResourceManager.GetString("ChestPainLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chronic Viral Infections.
+        /// </summary>
+        public static string ChronicViralInfections {
+            get {
+                return ResourceManager.GetString("ChronicViralInfections", resourceCulture);
             }
         }
         
@@ -1710,6 +1773,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inability to Concentrate.
+        /// </summary>
+        public static string ConcentrationProblems {
+            get {
+                return ResourceManager.GetString("ConcentrationProblems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you ever have difficulty concentrating?.
         /// </summary>
         public static string ConcentrationProblemsLabel {
@@ -1920,6 +1992,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to COPD (Chronic Obstructive Pulmonary Disease).
+        /// </summary>
+        public static string COPD {
+            get {
+                return ResourceManager.GetString("COPD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to COPD is an umbrella term used to describe two primary types of obstructive lung disease that used to be classified separately: emphysema and chronic bronchitis.
+        /// </summary>
+        public static string COPDInfo {
+            get {
+                return ResourceManager.GetString("COPDInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Core Earth.
         /// </summary>
         public static string CoreEarth {
@@ -1997,6 +2087,15 @@ namespace K9.Globalisation {
         public static string CrackedTeeth {
             get {
                 return ResourceManager.GetString("CrackedTeeth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cramps, Tremors, Twitches.
+        /// </summary>
+        public static string CrampsTremorsTwitches {
+            get {
+                return ResourceManager.GetString("CrampsTremorsTwitches", resourceCulture);
             }
         }
         
@@ -2211,6 +2310,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cystic fibrosis.
+        /// </summary>
+        public static string CysticFibrosis {
+            get {
+                return ResourceManager.GetString("CysticFibrosis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cystic fibrosis (CF) is a condition can cause both breathing and digestive problems because the disease makes the mucus in the body very thick..
+        /// </summary>
+        public static string CysticFibrosisInfo {
+            get {
+                return ResourceManager.GetString("CysticFibrosisInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Daily.
         /// </summary>
         public static string Daily {
@@ -2376,6 +2493,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Depression / Anxiety.
+        /// </summary>
+        public static string DepressionAnxiety {
+            get {
+                return ResourceManager.GetString("DepressionAnxiety", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you have a history of or are you currently experiencing depression or anxiety?.
         /// </summary>
         public static string DepressionAnxietyLabel {
@@ -2537,6 +2663,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Difficulty Urinating.
+        /// </summary>
+        public static string DifficultyUrinating {
+            get {
+                return ResourceManager.GetString("DifficultyUrinating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Digestion.
         /// </summary>
         public static string Digestion {
@@ -2587,6 +2722,15 @@ namespace K9.Globalisation {
         public static string DispositionQuestionLabel {
             get {
                 return ResourceManager.GetString("DispositionQuestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diverticulosis / Diverticulitis.
+        /// </summary>
+        public static string Diverticulitis {
+            get {
+                return ResourceManager.GetString("Diverticulitis", resourceCulture);
             }
         }
         
@@ -3302,6 +3446,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Endometriosis.
+        /// </summary>
+        public static string EndometriosisLabel {
+            get {
+                return ResourceManager.GetString("EndometriosisLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Endomorph.
         /// </summary>
         public static string Endomorph {
@@ -3525,6 +3678,15 @@ namespace K9.Globalisation {
         public static string ExternalLink {
             get {
                 return ResourceManager.GetString("ExternalLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eye Pain / Burning Eyes.
+        /// </summary>
+        public static string EyePainLabel {
+            get {
+                return ResourceManager.GetString("EyePainLabel", resourceCulture);
             }
         }
         
@@ -3913,6 +4075,15 @@ namespace K9.Globalisation {
         public static string Frequency {
             get {
                 return ResourceManager.GetString("Frequency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequent Nighttime Urination.
+        /// </summary>
+        public static string FrequentNighttimeUrination {
+            get {
+                return ResourceManager.GetString("FrequentNighttimeUrination", resourceCulture);
             }
         }
         
@@ -4377,6 +4548,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hair Loss.
+        /// </summary>
+        public static string HairLossLabel {
+            get {
+                return ResourceManager.GetString("HairLossLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Which of the following best describes your hair?.
         /// </summary>
         public static string HairTypeQuestionLabel {
@@ -4621,6 +4801,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hemorrhoids.
+        /// </summary>
+        public static string Hemorrhoids {
+            get {
+                return ResourceManager.GetString("Hemorrhoids", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Her.
         /// </summary>
         public static string Her {
@@ -4671,6 +4860,15 @@ namespace K9.Globalisation {
         public static string HereditaryRisk {
             get {
                 return ResourceManager.GetString("HereditaryRisk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequent Herpes Outbreaks.
+        /// </summary>
+        public static string Herpes {
+            get {
+                return ResourceManager.GetString("Herpes", resourceCulture);
             }
         }
         
@@ -4930,6 +5128,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to HypoThyroidism.
+        /// </summary>
+        public static string HypoThyroidism {
+            get {
+                return ResourceManager.GetString("HypoThyroidism", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ideal.
         /// </summary>
         public static string Ideal {
@@ -5069,6 +5276,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inflammation &amp; Immunity.
+        /// </summary>
+        public static string InflammationAndImmunity {
+            get {
+                return ResourceManager.GetString("InflammationAndImmunity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Infrared.
         /// </summary>
         public static string Infrared {
@@ -5168,6 +5384,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inner Tension.
+        /// </summary>
+        public static string InnerTension {
+            get {
+                return ResourceManager.GetString("InnerTension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you often feel an inner tension that makes it very hard to relax?.
         /// </summary>
         public static string InnerTensionLabel {
@@ -5195,6 +5420,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Insomnia.
+        /// </summary>
+        public static string Insomnia {
+            get {
+                return ResourceManager.GetString("Insomnia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you ever experience insomnia, either difficulty getting to sleep or staying asleep?.
         /// </summary>
         public static string InsomniaLabel {
@@ -5218,6 +5452,24 @@ namespace K9.Globalisation {
         public static string InternationalPriceLabel {
             get {
                 return ResourceManager.GetString("InternationalPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interstitial Cystitis.
+        /// </summary>
+        public static string InterstitialCystitis {
+            get {
+                return ResourceManager.GetString("InterstitialCystitis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Urinary burning and pain similar to urinary tract infections.
+        /// </summary>
+        public static string InterstitialCystitisInfo {
+            get {
+                return ResourceManager.GetString("InterstitialCystitisInfo", resourceCulture);
             }
         }
         
@@ -5272,6 +5524,15 @@ namespace K9.Globalisation {
         public static string IrregularDigestionLabel {
             get {
                 return ResourceManager.GetString("IrregularDigestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Irritability.
+        /// </summary>
+        public static string Irritability {
+            get {
+                return ResourceManager.GetString("Irritability", resourceCulture);
             }
         }
         
@@ -5991,6 +6252,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kidney Stones.
+        /// </summary>
+        public static string KidneyStones {
+            get {
+                return ResourceManager.GetString("KidneyStones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lab Sheet.
         /// </summary>
         public static string LabSheet {
@@ -6041,6 +6311,15 @@ namespace K9.Globalisation {
         public static string LateSummer {
             get {
                 return ResourceManager.GetString("LateSummer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leaky Gut.
+        /// </summary>
+        public static string LeakyGut {
+            get {
+                return ResourceManager.GetString("LeakyGut", resourceCulture);
             }
         }
         
@@ -6396,6 +6675,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Low Morning Energy.
+        /// </summary>
+        public static string LowMorningEnergy {
+            get {
+                return ResourceManager.GetString("LowMorningEnergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you tend to feel groggy and / or exhausted when you first wake up?.
         /// </summary>
         public static string LowMorningEnergyLabel {
@@ -6410,6 +6698,15 @@ namespace K9.Globalisation {
         public static string LowVigourLabel {
             get {
                 return ResourceManager.GetString("LowVigourLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LungCancer.
+        /// </summary>
+        public static string LungCancer {
+            get {
+                return ResourceManager.GetString("LungCancer", resourceCulture);
             }
         }
         
@@ -6491,6 +6788,15 @@ namespace K9.Globalisation {
         public static string MarkOutOfStock {
             get {
                 return ResourceManager.GetString("MarkOutOfStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mast Cell Activation Syndrome.
+        /// </summary>
+        public static string MastCellActivation {
+            get {
+                return ResourceManager.GetString("MastCellActivation", resourceCulture);
             }
         }
         
@@ -6634,6 +6940,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Memory Problems.
+        /// </summary>
+        public static string MemoryProblems {
+            get {
+                return ResourceManager.GetString("MemoryProblems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you experience any issues with your memory?.
         /// </summary>
         public static string MemoryProblemsLabel {
@@ -6738,6 +7053,15 @@ namespace K9.Globalisation {
         public static string MiddleFingerAndThumbOverlap {
             get {
                 return ResourceManager.GetString("MiddleFingerAndThumbOverlap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Migraines.
+        /// </summary>
+        public static string Migraines {
+            get {
+                return ResourceManager.GetString("Migraines", resourceCulture);
             }
         }
         
@@ -6913,6 +7237,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Muscle Pain.
+        /// </summary>
+        public static string MusclePain {
+            get {
+                return ResourceManager.GetString("MusclePain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Produced by certain types of molds, mycotoxins can cause acute symptoms like nausea and weakened immunity, and long-term exposure can lead to chronic health issues such as cancer, liver and kidney damage, and autoimmune disorders. Mycotoxins are often found in improperly stored grains, nuts, and animal products, posing a significant risk to food safety..
         /// </summary>
         public static string MycotoxinDescription {
@@ -7063,6 +7396,15 @@ namespace K9.Globalisation {
         public static string News {
             get {
                 return ResourceManager.GetString("News", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Night Sweats.
+        /// </summary>
+        public static string NightSweats {
+            get {
+                return ResourceManager.GetString("NightSweats", resourceCulture);
             }
         }
         
@@ -7745,6 +8087,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Osteoporosis / Osteopenia.
+        /// </summary>
+        public static string Osteoporosis {
+            get {
+                return ResourceManager.GetString("Osteoporosis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Osteopenia &amp; Osteoporosis represent a continuum of conditions that present with a decrease in bone mass and disrupted bone microarchitecture most commonly as a result of increased age, menopause, and metabolic abnormalities..
+        /// </summary>
+        public static string OsteoporosisInfo {
+            get {
+                return ResourceManager.GetString("OsteoporosisInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Other.
         /// </summary>
         public static string Other {
@@ -7799,11 +8159,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to High levels of oxalates in the diet can lead to the formation of kidney stones and may contribute to joint pain, inflammation, and oxalate toxicity, particularly in individuals with certain health conditions like kidney disorders or inflammatory bowel disease. Excessive oxalate can also impede the absorption of beneficial minerals such as calcium and magnesium, exacerbating issues like osteoporosis and muscle cramps..
+        ///   Looks up a localized string similar to High levels of oxalates in the diet can lead to the formation of kidney stones and may contribute to joint pain, inflammation, and oxalate toxicity, particularly in individuals with certain health conditions like kidney disorders or inflammatory bowel disease. Excessive oxalate can also impede the absorption of beneficial minerals such as calcium and magnesium, exacerbating issues like osteoporosis and muscle cramps and is linked to many chronic inflammatory diseases and mystery illnesses. Factors that may  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string OxalateDescription {
             get {
                 return ResourceManager.GetString("OxalateDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oxalate Intolerance.
+        /// </summary>
+        public static string OxalateIntolerance {
+            get {
+                return ResourceManager.GetString("OxalateIntolerance", resourceCulture);
             }
         }
         
@@ -7930,6 +8299,24 @@ namespace K9.Globalisation {
         public static string PayNow {
             get {
                 return ResourceManager.GetString("PayNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Polycystic Ovary Syndrome.
+        /// </summary>
+        public static string PCOS {
+            get {
+                return ResourceManager.GetString("PCOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Polycystic ovary syndrome, or polycystic ovarian syndrome, is the most common endocrine disorder in women of reproductive age. The syndrome is named after cysts which form on the ovaries of some people with this condition, though this is not a universal symptom, and not the underlying cause of the disorder..
+        /// </summary>
+        public static string PCOSInfo {
+            get {
+                return ResourceManager.GetString("PCOSInfo", resourceCulture);
             }
         }
         
@@ -8162,6 +8549,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pneumonia.
+        /// </summary>
+        public static string Pneumonia {
+            get {
+                return ResourceManager.GetString("Pneumonia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pod.
         /// </summary>
         public static string Pod {
@@ -8189,11 +8585,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you ever experience post-exertional malaise? (In other words, do you feel exhausted after physical activity?.
+        ///   Looks up a localized string similar to Post-Exertional Malaise.
+        /// </summary>
+        public static string PostExertionalMalaise {
+            get {
+                return ResourceManager.GetString("PostExertionalMalaise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Common symptoms of post-exertional malaise are feeling exhausted and unwell after physical or mental activity and the inability to tolerate tasks that would ordinarily be manageable..
         /// </summary>
         public static string PostExertionalMalaiseLabel {
             get {
                 return ResourceManager.GetString("PostExertionalMalaiseLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to POTS.
+        /// </summary>
+        public static string POTS {
+            get {
+                return ResourceManager.GetString("POTS", resourceCulture);
             }
         }
         
@@ -8931,6 +9345,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pulmonary Fibrosis.
+        /// </summary>
+        public static string PulmonaryFibrosis {
+            get {
+                return ResourceManager.GetString("PulmonaryFibrosis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Condition in which the lungs become scarred over time. Symptoms include shortness of breath, a dry cough, feeling tired, weight loss, and nail clubbing. Complications may include pulmonary hypertension, respiratory failure, pneumothorax, and lung cancer.
+        /// </summary>
+        public static string PulmonaryFibrosisInfo {
+            get {
+                return ResourceManager.GetString("PulmonaryFibrosisInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pungent.
         /// </summary>
         public static string Pungent {
@@ -9143,6 +9575,15 @@ namespace K9.Globalisation {
         public static string QuestionTypeLabel {
             get {
                 return ResourceManager.GetString("QuestionTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Racing Thoughts.
+        /// </summary>
+        public static string RacingThoughts {
+            get {
+                return ResourceManager.GetString("RacingThoughts", resourceCulture);
             }
         }
         
@@ -9445,6 +9886,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Respiratory Health.
+        /// </summary>
+        public static string RespiratoryHealth {
+            get {
+                return ResourceManager.GetString("RespiratoryHealth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restorative.
         /// </summary>
         public static string Restorative {
@@ -9648,6 +10098,15 @@ namespace K9.Globalisation {
         public static string Salty {
             get {
                 return ResourceManager.GetString("Salty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sandy Eye.
+        /// </summary>
+        public static string SandyEye {
+            get {
+                return ResourceManager.GetString("SandyEye", resourceCulture);
             }
         }
         
@@ -10261,6 +10720,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Spider Veins.
+        /// </summary>
+        public static string SpiderVeins {
+            get {
+                return ResourceManager.GetString("SpiderVeins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you have many spider veins, varicose veins or experience hemorrhoids?.
         /// </summary>
         public static string SpiderVeinsLabel {
@@ -10499,6 +10967,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stretch Marks.
+        /// </summary>
+        public static string StretchMarks {
+            get {
+                return ResourceManager.GetString("StretchMarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you have any stretchmarks?.
         /// </summary>
         public static string StretchMarksLabel {
@@ -10679,7 +11156,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you ever experience sugar crashes after eating carbohydrates?.
+        ///   Looks up a localized string similar to Sugar Crashes (Reactive Hypoglycaemia).
+        /// </summary>
+        public static string SugarCrashes {
+            get {
+                return ResourceManager.GetString("SugarCrashes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reactive hypoglycaemia causes people to suffer sugar crashes after eating carbohydrates, leading to feeling dizzy, weak and unwell for a short time, before recovering..
         /// </summary>
         public static string SugarCrashesLabel {
             get {
@@ -10973,7 +11459,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please check any of the following items that you experience / have or which apply to you: (please check all that apply).
+        ///   Looks up a localized string similar to Please check any of the following that apply to you:.
         /// </summary>
         public static string SymptomCheckerTitle {
             get {
@@ -11541,6 +12027,15 @@ namespace K9.Globalisation {
         public static string TroubleFallingAsleepLabel {
             get {
                 return ResourceManager.GetString("TroubleFallingAsleepLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tuberculosis.
+        /// </summary>
+        public static string Tuberculosis {
+            get {
+                return ResourceManager.GetString("Tuberculosis", resourceCulture);
             }
         }
         
@@ -12519,11 +13014,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you have one or more white flecks anywhere on your fingernails?.
+        ///   Looks up a localized string similar to White Spots on Nails.
+        /// </summary>
+        public static string WhiteSpotsOnNails {
+            get {
+                return ResourceManager.GetString("WhiteSpotsOnNails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to One or more white flecks anywhere on your fingernails or toenails?.
         /// </summary>
         public static string WhiteSpotsOnNailsLabel {
             get {
                 return ResourceManager.GetString("WhiteSpotsOnNailsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to White Spots on Skin.
+        /// </summary>
+        public static string WhiteSpotsOnSkin {
+            get {
+                return ResourceManager.GetString("WhiteSpotsOnSkin", resourceCulture);
             }
         }
         

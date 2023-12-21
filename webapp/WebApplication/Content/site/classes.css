@@ -291,13 +291,13 @@ li.divider {
 
 .food-item-icon {
     font-size: 1em;
-    font-color: #87ceeb;
+    color: #4682b4;
     cursor: pointer;
 }
 
 .food-item-info {
     font-size: 1em;
-    font-color: #87ceeb;
+    color: #4682b4;
 }
 
     .food-item-info span {
@@ -307,3 +307,8 @@ li.divider {
         border-radius: 3px;
         background-color: aliceblue;
     }
+
+.input-tooltip {
+    font-size: 1em;
+    color: #4682b4;
+}

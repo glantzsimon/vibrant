@@ -84,7 +84,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [Score(VataDosha = true)]
+        [Score(VataDosha = true, IsOxalateIntolerance = true)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.DryFlakySkinLabel)]
         public EYesNo? DryFlakySkin { get; set; }
 
@@ -112,7 +112,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [Score(PittaDosha = true)]
+        [Score(PittaDosha = true, IsOxalateIntolerance = true)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.UlcersAcidRefluxLabel)]
         public EYesNo? UlcersAcidReflux { get; set; }
 
