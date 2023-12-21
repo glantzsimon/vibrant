@@ -4063,11 +4063,29 @@
   <data name="A2MilkOnly" xml:space="preserve">
     <value>A2 Milk Only</value>
   </data>
+  <data name="AsthmaLabel" xml:space="preserve">
+    <value>Do you suffer from asthma?</value>
+  </data>
+  <data name="BackPainLabel" xml:space="preserve">
+    <value>Do you suffer from back pain?</value>
+  </data>
   <data name="BulletProofDescription" xml:space="preserve">
     <value>The Bulletproof Diet, created by Dave Asprey, is a high-fat, low-carbohydrate diet that emphasizes foods high in healthy fats, moderate in protein, and low in carbs, aimed at improving energy and mental clarity. It promotes the consumption of Bulletproof Coffee (coffee mixed with grass-fed butter and MCT oil) as a staple to kickstart the day. The diet's benefits are said to include enhanced cognitive function, weight loss, and stabilized blood sugar levels. It also focuses on reducing inflammation and eliminating toxins by advocating for organic, nutrient-dense foods and avoiding processed foods and common allergens. This diet has garnered attention for its potential to boost overall well-being, particularly in mental performance and energy levels.</value>
   </data>
   <data name="BulletProofDietLabel" xml:space="preserve">
     <value>Bulletproof Diet</value>
+  </data>
+  <data name="BurningMouth" xml:space="preserve">
+    <value>Burning Mouth</value>
+  </data>
+  <data name="CacheCleared" xml:space="preserve">
+    <value>Cache has been cleared successfully.</value>
+  </data>
+  <data name="CarpelTunnelLabel" xml:space="preserve">
+    <value>Do you suffer from carpal tunnel syndrome?</value>
+  </data>
+  <data name="ClearCache" xml:space="preserve">
+    <value>Clear Cache</value>
   </data>
   <data name="DemoteFoodsDescription" xml:space="preserve">
     <value>We are all unique. If any of the foods recommended for you do not agree with you, you can remove them by clicking on the thumbs-down button.</value>
@@ -4092,6 +4110,9 @@
   </data>
   <data name="HealthQuestoinnaireComplete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\healthquestoinnairecomplete.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="HiccupsLabel" xml:space="preserve">
+    <value>Do you often experience hiccups?</value>
   </data>
   <data name="HistamineDescription" xml:space="preserve">
     <value>High histamine levels, particularly problematic for those with histamine intolerance or mast cell activation disorders, can trigger a range of symptoms including headaches, skin irritations, digestive issues, and in severe cases, asthma-like symptoms or anaphylaxis. Chronic high histamine can also contribute to inflammatory conditions and exacerbate existing allergies and immune system disorders.</value>
@@ -4164,6 +4185,9 @@
   </data>
   <data name="Skin" xml:space="preserve">
     <value>Skin</value>
+  </data>
+  <data name="SymptomCheckerTitle" xml:space="preserve">
+    <value>Please check any of the following items that you experience / have or which apply to you: (please check all that apply)</value>
   </data>
   <data name="TCM" xml:space="preserve">
     <value>TCM</value>

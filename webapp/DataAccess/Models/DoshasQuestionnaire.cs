@@ -54,13 +54,13 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [Score(VataDosha = true, IsYin = true)]
+        [Score(VataDosha = true, IsYin = true, IsOxalateIntolerance = true)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.NervousnessLabel)]
         public EYesNo? Nervousness { get; set; }
 
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [Score(VataDosha = true)]
+        [Score(VataDosha = true, IsOxalateIntolerance = true)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.SpasmsLabel)]
         public EYesNo? Spasms { get; set; }
 
@@ -78,7 +78,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [Score(VataDosha = true)]
+        [Score(VataDosha = true, IsOxalateIntolerance = true)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.NeuropathicPainLabel)]
         public EYesNo? NeuropathicPain { get; set; }
 
@@ -90,7 +90,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [Score(VataDosha = true)]
+        [Score(VataDosha = true, IsOxalateIntolerance = true)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.IrregularDigestionLabel)]
         public EYesNo? IrregularDigestion { get; set; }
 

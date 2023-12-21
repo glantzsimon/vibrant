@@ -661,6 +661,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you suffer from asthma?.
+        /// </summary>
+        public static string AsthmaLabel {
+            get {
+                return ResourceManager.GetString("AsthmaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Astringent.
         /// </summary>
         public static string Astringent {
@@ -765,6 +774,15 @@ namespace K9.Globalisation {
         public static string Back {
             get {
                 return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you suffer from back pain?.
+        /// </summary>
+        public static string BackPainLabel {
+            get {
+                return ResourceManager.GetString("BackPainLabel", resourceCulture);
             }
         }
         
@@ -1096,6 +1114,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Burning Mouth.
+        /// </summary>
+        public static string BurningMouth {
+            get {
+                return ResourceManager.GetString("BurningMouth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cache has been cleared successfully..
+        /// </summary>
+        public static string CacheCleared {
+            get {
+                return ResourceManager.GetString("CacheCleared", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Would a cup of coffee in the afternoon or early evening keep you awake at night?.
         /// </summary>
         public static string CaffeineAffectsSleepLabel {
@@ -1209,6 +1245,15 @@ namespace K9.Globalisation {
         public static string Carnivore {
             get {
                 return ResourceManager.GetString("Carnivore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you suffer from carpal tunnel syndrome?.
+        /// </summary>
+        public static string CarpelTunnelLabel {
+            get {
+                return ResourceManager.GetString("CarpelTunnelLabel", resourceCulture);
             }
         }
         
@@ -1409,6 +1454,15 @@ namespace K9.Globalisation {
         public static string ChronicViralInfectionsLabel {
             get {
                 return ResourceManager.GetString("ChronicViralInfectionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear Cache.
+        /// </summary>
+        public static string ClearCache {
+            get {
+                return ResourceManager.GetString("ClearCache", resourceCulture);
             }
         }
         
@@ -4635,6 +4689,15 @@ namespace K9.Globalisation {
         public static string Hers {
             get {
                 return ResourceManager.GetString("Hers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you often experience hiccups?.
+        /// </summary>
+        public static string HiccupsLabel {
+            get {
+                return ResourceManager.GetString("HiccupsLabel", resourceCulture);
             }
         }
         
@@ -10906,6 +10969,15 @@ namespace K9.Globalisation {
         public static string SwitchSuccessfulTitle {
             get {
                 return ResourceManager.GetString("SwitchSuccessfulTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please check any of the following items that you experience / have or which apply to you: (please check all that apply).
+        /// </summary>
+        public static string SymptomCheckerTitle {
+            get {
+                return ResourceManager.GetString("SymptomCheckerTitle", resourceCulture);
             }
         }
         

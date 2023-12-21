@@ -3,7 +3,7 @@ using System;
 
 namespace K9.DataAccessLayer.Attributes
 {
-    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = true)]
     public class ScoreAttribute : Attribute, IGenoTypeBase
     {
         public bool VataDosha { get; set; }
@@ -57,6 +57,13 @@ namespace K9.DataAccessLayer.Attributes
         public bool IsInflammation { get; set; }
         public bool IsAcetylation { get; set; }
         public bool IsFamilyHistory { get; set; }
+
+        public bool IsOxalateIntolerance{ get; set; }
+        public bool IsLectinIntolerance{ get; set; }
+        public bool IsPhytateIntolerance{ get; set; }
+        public bool IsHistamineIntolerance{ get; set; }
+        public bool IsMycotoxinIntolerance{ get; set; }
+        public bool IsOmega6Intolerance{ get; set; }
     }
 
 }

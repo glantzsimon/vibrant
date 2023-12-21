@@ -176,7 +176,8 @@ namespace K9.DataAccessLayer.Models
         [UIHint("Quantity")]
 	    public float RecommendedDailyAllownace { get; set; }
 
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RDALabel)] public string FormattedRDA => GetFormattedRDAText();
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RDALabel)] 
+	    public string FormattedRDA => GetFormattedRDAText();
 
 	    private string GetFormattedRDAText()
 	    {

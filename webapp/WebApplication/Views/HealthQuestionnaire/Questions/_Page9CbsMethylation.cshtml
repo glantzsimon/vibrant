@@ -17,64 +17,104 @@
             @Html.Raw(Dictionary.CBSMethylationDescription)
         </div>
     </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            <h4 class="section-title">@Dictionary.SymptomCheckerTitle</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 padding-0">
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.WhiteSpotsOnNails)
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.Anaemia)
+            </div>
+        </div>
+        <div class="col-xs-6 padding-0">
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.PostExertionalMalaise)
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.CrampsTremorsTwitches)
+            </div>
+        </div>
+        <div class="col-xs-6 padding-0">
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.Migraines)
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.MemoryProblems)
+            </div>
+        </div>
+        <div class="col-xs-6 padding-0">
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.ConcentrationProblems)
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.POTS)
+            </div>
+        </div>
+        <div class="col-xs-6 padding-0">
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.DepressionAnxiety)
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.BrainFog)
+            </div>
+        </div>
+        <div class="col-xs-6 padding-0">
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.Insomnia)
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.NightSweats)
+            </div>
+        </div>
+        <div class="col-xs-6 padding-0">
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.LowMorningEnergy)
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.RacingThoughts)
+            </div>
+        </div>
+        <div class="col-xs-6 padding-0">
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.InnerTension)
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.SugarCrashes)
+            </div>
+        </div>
+        <div class="col-xs-6 padding-0">
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.ChronicViralInfections)
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.SpiderVeins)
+            </div>
+        </div>
+        <div class="col-xs-6 padding-0">
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.StretchMarks)
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.FrequentNighttimeUrination)
+            </div>
+        </div>
+        <div class="col-xs-6 padding-0">
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.Herpes)
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                @Html.BootstrapEditorFor(e => e.Irritability)
+            </div>
+        </div>
+    </div>
 
     <br />
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.WhiteSpotsOnNails)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.WhiteSpotsOnNails, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.Anaemia)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.Anaemia, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.PostExertionalMalaise)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.PostExertionalMalaise, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.CrampsTremorsTwitches)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.CrampsTremorsTwitches, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
 
     <div class="row">
         <div class="col-xs-12">
@@ -89,7 +129,6 @@
             })
         </div>
     </div>
-
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.MsgSensitivity)
@@ -103,7 +142,6 @@
             })
         </div>
     </div>
-
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.HistoryOfchronicFatigueOrFibromyalgia)
@@ -117,161 +155,6 @@
             })
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.Migraines)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.Migraines, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.MemoryProblems)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.MemoryProblems, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.ConcentrationProblems)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.ConcentrationProblems, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.POTS)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.POTS, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.DepressionAnxiety)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.DepressionAnxiety, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.BrainFog)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.BrainFog, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.Insomnia)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.Insomnia, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.NightSweats)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.NightSweats, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.LowMorningEnergy)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.LowMorningEnergy, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.RacingThoughts)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.RacingThoughts, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.InnerTension)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.InnerTension, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.LoudNoisesBrightLights)
@@ -285,7 +168,6 @@
             })
         </div>
     </div>
-
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.CoarseThinEyebrows)
@@ -313,21 +195,6 @@
             })
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.SugarCrashes)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.SugarCrashes, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
     <div class="row">
         <div class="col-xs-12">
             @Html.LabelFor(e => e.OCD)
@@ -341,91 +208,6 @@
             })
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.ChronicViralInfections)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.ChronicViralInfections, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.SpiderVeins)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.SpiderVeins, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.StretchMarks)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.StretchMarks, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.FrequentNighttimeUrination)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.FrequentNighttimeUrination, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.Herpes)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.Herpes, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.LabelFor(e => e.Irritability)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.Irritability, new EditorOptions
-            {
-                Label = ""
-            })
-        </div>
-    </div>
-
 </div>
 
 <hr />

@@ -154,6 +154,8 @@
 
                         <li class="divider"></li>
 
+                        <li class="@ViewContext.GetActiveClass("ClearCache", "Shared") sub-item"><a href="@Url.Action("ClearCache", "Shared")">@Dictionary.ClearCache</a></li>
+
                         <li class="@ViewContext.GetActiveClass("RunMaintenanceScript", "Shared") sub-item"><a href="@Url.Action("RunMaintenanceScript", "Shared")">@Dictionary.RunMaintenanceScript</a></li>
                     </ul>
                 </li>

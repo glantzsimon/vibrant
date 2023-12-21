@@ -1711,6 +1711,7 @@
     <Content Include="Views\Orders\_TableCollectionsButtons.cshtml" />
     <Content Include="Views\HealthQuestionnaire\Overview\_DoshasDetails.cshtml" />
     <Content Include="Views\Shared\_DietaryPreferenesMoreInfo.cshtml" />
+    <Content Include="Views\Shared\CacheCleared.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

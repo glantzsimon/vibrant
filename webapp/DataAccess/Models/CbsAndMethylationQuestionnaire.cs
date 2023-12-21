@@ -15,334 +15,191 @@ namespace K9.DataAccessLayer.Models
 
         #region Cbs
 
+        [Score(Cbs = true, ScoreFactor = 2)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.WhiteSpotsOnNailsLabel)]
-        public EYesNo? WhiteSpotsOnNails { get; set; }
+        public bool WhiteSpotsOnNails { get; set; }
 
+        [Score(Cbs = true, ScoreFactor = 2)]
         [Score(CardioVascularHealth = true, BloodBuilding = true, Restorative = true, IsYin = true, VataDosha = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AnaemiaLabel)]
-        public EYesNo? Anaemia { get; set; }
+        public bool Anaemia { get; set; }
 
-        [Score(Restorative = true, VataDosha = true, IsYin = true)]
+        [Score(Restorative = true, VataDosha = true, IsYin = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PostExertionalMalaiseLabel)]
-        public EYesNo? PostExertionalMalaise { get; set; }
-
-        [Score(Restorative = true)]
+        public bool PostExertionalMalaise { get; set; }
+        
+        [Score(Restorative = true, IsOxalateIntolerance = true, VataDosha = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CrampsTremorsTwitchesLabel)]
-        public EYesNo? CrampsTremorsTwitches { get; set; }
+        public bool CrampsTremorsTwitches { get; set; }
 
+        [Score(Cbs = true, ScoreFactor = 2)]
         [Score(VataDosha = true, IsYin = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HistoryOfchronicFatigueOrFibromyalgiaLabel)]
         public EYesNo? HistoryOfchronicFatigueOrFibromyalgia { get; set; }
-
+        
+        [Score(Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MigrainesLabel)]
-        public EYesNo? Migraines { get; set; }
+        public bool Migraines { get; set; }
 
+        [Score(Cbs = true, ScoreFactor = 2)]
         [Score(Restorative = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.POTSLabel)]
-        public EYesNo? POTS { get; set; }
+        public bool POTS { get; set; }
 
+        [Score(Cbs = true, ScoreFactor = 2)]
         [Score(Cognition = true, NeurologicalHealth = true, Mood = true, HormoneBalance = true,  AntiInflammatory = true, Vitality = true, Restorative = true,
             IsYin = true, VataDosha = true, ScoreFactor = 2)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DepressionAnxietyLabel)]
-        public EYesNo? DepressionAnxiety { get; set; }
+        public bool DepressionAnxiety { get; set; }
 
-        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, Detoxification = true, StressRelief = true, CellularHealth = true, VataDosha = true, IsYin = true, ScoreFactor = 2)]
+        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, Detoxification = true, StressRelief = true, CellularHealth = true, VataDosha = true, IsYin = true, ScoreFactor = 2, IsOxalateIntolerance = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MemoryProblemsLabel)]
-        public EYesNo? MemoryProblems { get; set; }
+        public bool MemoryProblems { get; set; }
         
-        [Score(Cognition = true, NeurologicalHealth = true, Mood = true)]
+        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, IsOxalateIntolerance = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ConcentrationProblemsLabel)]
-        public EYesNo? ConcentrationProblems { get; set; }
+        public bool ConcentrationProblems { get; set; }
 
-        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, VataDosha = true, IsYin = true, Cbs = true)]
+        [Score(Cbs = true, ScoreFactor = 2)]
+        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, VataDosha = true, IsYin = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BrainFogLabel)]
-        public EYesNo? BrainFog { get; set; }
+        public bool BrainFog { get; set; }
 
-        [Score(Sleep = true, StressRelief = true, Cognition = true, NeurologicalHealth = true, VataDosha = true)]
+        [Score(Sleep = true, StressRelief = true, Cognition = true, NeurologicalHealth = true, VataDosha = true, IsOxalateIntolerance = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InsomniaLabel)]
-        public EYesNo? Insomnia { get; set; }
+        public bool Insomnia { get; set; }
 
-        [Score(Restorative = true, Detoxification = true, UrologicalHealth = true, Immunity = true, IsYin = true)]
+        [Score(Restorative = true, Detoxification = true, UrologicalHealth = true, Immunity = true, IsYin = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NightSweatsLabel)]
-        public EYesNo? NightSweats { get; set; }
+        public bool NightSweats { get; set; }
 
-        [Score(HormoneBalance = true, StressRelief = true, Restorative = true, Sleep = true, VataDosha = true, IsYin = true)]
+        [Score(HormoneBalance = true, StressRelief = true, Restorative = true, Sleep = true, VataDosha = true, IsYin = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LowMorningEnergyLabel)]
-        public EYesNo? LowMorningEnergy { get; set; }
+        public bool LowMorningEnergy { get; set; }
 
-        [Score(Cognition = true, Mood = true, Sleep = true, NeurologicalHealth = true)]
+        [Score(Cognition = true, Mood = true, Sleep = true, NeurologicalHealth = true, IsOxalateIntolerance = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RacingThoughtsLabel)]
-        public EYesNo? RacingThoughts { get; set; }
+        public bool RacingThoughts { get; set; }
 
-        [Score(Cognition = true, Mood = true, Sleep = true, NeurologicalHealth = true)]
+        [Score(Cognition = true, Mood = true, Sleep = true, NeurologicalHealth = true, IsOxalateIntolerance = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InnerTensionLabel)]
-        public EYesNo? InnerTension { get; set; }
+        public bool InnerTension { get; set; }
 
-        [Score(NeurologicalHealth = true, VataDosha = true)]
+        [Score(NeurologicalHealth = true, VataDosha = true, Cbs = true, ScoreFactor = 2)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LoudNoisesBrightLightsLabel)]
         public EYesNo? LoudNoisesBrightLights { get; set; }
 
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
+        [Score(Cbs = true)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SulfiteSensitivityLabel)]
         public EYesNo? SulfiteSensitivity { get; set; }
 
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
+        [Score(Cbs = true)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MsgSensitivityLabel)]
         public EYesNo? MsgSensitivity { get; set; }
 
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
+        [Score(Cbs = true, ScoreFactor = 2)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CoarseThinEyebrowsLabel)]
         public EYesNo? CoarseThinEyebrows { get; set; }
 
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
+        [Score(Cbs = true, ScoreFactor = 3)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmmoniaSmellLabel)]
         public EYesNo? AmmoniaSmell { get; set; }
 
-        [Score(Restorative = true, HormoneBalance = true)]
+        [Score(Restorative = true, HormoneBalance = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SugarCrashesLabel)]
-        public EYesNo? SugarCrashes { get; set; }
+        public bool SugarCrashes { get; set; }
 
+        [Score(Cbs = true, ScoreFactor = 3)]
         [Score(Cognition = true, Mood = true, Sleep = true, NeurologicalHealth = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.OCDLabel)]
         public EYesNo? OCD { get; set; }
 
-        [Score(Immunity = true, Detoxification = true)]
+        [Score(Immunity = true, Detoxification = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChronicViralInfectionsLabel)]
-        public EYesNo? ChronicViralInfections { get; set; }
+        public bool ChronicViralInfections { get; set; }
 
-        [Score(CardioVascularHealth = true)]
+        [Score(CardioVascularHealth = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SpiderVeinsLabel)]
-        public EYesNo? SpiderVeins { get; set; }
+        public bool SpiderVeins { get; set; }
 
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
+        [Score(Cbs = true)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StretchMarksLabel)]
-        public EYesNo? StretchMarks { get; set; }
+        public bool StretchMarks { get; set; }
 
-        [Score(Restorative = true, UrologicalHealth = true, StressRelief = true)]
+        [Score(Restorative = true, UrologicalHealth = true, StressRelief = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.FrequentNighttimeUrinationLabel)]
-        public EYesNo? FrequentNighttimeUrination { get; set; }
+        public bool FrequentNighttimeUrination { get; set; }
 
-        [Score(Immunity = true, IsYang = true, PittaDosha = true)]
+        [Score(Immunity = true, IsYang = true, PittaDosha = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HerpesLabel)]
-        public EYesNo? Herpes { get; set; }
+        public bool Herpes { get; set; }
 
-        [Score(Cognition = true, Mood = true, Sleep = true, NeurologicalHealth = true, PittaDosha = true, IsYang = true)]
+        [Score(Cognition = true, Mood = true, Sleep = true, NeurologicalHealth = true, PittaDosha = true, IsYang = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IrritabilityLabel)]
-        public EYesNo? Irritability { get; set; }
+        public bool Irritability { get; set; }
 
         public List<PropertyInfo> GetCbsProperties() => this
             .GetProperties().Where(e => e.GetAttribute<QuestionCategoryAttribute>()?.Category == EQuestionCategory.Cbs).ToList();
 
-        public int GetCbsScore()
-        {
-            double totalScore = 34;
-            double score = 0;
-
-            if (ConcentrationProblems == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (MemoryProblems == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (MsgSensitivity == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (SulfiteSensitivity == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (ChronicViralInfections == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (SpiderVeins == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (StretchMarks == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (FrequentNighttimeUrination == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (Herpes == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (Irritability == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (OCD == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (SugarCrashes == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (AmmoniaSmell == EYesNo.Yes)
-            {
-                score++;
-                score++;
-                score++;
-            }
-
-            if (CoarseThinEyebrows == EYesNo.Yes)
-            {
-                score++;
-                score++;
-            }
-
-            if (LoudNoisesBrightLights == EYesNo.Yes)
-            {
-                score++;
-                score++;
-            }
-
-            if (RacingThoughts == EYesNo.Yes || InnerTension == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (LowMorningEnergy == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (NightSweats == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (Insomnia == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (BrainFog == EYesNo.Yes)
-            {
-                score++;
-                score++;
-            }
-
-            if (DepressionAnxiety == EYesNo.Yes)
-            {
-                score++;
-                score++;
-            }
-
-            if (POTS == EYesNo.Yes)
-            {
-                score++;
-                score++;
-            }
-
-            if (Migraines == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (HistoryOfchronicFatigueOrFibromyalgia == EYesNo.Yes)
-            {
-                score++;
-                score++;
-            }
-
-            if (PostExertionalMalaise == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            if (WhiteSpotsOnNails == EYesNo.Yes)
-            {
-                score++;
-                score++;
-            }
-
-            if (Anaemia == EYesNo.Yes)
-            {
-                score++;
-                score++;
-            }
-
-            if (CrampsTremorsTwitches == EYesNo.Yes)
-            {
-                score++;
-            }
-
-            return (int)Math.Ceiling((score / totalScore) * 100);
-        }
+        public int GetCbsScore() => GetScore(e => e.Cbs);
 
         #endregion
 

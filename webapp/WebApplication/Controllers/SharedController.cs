@@ -42,12 +42,17 @@ namespace K9.WebApplication.Controllers
 
         [Authorize]
         [RequirePermissions(Role = RoleNames.Administrators)]
+        public ActionResult ClearCache()
+        {
+            _productService.ClearCache();
+            return RedirectToAction("MaintenanceComplete");
+        }
+
+        [Authorize]
+        [RequirePermissions(Role = RoleNames.Administrators)]
         public ActionResult RunMaintenanceScript()
         {
             //_productService.UpdateProductCategories();
-            //_ingredientService.UpdateIngredientCategories();
-            //_orderService.UpdateFullName();
-            //_ingredientService.UpdateIngredientCategories();
             //_maintenanceService.AddFoodItemsAndActivities();
 
             return RedirectToAction("MaintenanceComplete");

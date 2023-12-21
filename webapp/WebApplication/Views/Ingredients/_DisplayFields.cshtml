@@ -36,10 +36,7 @@
 </div>
 <div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.IsHydroscopic)
-    </div>
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.IsHidden)
+        @Html.BootstrapDisplayFor(model => model.StockLowWarningLevel)
     </div>
 </div>
 <div class="row">
@@ -47,7 +44,15 @@
         @Html.BootstrapDisplayFor(model => model.Concentration)
     </div>
     <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.StockLowWarningLevel)
+        @Html.BootstrapDisplayFor(model => model.RecommendedDailyAllownace)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.IsHydroscopic)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.IsHidden)
     </div>
 </div>
 

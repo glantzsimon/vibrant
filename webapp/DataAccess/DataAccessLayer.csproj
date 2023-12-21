@@ -753,6 +753,10 @@
     <Compile Include="Migrations\202312190551263_EatsGrains.Designer.cs">
       <DependentUpon>202312190551263_EatsGrains.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312210825399_ChangeQHColumnTypes.cs" />
+    <Compile Include="Migrations\202312210825399_ChangeQHColumnTypes.Designer.cs">
+      <DependentUpon>202312210825399_ChangeQHColumnTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
@@ -1185,6 +1189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312190551263_EatsGrains.resx">
       <DependentUpon>202312190551263_EatsGrains.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312210825399_ChangeQHColumnTypes.resx">
+      <DependentUpon>202312210825399_ChangeQHColumnTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

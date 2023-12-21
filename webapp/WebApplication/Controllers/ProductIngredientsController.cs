@@ -43,9 +43,15 @@ namespace K9.WebApplication.Controllers
         [RequirePermissions(Permission = Permissions.Edit)]
         public ActionResult EditIngredientsForProduct(MultiSelectViewModel model)
         {
+            _productService.ClearCache();
             return EditMultiple<Product, Ingredient>(model);
         }
 
+        /// <summary>
+        ///  Not firing - not sure why
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ProductIngredientsController_RecordEditMultipleUpdated(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
         {
             e.IsRedirect = true;

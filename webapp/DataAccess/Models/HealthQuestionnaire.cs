@@ -136,16 +136,25 @@ namespace K9.DataAccessLayer.Models
                 .Select(e => new
                 {
                     PropertyInfo = e,
-                    ScoreAttribute = e.GetAttribute<ScoreAttribute>()
+                    ScoreAttributes = e.GetCustomAttributes<ScoreAttribute>().ToList()
                 })
-                .Where(e => condition(e.ScoreAttribute))
-                .Select(e => new
+                .Where(e => e.ScoreAttributes.Any(s => condition(s)))
+                .ToList()
+                .Select(e =>
                 {
-                    value = (EYesNo?)this.GetProperty(e.PropertyInfo),
-                    scoreFactor = e.ScoreAttribute.ScoreFactor
+                    var propertyValue = this.GetProperty(e.PropertyInfo);
+                    var value = e.PropertyInfo.PropertyType == typeof(EYesNo?)
+                            ? (EYesNo?)propertyValue == EYesNo.Yes
+                            : (bool)propertyValue;
+
+                    return new
+                    {
+                        value,
+                        scoreFactor = e.ScoreAttributes.Sum(s => s.ScoreFactor)
+                    };
                 }).ToList();
 
-            var yesses = answers.Where(e => e.value.HasValue && e.value.Value == EYesNo.Yes).ToList();
+            var yesses = answers.Where(e => e.value).ToList();
             var totalAnswers = answers.Sum(e => e.scoreFactor);
             var totalYesses = yesses.Sum(e => e.scoreFactor);
 
@@ -167,7 +176,7 @@ namespace K9.DataAccessLayer.Models
         public int GetDentalHealthScore()
         {
             return GetScore(e => e.DentalHealth,
-                () => RootCanals == EYesNo.Yes || (!string.IsNullOrEmpty(DentalIssues)), 3);
+                () => RootCanals, 3);
         }
 
         public int GetNeurologicalScore()
@@ -183,6 +192,11 @@ namespace K9.DataAccessLayer.Models
         public int GetInflammationScore()
         {
             return GetScore(e => e.IsInflammation, () => (GetCbsScore() > 50 || GetNeurologicalScore() > 50 || GetDigestionIssuesScore() > 50), 3);
+        }
+
+        public int GetOxalateScore()
+        {
+            return GetScore(e => e.IsOxalateIntolerance, () => GetCbsScore() > 50, 5);
         }
 
         #endregion
@@ -512,7 +526,7 @@ namespace K9.DataAccessLayer.Models
         [QuestionCategory(Category = EQuestionCategory.PersonalDetails, AllowNull = true)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IsLGBTQPlusLabel)]
         public EYesNo? IsIsLGBTQPlus { get; set; }
-        
+
         [QuestionCategory(Category = EQuestionCategory.PersonalDetails)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DateOfBirthLabel)]
         public DateTime? DateOfBirth { get; set; }
@@ -633,7 +647,7 @@ namespace K9.DataAccessLayer.Models
         [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowOmega6Label)]
         public bool IsLowOmega6 { get; set; }
-        
+
         [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsBulletProofLabel)]
         public bool IsBulletProof { get; set; }
@@ -648,114 +662,77 @@ namespace K9.DataAccessLayer.Models
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HighBloodPressureLabel)]
-        public EYesNo? HighBloodPressure { get; set; }
+        public bool HighBloodPressure { get; set; }
 
         [Score(CardioVascularHealth = true, ScoreFactor = 2)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChestPainLabel)]
-        public EYesNo? ChestPain { get; set; }
+        public bool ChestPain { get; set; }
 
         [Score(CardioVascularHealth = true, ScoreFactor = 2)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PalpitationsLabel)]
-        public EYesNo? Palpitations { get; set; }
+        public bool Palpitations { get; set; }
 
         [Score(CardioVascularHealth = true, ScoreFactor = 2)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EasilyOutOfBreathLabel)]
-        public EYesNo? EasilyOutOfBreath { get; set; }
+        public bool EasilyOutOfBreath { get; set; }
 
         #endregion
 
-        #region General Health 
-
-        public List<PropertyInfo> GeneralHealthProperties() => this
-            .GetProperties().Where(e => e.GetAttribute<QuestionCategoryAttribute>()?.Category == EQuestionCategory.GeneralHealth).ToList();
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CurrentHealthIssuesLabel)]
-        [StringLength(1111)]
-        [DataType(DataType.MultilineText)]
-        public string CurrentHealthIssues { get; set; }
-
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HealthGoalsLabel)]
-        [StringLength(1111)]
-        [DataType(DataType.MultilineText)]
-        public string HealthGoals { get; set; }
-
-        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [UIHint("Range")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CurrentHealthLevelLabel)]
-        [Min(1)]
-        [Max(10)]
-        public int? CurrentHealthLevel { get; set; }
-
-        public int GetCurrentHealthScore() => CurrentHealthLevel.HasValue ? CurrentHealthLevel.Value * 10 : 0;
-
-        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [UIHint("Range")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NutritionExpertiseLevelLabel)]
-        [Min(1)]
-        [Max(10)]
-        public int? NutritionExpertiseLevel { get; set; }
-
-        public int GetNutritionExpertiseScore() => NutritionExpertiseLevel.HasValue ? NutritionExpertiseLevel.Value * 10 : 0;
-
-        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [UIHint("YesNo")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnjoysCookingLabel)]
-        public EYesNo? EnjoysCooking { get; set; }
-
-        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [UIHint("Frequency")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CookingFrequencyLabel)]
-        public EFrequency? CookingFrequency { get; set; }
-
         #region Digestion
 
-        [Score(DigestiveHealth = true, VataDosha = true)]
+        [Score(DigestiveHealth = true, VataDosha = true, IsOxalateIntolerance = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BloatingLabel)]
-        public EYesNo? Bloating { get; set; }
+        public bool Bloating { get; set; }
 
-        [Score(DigestiveHealth = true, PittaDosha = true)]
+        [Score(DigestiveHealth = true, PittaDosha = true, IsOxalateIntolerance = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IrritableBowerlLabel)]
-        public EYesNo? IBS { get; set; }
+        public bool IBS { get; set; }
 
-        [Score(DigestiveHealth = true, VataDosha = true)]
+        [Score(DigestiveHealth = true, IsOxalateIntolerance = true)]
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HiccupsLabel)]
+        public bool Hiccups { get; set; }
+
+        [Score(DigestiveHealth = true, VataDosha = true, IsOxalateIntolerance = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GasLabel)]
-        public EYesNo? Gas { get; set; }
+        public bool Gas { get; set; }
 
-        [Score(DigestiveHealth = true, PittaDosha = true)]
+        [Score(DigestiveHealth = true, PittaDosha = true, IsOxalateIntolerance = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LooseStoolLabel)]
-        public EYesNo? LooseStool { get; set; }
+        public bool LooseStool { get; set; }
 
-        [Score(DigestiveHealth = true, VataDosha = true)]
+        [Score(DigestiveHealth = true, VataDosha = true, IsOxalateIntolerance = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ConstipationLabel)]
-        public EYesNo? Constipation { get; set; }
+        public bool Constipation { get; set; }
 
-        [Score(DigestiveHealth = true)]
+        [Score(DigestiveHealth = true, IsOxalateIntolerance = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AbdominalPainOrCrampingLabel)]
-        public EYesNo? AbdominalPainOrCramping { get; set; }
+        public bool AbdominalPainOrCramping { get; set; }
 
         [Score(DigestiveHealth = true, IsYang = true, PittaDosha = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinIssuesLabel)]
-        public EYesNo? SkinIssues { get; set; }
+        public bool SkinIssues { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinIssuesDetailsLabel)]
         [StringLength(1111)]
@@ -767,7 +744,7 @@ namespace K9.DataAccessLayer.Models
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CoatedTongueLabel)]
-        public EYesNo? CoatedTongue { get; set; }
+        public bool CoatedTongue { get; set; }
 
         public int GetDigestionIssuesScore()
         {
@@ -794,7 +771,13 @@ namespace K9.DataAccessLayer.Models
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.UTILabel)]
-        public EYesNo? UTI { get; set; }
+        public bool UTI { get; set; }
+
+        [Score(Immunity = true, IsOxalateIntolerance = true)]
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AsthmaLabel)]
+        public bool Asthma { get; set; }
 
         public int GetImmunityIssuesScore()
         {
@@ -810,19 +793,19 @@ namespace K9.DataAccessLayer.Models
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColdExtremitiesLabel)]
-        public EYesNo? ColdExtremities { get; set; }
+        public bool ColdExtremities { get; set; }
 
         [Score(Restorative = true, IsYin = true, VataDosha = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColdIntolerantLabel)]
-        public EYesNo? ColdIntolerant { get; set; }
+        public bool ColdIntolerant { get; set; }
 
-        [Score(Restorative = true, Immunity = true, IsYin = true)]
+        [Score(Restorative = true, Immunity = true, IsYin = true, IsOxalateIntolerance = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CandidaFungusLabel)]
-        public EYesNo? CandidaAndFungus { get; set; }
+        public bool CandidaAndFungus { get; set; }
 
         public int GetYinImbalanceScore()
         {
@@ -833,17 +816,35 @@ namespace K9.DataAccessLayer.Models
 
         #region Inflammation
 
-        [Score(AntiInflammatory = true, Immunity = true, Detoxification = true, IsYang = true, PittaDosha = true, IsInflammation = true)]
+        [Score(AntiInflammatory = true, Immunity = true, Detoxification = true, IsYang = true, PittaDosha = true, IsInflammation = true, IsOxalateIntolerance = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.JointInflammationLabel)]
-        public EYesNo? JointInflammation { get; set; }
+        public bool JointInflammation { get; set; }
 
-        [Score(AntiInflammatory = true, Detoxification = true, Immunity = true, IsYang = true, PittaDosha = true, IsInflammation = true)]
+        [Score(AntiInflammatory = true, IsInflammation = true, IsOxalateIntolerance = true)]
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CarpelTunnelLabel)]
+        public bool CarpelTunnel { get; set; }
+
+        [Score(AntiInflammatory = true, IsInflammation = true, IsOxalateIntolerance = true)]
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BackPainLabel)]
+        public bool BackPain { get; set; }
+
+        [Score(AntiInflammatory = true, IsInflammation = true, IsOxalateIntolerance = true)]
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BurningMouth)]
+        public bool BurningMouth { get; set; }
+
+        [Score(AntiInflammatory = true, Detoxification = true, Immunity = true, IsYang = true, PittaDosha = true, IsInflammation = true, IsOxalateIntolerance = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AutoImmunityLabel)]
-        public EYesNo? Autoimmunity { get; set; }
+        public bool Autoimmunity { get; set; }
 
         public int GetYangImbalanceScore()
         {
@@ -907,43 +908,43 @@ namespace K9.DataAccessLayer.Models
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmalgamFillingsLabel)]
-        public EYesNo? AmalgamFillings { get; set; }
+        public bool AmalgamFillings { get; set; }
 
         [Score(Detoxification = true, DentalHealth = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmalgamFillingsHistoryLabel)]
-        public EYesNo? AmalgamFillingsHistory { get; set; }
+        public bool AmalgamFillingsHistory { get; set; }
 
-        [Score(Immunity = true, DentalHealth = true, Restorative = true)]
+        [Score(Immunity = true, DentalHealth = true, Restorative = true, IsPhytateIntolerance = true, IsOxalateIntolerance = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ToothPainLabel)]
-        public EYesNo? ToothPain { get; set; }
+        public bool ToothPain { get; set; }
 
-        [Score(Immunity = true, DentalHealth = true, Restorative = true)]
+        [Score(Immunity = true, DentalHealth = true, Restorative = true, IsPhytateIntolerance = true, IsOxalateIntolerance = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TMJLabel)]
-        public EYesNo? TMJ { get; set; }
+        public bool TMJ { get; set; }
 
         [Score(Immunity = true, DentalHealth = true, Restorative = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CrackedTeeth)]
-        public EYesNo? CrackedTeeth { get; set; }
+        public bool CrackedTeeth { get; set; }
 
         [Score(Immunity = true, DentalHealth = true, Restorative = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Cavities)]
-        public EYesNo? Cavities { get; set; }
+        public bool Cavities { get; set; }
 
         [Score(Immunity = true, DentalHealth = true, Restorative = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RootCanalsLabel)]
-        public EYesNo? RootCanals { get; set; }
+        public bool RootCanals { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DentalIssuesLabel)]
         [StringLength(1111)]
@@ -951,6 +952,49 @@ namespace K9.DataAccessLayer.Models
         public string DentalIssues { get; set; }
 
         #endregion
+
+        #region General Health 
+
+        public List<PropertyInfo> GeneralHealthProperties() => this
+            .GetProperties().Where(e => e.GetAttribute<QuestionCategoryAttribute>()?.Category == EQuestionCategory.GeneralHealth).ToList();
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CurrentHealthIssuesLabel)]
+        [StringLength(1111)]
+        [DataType(DataType.MultilineText)]
+        public string CurrentHealthIssues { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HealthGoalsLabel)]
+        [StringLength(1111)]
+        [DataType(DataType.MultilineText)]
+        public string HealthGoals { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [UIHint("Range")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CurrentHealthLevelLabel)]
+        [Min(1)]
+        [Max(10)]
+        public int? CurrentHealthLevel { get; set; }
+
+        public int GetCurrentHealthScore() => CurrentHealthLevel.HasValue ? CurrentHealthLevel.Value * 10 : 0;
+
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [UIHint("Range")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NutritionExpertiseLevelLabel)]
+        [Min(1)]
+        [Max(10)]
+        public int? NutritionExpertiseLevel { get; set; }
+
+        public int GetNutritionExpertiseScore() => NutritionExpertiseLevel.HasValue ? NutritionExpertiseLevel.Value * 10 : 0;
+
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [UIHint("YesNo")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EnjoysCookingLabel)]
+        public EYesNo? EnjoysCooking { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [UIHint("Frequency")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CookingFrequencyLabel)]
+        public EFrequency? CookingFrequency { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ExerciseLabel)]
         [StringLength(1111)]
@@ -995,5 +1039,7 @@ namespace K9.DataAccessLayer.Models
                            return isComplete;
                        });
         }
+
+
     }
 }

@@ -1,11 +1,21 @@
 ﻿using K9.DataAccessLayer.Models;
+using System;
+using System.Linq;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace K9.DataAccessLayer.Tests.Unit
 {
 
     public class ModelTests
 	{
+	    private readonly ITestOutputHelper _output;
+
+	    public ModelTests(ITestOutputHelper output)
+	    {
+	        _output = output;
+	    }
+
 		[Fact]
 		public void MembershipOption_Upgrades()
 		{
@@ -49,5 +59,22 @@ namespace K9.DataAccessLayer.Tests.Unit
 		    Assert.False(annualPlatinum.CanUpgradeTo(monthlyPlatinum));
 		    Assert.False(annualPlatinum.CanUpgradeTo(annualPlatinum));
 		}
+
+	    [Fact]
+	    public void TestBoolColumns_HealthQuestionnaire()
+	    {
+	        ListColumnsForClass(typeof(HealthQuestionnaire), typeof(bool));
+
+	        Assert.True(true);
+	    }
+
+	    private void ListColumnsForClass(Type entityType, Type propertyType)
+	    {
+	        var boolColumns = entityType.GetProperties()
+	            .Where(e => e.PropertyType == propertyType)
+	            .ToList();
+
+	        _output.WriteLine(string.Join(Environment.NewLine, boolColumns.Select(e => e.Name)));
+	    }
 	}
 }
