@@ -2879,7 +2879,7 @@
     <value>Do you experience frequent herpes outbreaks?</value>
   </data>
   <data name="HighBloodPressureLabel" xml:space="preserve">
-    <value>Have you ever been diagnosed with high blood pressure?</value>
+    <value>Do you have high blood pressure?</value>
   </data>
   <data name="HistoryOfchronicFatigueOrFibromyalgiaLabel" xml:space="preserve">
     <value>Do you have a history of chronic fatigue, fibromyalgia or burnout?</value>
@@ -4063,6 +4063,18 @@
   <data name="A2MilkOnly" xml:space="preserve">
     <value>A2 Milk Only</value>
   </data>
+  <data name="AbdominalDistention" xml:space="preserve">
+    <value>Abdominal Distention</value>
+  </data>
+  <data name="ADHD" xml:space="preserve">
+    <value>ADHD</value>
+  </data>
+  <data name="ADHDLabel" xml:space="preserve">
+    <value>Do you experience symptoms of ADHD such as attention deficit or hyperactivity and inability to focus on one thing?</value>
+  </data>
+  <data name="Allergies" xml:space="preserve">
+    <value>Allergies</value>
+  </data>
   <data name="Anaemia" xml:space="preserve">
     <value>Anaemia</value>
   </data>
@@ -4141,6 +4153,12 @@
   <data name="Diverticulitis" xml:space="preserve">
     <value>Diverticulosis / Diverticulitis</value>
   </data>
+  <data name="Dizziness" xml:space="preserve">
+    <value>Dizziness</value>
+  </data>
+  <data name="Edema" xml:space="preserve">
+    <value>Edema</value>
+  </data>
   <data name="EndometriosisLabel" xml:space="preserve">
     <value>Endometriosis</value>
   </data>
@@ -4153,6 +4171,9 @@
   <data name="Flavour" xml:space="preserve">
     <value>Flavour</value>
   </data>
+  <data name="FlushingAndRedness" xml:space="preserve">
+    <value>Flushing and Redness</value>
+  </data>
   <data name="FoodCategoriesQuestionTitle" xml:space="preserve">
     <value>Which of the following food groups do you eat?</value>
   </data>
@@ -4162,6 +4183,9 @@
   <data name="FrequentNighttimeUrination" xml:space="preserve">
     <value>Frequent Nighttime Urination</value>
   </data>
+  <data name="GrainyStools" xml:space="preserve">
+    <value>Grainy Stools</value>
+  </data>
   <data name="HairLossLabel" xml:space="preserve">
     <value>Hair Loss</value>
   </data>
@@ -4170,6 +4194,9 @@
   </data>
   <data name="HealthQuestoinnaireComplete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\en-gb\healthquestoinnairecomplete.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="HeartAttackLabel" xml:space="preserve">
+    <value>Have you ever had a heart attack or been diagnosed as at risk?</value>
   </data>
   <data name="Hemorrhoids" xml:space="preserve">
     <value>Hemorrhoids</value>
@@ -4182,6 +4209,9 @@
   </data>
   <data name="HistamineDescription" xml:space="preserve">
     <value>High histamine levels, particularly problematic for those with histamine intolerance or mast cell activation disorders, can trigger a range of symptoms including headaches, skin irritations, digestive issues, and in severe cases, asthma-like symptoms or anaphylaxis. Chronic high histamine can also contribute to inflammatory conditions and exacerbate existing allergies and immune system disorders.</value>
+  </data>
+  <data name="Hives" xml:space="preserve">
+    <value>Hives</value>
   </data>
   <data name="HypoThyroidism" xml:space="preserve">
     <value>HypoThyroidism</value>
@@ -4200,6 +4230,9 @@
   </data>
   <data name="InterstitialCystitisInfo" xml:space="preserve">
     <value>Urinary burning and pain similar to urinary tract infections</value>
+  </data>
+  <data name="IrregularMenstruation" xml:space="preserve">
+    <value>Irregular Menstruation</value>
   </data>
   <data name="Irritability" xml:space="preserve">
     <value>Irritability</value>
@@ -4243,14 +4276,23 @@
   <data name="IsLowPhytateLabel" xml:space="preserve">
     <value>Low-Phytate</value>
   </data>
+  <data name="Itching" xml:space="preserve">
+    <value>Itching</value>
+  </data>
   <data name="KidneyStones" xml:space="preserve">
     <value>Kidney Stones</value>
+  </data>
+  <data name="LackOfCoordination" xml:space="preserve">
+    <value>Lack of Coordination</value>
   </data>
   <data name="LeakyGut" xml:space="preserve">
     <value>Leaky Gut</value>
   </data>
   <data name="LectinDescription" xml:space="preserve">
     <value>Found in high amounts in raw legumes and certain grains, lectins can cause significant digestive disturbances and may interfere with the absorption of nutrients, leading to inflammation, weakened gut barrier function, and autoimmune responses. Overconsumption of lectins has been associated with conditions like leaky gut syndrome and inflammatory bowel diseases.</value>
+  </data>
+  <data name="LowBloodPressureLabel" xml:space="preserve">
+    <value>Do you have low blood pressure?</value>
   </data>
   <data name="LowMorningEnergy" xml:space="preserve">
     <value>Low Morning Energy</value>
@@ -4272,6 +4314,9 @@
   </data>
   <data name="MycotoxinDescription" xml:space="preserve">
     <value>Produced by certain types of molds, mycotoxins can cause acute symptoms like nausea and weakened immunity, and long-term exposure can lead to chronic health issues such as cancer, liver and kidney damage, and autoimmune disorders. Mycotoxins are often found in improperly stored grains, nuts, and animal products, posing a significant risk to food safety.</value>
+  </data>
+  <data name="NasalCongestion" xml:space="preserve">
+    <value>Nasal Congestion</value>
   </data>
   <data name="NightSweats" xml:space="preserve">
     <value>Night Sweats</value>
@@ -4305,6 +4350,9 @@
   </data>
   <data name="PhytateDescription" xml:space="preserve">
     <value>Predominantly present in grains, seeds, and legumes, phytates can bind to essential minerals such as iron, zinc, and calcium, inhibiting their absorption and potentially leading to deficiencies. These deficiencies can manifest as weakened immune function, impaired wound healing, and bone density issues, contributing to a general decline in overall health.</value>
+  </data>
+  <data name="PMS" xml:space="preserve">
+    <value>PMS</value>
   </data>
   <data name="Pneumonia" xml:space="preserve">
     <value>Pneumonia</value>
@@ -4345,6 +4393,9 @@
   <data name="StretchMarks" xml:space="preserve">
     <value>Stretch Marks</value>
   </data>
+  <data name="StrokeLabel" xml:space="preserve">
+    <value>Have you ever had a stroke or been diagnosed as at risk?</value>
+  </data>
   <data name="SugarCrashes" xml:space="preserve">
     <value>Sugar Crashes (Reactive Hypoglycaemia)</value>
   </data>
@@ -4362,6 +4413,9 @@
   </data>
   <data name="VegetableProteinTitle" xml:space="preserve">
     <value>Vegetable Proteins (nuts, seeds, legumes, etc.)</value>
+  </data>
+  <data name="VisionProblems" xml:space="preserve">
+    <value>Vision Problems</value>
   </data>
   <data name="WeAreAllUnique" xml:space="preserve">
     <value>We are all unique!</value>

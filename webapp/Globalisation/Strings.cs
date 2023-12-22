@@ -290,9 +290,12 @@
             public const string PostExertionalMalaiseLabel ="PostExertionalMalaiseLabel";
             public const string SkinIssuesLabel ="SkinIssuesLabel";
             public const string HighBloodPressureLabel ="HighBloodPressureLabel";
+            public const string LowBloodPressureLabel ="LowBloodPressureLabel";
             public const string ChestPainLabel ="ChestPainLabel";
             public const string PalpitationsLabel ="PalpitationsLabel";
             public const string EasilyOutOfBreathLabel ="EasilyOutOfBreathLabel";
+            public const string StrokeLabel ="StrokeLabel";
+            public const string HeartAttackLabel ="HeartAttackLabel";
             public const string AutoImmunityLabel ="AutoImmunityLabel";
             public const string SkinIssuesDetailsLabel ="SkinIssuesDetailsLabel";
             public const string ColdExtremitiesLabel ="ColdExtremitiesLabel";
@@ -305,10 +308,18 @@
             public const string MastCellActivation ="MastCellActivation";
             public const string HairLossLabel ="HairLossLabel";
             public const string Osteoporosis ="Osteoporosis";
+            public const string GrainyStools ="GrainyStools";
             public const string PCOS ="PCOS";
             public const string PCOSInfo ="PCOSInfo";
             public const string SandyEye ="SandyEye";
             public const string HypoThyroidism ="HypoThyroidism";
+            
+            public const string Itching ="Itching";
+            public const string FlushingAndRedness ="FlushingAndRedness";
+            public const string NasalCongestion ="NasalCongestion";
+            public const string IrregularMenstruation ="IrregularMenstruation";
+
+
             public const string SandyEyeInfo ="SandyEyeInfo";
             public const string OsteoporosisInfo ="OsteoporosisInfo";
             public const string Hemorrhoids ="Hemorrhoids";
@@ -348,6 +359,15 @@
             public const string AmmoniaSmellLabel = "AmmoniaSmellLabel";
             public const string SugarCrashesLabel = "SugarCrashesLabel";
             public const string OCDLabel = "OCDLabel";
+            public const string ADHDLabel = "ADHDLabel";
+            public const string ADHD = "ADHD";
+            public const string Hives = "Hives";
+            public const string Edema = "Edema";
+            public const string AbdominalDistention = "AbdominalDistention";
+            public const string Dizziness = "Dizziness";
+            public const string Allergies = "Allergies";
+            public const string LackOfCoordination = "LackOfCoordination";
+            public const string VisionProblems = "VisionProblems";
             public const string ChronicViralInfectionsLabel = "ChronicViralInfectionsLabel";
             public const string SlowWoundHealingLabel = "SlowWoundHealingLabel";
             public const string SpiderVeinsLabel = "SpiderVeinsLabel";
@@ -436,6 +456,7 @@
             public const string FrequentNighttimeUrination = "FrequentNighttimeUrination";
             public const string Herpes = "Herpes";
             public const string Irritability = "Irritability";
+            public const string PMS = "PMS";
             public const string SulfiteSensitivity = "SulfiteSensitivity";
             public const string MsgSensitivity = "MsgSensitivity";
             public const string SurgeryDetails = "SurgeryDetails";

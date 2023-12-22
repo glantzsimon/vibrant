@@ -35,7 +35,7 @@ namespace K9.DataAccessLayer.Models
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PostExertionalMalaise, Description = Strings.Labels.PostExertionalMalaiseLabel)]
         public bool PostExertionalMalaise { get; set; }
-        
+
         [Score(Restorative = true, IsOxalateIntolerance = true, VataDosha = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CrampsTremorsTwitches)]
@@ -47,8 +47,8 @@ namespace K9.DataAccessLayer.Models
         [UIHint("YesNo")]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HistoryOfchronicFatigueOrFibromyalgiaLabel)]
         public EYesNo? HistoryOfchronicFatigueOrFibromyalgia { get; set; }
-        
-        [Score(Cbs = true, IsOxalateIntolerance = true)]
+
+        [Score(Cbs = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Migraines)]
         public bool Migraines { get; set; }
@@ -60,8 +60,8 @@ namespace K9.DataAccessLayer.Models
         public bool POTS { get; set; }
 
         [Score(Cbs = true, ScoreFactor = 2)]
-        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, HormoneBalance = true,  AntiInflammatory = true, Vitality = true, Restorative = true,
-            IsYin = true, VataDosha = true, IsOxalateIntolerance = true)]
+        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, HormoneBalance = true, AntiInflammatory = true, Vitality = true, Restorative = true,
+            IsYin = true, VataDosha = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DepressionAnxiety)]
         public bool DepressionAnxiety { get; set; }
@@ -70,7 +70,7 @@ namespace K9.DataAccessLayer.Models
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MemoryProblems)]
         public bool MemoryProblems { get; set; }
-        
+
         [Score(Cognition = true, NeurologicalHealth = true, Mood = true, IsOxalateIntolerance = true, Cbs = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ConcentrationProblems)]
@@ -178,6 +178,11 @@ namespace K9.DataAccessLayer.Models
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Irritability)]
         public bool Irritability { get; set; }
+
+        [Score(Cbs = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true)]
+        [QuestionCategory(Category = EQuestionCategory.Cbs)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PMS)]
+        public bool PMS { get; set; }
 
         public List<PropertyInfo> GetCbsProperties() => this
             .GetProperties().Where(e => e.GetAttribute<QuestionCategoryAttribute>()?.Category == EQuestionCategory.Cbs).ToList();
