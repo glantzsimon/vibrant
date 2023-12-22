@@ -4165,6 +4165,9 @@
   <data name="EyePainLabel" xml:space="preserve">
     <value>Eye Pain / Burning Eyes</value>
   </data>
+  <data name="Fatigue" xml:space="preserve">
+    <value>Fatigue</value>
+  </data>
   <data name="FiveElements" xml:space="preserve">
     <value>FiveElements</value>
   </data>
@@ -4179,6 +4182,12 @@
   </data>
   <data name="FoodIsSuitableTitle" xml:space="preserve">
     <value>My body likes this food!</value>
+  </data>
+  <data name="FrequentlySick" xml:space="preserve">
+    <value>Frequently Sick / Unwell</value>
+  </data>
+  <data name="FrequentlySickInfo" xml:space="preserve">
+    <value>Frequently gets sick and struggles to fight off infections</value>
   </data>
   <data name="FrequentNighttimeUrination" xml:space="preserve">
     <value>Frequent Nighttime Urination</value>
@@ -4213,8 +4222,17 @@
   <data name="Hives" xml:space="preserve">
     <value>Hives</value>
   </data>
+  <data name="HormoneImbalance" xml:space="preserve">
+    <value>Hormone Imbalance</value>
+  </data>
   <data name="HypoThyroidism" xml:space="preserve">
     <value>HypoThyroidism</value>
+  </data>
+  <data name="Impotency" xml:space="preserve">
+    <value>Impotency</value>
+  </data>
+  <data name="IncreasedThirst" xml:space="preserve">
+    <value>Increased Thirst</value>
   </data>
   <data name="InflammationAndImmunity" xml:space="preserve">
     <value>Inflammation &amp; Immunity</value>
@@ -4291,6 +4309,9 @@
   <data name="LectinDescription" xml:space="preserve">
     <value>Found in high amounts in raw legumes and certain grains, lectins can cause significant digestive disturbances and may interfere with the absorption of nutrients, leading to inflammation, weakened gut barrier function, and autoimmune responses. Overconsumption of lectins has been associated with conditions like leaky gut syndrome and inflammatory bowel diseases.</value>
   </data>
+  <data name="LossOfAppetite" xml:space="preserve">
+    <value>Loss of Appetite</value>
+  </data>
   <data name="LowBloodPressureLabel" xml:space="preserve">
     <value>Do you have low blood pressure?</value>
   </data>
@@ -4306,11 +4327,23 @@
   <data name="MemoryProblems" xml:space="preserve">
     <value>Memory Problems</value>
   </data>
+  <data name="MetabolicSyndrome" xml:space="preserve">
+    <value>Metabolic Syndrome</value>
+  </data>
+  <data name="MetabolicSyndromeInfo" xml:space="preserve">
+    <value>Metabolic syndrome is a clustering of at least three of the following five medical conditions: abdominal obesity, high blood pressure, high blood sugar, high serum triglycerides, and low serum high-density lipoprotein (HDL).</value>
+  </data>
+  <data name="MetalicTasteInMouth" xml:space="preserve">
+    <value>Metalic Taste in Mouth</value>
+  </data>
   <data name="Migraines" xml:space="preserve">
     <value>Migraines</value>
   </data>
   <data name="MusclePain" xml:space="preserve">
     <value>Muscle Pain</value>
+  </data>
+  <data name="MuscleWeakness" xml:space="preserve">
+    <value>Muscle Weakness</value>
   </data>
   <data name="MycotoxinDescription" xml:space="preserve">
     <value>Produced by certain types of molds, mycotoxins can cause acute symptoms like nausea and weakened immunity, and long-term exposure can lead to chronic health issues such as cancer, liver and kidney damage, and autoimmune disorders. Mycotoxins are often found in improperly stored grains, nuts, and animal products, posing a significant risk to food safety.</value>
@@ -4318,8 +4351,14 @@
   <data name="NasalCongestion" xml:space="preserve">
     <value>Nasal Congestion</value>
   </data>
+  <data name="Nausea" xml:space="preserve">
+    <value>Nausea</value>
+  </data>
   <data name="NightSweats" xml:space="preserve">
     <value>Night Sweats</value>
+  </data>
+  <data name="Numbness" xml:space="preserve">
+    <value>Numbness or Tingling</value>
   </data>
   <data name="Omega6Description" xml:space="preserve">
     <value>While essential for health, an imbalance with high intake of omega-6 fatty acids, relative to omega-3s, can promote inflammation, exacerbating conditions like arthritis, cardiovascular diseases, and autoimmune disorders. Commonly found in processed foods, vegetable oils, and certain nuts and seeds, excessive omega-6 consumption can disrupt the body's inflammatory response, contributing to chronic health problems.</value>
@@ -4335,6 +4374,9 @@
   </data>
   <data name="OtherDietaryPreferencesQuestionTitle" xml:space="preserve">
     <value>Please check any of the following dietary preferences that apply:</value>
+  </data>
+  <data name="OtherSymptoms" xml:space="preserve">
+    <value>Other Symptoms</value>
   </data>
   <data name="OxalateDescription" xml:space="preserve">
     <value>High levels of oxalates in the diet can lead to the formation of kidney stones and may contribute to joint pain, inflammation, and oxalate toxicity, particularly in individuals with certain health conditions like kidney disorders or inflammatory bowel disease. Excessive oxalate can also impede the absorption of beneficial minerals such as calcium and magnesium, exacerbating issues like osteoporosis and muscle cramps and is linked to many chronic inflammatory diseases and mystery illnesses. Factors that may contribute to oxalate toxicity (by impeding its correct metabolism) are: mold exposure, leaky gut, dysbiosis, pesticide exposure, low methylation status, stress, pollution.</value>
@@ -4375,6 +4417,9 @@
   <data name="RacingThoughts" xml:space="preserve">
     <value>Racing Thoughts</value>
   </data>
+  <data name="Rashes" xml:space="preserve">
+    <value>Rashes</value>
+  </data>
   <data name="RespiratoryHealth" xml:space="preserve">
     <value>Respiratory Health</value>
   </data>
@@ -4405,8 +4450,17 @@
   <data name="TCM" xml:space="preserve">
     <value>TCM</value>
   </data>
+  <data name="Tinnitus" xml:space="preserve">
+    <value>Tinnitus</value>
+  </data>
+  <data name="TinnitusInfo" xml:space="preserve">
+    <value>Ringing in The Ears</value>
+  </data>
   <data name="Tuberculosis" xml:space="preserve">
     <value>Tuberculosis</value>
+  </data>
+  <data name="Type2Diabetes" xml:space="preserve">
+    <value>Type 2 Diabetes</value>
   </data>
   <data name="UpdatePreferences" xml:space="preserve">
     <value>Update Preferences</value>
@@ -4416,6 +4470,9 @@
   </data>
   <data name="VisionProblems" xml:space="preserve">
     <value>Vision Problems</value>
+  </data>
+  <data name="Vomiting" xml:space="preserve">
+    <value>Vomiting</value>
   </data>
   <data name="WeAreAllUnique" xml:space="preserve">
     <value>We are all unique!</value>

@@ -72,13 +72,13 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [Score(VataDosha = true, IsYin = true)]
+        [Score(VataDosha = true, IsYin = true, IsMycotoxinIntolerance = true)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.WeightLossLabel)]
         public EYesNo? WeightLoss { get; set; }
 
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [Score(VataDosha = true, IsOxalateIntolerance = true)]
+        [Score(VataDosha = true, IsOxalateIntolerance = true, IsMycotoxinIntolerance = true)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.NeuropathicPainLabel)]
         public EYesNo? NeuropathicPain { get; set; }
 
@@ -118,7 +118,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [Score(PittaDosha = true)]
+        [Score(PittaDosha = true, IsPhytateIntolerance = true, IsLectinIntolerance = true)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.NauseaLabel)]
         public EYesNo? Nausea { get; set; }
 
@@ -160,7 +160,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [Score(PittaDosha = true)]
+        [Score(PittaDosha = true, IsMycotoxinIntolerance = true)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.LightSensitiveLabel)]
         public EYesNo? SensitiveToLight { get; set; }
 

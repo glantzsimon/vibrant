@@ -304,6 +304,14 @@
             public const string CarpelTunnelLabel ="CarpelTunnelLabel";
             public const string BackPainLabel ="BackPainLabel";
             public const string MusclePain ="MusclePain";
+            public const string MuscleWeakness ="MuscleWeakness";
+            public const string Numbness ="Numbness";
+            public const string FrequentlySick ="FrequentlySick";
+            public const string FrequentlySickInfo ="FrequentlySickInfo";
+            public const string IncreasedThirst ="IncreasedThirst";
+            public const string MetalicTasteInMouth ="MetalicTasteInMouth";
+            public const string Tinnitus ="Tinnitus";
+            public const string TinnitusInfo ="TinnitusInfo";
             public const string EyePainLabel ="EyePainLabel";
             public const string MastCellActivation ="MastCellActivation";
             public const string HairLossLabel ="HairLossLabel";
@@ -313,6 +321,9 @@
             public const string PCOSInfo ="PCOSInfo";
             public const string SandyEye ="SandyEye";
             public const string HypoThyroidism ="HypoThyroidism";
+            public const string MetabolicSyndrome ="MetabolicSyndrome";
+            public const string MetabolicSyndromeInfo ="MetabolicSyndromeInfo";
+            public const string Type2Diabetes ="Type2Diabetes";
             
             public const string Itching ="Itching";
             public const string FlushingAndRedness ="FlushingAndRedness";
@@ -366,6 +377,13 @@
             public const string AbdominalDistention = "AbdominalDistention";
             public const string Dizziness = "Dizziness";
             public const string Allergies = "Allergies";
+            public const string Fatigue = "Fatigue";
+            public const string HormoneImbalance = "HormoneImbalance";
+            public const string Impotency = "Impotency";
+            public const string Rashes = "Rashes";
+            public const string Vomiting = "Vomiting";
+            public const string Nausea = "Nausea";
+            public const string LossOfAppetite = "LossOfAppetite";
             public const string LackOfCoordination = "LackOfCoordination";
             public const string VisionProblems = "VisionProblems";
             public const string ChronicViralInfectionsLabel = "ChronicViralInfectionsLabel";

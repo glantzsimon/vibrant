@@ -3817,6 +3817,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fatigue.
+        /// </summary>
+        public static string Fatigue {
+            get {
+                return ResourceManager.GetString("Fatigue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fats.
         /// </summary>
         public static string Fats {
@@ -4138,6 +4147,24 @@ namespace K9.Globalisation {
         public static string Frequency {
             get {
                 return ResourceManager.GetString("Frequency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequently Sick / Unwell.
+        /// </summary>
+        public static string FrequentlySick {
+            get {
+                return ResourceManager.GetString("FrequentlySick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequently gets sick and struggles to fight off infections.
+        /// </summary>
+        public static string FrequentlySickInfo {
+            get {
+                return ResourceManager.GetString("FrequentlySickInfo", resourceCulture);
             }
         }
         
@@ -5071,6 +5098,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hormone Imbalance.
+        /// </summary>
+        public static string HormoneImbalance {
+            get {
+                return ResourceManager.GetString("HormoneImbalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to How to determine your sitting height.
         /// </summary>
         public static string HowToDetermineSittingHeight {
@@ -5290,6 +5326,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Impotency.
+        /// </summary>
+        public static string Impotency {
+            get {
+                return ResourceManager.GetString("Impotency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are your incisors shaped like spades / shovels?.
         /// </summary>
         public static string IncisorShovellingLabel {
@@ -5304,6 +5349,15 @@ namespace K9.Globalisation {
         public static string IncompleteOrders {
             get {
                 return ResourceManager.GetString("IncompleteOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Increased Thirst.
+        /// </summary>
+        public static string IncreasedThirst {
+            get {
+                return ResourceManager.GetString("IncreasedThirst", resourceCulture);
             }
         }
         
@@ -6744,6 +6798,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loss of Appetite.
+        /// </summary>
+        public static string LossOfAppetite {
+            get {
+                return ResourceManager.GetString("LossOfAppetite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do loud noises or bright lights ever make you anxious or overwhelmed?.
         /// </summary>
         public static string LoudNoisesBrightLightsLabel {
@@ -7120,6 +7183,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Metabolic Syndrome.
+        /// </summary>
+        public static string MetabolicSyndrome {
+            get {
+                return ResourceManager.GetString("MetabolicSyndrome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Metabolic syndrome is a clustering of at least three of the following five medical conditions: abdominal obesity, high blood pressure, high blood sugar, high serum triglycerides, and low serum high-density lipoprotein (HDL)..
+        /// </summary>
+        public static string MetabolicSyndromeInfo {
+            get {
+                return ResourceManager.GetString("MetabolicSyndromeInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Metabolic Types.
         /// </summary>
         public static string MetabolicTypes {
@@ -7143,6 +7224,15 @@ namespace K9.Globalisation {
         public static string MetalElement {
             get {
                 return ResourceManager.GetString("MetalElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Metalic Taste in Mouth.
+        /// </summary>
+        public static string MetalicTasteInMouth {
+            get {
+                return ResourceManager.GetString("MetalicTasteInMouth", resourceCulture);
             }
         }
         
@@ -7372,6 +7462,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Muscle Weakness.
+        /// </summary>
+        public static string MuscleWeakness {
+            get {
+                return ResourceManager.GetString("MuscleWeakness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Produced by certain types of molds, mycotoxins can cause acute symptoms like nausea and weakened immunity, and long-term exposure can lead to chronic health issues such as cancer, liver and kidney damage, and autoimmune disorders. Mycotoxins are often found in improperly stored grains, nuts, and animal products, posing a significant risk to food safety..
         /// </summary>
         public static string MycotoxinDescription {
@@ -7395,6 +7494,15 @@ namespace K9.Globalisation {
         public static string NasalCongestion {
             get {
                 return ResourceManager.GetString("NasalCongestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nausea.
+        /// </summary>
+        public static string Nausea {
+            get {
+                return ResourceManager.GetString("Nausea", resourceCulture);
             }
         }
         
@@ -7843,6 +7951,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Numbness or Tingling.
+        /// </summary>
+        public static string Numbness {
+            get {
+                return ResourceManager.GetString("Numbness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nutritional Supplements.
         /// </summary>
         public static string NutritionalSupplements {
@@ -8272,6 +8389,15 @@ namespace K9.Globalisation {
         public static string OtherInfo {
             get {
                 return ResourceManager.GetString("OtherInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other Symptoms.
+        /// </summary>
+        public static string OtherSymptoms {
+            get {
+                return ResourceManager.GetString("OtherSymptoms", resourceCulture);
             }
         }
         
@@ -9746,6 +9872,15 @@ namespace K9.Globalisation {
         public static string Rarely {
             get {
                 return ResourceManager.GetString("Rarely", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rashes.
+        /// </summary>
+        public static string Rashes {
+            get {
+                return ResourceManager.GetString("Rashes", resourceCulture);
             }
         }
         
@@ -11967,6 +12102,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tinnitus.
+        /// </summary>
+        public static string Tinnitus {
+            get {
+                return ResourceManager.GetString("Tinnitus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ringing in The Ears.
+        /// </summary>
+        public static string TinnitusInfo {
+            get {
+                return ResourceManager.GetString("TinnitusInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you experience neuralgia or TMJ issues?.
         /// </summary>
         public static string TMJLabel {
@@ -12261,6 +12414,15 @@ namespace K9.Globalisation {
         public static string TwoToThreeTimesWeekly {
             get {
                 return ResourceManager.GetString("TwoToThreeTimesWeekly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type 2 Diabetes.
+        /// </summary>
+        public static string Type2Diabetes {
+            get {
+                return ResourceManager.GetString("Type2Diabetes", resourceCulture);
             }
         }
         
@@ -12842,6 +13004,15 @@ namespace K9.Globalisation {
         public static string VitaminsMinerals {
             get {
                 return ResourceManager.GetString("VitaminsMinerals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vomiting.
+        /// </summary>
+        public static string Vomiting {
+            get {
+                return ResourceManager.GetString("Vomiting", resourceCulture);
             }
         }
         
