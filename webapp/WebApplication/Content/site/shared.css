@@ -371,3 +371,13 @@
     width: 100%;
     height: auto;
 }
+
+.price-tag {
+    background-image: url(../../Images/ui/price-tag.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 67px;
+    height: 39px;
+    padding-top: 3px;
+    text-align: center;
+}

@@ -757,6 +757,10 @@
     <Compile Include="Migrations\202312210825399_ChangeQHColumnTypes.Designer.cs">
       <DependentUpon>202312210825399_ChangeQHColumnTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312230435200_MoreFieldsHQFields.cs" />
+    <Compile Include="Migrations\202312230435200_MoreFieldsHQFields.Designer.cs">
+      <DependentUpon>202312230435200_MoreFieldsHQFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
@@ -1192,6 +1196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312210825399_ChangeQHColumnTypes.resx">
       <DependentUpon>202312210825399_ChangeQHColumnTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312230435200_MoreFieldsHQFields.resx">
+      <DependentUpon>202312230435200_MoreFieldsHQFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

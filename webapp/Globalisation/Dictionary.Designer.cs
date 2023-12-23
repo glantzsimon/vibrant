@@ -10669,6 +10669,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shop Price .
+        /// </summary>
+        public static string ShopPriceLabel {
+            get {
+                return ResourceManager.GetString("ShopPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Short Description.
         /// </summary>
         public static string ShortDescriptionLabel {

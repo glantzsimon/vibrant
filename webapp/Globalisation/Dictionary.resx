@@ -4429,6 +4429,9 @@
   <data name="Season" xml:space="preserve">
     <value>Season</value>
   </data>
+  <data name="ShopPriceLabel" xml:space="preserve">
+    <value>Shop Price </value>
+  </data>
   <data name="Skin" xml:space="preserve">
     <value>Skin</value>
   </data>

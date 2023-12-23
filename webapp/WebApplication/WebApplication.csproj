@@ -859,6 +859,7 @@
     <Content Include="Images\ui\label.png" />
     <Content Include="Images\ui\notfound.png" />
     <Content Include="Images\ui\locked.png" />
+    <Content Include="Images\ui\price-tag.png" />
     <Content Include="Images\ui\question-mark.jpg" />
     <Content Include="Images\ui\selected.png" />
     <Content Include="Images\ui\small-tick.png" />

@@ -65,6 +65,7 @@
             public const string PriceSmallPackDiscount2Label = "PriceSmallPackDiscount2Label";
             public const string InternationalPriceLabel = "InternationalPriceLabel";
             public const string PriceLabel = "PriceLabel";
+            public const string ShopPriceLabel = "ShopPriceLabel";
             public const string FullPriceLabel = "FullPriceLabel";
             public const string AmountRedeemableLabel = "AmountRedeemableLabel";
             public const string AmountRedeemedLabel = "AmountRedeemedLabel";
