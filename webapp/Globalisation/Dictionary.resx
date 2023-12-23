@@ -4066,6 +4066,9 @@
   <data name="AbdominalDistention" xml:space="preserve">
     <value>Abdominal Distention</value>
   </data>
+  <data name="AbdominalPainOrCramping" xml:space="preserve">
+    <value>AbdominalPainOrCramping</value>
+  </data>
   <data name="ADHD" xml:space="preserve">
     <value>ADHD</value>
   </data>
@@ -4074,6 +4077,15 @@
   </data>
   <data name="Allergies" xml:space="preserve">
     <value>Allergies</value>
+  </data>
+  <data name="AmalgamFillings" xml:space="preserve">
+    <value>AmalgamFillings</value>
+  </data>
+  <data name="AmalgamFillingsHistory" xml:space="preserve">
+    <value>AmalgamFillingsHistory</value>
+  </data>
+  <data name="AmmoniaSmell" xml:space="preserve">
+    <value>AmmoniaSmell</value>
   </data>
   <data name="Anaemia" xml:space="preserve">
     <value>Anaemia</value>
@@ -4086,6 +4098,9 @@
   </data>
   <data name="BackPainLabel" xml:space="preserve">
     <value>Do you suffer from back pain?</value>
+  </data>
+  <data name="Bloating" xml:space="preserve">
+    <value>Bloating</value>
   </data>
   <data name="BrainFog" xml:space="preserve">
     <value>Brain Fog</value>
@@ -4114,14 +4129,32 @@
   <data name="CataractsLabel" xml:space="preserve">
     <value>Cataracts</value>
   </data>
+  <data name="ChestPain" xml:space="preserve">
+    <value>ChestPain</value>
+  </data>
   <data name="ChronicViralInfections" xml:space="preserve">
     <value>Chronic Viral Infections</value>
   </data>
   <data name="ClearCache" xml:space="preserve">
     <value>Clear Cache</value>
   </data>
+  <data name="CoarseThinEyebrows" xml:space="preserve">
+    <value>CoarseThinEyebrows</value>
+  </data>
+  <data name="CoatedTongue" xml:space="preserve">
+    <value>CoatedTongue</value>
+  </data>
+  <data name="ColdExtremities" xml:space="preserve">
+    <value>ColdExtremities</value>
+  </data>
+  <data name="ColdIntolerant" xml:space="preserve">
+    <value>ColdIntolerant</value>
+  </data>
   <data name="ConcentrationProblems" xml:space="preserve">
     <value>Inability to Concentrate</value>
+  </data>
+  <data name="Constipation" xml:space="preserve">
+    <value>Constipation</value>
   </data>
   <data name="COPD" xml:space="preserve">
     <value>COPD (Chronic Obstructive Pulmonary Disease)</value>
@@ -4150,11 +4183,17 @@
   <data name="DifficultyUrinating" xml:space="preserve">
     <value>Difficulty Urinating</value>
   </data>
-  <data name="Diverticulitis" xml:space="preserve">
+  <data name="DiverticulitisLabel" xml:space="preserve">
     <value>Diverticulosis / Diverticulitis</value>
   </data>
   <data name="Dizziness" xml:space="preserve">
     <value>Dizziness</value>
+  </data>
+  <data name="DrinksAlcohol" xml:space="preserve">
+    <value>DrinksAlcohol</value>
+  </data>
+  <data name="EasilyOutOfBreath" xml:space="preserve">
+    <value>EasilyOutOfBreath</value>
   </data>
   <data name="Edema" xml:space="preserve">
     <value>Edema</value>
@@ -4192,6 +4231,9 @@
   <data name="FrequentNighttimeUrination" xml:space="preserve">
     <value>Frequent Nighttime Urination</value>
   </data>
+  <data name="Gas" xml:space="preserve">
+    <value>Gas</value>
+  </data>
   <data name="GrainyStools" xml:space="preserve">
     <value>Grainy Stools</value>
   </data>
@@ -4213,11 +4255,20 @@
   <data name="Herpes" xml:space="preserve">
     <value>Frequent Herpes Outbreaks</value>
   </data>
+  <data name="Hiccups" xml:space="preserve">
+    <value>Hiccups</value>
+  </data>
   <data name="HiccupsLabel" xml:space="preserve">
     <value>Do you often experience hiccups?</value>
   </data>
+  <data name="HighBloodPressure" xml:space="preserve">
+    <value>HighBloodPressure</value>
+  </data>
   <data name="HistamineDescription" xml:space="preserve">
     <value>High histamine levels, particularly problematic for those with histamine intolerance or mast cell activation disorders, can trigger a range of symptoms including headaches, skin irritations, digestive issues, and in severe cases, asthma-like symptoms or anaphylaxis. Chronic high histamine can also contribute to inflammatory conditions and exacerbate existing allergies and immune system disorders.</value>
+  </data>
+  <data name="HistoryOfchronicFatigueOrFibromyalgia" xml:space="preserve">
+    <value>HistoryOfchronicFatigueOrFibromyalgia</value>
   </data>
   <data name="Hives" xml:space="preserve">
     <value>Hives</value>
@@ -4254,6 +4305,9 @@
   </data>
   <data name="Irritability" xml:space="preserve">
     <value>Irritability</value>
+  </data>
+  <data name="IrritableBowerl" xml:space="preserve">
+    <value>IrritableBowerl</value>
   </data>
   <data name="IsBulletProofLabel" xml:space="preserve">
     <value>Bulletproof</value>
@@ -4297,6 +4351,9 @@
   <data name="Itching" xml:space="preserve">
     <value>Itching</value>
   </data>
+  <data name="JointInflammation" xml:space="preserve">
+    <value>JointInflammation</value>
+  </data>
   <data name="KidneyStones" xml:space="preserve">
     <value>Kidney Stones</value>
   </data>
@@ -4308,6 +4365,9 @@
   </data>
   <data name="LectinDescription" xml:space="preserve">
     <value>Found in high amounts in raw legumes and certain grains, lectins can cause significant digestive disturbances and may interfere with the absorption of nutrients, leading to inflammation, weakened gut barrier function, and autoimmune responses. Overconsumption of lectins has been associated with conditions like leaky gut syndrome and inflammatory bowel diseases.</value>
+  </data>
+  <data name="LooseStool" xml:space="preserve">
+    <value>LooseStool</value>
   </data>
   <data name="LossOfAppetite" xml:space="preserve">
     <value>Loss of Appetite</value>
@@ -4339,6 +4399,9 @@
   <data name="Migraines" xml:space="preserve">
     <value>Migraines</value>
   </data>
+  <data name="MsgSensitivity" xml:space="preserve">
+    <value>MsgSensitivity</value>
+  </data>
   <data name="MusclePain" xml:space="preserve">
     <value>Muscle Pain</value>
   </data>
@@ -4359,6 +4422,9 @@
   </data>
   <data name="Numbness" xml:space="preserve">
     <value>Numbness or Tingling</value>
+  </data>
+  <data name="OCD" xml:space="preserve">
+    <value>OCD</value>
   </data>
   <data name="Omega6Description" xml:space="preserve">
     <value>While essential for health, an imbalance with high intake of omega-6 fatty acids, relative to omega-3s, can promote inflammation, exacerbating conditions like arthritis, cardiovascular diseases, and autoimmune disorders. Commonly found in processed foods, vegetable oils, and certain nuts and seeds, excessive omega-6 consumption can disrupt the body's inflammatory response, contributing to chronic health problems.</value>
@@ -4383,6 +4449,9 @@
   </data>
   <data name="OxalateIntolerance" xml:space="preserve">
     <value>Oxalate Intolerance</value>
+  </data>
+  <data name="Palpitations" xml:space="preserve">
+    <value>Palpitations</value>
   </data>
   <data name="PCOS" xml:space="preserve">
     <value>Polycystic Ovary Syndrome</value>
@@ -4423,6 +4492,9 @@
   <data name="RespiratoryHealth" xml:space="preserve">
     <value>Respiratory Health</value>
   </data>
+  <data name="RootCanals" xml:space="preserve">
+    <value>RootCanals</value>
+  </data>
   <data name="SandyEye" xml:space="preserve">
     <value>Sandy Eye</value>
   </data>
@@ -4434,6 +4506,15 @@
   </data>
   <data name="Skin" xml:space="preserve">
     <value>Skin</value>
+  </data>
+  <data name="SkinIssuesDetails" xml:space="preserve">
+    <value>SkinIssuesDetails</value>
+  </data>
+  <data name="SkinType" xml:space="preserve">
+    <value>SkinType</value>
+  </data>
+  <data name="SlowWoundHealing" xml:space="preserve">
+    <value>SlowWoundHealing</value>
   </data>
   <data name="SpiderVeins" xml:space="preserve">
     <value>Spider Veins</value>
@@ -4447,6 +4528,9 @@
   <data name="SugarCrashes" xml:space="preserve">
     <value>Sugar Crashes (Reactive Hypoglycaemia)</value>
   </data>
+  <data name="SulfiteSensitivity" xml:space="preserve">
+    <value>SulfiteSensitivity</value>
+  </data>
   <data name="SymptomCheckerTitle" xml:space="preserve">
     <value>Please check any of the following that apply to you:</value>
   </data>
@@ -4459,6 +4543,12 @@
   <data name="TinnitusInfo" xml:space="preserve">
     <value>Ringing in The Ears</value>
   </data>
+  <data name="TMJ" xml:space="preserve">
+    <value>TMJ</value>
+  </data>
+  <data name="ToothPain" xml:space="preserve">
+    <value>ToothPain</value>
+  </data>
   <data name="Tuberculosis" xml:space="preserve">
     <value>Tuberculosis</value>
   </data>
@@ -4467,6 +4557,9 @@
   </data>
   <data name="UpdatePreferences" xml:space="preserve">
     <value>Update Preferences</value>
+  </data>
+  <data name="UTI" xml:space="preserve">
+    <value>UTI</value>
   </data>
   <data name="VegetableProteinTitle" xml:space="preserve">
     <value>Vegetable Proteins (nuts, seeds, legumes, etc.)</value>

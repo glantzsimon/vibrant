@@ -97,6 +97,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AbdominalPainOrCramping.
+        /// </summary>
+        public static string AbdominalPainOrCramping {
+            get {
+                return ResourceManager.GetString("AbdominalPainOrCramping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you often experience abdominal pain or cramping?.
         /// </summary>
         public static string AbdominalPainOrCrampingLabel {
@@ -364,6 +373,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AmalgamFillings.
+        /// </summary>
+        public static string AmalgamFillings {
+            get {
+                return ResourceManager.GetString("AmalgamFillings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AmalgamFillingsHistory.
+        /// </summary>
+        public static string AmalgamFillingsHistory {
+            get {
+                return ResourceManager.GetString("AmalgamFillingsHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Have you ever had any silver amalgam fillings in the past?.
         /// </summary>
         public static string AmalgamFillingsHistoryLabel {
@@ -414,6 +441,15 @@ namespace K9.Globalisation {
         public static string AmmoniaDetox {
             get {
                 return ResourceManager.GetString("AmmoniaDetox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AmmoniaSmell.
+        /// </summary>
+        public static string AmmoniaSmell {
+            get {
+                return ResourceManager.GetString("AmmoniaSmell", resourceCulture);
             }
         }
         
@@ -948,6 +984,15 @@ namespace K9.Globalisation {
         public static string Black {
             get {
                 return ResourceManager.GetString("Black", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bloating.
+        /// </summary>
+        public static string Bloating {
+            get {
+                return ResourceManager.GetString("Bloating", resourceCulture);
             }
         }
         
@@ -1530,6 +1575,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ChestPain.
+        /// </summary>
+        public static string ChestPain {
+            get {
+                return ResourceManager.GetString("ChestPain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you ever experience chest pain when you exert yourself?.
         /// </summary>
         public static string ChestPainLabel {
@@ -1647,11 +1701,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CoarseThinEyebrows.
+        /// </summary>
+        public static string CoarseThinEyebrows {
+            get {
+                return ResourceManager.GetString("CoarseThinEyebrows", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is the outer third of your eyebrows thinning or do you have any coarse, long eyebrow hairs?.
         /// </summary>
         public static string CoarseThinEyebrowsLabel {
             get {
                 return ResourceManager.GetString("CoarseThinEyebrowsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CoatedTongue.
+        /// </summary>
+        public static string CoatedTongue {
+            get {
+                return ResourceManager.GetString("CoatedTongue", resourceCulture);
             }
         }
         
@@ -1692,11 +1764,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ColdExtremities.
+        /// </summary>
+        public static string ColdExtremities {
+            get {
+                return ResourceManager.GetString("ColdExtremities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you often experience cold extremities?.
         /// </summary>
         public static string ColdExtremitiesLabel {
             get {
                 return ResourceManager.GetString("ColdExtremitiesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ColdIntolerant.
+        /// </summary>
+        public static string ColdIntolerant {
+            get {
+                return ResourceManager.GetString("ColdIntolerant", resourceCulture);
             }
         }
         
@@ -1841,6 +1931,15 @@ namespace K9.Globalisation {
         public static string Confectionery {
             get {
                 return ResourceManager.GetString("Confectionery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Constipation.
+        /// </summary>
+        public static string Constipation {
+            get {
+                return ResourceManager.GetString("Constipation", resourceCulture);
             }
         }
         
@@ -2764,9 +2863,9 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Diverticulosis / Diverticulitis.
         /// </summary>
-        public static string Diverticulitis {
+        public static string DiverticulitisLabel {
             get {
-                return ResourceManager.GetString("Diverticulitis", resourceCulture);
+                return ResourceManager.GetString("DiverticulitisLabel", resourceCulture);
             }
         }
         
@@ -3050,6 +3149,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DrinksAlcohol.
+        /// </summary>
+        public static string DrinksAlcohol {
+            get {
+                return ResourceManager.GetString("DrinksAlcohol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you regularly consume alcohol?.
         /// </summary>
         public static string DrinksAlcoholLabel {
@@ -3190,6 +3298,15 @@ namespace K9.Globalisation {
         public static string EarthElement {
             get {
                 return ResourceManager.GetString("EarthElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EasilyOutOfBreath.
+        /// </summary>
+        public static string EasilyOutOfBreath {
+            get {
+                return ResourceManager.GetString("EasilyOutOfBreath", resourceCulture);
             }
         }
         
@@ -4313,6 +4430,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gas.
+        /// </summary>
+        public static string Gas {
+            get {
+                return ResourceManager.GetString("Gas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you often experience flatulence, especially after meals?.
         /// </summary>
         public static string GasLabel {
@@ -4999,6 +5125,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hiccups.
+        /// </summary>
+        public static string Hiccups {
+            get {
+                return ResourceManager.GetString("Hiccups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you often experience hiccups?.
         /// </summary>
         public static string HiccupsLabel {
@@ -5013,6 +5148,15 @@ namespace K9.Globalisation {
         public static string High {
             get {
                 return ResourceManager.GetString("High", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HighBloodPressure.
+        /// </summary>
+        public static string HighBloodPressure {
+            get {
+                return ResourceManager.GetString("HighBloodPressure", resourceCulture);
             }
         }
         
@@ -5067,6 +5211,15 @@ namespace K9.Globalisation {
         public static string HistamineDescription {
             get {
                 return ResourceManager.GetString("HistamineDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HistoryOfchronicFatigueOrFibromyalgia.
+        /// </summary>
+        public static string HistoryOfchronicFatigueOrFibromyalgia {
+            get {
+                return ResourceManager.GetString("HistoryOfchronicFatigueOrFibromyalgia", resourceCulture);
             }
         }
         
@@ -5695,6 +5848,15 @@ namespace K9.Globalisation {
         public static string IrritabilityLabel {
             get {
                 return ResourceManager.GetString("IrritabilityLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IrritableBowerl.
+        /// </summary>
+        public static string IrritableBowerl {
+            get {
+                return ResourceManager.GetString("IrritableBowerl", resourceCulture);
             }
         }
         
@@ -6356,6 +6518,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to JointInflammation.
+        /// </summary>
+        public static string JointInflammation {
+            get {
+                return ResourceManager.GetString("JointInflammation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you ever experience joint pain or stiffness?.
         /// </summary>
         public static string JointInflammationLabel {
@@ -6785,6 +6956,15 @@ namespace K9.Globalisation {
         public static string Loop {
             get {
                 return ResourceManager.GetString("Loop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LooseStool.
+        /// </summary>
+        public static string LooseStool {
+            get {
+                return ResourceManager.GetString("LooseStool", resourceCulture);
             }
         }
         
@@ -7444,6 +7624,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MsgSensitivity.
+        /// </summary>
+        public static string MsgSensitivity {
+            get {
+                return ResourceManager.GetString("MsgSensitivity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Does Chinese food often make you feel jittery, groggy or sedated, or does it give you a headache?.
         /// </summary>
         public static string MsgSensitivityLabel {
@@ -8014,6 +8203,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OCD.
+        /// </summary>
+        public static string OCD {
+            get {
+                return ResourceManager.GetString("OCD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you like things to be carefully organised and do you spend a fair amount of time arranging things or making sure that things are just right? Or does chaos (such as a messy house / workplace) make you feel stressed?.
         /// </summary>
         public static string OCDLabel {
@@ -8461,6 +8659,15 @@ namespace K9.Globalisation {
         public static string PaidOnLabel {
             get {
                 return ResourceManager.GetString("PaidOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Palpitations.
+        /// </summary>
+        public static string Palpitations {
+            get {
+                return ResourceManager.GetString("Palpitations", resourceCulture);
             }
         }
         
@@ -10336,6 +10543,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to RootCanals.
+        /// </summary>
+        public static string RootCanals {
+            get {
+                return ResourceManager.GetString("RootCanals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you have any root canals?.
         /// </summary>
         public static string RootCanalsLabel {
@@ -10798,6 +11014,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SkinIssuesDetails.
+        /// </summary>
+        public static string SkinIssuesDetails {
+            get {
+                return ResourceManager.GetString("SkinIssuesDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please provide details of any skin issues you experience.
         /// </summary>
         public static string SkinIssuesDetailsLabel {
@@ -10812,6 +11037,15 @@ namespace K9.Globalisation {
         public static string SkinIssuesLabel {
             get {
                 return ResourceManager.GetString("SkinIssuesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SkinType.
+        /// </summary>
+        public static string SkinType {
+            get {
+                return ResourceManager.GetString("SkinType", resourceCulture);
             }
         }
         
@@ -10866,6 +11100,15 @@ namespace K9.Globalisation {
         public static string SlowInfrequentBowelMovementsLabel {
             get {
                 return ResourceManager.GetString("SlowInfrequentBowelMovementsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SlowWoundHealing.
+        /// </summary>
+        public static string SlowWoundHealing {
+            get {
+                return ResourceManager.GetString("SlowWoundHealing", resourceCulture);
             }
         }
         
@@ -11485,6 +11728,15 @@ namespace K9.Globalisation {
         public static string SuggestedRetailPriceLabel {
             get {
                 return ResourceManager.GetString("SuggestedRetailPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SulfiteSensitivity.
+        /// </summary>
+        public static string SulfiteSensitivity {
+            get {
+                return ResourceManager.GetString("SulfiteSensitivity", resourceCulture);
             }
         }
         
@@ -12129,6 +12381,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TMJ.
+        /// </summary>
+        public static string TMJ {
+            get {
+                return ResourceManager.GetString("TMJ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you experience neuralgia or TMJ issues?.
         /// </summary>
         public static string TMJLabel {
@@ -12153,6 +12414,15 @@ namespace K9.Globalisation {
         public static string TolerantDescription {
             get {
                 return ResourceManager.GetString("TolerantDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ToothPain.
+        /// </summary>
+        public static string ToothPain {
+            get {
+                return ResourceManager.GetString("ToothPain", resourceCulture);
             }
         }
         
@@ -12722,6 +12992,15 @@ namespace K9.Globalisation {
         public static string UserProtocols {
             get {
                 return ResourceManager.GetString("UserProtocols", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UTI.
+        /// </summary>
+        public static string UTI {
+            get {
+                return ResourceManager.GetString("UTI", resourceCulture);
             }
         }
         
