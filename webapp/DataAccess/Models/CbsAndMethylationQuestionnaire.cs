@@ -60,28 +60,28 @@ namespace K9.DataAccessLayer.Models
 
         [Score(Cbs = true, ScoreFactor = 2)]
         [Score(Cognition = true, NeurologicalHealth = true, Mood = true, HormoneBalance = true, AntiInflammatory = true, Vitality = true, Restorative = true,
-            IsYin = true, VataDosha = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true)]
+            IsYin = true, VataDosha = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true, IsOmega6Intolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DepressionAnxiety)]
         public bool DepressionAnxiety { get; set; }
 
-        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, Detoxification = true, StressRelief = true, CellularHealth = true, VataDosha = true, IsYin = true, ScoreFactor = 2, IsOxalateIntolerance = true, Cbs = true, IsPhytateIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true)]
+        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, Detoxification = true, StressRelief = true, CellularHealth = true, VataDosha = true, IsYin = true, ScoreFactor = 2, IsOxalateIntolerance = true, Cbs = true, IsPhytateIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true, IsOmega6Intolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MemoryProblems)]
         public bool MemoryProblems { get; set; }
 
-        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, IsOxalateIntolerance = true, Cbs = true, IsPhytateIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true)]
+        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, IsOxalateIntolerance = true, Cbs = true, IsPhytateIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true, IsOmega6Intolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ConcentrationProblems)]
         public bool ConcentrationProblems { get; set; }
 
         [Score(Cbs = true, ScoreFactor = 2)]
-        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, VataDosha = true, IsYin = true, IsOxalateIntolerance = true, IsPhytateIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true)]
+        [Score(Cognition = true, NeurologicalHealth = true, Mood = true, VataDosha = true, IsYin = true, IsOxalateIntolerance = true, IsPhytateIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true, IsOmega6Intolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BrainFog)]
         public bool BrainFog { get; set; }
 
-        [Score(Sleep = true, StressRelief = true, Cognition = true, NeurologicalHealth = true, VataDosha = true, IsOxalateIntolerance = true, Cbs = true)]
+        [Score(Sleep = true, StressRelief = true, Cognition = true, NeurologicalHealth = true, VataDosha = true, IsOxalateIntolerance = true, Cbs = true, IsOmega6Intolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.Cbs)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Insomnia)]
         public bool Insomnia { get; set; }
