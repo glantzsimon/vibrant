@@ -23,7 +23,14 @@
                 var value = Model.GetProperty(property);
                 if (value != null)
                 {
-                    if ((EYesNo)value == EYesNo.Yes)
+                    if (value.GetType() == typeof(bool))
+                    {
+                        if ((bool)value == true)
+                        {
+                            <span class="summary-item">@property.Name.SplitOnCapitalLetter()</span>
+                        }
+                    }
+                    else if ((EYesNo)value == EYesNo.Yes)
                     {
                         <span class="summary-item">@property.Name.SplitOnCapitalLetter()</span>
                     }
@@ -61,7 +68,7 @@
         </div>
     </div>
 
-    @if (Model.SkinIssues == EYesNo.Yes)
+    @if (Model.SkinIssues)
     {
         <div class="row">
             <div class="col-xs-12 col-md-6">

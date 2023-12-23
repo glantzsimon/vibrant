@@ -36,7 +36,14 @@
                 var value = Model.GetProperty(property);
                 if (value != null)
                 {
-                    if ((EYesNo)value == EYesNo.Yes)
+                    if (value.GetType() == typeof(bool))
+                    {
+                        if ((bool)value)
+                        {
+                            <span class="summary-item">@property.Name.SplitOnCapitalLetter()</span>
+                        }
+                    }
+                    else if ((EYesNo)value == EYesNo.Yes)
                     {
                         <span class="summary-item">@property.Name.SplitOnCapitalLetter()</span>
                     }
