@@ -685,27 +685,27 @@ namespace K9.DataAccessLayer.Models
 
         [Score(CardioVascularHealth = true, PittaDosha = true, IsYang = true, IsInflammation = true, IsOxalateIntolerance = true, IsOmega6Intolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HighBloodPressureLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HighBloodPressure)]
         public bool HighBloodPressure { get; set; }
 
         [Score(CardioVascularHealth = true, VataDosha = true, IsYin = true, IsHistamineIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LowBloodPressureLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LowBloodPressure)]
         public bool LowBloodPressure { get; set; }
 
         [Score(CardioVascularHealth = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChestPainLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChestPain)]
         public bool ChestPain { get; set; }
 
         [Score(CardioVascularHealth = true, IsOxalateIntolerance = true, IsOmega6Intolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PalpitationsLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Palpitations)]
         public bool Palpitations { get; set; }
 
         [Score(CardioVascularHealth = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EasilyOutOfBreathLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EasilyOutOfBreath)]
         public bool EasilyOutOfBreath { get; set; }
 
         [Score(CardioVascularHealth = true)]
@@ -724,12 +724,12 @@ namespace K9.DataAccessLayer.Models
 
         [Score(DigestiveHealth = true, VataDosha = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BloatingLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Bloating)]
         public bool Bloating { get; set; }
 
         [Score(DigestiveHealth = true, PittaDosha = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true, IsOmega6Intolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IrritableBowerlLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IrritableBowerl)]
         public bool IBS { get; set; }
 
         [Score(DigestiveHealth = true, IsOxalateIntolerance = true)]
@@ -739,27 +739,27 @@ namespace K9.DataAccessLayer.Models
 
         [Score(DigestiveHealth = true, VataDosha = true, IsOxalateIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.GasLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Gas)]
         public bool Gas { get; set; }
 
         [Score(DigestiveHealth = true, PittaDosha = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true, IsMycotoxinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LooseStoolLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LooseStool)]
         public bool LooseStool { get; set; }
 
         [Score(DigestiveHealth = true, VataDosha = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true, IsMycotoxinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ConstipationLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Constipation)]
         public bool Constipation { get; set; }
 
         [Score(DigestiveHealth = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AbdominalPainOrCrampingLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AbdominalPainOrCramping)]
         public bool AbdominalPainOrCramping { get; set; }
 
         [Score(DigestiveHealth = true, IsYang = true, PittaDosha = true, IsOmega6Intolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinIssuesLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinIssues)]
         public bool SkinIssues { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinIssuesDetailsLabel)]
@@ -770,7 +770,7 @@ namespace K9.DataAccessLayer.Models
 
         [Score(DigestiveHealth = true, Immunity = true, Detoxification = true, DentalHealth = true, KaphaDosha = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CoatedTongueLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CoatedTongue)]
         public bool CoatedTongue { get; set; }
 
         [Score(DigestiveHealth = true, Immunity = true, Detoxification = true, IsOxalateIntolerance = true)]
@@ -785,7 +785,7 @@ namespace K9.DataAccessLayer.Models
 
         [Score(Restorative = true, Immunity = true, IsYin = true, IsOxalateIntolerance = true, IsMycotoxinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CandidaFungusLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CandidaFungus)]
         public bool CandidaAndFungus { get; set; }
 
         [Score(DigestiveHealth = true, IsPhytateIntolerance = true, IsOxalateIntolerance = true, Cbs = true, IsYin = true, VataDosha = true, IsMycotoxinIntolerance = true)]
@@ -836,12 +836,12 @@ namespace K9.DataAccessLayer.Models
 
         [Score(Restorative = true, IsYin = true, VataDosha = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColdExtremitiesLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColdExtremities)]
         public bool ColdExtremities { get; set; }
 
         [Score(Restorative = true, IsYin = true, VataDosha = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColdIntolerantLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ColdIntolerant)]
         public bool ColdIntolerant { get; set; }
 
         public int GetYinImbalanceScore()
@@ -855,12 +855,12 @@ namespace K9.DataAccessLayer.Models
 
         [Score(Immunity = true, IsOxalateIntolerance = true, RespiratoryHealth = true, IsOmega6Intolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AsthmaLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Asthma)]
         public bool Asthma { get; set; }
 
         [Score(Immunity = true, IsOxalateIntolerance = true, RespiratoryHealth = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AsthmaLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BronchitisLabel)]
         public bool Bronchitis { get; set; }
 
         [Score(Immunity = true, IsOxalateIntolerance = true, RespiratoryHealth = true)]
@@ -901,7 +901,7 @@ namespace K9.DataAccessLayer.Models
 
         [Score(AntiInflammatory = true, Immunity = true, Detoxification = true, IsYang = true, PittaDosha = true, IsInflammation = true, IsOxalateIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true, IsOmega6Intolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.JointInflammationLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.JointInflammation)]
         public bool JointInflammation { get; set; }
 
         [Score(AntiInflammatory = true, IsInflammation = true, IsOxalateIntolerance = true)]
@@ -921,12 +921,12 @@ namespace K9.DataAccessLayer.Models
 
         [Score(AntiInflammatory = true, Detoxification = true, Immunity = true, IsYang = true, PittaDosha = true, IsInflammation = true, IsOxalateIntolerance = true, IsLectinIntolerance = true, IsOmega6Intolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AutoImmunityLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AutoImmunity, Description = Strings.Labels.AutoImmunityLabel)]
         public bool Autoimmunity { get; set; }
 
         [Score(AntiInflammatory = true, IsInflammation = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BackPainLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CataractsLabel)]
         public bool Cataracts { get; set; }
 
         [Score(Immunity = true, UrologicalHealth = true, Detoxification = true, IsYin = true, IsOxalateIntolerance = true)]
@@ -936,7 +936,7 @@ namespace K9.DataAccessLayer.Models
 
         [Score(Immunity = true, UrologicalHealth = true, Detoxification = true, IsYin = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.UTI)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.KidneyStones)]
         public bool KidneyStones { get; set; }
 
         [Score(Immunity = true, UrologicalHealth = true, Detoxification = true, IsYin = true, IsOxalateIntolerance = true)]
@@ -1184,22 +1184,22 @@ namespace K9.DataAccessLayer.Models
 
         [Score(Detoxification = true, DentalHealth = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmalgamFillingsLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmalgamFillings,  Description = Strings.Labels.AmalgamFillingsLabel)]
         public bool AmalgamFillings { get; set; }
 
         [Score(Detoxification = true, DentalHealth = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmalgamFillingsHistoryLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmalgamFillingsHistory, Description = Strings.Labels.AmalgamFillingsHistoryLabel)]
         public bool AmalgamFillingsHistory { get; set; }
 
         [Score(Immunity = true, DentalHealth = true, Restorative = true, IsPhytateIntolerance = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ToothPainLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ToothPain)]
         public bool ToothPain { get; set; }
 
         [Score(Immunity = true, DentalHealth = true, Restorative = true, IsPhytateIntolerance = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TMJLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TMJ)]
         public bool TMJ { get; set; }
 
         [Score(Immunity = true, DentalHealth = true, Restorative = true)]

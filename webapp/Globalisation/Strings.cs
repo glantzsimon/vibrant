@@ -432,6 +432,7 @@
             public const string SkinIssues ="SkinIssues";
             public const string HighBloodPressure ="HighBloodPressure";
             public const string ChestPain ="ChestPain";
+            public const string LowBloodPressure ="LowBloodPressure";
             public const string Palpitations ="Palpitations";
             public const string EasilyOutOfBreath ="EasilyOutOfBreath";
             public const string AutoImmunity ="AutoImmunity";

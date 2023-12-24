@@ -742,6 +742,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Asthma.
+        /// </summary>
+        public static string Asthma {
+            get {
+                return ResourceManager.GetString("Asthma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you suffer from asthma?.
         /// </summary>
         public static string AsthmaLabel {
@@ -780,9 +789,9 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Autoimmunity.
         /// </summary>
-        public static string Autoimmunity {
+        public static string AutoImmunity {
             get {
-                return ResourceManager.GetString("Autoimmunity", resourceCulture);
+                return ResourceManager.GetString("AutoImmunity", resourceCulture);
             }
         }
         
@@ -1267,6 +1276,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Candida / Fungus.
+        /// </summary>
+        public static string CandidaFungus {
+            get {
+                return ResourceManager.GetString("CandidaFungus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you often experience issues related to candida or other yeast or fungus, such as athlete&apos;s foot, thrush, etc?.
         /// </summary>
         public static string CandidaFungusLabel {
@@ -1411,7 +1429,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you have any cavities?.
+        ///   Looks up a localized string similar to Cavities.
         /// </summary>
         public static string Cavities {
             get {
@@ -2217,7 +2235,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you have any cracked teeth?.
+        ///   Looks up a localized string similar to Cracked Teeth.
         /// </summary>
         public static string CrackedTeeth {
             get {
@@ -7001,6 +7019,15 @@ namespace K9.Globalisation {
         public static string Low {
             get {
                 return ResourceManager.GetString("Low", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low Blood Pressure.
+        /// </summary>
+        public static string LowBloodPressure {
+            get {
+                return ResourceManager.GetString("LowBloodPressure", resourceCulture);
             }
         }
         

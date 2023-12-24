@@ -169,13 +169,13 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopPriceLabel)]
         [DataType(DataType.Currency)]
-        public double GetShopPrice() => Price *= 0.15;
+        public double GetShopPrice() => Price + (Price * 0.15);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         public string GetFormattedPrice() => Price.ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
-        public string GetFormattedShopPrice() => GetShopPrice().ToString("C0", CultureInfo.GetCultureInfo("th-TH"));
+        public string GetFormattedShopPrice() => string.Format(CultureInfo.GetCultureInfo("th-TH"), "{0:C}", GetShopPrice());
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [DataType(DataType.Currency)]
