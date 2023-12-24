@@ -715,7 +715,7 @@ namespace K9.DataAccessLayer.Models
 
         [Score(CardioVascularHealth = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HeartAttackLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HeartAttack, Description = Strings.Labels.HeartAttackLabel)]
         public bool HeartAttack { get; set; }
 
         #endregion
@@ -1214,7 +1214,7 @@ namespace K9.DataAccessLayer.Models
 
         [Score(Immunity = true, DentalHealth = true, Restorative = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RootCanalsLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RootCanals)]
         public bool RootCanals { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DentalIssuesLabel)]

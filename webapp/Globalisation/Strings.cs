@@ -434,6 +434,7 @@
             public const string ChestPain ="ChestPain";
             public const string LowBloodPressure ="LowBloodPressure";
             public const string Palpitations ="Palpitations";
+            public const string HeartAttack ="HeartAttack";
             public const string EasilyOutOfBreath ="EasilyOutOfBreath";
             public const string AutoImmunity ="AutoImmunity";
             public const string SkinIssuesDetails ="SkinIssuesDetails";

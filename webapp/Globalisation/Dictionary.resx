@@ -4588,6 +4588,9 @@
   <data name="CandidaFungus" xml:space="preserve">
     <value>Candida / Fungus</value>
   </data>
+  <data name="HeartAttack" xml:space="preserve">
+    <value>Heart Attack</value>
+  </data>
   <data name="LowBloodPressure" xml:space="preserve">
     <value>Low Blood Pressure</value>
   </data>

@@ -5026,6 +5026,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Heart Attack.
+        /// </summary>
+        public static string HeartAttack {
+            get {
+                return ResourceManager.GetString("HeartAttack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Have you ever had a heart attack or been diagnosed as at risk?.
         /// </summary>
         public static string HeartAttackLabel {
