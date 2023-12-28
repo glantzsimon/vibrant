@@ -9458,6 +9458,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Printable Food List.
+        /// </summary>
+        public static string PrintableFoodList {
+            get {
+                return ResourceManager.GetString("PrintableFoodList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Priority.
         /// </summary>
         public static string PriorityLabel {

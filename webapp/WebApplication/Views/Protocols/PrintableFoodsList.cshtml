@@ -1,0 +1,53 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.Base.WebApplication.Helpers
+@using K9.DataAccessLayer.Enums
+@using K9.SharedLibrary.Authentication
+@using K9.WebApplication.ViewModels
+
+@model Protocol
+@{
+    Layout = "../Shared/_LayoutPrint.cshtml";
+    ViewBag.SubTitle = Model.Name;
+}
+
+<div class="print-container schedule-print-container">
+    <div class="row">
+        <div class="col-xs-12 center-block">
+            <img src="~/Images/company/logo-small.png" class="center-block" />
+        </div>
+    </div>
+    <br />
+</div>
+
+@if (Model.RecommendedFoods != null && Model.RecommendedFoods.Any())
+{
+    using (Html.BeginForm())
+    {
+        using (Html.BeginBootstrapForm())
+        {
+            <div class="row margin-top-0">
+                <div class="col-xs-12">
+                    <h3 class="margin-top-0">@Dictionary.RecommendedFoods</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.Partial("../Protocols/_PrintableFoodsList",  new RecommendedFoodsViewModel
+                    {
+                        ClientId = Model.ClientId,
+                        GenoType =  Model.GenoType,
+                        Protocol = Model,
+                        RecommendedFoods = Model.RecommendedFoods.Select(e =>
+                        {
+                            var foodItem = e.FoodItem;
+                            foodItem.Score = e.Score;
+                            foodItem.RelativeScore = e.RelativeScore;
+                            return foodItem;
+                        }).ToList()
+                    }))
+                </div>
+            </div>
+        }
+    }
+}

@@ -4657,6 +4657,9 @@
   <data name="PhytateIntolerance" xml:space="preserve">
     <value>Phytate Intolerance</value>
   </data>
+  <data name="PrintableFoodList" xml:space="preserve">
+    <value>Printable Food List</value>
+  </data>
   <data name="SattvicDescription" xml:space="preserve">
     <value>A sattvic diet is a diet based on foods that contain one of the three yogic qualities (guna) known as sattva. In this system of dietary classification, foods that decrease the energy of the body are considered tamasic, while those that increase the energy of the body are considered rajasic. A sattvic diet is sometimes referred to as a yogic diet in modern literature.
 

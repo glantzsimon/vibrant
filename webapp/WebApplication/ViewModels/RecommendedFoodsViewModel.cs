@@ -35,7 +35,7 @@ namespace K9.WebApplication.ViewModels
         };
 
         public List<FoodItem> RecommendedFoods { get; set; }
-
+        
         public List<FoodItem> GetRecommendedFoodsForLevelAndGroup(EFoodGroup foodGroup, ECompatibilityLevel level)
         {
             switch (GenoType)

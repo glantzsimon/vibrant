@@ -1720,6 +1720,8 @@
     <Content Include="Views\Products\_QrCodesQuantitiesFields.cshtml" />
     <Content Include="Views\Products\ViewProductQrCodes.cshtml" />
     <Content Include="Views\Orders\_OrdersTableFields.cshtml" />
+    <Content Include="Views\Protocols\PrintableFoodsList.cshtml" />
+    <Content Include="Views\Protocols\_PrintableFoodsList.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

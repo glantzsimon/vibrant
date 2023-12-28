@@ -1,0 +1,69 @@
+﻿@using K9.Base.DataAccessLayer.Attributes;
+@using K9.Base.WebApplication.Helpers
+@using K9.DataAccessLayer.Attributes
+@using K9.DataAccessLayer.Enums
+@using K9.DataAccessLayer.Helpers
+@using K9.SharedLibrary.Extensions
+@using K9.WebApplication.Helpers
+@model K9.WebApplication.ViewModels.RecommendedFoodsViewModel
+
+@{
+    var levels = new List<ECompatibilityLevel>
+{
+ECompatibilityLevel.Optimal,
+ECompatibilityLevel.Excellent
+};
+}
+
+@if (Model.RecommendedFoods.Any())
+{
+    for (int i = 0; i < Model.FoodGroups.Count; i++)
+    {
+        var foodGroup = Model.FoodGroups[i];
+        var foodGroupName = foodGroup.ToString();
+        var foodGroupDescription = foodGroup.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+
+        <div class="well">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>@foodGroupDescription</h3>
+                </div>
+            </div>
+
+            @foreach (var level in levels)
+            {
+                var levelName = level.GetAttribute<EnumDescriptionAttribute>
+                    ().GetDescription();
+                var compatibilityEnumMetaDataAttribute = level.GetAttribute<ECompatibilityEnumMetaDataAttribute>
+                    ();
+                var levelDescription = compatibilityEnumMetaDataAttribute.GetDescription();
+                var levelColor = compatibilityEnumMetaDataAttribute.Color;
+                var filteredFoods = Model.GetRecommendedFoodsForLevelAndGroup(foodGroup, level);
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4>@levelName</h4>
+                        <p><i>@levelDescription</i></p>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-xs-12">
+                        @if (filteredFoods != null && filteredFoods.Any())
+                        {
+                            for (int j = 0; j < filteredFoods.Count; j++)
+                            {
+                                var recommendedFood = filteredFoods[j];
+
+                                <span data-id="@recommendedFood.Id" class="summary-item recommended-food" style="background-color: @levelColor !important;">
+                                    <span>@recommendedFood.Name</span>
+                                </span>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    }
+}
