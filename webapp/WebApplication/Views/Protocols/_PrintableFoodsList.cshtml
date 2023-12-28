@@ -7,13 +7,6 @@
 @using K9.WebApplication.Helpers
 @model K9.WebApplication.ViewModels.RecommendedFoodsViewModel
 
-@{
-    var levels = new List<ECompatibilityLevel>
-{
-ECompatibilityLevel.Optimal,
-ECompatibilityLevel.Excellent
-};
-}
 
 @if (Model.RecommendedFoods.Any())
 {
@@ -22,48 +15,35 @@ ECompatibilityLevel.Excellent
         var foodGroup = Model.FoodGroups[i];
         var foodGroupName = foodGroup.ToString();
         var foodGroupDescription = foodGroup.GetAttribute<EnumDescriptionAttribute>().GetDescription();
+        var filteredFoods = Model.GetBestFoods(foodGroup);
 
-        <div class="well">
+        <div class="well" style="page-break-inside: avoid;">
 
             <div class="row">
                 <div class="col-xs-12">
-                    <h3>@foodGroupDescription</h3>
+                    <h1>@foodGroupDescription</h1>
                 </div>
             </div>
 
-            @foreach (var level in levels)
-            {
-                var levelName = level.GetAttribute<EnumDescriptionAttribute>
-                    ().GetDescription();
-                var compatibilityEnumMetaDataAttribute = level.GetAttribute<ECompatibilityEnumMetaDataAttribute>
-                    ();
-                var levelDescription = compatibilityEnumMetaDataAttribute.GetDescription();
-                var levelColor = compatibilityEnumMetaDataAttribute.Color;
-                var filteredFoods = Model.GetRecommendedFoodsForLevelAndGroup(foodGroup, level);
+            <br />
 
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h4>@levelName</h4>
-                        <p><i>@levelDescription</i></p>
-                    </div>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-xs-12">
-                        @if (filteredFoods != null && filteredFoods.Any())
+            <div class="row">
+                <div class="col-xs-12">
+                    @if (filteredFoods != null && filteredFoods.Any())
+                    {
+                        for (int j = 0; j < filteredFoods.Count; j++)
                         {
-                            for (int j = 0; j < filteredFoods.Count; j++)
-                            {
-                                var recommendedFood = filteredFoods[j];
+                            var recommendedFood = filteredFoods[j];
 
-                                <span data-id="@recommendedFood.Id" class="summary-item recommended-food" style="background-color: @levelColor !important;">
-                                    <span>@recommendedFood.Name</span>
-                                </span>
-                            }
+                            <span data-id="@recommendedFood.Id" class="summary-item recommended-food" style="background-color: lightblue !important;">
+                                @Html.Raw(recommendedFood.GetRelativeScoreHtml())
+                                <span>@recommendedFood.Name</span>
+                            </span>
                         }
-                    </div>
+                    }
                 </div>
-            }
+            </div>
+
         </div>
     }
 }

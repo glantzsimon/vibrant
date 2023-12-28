@@ -35,7 +35,15 @@ namespace K9.WebApplication.ViewModels
         };
 
         public List<FoodItem> RecommendedFoods { get; set; }
-        
+
+        public List<FoodItem> GetBestFoods(EFoodGroup foodGroup)
+        {
+            var items = new List<FoodItem>();
+            items.AddRange(GetRecommendedFoodsForLevelAndGroup(foodGroup, ECompatibilityLevel.Optimal));
+            items.AddRange(GetRecommendedFoodsForLevelAndGroup(foodGroup, ECompatibilityLevel.Excellent));
+            return items.OrderByDescending(e => e.Score).ThenBy(e => e.Name).ToList();
+        }
+
         public List<FoodItem> GetRecommendedFoodsForLevelAndGroup(EFoodGroup foodGroup, ECompatibilityLevel level)
         {
             switch (GenoType)
