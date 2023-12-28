@@ -193,6 +193,7 @@ namespace K9.WebApplication.Services
                 protocol.IsBulletProof = hq.IsBulletProof;
                 protocol.IsSattvic = hq.IsSattvic;
                 protocol.CurrentHealthLevel = hq.CurrentHealthLevel;
+                protocol.AutomaticallyFilterFoods = hq.AutomaticallyFilterFoods;
             }
 
             protocol.Activities = _protocolActivitiesRepository.Find(e => e.ProtocolId == protocol.Id).ToList();

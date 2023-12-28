@@ -56,6 +56,19 @@ namespace K9.WebApplication.Controllers
             hq.IsBulletProof = model.IsBulletProof;
             hq.IsSattvic = model.IsSattvic;
             hq.CurrentHealthLevel = model.CurrentHealthLevel;
+            hq.AutomaticallyFilterFoods = model.AutomaticallyFilterFoods;
+
+            if (model.AutomaticallyFilterFoods)
+            {
+                var threshold = hq.GetScoreThreshold();
+
+                hq.IsLowOxalate = hq.GetOxalateScore() > threshold;
+                hq.IsLowLectin = hq.GetLectinsScore() > threshold;
+                hq.IsLowPhytate = hq.GetPhytateScore() > threshold;
+                hq.IsLowHistamine = hq.GetHistamineScore() > threshold;
+                hq.IsLowMycotoxin = hq.GetMycotoxinScore() > threshold;
+                hq.IsLowOmega6 = hq.GetOmega6Score() > threshold;
+            }
 
             _healthQuestionnaireService.Save(hq);
 

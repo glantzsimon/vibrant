@@ -102,6 +102,11 @@ namespace K9.DataAccessLayer.Models
         [Max(10)]
         public int? CurrentHealthLevel { get; set; }
 
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AutomaticallyFilterFoodsLabel)]
+        public bool AutomaticallyFilterFoods { get; set; }
+
+
         #endregion
 
         [NotMapped]

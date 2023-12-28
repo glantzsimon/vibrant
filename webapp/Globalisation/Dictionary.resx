@@ -4633,8 +4633,11 @@
   <data name="BalancesWaterLabel" xml:space="preserve">
     <value>Balances Water Element</value>
   </data>
+  <data name="AutomaticallyFilterFoodsLabel" xml:space="preserve">
+    <value>Automatically filter out problematic foods according to how healthy you feel</value>
+  </data>
   <data name="CurrentHealthLevelSliderLabel" xml:space="preserve">
-    <value>On a scale of 1 - 10, how healthy do you feel at the moment? (If feeling unwell, problematic foods will automatically be filtered out to help you recover)</value>
+    <value>On a scale of 1 - 10, how healthy do you feel at the moment?</value>
   </data>
   <data name="HistamineIntolerance" xml:space="preserve">
     <value>Histamine Intolerance</value>

@@ -805,6 +805,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatically filter out problematic foods according to how healthy you feel.
+        /// </summary>
+        public static string AutomaticallyFilterFoodsLabel {
+            get {
+                return ResourceManager.GetString("AutomaticallyFilterFoodsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto Renewal.
         /// </summary>
         public static string AutoRenewLabel {
@@ -2499,7 +2508,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to On a scale of 1 - 10, how healthy do you feel at the moment? (If feeling unwell, problematic foods will automatically be filtered out to help you recover).
+        ///   Looks up a localized string similar to On a scale of 1 - 10, how healthy do you feel at the moment?.
         /// </summary>
         public static string CurrentHealthLevelSliderLabel {
             get {

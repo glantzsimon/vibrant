@@ -1250,6 +1250,9 @@ namespace K9.DataAccessLayer.Models
         [Max(10)]
         public int? CurrentHealthLevel { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AutomaticallyFilterFoodsLabel)]
+        public bool AutomaticallyFilterFoods { get; set; }
+
         /// <summary>
         /// Enables users to use the health level slider and automatically filter out problematic foods
         /// </summary>

@@ -777,6 +777,10 @@
     <Compile Include="Migrations\202312281353335_ShopPayable.Designer.cs">
       <DependentUpon>202312281353335_ShopPayable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312281526108_AutoFilterFoods.cs" />
+    <Compile Include="Migrations\202312281526108_AutoFilterFoods.Designer.cs">
+      <DependentUpon>202312281526108_AutoFilterFoods.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
@@ -1227,6 +1231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312281353335_ShopPayable.resx">
       <DependentUpon>202312281353335_ShopPayable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312281526108_AutoFilterFoods.resx">
+      <DependentUpon>202312281526108_AutoFilterFoods.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

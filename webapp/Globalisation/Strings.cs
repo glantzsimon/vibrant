@@ -534,6 +534,7 @@
             public const string HealthGoalsLabel = "HealthGoalsLabel";
             public const string CurrentHealthLevelLabel = "CurrentHealthLevelLabel";
             public const string CurrentHealthLevelSliderLabel = "CurrentHealthLevelSliderLabel";
+            public const string AutomaticallyFilterFoodsLabel = "AutomaticallyFilterFoodsLabel";
             public const string NutritionExpertiseLevelLabel = "NutritionExpertiseLevelLabel";
             public const string EnjoysCookingLabel = "EnjoysCookingLabel";
             public const string AllergiesAndSensitivitiesLabel = "AllergiesAndSensitivitiesLabel";
