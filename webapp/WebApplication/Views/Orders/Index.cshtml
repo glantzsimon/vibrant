@@ -12,6 +12,7 @@
     var incompleteOrders = Model.GetIncompleteOrders();
     var completeOrders = Model.GetCompleteOrders();
     var ordersOnHold = Model.GetOrdersOnHold();
+    var shopProvisions = Model.GetShopProvisionOrders();
 }
 
 <div class="row">
@@ -50,6 +51,58 @@
     </div>
 
     @foreach (var item in incompleteOrders)
+    {
+        <div class="row table-row">
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.FullName)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.RepId)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.ClientId)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.RequestedOn)
+            </div>
+            <div class="col-xs-2">
+                @Html.DisplayFor(e => item.PaidOn)
+            </div>
+            <div class="col-xs-2">
+                @Html.Partial("_TableCollectionsButtons", item)
+            </div>
+        </div>
+    }
+</div>
+
+<div class="well">
+    <div class="row table-row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.ShopProvisions</h3>
+        </div>
+    </div>
+
+    <div class="row table-row">
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].FullName)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].RepId)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].ClientId)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].RequestedOn)</strong>
+        </div>
+        <div class="col-xs-2">
+            <strong>@Html.LabelFor(e => Model.AllOrders[0].PaidOn)</strong>
+        </div>
+        <div class="col-xs-2">
+        </div>
+    </div>
+
+    @foreach (var item in shopProvisions)
     {
         <div class="row table-row">
             <div class="col-xs-2">

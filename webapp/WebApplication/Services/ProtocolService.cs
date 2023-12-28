@@ -191,6 +191,7 @@ namespace K9.WebApplication.Services
                 protocol.IsLowMycotoxin = hq.IsLowMycotoxin;
                 protocol.IsLowOmega6 = hq.IsLowOmega6;
                 protocol.IsBulletProof = hq.IsBulletProof;
+                protocol.IsSattvic = hq.IsSattvic;
             }
 
             protocol.Activities = _protocolActivitiesRepository.Find(e => e.ProtocolId == protocol.Id).ToList();
@@ -311,12 +312,32 @@ namespace K9.WebApplication.Services
                             {
                                 compatibilityLevel = ECompatibilityLevel.Unsuitable;
                             }
+                            
                             if (protocolFoodItem.FoodItem.IsBulletProof && protocol.IsBulletProof)
                             {
-                                if (compatibilityLevel < ECompatibilityLevel.Suboptimal)
+                                if (compatibilityLevel == ECompatibilityLevel.Excellent || compatibilityLevel == ECompatibilityLevel.Optimal)
                                 {
                                     compatibilityLevel = ECompatibilityLevel.Optimal;
                                     protocolFoodItem.FoodItem.RelativeScore = 99;
+                                }
+                                else if (compatibilityLevel == ECompatibilityLevel.Neutral)
+                                {
+                                    compatibilityLevel = ECompatibilityLevel.Excellent;
+                                    protocolFoodItem.FoodItem.RelativeScore = 77;
+                                };
+                            }
+
+                            if (protocolFoodItem.FoodItem.IsSattvic && protocol.IsSattvic)
+                            {
+                                if (compatibilityLevel == ECompatibilityLevel.Excellent || compatibilityLevel == ECompatibilityLevel.Optimal)
+                                {
+                                    compatibilityLevel = ECompatibilityLevel.Optimal;
+                                    protocolFoodItem.FoodItem.RelativeScore = 99;
+                                }
+                                else if (compatibilityLevel == ECompatibilityLevel.Neutral)
+                                {
+                                    compatibilityLevel = ECompatibilityLevel.Excellent;
+                                    protocolFoodItem.FoodItem.RelativeScore = 77;
                                 };
                             }
                         }

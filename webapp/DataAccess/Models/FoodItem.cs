@@ -132,22 +132,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsWinterLabel)]
         public bool IsWinter { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsWaterElementLabel)]
-        public bool IsWaterElement { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsTreeElementLabel)]
-        public bool IsTreeElement { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsFireElementLabel)]
-        public bool IsFireElement { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsEarthElementLabel)]
-        public bool IsEarthElement { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsMetalElementLabel)]
-        public bool IsMetalElement { get; set; }
-
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHighOxalateLabel)]
         public bool IsHighOxalate { get; set; }
 
@@ -172,6 +157,18 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BulletProofDietLabel)]
         public bool IsBulletProof { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsAggravateVataLabel)]
+        public bool IsAggravatesVata { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsAggravatePittaLabel)]
+        public bool IsAggravatesPitta { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsAggravateKaphaLabel)]
+        public bool IsAggravatesKapha { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsSattvicLabel)]
+        public bool IsSattvic { get; set; }
 
         public string GetFoodAllergyInfo()
         {
@@ -204,6 +201,10 @@ namespace K9.DataAccessLayer.Models
             if (IsBulletProof)
             {
                 AddHtmlToString(sb, Globalisation.Dictionary.IsBulletProofLabel);
+            }
+            if (IsSattvic)
+            {
+                AddHtmlToString(sb, Globalisation.Dictionary.IsSattvicLabel);
             }
 
             return sb.ToString();

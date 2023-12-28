@@ -24,6 +24,11 @@
     var inflammationColor = Model.GetColorFromScore(Model.GetInflammationScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 
     var oxalateColor = Model.GetColorFromScore(Model.GetOxalateScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var histamineColor = Model.GetColorFromScore(Model.GetHistamineScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var phytateColor = Model.GetColorFromScore(Model.GetPhytateScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var lectinColor = Model.GetColorFromScore(Model.GetLectinsScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var mycotoxinColor = Model.GetColorFromScore(Model.GetMycotoxinScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var omega6Color = Model.GetColorFromScore(Model.GetOmega6Score()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 
     var currentHealthColor = Model.GetColorFromScore(Model.GetCurrentHealthScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
     var expertiseColor = Model.GetColorFromScore(Model.GetNutritionExpertiseScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
@@ -266,6 +271,61 @@
                 BackgroundColor = $"rgb({oxalateColor}, 0.33)",
                 StrokeColor = $"rgb({oxalateColor})",
                 Units = $"{Model.GetOxalateScore()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = Model.GetLectinsScore(),
+                Title = Dictionary.LectinIntolerance,
+                BackgroundColor = $"rgb({lectinColor}, 0.33)",
+                StrokeColor = $"rgb({lectinColor})",
+                Units = $"{Model.GetLectinsScore()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = Model.GetPhytateScore(),
+                Title = Dictionary.PhytateIntolerance,
+                BackgroundColor = $"rgb({phytateColor}, 0.33)",
+                StrokeColor = $"rgb({phytateColor})",
+                Units = $"{Model.GetPhytateScore()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = Model.GetHistamineScore(),
+                Title = Dictionary.HistamineIntolerance,
+                BackgroundColor = $"rgb({histamineColor}, 0.33)",
+                StrokeColor = $"rgb({histamineColor})",
+                Units = $"{Model.GetHistamineScore()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = Model.GetMycotoxinScore(),
+                Title = Dictionary.MycotoxinIntolerance,
+                BackgroundColor = $"rgb({mycotoxinColor}, 0.33)",
+                StrokeColor = $"rgb({mycotoxinColor})",
+                Units = $"{Model.GetMycotoxinScore()}%",
+            })
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            @Html.Partial("Controls/_Gauge", new GaugeOptions
+            {
+                MaxValue = 100,
+                Value = Model.GetOmega6Score(),
+                Title = Dictionary.Omega6Intolerance,
+                BackgroundColor = $"rgb({omega6Color}, 0.33)",
+                StrokeColor = $"rgb({omega6Color})",
+                Units = $"{Model.GetOmega6Score()}%",
             })
         </div>
     </div>

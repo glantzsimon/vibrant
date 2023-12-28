@@ -761,6 +761,14 @@
     <Compile Include="Migrations\202312230435200_MoreFieldsHQFields.Designer.cs">
       <DependentUpon>202312230435200_MoreFieldsHQFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312280858233_Refactoring.cs" />
+    <Compile Include="Migrations\202312280858233_Refactoring.Designer.cs">
+      <DependentUpon>202312280858233_Refactoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312280933097_SattvicColumns.cs" />
+    <Compile Include="Migrations\202312280933097_SattvicColumns.Designer.cs">
+      <DependentUpon>202312280933097_SattvicColumns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
@@ -1199,6 +1207,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312230435200_MoreFieldsHQFields.resx">
       <DependentUpon>202312230435200_MoreFieldsHQFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312280858233_Refactoring.resx">
+      <DependentUpon>202312280858233_Refactoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312280933097_SattvicColumns.resx">
+      <DependentUpon>202312280933097_SattvicColumns.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -36,6 +36,16 @@ namespace K9.DataAccessLayer.Models
                 return EScore.Medium;
             }
 
+            if (RelativeScore <= 30)
+            {
+                return EScore.Low;
+            }
+
+            if (RelativeScore <= 13)
+            {
+                return EScore.VeryLow;
+            }
+
             return EScore.Low;
         }
 
@@ -56,13 +66,13 @@ namespace K9.DataAccessLayer.Models
             return "";
         }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.VataDosha)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BalancesVataLabel)]
         public bool VataDosha { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.PittaDosha)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BalancesPittaLabel)]
         public bool PittaDosha { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.KaphaDosha)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BalancesKaphaLabel)]
         public bool KaphaDosha { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Hunter)]
@@ -143,19 +153,19 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.NomadFrequency)]
         public EFoodFrequency? NomadFrequency { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Water)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BalancesWaterLabel)]
         public bool Water { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Earth)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BalancesEarthLabel)]
         public bool Earth { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Tree)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BalancesTreeLabel)]
         public bool Tree { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Metal)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BalancesMetalLabel)]
         public bool Metal { get; set; }
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Fire)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BalancesFireLabel)]
         public bool Fire { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Cbs)]

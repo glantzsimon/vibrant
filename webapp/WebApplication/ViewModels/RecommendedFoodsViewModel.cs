@@ -41,22 +41,9 @@ namespace K9.WebApplication.ViewModels
             switch (GenoType)
             {
                 case EGenoType.Hunter:
-                    // Upgrade highest-scoring items
                     foreach (var recommendedFood in RecommendedFoods)
                     {
-                        if (recommendedFood.RelativeScore >= 90 && recommendedFood.HunterCompatibilityLevel < ECompatibilityLevel.Suboptimal)
-                        {
-                            recommendedFood.HunterCompatibilityLevel = ECompatibilityLevel.Optimal;
-                        }
-                        else if (recommendedFood.RelativeScore >= 80 && recommendedFood.HunterCompatibilityLevel == ECompatibilityLevel.Neutral)
-                        {
-                            recommendedFood.HunterCompatibilityLevel = ECompatibilityLevel.Excellent;
-                        }
-                        else if (recommendedFood.RelativeScore >= 70 && (recommendedFood.HunterCompatibilityLevel == ECompatibilityLevel.Suboptimal || recommendedFood.HunterCompatibilityLevel == ECompatibilityLevel.Unsuitable))
-
-                        {
-                            recommendedFood.RelativeScore = 0;
-                        }
+                        recommendedFood.HunterCompatibilityLevel = GetCompatibilityLevel(recommendedFood, recommendedFood.HunterCompatibilityLevel);
                     }
 
                     if (foodGroup == EFoodGroup.Other)
@@ -74,19 +61,7 @@ namespace K9.WebApplication.ViewModels
                     // Upgrade highest-scoring items
                     foreach (var recommendedFood in RecommendedFoods)
                     {
-                        if (recommendedFood.RelativeScore >= 90 && recommendedFood.GathererCompatibilityLevel < ECompatibilityLevel.Suboptimal)
-                        {
-                            recommendedFood.GathererCompatibilityLevel = ECompatibilityLevel.Optimal;
-                        }
-                        else if (recommendedFood.RelativeScore >= 80 && recommendedFood.GathererCompatibilityLevel == ECompatibilityLevel.Neutral)
-                        {
-                            recommendedFood.GathererCompatibilityLevel = ECompatibilityLevel.Excellent;
-                        }
-                        else if (recommendedFood.RelativeScore >= 70 && (recommendedFood.GathererCompatibilityLevel == ECompatibilityLevel.Suboptimal || recommendedFood.GathererCompatibilityLevel == ECompatibilityLevel.Unsuitable))
-
-                        {
-                            recommendedFood.RelativeScore = 0;
-                        }
+                        recommendedFood.GathererCompatibilityLevel = GetCompatibilityLevel(recommendedFood, recommendedFood.GathererCompatibilityLevel);
                     }
 
                     if (foodGroup == EFoodGroup.Other)
@@ -104,19 +79,7 @@ namespace K9.WebApplication.ViewModels
                     // Upgrade highest-scoring items
                     foreach (var recommendedFood in RecommendedFoods)
                     {
-                        if (recommendedFood.RelativeScore >= 90 && recommendedFood.TeacherCompatibilityLevel < ECompatibilityLevel.Suboptimal)
-                        {
-                            recommendedFood.TeacherCompatibilityLevel = ECompatibilityLevel.Optimal;
-                        }
-                        else if (recommendedFood.RelativeScore >= 80 && recommendedFood.TeacherCompatibilityLevel == ECompatibilityLevel.Neutral)
-                        {
-                            recommendedFood.TeacherCompatibilityLevel = ECompatibilityLevel.Excellent;
-                        }
-                        else if (recommendedFood.RelativeScore >= 70 && (recommendedFood.TeacherCompatibilityLevel == ECompatibilityLevel.Suboptimal || recommendedFood.TeacherCompatibilityLevel == ECompatibilityLevel.Unsuitable))
-
-                        {
-                            recommendedFood.RelativeScore = 0;
-                        }
+                        recommendedFood.TeacherCompatibilityLevel = GetCompatibilityLevel(recommendedFood, recommendedFood.TeacherCompatibilityLevel);
                     }
 
                     if (foodGroup == EFoodGroup.Other)
@@ -134,19 +97,7 @@ namespace K9.WebApplication.ViewModels
                     // Upgrade highest-scoring items
                     foreach (var recommendedFood in RecommendedFoods)
                     {
-                        if (recommendedFood.RelativeScore >= 90 && recommendedFood.ExplorerCompatibilityLevel < ECompatibilityLevel.Suboptimal)
-                        {
-                            recommendedFood.ExplorerCompatibilityLevel = ECompatibilityLevel.Optimal;
-                        }
-                        else if (recommendedFood.RelativeScore >= 80 && recommendedFood.ExplorerCompatibilityLevel == ECompatibilityLevel.Neutral)
-                        {
-                            recommendedFood.ExplorerCompatibilityLevel = ECompatibilityLevel.Excellent;
-                        }
-                        else if (recommendedFood.RelativeScore >= 70 && (recommendedFood.ExplorerCompatibilityLevel == ECompatibilityLevel.Suboptimal || recommendedFood.ExplorerCompatibilityLevel == ECompatibilityLevel.Unsuitable))
-
-                        {
-                            recommendedFood.RelativeScore = 0;
-                        }
+                        recommendedFood.ExplorerCompatibilityLevel = GetCompatibilityLevel(recommendedFood, recommendedFood.ExplorerCompatibilityLevel);
                     }
 
                     if (foodGroup == EFoodGroup.Other)
@@ -164,19 +115,7 @@ namespace K9.WebApplication.ViewModels
                     // Upgrade highest-scoring items
                     foreach (var recommendedFood in RecommendedFoods)
                     {
-                        if (recommendedFood.RelativeScore >= 90 && recommendedFood.WarriorCompatibilityLevel < ECompatibilityLevel.Suboptimal)
-                        {
-                            recommendedFood.WarriorCompatibilityLevel = ECompatibilityLevel.Optimal;
-                        }
-                        else if (recommendedFood.RelativeScore >= 80 && recommendedFood.WarriorCompatibilityLevel == ECompatibilityLevel.Neutral)
-                        {
-                            recommendedFood.WarriorCompatibilityLevel = ECompatibilityLevel.Excellent;
-                        }
-                        else if (recommendedFood.RelativeScore >= 70 && (recommendedFood.WarriorCompatibilityLevel == ECompatibilityLevel.Suboptimal || recommendedFood.WarriorCompatibilityLevel == ECompatibilityLevel.Unsuitable))
-
-                        {
-                            recommendedFood.RelativeScore = 0;
-                        }
+                        recommendedFood.WarriorCompatibilityLevel = GetCompatibilityLevel(recommendedFood, recommendedFood.WarriorCompatibilityLevel);
                     }
 
                     if (foodGroup == EFoodGroup.Other)
@@ -194,19 +133,7 @@ namespace K9.WebApplication.ViewModels
                     // Upgrade highest-scoring items
                     foreach (var recommendedFood in RecommendedFoods)
                     {
-                        if (recommendedFood.RelativeScore >= 90 && recommendedFood.NomadCompatibilityLevel < ECompatibilityLevel.Suboptimal)
-                        {
-                            recommendedFood.NomadCompatibilityLevel = ECompatibilityLevel.Optimal;
-                        }
-                        else if (recommendedFood.RelativeScore >= 80 && recommendedFood.NomadCompatibilityLevel == ECompatibilityLevel.Neutral)
-                        {
-                            recommendedFood.NomadCompatibilityLevel = ECompatibilityLevel.Excellent;
-                        }
-                        else if (recommendedFood.RelativeScore >= 70 && (recommendedFood.NomadCompatibilityLevel == ECompatibilityLevel.Suboptimal || recommendedFood.NomadCompatibilityLevel == ECompatibilityLevel.Unsuitable))
-
-                        {
-                            recommendedFood.RelativeScore = 0;
-                        }
+                        recommendedFood.NomadCompatibilityLevel = GetCompatibilityLevel(recommendedFood, recommendedFood.NomadCompatibilityLevel);
                     }
 
                     if (foodGroup == EFoodGroup.Other)
@@ -222,6 +149,72 @@ namespace K9.WebApplication.ViewModels
             }
 
             return null;
+        }
+
+        private static ECompatibilityLevel GetCompatibilityLevel(FoodItem recommendedFood, ECompatibilityLevel compatibilityLevel)
+        {
+            var score = recommendedFood.GetScore();
+
+            // Upgrade highest-scoring items
+            if (score == EScore.VeryHigh
+                && compatibilityLevel != ECompatibilityLevel.Unsuitable
+                && compatibilityLevel != ECompatibilityLevel.Suboptimal)
+            {
+                return ECompatibilityLevel.Optimal;
+            }
+
+            else if (score == EScore.High
+                     && compatibilityLevel == ECompatibilityLevel.Neutral)
+            {
+                return ECompatibilityLevel.Excellent;
+            }
+
+            else if (score >= EScore.High && (compatibilityLevel == ECompatibilityLevel.Suboptimal ||
+                                              compatibilityLevel == ECompatibilityLevel.Unsuitable))
+
+            {
+                recommendedFood.RelativeScore = 0;
+            }
+
+            // Downgrade lowest scoring items
+            else if (score == EScore.VeryLow)
+            {
+                if (compatibilityLevel == ECompatibilityLevel.Optimal)
+                {
+                    return ECompatibilityLevel.Neutral;
+                }
+
+                else if (compatibilityLevel == ECompatibilityLevel.Excellent)
+                {
+                    return ECompatibilityLevel.Suboptimal;
+                }
+
+                else if (compatibilityLevel == ECompatibilityLevel.Neutral
+                         || compatibilityLevel == ECompatibilityLevel.Suboptimal)
+                {
+                    return ECompatibilityLevel.Unsuitable;
+                }
+            }
+
+            else if (score == EScore.Low)
+            {
+                if (compatibilityLevel == ECompatibilityLevel.Optimal)
+                {
+                    return ECompatibilityLevel.Excellent;
+                }
+
+                else if (compatibilityLevel == ECompatibilityLevel.Excellent)
+                {
+                    return ECompatibilityLevel.Neutral;
+                }
+
+                else if (compatibilityLevel == ECompatibilityLevel.Neutral)
+                {
+                    return ECompatibilityLevel.Suboptimal;
+                }
+            }
+
+            return compatibilityLevel;
         }
     }
 }

@@ -3,34 +3,34 @@ using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Services
 {
-    public class FiveElementScore : IScore
+    public class FiveElementScore 
     {
-        public int GetScore(HealthQuestionnaire hq, EGenoType genoType, GenoTypeBase item)
+        public int GetScore(HealthQuestionnaire hq, FoodItem foodItem)
         {
             var score = 0;
             var nineStarKi = hq.GetNineStarKiModel();
 
-            if (item.Water && nineStarKi.MainEnergy == ENineStarKiEnergy.Water)
+            if (foodItem.Water && nineStarKi.MainEnergy == ENineStarKiEnergy.Water)
             {
                 score += 7;
             }
-            if (item.Tree && nineStarKi.MainEnergy == ENineStarKiEnergy.Thunder || 
+            if (foodItem.Tree && nineStarKi.MainEnergy == ENineStarKiEnergy.Thunder || 
                              nineStarKi.MainEnergy == ENineStarKiEnergy.Wind)
             {
                 score += 7;
             }
-            if (item.Earth && nineStarKi.MainEnergy == ENineStarKiEnergy.Soil || 
+            if (foodItem.Earth && nineStarKi.MainEnergy == ENineStarKiEnergy.Soil || 
                               nineStarKi.MainEnergy == ENineStarKiEnergy.CoreEarth ||
                               nineStarKi.MainEnergy == ENineStarKiEnergy.Mountain)
             {
                 score += 7;
             }
-            if (item.Metal && nineStarKi.MainEnergy == ENineStarKiEnergy.Heaven ||
+            if (foodItem.Metal && nineStarKi.MainEnergy == ENineStarKiEnergy.Heaven ||
                               nineStarKi.MainEnergy == ENineStarKiEnergy.Lake)
             {
                 score += 7;
             }
-            if (item.Fire && nineStarKi.MainEnergy == ENineStarKiEnergy.Fire)
+            if (foodItem.Fire && nineStarKi.MainEnergy == ENineStarKiEnergy.Fire)
             {
                 score += 7;
             }

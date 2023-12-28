@@ -5,10 +5,9 @@ namespace K9.WebApplication.Services
 {
     public class SeasonScore 
     {
-        public int GetScore(HealthQuestionnaire hq, ESeason season, GenoTypeBase item)
+        public int GetScore(HealthQuestionnaire hq, ESeason season, FoodItem foodItem)
         {
             var score = 0;
-            FoodItem foodItem = item as FoodItem;
 
             switch (season)
             {

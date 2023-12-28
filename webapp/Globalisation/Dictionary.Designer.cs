@@ -850,6 +850,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ayurvedic Properties.
+        /// </summary>
+        public static string AyurvedicProperties {
+            get {
+                return ResourceManager.GetString("AyurvedicProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to B.
         /// </summary>
         public static string B {
@@ -882,6 +891,78 @@ namespace K9.Globalisation {
         public static string BackPainLabel {
             get {
                 return ResourceManager.GetString("BackPainLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balances Earth Element.
+        /// </summary>
+        public static string BalancesEarthLabel {
+            get {
+                return ResourceManager.GetString("BalancesEarthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balances Fire Element.
+        /// </summary>
+        public static string BalancesFireLabel {
+            get {
+                return ResourceManager.GetString("BalancesFireLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balances Kapha Dosha.
+        /// </summary>
+        public static string BalancesKaphaLabel {
+            get {
+                return ResourceManager.GetString("BalancesKaphaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balances Metal Element.
+        /// </summary>
+        public static string BalancesMetalLabel {
+            get {
+                return ResourceManager.GetString("BalancesMetalLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balances Pitta Dosha.
+        /// </summary>
+        public static string BalancesPittaLabel {
+            get {
+                return ResourceManager.GetString("BalancesPittaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balances Tree Element.
+        /// </summary>
+        public static string BalancesTreeLabel {
+            get {
+                return ResourceManager.GetString("BalancesTreeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balances Vata Dosha.
+        /// </summary>
+        public static string BalancesVataLabel {
+            get {
+                return ResourceManager.GetString("BalancesVataLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balances Water Element.
+        /// </summary>
+        public static string BalancesWaterLabel {
+            get {
+                return ResourceManager.GetString("BalancesWaterLabel", resourceCulture);
             }
         }
         
@@ -5242,6 +5323,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Histamine Intolerance.
+        /// </summary>
+        public static string HistamineIntolerance {
+            get {
+                return ResourceManager.GetString("HistamineIntolerance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to HistoryOfchronicFatigueOrFibromyalgia.
         /// </summary>
         public static string HistoryOfchronicFatigueOrFibromyalgia {
@@ -5906,6 +5996,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aggravates Kapha.
+        /// </summary>
+        public static string IsAggravateKaphaLabel {
+            get {
+                return ResourceManager.GetString("IsAggravateKaphaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aggravates Pitta.
+        /// </summary>
+        public static string IsAggravatePittaLabel {
+            get {
+                return ResourceManager.GetString("IsAggravatePittaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aggravates Vata.
+        /// </summary>
+        public static string IsAggravateVataLabel {
+            get {
+                return ResourceManager.GetString("IsAggravateVataLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Astringent.
         /// </summary>
         public static string IsAstringentLabel {
@@ -6347,6 +6464,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sattvic.
+        /// </summary>
+        public static string IsSattvicLabel {
+            get {
+                return ResourceManager.GetString("IsSattvicLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Selected.
         /// </summary>
         public static string IsSelectedLabel {
@@ -6716,6 +6842,15 @@ namespace K9.Globalisation {
         public static string LectinDescription {
             get {
                 return ResourceManager.GetString("LectinDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lectin Intolerance.
+        /// </summary>
+        public static string LectinIntolerance {
+            get {
+                return ResourceManager.GetString("LectinIntolerance", resourceCulture);
             }
         }
         
@@ -7705,6 +7840,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mycotoxin Intolerance.
+        /// </summary>
+        public static string MycotoxinIntolerance {
+            get {
+                return ResourceManager.GetString("MycotoxinIntolerance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Narrow Angle.
         /// </summary>
         public static string NarrowAngle {
@@ -8289,6 +8433,15 @@ namespace K9.Globalisation {
         public static string Omega6Description {
             get {
                 return ResourceManager.GetString("Omega6Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Omega 6 Intolerance.
+        /// </summary>
+        public static string Omega6Intolerance {
+            get {
+                return ResourceManager.GetString("Omega6Intolerance", resourceCulture);
             }
         }
         
@@ -8947,6 +9100,15 @@ namespace K9.Globalisation {
         public static string PhytateDescription {
             get {
                 return ResourceManager.GetString("PhytateDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phytate Intolerance.
+        /// </summary>
+        public static string PhytateIntolerance {
+            get {
+                return ResourceManager.GetString("PhytateIntolerance", resourceCulture);
             }
         }
         
@@ -10926,6 +11088,24 @@ namespace K9.Globalisation {
         public static string ShopPriceLabel {
             get {
                 return ResourceManager.GetString("ShopPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shop Provision.
+        /// </summary>
+        public static string ShopProvision {
+            get {
+                return ResourceManager.GetString("ShopProvision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shop Provisions.
+        /// </summary>
+        public static string ShopProvisions {
+            get {
+                return ResourceManager.GetString("ShopProvisions", resourceCulture);
             }
         }
         

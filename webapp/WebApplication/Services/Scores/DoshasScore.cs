@@ -3,52 +3,92 @@ using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication.Services
 {
-    public class DoshasScore : IScore
+    public class DoshasScore
     {
-        public int GetScore(HealthQuestionnaire hq, EGenoType genoType, GenoTypeBase item)
+        public int GetScore(HealthQuestionnaire hq, FoodItem foodItem)
         {
             var score = 0;
-            var threshold = 22;
+            var threshold = 33;
             var prakrutiDoshas = hq.GetPrakrutiDoshas();
             var prakruti = prakrutiDoshas.GetDosha();
             var vikruti = hq.GetVikrutiDoshas();
 
-            if (item.VataDosha)
+            if (foodItem.VataDosha)
             {
                 if (prakruti == EDosha.Vata || prakruti == EDosha.KaphaVata || prakruti == EDosha.VataPitta)
                 {
                     score += 7;
                 }
 
-                if (vikruti.VataDoshaScore - prakrutiDoshas.VataDoshaScore > threshold)
+                if (vikruti.VataDoshaScore > threshold)
                 {
                     score += 7;
                 }
             }
 
-            if (item.PittaDosha)
+            if (foodItem.PittaDosha)
             {
                 if (prakruti == EDosha.Pitta || prakruti == EDosha.PittaKapha || prakruti == EDosha.VataPitta)
                 {
                     score += 7;
                 }
 
-                if (vikruti.PittaDoshaScore - prakrutiDoshas.PittaDoshaScore > threshold)
+                if (vikruti.PittaDoshaScore > threshold)
                 {
                     score += 7;
                 }
             }
 
-            if (item.KaphaDosha)
+            if (foodItem.KaphaDosha)
             {
                 if (prakruti == EDosha.Kapha || prakruti == EDosha.KaphaVata || prakruti == EDosha.PittaKapha)
                 {
                     score += 7;
                 }
-                
-                if (vikruti.KaphaDoshaScore - prakrutiDoshas.KaphaDoshaScore > threshold)
+
+                if (vikruti.KaphaDoshaScore > threshold)
                 {
                     score += 7;
+                }
+            }
+
+            // Aggravating
+            if (foodItem.IsAggravatesVata)
+            {
+                if (prakruti == EDosha.Vata || prakruti == EDosha.KaphaVata || prakruti == EDosha.VataPitta)
+                {
+                    score -= 7;
+                }
+
+                if (vikruti.VataDoshaScore > threshold)
+                {
+                    score -= 7;
+                }
+            }
+
+            if (foodItem.IsAggravatesPitta)
+            {
+                if (prakruti == EDosha.Pitta || prakruti == EDosha.PittaKapha || prakruti == EDosha.VataPitta)
+                {
+                    score -= 7;
+                }
+
+                if (vikruti.PittaDoshaScore > threshold)
+                {
+                    score -= 7;
+                }
+            }
+
+            if (foodItem.IsAggravatesKapha)
+            {
+                if (prakruti == EDosha.Kapha || prakruti == EDosha.KaphaVata || prakruti == EDosha.PittaKapha)
+                {
+                    score -= 7;
+                }
+
+                if (vikruti.KaphaDoshaScore > threshold)
+                {
+                    score -= 7;
                 }
             }
 

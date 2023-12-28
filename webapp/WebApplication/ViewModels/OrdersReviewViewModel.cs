@@ -9,12 +9,14 @@ namespace K9.WebApplication.ViewModels
     public class OrdersReviewViewModel
     {
         public readonly List<Order> AllOrders;
-        public readonly List<Order> AllOrdersNotOnHold;
+        public readonly List<Order> AllDirectOrders;
+        public readonly List<Order> AllActiveOrders;
 
         public OrdersReviewViewModel(List<Order> allOrders)
         {
             AllOrders = allOrders;
-            AllOrdersNotOnHold = allOrders.Where(e => !e.IsOnHold).ToList();
+            AllDirectOrders = allOrders.Where(e => e.OrderType != EOrderType.ShopProvision).ToList();
+            AllActiveOrders = allOrders.Where(e => !e.IsOnHold && e.OrderType != EOrderType.ShopProvision).ToList();
         }
 
         public Order SelectedOrder { get; set; }
@@ -23,15 +25,17 @@ namespace K9.WebApplication.ViewModels
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
         public int SelectedOrderId => SelectedOrder?.Id ?? 0;
 
-        public List<Order> GetOrdersOnHold() => AllOrders.Where(e => e.IsOnHold).ToList();
+        public List<Order> GetShopProvisionOrders() => AllOrders.Where(e => !e.IsOnHold && e.OrderType == EOrderType.ShopProvision).ToList();
 
-        public List<Order> GetIncompleteOrders() => AllOrdersNotOnHold.Where(e => !e.IsComplete).ToList();
-        
-        public List<Order> GetCompleteOrders() => AllOrdersNotOnHold.Where(e => e.IsComplete).ToList();
-        
-        public List<Order> GetOrdersToMake() => AllOrdersNotOnHold.Where(e => !e.IsMade).ToList();
+        public List<Order> GetOrdersOnHold() => AllDirectOrders.Where(e => e.IsOnHold).ToList();
 
-        public List<Order> GetOrdersToSend() => AllOrdersNotOnHold.Where(e => e.IsMade && !e.IsComplete).ToList();
+        public List<Order> GetIncompleteOrders() => AllActiveOrders.Where(e => !e.IsComplete).ToList();
+        
+        public List<Order> GetCompleteOrders() => AllActiveOrders.Where(e => e.IsComplete).ToList();
+        
+        public List<Order> GetOrdersToMake() => AllActiveOrders.Where(e => !e.IsMade).ToList();
+
+        public List<Order> GetOrdersToSend() => AllActiveOrders.Where(e => e.IsMade && !e.IsComplete).ToList();
 
         public List<OrderProduct> GetCombinedOrderProducts() => GetCombinedGroupedProducts();
 

@@ -97,6 +97,7 @@ namespace K9.WebApplication
             builder.Register(c => ConfigHelper.GetConfiguration<StripeConfiguration>(ConfigurationManager.AppSettings)).SingleInstance();
             builder.Register(c => ConfigHelper.GetConfiguration<MailChimpConfiguration>(ConfigurationManager.AppSettings)).SingleInstance();
             builder.Register(c => ConfigHelper.GetConfiguration<RecaptchaConfiguration>(ConfigurationManager.AppSettings)).SingleInstance();
+            builder.Register(c => ConfigHelper.GetConfiguration<ApiConfiguration>(ConfigurationManager.AppSettings)).SingleInstance();
 
             var websiteConfig = ConfigHelper.GetConfiguration<WebsiteConfiguration>(json);
             builder.Register(c => websiteConfig).SingleInstance();
@@ -109,6 +110,9 @@ namespace K9.WebApplication
             var defaultConfig = ConfigHelper.GetConfiguration<DefaultValuesConfiguration>(json);
             builder.Register(c => defaultConfig).SingleInstance();
             DefaultValuesConfiguration.Instance = defaultConfig.Value;
+
+            ApiConfiguration.Instance =
+                ConfigHelper.GetConfiguration<ApiConfiguration>(ConfigurationManager.AppSettings).Value;
         }
     }
 }

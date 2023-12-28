@@ -4549,11 +4549,11 @@ namespace K9.WebApplication.Services
             foodItem.VataDosha = isVata;
             foodItem.PittaDosha = isPitta;
             foodItem.KaphaDosha = isKapha;
-            foodItem.IsWaterElement = isWater;
-            foodItem.IsEarthElement = isEarth;
-            foodItem.IsTreeElement = isTree;
-            foodItem.IsMetalElement = isMetal;
-            foodItem.IsFireElement = isFire;
+            foodItem.Water = isWater;
+            foodItem.Earth = isEarth;
+            foodItem.Tree = isTree;
+            foodItem.Metal = isMetal;
+            foodItem.Fire = isFire;
             
             if (foodItem.Id > 0)
             {
@@ -4587,11 +4587,11 @@ namespace K9.WebApplication.Services
                                                 $"IsVataDosha = {(foodItem.VataDosha? 1 : 0)}, " +
                                                 $"IsPittaDosha = {(foodItem.PittaDosha? 1 : 0)}, " +
                                                 $"IsKaphaDosha = {(foodItem.KaphaDosha? 1 : 0)}, " +
-                                                $"IsWaterElement = {(foodItem.IsWaterElement? 1 : 0)}, " +
-                                                $"IsEarthlElement = {(foodItem.IsEarthElement? 1 : 0)}, " +
-                                                $"IsTreeElement = {(foodItem.IsTreeElement? 1 : 0)}, " +
-                                                $"IsMetalElement = {(foodItem.IsMetalElement? 1 : 0)}, " +
-                                                $"IsFireElement = {(foodItem.IsFireElement? 1 : 0)} WHERE " +
+                                                $"Water = {(foodItem.Water? 1 : 0)}, " +
+                                                $"IsEarthlElement = {(foodItem.Earth? 1 : 0)}, " +
+                                                $"Tree = {(foodItem.Tree? 1 : 0)}, " +
+                                                $"Metal = {(foodItem.Metal? 1 : 0)}, " +
+                                                $"Fire = {(foodItem.Fire? 1 : 0)} WHERE " +
                                                 $"Id = {foodItem.Id}";
 
                 _foodItemsRepository.GetQuery(sql);

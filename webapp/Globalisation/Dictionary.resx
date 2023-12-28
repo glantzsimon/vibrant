@@ -4585,16 +4585,76 @@
   <data name="Asthma" xml:space="preserve">
     <value>Asthma</value>
   </data>
+  <data name="AyurvedicProperties" xml:space="preserve">
+    <value>Ayurvedic Properties</value>
+  </data>
   <data name="CandidaFungus" xml:space="preserve">
     <value>Candida / Fungus</value>
   </data>
   <data name="HeartAttack" xml:space="preserve">
     <value>Heart Attack</value>
   </data>
+  <data name="IsAggravateKaphaLabel" xml:space="preserve">
+    <value>Aggravates Kapha</value>
+  </data>
+  <data name="IsAggravatePittaLabel" xml:space="preserve">
+    <value>Aggravates Pitta</value>
+  </data>
+  <data name="IsAggravateVataLabel" xml:space="preserve">
+    <value>Aggravates Vata</value>
+  </data>
   <data name="LowBloodPressure" xml:space="preserve">
     <value>Low Blood Pressure</value>
   </data>
   <data name="Stroke" xml:space="preserve">
     <value>Stroke</value>
+  </data>
+  <data name="BalancesEarthLabel" xml:space="preserve">
+    <value>Balances Earth Element</value>
+  </data>
+  <data name="BalancesFireLabel" xml:space="preserve">
+    <value>Balances Fire Element</value>
+  </data>
+  <data name="BalancesKaphaLabel" xml:space="preserve">
+    <value>Balances Kapha Dosha</value>
+  </data>
+  <data name="BalancesMetalLabel" xml:space="preserve">
+    <value>Balances Metal Element</value>
+  </data>
+  <data name="BalancesPittaLabel" xml:space="preserve">
+    <value>Balances Pitta Dosha</value>
+  </data>
+  <data name="BalancesTreeLabel" xml:space="preserve">
+    <value>Balances Tree Element</value>
+  </data>
+  <data name="BalancesVataLabel" xml:space="preserve">
+    <value>Balances Vata Dosha</value>
+  </data>
+  <data name="BalancesWaterLabel" xml:space="preserve">
+    <value>Balances Water Element</value>
+  </data>
+  <data name="HistamineIntolerance" xml:space="preserve">
+    <value>Histamine Intolerance</value>
+  </data>
+  <data name="IsSattvicLabel" xml:space="preserve">
+    <value>Sattvic</value>
+  </data>
+  <data name="LectinIntolerance" xml:space="preserve">
+    <value>Lectin Intolerance</value>
+  </data>
+  <data name="MycotoxinIntolerance" xml:space="preserve">
+    <value>Mycotoxin Intolerance</value>
+  </data>
+  <data name="Omega6Intolerance" xml:space="preserve">
+    <value>Omega 6 Intolerance</value>
+  </data>
+  <data name="PhytateIntolerance" xml:space="preserve">
+    <value>Phytate Intolerance</value>
+  </data>
+  <data name="ShopProvision" xml:space="preserve">
+    <value>Shop Provision</value>
+  </data>
+  <data name="ShopProvisions" xml:space="preserve">
+    <value>Shop Provisions</value>
   </data>
 </root>

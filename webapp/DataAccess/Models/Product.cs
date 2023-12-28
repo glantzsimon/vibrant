@@ -110,6 +110,10 @@ namespace K9.DataAccessLayer.Models
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
+        public int DisplayAmount { get; set; }
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
         public string FormattedAmount { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountLabel)]
@@ -169,13 +173,13 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopPriceLabel)]
         [DataType(DataType.Currency)]
-        public double GetShopPrice() => Price + (Price * 0.15);
+        public double GetShopPrice() => Price + (Price * 0.20);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         public string GetFormattedPrice() => Price.ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
-        public string GetFormattedShopPrice() => string.Format(CultureInfo.GetCultureInfo("th-TH"), "{0:C}", GetShopPrice());
+        public string GetFormattedShopPrice() => string.Format(CultureInfo.GetCultureInfo("th-TH"), "{0:C0}", GetShopPrice());
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceLabel)]
         [DataType(DataType.Currency)]

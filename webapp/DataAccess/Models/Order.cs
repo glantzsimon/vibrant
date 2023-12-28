@@ -209,7 +209,9 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
-        public double GetTotalProductsPrice() => Products?.Sum(e => e.TotalPrice) ?? 0;
+        public double GetTotalProductsPrice() => OrderType == EOrderType.ShopProvision 
+            ? Products?.Sum(e => e.GetShopPrice()) ?? 0 
+            : Products?.Sum(e => e.TotalPrice) ?? 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]

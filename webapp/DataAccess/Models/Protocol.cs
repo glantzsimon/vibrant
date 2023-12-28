@@ -91,6 +91,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsBulletProofLabel)]
         public bool IsBulletProof { get; set; }
 
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsSattvicLabel)]
+        public bool IsSattvic { get; set; }
+
         #endregion
 
         [NotMapped]

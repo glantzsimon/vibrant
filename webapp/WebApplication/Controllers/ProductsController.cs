@@ -5,7 +5,9 @@ using K9.DataAccessLayer.Helpers;
 using K9.DataAccessLayer.Interfaces;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Config;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Helpers;
 using K9.WebApplication.Packages;
@@ -26,13 +28,15 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<ProductIngredient> _productIngredientsRepository;
         private readonly IRepository<Ingredient> _ingredientsRepository;
         private readonly IIngredientService _ingredientService;
+        private readonly ApiConfiguration _config;
 
-        public ProductsController(IControllerPackage<Product> controllerPackage, IProductService productService, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository, IIngredientService ingredientService, IPureControllerPackage pureControllerPackage) : base(controllerPackage, pureControllerPackage)
+        public ProductsController(IControllerPackage<Product> controllerPackage, IProductService productService, IRepository<ProductIngredient> productIngredientsRepository, IRepository<Ingredient> ingredientsRepository, IIngredientService ingredientService, IPureControllerPackage pureControllerPackage, IOptions<ApiConfiguration> config) : base(controllerPackage, pureControllerPackage)
         {
             _productService = productService;
             _productIngredientsRepository = productIngredientsRepository;
             _ingredientsRepository = ingredientsRepository;
             _ingredientService = ingredientService;
+            _config = config.Value;
             RecordBeforeCreate += ProductsController_RecordBeforeCreate;
             RecordBeforeCreated += ProductsController_RecordBeforeCreated;
             RecordBeforeUpdated += ProductsController_RecordBeforeUpdated;
@@ -44,9 +48,42 @@ namespace K9.WebApplication.Controllers
             RecordDeleted += ProductsController_RecordDeleted;
         }
 
-        public ActionResult ViewProductQrCodes()
+        public ActionResult ProductQrCodes()
         {
-            return View(_productService.List(true));
+            return View(_productService.List(false));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ProductQrCodesQuantities(List<Product> products)
+        {
+            foreach (var product in products)
+            {
+                if (product.IsSelected)
+                {
+                    product.DisplayAmount = 1;
+                }
+            }
+            return View(products);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ViewProductQrCodes(List<Product> products)
+        {
+            var selectedIds = products.Where(e => e.IsSelected).Select(e => e.Id).ToList();
+            var selectedProducts = _productService.List(false).Where(e => selectedIds.Contains(e.Id)).ToList();
+
+            foreach (var selectedProduct in selectedProducts)
+            {
+                var original = products.FirstOrDefault(e => e.Id == selectedProduct.Id);
+                selectedProduct.DisplayAmount = original.DisplayAmount;
+                var productUrl = Url.AbsoluteAction("Details", "Product", new { seoFriendlyId = selectedProduct.SeoFriendlyId });  
+                selectedProduct.QrCodeUrl = string.Format(_config.QrCodeApiUrl, 111, productUrl);
+            }
+
+            return View(selectedProducts);
+
         }
 
         [RequirePermissions(Permission = Permissions.Edit)]

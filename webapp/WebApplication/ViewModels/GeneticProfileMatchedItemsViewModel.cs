@@ -31,10 +31,17 @@ namespace K9.WebApplication.ViewModels
         {
             if (items != null & items.Any())
             {
-                var maxScore = items.Max(e => e.Score);
+                var maxScore = items.Where(e => e.Score >= 0).Max(e => e.Score);
                 foreach (var item in items)
                 {
-                    item.RelativeScore = (int)Math.Ceiling(((double)item.Score / maxScore) * 100);
+                    if (item.Score >= 0)
+                    {
+                        item.RelativeScore = (int)Math.Ceiling(((double)item.Score / maxScore) * 100);
+                    }
+                    else
+                    {
+                        item.RelativeScore = item.Score;
+                    }
                 }
             }
         }

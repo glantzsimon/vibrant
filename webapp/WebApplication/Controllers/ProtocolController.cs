@@ -54,6 +54,7 @@ namespace K9.WebApplication.Controllers
             hq.IsLowMycotoxin = model.IsLowMycotoxin;
             hq.IsLowOmega6 = model.IsLowOmega6;
             hq.IsBulletProof = model.IsBulletProof;
+            hq.IsSattvic = model.IsSattvic;
 
             _healthQuestionnaireService.Save(hq);
 

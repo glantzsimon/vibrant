@@ -677,6 +677,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsBulletProofLabel)]
         public bool IsBulletProof { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsSattvicLabel)]
+        public bool IsSattvic { get; set; }
+
         public bool IsDietaryPreferencesComplete() => IsCategoryComplete(e => e.Category == EQuestionCategory.DietaryPreferences);
 
         #endregion

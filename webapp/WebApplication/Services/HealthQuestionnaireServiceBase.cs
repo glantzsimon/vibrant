@@ -143,6 +143,8 @@ namespace K9.WebApplication.Services
             {
                 var foodScore = GetGenoTypeItemScore(hq, genoType, foodItem);
                 foodScore += new SeasonScore().GetScore(hq, hq.CurrentSeason, foodItem);
+                foodScore += new FiveElementScore().GetScore(hq, foodItem);
+                foodScore += new DoshasScore().GetScore(hq, foodItem);
                 foodItem.Score = foodScore;
             }
 

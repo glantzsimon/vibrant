@@ -166,6 +166,21 @@
             public const string IsHighOmega6Label = "IsHighOmega6Label";
             public const string IsBulletProofLabel = "IsBulletProofLabel";
             public const string BulletProofDietLabel = "BulletProofDietLabel";
+            
+            public const string BalancesVataLabel = "BalancesVataLabel";
+            public const string BalancesPittaLabel = "BalancesPittaLabel";
+            public const string BalancesKaphaLabel = "BalancesKaphaLabel";
+            
+            public const string BalancesWaterLabel = "BalancesWaterLabel";
+            public const string BalancesTreeLabel = "BalancesTreeLabel";
+            public const string BalancesFireLabel = "BalancesFireLabel";
+            public const string BalancesEarthLabel = "BalancesEarthLabel";
+            public const string BalancesMetalLabel = "BalancesMetalLabel";
+
+            public const string IsAggravateVataLabel = "IsAggravateVataLabel";
+            public const string IsAggravatePittaLabel = "IsAggravatePittaLabel";
+            public const string IsAggravateKaphaLabel = "IsAggravateKaphaLabel";
+            public const string IsSattvicLabel = "IsSattvicLabel";
 
             public const string IsLowOxalateLabel = "IsLowOxalateLabel";
             public const string IsLowLectinLabel = "IsLowLectinLabel";
@@ -627,6 +642,7 @@
             public const string Consultation = "Consultation";
             public const string ShoppingCart = "ShoppingCart";
             public const string RedeemCommission = "RedeemCommission";
+            public const string ShopProvision = "ShopProvision";
             public const string Consultations = "Consultations";
             public const string UserProtocol = "UserProtocol";
             public const string UserProtocols = "UserProtocols";

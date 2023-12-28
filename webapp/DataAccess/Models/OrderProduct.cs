@@ -93,6 +93,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
         public double FullTotalPrice => Amount * Product?.Price ?? 0;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double GetShopPrice() => Amount * Product?.GetShopPrice() ?? 0;
         
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         public string GetFormattedTotalPrice() =>

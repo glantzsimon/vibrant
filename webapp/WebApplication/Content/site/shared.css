@@ -373,11 +373,11 @@
 }
 
 .price-tag {
-    background-image: url(../../Images/ui/price-tag.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 67px;
-    height: 39px;
-    padding-top: 3px;
+    background-image: url(../../Images/ui/price-tag.png) !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    width: 67px !important;
+    height: 39px !important;
+    padding-top: 4px;
     text-align: center;
 }
