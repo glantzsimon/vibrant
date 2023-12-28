@@ -74,14 +74,25 @@
         @Html.BootstrapDisplayFor(model => model.DiscountAmount)
     </div>
 </div>
+
+<hr />
+
 <div class="row">
     <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.ShopCommission)
     </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.ShopCommissionAmount)
+    </div>
 </div>
-
-<hr />
-
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.ShopPayableAmount)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.TotalShopPayableAmount)
+    </div>
+</div>
 <div class="row">
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.GrandTotal)

@@ -12,7 +12,7 @@ namespace K9.WebApplication.Controllers
 {
     [Authorize]
     [RequirePermissions(Role = Constants.Constants.ClientUser)]
-    public class ProtocolController : BasePureController
+    public partial class ProtocolController : BasePureController
     {
         private readonly IProtocolService _protocolService;
         private readonly IHealthQuestionnaireService _healthQuestionnaireService;
@@ -55,6 +55,7 @@ namespace K9.WebApplication.Controllers
             hq.IsLowOmega6 = model.IsLowOmega6;
             hq.IsBulletProof = model.IsBulletProof;
             hq.IsSattvic = model.IsSattvic;
+            hq.CurrentHealthLevel = model.CurrentHealthLevel;
 
             _healthQuestionnaireService.Save(hq);
 

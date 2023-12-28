@@ -9,9 +9,10 @@
 }
 
 <script language="javascript">
-    $(function () {
-        customOrder = [[3, "desc"]];
-    });
+    $(window).on("load",
+        function () {
+            customOrder = [[3, "desc"]];
+        });
 </script>
 
 @Html.BootstrapTable(new DataTableOptions<Order>

@@ -3,14 +3,12 @@
     Layout = "~/Views/Shared/_LayoutMaster.cshtml";
     var background = ViewBag.Background == ViewBagHelper.EViewBackground.Jarallax ? "background-image jarallax" : "";
 }
-
 @if (ViewBag.Background != ViewBagHelper.EViewBackground.Jarallax)
 {
     <div class="background-image background-fixed">
         &nbsp;
     </div>
 }
-
 <div class="@background">
     @Html.Partial("_Navbar")
     <div class="mainContent">
@@ -19,16 +17,15 @@
         </div>
     </div>
 </div>
-
 @section headerscripts {
     @RenderSection("headerscripts", false)
 }
-
 @section scripts {
     <script type="text/javascript">
-        $(function () {
-            bootstrapControls().selectFirstFormInput();
-        });
+        $(window).on("load",
+            function () {
+                bootstrapControls().selectFirstFormInput();
+            });
     </script>
     @RenderSection("scripts", false)
 }

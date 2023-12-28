@@ -77,7 +77,8 @@
 </div>
 
 <script type="text/javascript">
-    $(function () {
+    $(window).on("load",
+        function () {
 
         $("#SelectedOrderId").change(function () {
             $("#SelectedOrderId").closest("form").submit();

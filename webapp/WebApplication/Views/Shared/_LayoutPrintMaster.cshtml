@@ -9,9 +9,10 @@
 }
 @section scripts {
     <script type="text/javascript">
-        $(function () {
-            bootstrapControls().selectFirstFormInput();
-        });
+        $(window).on("load",
+            function () {
+                bootstrapControls().selectFirstFormInput();
+            });
     </script>
     @RenderSection("scripts", false)
 }

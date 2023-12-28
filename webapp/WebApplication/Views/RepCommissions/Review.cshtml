@@ -59,10 +59,9 @@
 }
 
 <script type="text/javascript">
-    $(function () {
-
-        $("#RepId").change(function () {
-            $("#RepId").closest("form").submit();
-        });
-    })
+    $(window).on("load",
+        function () {
+            $("#RepId").change(function () {
+                $("#RepId").closest("form").submit();
+            });
 </script>

@@ -42,9 +42,9 @@
 }
 
 <script type="text/javascript">
-    $(function () {
-        $("#ProductId, #BatchSize").change(function () {
-            $("#ProductId").closest("form").submit();
-        });
-    })
+    $(window).on("load",
+        function () {
+            $("#ProductId, #BatchSize").change(function () {
+                $("#ProductId").closest("form").submit();
+            });
 </script>

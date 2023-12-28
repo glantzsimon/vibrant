@@ -4633,6 +4633,9 @@
   <data name="BalancesWaterLabel" xml:space="preserve">
     <value>Balances Water Element</value>
   </data>
+  <data name="CurrentHealthLevelSliderLabel" xml:space="preserve">
+    <value>On a scale of 1 - 10, how healthy do you feel at the moment? (If feeling unwell, problematic foods will automatically be filtered out to help you recover)</value>
+  </data>
   <data name="HistamineIntolerance" xml:space="preserve">
     <value>Histamine Intolerance</value>
   </data>
@@ -4651,6 +4654,14 @@
   <data name="PhytateIntolerance" xml:space="preserve">
     <value>Phytate Intolerance</value>
   </data>
+  <data name="SattvicDescription" xml:space="preserve">
+    <value>A sattvic diet is a diet based on foods that contain one of the three yogic qualities (guna) known as sattva. In this system of dietary classification, foods that decrease the energy of the body are considered tamasic, while those that increase the energy of the body are considered rajasic. A sattvic diet is sometimes referred to as a yogic diet in modern literature.
+
+A sattvic diet shares the qualities of sattva, some of which include "pure, essential, natural, vital, energy-containing, clean, conscious, true, honest, wise". A sattvic diet can also exemplify Ahimsa, the principle of not causing harm to other living beings. This is one reason yogis often follow a vegetarian diet.</value>
+  </data>
+  <data name="ShopCommissionAmount" xml:space="preserve">
+    <value>Shop Commission</value>
+  </data>
   <data name="ShopCommissionLabel" xml:space="preserve">
     <value>Shop Commission %</value>
   </data>
@@ -4662,5 +4673,11 @@
   </data>
   <data name="ShopProvisions" xml:space="preserve">
     <value>Shop Provisions</value>
+  </data>
+  <data name="TotalPaidLabel" xml:space="preserve">
+    <value>Total Paid</value>
+  </data>
+  <data name="TotalShopPayableAmountLabel" xml:space="preserve">
+    <value>Total Shop Payable Amount</value>
   </data>
 </root>

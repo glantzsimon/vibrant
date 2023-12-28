@@ -91,7 +91,9 @@
 
 <script type="text/javascript">
 
-    $(function () {
+    $(window).on("load",
+        function () {
+
         $("input[type='checkbox'][name*=@nameof(ProductIngredient.IsSelected)]").click(function () {
             var $el = $(this);
             var isSelected = $el.is(":checked");

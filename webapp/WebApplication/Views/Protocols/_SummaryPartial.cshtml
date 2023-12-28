@@ -232,6 +232,9 @@
                                             <div class="col-xs-12">
                                                 <p class="margin-top-0"><strong>@Dictionary.OtherDietaryPreferencesQuestionTitle</strong></p>
                                             </div>
+                                            <div class="col-xs-12">
+                                                @Html.BootstrapEditorFor(e => e.CurrentHealthLevel)
+                                            </div>
                                             <div class="col-xs-12 padding-0">
                                                 <div class="col-xs-6 padding-0">
                                                     <div class="col-xs-12 col-sm-6">
@@ -256,8 +259,13 @@
                                                     <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.IsLowOmega6)
                                                     </div>
+                                                </div>
+                                                <div class="col-xs-6 padding-0">
                                                     <div class="col-xs-12 col-sm-6">
                                                         @Html.BootstrapEditorFor(e => e.IsBulletProof)
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        @Html.BootstrapEditorFor(e => e.IsSattvic)
                                                     </div>
                                                     <hr />
                                                 </div>
@@ -407,9 +415,29 @@
 </div>
 
 <script type="text/javascript">
-    $(function () {
-        $("#ProtocolId").change(function () {
-            $("#ProtocolId").closest("form").submit();
+    $(window).on("load",
+        function () {
+            $("#ProtocolId").change(function () {
+                $("#ProtocolId").closest("form").submit();
+
+            $("#@($"{nameof(Protocol.CurrentHealthLevel)}")").slider().on('slideStop', function(e){
+                $("#pageSpinner").show();
+
+                var value = $("#@($"{nameof(Protocol.CurrentHealthLevel)}")").data('slider').getValue();
+
+                ajaxcontroller().send("@Url.Action("UpdateProtocolWellnessLevelForClient")",
+                    {
+                        id: @Model.ClientId,
+                        value: value
+                    }, "POST").done(
+                    function(result) {
+                        $.fn.processResultAndShowPopup(result);
+                        window.setTimeout(function() {
+                                document.location.reload();
+                            },
+                            500);
+                    });
+            });
+
         });
-    })
 </script>

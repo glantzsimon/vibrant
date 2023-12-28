@@ -3,15 +3,14 @@
 @using K9.SharedLibrary.Authentication
 @model UserConsultation
 @{
-	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
-
 <script language="javascript">
-    $(function () {
-        customOrder = [[0, "desc"]];
-    });
+    $(window).on("load",
+        function () {
+            customOrder = [[0, "desc"]];
+        });
 </script>
-
 @Html.BootstrapTable(new DataTableOptions<UserConsultation>
 {
     AllowCreate = false,

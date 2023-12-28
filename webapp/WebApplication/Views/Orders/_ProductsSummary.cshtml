@@ -61,12 +61,35 @@
     <hr />
 
 }
+
 <div class="row">
     <div class="col-sm-3">
-        <strong>@Dictionary.TotalLabel</strong>
+        <strong>@Dictionary.SubTotalLabel</strong>
+    </div>
+    <div class="col-sm-3">
     </div>
     <div class="col-sm-3">
         <strong>@Model.GetTotalProducts()</strong>
+    </div>
+    <div class="col-sm-3">
+        @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
+        {
+            <strong>@Html.DisplayFor(e => Model.FullTotalProductsPrice)</strong>
+        }
+        else
+        {
+            <strong>@Html.DisplayFor(e => Model.TotalInternationalProductsPrice)</strong>
+        }
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-3">
+        <strong>@Dictionary.GrandTotalLabel</strong>
+    </div>
+    <div class="col-sm-3">
     </div>
     <div class="col-sm-3">
     </div>
@@ -77,7 +100,7 @@
         }
         else
         {
-            <strong>@Html.DisplayFor(e => Model.TotalInternationalProductsPrice)</strong> 
+            <strong>@Html.DisplayFor(e => Model.TotalInternationalProductsPrice)</strong>
         }
     </div>
 </div>

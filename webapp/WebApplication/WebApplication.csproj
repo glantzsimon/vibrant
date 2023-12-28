@@ -272,6 +272,7 @@
     <Compile Include="Controllers\HealthQuestionnaireFoodItemsController.cs" />
     <Compile Include="Controllers\ClientForbiddenFoodsController.cs" />
     <Compile Include="Controllers\ClientForbiddenFoodsControllerAjax.cs" />
+    <Compile Include="Controllers\ProtocolControllerAjax.cs" />
     <Compile Include="Controllers\ProtocolFoodItemsController.cs" />
     <Compile Include="Controllers\ShoppingCartControllerAjax.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />

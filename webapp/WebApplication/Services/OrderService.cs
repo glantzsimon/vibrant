@@ -192,9 +192,12 @@ namespace K9.WebApplication.Services
             order.FormattedSuggestedDiscountAsPercent = order.GetFormattedSuggestedDiscountAsPercent();
             order.FormattedSuggestedDiscountAmount = order.GetFormattedSuggestedDiscountAmount();
             order.DiscountAmount = order.GetDiscountAmount();
+            order.ShopCommissionAmount = order.GetShopCommissionAmount();
             order.ShopPayableAmount = order.GetShopPayableAmount();
+            order.TotalShopPayableAmount = order.GetTotalShopPayableAmount();
             order.GrandTotal = order.GetGrandTotal();
             order.InternationalGrandTotal = order.GetInternationalGrandTotal();
+            order.FullTotalProductsPrice = order.GetFullTotalProductsPrice();
 
             return order;
         }

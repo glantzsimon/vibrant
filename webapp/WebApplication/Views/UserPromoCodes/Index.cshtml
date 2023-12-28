@@ -3,18 +3,17 @@
 @using K9.SharedLibrary.Models
 @using K9.SharedLibrary.Authentication
 @using EButtonType = K9.SharedLibrary.Models.EButtonType
-
 @model UserPromoCode
 @{
     Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
 }
-
 <script language="javascript">
-    $(function () {
-        customOrder = [[0, "desc"]];
-    });
-</script>
+    $(window).on("load",
+        function () {
+            customOrder = [[0, "desc"]];
+        });
 
+</script>
 @Html.BootstrapTable(new DataTableOptions<UserPromoCode>
 {
     AllowCreate = false,

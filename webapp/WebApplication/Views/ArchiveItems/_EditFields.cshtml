@@ -7,7 +7,6 @@
 @Html.BootstrapEditorFor(model => model.FileSource)
 @Html.BootstrapEditorFor(model => model.Title)
 @Html.BootstrapEditorFor(model => model.DescriptionText)
-
 <script type="text/javascript">
 
     function setAcceptedFileExtensionsByCategory() {
@@ -16,12 +15,13 @@
         $.fn.setAcceptedFileExtensions(fileInput, type);
     }
 
-    $(function () {
-        $("#CategoryId").change(function () {
-            setAcceptedFileExtensionsByCategory();
-        });
+    $(window).on("load",
+        function () {
+            $("#CategoryId").change(function () {
+                setAcceptedFileExtensionsByCategory();
+            });
 
-        window.setTimeout(setAcceptedFileExtensionsByCategory, 500);
-    });
+            window.setTimeout(setAcceptedFileExtensionsByCategory, 500);
+        });
 
 </script>

@@ -2499,6 +2499,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to On a scale of 1 - 10, how healthy do you feel at the moment? (If feeling unwell, problematic foods will automatically be filtered out to help you recover).
+        /// </summary>
+        public static string CurrentHealthLevelSliderLabel {
+            get {
+                return ResourceManager.GetString("CurrentHealthLevelSliderLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Current Season.
         /// </summary>
         public static string CurrentSeason {
@@ -10813,6 +10822,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A sattvic diet is a diet based on foods that contain one of the three yogic qualities (guna) known as sattva. In this system of dietary classification, foods that decrease the energy of the body are considered tamasic, while those that increase the energy of the body are considered rajasic. A sattvic diet is sometimes referred to as a yogic diet in modern literature.
+        ///
+        ///A sattvic diet shares the qualities of sattva, some of which include &quot;pure, essential, natural, vital, energy-containing, clean, conscious, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SattvicDescription {
+            get {
+                return ResourceManager.GetString("SattvicDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Saturday.
         /// </summary>
         public static string Saturday {
@@ -11070,6 +11090,15 @@ namespace K9.Globalisation {
         public static string Shop {
             get {
                 return ResourceManager.GetString("Shop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shop Commission.
+        /// </summary>
+        public static string ShopCommissionAmount {
+            get {
+                return ResourceManager.GetString("ShopCommissionAmount", resourceCulture);
             }
         }
         
@@ -12751,6 +12780,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total Paid.
+        /// </summary>
+        public static string TotalPaidLabel {
+            get {
+                return ResourceManager.GetString("TotalPaidLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Total Price.
         /// </summary>
         public static string TotalPriceLabel {
@@ -12783,6 +12821,15 @@ namespace K9.Globalisation {
         public static string TotalSavingsLabel {
             get {
                 return ResourceManager.GetString("TotalSavingsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Shop Payable Amount.
+        /// </summary>
+        public static string TotalShopPayableAmountLabel {
+            get {
+                return ResourceManager.GetString("TotalShopPayableAmountLabel", resourceCulture);
             }
         }
         

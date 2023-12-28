@@ -26,9 +26,9 @@
 }
 
 <script type="text/javascript">
-    $(function () {
-        $("#ProtocolSectionId").change(function () {
-            $("#ProtocolSectionId").closest("form").submit();
-        });
-    })
+    $(window).on("load",
+        function () {
+            $("#ProtocolSectionId").change(function () {
+                $("#ProtocolSectionId").closest("form").submit();
+            });
 </script>

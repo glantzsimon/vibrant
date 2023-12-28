@@ -36,7 +36,7 @@ namespace K9.DataAccessLayer.Models
         [Index(IsUnique = true)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
         public string OrderNumber { get; set; }
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsOnHoldLabel)]
         public bool IsOnHold { get; set; }
 
@@ -50,6 +50,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FullNameLabel)]
         public string FullName { get; set; }
 
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FullNameLabel)]
+        public string NameAndStatus => GetFullName();
+        
         public string GetFullName() => $"{Name} - {RequestedOn.ToShortDateString()} - {OrderStatusText}";
 
         [UIHint("User")]
@@ -201,6 +205,10 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double TotalProductsPrice { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalPaid { get; set; }
+
         [NotMapped]
         [UIHint("InternationalCurrency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
@@ -209,13 +217,24 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
-        public double GetTotalProductsPrice() => OrderType == EOrderType.ShopProvision 
-            ? Products?.Sum(e => e.GetShopPrice()) ?? 0 
+        public double GetTotalProductsPrice() => OrderType == EOrderType.ShopProvision
+            ? Products?.Sum(e => e.GetShopPrice()) ?? 0
             : Products?.Sum(e => e.TotalPrice) ?? 0;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
+        public double GetTotalCompletedProductsPrice() => OrderType == EOrderType.ShopProvision
+            ? Products?.Sum(e => e.GetCompletedShopPrice()) ?? 0
+            : 0;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
+        [DataType(DataType.Currency)]
         public double GetTotalInternationalProductsPrice() => Products?.Sum(e => e.TotalInternationalPrice) ?? 0;
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalFullProductsPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double FullTotalProductsPrice { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalFullProductsPriceLabel)]
         [DataType(DataType.Currency)]
@@ -284,7 +303,7 @@ namespace K9.DataAccessLayer.Models
         [UIHint("Percentage")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public double? Discount { get; set; }
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public string GetFormattedDiscountAsPercent() => (Discount / 100)?.ToString("P0", CultureInfo.InvariantCulture);
 
@@ -297,6 +316,11 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double GetDiscountAmount() => ((TotalPriceMinusShipping * (Discount / 100 ?? 0)));
 
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopCommissionAmount)]
+        [DataType(DataType.Currency)]
+        public double ShopCommissionAmount { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopCommissionLabel)]
         [DataType(DataType.Currency)]
         public double GetShopCommissionAmount() => ((TotalPriceMinusShipping * (ShopCommission / 100 ?? 0)));
@@ -306,10 +330,20 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double ShopPayableAmount { get; set; }
 
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalShopPayableAmountLabel)]
+        [DataType(DataType.Currency)]
+        public double TotalShopPayableAmount { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopPayableAmountLabel)]
         [DataType(DataType.Currency)]
-        public double GetShopPayableAmount() => ((TotalPriceMinusShipping * (ShopCommission / 100 ?? 0)));
+        public double GetTotalShopPayableAmount() => (TotalPriceMinusShipping - (TotalPriceMinusShipping * (ShopCommission / 100 ?? 0))) - TotalPaid;
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.ShopPayableAmountLabel)]
+        [DataType(DataType.Currency)]
+        public double GetShopPayableAmount() => (GetTotalCompletedProductsPrice() - (GetTotalCompletedProductsPrice() * (ShopCommission / 100 ?? 0))) - TotalPaid;
+        
         [UIHint("InternationalCurrency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         [DataType(DataType.Currency)]
@@ -337,7 +371,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         [DataType(DataType.Currency)]
         public double InternationalGrandTotal { get; set; }
-        
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         public string FormattedInternationalGrandTotal => GetInternationalGrandTotal().ToString("C", CultureInfo.CurrentCulture);
 
@@ -495,6 +529,8 @@ namespace K9.DataAccessLayer.Models
 
             return results;
         }
+
+
 
         private List<Product> GetCombinedProducts() => GetAllProducts().Concat(GetAllProductPackProducts()).ToList();
 

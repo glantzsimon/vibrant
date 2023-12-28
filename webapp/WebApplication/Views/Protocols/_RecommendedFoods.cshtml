@@ -60,24 +60,10 @@
                                                          recommendedFood.IsHighHistamine ||
                                                          recommendedFood.IsHighMycotoxin ||
                                                          recommendedFood.IsHighOmega6 ||
-                                                         recommendedFood.IsBulletProof;
+                                                         recommendedFood.IsBulletProof ||
+                                                        recommendedFood.IsSattvic;
 
-                                        <span data-id="@recommendedFood.Id"
-                                              data-redmeat="@recommendedFood.IsRedMeat"
-                                              data-fishandseafood="@recommendedFood.IsFishAndSeafood"
-                                              data-eggsandroes="@recommendedFood.IsEggsAndRoes"
-                                              data-dairy="@recommendedFood.IsDairy"
-                                              data-vegetables="@recommendedFood.IsVegetables"
-                                              data-vegetableprotein="@recommendedFood.IsVegetableProtein"
-                                              data-fungi="@recommendedFood.IsFungi"
-                                              data-fruit="@recommendedFood.IsFruit"
-                                              data-high-oxalate="@recommendedFood.IsHighOxalate"
-                                              data-high-lectin="@recommendedFood.IsHighLectin"
-                                              data-high-phytate="@recommendedFood.IsHighPhytate"
-                                              data-high-histamine="@recommendedFood.IsHighHistamine"
-                                              data-high-mycotoxin="@recommendedFood.IsHighMycotoxin"
-                                              data-high-omega6="@recommendedFood.IsHighOmega6"
-                                              class="summary-item recommended-food" style="background-color: @levelColor !important;">
+                                        <span data-id="@recommendedFood.Id" class="summary-item recommended-food" style="background-color: @levelColor !important;">
 
                                             @Html.Raw(recommendedFood.GetRelativeScoreHtml())
                                             <span>@recommendedFood.Name</span>
@@ -112,8 +98,8 @@
 }
 
 <script type="text/javascript">
-    $(function () {
-
+    $(window).on("load",
+        function () {
         $("i.demote-food-item").click(function() {
             $("#pageSpinner").show();
             let $el = $(this);
@@ -147,6 +133,5 @@
                         500);
                 });
         });
-
     })
 </script>

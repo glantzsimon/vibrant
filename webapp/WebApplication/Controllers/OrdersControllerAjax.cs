@@ -24,6 +24,7 @@ namespace K9.WebApplication.Controllers
                     }
                 }
 
+                original.FullName = original.GetFullName();
                 Repository.Update(original);
                 _orderService.ClearCache();
 
@@ -58,6 +59,7 @@ namespace K9.WebApplication.Controllers
                         original.MadeOn = null;
                     }
 
+                    original.FullName = original.GetFullName();
                     Repository.Update(original);
 
                     if (value)
@@ -117,6 +119,7 @@ namespace K9.WebApplication.Controllers
                     }
                 }
 
+                original.FullName = original.GetFullName();
                 Repository.Update(original);
                 _orderService.ClearCache();
                 return Json(new { success = true });
@@ -145,6 +148,7 @@ namespace K9.WebApplication.Controllers
                     }
                 }
 
+                original.FullName = original.GetFullName();
                 Repository.Update(original);
                 _orderService.ClearCache();
 
@@ -167,6 +171,7 @@ namespace K9.WebApplication.Controllers
                     original.IsOnHold = value;
                 }
 
+                original.FullName = original.GetFullName();
                 Repository.Update(original);
                 _orderService.ClearCache();
                 return Json(new { success = true });
@@ -188,6 +193,7 @@ namespace K9.WebApplication.Controllers
                     original.IsLocalDelivery = value;
                 }
 
+                original.FullName = original.GetFullName();
                 Repository.Update(original);
                 _orderService.ClearCache();
                 return Json(new { success = true });

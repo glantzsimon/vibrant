@@ -1,7 +1,7 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @model Client
 @{
-	Layout = "../Shared/_LayoutFormSmall.cshtml";
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 @using (Html.BeginForm("Edit", "Clients"))
 {
@@ -12,20 +12,19 @@
 }
 @using (Html.BeginForm())
 {
-	using (Html.BeginBootstrapForm())
-	{
-		@Html.HiddenFor(model => model.Id)
-		@Html.Partial("_EditFields")
-		<hr/>
-		@Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save")
-		@Html.BootstrapBackToListButton()
-	}
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.HiddenFor(model => model.Id)
+        @Html.Partial("_EditFields")
+        <hr />
+        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Update, EButtonType.Submit, "fa-save")
+        @Html.BootstrapBackToListButton()
+    }
 }
-
 <script type="text/javascript">
-    $(function () {
-        $("#ClientId").change(function () {
-            $("#ClientId").closest("form").submit();
-        });
-    })
+    $(window).on("load",
+        function () {
+            $("#ClientId").change(function () {
+                $("#ClientId").closest("form").submit();
+            });
 </script>

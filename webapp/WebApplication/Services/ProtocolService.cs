@@ -192,6 +192,7 @@ namespace K9.WebApplication.Services
                 protocol.IsLowOmega6 = hq.IsLowOmega6;
                 protocol.IsBulletProof = hq.IsBulletProof;
                 protocol.IsSattvic = hq.IsSattvic;
+                protocol.CurrentHealthLevel = hq.CurrentHealthLevel;
             }
 
             protocol.Activities = _protocolActivitiesRepository.Find(e => e.ProtocolId == protocol.Id).ToList();

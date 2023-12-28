@@ -85,7 +85,9 @@
 @Html.Partial("_GenoTypeBaseEditFields")
 
 <script type="text/javascript">
-    $(function () {
+    $(window).on("load",
+        function () {
+
         $("#Frequency").change(function () {
             let frequency = $("#Frequency").find("option:selected").val();
             let $daysContainer = $("#days-container");

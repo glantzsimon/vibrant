@@ -45,6 +45,7 @@
             public const string GrandTotalLabel = "GrandTotalLabel";
             public const string TotalFullProductsPriceLabel = "TotalFullProductsPriceLabel";
             public const string TotalProductsPriceLabel = "TotalProductsPriceLabel";
+            public const string TotalPaidLabel = "TotalPaidLabel";
             public const string TotalFullProductPacksPriceLabel = "TotalFullProductPacksPriceLabel";
             public const string TotalProductPacksPriceLabel = "TotalProductPacksPriceLabel";
             public const string TotalCostLabel = "TotalCostLabel";
@@ -74,7 +75,9 @@
             public const string ShippingLabel = "ShippingLabel";
             public const string DiscountLabel = "DiscountLabel";
             public const string ShopCommissionLabel = "ShopCommissionLabel";
+            public const string ShopCommissionAmount = "ShopCommissionAmount";
             public const string ShopPayableAmountLabel = "ShopPayableAmountLabel";
+            public const string TotalShopPayableAmountLabel = "TotalShopPayableAmountLabel";
             public const string PriceSmallPackLabel = "PriceSmallPackLabel";
             public const string CostOfMaterialsLabel = "CostOfMaterialsLabel";
             public const string AllowIngredientSubstitutesLabel = "AllowIngredientSubstitutesLabel";
@@ -530,6 +533,7 @@
             public const string CurrentHealthIssuesLabel = "CurrentHealthIssuesLabel";
             public const string HealthGoalsLabel = "HealthGoalsLabel";
             public const string CurrentHealthLevelLabel = "CurrentHealthLevelLabel";
+            public const string CurrentHealthLevelSliderLabel = "CurrentHealthLevelSliderLabel";
             public const string NutritionExpertiseLevelLabel = "NutritionExpertiseLevelLabel";
             public const string EnjoysCookingLabel = "EnjoysCookingLabel";
             public const string AllergiesAndSensitivitiesLabel = "AllergiesAndSensitivitiesLabel";

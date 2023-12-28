@@ -1,5 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Attributes;
-using K9.Base.DataAccessLayer.Models;
+﻿using DataAnnotationsExtensions;
+using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.Globalisation;
 using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Attributes;
@@ -94,6 +94,13 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsSattvicLabel)]
         public bool IsSattvic { get; set; }
+
+        [NotMapped]
+        [UIHint("Range")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CurrentHealthLevelSliderLabel)]
+        [Min(1)]
+        [Max(10)]
+        public int? CurrentHealthLevel { get; set; }
 
         #endregion
 

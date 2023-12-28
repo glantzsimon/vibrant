@@ -28,9 +28,9 @@
 }
 
 <script type="text/javascript">
-    $(function () {
-        $("#ProductPackId").change(function () {
-            $("#ProductPackId").closest("form").submit();
-        });
-    })
+    $(window).on("load",
+        function () {
+            $("#ProductPackId").change(function () {
+                $("#ProductPackId").closest("form").submit();
+            });
 </script>

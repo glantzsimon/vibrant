@@ -1250,6 +1250,12 @@ namespace K9.DataAccessLayer.Models
         [Max(10)]
         public int? CurrentHealthLevel { get; set; }
 
+        /// <summary>
+        /// Enables users to use the health level slider and automatically filter out problematic foods
+        /// </summary>
+        /// <returns></returns>
+        public int GetScoreThreshold() => (int)CurrentHealthLevel * 10;
+
         public int GetCurrentHealthScore() => CurrentHealthLevel.HasValue ? CurrentHealthLevel.Value * 10 : 0;
 
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
