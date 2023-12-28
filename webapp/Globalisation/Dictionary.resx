@@ -3982,7 +3982,7 @@
   <data name="IrregularDigestionLabel" xml:space="preserve">
     <value>Is your digestion irregular and unpredictable?</value>
   </data>
-  <data name="IrritableBowerlLabel" xml:space="preserve">
+  <data name="IrritableBowelLabel" xml:space="preserve">
     <value>Do you experience symptoms of IBS?</value>
   </data>
   <data name="LethargicLabel" xml:space="preserve">
@@ -4067,7 +4067,7 @@
     <value>Abdominal Distention</value>
   </data>
   <data name="AbdominalPainOrCramping" xml:space="preserve">
-    <value>AbdominalPainOrCramping</value>
+    <value>Abdominal Pain or Cramping</value>
   </data>
   <data name="ADHD" xml:space="preserve">
     <value>ADHD</value>
@@ -4079,10 +4079,10 @@
     <value>Allergies</value>
   </data>
   <data name="AmalgamFillings" xml:space="preserve">
-    <value>AmalgamFillings</value>
+    <value>Amalgam Fillings</value>
   </data>
   <data name="AmalgamFillingsHistory" xml:space="preserve">
-    <value>AmalgamFillingsHistory</value>
+    <value>History of Amalgam Fillings </value>
   </data>
   <data name="AmmoniaSmell" xml:space="preserve">
     <value>AmmoniaSmell</value>
@@ -4124,13 +4124,13 @@
     <value>Carpal Tunnel Syndrome</value>
   </data>
   <data name="CarpelTunnelLabel" xml:space="preserve">
-    <value>Do you suffer from carpal tunnel syndrome?</value>
+    <value>Carpal tunnel syndrome is a common nerve disorder that may affect hand strength and sensation, causing reduced function. Mild carpal tunnel syndrome causes periodic numbness, when severe there can be weakness. Symptoms often appear in the morning but may happen at other times. Symptoms may worsen with hand activities like driving, holding a book or grasping items.</value>
   </data>
   <data name="CataractsLabel" xml:space="preserve">
     <value>Cataracts</value>
   </data>
   <data name="ChestPain" xml:space="preserve">
-    <value>ChestPain</value>
+    <value>Chest Pain</value>
   </data>
   <data name="ChronicViralInfections" xml:space="preserve">
     <value>Chronic Viral Infections</value>
@@ -4142,13 +4142,13 @@
     <value>CoarseThinEyebrows</value>
   </data>
   <data name="CoatedTongue" xml:space="preserve">
-    <value>CoatedTongue</value>
+    <value>Coated Tongue</value>
   </data>
   <data name="ColdExtremities" xml:space="preserve">
-    <value>ColdExtremities</value>
+    <value>Cold Extremities</value>
   </data>
   <data name="ColdIntolerant" xml:space="preserve">
-    <value>ColdIntolerant</value>
+    <value>Cold Intolerant</value>
   </data>
   <data name="ConcentrationProblems" xml:space="preserve">
     <value>Inability to Concentrate</value>
@@ -4166,10 +4166,10 @@
     <value>Cramps, Tremors, Twitches</value>
   </data>
   <data name="CysticFibrosis" xml:space="preserve">
-    <value>Cystic fibrosis</value>
+    <value>Cystic Fibrosis</value>
   </data>
   <data name="CysticFibrosisInfo" xml:space="preserve">
-    <value>Cystic fibrosis (CF) is a condition can cause both breathing and digestive problems because the disease makes the mucus in the body very thick.</value>
+    <value>Cystic Fibrosis (CF) is a condition can cause both breathing and digestive problems because the disease makes the mucus in the body very thick.</value>
   </data>
   <data name="DemoteFoodsDescription" xml:space="preserve">
     <value>We are all unique. If any of the foods recommended for you do not agree with you, you can remove them by clicking on the thumbs-down button.</value>
@@ -4193,7 +4193,7 @@
     <value>DrinksAlcohol</value>
   </data>
   <data name="EasilyOutOfBreath" xml:space="preserve">
-    <value>EasilyOutOfBreath</value>
+    <value>Easily Out of Breath</value>
   </data>
   <data name="Edema" xml:space="preserve">
     <value>Edema</value>
@@ -4262,7 +4262,7 @@
     <value>Do you often experience hiccups?</value>
   </data>
   <data name="HighBloodPressure" xml:space="preserve">
-    <value>HighBloodPressure</value>
+    <value>High Blood Pressure</value>
   </data>
   <data name="HistamineDescription" xml:space="preserve">
     <value>High histamine levels, particularly problematic for those with histamine intolerance or mast cell activation disorders, can trigger a range of symptoms including headaches, skin irritations, digestive issues, and in severe cases, asthma-like symptoms or anaphylaxis. Chronic high histamine can also contribute to inflammatory conditions and exacerbate existing allergies and immune system disorders.</value>
@@ -4277,7 +4277,7 @@
     <value>Hormone Imbalance</value>
   </data>
   <data name="HypoThyroidism" xml:space="preserve">
-    <value>HypoThyroidism</value>
+    <value>Hypothyroidism</value>
   </data>
   <data name="Impotency" xml:space="preserve">
     <value>Impotency</value>
@@ -4306,8 +4306,8 @@
   <data name="Irritability" xml:space="preserve">
     <value>Irritability</value>
   </data>
-  <data name="IrritableBowerl" xml:space="preserve">
-    <value>IrritableBowerl</value>
+  <data name="IrritableBowel" xml:space="preserve">
+    <value>Irritable Bowel</value>
   </data>
   <data name="IsBulletProofLabel" xml:space="preserve">
     <value>Bulletproof</value>
@@ -4352,7 +4352,7 @@
     <value>Itching</value>
   </data>
   <data name="JointInflammation" xml:space="preserve">
-    <value>JointInflammation</value>
+    <value>Joint Inflammation</value>
   </data>
   <data name="KidneyStones" xml:space="preserve">
     <value>Kidney Stones</value>
@@ -4367,7 +4367,7 @@
     <value>Found in high amounts in raw legumes and certain grains, lectins can cause significant digestive disturbances and may interfere with the absorption of nutrients, leading to inflammation, weakened gut barrier function, and autoimmune responses. Overconsumption of lectins has been associated with conditions like leaky gut syndrome and inflammatory bowel diseases.</value>
   </data>
   <data name="LooseStool" xml:space="preserve">
-    <value>LooseStool</value>
+    <value>Loose Stool</value>
   </data>
   <data name="LossOfAppetite" xml:space="preserve">
     <value>Loss of Appetite</value>
@@ -4379,7 +4379,7 @@
     <value>Low Morning Energy</value>
   </data>
   <data name="LungCancer" xml:space="preserve">
-    <value>LungCancer</value>
+    <value>Lung Cancer</value>
   </data>
   <data name="MastCellActivation" xml:space="preserve">
     <value>Mast Cell Activation Syndrome</value>
@@ -4493,7 +4493,7 @@
     <value>Respiratory Health</value>
   </data>
   <data name="RootCanals" xml:space="preserve">
-    <value>RootCanals</value>
+    <value>Root Canals</value>
   </data>
   <data name="SandyEye" xml:space="preserve">
     <value>Sandy Eye</value>
@@ -4547,7 +4547,7 @@
     <value>TMJ</value>
   </data>
   <data name="ToothPain" xml:space="preserve">
-    <value>ToothPain</value>
+    <value>Tooth Pain</value>
   </data>
   <data name="Tuberculosis" xml:space="preserve">
     <value>Tuberculosis</value>
@@ -4593,5 +4593,8 @@
   </data>
   <data name="LowBloodPressure" xml:space="preserve">
     <value>Low Blood Pressure</value>
+  </data>
+  <data name="Stroke" xml:space="preserve">
+    <value>Stroke</value>
   </data>
 </root>

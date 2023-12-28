@@ -710,7 +710,7 @@ namespace K9.DataAccessLayer.Models
 
         [Score(CardioVascularHealth = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.StrokeLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Stroke, Description = Strings.Labels.StrokeLabel)]
         public bool Stroke { get; set; }
 
         [Score(CardioVascularHealth = true)]
@@ -729,12 +729,12 @@ namespace K9.DataAccessLayer.Models
 
         [Score(DigestiveHealth = true, PittaDosha = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true, IsOmega6Intolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IrritableBowerl)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IrritableBowel)]
         public bool IBS { get; set; }
 
         [Score(DigestiveHealth = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HiccupsLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Hiccups)]
         public bool Hiccups { get; set; }
 
         [Score(DigestiveHealth = true, VataDosha = true, IsOxalateIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true)]
@@ -770,7 +770,7 @@ namespace K9.DataAccessLayer.Models
 
         [Score(DigestiveHealth = true, Immunity = true, Detoxification = true, DentalHealth = true, KaphaDosha = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CoatedTongue)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CoatedTongue, Description = Strings.Labels.CoatedTongueLabel)]
         public bool CoatedTongue { get; set; }
 
         [Score(DigestiveHealth = true, Immunity = true, Detoxification = true, IsOxalateIntolerance = true)]
@@ -901,12 +901,12 @@ namespace K9.DataAccessLayer.Models
 
         [Score(AntiInflammatory = true, Immunity = true, Detoxification = true, IsYang = true, PittaDosha = true, IsInflammation = true, IsOxalateIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true, IsOmega6Intolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.JointInflammation)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.JointInflammation, Description = Strings.Labels.JointInflammationLabel)]
         public bool JointInflammation { get; set; }
 
         [Score(AntiInflammatory = true, IsInflammation = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CarpelTunnel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CarpelTunnel, Description = Strings.Labels.CarpelTunnelLabel)]
         public bool CarpelTunnel { get; set; }
 
         [Score(AntiInflammatory = true, IsInflammation = true, IsOxalateIntolerance = true, IsLectinIntolerance = true, IsMycotoxinIntolerance = true, IsOmega6Intolerance = true)]

@@ -280,7 +280,7 @@
             public const string ProductPackLabel = "ProductPackLabel";
             public const string ProductPacksLabel = "ProductPacksLabel";
 
-            public const string IrritableBowerlLabel = "IrritableBowerlLabel";
+            public const string IrritableBowellLabel = "IrritableBowelLabel";
             public const string HiccupsLabel = "HiccupsLabel";
             public const string BloatingLabel = "BloatingLabel";
             public const string GasLabel = "GasLabel";
@@ -296,13 +296,13 @@
             public const string PalpitationsLabel ="PalpitationsLabel";
             public const string EasilyOutOfBreathLabel ="EasilyOutOfBreathLabel";
             public const string StrokeLabel ="StrokeLabel";
+            public const string Stroke ="Stroke";
             public const string HeartAttackLabel ="HeartAttackLabel";
             public const string AutoImmunityLabel ="AutoImmunityLabel";
             public const string SkinIssuesDetailsLabel ="SkinIssuesDetailsLabel";
             public const string ColdExtremitiesLabel ="ColdExtremitiesLabel";
             public const string ColdIntolerantLabel ="ColdIntolerantLabel";
             public const string JointInflammationLabel ="JointInflammationLabel";
-            public const string CarpelTunnelLabel ="CarpelTunnelLabel";
             public const string BackPainLabel ="BackPainLabel";
             public const string MusclePain ="MusclePain";
             public const string MuscleWeakness ="MuscleWeakness";
@@ -420,7 +420,7 @@
             public const string WhiteSpotsOnNailsLabel = "WhiteSpotsOnNailsLabel";
 
             public const string BurningMouth ="BurningMouth";
-            public const string IrritableBowerl = "IrritableBowerl";
+            public const string IrritableBowel = "IrritableBowel";
             public const string Hiccups = "Hiccups";
             public const string Bloating = "Bloating";
             public const string Gas = "Gas";
@@ -442,6 +442,7 @@
             public const string ColdIntolerant ="ColdIntolerant";
             public const string JointInflammation ="JointInflammation";
             public const string CarpelTunnel ="CarpelTunnel";
+            public const string CarpelTunnelLabel ="CarpelTunnelLabel";
             public const string BackPain ="BackPain";
             public const string UTI ="UTI";
             public const string KidneyStones ="KidneyStones";

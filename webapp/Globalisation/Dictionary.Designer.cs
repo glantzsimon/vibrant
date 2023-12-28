@@ -97,7 +97,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AbdominalPainOrCramping.
+        ///   Looks up a localized string similar to Abdominal Pain or Cramping.
         /// </summary>
         public static string AbdominalPainOrCramping {
             get {
@@ -373,7 +373,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AmalgamFillings.
+        ///   Looks up a localized string similar to Amalgam Fillings.
         /// </summary>
         public static string AmalgamFillings {
             get {
@@ -382,7 +382,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AmalgamFillingsHistory.
+        ///   Looks up a localized string similar to History of Amalgam Fillings .
         /// </summary>
         public static string AmalgamFillingsHistory {
             get {
@@ -1393,7 +1393,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you suffer from carpal tunnel syndrome?.
+        ///   Looks up a localized string similar to Carpal tunnel syndrome is a common nerve disorder that may affect hand strength and sensation, causing reduced function. Mild carpal tunnel syndrome causes periodic numbness, when severe there can be weakness. Symptoms often appear in the morning but may happen at other times. Symptoms may worsen with hand activities like driving, holding a book or grasping items..
         /// </summary>
         public static string CarpelTunnelLabel {
             get {
@@ -1593,7 +1593,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ChestPain.
+        ///   Looks up a localized string similar to Chest Pain.
         /// </summary>
         public static string ChestPain {
             get {
@@ -1737,7 +1737,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CoatedTongue.
+        ///   Looks up a localized string similar to Coated Tongue.
         /// </summary>
         public static string CoatedTongue {
             get {
@@ -1782,7 +1782,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ColdExtremities.
+        ///   Looks up a localized string similar to Cold Extremities.
         /// </summary>
         public static string ColdExtremities {
             get {
@@ -1800,7 +1800,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ColdIntolerant.
+        ///   Looks up a localized string similar to Cold Intolerant.
         /// </summary>
         public static string ColdIntolerant {
             get {
@@ -2463,7 +2463,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cystic fibrosis.
+        ///   Looks up a localized string similar to Cystic Fibrosis.
         /// </summary>
         public static string CysticFibrosis {
             get {
@@ -2472,7 +2472,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cystic fibrosis (CF) is a condition can cause both breathing and digestive problems because the disease makes the mucus in the body very thick..
+        ///   Looks up a localized string similar to Cystic Fibrosis (CF) is a condition can cause both breathing and digestive problems because the disease makes the mucus in the body very thick..
         /// </summary>
         public static string CysticFibrosisInfo {
             get {
@@ -3320,7 +3320,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to EasilyOutOfBreath.
+        ///   Looks up a localized string similar to Easily Out of Breath.
         /// </summary>
         public static string EasilyOutOfBreath {
             get {
@@ -5179,7 +5179,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to HighBloodPressure.
+        ///   Looks up a localized string similar to High Blood Pressure.
         /// </summary>
         public static string HighBloodPressure {
             get {
@@ -5434,7 +5434,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to HypoThyroidism.
+        ///   Looks up a localized string similar to Hypothyroidism.
         /// </summary>
         public static string HypoThyroidism {
             get {
@@ -5879,20 +5879,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IrritableBowerl.
+        ///   Looks up a localized string similar to Irritable Bowel.
         /// </summary>
-        public static string IrritableBowerl {
+        public static string IrritableBowel {
             get {
-                return ResourceManager.GetString("IrritableBowerl", resourceCulture);
+                return ResourceManager.GetString("IrritableBowel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Do you experience symptoms of IBS?.
         /// </summary>
-        public static string IrritableBowerlLabel {
+        public static string IrritableBowelLabel {
             get {
-                return ResourceManager.GetString("IrritableBowerlLabel", resourceCulture);
+                return ResourceManager.GetString("IrritableBowelLabel", resourceCulture);
             }
         }
         
@@ -6545,7 +6545,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to JointInflammation.
+        ///   Looks up a localized string similar to Joint Inflammation.
         /// </summary>
         public static string JointInflammation {
             get {
@@ -6987,7 +6987,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LooseStool.
+        ///   Looks up a localized string similar to Loose Stool.
         /// </summary>
         public static string LooseStool {
             get {
@@ -7107,7 +7107,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LungCancer.
+        ///   Looks up a localized string similar to Lung Cancer.
         /// </summary>
         public static string LungCancer {
             get {
@@ -10579,7 +10579,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RootCanals.
+        ///   Looks up a localized string similar to Root Canals.
         /// </summary>
         public static string RootCanals {
             get {
@@ -11561,6 +11561,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stroke.
+        /// </summary>
+        public static string Stroke {
+            get {
+                return ResourceManager.GetString("Stroke", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Have you ever had a stroke or been diagnosed as at risk?.
         /// </summary>
         public static string StrokeLabel {
@@ -12454,7 +12463,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ToothPain.
+        ///   Looks up a localized string similar to Tooth Pain.
         /// </summary>
         public static string ToothPain {
             get {
