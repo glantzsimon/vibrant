@@ -11074,6 +11074,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shop Commission %.
+        /// </summary>
+        public static string ShopCommissionLabel {
+            get {
+                return ResourceManager.GetString("ShopCommissionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shop Payable Amount.
+        /// </summary>
+        public static string ShopPayableAmountLabel {
+            get {
+                return ResourceManager.GetString("ShopPayableAmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shopping Cart.
         /// </summary>
         public static string ShoppingCart {

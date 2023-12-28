@@ -1,0 +1,47 @@
+﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
+@model List<Order>
+
+<div class="row table-row">
+    <div class="col-xs-2">
+        <strong>@Html.LabelFor(e => Model[0].FullName)</strong>
+    </div>
+    <div class="col-xs-2">
+        <strong>@Html.LabelFor(e => Model[0].RepId)</strong>
+    </div>
+    <div class="col-xs-2">
+        <strong>@Html.LabelFor(e => Model[0].ClientId)</strong>
+    </div>
+    <div class="col-xs-2">
+        <strong>@Html.LabelFor(e => Model[0].RequestedOn)</strong>
+    </div>
+    <div class="col-xs-2">
+        <strong>@Html.LabelFor(e => Model[0].PaidOn)</strong>
+    </div>
+    <div class="col-xs-2">
+    </div>
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="row table-row">
+        <div class="col-xs-2">
+            @Html.DisplayFor(e => item.FullName)
+        </div>
+        <div class="col-xs-2">
+            @Html.DisplayFor(e => item.RepId)
+        </div>
+        <div class="col-xs-2">
+            @Html.DisplayFor(e => item.ClientId)
+        </div>
+        <div class="col-xs-2">
+            @Html.DisplayFor(e => item.RequestedOn)
+        </div>
+        <div class="col-xs-2">
+            @Html.DisplayFor(e => item.PaidOn)
+        </div>
+        <div class="col-xs-2">
+            @Html.Partial("_TableCollectionsButtons", item)
+        </div>
+    </div>
+}

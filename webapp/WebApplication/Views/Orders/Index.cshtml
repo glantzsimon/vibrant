@@ -26,207 +26,29 @@
 <div class="well">
     <div class="row table-row">
         <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.IncompleteOrders</h3>
+
+            <ul class="nav nav-pills">
+                <li class="active"><a data-toggle="pill" href="#incomplete-orders">@Dictionary.IncompleteOrders</a></li>
+                <li><a data-toggle="pill" href="#shop-provisions">@Dictionary.ShopProvisions</a></li>
+                <li><a data-toggle="pill" href="#on-hold">@Dictionary.OrdersOnHold</a></li>
+                <li><a data-toggle="pill" href="#complete-orders">@Dictionary.CompleteOrders</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="incomplete-orders" class="tab-pane fade active in padding-top-15">
+                    @Html.Partial("_OrdersTableFields", @incompleteOrders)
+                </div>
+                <div id="shop-provisions" class="tab-pane fade padding-top-15">
+                    @Html.Partial("_OrdersTableFields", @shopProvisions)
+                </div>
+                <div id="on-hold" class="tab-pane fade padding-top-15">
+                    @Html.Partial("_OrdersTableFields", @ordersOnHold)
+                </div>
+                <div id="complete-orders" class="tab-pane fade padding-top-15">
+                    @Html.Partial("_OrdersTableFields", @completeOrders)
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="row table-row">
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].FullName)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].RepId)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].ClientId)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].RequestedOn)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].PaidOn)</strong>
-        </div>
-        <div class="col-xs-2">
-        </div>
-    </div>
-
-    @foreach (var item in incompleteOrders)
-    {
-        <div class="row table-row">
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.FullName)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.RepId)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.ClientId)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.RequestedOn)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.PaidOn)
-            </div>
-            <div class="col-xs-2">
-                @Html.Partial("_TableCollectionsButtons", item)
-            </div>
-        </div>
-    }
 </div>
 
-<div class="well">
-    <div class="row table-row">
-        <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.ShopProvisions</h3>
-        </div>
-    </div>
-
-    <div class="row table-row">
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].FullName)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].RepId)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].ClientId)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].RequestedOn)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].PaidOn)</strong>
-        </div>
-        <div class="col-xs-2">
-        </div>
-    </div>
-
-    @foreach (var item in shopProvisions)
-    {
-        <div class="row table-row">
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.FullName)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.RepId)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.ClientId)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.RequestedOn)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.PaidOn)
-            </div>
-            <div class="col-xs-2">
-                @Html.Partial("_TableCollectionsButtons", item)
-            </div>
-        </div>
-    }
-</div>
-
-<div class="well">
-    <div class="row table-row">
-        <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.OrdersOnHold</h3>
-        </div>
-    </div>
-
-    <div class="row table-row">
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].FullName)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].RepId)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].ClientId)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].RequestedOn)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].PaidOn)</strong>
-        </div>
-        <div class="col-xs-2">
-        </div>
-    </div>
-
-    @foreach (var item in ordersOnHold)
-    {
-        <div class="row table-row">
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.FullName)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.RepId)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.ClientId)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.RequestedOn)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.PaidOn)
-            </div>
-            <div class="col-xs-2">
-                @Html.Partial("_TableCollectionsButtons", item)
-            </div>
-        </div>
-    }
-</div>
-
-<div class="well">
-    <div class="row table-row">
-        <div class="col-xs-12">
-            <h3 class="section-title">@Dictionary.CompleteOrders</h3>
-        </div>
-    </div>
-
-    <div class="row table-row">
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].FullName)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].RepId)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].ClientId)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].RequestedOn)</strong>
-        </div>
-        <div class="col-xs-2">
-            <strong>@Html.LabelFor(e => Model.AllOrders[0].PaidOn)</strong>
-        </div>
-        <div class="col-xs-2">
-        </div>
-    </div>
-
-    @foreach (var item in completeOrders)
-    {
-        <div class="row table-row">
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.FullName)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.RepId)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.ClientId)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.RequestedOn)
-            </div>
-            <div class="col-xs-2">
-                @Html.DisplayFor(e => item.PaidOn)
-            </div>
-            <div class="col-xs-2">
-                @Html.Partial("_TableCollectionsButtons", item)
-            </div>
-        </div>
-    }
-</div>

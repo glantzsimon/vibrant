@@ -278,9 +278,13 @@ namespace K9.DataAccessLayer.Models
         public string GetFormattedSuggestedDiscountAmount() => GetSuggestedDiscount().ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [UIHint("Percentage")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopCommissionLabel)]
+        public double? ShopCommission { get; set; }
+
+        [UIHint("Percentage")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public double? Discount { get; set; }
-
+        
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public string GetFormattedDiscountAsPercent() => (Discount / 100)?.ToString("P0", CultureInfo.InvariantCulture);
 
@@ -292,6 +296,19 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         [DataType(DataType.Currency)]
         public double GetDiscountAmount() => ((TotalPriceMinusShipping * (Discount / 100 ?? 0)));
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopCommissionLabel)]
+        [DataType(DataType.Currency)]
+        public double GetShopCommissionAmount() => ((TotalPriceMinusShipping * (ShopCommission / 100 ?? 0)));
+
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopPayableAmountLabel)]
+        [DataType(DataType.Currency)]
+        public double ShopPayableAmount { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopPayableAmountLabel)]
+        [DataType(DataType.Currency)]
+        public double GetShopPayableAmount() => ((TotalPriceMinusShipping * (ShopCommission / 100 ?? 0)));
 
         [UIHint("InternationalCurrency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]

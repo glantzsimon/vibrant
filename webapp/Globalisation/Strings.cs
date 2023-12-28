@@ -73,6 +73,8 @@
             public const string RedeemedOnLabel = "RedeemedOnLabel";
             public const string ShippingLabel = "ShippingLabel";
             public const string DiscountLabel = "DiscountLabel";
+            public const string ShopCommissionLabel = "ShopCommissionLabel";
+            public const string ShopPayableAmountLabel = "ShopPayableAmountLabel";
             public const string PriceSmallPackLabel = "PriceSmallPackLabel";
             public const string CostOfMaterialsLabel = "CostOfMaterialsLabel";
             public const string AllowIngredientSubstitutesLabel = "AllowIngredientSubstitutesLabel";

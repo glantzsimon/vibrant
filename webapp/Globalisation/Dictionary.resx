@@ -4651,6 +4651,12 @@
   <data name="PhytateIntolerance" xml:space="preserve">
     <value>Phytate Intolerance</value>
   </data>
+  <data name="ShopCommissionLabel" xml:space="preserve">
+    <value>Shop Commission %</value>
+  </data>
+  <data name="ShopPayableAmountLabel" xml:space="preserve">
+    <value>Shop Payable Amount</value>
+  </data>
   <data name="ShopProvision" xml:space="preserve">
     <value>Shop Provision</value>
   </data>
