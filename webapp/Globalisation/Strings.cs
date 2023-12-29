@@ -759,6 +759,16 @@
             public const string Gallbladder = "Gallbladder";
             public const string SmallIntestine = "SmallIntestine";
 
+            public const string OxalateDescription = "OxalateDescription";
+            public const string LectinDescription = "LectinDescription";
+            public const string PhytateDescription = "PhytateDescription";
+            public const string HistamineDescription = "HistamineDescription";
+            public const string MycotoxinDescription = "MycotoxinDescription";
+            public const string Omega6Description = "Omega6Description";
+            public const string BulletProofDescription = "BulletProofDescription";
+            public const string SattvicDescription = "SattvicDescription";
+            public const string LowSulphurDescription = "LowSulphurDescription";
+
             public const string Omnivore = "Omnivore";
             public const string Vegetarian = "Vegetarian";
             public const string Vegan = "Vegan";

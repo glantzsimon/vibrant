@@ -279,6 +279,13 @@
                                                 <hr />
                                             </div>
                                             <div class="col-xs-12">
+                                                <div class="alert alert-success">
+                                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                    <h4>@Dictionary.YouHaveFlexibility</h4>
+                                                    <div>@Html.Raw(Dictionary.flexible_foods)</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
                                                 @Html.BootstrapEditorFor(e => e.AutomaticallyFilterFoods)
                                             </div>
                                             <div class="col-xs-12">

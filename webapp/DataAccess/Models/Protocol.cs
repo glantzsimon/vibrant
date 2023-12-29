@@ -64,39 +64,39 @@ namespace K9.DataAccessLayer.Models
         public bool EatsGrains { get; set; }
 
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowOxalateLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowOxalateLabel, Description = Globalisation.Strings.Names.OxalateDescription)]
         public bool IsLowOxalate { get; set; }
 
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowLectinLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowLectinLabel, Description = Globalisation.Strings.Names.LectinDescription)]
         public bool IsLowLectin { get; set; }
 
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowPhytateLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowPhytateLabel, Description = Globalisation.Strings.Names.PhytateDescription)]
         public bool IsLowPhytate { get; set; }
 
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowHistamineLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowHistamineLabel, Description = Globalisation.Strings.Names.HistamineDescription)]
         public bool IsLowHistamine { get; set; }
 
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowMycotoxinLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowMycotoxinLabel, Description = Globalisation.Strings.Names.MycotoxinDescription)]
         public bool IsLowMycotoxin { get; set; }
 
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowOmega6Label)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowOmega6Label, Description = Globalisation.Strings.Names.Omega6Description)]
         public bool IsLowOmega6 { get; set; }
 
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsBulletProofLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsBulletProofLabel, Description = Globalisation.Strings.Names.BulletProofDescription)]
         public bool IsBulletProof { get; set; }
 
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsSattvicLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsSattvicLabel, Description = Globalisation.Strings.Names.SattvicDescription)]
         public bool IsSattvic { get; set; }
 
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowSulphur)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowSulphur, Description = Globalisation.Strings.Names.LowSulphurDescription)]
         public bool IsLowSulphur { get; set; }
 
         [NotMapped]

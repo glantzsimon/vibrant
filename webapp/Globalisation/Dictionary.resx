@@ -4639,6 +4639,9 @@
   <data name="CurrentHealthLevelSliderLabel" xml:space="preserve">
     <value>On a scale of 1 - 10, how healthy do you feel at the moment?</value>
   </data>
+  <data name="flexible_foods" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>nutrition\en-gb\flexible-foods.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="HistamineIntolerance" xml:space="preserve">
     <value>Histamine Intolerance</value>
   </data>
@@ -4700,5 +4703,8 @@ A sattvic diet shares the qualities of sattva, some of which include "pure, esse
   </data>
   <data name="TotalShopPayableAmountLabel" xml:space="preserve">
     <value>Total Shop Payable Amount</value>
+  </data>
+  <data name="YouHaveFlexibility" xml:space="preserve">
+    <value>Your dietary guidelines are flexible.</value>
   </data>
 </root>

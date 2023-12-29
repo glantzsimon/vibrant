@@ -4250,6 +4250,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;
+        ///    We appreciate that eating right for your type and current state of health may leave you with far fewer foods than you would ideally like and &lt;strong&gt;this can seem very restrictive&lt;/strong&gt;. However, it&apos;s &lt;strong&gt;typically only necessary to restrict problem foods when you are more vulnerable&lt;/strong&gt; or have uncomfortable symptoms. We recommend being more cautious when, for example, you have an &lt;strong&gt;infection or are tired, run down, inflamed, very stressed or just generally feeling unwell&lt;/stro [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string flexible_foods {
+            get {
+                return ResourceManager.GetString("flexible_foods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Flower.
         /// </summary>
         public static string Flower {
@@ -14262,6 +14272,15 @@ namespace K9.Globalisation {
         public static string YouAreSignedUp {
             get {
                 return ResourceManager.GetString("YouAreSignedUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your dietary guidelines are flexible..
+        /// </summary>
+        public static string YouHaveFlexibility {
+            get {
+                return ResourceManager.GetString("YouHaveFlexibility", resourceCulture);
             }
         }
         
