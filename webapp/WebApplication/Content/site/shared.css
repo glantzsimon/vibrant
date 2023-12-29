@@ -385,3 +385,7 @@
     padding-top: 4px;
     text-align: center;
 }
+
+.print-page-break {
+    page-break-inside: avoid !important;
+}

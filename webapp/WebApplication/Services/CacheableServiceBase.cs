@@ -206,12 +206,12 @@ namespace K9.WebApplication.Services
 
             itemsInCategory = itemsInCategory.OrderBy(e => e.Name).ToList();
 
-            var indexedItems = itemsInCategory.Select((p, i) => new { Model = p, Index = i }).ToList();
-            var newIndex = indexedItems.First(e => e.Model.Name == model.Name).Index;
+            var indexedItems = itemsInCategory.Select((p, i) => new { Model = p, Index = i }).OrderBy(e => e.Index).ToList();
+            var newIndex = indexedItems.First(e => e.Model.Name == model.Name && e.Model.Id == model.Id).Index;
             var firstIndex = indexedItems.Min(e => e.Index);
             var lastIndex = indexedItems.Max(e => e.Index);
-            var previousItem = newIndex == firstIndex ? null : itemsInCategory[newIndex - 1];
-            var nextItem = newIndex == lastIndex ? null : itemsInCategory[newIndex + 1];
+            var previousItem = newIndex == firstIndex ? null : indexedItems[newIndex - 1].Model;
+            var nextItem = newIndex == lastIndex ? null : indexedItems[newIndex + 1].Model;
 
             if (previousItem != null & nextItem != null)
             {

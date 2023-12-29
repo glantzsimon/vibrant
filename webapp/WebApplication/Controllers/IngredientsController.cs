@@ -100,7 +100,7 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult SelectIngredientsLabels()
         {
-            return View(new IngredientsLabelsViewModel(_ingredientService.List(false, true)));
+            return View(new IngredientsLabelsViewModel(_ingredientService.List(false, false)));
         }
 
         [HttpPost]

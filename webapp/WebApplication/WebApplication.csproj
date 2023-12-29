@@ -855,6 +855,7 @@
     <Content Include="Images\template\t2.jpg" />
     <Content Include="Images\template\t3.jpg" />
     <Content Include="Images\ui\audio.png" />
+    <Content Include="Images\ui\apothecary-label.png" />
     <Content Include="Images\ui\document.jpg" />
     <Content Include="Images\ui\fade-out.png" />
     <Content Include="Images\ui\fail.png" />
@@ -1722,6 +1723,7 @@
     <Content Include="Views\Orders\_OrdersTableFields.cshtml" />
     <Content Include="Views\Protocols\PrintableFoodsList.cshtml" />
     <Content Include="Views\Protocols\_PrintableFoodsList.cshtml" />
+    <Content Include="Views\Ingredients\_IngredientApothecaryLabel.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

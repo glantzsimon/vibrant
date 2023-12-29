@@ -2,29 +2,24 @@
 @using K9.WebApplication.Models
 @model IngredientsLabelsViewModel
 
-@{
-    var pageIndex = 0;
-}
-
-<div class="row padding-0 margin-0">
-    @for (int i = 0; i < Model.SelectIngredients.Count; i++)
-    {
-        if (i == 6)
+<div class="well print-page-break">
+    <div class="row padding-0 margin-0">
+        @for (int i = 0; i < Model.SelectIngredients.Count; i++)
         {
-            pageIndex += 1;
-
-            @:</div>
-            @:<div class="row padding-0 margin-0">
-
-            if (pageIndex >= 6)
-            {
-                <div class="pagebreak"></div>
-                pageIndex = 0;
-            }
+            <div class="col-md-2 col-xs-4 padding-0 margin-0 print-page-break">
+                @Html.Partial("_IngredientLabel", Model.SelectIngredients[i])
+            </div>
         }
+    </div>
+</div>
 
-        <div class="col-xs-2 padding-0 margin-0">
-            @Html.Partial("_IngredientLabel", Model.SelectIngredients[i])
+<div class="well print-page-break">
+    <div class="row padding-0 margin-0">
+        @for (int i = 0; i < Model.SelectIngredients.Count; i++)
+        {
+        <div class="col-md-2 col-xs-4 padding-0 margin-0 print-page-break">
+            @Html.Partial("_IngredientApothecaryLabel", Model.SelectIngredients[i])
         </div>
-    }
+        }
+    </div>
 </div>

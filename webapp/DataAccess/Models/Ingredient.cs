@@ -18,6 +18,31 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Ingredients, PluralName = Globalisation.Strings.Names.Ingredients, Name = Globalisation.Strings.Names.Ingredient)]
     public class Ingredient : GenoTypeBase, ICategorisable
 	{
+	    public string GetDyamicFontLabelSize()
+	    {
+	        var charLength = Name.Length;
+	        if (charLength < 7)
+	        {
+	            return "2.2em";
+	        }
+	        if (charLength < 10)
+	        {
+	            return "1.9em";
+	        }
+	        if (charLength < 14)
+	        {
+	            return "1.6em";
+	        }
+	        if (charLength < 18)
+	        {
+	            return "1.3em";
+	        }
+	        else
+	        {
+	            return "1.1em";
+	        }
+	    }
+
 	    [UIHint("IngredientCategory")]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CategoryLabel)]
 	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
