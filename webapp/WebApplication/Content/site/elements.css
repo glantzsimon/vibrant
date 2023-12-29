@@ -30,25 +30,25 @@ article {
     padding: 10px;
 }
 
-article h4 {
-    margin-top: 32px;
-    margin-bottom: 15px;
-    font-weight: bold;
-    font-size: 1.7em;
-    color: #444;
-}
-
-    article h4 a.collapsible-panel-link {
-        font-size: 1.5em;
+    article h4 {
+        margin-top: 32px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        font-size: 1.7em;
+        color: #444;
     }
 
-article h5 {
-    margin-top: 20px;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 1.3em;
-    line-height: 1.5em;
-}
+        article h4 a.collapsible-panel-link {
+            font-size: 1.5em;
+        }
+
+    article h5 {
+        margin-top: 20px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 1.3em;
+        line-height: 1.5em;
+    }
 
     article h6 {
         margin-top: 20px;
@@ -72,4 +72,8 @@ hr {
 
 .footer h3, .footer h4, .footer h5 {
     color: #8a8a8a !important;
+}
+
+well h4 {
+    margin-bottom: 7px;
 }
