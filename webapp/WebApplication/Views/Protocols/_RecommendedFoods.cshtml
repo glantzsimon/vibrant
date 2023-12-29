@@ -31,6 +31,19 @@
             var activeClass = i == 0 ? "active in" : "";
 
             <div id="@foodGroupName" class="tab-pane fade @activeClass padding-top-15">
+                @if (foodGroup == EFoodGroup.Carbohydrates || foodGroup == EFoodGroup.Proteins)
+                {
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="alert alert-info">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <h4>@Dictionary.ImportacneOfSoaking</h4>
+                                <p>@Dictionary.SoakPulsesNutsAndSeeds</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+
                 @foreach (var level in Model.Levels)
                 {
                     var levelName = level.GetAttribute<EnumDescriptionAttribute>().GetDescription();
@@ -46,7 +59,7 @@
                                 <p><i>@levelDescription</i></p>
                             </div>
                         </div>
-                        <br />
+                        <br/>
                         <div class="row">
                             <div class="col-xs-12">
                                 @if (filteredFoods != null && filteredFoods.Any())
@@ -61,7 +74,7 @@
                                                          recommendedFood.IsHighMycotoxin ||
                                                          recommendedFood.IsHighOmega6 ||
                                                          recommendedFood.IsBulletProof ||
-                                                        recommendedFood.IsSattvic;
+                                                         recommendedFood.IsSattvic;
 
                                         <span data-id="@recommendedFood.Id" class="summary-item recommended-food" style="background-color: @levelColor !important;">
 

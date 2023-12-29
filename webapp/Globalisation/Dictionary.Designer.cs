@@ -5614,6 +5614,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Importance of Soaking.
+        /// </summary>
+        public static string ImportacneOfSoaking {
+            get {
+                return ResourceManager.GetString("ImportacneOfSoaking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Impotency.
         /// </summary>
         public static string Impotency {
@@ -11444,6 +11453,15 @@ namespace K9.Globalisation {
         public static string SmokeLabel {
             get {
                 return ResourceManager.GetString("SmokeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grains, pulses, nuts and seeds should be soaked for typically 8 - 24 hours in an acidic medium, such as water with lemon juice or vinegar or citric acid, before rinsing and either cooking / eating. Traditions all around the world have done this since time immemorial. The reason this is so important is that it neutralises many anti-nutrients in these foods that can bind to minerals and other nutrients and also accumulate in the tissues,causing problems in sensitive individuals. .
+        /// </summary>
+        public static string SoakPulsesNutsAndSeeds {
+            get {
+                return ResourceManager.GetString("SoakPulsesNutsAndSeeds", resourceCulture);
             }
         }
         

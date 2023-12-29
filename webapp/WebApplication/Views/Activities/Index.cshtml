@@ -10,7 +10,7 @@
 {
     AllowCreate = true,
     AllowEdit = true,
-    AllowDelete = ((BaseController<Activity>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
+    AllowDelete = K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin(),
     SelectAllColumns = false,
     VisibleColumns = new List<string>
     {

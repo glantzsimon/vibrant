@@ -68,7 +68,7 @@
                     @Html.BootstrapActionLinkButton(Dictionary.TakeTheGeneticProfileTest, "GeneticProfileTest", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Primary)
                 }
                 
-                if (Model.HealthQuestionnaire.IsComplete())
+                if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin() && Model.HealthQuestionnaire.IsComplete())
                 {
                     @Html.BootstrapActionLinkButton(Dictionary.ViewHealthQuestionnaireResults, "GeneticProfileTestOverview", "HealthQuestionnaire", new { externalId = Model.HealthQuestionnaire.ExternalId }, "fa fa-heartbeat", EButtonClass.Success)
                 }

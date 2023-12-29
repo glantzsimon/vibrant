@@ -49,11 +49,6 @@ namespace K9.WebApplication.ViewModels
             switch (GenoType)
             {
                 case EGenoType.Hunter:
-                    foreach (var recommendedFood in RecommendedFoods)
-                    {
-                        recommendedFood.HunterCompatibilityLevel = GetCompatibilityLevel(recommendedFood, recommendedFood.HunterCompatibilityLevel);
-                    }
-
                     if (foodGroup == EFoodGroup.Other)
                     {
                         return RecommendedFoods?.Where(e =>
@@ -66,12 +61,6 @@ namespace K9.WebApplication.ViewModels
                         (e.HunterCompatibilityLevel == level)).ToList();
 
                 case EGenoType.Gatherer:
-                    // Upgrade highest-scoring items
-                    foreach (var recommendedFood in RecommendedFoods)
-                    {
-                        recommendedFood.GathererCompatibilityLevel = GetCompatibilityLevel(recommendedFood, recommendedFood.GathererCompatibilityLevel);
-                    }
-
                     if (foodGroup == EFoodGroup.Other)
                     {
                         return RecommendedFoods?.Where(e =>
@@ -84,12 +73,6 @@ namespace K9.WebApplication.ViewModels
                         (e.GathererCompatibilityLevel == level)).ToList();
 
                 case EGenoType.Teacher:
-                    // Upgrade highest-scoring items
-                    foreach (var recommendedFood in RecommendedFoods)
-                    {
-                        recommendedFood.TeacherCompatibilityLevel = GetCompatibilityLevel(recommendedFood, recommendedFood.TeacherCompatibilityLevel);
-                    }
-
                     if (foodGroup == EFoodGroup.Other)
                     {
                         return RecommendedFoods?.Where(e =>
@@ -102,12 +85,6 @@ namespace K9.WebApplication.ViewModels
                         (e.TeacherCompatibilityLevel == level)).ToList();
 
                 case EGenoType.Explorer:
-                    // Upgrade highest-scoring items
-                    foreach (var recommendedFood in RecommendedFoods)
-                    {
-                        recommendedFood.ExplorerCompatibilityLevel = GetCompatibilityLevel(recommendedFood, recommendedFood.ExplorerCompatibilityLevel);
-                    }
-
                     if (foodGroup == EFoodGroup.Other)
                     {
                         return RecommendedFoods?.Where(e =>
@@ -120,12 +97,6 @@ namespace K9.WebApplication.ViewModels
                         (e.ExplorerCompatibilityLevel == level)).ToList();
 
                 case EGenoType.Warrior:
-                    // Upgrade highest-scoring items
-                    foreach (var recommendedFood in RecommendedFoods)
-                    {
-                        recommendedFood.WarriorCompatibilityLevel = GetCompatibilityLevel(recommendedFood, recommendedFood.WarriorCompatibilityLevel);
-                    }
-
                     if (foodGroup == EFoodGroup.Other)
                     {
                         return RecommendedFoods?.Where(e =>
@@ -138,12 +109,6 @@ namespace K9.WebApplication.ViewModels
                         (e.WarriorCompatibilityLevel == level)).ToList();
 
                 case EGenoType.Nomad:
-                    // Upgrade highest-scoring items
-                    foreach (var recommendedFood in RecommendedFoods)
-                    {
-                        recommendedFood.NomadCompatibilityLevel = GetCompatibilityLevel(recommendedFood, recommendedFood.NomadCompatibilityLevel);
-                    }
-
                     if (foodGroup == EFoodGroup.Other)
                     {
                         return RecommendedFoods?.Where(e =>
@@ -158,71 +123,6 @@ namespace K9.WebApplication.ViewModels
 
             return null;
         }
-
-        private static ECompatibilityLevel GetCompatibilityLevel(FoodItem recommendedFood, ECompatibilityLevel compatibilityLevel)
-        {
-            var score = recommendedFood.GetScore();
-
-            // Upgrade highest-scoring items
-            if (score == EScore.VeryHigh
-                && compatibilityLevel != ECompatibilityLevel.Unsuitable
-                && compatibilityLevel != ECompatibilityLevel.Suboptimal)
-            {
-                return ECompatibilityLevel.Optimal;
-            }
-
-            else if (score == EScore.High
-                     && compatibilityLevel == ECompatibilityLevel.Neutral)
-            {
-                return ECompatibilityLevel.Excellent;
-            }
-
-            else if (score >= EScore.High && (compatibilityLevel == ECompatibilityLevel.Suboptimal ||
-                                              compatibilityLevel == ECompatibilityLevel.Unsuitable))
-
-            {
-                recommendedFood.RelativeScore = 0;
-            }
-
-            // Downgrade lowest scoring items
-            else if (score == EScore.VeryLow)
-            {
-                if (compatibilityLevel == ECompatibilityLevel.Optimal)
-                {
-                    return ECompatibilityLevel.Neutral;
-                }
-
-                else if (compatibilityLevel == ECompatibilityLevel.Excellent)
-                {
-                    return ECompatibilityLevel.Suboptimal;
-                }
-
-                else if (compatibilityLevel == ECompatibilityLevel.Neutral
-                         || compatibilityLevel == ECompatibilityLevel.Suboptimal)
-                {
-                    return ECompatibilityLevel.Unsuitable;
-                }
-            }
-
-            else if (score == EScore.Low)
-            {
-                if (compatibilityLevel == ECompatibilityLevel.Optimal)
-                {
-                    return ECompatibilityLevel.Excellent;
-                }
-
-                else if (compatibilityLevel == ECompatibilityLevel.Excellent)
-                {
-                    return ECompatibilityLevel.Neutral;
-                }
-
-                else if (compatibilityLevel == ECompatibilityLevel.Neutral)
-                {
-                    return ECompatibilityLevel.Suboptimal;
-                }
-            }
-
-            return compatibilityLevel;
-        }
+        
     }
 }
