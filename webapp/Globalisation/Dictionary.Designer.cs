@@ -3239,6 +3239,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download Ingredients as Json.
+        /// </summary>
+        public static string DownloadIngredientsJson {
+            get {
+                return ResourceManager.GetString("DownloadIngredientsJson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Download Orders as CSV.
         /// </summary>
         public static string DownloadOrdersCsv {
@@ -3253,6 +3262,15 @@ namespace K9.Globalisation {
         public static string DownloadProductsCsv {
             get {
                 return ResourceManager.GetString("DownloadProductsCsv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download Products as Json.
+        /// </summary>
+        public static string DownloadProductsJson {
+            get {
+                return ResourceManager.GetString("DownloadProductsJson", resourceCulture);
             }
         }
         

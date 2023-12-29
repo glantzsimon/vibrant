@@ -16,14 +16,9 @@ namespace K9.DataAccessLayer.Models
 
         public EScore GetScore()
         {
-            if (RelativeScore >= 90)
-            {
-                return EScore.VeryHigh;
-            }
-
             if (RelativeScore >= 80)
             {
-                return EScore.High;
+                return EScore.VeryHigh;
             }
 
             if (RelativeScore >= 70)
@@ -31,22 +26,27 @@ namespace K9.DataAccessLayer.Models
                 return EScore.High;
             }
 
-            if (RelativeScore >= 50)
+            if (RelativeScore >= 60)
+            {
+                return EScore.High;
+            }
+
+            if (RelativeScore >= 44)
             {
                 return EScore.Medium;
             }
 
-            if (RelativeScore <= 30)
+            if (RelativeScore <= 22)
             {
                 return EScore.Low;
             }
 
-            if (RelativeScore <= 13)
+            if (RelativeScore <= 7)
             {
                 return EScore.VeryLow;
             }
 
-            return EScore.Low;
+            return EScore.Medium;
         }
 
         public string GetRelativeScoreHtml()

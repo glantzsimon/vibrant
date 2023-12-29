@@ -151,16 +151,7 @@ namespace K9.WebApplication.Controllers
         [Route("ingredients/export/csv")]
         public ActionResult DownloadIngredientsCsv()
         {
-            var ingredients = _ingredientService.List(true);
-            var ingredientsItems = new List<IngredientItem>();
-
-            foreach (var ingredient in ingredients)
-            {
-                var ingredientItem = ingredient.MapTo<IngredientItem>();
-                ingredientItem.IngredientTypeText = ingredient.GetIngredientTypeText();
-                ingredientsItems.Add(ingredientItem);
-            }
-
+            var ingredientsItems = _ingredientService.ListIngredientItems();
             var data = ingredientsItems.ToCsv();
 
             Response.Clear();

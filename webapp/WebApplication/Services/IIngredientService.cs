@@ -14,6 +14,7 @@ namespace K9.WebApplication.Services
         Ingredient GetFullIngredient(Ingredient ingredient);
         Ingredient FindWithSubstitutesSelectList(int id);
         List<Ingredient> List(bool retrieveFullIngredient = false, bool usedOnly = false);
+        List<IngredientItem> ListIngredientItems();
         void UpdateIngredientPriorities(List<SortableItem> items);
         void EditIngredientSubstitutes(Ingredient ingredient);
         void MarkIngredientAsOutOfStock(int id);

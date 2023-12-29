@@ -1,6 +1,7 @@
 ﻿using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
+using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Models;
 using Microsoft.Extensions.Caching.Memory;
@@ -317,6 +318,21 @@ namespace K9.WebApplication.Services
             }
 
             ClearCache();
+        }
+
+        public List<IngredientItem> ListIngredientItems()
+        {
+            var ingredients = List(true);
+            var ingredientsItems = new List<IngredientItem>();
+
+            foreach (var ingredient in ingredients)
+            {
+                var ingredientItem = ingredient.MapTo<IngredientItem>();
+                ingredientItem.IngredientTypeText = ingredient.GetIngredientTypeText();
+                ingredientsItems.Add(ingredientItem);
+            }
+
+            return ingredientsItems;
         }
     }
 }

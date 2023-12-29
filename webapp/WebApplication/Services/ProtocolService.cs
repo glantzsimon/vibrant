@@ -889,7 +889,7 @@ namespace K9.WebApplication.Services
 
             // Remove "hearts"
             else if (score >= EScore.High && (compatibilityLevel == ECompatibilityLevel.Suboptimal ||
-                                              compatibilityLevel == ECompatibilityLevel.Unsuitable))
+                                              compatibilityLevel == ECompatibilityLevel.Unsuitable || compatibilityLevel == ECompatibilityLevel.Neutral))
 
             {
                 recommendedFood.RelativeScore = 0;

@@ -427,7 +427,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.RecommendationsLabel)]
         public string GetRecommendationsText() =>
-            $"Take {GetFullDosageLabellext()} {Recommendations.GetAttribute<EnumDescriptionAttribute>().GetDescription().ToLower()}";
+            $"Take {GetFullDosageLabellext()} {Recommendations.GetAttribute<EnumDescriptionAttribute>()?.GetDescription().ToLower()}";
 
         #endregion
 

@@ -6,6 +6,8 @@ namespace K9.WebApplication.Models
 {
     public class IngredientItem
     {
+        public int Id { get; set; }
+
         [ProductLabel]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IngredientLabel)]
         public string Name { get; set; }
