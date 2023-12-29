@@ -168,7 +168,22 @@ namespace K9.DataAccessLayer.Models
                 }
             }
 
-            var score = yesses.Count > 0 ? (((double)totalYesses / (double)totalAnswers)) : 0;
+            var yessesCount = yesses.Count;
+            var score = yessesCount > 0 ? (((double)totalYesses / (double)totalAnswers)) : 0;
+
+            // Up the score for a high yes count
+            if (yessesCount >= 5)
+            {
+                score = IncreaseTowardsMaxScore(score, 1 / 4);
+            }
+            if (yessesCount >= 9)
+            {
+                score = IncreaseTowardsMaxScore(score, 1 / 2);
+            }
+            if (yessesCount >= 12)
+            {
+                score = IncreaseTowardsMaxScore(score, 3 / 4);
+            }
 
             return (int)Math.Ceiling((double)score * 100);
         }
@@ -681,7 +696,14 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsSattvicLabel)]
         public bool IsSattvic { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowSulphur)]
+        public bool IsLowSulphur { get; set; }
+
         public bool IsDietaryPreferencesComplete() => IsCategoryComplete(e => e.Category == EQuestionCategory.DietaryPreferences);
+
+        public List<PropertyInfo> GeneralDietaryPreferencesProperties() => this
+            .GetProperties().Where(e => e.GetAttribute<QuestionCategoryAttribute>()?.Category == EQuestionCategory.DietaryPreferences).ToList();
 
         #endregion
 
@@ -751,17 +773,17 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LooseStool)]
         public bool LooseStool { get; set; }
 
-        [Score(DigestiveHealth = true, VataDosha = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true, IsMycotoxinIntolerance = true)]
+        [Score(DigestiveHealth = true, VataDosha = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true, IsMycotoxinIntolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Constipation)]
         public bool Constipation { get; set; }
 
-        [Score(DigestiveHealth = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true)]
+        [Score(DigestiveHealth = true, IsOxalateIntolerance = true, IsHistamineIntolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AbdominalPainOrCramping)]
         public bool AbdominalPainOrCramping { get; set; }
 
-        [Score(DigestiveHealth = true, IsYang = true, PittaDosha = true, IsOmega6Intolerance = true)]
+        [Score(DigestiveHealth = true, IsYang = true, PittaDosha = true, IsOmega6Intolerance = true, IsLectinIntolerance = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinIssues)]
         public bool SkinIssues { get; set; }
@@ -777,12 +799,12 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CoatedTongue, Description = Strings.Labels.CoatedTongueLabel)]
         public bool CoatedTongue { get; set; }
 
-        [Score(DigestiveHealth = true, Immunity = true, Detoxification = true, IsOxalateIntolerance = true)]
+        [Score(DigestiveHealth = true, Immunity = true, Detoxification = true, IsOxalateIntolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DiverticulitisLabel)]
         public bool Diverticulitis { get; set; }
 
-        [Score(DigestiveHealth = true, Immunity = true, Detoxification = true, IsOxalateIntolerance = true)]
+        [Score(DigestiveHealth = true, Immunity = true, Detoxification = true, IsOxalateIntolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LeakyGut)]
         public bool LeakyGut { get; set; }
@@ -857,12 +879,12 @@ namespace K9.DataAccessLayer.Models
 
         #region Respiratory Health
 
-        [Score(Immunity = true, IsOxalateIntolerance = true, RespiratoryHealth = true, IsOmega6Intolerance = true)]
+        [Score(Immunity = true, IsOxalateIntolerance = true, RespiratoryHealth = true, IsOmega6Intolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Asthma)]
         public bool Asthma { get; set; }
 
-        [Score(Immunity = true, IsOxalateIntolerance = true, RespiratoryHealth = true)]
+        [Score(Immunity = true, IsOxalateIntolerance = true, RespiratoryHealth = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.BronchitisLabel)]
         public bool Bronchitis { get; set; }
@@ -928,7 +950,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AutoImmunity, Description = Strings.Labels.AutoImmunityLabel)]
         public bool Autoimmunity { get; set; }
 
-        [Score(AntiInflammatory = true, IsInflammation = true, IsOxalateIntolerance = true)]
+        [Score(AntiInflammatory = true, IsInflammation = true, IsOxalateIntolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CataractsLabel)]
         public bool Cataracts { get; set; }
@@ -948,12 +970,12 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DifficultyUrinating)]
         public bool DifficultyUrinating { get; set; }
 
-        [Score(Immunity = true, UrologicalHealth = true, Detoxification = true, IsYin = true, IsOxalateIntolerance = true)]
+        [Score(Immunity = true, UrologicalHealth = true, Detoxification = true, IsYin = true, IsOxalateIntolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.InterstitialCystitis, Description = Strings.Labels.InterstitialCystitisInfo)]
         public bool InterstitialCystitis { get; set; }
 
-        [Score(Immunity = true, UrologicalHealth = true, Detoxification = true, IsYin = true, IsOxalateIntolerance = true)]
+        [Score(Immunity = true, UrologicalHealth = true, Detoxification = true, IsYin = true, IsOxalateIntolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EndometriosisLabel)]
         public bool Endometriosis { get; set; }
@@ -977,12 +999,12 @@ namespace K9.DataAccessLayer.Models
 
         #region Other
 
-        [Score(IsOmega6Intolerance = true)]
+        [Score(IsOmega6Intolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Type2Diabetes)]
         public bool Type2Diabetes { get; set; }
 
-        [Score(IsOmega6Intolerance = true)]
+        [Score(IsOmega6Intolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MetabolicSyndrome, Description = Strings.Labels.MetabolicSyndromeInfo)]
         public bool MetabolicSyndroms { get; set; }
@@ -1047,7 +1069,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LackOfCoordination)]
         public bool LackOfCoordination { get; set; }
 
-        [Score(IsOxalateIntolerance = true, IsOmega6Intolerance = true)]
+        [Score(IsOxalateIntolerance = true, IsOmega6Intolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.VisionProblems)]
         public bool VisionProblems { get; set; }
@@ -1057,7 +1079,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Dizziness)]
         public bool Dizziness { get; set; }
 
-        [Score(IsHistamineIntolerance = true)]
+        [Score(IsHistamineIntolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AbdominalDistention)]
         public bool AbdominalDistention { get; set; }
@@ -1072,7 +1094,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Hives)]
         public bool Hives { get; set; }
 
-        [Score(Cognition = true, Mood = true, NeurologicalHealth = true, IsHistamineIntolerance = true)]
+        [Score(Cognition = true, Mood = true, NeurologicalHealth = true, IsHistamineIntolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ADHD, Description = Strings.Labels.ADHDLabel)]
         public bool ADHD { get; set; }
@@ -1082,7 +1104,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.IrregularMenstruation)]
         public bool IrregularMenstruation { get; set; }
 
-        [Score(IsHistamineIntolerance = true)]
+        [Score(IsHistamineIntolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NasalCongestion)]
         public bool NasalCongestion { get; set; }
@@ -1097,7 +1119,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Itching)]
         public bool Itching { get; set; }
 
-        [Score(IsOxalateIntolerance = true)]
+        [Score(IsOxalateIntolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HypoThyroidism)]
         public bool HypoThyroidism { get; set; }
@@ -1107,7 +1129,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SandyEye)]
         public bool SandyEye { get; set; }
 
-        [Score(IsOxalateIntolerance = true)]
+        [Score(IsOxalateIntolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.PCOS, Description = Strings.Labels.PCOSInfo)]
         public bool PCOS { get; set; }
@@ -1127,7 +1149,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Hemorrhoids)]
         public bool Hemorrhoids { get; set; }
 
-        [Score(IsOxalateIntolerance = true, IsPhytateIntolerance = true, IsMycotoxinIntolerance = true)]
+        [Score(IsOxalateIntolerance = true, IsPhytateIntolerance = true, IsMycotoxinIntolerance = true, IsLectinIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.HairLossLabel)]
         public bool HairLoss { get; set; }
@@ -1324,6 +1346,19 @@ namespace K9.DataAccessLayer.Models
                        });
         }
 
+        private static double IncreaseTowardsMaxScore(double initialValue, double fraction)
+        {
+            if (initialValue < 0 || initialValue > 100)
+            {
+                throw new ArgumentOutOfRangeException("InitialValue must be between 0 and 100.");
+            }
+
+            var remainingDistance = 100 - initialValue;
+            var increase = remainingDistance * fraction;
+            var newValue = initialValue + increase;
+
+            return Math.Min(newValue, 100);
+        }
 
     }
 }

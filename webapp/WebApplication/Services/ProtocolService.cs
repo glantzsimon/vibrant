@@ -191,6 +191,7 @@ namespace K9.WebApplication.Services
                 protocol.IsLowOmega6 = hq.IsLowOmega6;
                 protocol.IsBulletProof = hq.IsBulletProof;
                 protocol.IsSattvic = hq.IsSattvic;
+                protocol.IsLowSulphur = hq.IsLowSulphur;
                 protocol.CurrentHealthLevel = hq.CurrentHealthLevel;
                 protocol.AutomaticallyFilterFoods = hq.AutomaticallyFilterFoods;
             }
@@ -310,6 +311,10 @@ namespace K9.WebApplication.Services
                                 compatibilityLevel = ECompatibilityLevel.Unsuitable;
                             }
                             else if (protocolFoodItem.FoodItem.IsHighOmega6 && protocol.IsLowOmega6)
+                            {
+                                compatibilityLevel = ECompatibilityLevel.Unsuitable;
+                            }
+                            else if (protocolFoodItem.FoodItem.IsHighSulphur && protocol.IsLowSulphur)
                             {
                                 compatibilityLevel = ECompatibilityLevel.Unsuitable;
                             }

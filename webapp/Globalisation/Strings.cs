@@ -186,6 +186,8 @@
             public const string IsAggravatePittaLabel = "IsAggravatePittaLabel";
             public const string IsAggravateKaphaLabel = "IsAggravateKaphaLabel";
             public const string IsSattvicLabel = "IsSattvicLabel";
+            public const string IsHighSulphur = "IsHighSulphur";
+            public const string IsLowSulphur = "IsLowSulphur";
 
             public const string IsLowOxalateLabel = "IsLowOxalateLabel";
             public const string IsLowLectinLabel = "IsLowLectinLabel";

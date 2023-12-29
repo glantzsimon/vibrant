@@ -96,6 +96,10 @@ namespace K9.DataAccessLayer.Models
         public bool IsSattvic { get; set; }
 
         [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowSulphur)]
+        public bool IsLowSulphur { get; set; }
+
+        [NotMapped]
         [UIHint("Range")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CurrentHealthLevelSliderLabel)]
         [Min(1)]

@@ -42,6 +42,37 @@
     <br />
 
     <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.DietaryPreferences</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            @foreach (var property in Model.GeneralDietaryPreferencesProperties())
+            {
+                var value = Model.GetProperty(property);
+                if (value != null)
+                {
+                    if (value.GetType() == typeof(bool))
+                    {
+                        if ((bool)value == true)
+                        {
+                            <span class="summary-item">@property.Name.SplitOnCapitalLetter()</span>
+                        }
+                    }
+                    else if ((EYesNo)value == EYesNo.Yes)
+                    {
+                        <span class="summary-item">@property.Name.SplitOnCapitalLetter()</span>
+                    }
+                }
+            }
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
         <div class="col-xs-12 col-md-6">
             @Html.BootstrapDisplayFor(e => e.CurrentHealthIssues, new EditorOptions
             {

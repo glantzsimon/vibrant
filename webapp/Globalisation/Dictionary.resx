@@ -4645,11 +4645,20 @@
   <data name="ImportacneOfSoaking" xml:space="preserve">
     <value>The Importance of Soaking</value>
   </data>
+  <data name="IsHighSulphur" xml:space="preserve">
+    <value>High-Sulphur / Thiol</value>
+  </data>
+  <data name="IsLowSulphur" xml:space="preserve">
+    <value>Low-Sulphur / Thiol</value>
+  </data>
   <data name="IsSattvicLabel" xml:space="preserve">
     <value>Sattvic</value>
   </data>
   <data name="LectinIntolerance" xml:space="preserve">
     <value>Lectin Intolerance</value>
+  </data>
+  <data name="LowSulphurDescription" xml:space="preserve">
+    <value>Many people, especially those with a CBS upregulation and methylation issues, cannot properly metabolise and ustilise sulphur when out of balance. Therefore, it can be very beneficial to reduce high sulphur foods until health is restored.</value>
   </data>
   <data name="MycotoxinIntolerance" xml:space="preserve">
     <value>Mycotoxin Intolerance</value>

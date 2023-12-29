@@ -55,6 +55,7 @@ namespace K9.WebApplication.Controllers
             hq.IsLowOmega6 = model.IsLowOmega6;
             hq.IsBulletProof = model.IsBulletProof;
             hq.IsSattvic = model.IsSattvic;
+            hq.IsLowSulphur = model.IsLowSulphur;
             hq.CurrentHealthLevel = model.CurrentHealthLevel;
             hq.AutomaticallyFilterFoods = model.AutomaticallyFilterFoods;
 
@@ -68,6 +69,7 @@ namespace K9.WebApplication.Controllers
                 hq.IsLowHistamine = hq.GetHistamineScore() > threshold;
                 hq.IsLowMycotoxin = hq.GetMycotoxinScore() > threshold;
                 hq.IsLowOmega6 = hq.GetOmega6Score() > threshold;
+                hq.IsLowSulphur = hq.GetCbsScore() > threshold;
             }
 
             _healthQuestionnaireService.Save(hq);

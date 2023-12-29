@@ -170,6 +170,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsSattvicLabel)]
         public bool IsSattvic { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHighSulphur)]
+        public bool IsHighSulphur { get; set; }
+
         public string GetFoodAllergyInfo()
         {
             var sb = new StringBuilder();

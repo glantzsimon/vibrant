@@ -6230,6 +6230,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to High-Sulphur / Thiol.
+        /// </summary>
+        public static string IsHighSulphur {
+            get {
+                return ResourceManager.GetString("IsHighSulphur", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kapha Dosha.
         /// </summary>
         public static string IsKaphaDoshaLabel {
@@ -6352,6 +6361,15 @@ namespace K9.Globalisation {
         public static string IsLowPhytateLabel {
             get {
                 return ResourceManager.GetString("IsLowPhytateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Low-Sulphur / Thiol.
+        /// </summary>
+        public static string IsLowSulphur {
+            get {
+                return ResourceManager.GetString("IsLowSulphur", resourceCulture);
             }
         }
         
@@ -7256,6 +7274,15 @@ namespace K9.Globalisation {
         public static string LowMorningEnergyLabel {
             get {
                 return ResourceManager.GetString("LowMorningEnergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Many people, especially those with a CBS upregulation and methylation issues, cannot properly metabolise and ustilise sulphur when out of balance. Therefore, it can be very beneficial to reduce high sulphur foods until health is restored..
+        /// </summary>
+        public static string LowSulphurDescription {
+            get {
+                return ResourceManager.GetString("LowSulphurDescription", resourceCulture);
             }
         }
         

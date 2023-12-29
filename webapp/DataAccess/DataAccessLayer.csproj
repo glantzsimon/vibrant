@@ -781,6 +781,10 @@
     <Compile Include="Migrations\202312281526108_AutoFilterFoods.Designer.cs">
       <DependentUpon>202312281526108_AutoFilterFoods.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312290601154_LowSulphur.cs" />
+    <Compile Include="Migrations\202312290601154_LowSulphur.Designer.cs">
+      <DependentUpon>202312290601154_LowSulphur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
@@ -1234,6 +1238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312281526108_AutoFilterFoods.resx">
       <DependentUpon>202312281526108_AutoFilterFoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312290601154_LowSulphur.resx">
+      <DependentUpon>202312290601154_LowSulphur.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
