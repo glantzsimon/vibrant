@@ -389,3 +389,8 @@
 .print-page-break {
     page-break-inside: avoid !important;
 }
+
+.align-centre {
+    display: flex !important;
+    justify-content: center !important;
+}
