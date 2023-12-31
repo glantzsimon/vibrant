@@ -16,6 +16,11 @@ namespace K9.DataAccessLayer.Models
 
         public EScore GetScore()
         {
+            if (Score < 0)
+            {
+                return EScore.Negative;
+            }
+
             if (RelativeScore >= 80)
             {
                 return EScore.VeryHigh;
@@ -44,11 +49,6 @@ namespace K9.DataAccessLayer.Models
             if (RelativeScore <= 7)
             {
                 return EScore.VeryLow;
-            }
-
-            if (RelativeScore < 0)
-            {
-                return EScore.Negative;
             }
 
             return EScore.Medium;
