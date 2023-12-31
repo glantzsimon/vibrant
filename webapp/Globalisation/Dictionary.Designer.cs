@@ -10291,7 +10291,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thank you. You have successfully completed the Genetic Profile Test. We will contact you soon, pending analysis of the answers given..
+        ///   Looks up a localized string similar to Thank you. You have successfully completed the Genetic Profile Test..
         /// </summary>
         public static string QuestionnairecompletedSuccessfully {
             get {
@@ -13994,6 +13994,15 @@ namespace K9.Globalisation {
         public static string WelcomeSubTitle {
             get {
                 return ResourceManager.GetString("WelcomeSubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We will contact you soon, pending analysis of the answers given..
+        /// </summary>
+        public static string WeWillContactYouSoon {
+            get {
+                return ResourceManager.GetString("WeWillContactYouSoon", resourceCulture);
             }
         }
         

@@ -2585,7 +2585,7 @@
     <value>-- Please Select --</value>
   </data>
   <data name="QuestionnairecompletedSuccessfully" xml:space="preserve">
-    <value>Thank you. You have successfully completed the Genetic Profile Test. We will contact you soon, pending analysis of the answers given.</value>
+    <value>Thank you. You have successfully completed the Genetic Profile Test.</value>
   </data>
   <data name="Reactive" xml:space="preserve">
     <value>Reactive</value>
@@ -4709,6 +4709,9 @@ A sattvic diet shares the qualities of sattva, some of which include "pure, esse
   </data>
   <data name="TotalShopPayableAmountLabel" xml:space="preserve">
     <value>Total Shop Payable Amount</value>
+  </data>
+  <data name="WeWillContactYouSoon" xml:space="preserve">
+    <value>We will contact you soon, pending analysis of the answers given.</value>
   </data>
   <data name="YouHaveFlexibility" xml:space="preserve">
     <value>Your dietary guidelines are flexible.</value>
