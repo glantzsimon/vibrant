@@ -46,6 +46,11 @@ namespace K9.DataAccessLayer.Models
                 return EScore.VeryLow;
             }
 
+            if (RelativeScore < 0)
+            {
+                return EScore.Negative;
+            }
+
             return EScore.Medium;
         }
 

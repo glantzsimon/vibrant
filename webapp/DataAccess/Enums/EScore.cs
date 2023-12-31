@@ -2,6 +2,7 @@
 {
     public enum EScore
     {
+        Negative,
         VeryLow,
         Low,
         Medium,

@@ -896,7 +896,7 @@ namespace K9.WebApplication.Services
             }
 
             // Downgrade lowest scoring items
-            else if (score <= EScore.VeryLow)
+            else if (score <= EScore.Negative)
             {
                 if (compatibilityLevel == ECompatibilityLevel.Optimal)
                 {
