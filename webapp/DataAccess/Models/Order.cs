@@ -415,7 +415,7 @@ namespace K9.DataAccessLayer.Models
         public string GetFormattedDiscount() => GetDiscountAmount().ToCurrency();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
-        public string GetFormattedTotalDiscount() => (GetDiscountAmount() + GetTotalTierDiscount() - ShippingCost).ToCurrency();
+        public string GetFormattedTotalDiscount() => (GetDiscountAmount() + GetTotalTierDiscount()).ToCurrency();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         public string GetFormattedGrandTotal() => GetGrandTotal().ToCurrency();
