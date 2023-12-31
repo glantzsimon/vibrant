@@ -3,6 +3,11 @@
 @model Order
 
 <div class="row">
+    <div class="col-sm-12">
+        <h3>@Dictionary.Order: @Model.OrderNumber</h3>
+    </div>
+</div>
+<div class="row">
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.Name)
     </div>
@@ -22,21 +27,16 @@
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.UserId)
     </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.OrderType)
+    </div>
 </div>
 <div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.IsLocalDelivery)
-    </div>
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.IsOnHold)
     </div>
-</div>
-<div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.OrderNumber)
-    </div>
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.OrderType)
+        @Html.BootstrapDisplayFor(model => model.IsLocalDelivery)
     </div>
 </div>
 
@@ -44,10 +44,18 @@
 
 <div class="row">
     <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.TotalPrice)
+        @Html.BootstrapDisplayFor(model => model.Discount)
     </div>
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.ShippingCost)
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.DiscountAmount)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.TotalPrice)
     </div>
 </div>
 <div class="row">
@@ -56,14 +64,6 @@
     </div>
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.FormattedSuggestedDiscountAmount)
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.Discount)
-    </div>
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.DiscountAmount)
     </div>
 </div>
 
