@@ -22,6 +22,7 @@ namespace K9.DataAccessLayer.Models
         [UIHint("User")]
         [Required]
         [ForeignKey("User")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.User)]
         public int UserId { get; set; }
 
         [UIHint("MembershipOption")]

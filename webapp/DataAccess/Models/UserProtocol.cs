@@ -5,6 +5,7 @@ using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using K9.Base.Globalisation;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -16,6 +17,7 @@ namespace K9.DataAccessLayer.Models
         [UIHint("User")]
         [Required]
         [ForeignKey("User")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.User)]
         public int UserId { get; set; }
 
         public virtual User User { get; set; }

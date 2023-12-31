@@ -21,6 +21,7 @@ namespace K9.DataAccessLayer.Models
 
         [Required]
         [ForeignKey("User")]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.User)]
         public int UserId { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
