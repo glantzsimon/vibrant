@@ -25,7 +25,13 @@ namespace K9.WebApplication.Controllers
             _orderProductPacksRepository = orderProductPacksRepository;
             _orderService = orderService;
 
-            RecordEditMultipleUpdated += OrderProductPacksController_RecordEditMultipleUpdated;
+            RecordEditMultipleCreateItem += OrderProductPacksController_RecordEditMultipleCreateItem;
+        }
+
+        private void OrderProductPacksController_RecordEditMultipleCreateItem(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
+        {
+            var orderProduct = e.Item as OrderProduct;
+            orderProduct.Amount = 1;
         }
 
         public override ActionResult Index()
@@ -46,11 +52,6 @@ namespace K9.WebApplication.Controllers
         public ActionResult EditProductPacksForOrder(MultiSelectViewModel model)
         {
             return EditMultiple<Order, ProductPack>(model);
-        }
-
-        private void OrderProductPacksController_RecordEditMultipleUpdated(object sender, Base.WebApplication.EventArgs.CrudEventArgs e)
-        {
-            _orderService.UpdateProductPacksSetDefaultAmountIfZero(e.Item.Id);
         }
     }
 }
