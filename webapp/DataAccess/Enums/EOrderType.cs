@@ -18,7 +18,7 @@ namespace K9.DataAccessLayer.Enums
         RedeemCommission,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ShopProvision)]
         ShopProvision,
-        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.ShopProvision)]
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Restock)]
         Restock
     }
 }
