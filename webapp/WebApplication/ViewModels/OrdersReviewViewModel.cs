@@ -26,6 +26,8 @@ namespace K9.WebApplication.ViewModels
         public int SelectedOrderId => SelectedOrder?.Id ?? 0;
 
         public List<Order> GetShopProvisionOrders() => AllOrders.Where(e => !e.IsOnHold && e.OrderType == EOrderType.ShopProvision).ToList();
+        
+        public List<Order> GetRestockOrders() => AllOrders.Where(e => !e.IsOnHold && e.OrderType == EOrderType.Restock).ToList();
 
         public List<Order> GetOrdersOnHold() => AllDirectOrders.Where(e => e.IsOnHold).ToList();
 
@@ -35,7 +37,7 @@ namespace K9.WebApplication.ViewModels
         
         public List<Order> GetOrdersToMake() => AllActiveOrders.Where(e => !e.IsMade).ToList();
 
-        public List<Order> GetOrdersToSend() => AllActiveOrders.Where(e => e.IsMade && !e.IsComplete).ToList();
+        public List<Order> GetOrdersToSend() => AllActiveOrders.Where(e => e.IsMade && !e.IsComplete && e.OrderType != EOrderType.Restock).ToList();
 
         public List<OrderProduct> GetCombinedOrderProducts() => GetCombinedGroupedProducts();
 

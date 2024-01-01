@@ -13,6 +13,7 @@
     var completeOrders = Model.GetCompleteOrders();
     var ordersOnHold = Model.GetOrdersOnHold();
     var shopProvisions = Model.GetShopProvisionOrders();
+    var restockOrders = Model.GetRestockOrders();
 }
 
 <div class="row">
@@ -30,22 +31,26 @@
             <ul class="nav nav-pills">
                 <li class="active"><a data-toggle="pill" href="#incomplete-orders">@Dictionary.IncompleteOrders</a></li>
                 <li><a data-toggle="pill" href="#shop-provisions">@Dictionary.ShopProvisions</a></li>
+                <li><a data-toggle="pill" href="#shop-restock">@Dictionary.Restock</a></li>
                 <li><a data-toggle="pill" href="#on-hold">@Dictionary.OrdersOnHold</a></li>
                 <li><a data-toggle="pill" href="#complete-orders">@Dictionary.CompleteOrders</a></li>
             </ul>
 
             <div class="tab-content">
                 <div id="incomplete-orders" class="tab-pane fade active in padding-top-15">
-                    @Html.Partial("_OrdersTableFields", @incompleteOrders)
+                    @Html.Partial("_OrdersTableFields", incompleteOrders)
                 </div>
                 <div id="shop-provisions" class="tab-pane fade padding-top-15">
-                    @Html.Partial("_OrdersTableFields", @shopProvisions)
+                    @Html.Partial("_OrdersTableFields", shopProvisions)
+                </div>    
+                <div id="shop-restock" class="tab-pane fade padding-top-15">
+                    @Html.Partial("_OrdersTableFields", restockOrders)
                 </div>
                 <div id="on-hold" class="tab-pane fade padding-top-15">
-                    @Html.Partial("_OrdersTableFields", @ordersOnHold)
+                    @Html.Partial("_OrdersTableFields", ordersOnHold)
                 </div>
                 <div id="complete-orders" class="tab-pane fade padding-top-15">
-                    @Html.Partial("_OrdersTableFields", @completeOrders)
+                    @Html.Partial("_OrdersTableFields", completeOrders)
                 </div>
             </div>
         </div>

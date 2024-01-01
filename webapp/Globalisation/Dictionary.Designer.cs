@@ -10670,6 +10670,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restock.
+        /// </summary>
+        public static string Restock {
+            get {
+                return ResourceManager.GetString("Restock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restorative.
         /// </summary>
         public static string Restorative {

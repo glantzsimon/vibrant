@@ -96,7 +96,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult EditProductPacks(int id = 0)
         {
             var order = _orderService.Find(id);
-            if (order.OrderType == EOrderType.ShopProvision)
+            if (order.OrderType == EOrderType.ShopProvision || order.OrderType == EOrderType.Restock)
             {
                 return HttpForbidden();
             }

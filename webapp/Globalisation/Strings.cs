@@ -652,6 +652,7 @@
             public const string ShoppingCart = "ShoppingCart";
             public const string RedeemCommission = "RedeemCommission";
             public const string ShopProvision = "ShopProvision";
+            public const string Restock = "Restock";
             public const string Consultations = "Consultations";
             public const string UserProtocol = "UserProtocol";
             public const string UserProtocols = "UserProtocols";
