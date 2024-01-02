@@ -294,9 +294,9 @@ namespace K9.DataAccessLayer.Models
 
         public Product GetProduct(int productId)
         {
-            return Products?.Select(e => e.Product).FirstOrDefault(e => e.Id == 35) ?? ProductPacks
+            return Products?.Select(e => e.Product).FirstOrDefault(e => e.Id == productId) ?? ProductPacks
                        ?.SelectMany(e => e.ProductPack.Products.Select(p => p.Product))
-                       .FirstOrDefault(e => e.ProductId == 35);
+                       .FirstOrDefault(e => e.ProductId == productId);
         }
 
         private int GetDaysDuration()
