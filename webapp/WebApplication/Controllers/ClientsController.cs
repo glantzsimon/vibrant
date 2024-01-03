@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using K9.DataAccessLayer.Enums;
 using K9.WebApplication.ViewModels;
 
 namespace K9.WebApplication.Controllers
@@ -89,7 +90,9 @@ namespace K9.WebApplication.Controllers
         {
             var allOrders = _ordersService.List(true).Where(e => !e.IsOnHold && !e.IsLocalDelivery).ToList();
             var ordersViewModel = new OrdersReviewViewModel(allOrders);
-            return ViewClientsAddressLabels(ordersViewModel.GetPickslipOrders().Where(e => !e.IsLocalDelivery).Select(e => e.ClientId ?? 0).ToArray());
+            return ViewClientsAddressLabels(ordersViewModel.GetPickslipOrders()
+                .Where(e => !e.IsLocalDelivery && e.OrderType != EOrderType.ShopProvision)
+                .Select(e => e.ClientId ?? 0).ToArray());
         }
 
         [OutputCache(NoStore = true, Duration = 0)]
