@@ -32,6 +32,8 @@ namespace K9.WebApplication.ViewModels
         public List<Order> GetOrdersOnHold() => AllDirectOrders.Where(e => e.IsOnHold).ToList();
 
         public List<Order> GetIncompleteOrders() => AllActiveOrders.Where(e => !e.IsComplete).ToList();
+
+        public List<Order> GetPickslipOrders() => AllOrders.Where(e => !e.IsComplete && !e.IsOnHold).ToList();
         
         public List<Order> GetCompleteOrders() => AllActiveOrders.Where(e => e.IsComplete).ToList();
         

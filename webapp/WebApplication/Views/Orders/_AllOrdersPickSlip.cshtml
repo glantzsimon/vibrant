@@ -8,8 +8,8 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        var incompleteOrders = Model.GetIncompleteOrders();
-        var clientIds = incompleteOrders.Select(e => e.ClientId).ToList();
+        var pickslipOrders = Model.GetPickslipOrders();
+        var clientIds = pickslipOrders.Select(e => e.ClientId).ToList();
 
         <div class="padding-5 padding-top-15 row">
             <div class="col-xs-12">
@@ -18,7 +18,7 @@
         </div>
         <hr />
 
-        foreach (var order in incompleteOrders)
+        foreach (var order in pickslipOrders)
         {
             <div class="padding-5 padding-top-15 row">
                 <div class="col-sm-4 valign-top">
