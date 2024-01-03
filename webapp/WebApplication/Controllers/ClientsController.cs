@@ -89,7 +89,7 @@ namespace K9.WebApplication.Controllers
         {
             var allOrders = _ordersService.List(true).Where(e => !e.IsOnHold && !e.IsLocalDelivery).ToList();
             var ordersViewModel = new OrdersReviewViewModel(allOrders);
-            return ViewClientsAddressLabels(ordersViewModel.GetIncompleteOrders().Select(e => e.ClientId ?? 0).ToArray());
+            return ViewClientsAddressLabels(ordersViewModel.GetPickslipOrders().Select(e => e.ClientId ?? 0).ToArray());
         }
 
         [OutputCache(NoStore = true, Duration = 0)]
