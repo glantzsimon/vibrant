@@ -11,7 +11,6 @@ using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using NLog;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 
@@ -36,6 +35,7 @@ namespace K9.WebApplication.Controllers
             _membershipService = pureControllerPackage.MembershipService;
             SetBetaWarningSessionVariable();
             SetSessionRoles(WebSecurity.CurrentUserId);
+            LoadDatasets();
 
             var acceptableCultureCodes = new List<string>
             {
@@ -77,19 +77,12 @@ namespace K9.WebApplication.Controllers
         
         public void SetSessionRoles(int userId)
         {
-            var adminRole =  _pureControllerPackage.RolesRepository.Find(e => e.Name == Constants.Constants.Administrator).First();
-            var powerUserRole = _pureControllerPackage.RolesRepository.Find(e => e.Name == Constants.Constants.PowerUser).First();
-            var clientRole = _pureControllerPackage.RolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
-            var practitionerUser = _pureControllerPackage.RolesRepository.Find(e => e.Name == Constants.Constants.PractitionerUser).First();
-            var unicornRole = _pureControllerPackage.RolesRepository.Find(e => e.Name == Constants.Constants.UnicornUser).First();
-            
-            var isAmin = _pureControllerPackage.UserRolesRepository.Exists(e => e.UserId == userId && e.RoleId == adminRole.Id);
-            var isPower = _pureControllerPackage.UserRolesRepository.Exists(e => e.UserId == userId && e.RoleId == powerUserRole.Id);
-            var isClient = _pureControllerPackage.UserRolesRepository.Exists(e => e.UserId == userId && e.RoleId == clientRole.Id);
-            var isPractitioner = _pureControllerPackage.UserRolesRepository.Exists(e => e.UserId == userId && e.RoleId == practitionerUser.Id);
-            var isUnicorn = _pureControllerPackage.UserRolesRepository.Exists(e => e.UserId == userId && e.RoleId == unicornRole.Id);
+            Helpers.SessionHelper.SetCurrentUserRoles(_pureControllerPackage.RolesRepository, _pureControllerPackage.UserRolesRepository, userId);
+        }
 
-            Helpers.SessionHelper.SetCurrentUserRoles(isAmin, isPower, isClient, isPractitioner, isUnicorn);
+        public void LoadDatasets()
+        {
+            Helpers.DatasetHelper.LoadDatasets(_pureControllerPackage.OrdersRepository);
         }
 
         private void SetCultureCode(string languageCode, string cultureCode)

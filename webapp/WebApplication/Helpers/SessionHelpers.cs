@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using K9.Base.DataAccessLayer.Models;
+using K9.SharedLibrary.Models;
 
 namespace K9.WebApplication.Helpers
 {
@@ -34,8 +37,20 @@ namespace K9.WebApplication.Helpers
             return false;
         }
 
-        public static void SetCurrentUserRoles(bool isAdmin = false, bool isPower = false, bool isClient = false, bool isPractitioner = false, bool isUnicorn = false)
+        public static void SetCurrentUserRoles(IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, int userId)
         {
+            var adminRole =  rolesRepository.Find(e => e.Name == Constants.Constants.Administrator).First();
+            var powerUserRole = rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
+            var clientRole = rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
+            var practitionerUser = rolesRepository.Find(e => e.Name == Constants.Constants.ClientUser).First();
+            var unicornRole = rolesRepository.Find(e => e.Name == Constants.Constants.UnicornUser).First();
+            
+            var isAdmin = userRolesRepository.Exists(e => e.UserId == userId && e.RoleId == adminRole.Id);
+            var isPower = userRolesRepository.Exists(e => e.UserId == userId && e.RoleId == powerUserRole.Id);
+            var isClient = userRolesRepository.Exists(e => e.UserId == userId && e.RoleId == clientRole.Id);
+            var isPractitioner = userRolesRepository.Exists(e => e.UserId == userId && e.RoleId == practitionerUser.Id);
+            var isUnicorn = userRolesRepository.Exists(e => e.UserId == userId && e.RoleId == unicornRole.Id);
+
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.Constants.Administrator, isAdmin);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.Constants.PowerUser, isPower);
             Base.WebApplication.Helpers.SessionHelper.SetValue(Constants.Constants.ClientUser, isClient);

@@ -1,4 +1,5 @@
 ﻿using K9.Base.DataAccessLayer.Models;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Services;
 
@@ -11,5 +12,6 @@ namespace K9.WebApplication.Packages
         IRepository<User> UsersRepository { get; set; }
         IRepository<Role> RolesRepository { get; set; }
         IRepository<UserRole> UserRolesRepository { get; set; }
+        IRepository<Order> OrdersRepository { get; set; }
     }
 }

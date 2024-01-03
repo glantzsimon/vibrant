@@ -328,6 +328,7 @@
     <Compile Include="Controllers\ProductIngredientsController.cs" />
     <Compile Include="Enums\EDeviceType.cs" />
     <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Helpers\DatasetHelper.cs" />
     <Compile Include="Helpers\HtmlParser.cs" />
     <Compile Include="Helpers\General.cs" />
     <Compile Include="Helpers\ViewBagHelper.cs" />
