@@ -540,6 +540,11 @@ namespace K9.DataAccessLayer.Models
 
         private EOrderStatus CalculateOrderStatus()
         {
+            if (IsOnHold)
+            {
+                return EOrderStatus.OnHold;
+            }
+
             if (!StartedOn.HasValue)
             {
                 return EOrderStatus.InPreparation;

@@ -14,5 +14,7 @@ namespace K9.DataAccessLayer.Enums
         AwaitingPayment = 4,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Complete)]
         Complete = 5,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsOnHoldLabel)]
+        OnHold,
     }
 }
