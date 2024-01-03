@@ -6276,6 +6276,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Keto.
+        /// </summary>
+        public static string IsKeto {
+            get {
+                return ResourceManager.GetString("IsKeto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Late Summer.
         /// </summary>
         public static string IsLateSummerLabel {
@@ -6788,6 +6797,15 @@ namespace K9.Globalisation {
         public static string KaphaVataDosha {
             get {
                 return ResourceManager.GetString("KaphaVataDosha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A ketogenic diet is a therapeutic diet designed to reduce glucose availability and promote ketosis. Studies have shown that a ketogenic diet is remarkably effective in improving disease outcomes for many serious chronic diseases, especially cancer and neurological diseases..
+        /// </summary>
+        public static string KetoDescription {
+            get {
+                return ResourceManager.GetString("KetoDescription", resourceCulture);
             }
         }
         

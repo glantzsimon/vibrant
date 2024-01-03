@@ -700,6 +700,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowSulphur)]
         public bool IsLowSulphur { get; set; }
 
+        [QuestionCategory(Category = EQuestionCategory.DietaryPreferences)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsKeto)]
+        public bool IsKeto { get; set; }
+
         public bool IsDietaryPreferencesComplete() => IsCategoryComplete(e => e.Category == EQuestionCategory.DietaryPreferences);
 
         public List<PropertyInfo> GeneralDietaryPreferencesProperties() => this

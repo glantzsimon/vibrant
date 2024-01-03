@@ -192,6 +192,7 @@ namespace K9.WebApplication.Services
                 protocol.IsBulletProof = hq.IsBulletProof;
                 protocol.IsSattvic = hq.IsSattvic;
                 protocol.IsLowSulphur = hq.IsLowSulphur;
+                protocol.IsKeto = hq.IsKeto;
                 protocol.CurrentHealthLevel = hq.CurrentHealthLevel;
                 protocol.AutomaticallyFilterFoods = hq.AutomaticallyFilterFoods;
             }
@@ -315,6 +316,10 @@ namespace K9.WebApplication.Services
                                 compatibilityLevel = ECompatibilityLevel.Unsuitable;
                             }
                             else if (protocolFoodItem.FoodItem.IsHighSulphur && protocol.IsLowSulphur)
+                            {
+                                compatibilityLevel = ECompatibilityLevel.Unsuitable;
+                            }
+                            else if (!protocolFoodItem.FoodItem.IsKeto && protocol.IsKeto)
                             {
                                 compatibilityLevel = ECompatibilityLevel.Unsuitable;
                             }

@@ -187,6 +187,7 @@
             public const string IsAggravateKaphaLabel = "IsAggravateKaphaLabel";
             public const string IsSattvicLabel = "IsSattvicLabel";
             public const string IsHighSulphur = "IsHighSulphur";
+            public const string IsKeto = "IsKeto";
             public const string IsLowSulphur = "IsLowSulphur";
 
             public const string IsLowOxalateLabel = "IsLowOxalateLabel";
@@ -769,6 +770,7 @@
             public const string BulletProofDescription = "BulletProofDescription";
             public const string SattvicDescription = "SattvicDescription";
             public const string LowSulphurDescription = "LowSulphurDescription";
+            public const string KetoDescription = "KetoDescription";
 
             public const string Omnivore = "Omnivore";
             public const string Vegetarian = "Vegetarian";
