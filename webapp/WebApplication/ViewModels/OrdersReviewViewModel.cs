@@ -14,7 +14,7 @@ namespace K9.WebApplication.ViewModels
 
         public OrdersReviewViewModel(List<Order> allOrders)
         {
-            AllOrders = allOrders;
+            AllOrders = allOrders.Where(e => e.OrderType != EOrderType.ShoppingCart).ToList();
             AllDirectOrders = allOrders.Where(e => e.OrderType != EOrderType.ShopProvision).ToList();
             AllActiveOrders = allOrders.Where(e => !e.IsOnHold && e.OrderType != EOrderType.ShopProvision).ToList();
         }
