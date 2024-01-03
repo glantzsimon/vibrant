@@ -3,6 +3,7 @@ using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Ajax.Utilities;
 
 namespace K9.WebApplication.Helpers
 {
@@ -13,7 +14,9 @@ namespace K9.WebApplication.Helpers
         public static void LoadDatasets(IRepository<Order> ordersRepository)
         {
             var orders = ordersRepository.List()
-                .Where(e => !e.IsOnHold && !e.IsComplete && e.OrderType != EOrderType.ShoppingCart);
+                .Where(e => !e.IsComplete && e.OrderType != EOrderType.ShoppingCart);
+
+            orders.ForEach(e => e.Name = e.GetFullName());
 
             OrdersDropdownData =
                 GetListItems(
@@ -35,32 +38,32 @@ namespace K9.WebApplication.Helpers
 
             listItems.AddRange(items.Select(e => new ListItem(e.Id, e.Name)));
 
-            if (items2 != null)
+            if (items2 != null && items2.Any())
             {
                 AddListSeparator(listItems);
                 listItems.AddRange(items2.Select(e => new ListItem(e.Id, e.Name)));
             };
-            if (items3 != null)
+            if (items3 != null && items3.Any())
             {
                 AddListSeparator(listItems);
                 listItems.AddRange(items3.Select(e => new ListItem(e.Id, e.Name)));
             };
-            if (items4 != null)
+            if (items4 != null && items4.Any())
             {
                 AddListSeparator(listItems);
                 listItems.AddRange(items4.Select(e => new ListItem(e.Id, e.Name)));
             };
-            if (items5 != null)
+            if (items5 != null && items5.Any())
             {
                 AddListSeparator(listItems);
                 listItems.AddRange(items5.Select(e => new ListItem(e.Id, e.Name)));
             };
-            if (items6 != null)
+            if (items6 != null && items6.Any())
             {
                 AddListSeparator(listItems);
                 listItems.AddRange(items6.Select(e => new ListItem(e.Id, e.Name)));
             };
-            if (items7 != null)
+            if (items7 != null && items7.Any())
             {
                 AddListSeparator(listItems);
                 listItems.AddRange(items7.Select(e => new ListItem(e.Id, e.Name)));
@@ -69,7 +72,7 @@ namespace K9.WebApplication.Helpers
             return listItems;
         }
 
-        private static void AddListSeparator(List<ListItem> listItems) 
+        private static void AddListSeparator(List<ListItem> listItems)
         {
             listItems.Add(new ListItem(-1, "---"));
         }
