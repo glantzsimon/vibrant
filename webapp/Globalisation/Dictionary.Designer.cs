@@ -3221,6 +3221,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download as CSV (GBP).
+        /// </summary>
+        public static string DownloadGbpAsCsv {
+            get {
+                return ResourceManager.GetString("DownloadGbpAsCsv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Download Ingredient Categories as CSV.
         /// </summary>
         public static string DownloadIngredientCategoriesCsv {

@@ -29,6 +29,16 @@ namespace K9.DataAccessLayer.Helpers
             return value;
         }
 
+        public static double ToBritishPounds(this double value)
+        {
+            if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName != Strings.LanguageCodes.Thai)
+            {
+                return Math.Round(value * ConversionConstants.BahtToBritishPoundsRate / 7, MidpointRounding.AwayFromZero) * 7;
+            }
+
+            return value;
+        }
+
         public static double RoundToInteger(double value, int roundValue)
         {
             return Math.Round(value / roundValue, 0) * roundValue;

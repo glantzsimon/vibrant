@@ -4639,6 +4639,9 @@
   <data name="CurrentHealthLevelSliderLabel" xml:space="preserve">
     <value>On a scale of 1 - 10, how healthy do you feel at the moment?</value>
   </data>
+  <data name="DownloadGbpAsCsv" xml:space="preserve">
+    <value>Download as CSV (GBP)</value>
+  </data>
   <data name="DownloadIngredientsJson" xml:space="preserve">
     <value>Download Ingredients as Json</value>
   </data>

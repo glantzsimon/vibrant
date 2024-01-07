@@ -229,6 +229,18 @@ namespace K9.WebApplication.Controllers
         }
 
         [NoCache]
+        [Route("orders/exportsingle/gbp/csv")]
+        public ActionResult DownloadOrderCsvInGbp(int id)
+        {
+            var order = _orderService.Find(id);
+            var orderItems = new List<OrderItem>();
+            orderItems.Add(GetOrderItem(order, true));
+
+            var data = orderItems.ToCsv();
+            return ExportToCsv(data, $"Order {order.OrderNumber} - {order.Name}.csv");
+        }
+
+        [NoCache]
         [Route("orders/export/csv")]
         public ActionResult DownloadOrdersCsv()
         {
@@ -243,20 +255,31 @@ namespace K9.WebApplication.Controllers
             var data = orderItems.ToCsv();
             return ExportToCsv(data, "Orders.csv");
         }
-
-        private OrderItem GetOrderItem(Order order)
+        
+        private OrderItem GetOrderItem(Order order, bool isGbp = false)
         {
             var orderItem = order.MapTo<OrderItem>();
-
-            orderItem.FormattedDiscount = order.GetFormattedTotalDiscount();
-            orderItem.BulkDiscountText = order.DiscountAmount > 0 ? order.GetBulkDiscountText() : Globalisation.Dictionary.DiscountLabel;
-            orderItem.FormattedGrandTotal = order.GetFormattedGrandTotal();
-            orderItem.FormattedSubTotal = order.GetFormattedSubTotal();
-            orderItem.InvoiceNumbersText = order.GetInvoiceNumbersText();
-            orderItem.PricesList = order.GetPricesList();
-            orderItem.ProductsList = order.GetProductsList();
+            if (isGbp)
+            {
+                orderItem.FormattedDiscount = order.GetFormattedTotalDiscountInBritishPounds();
+                orderItem.FormattedGrandTotal = order.GetFormattedGrandTotalInBritishPounds();
+                orderItem.FormattedSubTotal = order.GetFormattedSubTotalInBritishPounds();
+                orderItem.PricesList = order.GetPricesListInBritishPounds();
+                orderItem.TotalsList = order.GetTotalsListInBritishPounds();
+            }
+            else
+            {
+                orderItem.FormattedDiscount = order.GetFormattedTotalDiscount();
+                orderItem.FormattedGrandTotal = order.GetFormattedGrandTotal();
+                orderItem.FormattedSubTotal = order.GetFormattedSubTotal();
+                orderItem.PricesList = order.GetPricesList();
+                orderItem.TotalsList = order.GetTotalsList();
+            }
+            
             orderItem.QuantitiesList = order.GetQuantitiesList();
-            orderItem.TotalsList = order.GetTotalsList();
+            orderItem.ProductsList = order.GetProductsList();
+            orderItem.InvoiceNumbersText = order.GetInvoiceNumbersText();
+            orderItem.BulkDiscountText = order.DiscountAmount > 0 ? order.GetBulkDiscountText() : Globalisation.Dictionary.DiscountLabel;
             orderItem.InvoiceDate = DateTime.Today.ToShortDateString();
 
             return orderItem;
