@@ -793,6 +793,10 @@
     <Compile Include="Migrations\202401110650178_LowGoitrogen.Designer.cs">
       <DependentUpon>202401110650178_LowGoitrogen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401111502588_IsDelivered.cs" />
+    <Compile Include="Migrations\202401111502588_IsDelivered.Designer.cs">
+      <DependentUpon>202401111502588_IsDelivered.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
@@ -1255,6 +1259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401110650178_LowGoitrogen.resx">
       <DependentUpon>202401110650178_LowGoitrogen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401111502588_IsDelivered.resx">
+      <DependentUpon>202401111502588_IsDelivered.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2688,6 +2688,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delivered On.
+        /// </summary>
+        public static string DeliveredOnLabel {
+            get {
+                return ResourceManager.GetString("DeliveredOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to We are all unique. If any of the foods recommended for you do not agree with you, you can remove them by clicking on the thumbs-down button..
         /// </summary>
         public static string DemoteFoodsDescription {
@@ -6173,6 +6182,15 @@ namespace K9.Globalisation {
         public static string IsCompleteLabel {
             get {
                 return ResourceManager.GetString("IsCompleteLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delivered.
+        /// </summary>
+        public static string IsDeliveredLabel {
+            get {
+                return ResourceManager.GetString("IsDeliveredLabel", resourceCulture);
             }
         }
         

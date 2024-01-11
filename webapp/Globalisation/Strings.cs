@@ -94,6 +94,8 @@
             public const string IsLocalDeliveryLabel = "IsLocalDeliveryLabel";
             public const string StartedOnLabel = "StartedOnLabel";
             public const string MadeOnLabel = "MadeOnLabel";
+            public const string DeliveredOnLabel = "DeliveredOnLabel";
+            public const string IsDeliveredLabel = "IsDeliveredLabel";
             public const string IsMadeLabel = "IsMadeLabel";
             public const string DueByLabel = "DueByLabel";
             public const string IsCompleteLabel = "IsCompleteLabel";

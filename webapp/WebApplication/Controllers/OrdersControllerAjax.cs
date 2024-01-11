@@ -48,7 +48,7 @@ namespace K9.WebApplication.Controllers
                     if (value)
                     {
                         original.MadeOn = DateTime.Today;
-                        
+
                         if (!original.StartedOn.HasValue)
                         {
                             original.StartedOn = DateTime.Today;
@@ -73,6 +73,37 @@ namespace K9.WebApplication.Controllers
                         }
                     }
 
+                    _orderService.ClearCache();
+                }
+
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
+
+        public JsonResult UpdateOrderIsDelivered(int id, bool value)
+        {
+            try
+            {
+                var original = Repository.Find(id);
+                var valueHasChanged = original.IsDelivered != value;
+
+                if (valueHasChanged)
+                {
+                    if (value)
+                    {
+                        original.DeliveredOn = DateTime.Today;
+                    }
+                    else
+                    {
+                        original.DeliveredOn = null;
+                    }
+
+                    original.FullName = original.GetFullName();
+                    Repository.Update(original);
                     _orderService.ClearCache();
                 }
 
@@ -181,7 +212,7 @@ namespace K9.WebApplication.Controllers
                 return Json(new { success = false, error = ex.Message });
             }
         }
-        
+
         public JsonResult UpdateOrderIsLocalDelivery(int id, bool value)
         {
             try

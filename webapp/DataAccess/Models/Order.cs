@@ -125,6 +125,14 @@ namespace K9.DataAccessLayer.Models
         public bool IsMade => MadeOn != null && MadeOn <= DateTime.Today;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.DeliveredOnLabel)]
+        public DateTime? DeliveredOn { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
+            Name = Globalisation.Strings.Labels.IsDeliveredLabel)]
+        public bool IsDelivered => DeliveredOn != null && DeliveredOn <= DateTime.Today;
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.CompletedOnLabel)]
         public DateTime? CompletedOn { get; set; }
 
@@ -570,9 +578,14 @@ namespace K9.DataAccessLayer.Models
                 return EOrderStatus.InProgress;
             }
 
-            if (!CompletedOn.HasValue)
+            if (!CompletedOn.HasValue && !DeliveredOn.HasValue)
             {
                 return EOrderStatus.ReadyForDelivery;
+            }
+
+            if (!CompletedOn.HasValue && DeliveredOn.HasValue)
+            {
+                return EOrderStatus.Delivered;
             }
 
             if (!IsPaid)

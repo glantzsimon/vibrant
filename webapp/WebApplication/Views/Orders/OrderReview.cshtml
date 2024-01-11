@@ -40,6 +40,7 @@
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsPaid)
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsStarted)
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsMade)
+                            @Html.BootstrapEditorFor(e => e.SelectedOrder.IsDelivered)
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsComplete)
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsOnHold)
                             @Html.BootstrapEditorFor(e => e.SelectedOrder.IsLocalDelivery)
@@ -111,6 +112,21 @@
                     });
                 });
         });
+
+            $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.IsDelivered)}")").click(function() {
+                $("#pageSpinner").show();
+                var value = $(this).is(":checked");
+                ajaxcontroller().send("@Url.Action("UpdateOrderIsDelivered")",
+                    {
+                        id: @Model.SelectedOrder.Id,
+                        value: value
+                    }, "POST").done(
+                    function(result) {
+                        $.fn.processResultAndShowPopup(result, function() {
+                            $("#SelectedOrderId").closest("form").submit();
+                        });
+                    });
+            });
 
         $("#@($"{nameof(OrdersReviewViewModel.SelectedOrder)}_{nameof(Order.IsComplete)}")").click(function() {
             $("#pageSpinner").show();

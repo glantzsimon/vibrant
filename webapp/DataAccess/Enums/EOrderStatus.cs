@@ -16,5 +16,7 @@ namespace K9.DataAccessLayer.Enums
         Complete = 5,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsOnHoldLabel)]
         OnHold,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsDeliveredLabel)]
+        Delivered,
     }
 }
