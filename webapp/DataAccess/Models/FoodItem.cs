@@ -176,6 +176,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHighSulphur)]
         public bool IsKeto { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsHighSulphur)]
+        public bool IsHighGoitrogen { get; set; }
+
         public string GetFoodAllergyInfo()
         {
             var sb = new StringBuilder();

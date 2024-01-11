@@ -187,6 +187,7 @@
             public const string IsAggravateKaphaLabel = "IsAggravateKaphaLabel";
             public const string IsSattvicLabel = "IsSattvicLabel";
             public const string IsHighSulphur = "IsHighSulphur";
+            public const string IsHighGoitrogen = "IsHighGoitrogen";
             public const string IsKeto = "IsKeto";
             public const string IsLowSulphur = "IsLowSulphur";
 

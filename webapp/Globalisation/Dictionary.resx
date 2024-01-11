@@ -4657,6 +4657,9 @@
   <data name="ImportacneOfSoaking" xml:space="preserve">
     <value>The Importance of Soaking</value>
   </data>
+  <data name="IsHighGoitrogen" xml:space="preserve">
+    <value>High-Goitrogen</value>
+  </data>
   <data name="IsHighSulphur" xml:space="preserve">
     <value>High-Sulphur / Thiol</value>
   </data>

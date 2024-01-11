@@ -6213,6 +6213,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to High-Goitrogen.
+        /// </summary>
+        public static string IsHighGoitrogen {
+            get {
+                return ResourceManager.GetString("IsHighGoitrogen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to High in Histamine.
         /// </summary>
         public static string IsHighHistamineLabel {
