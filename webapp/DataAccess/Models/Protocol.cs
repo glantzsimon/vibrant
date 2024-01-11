@@ -104,7 +104,7 @@ namespace K9.DataAccessLayer.Models
         public bool IsKeto { get; set; }
 
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowSulphur, Description = Globalisation.Strings.Names.LowGoitrogenDescription)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowGoitrogen, Description = Globalisation.Strings.Names.LowGoitrogenDescription)]
         public bool IsLowGoitrogen { get; set; }
 
         [NotMapped]
