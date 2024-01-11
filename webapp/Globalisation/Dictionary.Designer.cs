@@ -6366,6 +6366,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Low-Goitrogen.
+        /// </summary>
+        public static string IsLowGoitrogen {
+            get {
+                return ResourceManager.GetString("IsLowGoitrogen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Low-Histamine.
         /// </summary>
         public static string IsLowHistamineLabel {
@@ -7320,6 +7329,15 @@ namespace K9.Globalisation {
         public static string LowerLegLengthTitle {
             get {
                 return ResourceManager.GetString("LowerLegLengthTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For individuals with thyroid disorders, particularly those affecting thyroid function like hypothyroidism, the importance of consuming low goitrogen foods cannot be overstated. Goitrogens are substances found in certain foods that can interfere with thyroid function by inhibiting the uptake of iodine, essential for thyroid hormone production. Eating a diet low in goitrogens is crucial for these individuals as it minimizes the risk of further impairing thyroid function. Such a dietary approach helps maintain [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string LowGoitrogenDescription {
+            get {
+                return ResourceManager.GetString("LowGoitrogenDescription", resourceCulture);
             }
         }
         

@@ -56,6 +56,7 @@ namespace K9.WebApplication.Controllers
             hq.IsBulletProof = model.IsBulletProof;
             hq.IsSattvic = model.IsSattvic;
             hq.IsLowSulphur = model.IsLowSulphur;
+            hq.IsLowGoitrogen = model.IsLowGoitrogen;
             hq.IsKeto = model.IsKeto;
             hq.CurrentHealthLevel = model.CurrentHealthLevel;
             hq.AutomaticallyFilterFoods = model.AutomaticallyFilterFoods;
@@ -72,6 +73,7 @@ namespace K9.WebApplication.Controllers
                 hq.IsLowOmega6 = hq.GetOmega6Score() > threshold;
                 hq.IsLowSulphur = hq.GetCbsScore() > threshold;
                 hq.IsKeto= hq.GetCbsScore() > threshold || hq.GetInflammationScore() > threshold;
+                hq.IsLowGoitrogen = hq.HypoThyroidism;
             }
 
             _healthQuestionnaireService.Save(hq);

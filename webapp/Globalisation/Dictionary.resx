@@ -4666,6 +4666,9 @@
   <data name="IsKeto" xml:space="preserve">
     <value>Keto</value>
   </data>
+  <data name="IsLowGoitrogen" xml:space="preserve">
+    <value>Low-Goitrogen</value>
+  </data>
   <data name="IsLowSulphur" xml:space="preserve">
     <value>Low-Sulphur / Thiol</value>
   </data>
@@ -4677,6 +4680,9 @@
   </data>
   <data name="LectinIntolerance" xml:space="preserve">
     <value>Lectin Intolerance</value>
+  </data>
+  <data name="LowGoitrogenDescription" xml:space="preserve">
+    <value>For individuals with thyroid disorders, particularly those affecting thyroid function like hypothyroidism, the importance of consuming low goitrogen foods cannot be overstated. Goitrogens are substances found in certain foods that can interfere with thyroid function by inhibiting the uptake of iodine, essential for thyroid hormone production. Eating a diet low in goitrogens is crucial for these individuals as it minimizes the risk of further impairing thyroid function. Such a dietary approach helps maintain a balanced and efficient thyroid, ensuring the body's metabolic processes, energy levels, and overall hormonal balance are supported. This is particularly vital for those already experiencing thyroid-related challenges, where optimal thyroid function is essential for health and well-being.</value>
   </data>
   <data name="LowSulphurDescription" xml:space="preserve">
     <value>Many people, especially those with a CBS upregulation and methylation issues, cannot properly metabolise and ustilise sulphur when out of balance. Therefore, it can be very beneficial to reduce high sulphur foods until health is restored.</value>

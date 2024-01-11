@@ -190,6 +190,7 @@
             public const string IsHighGoitrogen = "IsHighGoitrogen";
             public const string IsKeto = "IsKeto";
             public const string IsLowSulphur = "IsLowSulphur";
+            public const string IsLowGoitrogen = "IsLowGoitrogen";
 
             public const string IsLowOxalateLabel = "IsLowOxalateLabel";
             public const string IsLowLectinLabel = "IsLowLectinLabel";
@@ -771,6 +772,7 @@
             public const string BulletProofDescription = "BulletProofDescription";
             public const string SattvicDescription = "SattvicDescription";
             public const string LowSulphurDescription = "LowSulphurDescription";
+            public const string LowGoitrogenDescription = "LowGoitrogenDescription";
             public const string KetoDescription = "KetoDescription";
 
             public const string Omnivore = "Omnivore";

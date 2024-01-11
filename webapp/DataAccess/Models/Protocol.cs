@@ -103,7 +103,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsKeto, Description = Globalisation.Strings.Names.KetoDescription)]
         public bool IsKeto { get; set; }
 
-
+        [NotMapped]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsLowSulphur, Description = Globalisation.Strings.Names.LowGoitrogenDescription)]
+        public bool IsLowGoitrogen { get; set; }
 
         [NotMapped]
         [UIHint("Range")]

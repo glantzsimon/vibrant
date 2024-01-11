@@ -323,7 +323,7 @@ namespace K9.WebApplication.Services
                             {
                                 compatibilityLevel = ECompatibilityLevel.Unsuitable;
                             }
-                            else if (!protocolFoodItem.FoodItem.IsHighGoitrogen && protocol.IsKeto)
+                            else if (!protocolFoodItem.FoodItem.IsHighGoitrogen && protocol.IsLowGoitrogen)
                             {
                                 compatibilityLevel = ECompatibilityLevel.Unsuitable;
                             }
