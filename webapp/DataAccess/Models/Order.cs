@@ -414,19 +414,19 @@ namespace K9.DataAccessLayer.Models
         public string GetPricesList() => GetAllOrderedProductsIncludingShipping().Select(e => e.GetPrice().ToCurrency()).ToDisplayList();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PricesListLabel)]
-        public string GetPricesListInBritishPounds() => GetAllOrderedProductsIncludingShipping().Select(e => e.GetPrice().ToBritishPounds().ToCurrency()).ToDisplayList();
+        public string GetPricesListInBritishPounds() => GetAllOrderedProductsIncludingShipping().Select(e => e.GetPrice().ToBritishPounds().ToCurrency("£")).ToDisplayList();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalsLabel)]
         public string GetTotalsList() => GetAllOrderedProductsIncludingShipping().Select(e => e.TotalPrice.ToCurrency()).ToDisplayList();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalsLabel)]
-        public string GetTotalsListInBritishPounds() => GetAllOrderedProductsIncludingShipping().Select(e => e.TotalPrice.ToBritishPounds().ToCurrency()).ToDisplayList();
+        public string GetTotalsListInBritishPounds() => GetAllOrderedProductsIncludingShipping().Select(e => e.TotalPrice.ToBritishPounds().ToCurrency("£")).ToDisplayList();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTotalLabel)]
         public string GetFormattedSubTotal() => GetFullTotalPrice().ToCurrency();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.SubTotalLabel)]
-        public string GetFormattedSubTotalInBritishPounds() => GetFullTotalPrice().ToBritishPounds().ToCurrency();
+        public string GetFormattedSubTotalInBritishPounds() => GetFullTotalPrice().ToBritishPounds().ToCurrency("£");
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public string GetFormattedDiscount() => GetDiscountAmount().ToCurrency();
@@ -435,13 +435,13 @@ namespace K9.DataAccessLayer.Models
         public string GetFormattedTotalDiscount() => (GetDiscountAmount() + GetTotalTierDiscount()).ToCurrency();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
-        public string GetFormattedTotalDiscountInBritishPounds() => (GetDiscountAmount() + GetTotalTierDiscount()).ToBritishPounds().ToCurrency("$");
+        public string GetFormattedTotalDiscountInBritishPounds() => (GetDiscountAmount() + GetTotalTierDiscount()).ToBritishPounds().ToCurrency("£");
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         public string GetFormattedGrandTotal() => GetGrandTotal().ToCurrency();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
-        public string GetFormattedGrandTotalInBritishPounds() => GetGrandTotal().ToBritishPounds().ToCurrency();
+        public string GetFormattedGrandTotalInBritishPounds() => GetGrandTotal().ToBritishPounds().ToCurrency("£");
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ClientLabel)]
         public string GetBulkDiscountText() =>

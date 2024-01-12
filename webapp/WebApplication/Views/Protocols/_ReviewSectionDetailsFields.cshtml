@@ -72,7 +72,7 @@
     <hr />
 }
 
-@if (Model.Protocol.ProductPacks.Any())
+@if (Model.Protocol.ProductPacks.Any() || Model.Protocol.Products.Any())
 {
     <div class="row">
         <div class="col-sm-2">
