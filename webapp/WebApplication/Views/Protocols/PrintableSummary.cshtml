@@ -2,6 +2,7 @@
 @using K9.Base.WebApplication.Helpers
 @using K9.DataAccessLayer.Enums
 @using K9.SharedLibrary.Authentication
+@using K9.WebApplication.ViewModels
 @model Protocol
 @{
     Layout = "../Shared/_LayoutPrint.cshtml";
@@ -83,7 +84,19 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    @Html.Partial("../Protocols/_PrintableFoodsList")
+                    @Html.Partial("../Protocols/_PrintableFoodsList", new RecommendedFoodsViewModel
+                    {
+                        ClientId = Model.ClientId,
+                        GenoType =  Model.GenoType,
+                        Protocol = Model,
+                        RecommendedFoods = Model.RecommendedFoods.Select(e =>
+                        {
+                            var foodItem = e.FoodItem;
+                            foodItem.Score = e.Score;
+                            foodItem.RelativeScore = e.RelativeScore;
+                            return foodItem;
+                        }).ToList()
+                    })
                 </div>
             </div>
         }
