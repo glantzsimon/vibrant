@@ -63,7 +63,12 @@ namespace K9.DataAccessLayer.Helpers
 
         public static string RemoveEmptyLines(this string value)
         {
-            return string.Join(Environment.NewLine, Regex.Split(value, Environment.NewLine).Select(e => e.Trim()).Where(e => !string.IsNullOrEmpty(e) && !string.IsNullOrWhiteSpace(e)));
+            if (!string.IsNullOrEmpty(value))
+            {
+                return string.Join(Environment.NewLine, Regex.Split(value, Environment.NewLine).Select(e => e.Trim()).Where(e => !string.IsNullOrEmpty(e) && !string.IsNullOrWhiteSpace(e)));
+            }
+
+            return string.Empty;
         }
 
         public static string SelectLines(this string value, int numberOfLines)
