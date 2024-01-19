@@ -190,95 +190,22 @@ namespace K9.WebApplication.Services
         {
             model.ItemCode = 0;
 
-            var itemsInCategory = items.Where(e => e.Category == model.Category).Select(e => new SortableItem
+            var itemsInCategory = items.Where(e => e.Category == model.Category).ToList();
+            var newItemCode = (int)model.Category;
+            var maxItemCode = (int)model.Category + Constants.Constants.CategoryGap;
+
+            while (newItemCode <= maxItemCode)
             {
-                Id = e.Id,
-                Name = e.Name,
-                DisplayIndex = e.ItemCode
-            }).ToList();
-
-            itemsInCategory.Add(new SortableItem
-            {
-                Id = model.Id,
-                Name = model.Name,
-                DisplayIndex = model.ItemCode
-            });
-
-            itemsInCategory = itemsInCategory.OrderBy(e => e.Name).ToList();
-
-            var indexedItems = itemsInCategory.Select((p, i) => new { Model = p, Index = i }).OrderBy(e => e.Index).ToList();
-            var newIndex = indexedItems.First(e => e.Model.Name == model.Name && e.Model.Id == model.Id).Index;
-            var firstIndex = indexedItems.Min(e => e.Index);
-            var lastIndex = indexedItems.Max(e => e.Index);
-            var previousItem = newIndex == firstIndex ? null : indexedItems[newIndex - 1].Model;
-            var nextItem = newIndex == lastIndex ? null : indexedItems[newIndex + 1].Model;
-
-            if (previousItem != null & nextItem != null)
-            {
-                // This will be in the middle of the list. Get Index half way between nextItem and beginning of category
-                var newItemCode = previousItem.DisplayIndex + (int)Math.Round((double)(nextItem.DisplayIndex - previousItem.DisplayIndex) / 2, 0, MidpointRounding.AwayFromZero);
-
-                while (newItemCode < nextItem.DisplayIndex)
+                if (itemsInCategory.Any(e => e.ItemCode == newItemCode))
                 {
-                    if (itemsInCategory.Any(e => e.DisplayIndex == newItemCode))
-                    {
-                        // ItemCode already taken, increment it
-                        newItemCode++;
-                    }
-                    else
-                    {
-                        return newItemCode;
-                    }
+                    // ItemCode already taken, decrease it
+                    newItemCode++;
                 }
-
-                throw new Exception(Globalisation.Dictionary.NewItemCodeNotAvailable);
-            }
-
-            else if (previousItem == null && nextItem != null)
-            {
-                var newItemCode = (int)model.Category + (int)Math.Round((double)(nextItem.DisplayIndex - (int)model.Category) / 2, 0);
-
-                while (newItemCode >= (int)model.Category)
+                else
                 {
-                    if (itemsInCategory.Any(e => e.DisplayIndex == newItemCode))
-                    {
-                        // ItemCode already taken, decrease it
-                        newItemCode--;
-                    }
-                    else
-                    {
-                        return newItemCode;
-                    }
-                }
-
-                throw new Exception(Globalisation.Dictionary.NewItemCodeNotAvailable);
-            }
-
-            else if (nextItem == null && previousItem != null)
-            {
-                // This will become the last in the list. Increment index by ItemCodeGap
-                var newItemCode = previousItem.DisplayIndex + Constants.Constants.ItemCodeGap;
-
-                while (newItemCode <= (int)model.Category + Constants.Constants.CategoryGap)
-                {
-                    if (itemsInCategory.Any(e => e.DisplayIndex == newItemCode))
-                    {
-                        // ItemCode already taken, decrease it
-                        newItemCode++;
-                    }
-                    else
-                    {
-                        return newItemCode;
-                    }
+                    return newItemCode;
                 }
             }
-
-            else if (nextItem == null && previousItem == null)
-            {
-                // Create the first in the list!
-                return (int)model.Category;
-            }
-
 
             throw new Exception(Globalisation.Dictionary.NewItemCodeNotAvailable);
         }

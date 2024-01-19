@@ -22,10 +22,13 @@
 <hr />
 
 <article>
-    <h5>@Dictionary.OverviewLabel</h5>
-    @MvcHtmlString.Create(Model.Body)
+    @if (!string.IsNullOrEmpty(Model.Body))
+    {
+        <h5>@Dictionary.OverviewLabel</h5>
+        @MvcHtmlString.Create(Model.Body)
 
-    <br />
+        <br />
+    }
 
     <h5>@Dictionary.PriceLabel</h5>
     @Model.GetFormattedInternationalPrice()
