@@ -1,5 +1,6 @@
 ﻿@using System.Web.Mvc.Html
 @using K9.Base.WebApplication.ViewModels
+@using K9.DataAccessLayer.Enums
 @model Product
 
 @if (Model.ImageFileSource != null)
@@ -31,15 +32,20 @@
 
     <br />
 
-    <h5>@Dictionary.AmountLabel</h5>
-    @Model.FormattedAmount
+    @if (Model.ProductType != EProductType.Other)
+    {
 
-    <br />
+        <h5>@Dictionary.AmountLabel</h5>
+        @Model.FormattedAmount
 
-    <h5>@Dictionary.DosageLabel</h5>
-    @Model.GetRecommendationsText()
+        <br />
 
-    <br />
+        <h5>@Dictionary.DosageLabel</h5>
+        @Model.GetRecommendationsText()
+
+        <br />
+    }
+
     <br />
 
     <h5>@Dictionary.BenefitsLabel</h5>
@@ -49,9 +55,13 @@
 
     <br />
 
-    @Html.Partial("_Ingredients", Model)
+    @if (Model.ProductType != EProductType.Other)
+    {
 
-    <hr />
+        @Html.Partial("_Ingredients", Model)
+
+        <hr />
+    }
 
     <div class="buttons-container">
         @Html.Partial("../Product/_AddToCart", Model)
