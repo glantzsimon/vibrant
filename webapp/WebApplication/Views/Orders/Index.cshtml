@@ -17,8 +17,14 @@
 }
 
 <div class="row">
-    <div class="col-xs-12 padding-0">
+    <div class="col-xs-6 padding-0">
         @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.CreateNew, "Create", "Orders", null, "fa fa-plus-circle", EButtonClass.Primary)
+    </div>
+    <div class="col-xs-6">
+        @Html.Partial("Controls/_SearchBox", new SearchBoxOptions
+        {
+            CssSelector = "div.checkbox"
+        })
     </div>
 </div>
 
