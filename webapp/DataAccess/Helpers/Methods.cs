@@ -46,6 +46,10 @@ namespace K9.DataAccessLayer.Helpers
 
         public static string HtmlToText(this string html)
         {
+            if (string.IsNullOrEmpty(html))
+            {
+                return string.Empty;
+            }
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(html);
             return htmlDoc.DocumentNode.InnerText;

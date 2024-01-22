@@ -21,10 +21,10 @@
         @Html.BootstrapActionLinkButton(K9.Base.Globalisation.Dictionary.CreateNew, "Create", "Orders", null, "fa fa-plus-circle", EButtonClass.Primary)
     </div>
     <div class="col-xs-6">
-        @Html.Partial("Controls/_SearchBox", new SearchBoxOptions
-        {
-            CssSelector = "div.checkbox"
-        })
+        @Html.Partial("Controls/_SearchBox", new K9.WebApplication.Options.SearchBoxOptions
+   {
+       CssSelector = "div.checkbox"
+   })
     </div>
 </div>
 
