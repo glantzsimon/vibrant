@@ -385,7 +385,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         [DataType(DataType.Currency)]
-        public double GetGrandTotal() => GetTotalPrice() - GetDiscountAmount();
+        public double GetGrandTotal() => ShopCommission.HasValue && ShopCommission.Value > 0 ? TotalShopPayableAmount : GetTotalPrice() - GetDiscountAmount();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         [DataType(DataType.Currency)]
@@ -432,7 +432,7 @@ namespace K9.DataAccessLayer.Models
         public string GetFormattedDiscount() => GetDiscountAmount().ToCurrency();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
-        public string GetFormattedTotalDiscount() => (GetDiscountAmount() + GetTotalTierDiscount()).ToCurrency();
+        public string GetFormattedTotalDiscount() => (ShopCommission.HasValue && ShopCommissionAmount > 0 ? ShopCommissionAmount : (GetDiscountAmount() + GetTotalTierDiscount())).ToCurrency();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public string GetFormattedTotalDiscountInBritishPounds() => (GetDiscountAmount() + GetTotalTierDiscount()).ToBritishPounds().ToCurrency("£");
@@ -475,6 +475,7 @@ namespace K9.DataAccessLayer.Models
                 };
                 items.Add(shippingItem);
             }
+            
             return items;
         }
 
@@ -523,7 +524,7 @@ namespace K9.DataAccessLayer.Models
                         var groupItem = new
                         {
                             Product = GetCombinedProducts().FirstOrDefault(e => e.Id == group.Key),
-
+                            
                             Count = groupOrderProducts.Sum(e => e.Amount) +
                                     groupOrderProductPacks.Sum(e => e.OrderProductPack.Amount * e.Products.Sum(p => p.Amount)),
 
@@ -545,7 +546,8 @@ namespace K9.DataAccessLayer.Models
                     Product = group.Product,
                     ProductId = group.Product.Id,
                     Amount = group.Count,
-                    AmountCompleted = group.CompleteCount
+                    AmountCompleted = group.CompleteCount,
+                    PriceTier = Products.FirstOrDefault(e => e.ProductId == group.Product.Id).PriceTier
                 };
                 results.Add(newOrderProduct);
             }

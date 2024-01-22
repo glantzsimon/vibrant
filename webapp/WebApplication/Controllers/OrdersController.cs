@@ -279,7 +279,7 @@ namespace K9.WebApplication.Controllers
             orderItem.QuantitiesList = order.GetQuantitiesList();
             orderItem.ProductsList = order.GetProductsList();
             orderItem.InvoiceNumbersText = order.GetInvoiceNumbersText();
-            orderItem.BulkDiscountText = order.DiscountAmount > 0 ? order.GetBulkDiscountText() : Globalisation.Dictionary.DiscountLabel;
+            orderItem.BulkDiscountText = order.ShopCommission.HasValue && order.ShopCommission.Value > 0 ? Globalisation.Dictionary.ShopCommissionLabel : order.DiscountAmount > 0 ? order.GetBulkDiscountText() : Globalisation.Dictionary.DiscountLabel;
             orderItem.InvoiceDate = DateTime.Today.ToShortDateString();
 
             return orderItem;

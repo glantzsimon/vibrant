@@ -64,6 +64,9 @@ namespace K9.DataAccessLayer.Models
                     case EPriceTier.Discount2:
                         return Product.PriceDiscount2;
 
+                    case EPriceTier.ShopPrice:
+                        return Product.GetShopPrice();
+
                     case EPriceTier.SmallPack:
                         return Product.PriceSmallPack;
 

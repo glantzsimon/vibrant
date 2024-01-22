@@ -16,5 +16,7 @@ namespace K9.DataAccessLayer.Enums
         SmallPackDiscount1,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceSmallPackDiscount2Label)]
         SmallPackDiscount2,
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.RegularPackShopPriceLabel)]
+        ShopPrice,
     }
 }

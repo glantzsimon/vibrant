@@ -10661,6 +10661,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Regular Pack - Shop Price.
+        /// </summary>
+        public static string RegularPackShopPriceLabel {
+            get {
+                return ResourceManager.GetString("RegularPackShopPriceLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Regular Pack - Full Price.
         /// </summary>
         public static string RegularPrice {

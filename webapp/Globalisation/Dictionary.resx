@@ -4705,6 +4705,9 @@
   <data name="PrintableFoodList" xml:space="preserve">
     <value>Printable Food List</value>
   </data>
+  <data name="RegularPackShopPriceLabel" xml:space="preserve">
+    <value>Regular Pack - Shop Price</value>
+  </data>
   <data name="Restock" xml:space="preserve">
     <value>Restock</value>
   </data>
