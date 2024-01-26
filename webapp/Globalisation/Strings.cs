@@ -474,7 +474,7 @@
             public const string BackPain ="BackPain";
             public const string UTI ="UTI";
             public const string KidneyStones ="KidneyStones";
-            public const string DifficultyUrinating ="KidneyStones";
+            public const string DifficultyUrinating ="DifficultyUrinating";
             public const string Asthma ="Asthma";
             public const string CandidaFungus ="CandidaFungus";
             public const string Anaemia ="Anaemia";

@@ -125,7 +125,10 @@ namespace K9.WebApplication.Services
         {
             order.Client = _clientsRepository.Find(order.ClientId ?? 0);
             order.ClientName = order.Client?.FullName;
-            order.Client.Country = _countriesRepository.Find(order.Client.CountryId ?? 0);
+            if (order.Client != null)
+            {
+                order.Client.Country = _countriesRepository.Find(order.Client.CountryId ?? 0);
+            }
             order.User = _usersRepository.Find(order.UserId);
             order.UserName = order.User.Name;
 
