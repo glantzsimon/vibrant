@@ -375,6 +375,12 @@
             public const string Pneumonia ="Pneumonia";
             public const string Tuberculosis ="Tuberculosis";
             public const string LungCancer ="LungCancer";
+            public const string Dyspnea ="Dyspnea";
+            public const string DyspneaDetails ="DyspneaDetails";
+            public const string MucusInLungs ="MucusInLungs";
+            public const string Wheezing ="Wheezing";
+            public const string ChronicCough ="ChronicCough";
+            public const string TightnessInChest ="TightnessInChest";
             public const string CysticFibrosisInfo ="CysticFibrosisInfo";
             public const string PulmonaryFibrosisInfo ="PulmonaryFibrosisInfo";
             public const string BronchitisLabel ="BronchitisLabel";
@@ -430,6 +436,8 @@
             public const string PrescriptionMedicationLabel = "PrescriptionMedicationLabel";
             public const string SupplementsLabel = "SupplementsLabel";
             public const string SmokeLabel = "SmokeLabel";
+            public const string CovidVaccine = "CovidVaccine";
+            public const string LongCovid = "LongCovid";
             public const string CoatedTongueLabel = "CoatedTongueLabel";
             public const string DiverticulitisLabel = "DiverticulitisLabel";
             public const string LeakyGut = "LeakyGut";
@@ -522,6 +530,7 @@
             public const string ToothPain = "ToothPain";
             public const string TMJ = "TMJ";
             public const string RootCanals = "RootCanals";
+            public const string DentalAbsesses = "DentalAbsesses";
             public const string DentalIssues = "DentalIssues";
             public const string PhotoOfEyes = "PhotoOfEyes";
             public const string WhiteSpotsOnNails = "WhiteSpotsOnNails";

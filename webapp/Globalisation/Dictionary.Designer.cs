@@ -2325,6 +2325,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Have you received one or more COVID vaccines?.
+        /// </summary>
+        public static string CovidVaccine {
+            get {
+                return ResourceManager.GetString("CovidVaccine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cracked Teeth.
         /// </summary>
         public static string CrackedTeeth {
@@ -2702,6 +2711,15 @@ namespace K9.Globalisation {
         public static string DemoteFoodsDescription {
             get {
                 return ResourceManager.GetString("DemoteFoodsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dental Abscesses.
+        /// </summary>
+        public static string DentalAbsesses {
+            get {
+                return ResourceManager.GetString("DentalAbsesses", resourceCulture);
             }
         }
         
@@ -3424,6 +3442,24 @@ namespace K9.Globalisation {
         public static string Duration {
             get {
                 return ResourceManager.GetString("Duration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dyspnea.
+        /// </summary>
+        public static string Dyspnea {
+            get {
+                return ResourceManager.GetString("Dyspnea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uncomfortable feeling of not being able to breathe well enough or feeling out of breath while doing simple everyday routine tasks, such as walking, standing, bending, etc..
+        /// </summary>
+        public static string DyspneaDescription {
+            get {
+                return ResourceManager.GetString("DyspneaDescription", resourceCulture);
             }
         }
         
@@ -7240,6 +7276,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Have you ever experienced long COVID?.
+        /// </summary>
+        public static string LongCovid {
+            get {
+                return ResourceManager.GetString("LongCovid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Longevity.
         /// </summary>
         public static string Longevity {
@@ -7963,6 +8008,15 @@ namespace K9.Globalisation {
         public static string MsgSensitivityLabel {
             get {
                 return ResourceManager.GetString("MsgSensitivityLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mucus in Lungs.
+        /// </summary>
+        public static string MucusInLungs {
+            get {
+                return ResourceManager.GetString("MucusInLungs", resourceCulture);
             }
         }
         
@@ -14111,6 +14165,15 @@ namespace K9.Globalisation {
         public static string WhatsAppUs {
             get {
                 return ResourceManager.GetString("WhatsAppUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wheezing.
+        /// </summary>
+        public static string Wheezing {
+            get {
+                return ResourceManager.GetString("Wheezing", resourceCulture);
             }
         }
         

@@ -229,7 +229,7 @@ namespace K9.DataAccessLayer.Models
             return IsCategoryComplete(e => e.Category == EQuestionCategory.Doshas);
         }
 
-        public Doshas GetPrakrutiDoshas()
+        public Doshas GetPrakrutiDoshas(HealthQuestionnaire hq)
         {
             var results = new List<EDosha>
             {
@@ -248,11 +248,35 @@ namespace K9.DataAccessLayer.Models
             var pittaCount = results.Count(e => e == EDosha.Pitta);
             var kaphaCount = results.Count(e => e == EDosha.Kapha);
 
+            var genotypeToDoshaCount = 0;
+            switch (CalculateGenotype().GenoType)
+            {
+                case EGenoType.Hunter:
+                case EGenoType.Explorer:
+                    genotypeToDoshaCount = pittaCount;
+                    pittaCount += genotypeToDoshaCount;
+                    break;
+
+                case EGenoType.Warrior:
+                case EGenoType.Gatherer:
+                    genotypeToDoshaCount = kaphaCount;
+                    kaphaCount += genotypeToDoshaCount;
+                    break;
+
+                case EGenoType.Nomad:
+                case EGenoType.Teacher:
+                    genotypeToDoshaCount = vataCount;
+                    vataCount += genotypeToDoshaCount;
+                    break;
+            }
+
+            totalDoshas += genotypeToDoshaCount;
+
             return new Doshas
             {
                 VataDoshaScore = vataCount > 0 ? (double)vataCount / totalDoshas * 100 : 0,
-                PittaDoshaScore = pittaCount > 0 ? (double)pittaCount / totalDoshas * 100: 0,
-                KaphaDoshaScore = kaphaCount > 0 ? (double)kaphaCount / totalDoshas * 100: 0
+                PittaDoshaScore = pittaCount > 0 ? (double)pittaCount / totalDoshas * 100 : 0,
+                KaphaDoshaScore = kaphaCount > 0 ? (double)kaphaCount / totalDoshas * 100 : 0
             };
         }
 
@@ -269,6 +293,6 @@ namespace K9.DataAccessLayer.Models
                 KaphaDoshaScore = kaphaDoshaScore
             };
         }
-        
+
     }
 }

@@ -9,7 +9,7 @@ namespace K9.WebApplication.Services
         {
             var score = 0;
             var threshold = 33;
-            var prakrutiDoshas = hq.GetPrakrutiDoshas();
+            var prakrutiDoshas = hq.GetPrakrutiDoshas(hq);
             var prakruti = prakrutiDoshas.GetDosha();
             var vikruti = hq.GetVikrutiDoshas();
 

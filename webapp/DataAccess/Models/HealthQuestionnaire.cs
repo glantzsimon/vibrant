@@ -927,6 +927,31 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LungCancer)]
         public bool LungCancer { get; set; }
 
+        [Score(Immunity = true, RespiratoryHealth = true, CardioVascularHealth = true)]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Dyspnea, Description = Strings.Labels.DyspneaDetails)]
+        public bool Dyspnea { get; set; }
+
+        [Score(Immunity = true, RespiratoryHealth = true, KaphaDosha = true)]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MucusInLungs)]
+        public bool MucusInLungs { get; set; }
+
+        [Score(Immunity = true, RespiratoryHealth = true)]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Wheezing)]
+        public bool Wheezing { get; set; }
+
+        [Score(Immunity = true, RespiratoryHealth = true)]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ChronicCough)]
+        public bool ChronicCough { get; set; }
+
+        [Score(Immunity = true, RespiratoryHealth = true)]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TightnessInChest)]
+        public bool TightnessInChest { get; set; }
+
         public int GetRespiratoryHealthScore => GetScore(e => e.RespiratoryHealth);
 
         #endregion
@@ -1183,6 +1208,18 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SmokeLabel)]
         public EYesNo? Smoke { get; set; }
 
+        [Score(Cbs = true, IsYin = true, Restorative = true, VataDosha = true)]
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.CovidVaccine)]
+        public EYesNo? CovidVaccine { get; set; }
+
+        [Score(Cbs = true, IsYin = true, Restorative = true, VataDosha = true)]
+        [UIHint("YesNo")]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.LongCovid)]
+        public EYesNo? LongCovid { get; set; }
+
         [Score(NeurologicalHealth = true, Mood = true, Cognition = true, StressRelief = true)]
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
@@ -1231,7 +1268,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.ToothPain)]
         public bool ToothPain { get; set; }
 
-        [Score(Immunity = true, DentalHealth = true, Restorative = true, IsPhytateIntolerance = true, IsOxalateIntolerance = true)]
+        [Score(Immunity = true, DentalHealth = true,  IsPhytateIntolerance = true, IsOxalateIntolerance = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TMJ)]
         public bool TMJ { get; set; }
@@ -1246,10 +1283,15 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.Cavities)]
         public bool Cavities { get; set; }
 
-        [Score(Immunity = true, DentalHealth = true, Restorative = true)]
+        [Score(Immunity = true, DentalHealth = true)]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.RootCanals)]
         public bool RootCanals { get; set; }
+
+        [Score(Immunity = true, DentalHealth = true)]
+        [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DentalAbsesses)]
+        public bool DentalAbcsesses { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DentalIssuesLabel)]
         [StringLength(1111)]
