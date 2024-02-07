@@ -4770,4 +4770,13 @@ A sattvic diet shares the qualities of sattva, some of which include "pure, esse
   <data name="Wheezing" xml:space="preserve">
     <value>Wheezing</value>
   </data>
+  <data name="ChronicCough" xml:space="preserve">
+    <value>Chronic Cough</value>
+  </data>
+  <data name="DyspneaDetails" xml:space="preserve">
+    <value>Shortness of breath</value>
+  </data>
+  <data name="TightnessInChest" xml:space="preserve">
+    <value>Tightness In Chest</value>
+  </data>
 </root>
