@@ -33,6 +33,7 @@ namespace K9.WebApplication.Constants
         {
             ECategory.Alchemy,
             ECategory.Detox,
+            ECategory.GeneticProfiles,
             ECategory.Herbal,
             ECategory.VitaminsMinerals,
             ECategory.DietarySupplement,

@@ -698,6 +698,7 @@
             public const string Product = "Product";
             public const string DietarySupplement = "DietarySupplement";
             public const string PersonalCare = "PersonalCare";
+            public const string GeneticProfiles = "GeneticProfiles";
             public const string Herb = "Herb";
             public const string Superfood = "Superfood";
             public const string Phytonutrient = "Phytonutrient";

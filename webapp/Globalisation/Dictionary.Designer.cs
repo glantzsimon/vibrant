@@ -4786,6 +4786,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Genetic Profiles.
+        /// </summary>
+        public static string GeneticProfiles {
+            get {
+                return ResourceManager.GetString("GeneticProfiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Genetic Profile Test.
         /// </summary>
         public static string GeneticProfileTest {

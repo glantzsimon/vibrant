@@ -797,6 +797,10 @@
     <Compile Include="Migrations\202401111502588_IsDelivered.Designer.cs">
       <DependentUpon>202401111502588_IsDelivered.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402070451161_NewHQFields.cs" />
+    <Compile Include="Migrations\202402070451161_NewHQFields.Designer.cs">
+      <DependentUpon>202402070451161_NewHQFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
@@ -1262,6 +1266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401111502588_IsDelivered.resx">
       <DependentUpon>202401111502588_IsDelivered.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402070451161_NewHQFields.resx">
+      <DependentUpon>202402070451161_NewHQFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

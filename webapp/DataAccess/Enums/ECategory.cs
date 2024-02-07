@@ -31,6 +31,10 @@ namespace K9.DataAccessLayer.Enums
         Alchemy = 770000,
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.PersonalCare)]
         PersonalCare = 800000,
+
+        [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.GeneticProfiles)]
+        GeneticProfiles = 810000,
+
         [EnumDescription(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.Other)]
         Other = 1100000
     }

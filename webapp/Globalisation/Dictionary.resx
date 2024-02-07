@@ -4758,6 +4758,9 @@ A sattvic diet shares the qualities of sattva, some of which include "pure, esse
   <data name="DyspneaDescription" xml:space="preserve">
     <value>Uncomfortable feeling of not being able to breathe well enough or feeling out of breath while doing simple everyday routine tasks, such as walking, standing, bending, etc.</value>
   </data>
+  <data name="GeneticProfiles" xml:space="preserve">
+    <value>Genetic Profiles</value>
+  </data>
   <data name="LongCovid" xml:space="preserve">
     <value>Have you ever experienced long COVID?</value>
   </data>
