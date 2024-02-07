@@ -42,6 +42,7 @@
                 <li><a data-toggle="pill" href="#shop-redeem">@Dictionary.Redeemable</a></li>
                 <li><a data-toggle="pill" href="#on-hold">@Dictionary.OrdersOnHold</a></li>
                 <li><a data-toggle="pill" href="#complete-orders">@Dictionary.CompleteOrders</a></li>
+                <li><a data-toggle="pill" href="#all-orders">@Dictionary.AllOrders</a></li>
             </ul>
 
             <div class="tab-content">
@@ -50,7 +51,7 @@
                 </div>
                 <div id="shop-provisions" class="tab-pane fade padding-top-15">
                     @Html.Partial("_OrdersTableFields", shopProvisions)
-                </div>    
+                </div>
                 <div id="shop-restock" class="tab-pane fade padding-top-15">
                     @Html.Partial("_OrdersTableFields", restockOrders)
                 </div>
@@ -62,6 +63,9 @@
                 </div>
                 <div id="complete-orders" class="tab-pane fade padding-top-15">
                     @Html.Partial("_OrdersTableFields", completeOrders)
+                </div>
+                <div id="all-orders" class="tab-pane fade padding-top-15">
+                    @Html.Partial("_OrdersTableFields", Model.AllOrders)
                 </div>
             </div>
         </div>

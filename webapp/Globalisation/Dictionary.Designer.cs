@@ -328,6 +328,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Orders.
+        /// </summary>
+        public static string AllOrders {
+            get {
+                return ResourceManager.GetString("AllOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All Orders Overview.
         /// </summary>
         public static string AllOrdersOverview {
