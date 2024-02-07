@@ -10,7 +10,7 @@
 @model HealthQuestionnaire
 
 @{
-    var prakrutiDoshas = Model.GetPrakrutiDoshas();
+    var prakrutiDoshas = Model.GetPrakrutiDoshas(Model);
     var prakruti = prakrutiDoshas.GetDosha();
     var prakrutiViewModel = new K9.WebApplication.ViewModels.DoshasViewModel(
         Model,
