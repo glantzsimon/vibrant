@@ -14,6 +14,7 @@
     var ordersOnHold = Model.GetOrdersOnHold();
     var shopProvisions = Model.GetShopProvisionOrders();
     var restockOrders = Model.GetRestockOrders();
+    var redeemableOrders = 
 }
 
 <div class="row">
@@ -23,7 +24,7 @@
     <div class="col-xs-6">
         @Html.Partial("Controls/_SearchBox", new K9.WebApplication.Options.SearchBoxOptions
    {
-       CssSelector = "div.checkbox"
+       CssSelector = "div.row"
    })
     </div>
 </div>
@@ -38,6 +39,7 @@
                 <li class="active"><a data-toggle="pill" href="#incomplete-orders">@Dictionary.IncompleteOrders</a></li>
                 <li><a data-toggle="pill" href="#shop-provisions">@Dictionary.ShopProvisions</a></li>
                 <li><a data-toggle="pill" href="#shop-restock">@Dictionary.Restock</a></li>
+                <li><a data-toggle="pill" href="#shop-redeem">@Dictionary.Redeemable</a></li>
                 <li><a data-toggle="pill" href="#on-hold">@Dictionary.OrdersOnHold</a></li>
                 <li><a data-toggle="pill" href="#complete-orders">@Dictionary.CompleteOrders</a></li>
             </ul>
@@ -51,6 +53,9 @@
                 </div>    
                 <div id="shop-restock" class="tab-pane fade padding-top-15">
                     @Html.Partial("_OrdersTableFields", restockOrders)
+                </div>
+                <div id="shop-redeem" class="tab-pane fade padding-top-15">
+                    @Html.Partial("_OrdersTableFields", redeemableOrders)
                 </div>
                 <div id="on-hold" class="tab-pane fade padding-top-15">
                     @Html.Partial("_OrdersTableFields", ordersOnHold)

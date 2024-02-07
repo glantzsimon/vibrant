@@ -366,8 +366,8 @@ namespace K9.WebApplication.Services
         public RepCommissionViewModel CalculateRepCommission(int repId)
         {
             var redeemedCommissions = _repCommissionsRepository.Find(e => e.RepId == repId).ToList();
-            var repOrders = List(true).Where(e => (e.RepId == repId) && !e.IsOnHold && e.PaidOn.HasValue).ToList();
-            var redeemedOrders = List(true).Where(e => (e.RepId == repId || e.ClientId == repId) && !e.IsOnHold && e.OrderType == EOrderType.RedeemCommission).ToList();
+            var repOrders = List(true, true).Where(e => (e.RepId == repId) && !e.IsOnHold).ToList();
+            var redeemedOrders = List(true, true).Where(e => (e.RepId == repId || e.ClientId == repId) && !e.IsOnHold && e.OrderType == EOrderType.RedeemCommission).ToList();
 
             var totalRedeemed = redeemedCommissions.Sum(e => e.AmountRedeemed) +
                                 redeemedOrders.Where(e => e.OrderType == EOrderType.RedeemCommission).Sum(e => e.TotalPrice);

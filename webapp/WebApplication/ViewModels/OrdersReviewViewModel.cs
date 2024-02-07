@@ -29,6 +29,8 @@ namespace K9.WebApplication.ViewModels
         
         public List<Order> GetRestockOrders() => AllOrders.Where(e => !e.IsOnHold && e.OrderType == EOrderType.Restock).ToList();
 
+        public List<Order> GetRedeemableOrders() => AllOrders.Where(e => !e.IsOnHold && e.RepId.HasValue).ToList();
+
         public List<Order> GetOrdersOnHold() => AllDirectOrders.Where(e => e.IsOnHold).ToList();
 
         public List<Order> GetIncompleteOrders() => AllActiveOrders.Where(e => !e.IsComplete).ToList();
