@@ -111,8 +111,7 @@ namespace K9.WebApplication.Services
                         ProtocolFrequency = EProtocolFrequency.Daily,
                         NumberOfPeriodsOff = 1,
                         Duration = EProtocolDuration.ThreeMonths,
-                        GenoType = hq.CalculateGenotype().GenoType,
-                        Vikruti = hq.GetVikrutiDoshas()
+                        GenoType = hq.CalculateGenotype().GenoType
                     };
 
                     _protocolsRepository.Create(protocol);

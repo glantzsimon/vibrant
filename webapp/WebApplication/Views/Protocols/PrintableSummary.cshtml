@@ -55,49 +55,20 @@
             </div>
         }
     }
-}
 
-@if (Model.DietaryRecommendations != null && Model.DietaryRecommendations.Any())
-{
     using (Html.BeginForm())
     {
         using (Html.BeginBootstrapForm())
         {
-            <div class="row margin-top-0">
-                <div class="col-xs-12">
-                    <h3 class="section-title margin-top-0">@Dictionary.DietaryAdvice</h3>
-                </div>
-            </div>
-
             <div class="row">
                 <div class="col-xs-12">
-                    @Html.Partial("../Protocols/_DietaryRecommendationsSummary")
+                    @Html.Partial("../Protocols/_NineStarKiSummary", Model.NineStarKi)
                 </div>
             </div>
         }
     }
 }
 
-@if (Model.Activities != null && Model.Activities.Any())
-{
-    using (Html.BeginForm())
-    {
-        using (Html.BeginBootstrapForm())
-        {
-            <div class="row margin-top-0">
-                <div class="col-xs-12">
-                    <h3 class="section-title margin-top-0">@Dictionary.RecommendedActivitties</h3>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-12">
-                    @Html.Partial("../Protocols/_ActivitiesSummary")
-                </div>
-            </div>
-        }
-    }
-}
 
 @if (Model.RecommendedFoods != null && Model.RecommendedFoods.Any())
 {
@@ -107,9 +78,11 @@
         {
             <div class="row margin-top-0">
                 <div class="col-xs-12">
-                    <h3 class="section-title margin-top-0">@Dictionary.RecommendedFoods</h3>
+                    <h1 class="section-title margin-top-0">@Dictionary.RecommendedFoods</h1>
                 </div>
             </div>
+
+            <br />
 
             <div class="row">
                 <div class="col-xs-12">
@@ -126,6 +99,52 @@
                             return foodItem;
                         }).ToList()
                     })
+                </div>
+            </div>
+        }
+    }
+}
+
+@if (Model.DietaryRecommendations != null && Model.DietaryRecommendations.Any())
+{
+    using (Html.BeginForm())
+    {
+        using (Html.BeginBootstrapForm())
+        {
+            <div class="row margin-top-0">
+                <div class="col-xs-12">
+                    <h1 class="section-title margin-top-0">@Dictionary.DietaryAdvice</h1>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.Partial("../Protocols/_DietaryRecommendationsPrintable")
+                </div>
+            </div>
+        }
+    }
+}
+
+@if (Model.Activities != null && Model.Activities.Any())
+{
+    using (Html.BeginForm())
+    {
+        using (Html.BeginBootstrapForm())
+        {
+            <div class="row margin-top-0">
+                <div class="col-xs-12">
+                    <h1 class="section-title margin-top-0">@Dictionary.RecommendedActivitties</h1>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.Partial("../Protocols/_ActivityPrintable")
                 </div>
             </div>
         }

@@ -44,6 +44,14 @@ namespace K9.WebApplication.ViewModels
             return items.OrderByDescending(e => e.Score).ThenBy(e => e.Name).ToList();
         }
 
+        public List<FoodItem> GetWorstFoods(EFoodGroup foodGroup)
+        {
+            var items = new List<FoodItem>();
+            items.AddRange(GetRecommendedFoodsForLevelAndGroup(foodGroup, ECompatibilityLevel.Suboptimal));
+            items.AddRange(GetRecommendedFoodsForLevelAndGroup(foodGroup, ECompatibilityLevel.Unsuitable));
+            return items.OrderByDescending(e => e.Score).ThenBy(e => e.Name).ToList();
+        }
+
         public List<FoodItem> GetRecommendedFoodsForLevelAndGroup(EFoodGroup foodGroup, ECompatibilityLevel level)
         {
             switch (GenoType)

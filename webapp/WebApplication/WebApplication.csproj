@@ -1730,6 +1730,9 @@
     <Content Include="Views\Account\Impersonate.cshtml" />
     <Content Include="Views\Account\ImpersonateStop.cshtml" />
     <Content Include="Views\Protocols\_DoshasSummary.cshtml" />
+    <Content Include="Views\Protocols\_DietaryRecommendationsPrintable.cshtml" />
+    <Content Include="Views\Protocols\_ActivityPrintable.cshtml" />
+    <Content Include="Views\Protocols\_NineStarKiSummary.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
