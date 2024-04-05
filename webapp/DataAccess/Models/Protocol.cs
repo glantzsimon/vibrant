@@ -1,9 +1,11 @@
 ﻿using DataAnnotationsExtensions;
 using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.Globalisation;
+using K9.DataAccessLayer.Attributes;
 using K9.DataAccessLayer.Enums;
 using K9.SharedLibrary.Attributes;
 using K9.SharedLibrary.Enums;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -21,6 +23,13 @@ namespace K9.DataAccessLayer.Models
         
         public EGenoType GenoType { get; set; }
 
+        public GenoTypeEnumMetaDataAttribute GenoTypeEnumMetaDataAttribute() =>
+            GenoType.GetAttribute<GenoTypeEnumMetaDataAttribute>();
+
+        public string GenoTypeName => GenoTypeEnumMetaDataAttribute().GetDescription();
+
+        public string GenoTypeDetailsName => $"{GenoTypeName}Details";
+       
         #region Food Choices
 
         [NotMapped]
