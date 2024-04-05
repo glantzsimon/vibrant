@@ -4,6 +4,7 @@
 @using K9.WebApplication.Enums
 @using K9.WebApplication.Extensions
 @using K9.WebApplication.Models
+@using K9.WebApplication.Helpers;
 @{
     var deviceType = new BrowserInfo(Request.Headers["User-Agent"]).DeviceType;
     var whatsAppLink = (deviceType == EDeviceType.Desktop ? "https://web.whatsapp.com/send?phone=" : "https://wa.me/") + DefaultValuesConfiguration.Instance.WhatsAppSupportNumber;
@@ -145,6 +146,15 @@
                         <li class="divider"></li>
 
                         <li class="@ViewContext.GetActiveClass("Index", "Users") sub-item"><a href="@Url.Action("Index", "Users")">@K9.Base.Globalisation.Dictionary.Users</a></li>
+                        
+                        @if (Current.IsImpersonating())
+                        {
+                            <li class="@ViewContext.GetActiveClass("ImpersonateStop", "Account") sub-item"><a href="@Url.Action("ImpersonateStop", "Account")">@K9.Globalisation.Dictionary.StoppedImpersonatingUser</a></li>
+                        }
+                        else
+                        {
+                            <li class="@ViewContext.GetActiveClass("Impersonate", "Account") sub-item"><a href="@Url.Action("Impersonate", "Account")">@K9.Globalisation.Dictionary.ImpersonateUser</a></li>
+                        }
 
                         <li class="@ViewContext.GetActiveClass("Index", "UserConsultations") sub-item"><a href="@Url.Action("Index", "UserConsultations")">@Dictionary.UserConsultations</a></li>
 

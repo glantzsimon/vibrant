@@ -9,6 +9,7 @@ using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
@@ -309,7 +310,7 @@ namespace K9.WebApplication.Controllers
             var order = e.Item as Order;
             order.RequestedOn = DateTime.Today;
             order.DueBy = DateTime.Today.AddDays(11);
-            order.UserId = WebSecurity.CurrentUserId;
+            order.UserId = Current.UserId;
 
             _orderService.UpdateOrderNumberIfEmpty(order);
         }

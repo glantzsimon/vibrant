@@ -23,6 +23,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 using UserRole = K9.Base.DataAccessLayer.Models.UserRole;
@@ -246,6 +247,31 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [Authorize]
+        [RequirePermissions(Role = RoleNames.Administrators)]
+        public ActionResult Impersonate()
+        {
+            return View();
+        }
+
+        [Authorize]
+        [RequirePermissions(Role = RoleNames.Administrators)]
+        public ActionResult ImpersonateStop()
+        {
+            Current.StopImpersonating();
+            return View();
+        }
+
+        [Authorize]
+        [RequirePermissions(Role = RoleNames.Administrators)]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Impersonate(ImpersonateViewModel model)
+        {
+            Current.UserId = model.UserId;
+            return View();
+        }
+
         public ActionResult Register(string promoCode = null)
         {
             ViewBag.RecaptchaSiteKey = _recaptchaConfig.RecaptchaSiteKey;
@@ -414,7 +440,7 @@ namespace K9.WebApplication.Controllers
         [Authorize]
         public ActionResult MyAccount(int? userId = null)
         {
-            var user = _userRepository.Find(userId ?? WebSecurity.CurrentUserId);
+            var user = _userRepository.Find(userId ?? Current.UserId);
             var clientRecord = _clientService.GetOrCreateClientFromUser(user);
             var userProtocolIds = _userProtocolsRepository.Find(e => e.UserId == user.Id)
                 .Select(e => e.ProtocolId)
@@ -429,7 +455,7 @@ namespace K9.WebApplication.Controllers
                 Membership = _membershipService.GetActiveUserMembership(user?.Id),
                 Protocols = protocols,
                 Orders = _orderService.ListForClient(clientRecord.Id).Where(e => e.OrderType != EOrderType.ShoppingCart).ToList(),
-                HealthQuestionnaire = _healthQuestionnaireService.GetHealthQuestionnaireForUser(WebSecurity.CurrentUserId)
+                HealthQuestionnaire = _healthQuestionnaireService.GetHealthQuestionnaireForUser(Current.UserId)
             };
 
             var hq = _healthQuestionnaireService.GetHealthQuestionnaireForClient(clientRecord.Id);

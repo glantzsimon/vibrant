@@ -9,6 +9,7 @@ using System.Linq;
 using System.Web.Mvc;
 using K9.WebApplication.Packages;
 using WebMatrix.WebData;
+using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Controllers
 {
@@ -38,7 +39,7 @@ namespace K9.WebApplication.Controllers
 
             if (WebSecurity.IsAuthenticated)
             {
-                var clientRecord = _clientService.FindFromUser(WebSecurity.CurrentUserId);
+                var clientRecord = _clientService.FindFromUser(Current.UserId);
                 if (clientRecord != null)
                 {
                     recommended = _healthQuestionnaireService.GetGeneticProfileMatchedProtocols(clientRecord.Id);

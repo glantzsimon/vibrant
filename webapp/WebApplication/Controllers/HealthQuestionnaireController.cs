@@ -16,6 +16,7 @@ using System.Linq;
 using System.Web.Hosting;
 using System.Web.Mvc;
 using WebMatrix.WebData;
+using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Controllers
 {
@@ -78,7 +79,7 @@ namespace K9.WebApplication.Controllers
                 if (!userIsAdmin)
                 {
                     var client = _clientService.Find(clientId.Value);
-                    if (client.UserId != WebSecurity.CurrentUserId)
+                    if (client.UserId != Current.UserId)
                     {
                         return HttpForbidden();
                     }
@@ -88,7 +89,7 @@ namespace K9.WebApplication.Controllers
             }
             else
             {
-                hq = _healthQuestionnaireService.GetHealthQuestionnaireForUser(WebSecurity.CurrentUserId);
+                hq = _healthQuestionnaireService.GetHealthQuestionnaireForUser(Current.UserId);
             }
 
             if (hq == null)
@@ -120,7 +121,7 @@ namespace K9.WebApplication.Controllers
                 if (!Roles.CurrentUserIsInRoles(RoleNames.Administrators))
                 {
                     var client = _clientService.Find(clientId.Value);
-                    if (client.UserId != WebSecurity.CurrentUserId)
+                    if (client.UserId != Current.UserId)
                     {
                         return HttpForbidden();
                     }
@@ -130,7 +131,7 @@ namespace K9.WebApplication.Controllers
             }
             else
             {
-                hq = _healthQuestionnaireService.GetHealthQuestionnaireForUser(WebSecurity.CurrentUserId);
+                hq = _healthQuestionnaireService.GetHealthQuestionnaireForUser(Current.UserId);
             }
 
             if (hq == null)

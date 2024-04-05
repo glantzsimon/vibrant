@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web.Mvc;
 using K9.WebApplication.Packages;
 using WebMatrix.WebData;
+using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Controllers
 {
@@ -43,9 +44,9 @@ namespace K9.WebApplication.Controllers
                 return HttpNotFound();
             }
 
-            if (order.UserId != WebSecurity.CurrentUserId)
+            if (order.UserId != Current.UserId)
             {
-                var user = _usersRepository.Find(WebSecurity.CurrentUserId);
+                var user = _usersRepository.Find(Current.UserId);
                 var client = _clientsRepository.Find(e => e.UserId == user.Id).First();
                 if (client.Id != order.ClientId)
                 {

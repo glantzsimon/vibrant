@@ -4,6 +4,7 @@ using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Extensions;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Packages;
 using Microsoft.Ajax.Utilities;
 using System;
@@ -37,7 +38,7 @@ namespace K9.WebApplication.Controllers
 	    void ArticlesController_RecordBeforeCreate(object sender, CrudEventArgs e)
 	    {
 	        var article = e.Item as Article;
-	        article.UserId = WebSecurity.CurrentUserId;
+	        article.UserId = Current.UserId;
 	        article.Name = Guid.NewGuid().ToString();
 	        article.PublishedBy = WebSecurity.CurrentUserName;
 	        article.PublishedOn = DateTime.Now;

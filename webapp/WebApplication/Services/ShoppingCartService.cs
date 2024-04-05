@@ -5,6 +5,7 @@ using K9.SharedLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using K9.WebApplication.Helpers;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Services
@@ -33,14 +34,14 @@ namespace K9.WebApplication.Services
 
         public void SetShoppingCartIsPaid()
         {
-            var cart = GetShoppingCart(WebSecurity.CurrentUserId);
+            var cart = GetShoppingCart(Current.UserId);
             cart.PaidOn = DateTime.Now;
             _ordersRepository.Update(cart);
         }
 
         public void AddProductToCart(int productId, int amount)
         {
-            var cart = GetShoppingCart(WebSecurity.CurrentUserId);
+            var cart = GetShoppingCart(Current.UserId);
             var existing = _orderProductsRepository.Find(e => e.OrderId == cart.Id && e.ProductId == productId)
                 .FirstOrDefault();
 
@@ -64,7 +65,7 @@ namespace K9.WebApplication.Services
 
         public void UpdateProductAmount(int productId, int amount)
         {
-            var cart = GetShoppingCart(WebSecurity.CurrentUserId);
+            var cart = GetShoppingCart(Current.UserId);
             var orderProduct = _orderProductsRepository.Find(e => e.OrderId == cart.OrderId && e.ProductId == productId)
                 .FirstOrDefault();
 
@@ -81,7 +82,7 @@ namespace K9.WebApplication.Services
 
         public void AddProductPackToCart(int productPackId, int amount)
         {
-            var cart = GetShoppingCart(WebSecurity.CurrentUserId);
+            var cart = GetShoppingCart(Current.UserId);
             var existing = _orderProductPacksRepository.Find(e => e.OrderId == cart.Id && e.ProductPackId == productPackId)
                 .FirstOrDefault();
 
@@ -105,7 +106,7 @@ namespace K9.WebApplication.Services
 
         public void UpdateProductPackAmount(int productPackId, int amount)
         {
-            var cart = GetShoppingCart(WebSecurity.CurrentUserId);
+            var cart = GetShoppingCart(Current.UserId);
             var orderProductPack = _orderProductPacksRepository.Find(e => e.OrderId == cart.OrderId && e.ProductPackId == productPackId)
                 .FirstOrDefault();
 

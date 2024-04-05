@@ -331,6 +331,7 @@
     <Compile Include="Helpers\DatasetHelper.cs" />
     <Compile Include="Helpers\HtmlParser.cs" />
     <Compile Include="Helpers\General.cs" />
+    <Compile Include="Helpers\Current.cs" />
     <Compile Include="Helpers\ViewBagHelper.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />
     <Compile Include="Controllers\AccountControllerAjax.cs" />
@@ -425,6 +426,7 @@
     <Compile Include="ViewModels\ProtocolsViewModel.cs" />
     <Compile Include="ViewModels\GeneticProfileMatchedItemsViewModel.cs" />
     <Compile Include="ViewModels\ProtocolReviewViewModel.cs" />
+    <Compile Include="ViewModels\ImpersonateViewModel.cs" />
     <Compile Include="ViewModels\RepCommissionViewModel.cs" />
     <Compile Include="ViewModels\OrdersReviewViewModel.cs" />
     <Compile Include="ViewModels\EmailPromoCodeViewModel.cs" />
@@ -1725,6 +1727,8 @@
     <Content Include="Views\Protocols\PrintableFoodsList.cshtml" />
     <Content Include="Views\Protocols\_PrintableFoodsList.cshtml" />
     <Content Include="Views\Ingredients\_IngredientApothecaryLabel.cshtml" />
+    <Content Include="Views\Account\Impersonate.cshtml" />
+    <Content Include="Views\Account\ImpersonateStop.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -15,13 +15,13 @@ namespace K9.WebApplication.Controllers
         private readonly IPureControllerPackage _pureControllerPackage;
 
         public Order ShoppingCart => WebSecurity.IsAuthenticated
-            ? _pureControllerPackage.ShoppingCartService.GetShoppingCart(WebSecurity.CurrentUserId)
+            ? _pureControllerPackage.ShoppingCartService.GetShoppingCart(Current.UserId)
             : null;
 
         public HtmlControllerBase(IControllerPackage<T> controllerPackage, IPureControllerPackage pureControllerPackage) : base(controllerPackage)
         {
             _pureControllerPackage = pureControllerPackage;
-            SetSessionRoles(WebSecurity.CurrentUserId);
+            SetSessionRoles(Current.UserId);
             LoadDatasets();
 
             RecordBeforeCreated += HtmlControllerBase_RecordBeforeCreated;

@@ -2,6 +2,7 @@
 using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
@@ -31,7 +32,7 @@ namespace K9.WebApplication.Controllers
 
         public Order GetShoppingCart()
         {
-            return WebSecurity.IsAuthenticated ? _shoppingCartService.GetShoppingCart(WebSecurity.CurrentUserId) : null;
+            return WebSecurity.IsAuthenticated ? _shoppingCartService.GetShoppingCart(Current.UserId) : null;
         }
 
 

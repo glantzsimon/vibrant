@@ -6,6 +6,7 @@ using K9.Globalisation;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Enums;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
@@ -13,6 +14,7 @@ using NLog;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using WebMatrix.WebData;
+using SessionHelper = K9.Base.WebApplication.Helpers.SessionHelper;
 
 namespace K9.WebApplication.Controllers
 {
@@ -23,7 +25,7 @@ namespace K9.WebApplication.Controllers
         private readonly IMembershipService _membershipService;
         
         public Order ShoppingCart => WebSecurity.IsAuthenticated
-            ? _pureControllerPackage.ShoppingCartService.GetShoppingCart(WebSecurity.CurrentUserId)
+            ? _pureControllerPackage.ShoppingCartService.GetShoppingCart(Current.UserId)
             : null;
 
         public BasePureController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles,
@@ -34,7 +36,7 @@ namespace K9.WebApplication.Controllers
             _pureControllerPackage = pureControllerPackage;
             _membershipService = pureControllerPackage.MembershipService;
             SetBetaWarningSessionVariable();
-            SetSessionRoles(WebSecurity.CurrentUserId);
+            SetSessionRoles(Current.UserId);
             LoadDatasets();
 
             var acceptableCultureCodes = new List<string>

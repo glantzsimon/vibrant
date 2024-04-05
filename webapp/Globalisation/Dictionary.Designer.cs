@@ -4013,7 +4013,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
+        ///   Looks up a localized string similar to &lt;h2&gt;Type 4 - Explorer&lt;/h2&gt;
+        ///&lt;p&gt;
         ///    Muscular, quirky and adventurous, the Explorer is a biological problem-solver with an impressive ability to adapt to environmental changes and a better-than-average capacity for gene repair.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -4021,10 +4022,9 @@ namespace K9.Globalisation {
         ///&lt;/p&gt;
         ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; I&apos;ll do it my way!&lt;/p&gt;
         ///
-        ///&lt;h4&gt;Explorer Strengths&lt;/h4&gt;
+        ///&lt;h4&gt;Strengths&lt;/h4&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;Lateral thinker conerned with changing concepts and perception&lt;/li&gt;
-        ///   [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Lateral thinker conerned with changing concepts and  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ExplorerDetails {
             get {
@@ -4692,9 +4692,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h2&gt;Type 2 - Gatherer&lt;/h2&gt;
         ///&lt;p&gt;
         ///    Gatherers often have wonderful, warm, sensuous personalities. An affinity for home, hearth, people, and food makes them beloved friends and partners.
         ///&lt;/p&gt;
@@ -4703,9 +4701,9 @@ namespace K9.Globalisation {
         ///&lt;/p&gt;
         ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; Whoever dies with the most wins&lt;/p&gt;
         ///
-        ///&lt;h4&gt;Gatherer Strengths&lt;/h4&gt;
+        ///&lt;h4&gt;Strengths&lt;/h4&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;Phenomenal capacity for pr [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Phenomenal capacity  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GathererDetails {
             get {
@@ -5603,7 +5601,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h2&gt;Type 1 - The Proactive&lt;/h2&gt;
+        ///   Looks up a localized string similar to &lt;h2&gt;Type 1 - Hunter&lt;/h2&gt;
         ///&lt;p&gt;
         ///    Often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
         ///&lt;/p&gt;
@@ -5616,7 +5614,7 @@ namespace K9.Globalisation {
         ///&lt;ul&gt;
         ///    &lt;li&gt;Logical&lt;/li&gt;
         ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
-        ///    &lt;li&gt;Handles stress well when well-rested  [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Handles stress well when well-rested and wel [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HunterDetails {
             get {
@@ -5729,6 +5727,15 @@ namespace K9.Globalisation {
         public static string ImpatientIdealisticLabel {
             get {
                 return ResourceManager.GetString("ImpatientIdealisticLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Impersonate User.
+        /// </summary>
+        public static string ImpersonateUser {
+            get {
+                return ResourceManager.GetString("ImpersonateUser", resourceCulture);
             }
         }
         
@@ -8329,7 +8336,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
+        ///   Looks up a localized string similar to &lt;h2&gt;Type 6 - Nomad&lt;/h2&gt;
+        ///&lt;p&gt;
         ///    Nomad - a genetic profile of extremes, with a great sensitivity to environmental conditions—especially changes in altitude and barometric pressure.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -8337,10 +8345,10 @@ namespace K9.Globalisation {
         ///&lt;/p&gt;
         ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; a new career in a new town&lt;/p&gt;
         ///
-        ///&lt;h4&gt;Nomad Strengths&lt;/h4&gt;
+        ///&lt;h4&gt;Strengths&lt;/h4&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Phlegmatic, easy-going personality&lt;/li&gt;
-        ///    &lt;li&gt;Often quiet but  [rest of string was truncated]&quot;;.
+        ///    &lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NomadDetails {
             get {
@@ -11970,6 +11978,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have stopped impersonating other users..
+        /// </summary>
+        public static string StoppedImpersonatingUser {
+            get {
+                return ResourceManager.GetString("StoppedImpersonatingUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Straight.
         /// </summary>
         public static string Straight {
@@ -12624,7 +12641,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
+        ///   Looks up a localized string similar to &lt;h2&gt;Type 3 - Teacher&lt;/h2&gt;
+        ///&lt;p&gt;
         ///    Teachers are typically sinewy and flexible, with an amazing adaptability, the Teacher is a balance between opposing and often contradictory forces.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -12632,11 +12650,10 @@ namespace K9.Globalisation {
         ///&lt;/p&gt;
         ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; why can&apos;t we all just get along?&lt;/p&gt;
         ///
-        ///&lt;h4&gt;Teacher Strengths&lt;/h4&gt;
+        ///&lt;h4&gt;Strengths&lt;/h4&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Natural exuberance&lt;/li&gt;
-        ///    &lt;li&gt;Calm and steady nature&lt;/li&gt;
-        ///    &lt;li&gt;Soul o [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Calm and steady nature&lt;/ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TeacherDetails {
             get {
@@ -13944,7 +13961,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
+        ///   Looks up a localized string similar to &lt;h2&gt;Type 5 - Warrior&lt;/h2&gt;
+        ///&lt;p&gt;
         ///    Warrior are long, lean, and healthy in youth, but typically subject to a bodily rebellion in midlife.
         ///&lt;/p&gt;
         ///&lt;p&gt;
@@ -13952,12 +13970,12 @@ namespace K9.Globalisation {
         ///&lt;/p&gt;
         ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; time flies when you&apos;re having fun&lt;/p&gt;
         ///
-        ///&lt;h4&gt;Warrior Strengths&lt;/h4&gt;
+        ///&lt;h4&gt;Strengths&lt;/h4&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Charismatic&lt;/li&gt;
         ///    &lt;li&gt;Quick, nimble, computer-like mind&lt;/li&gt;
         ///    &lt;li&gt;Great determination&lt;/li&gt;
-        ///    &lt;li&gt;Ox-like strength&lt; [rest of string was truncated]&quot;;.
+        ///    &lt;l [rest of string was truncated]&quot;;.
         /// </summary>
         public static string WarriorDetails {
             get {
