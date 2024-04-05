@@ -196,6 +196,7 @@ namespace K9.WebApplication.Services
                 protocol.CurrentHealthLevel = hq.CurrentHealthLevel;
                 protocol.AutomaticallyFilterFoods = hq.AutomaticallyFilterFoods;
                 protocol.Vikruti = hq.GetVikrutiDoshas();
+                protocol.Prakruti = hq.GetPrakrutiDoshas(hq);
                 protocol.NineStarKi = hq.GetNineStarKiModel();
             }
 

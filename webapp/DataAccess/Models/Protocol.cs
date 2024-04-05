@@ -32,6 +32,9 @@ namespace K9.DataAccessLayer.Models
 
         [NotMapped]
         public Doshas Vikruti { get; set; }
+
+        [NotMapped]
+        public Doshas Prakruti { get; set; }
         
         [NotMapped]
         public NineStarKiModel NineStarKi { get; set; }

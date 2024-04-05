@@ -31,15 +31,15 @@ namespace K9.DataAccessLayer.Models
                 return EDosha.KaphaVata;
             }
 
-            if (VataDoshaScore > singleBoundary)
+            if (VataDoshaScore > PittaDoshaScore && VataDoshaScore > KaphaDoshaScore)
             {
                 return EDosha.Vata;
             }
-            if (PittaDoshaScore > singleBoundary)
+            if (PittaDoshaScore > VataDoshaScore && PittaDoshaScore > KaphaDoshaScore)
             {
                 return EDosha.Pitta;
             }
-            if (KaphaDoshaScore > singleBoundary)
+            if (KaphaDoshaScore > VataDoshaScore && KaphaDoshaScore > PittaDoshaScore)
             {
                 return EDosha.Kapha;
             }

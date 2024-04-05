@@ -2,28 +2,28 @@
 @model Protocol
 
 @{
-    var vikrutiDoshas = Model.Vikruti;
-    var vikruti = vikrutiDoshas.GetDosha();
-    var vikrutiViewModel = new K9.WebApplication.ViewModels.DoshasViewModel(
+    var doshas = Model.Prakruti;
+    var prakruti = doshas.GetDosha();
+    var doshasViewModel = new K9.WebApplication.ViewModels.DoshasViewModel(
         null,
-        vikruti,
-        vikrutiDoshas.GetVataDoshaPercentage(),
-        vikrutiDoshas.GetPittaDoshaPercentage(),
-        vikrutiDoshas.GetKaphaDoshaPercentage(),
+        prakruti,
+        doshas.GetVataDoshaPercentage(),
+        doshas.GetPittaDoshaPercentage(),
+        doshas.GetKaphaDoshaPercentage(),
         false);
 }
 
 <div class="row">
     <div class="col-xs-12">
-        @if (vikruti == EDosha.Vata || vikruti == EDosha.KaphaVata || vikruti == EDosha.VataPitta || vikruti == EDosha.Tridoshic)
+        @if (prakruti == EDosha.Vata || prakruti == EDosha.KaphaVata || prakruti == EDosha.VataPitta || prakruti == EDosha.Tridoshic)
         {
             @Html.Raw(Dictionary.VataDoshaDetails)
         }
-        @if (vikruti == EDosha.Pitta || vikruti == EDosha.PittaKapha || vikruti == EDosha.VataPitta || vikruti == EDosha.Tridoshic)
+        @if (prakruti == EDosha.Pitta || prakruti == EDosha.PittaKapha || prakruti == EDosha.VataPitta || prakruti == EDosha.Tridoshic)
         {
             @Html.Raw(Dictionary.PittaDoshaDetails)
         }
-        @if (vikruti == EDosha.Kapha || vikruti == EDosha.PittaKapha || vikruti == EDosha.KaphaVata || vikruti == EDosha.Tridoshic)
+        @if (prakruti == EDosha.Kapha || prakruti == EDosha.PittaKapha || prakruti == EDosha.KaphaVata || prakruti == EDosha.Tridoshic)
         {
             @Html.Raw(Dictionary.KaphaDoshaDetails)
         }
