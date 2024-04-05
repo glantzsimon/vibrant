@@ -149,7 +149,7 @@
 
                         @if (Current.IsImpersonating())
                         {
-                            <li class="@ViewContext.GetActiveClass("ImpersonateStop", "Account") sub-item"><a href="@Url.Action("ImpersonateStop", "Account")">@K9.Globalisation.Dictionary.StoppedImpersonatingUser</a></li>
+                            <li class="@ViewContext.GetActiveClass("ImpersonateStop", "Account") sub-item"><a href="@Url.Action("ImpersonateStop", "Account")">@K9.Globalisation.Dictionary.StopImpersonatingUser</a></li>
                         }
                         else
                         {
@@ -178,7 +178,7 @@
         <ul class="site-controls">
             @if (Current.IsImpersonating())
             {
-                <li><i class="fa fa-user-alt"></i><span class="site-controls-text"> @Dictionary.Impersonating @Current.UserId</span></li>
+                <li><i class="fa fa-user-alt"></i><span class="site-controls-text"> @Dictionary.Impersonating @Current.UserName</span></li>
             }
 
             <li class="@ViewContext.GetActiveClass("BookConsultationStart", "Consultation")"><a title="@Dictionary.BookAConsultation" href="@Url.Action("BookConsultationStart", "Consultation")"><i class="fa fa-phone-alt"></i><span class="site-controls-text"> @Dictionary.BookAConsultation</span></a></li>

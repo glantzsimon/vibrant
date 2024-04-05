@@ -11989,6 +11989,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stop Impersonating User.
+        /// </summary>
+        public static string StopImpersonatingUser {
+            get {
+                return ResourceManager.GetString("StopImpersonatingUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have stopped impersonating other users..
         /// </summary>
         public static string StoppedImpersonatingUser {
@@ -13538,15 +13547,6 @@ namespace K9.Globalisation {
         public static string UsedOnLabel {
             get {
                 return ResourceManager.GetString("UsedOnLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User.
-        /// </summary>
-        public static string User {
-            get {
-                return ResourceManager.GetString("User", resourceCulture);
             }
         }
         

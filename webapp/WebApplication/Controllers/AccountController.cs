@@ -277,7 +277,7 @@ namespace K9.WebApplication.Controllers
             }
 
             Current.StartImpersonating(model.UserId, user.FullName);
-            return View();
+            return RedirectToAction("ImpersonateStop");
         }
 
         public ActionResult Register(string promoCode = null)
