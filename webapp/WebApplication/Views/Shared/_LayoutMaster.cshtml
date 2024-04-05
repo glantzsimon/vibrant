@@ -7,7 +7,8 @@
     var keywords = ViewBag.Keywords ?? Dictionary.Keywords;
     var mainTitle = (ViewBag.Title ?? string.Empty).Replace(Dictionary.PureAlchemy, string.Empty).Trim();
     var pageTitle = string.IsNullOrEmpty(mainTitle) ? Dictionary.PureAlchemy : $"{mainTitle} &raquo; {Dictionary.PureAlchemy}";
-    var title = Html.Raw($"{pageTitle} &raquo; {Dictionary.SuperFoodsHerbsNutritionBiohacking}");
+    var omitKeyWordsFromTitle = ViewBag.OmitKeyWordsFromTitle ?? false;
+    var title = omitKeyWordsFromTitle ? Html.Raw(mainTitle) : Html.Raw($"{pageTitle} &raquo; {Dictionary.SuperFoodsHerbsNutritionBiohacking}");
     var description = Html.Raw(ViewBag.MetaDescription ?? Dictionary.PureAlchemyMetaDescriptionMain);
 }
 

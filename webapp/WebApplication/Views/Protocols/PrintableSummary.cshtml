@@ -7,6 +7,7 @@
 @model Protocol
 @{
     Layout = "../Shared/_LayoutPrint.cshtml";
+    ViewBag.OmitKeyWordsFromTitle = true;
     ViewBag.SubTitle = Model.Name;
     ViewBag.Title = Model.Name;
 }
