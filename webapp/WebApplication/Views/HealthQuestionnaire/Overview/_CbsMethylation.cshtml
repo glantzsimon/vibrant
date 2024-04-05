@@ -9,7 +9,7 @@
 @model HealthQuestionnaire
 
 @{
-    var cbsColor = Model.GetColorFromScore(Model.GetCbsScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var cbsColor = Model.Client.GetColorFromScore(Model.GetCbsScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 }
 
 <div class="well">

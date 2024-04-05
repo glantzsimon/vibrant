@@ -20,7 +20,7 @@ namespace K9.DataAccessLayer.Models
     public class Protocol : GenoTypeBase
     {
         public Guid ExternalId { get; set; }
-        
+
         public EGenoType GenoType { get; set; }
 
         public GenoTypeEnumMetaDataAttribute GenoTypeEnumMetaDataAttribute() =>
@@ -29,7 +29,10 @@ namespace K9.DataAccessLayer.Models
         public string GenoTypeName => GenoTypeEnumMetaDataAttribute().GetDescription();
 
         public string GenoTypeDetailsName => $"{GenoTypeName}Details";
-       
+
+        [NotMapped]
+        public Doshas Vikruti { get; set; }
+
         #region Food Choices
 
         [NotMapped]

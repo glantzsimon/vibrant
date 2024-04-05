@@ -43,6 +43,18 @@
             </div>
         }
     }
+
+    using (Html.BeginForm())
+    {
+        using (Html.BeginBootstrapForm())
+        {
+            <div class="row">
+                <div class="col-xs-12">
+                    @Html.Partial("../Protocols/_DoshasSummary")
+                </div>
+            </div>
+        }
+    }
 }
 
 @if (Model.DietaryRecommendations != null && Model.DietaryRecommendations.Any())
@@ -53,7 +65,7 @@
         {
             <div class="row margin-top-0">
                 <div class="col-xs-12">
-                    <h3 class="margin-top-0">@Dictionary.DietaryAdvice</h3>
+                    <h3 class="section-title margin-top-0">@Dictionary.DietaryAdvice</h3>
                 </div>
             </div>
 
@@ -74,7 +86,7 @@
         {
             <div class="row margin-top-0">
                 <div class="col-xs-12">
-                    <h3 class="margin-top-0">@Dictionary.RecommendedActivitties</h3>
+                    <h3 class="section-title margin-top-0">@Dictionary.RecommendedActivitties</h3>
                 </div>
             </div>
 
@@ -95,7 +107,7 @@
         {
             <div class="row margin-top-0">
                 <div class="col-xs-12">
-                    <h3 class="margin-top-0">@Dictionary.RecommendedFoods</h3>
+                    <h3 class="section-title margin-top-0">@Dictionary.RecommendedFoods</h3>
                 </div>
             </div>
 

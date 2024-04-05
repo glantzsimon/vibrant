@@ -13,12 +13,24 @@ namespace K9.WebApplication.Services
         private readonly IRepository<FoodItem> _foodItemsRepository;
         private readonly IRepository<Activity> _activitiesRepository;
         private readonly ILogger _logger;
+        private readonly IProtocolService _protocolService;
 
-        public MaintenanceService(IRepository<FoodItem> foodItemsRepository, IRepository<Activity> activitiesRepository, ILogger logger)
+        public MaintenanceService(IRepository<FoodItem> foodItemsRepository, IRepository<Activity> activitiesRepository, ILogger logger, IProtocolService protocolService)
         {
             _foodItemsRepository = foodItemsRepository;
             _activitiesRepository = activitiesRepository;
             _logger = logger;
+            _protocolService = protocolService;
+        }
+
+        public void PerformMaintenance()
+        {
+            
+        }
+
+        private void UpdateVikruti()
+        {
+            
         }
 
         public void AddFoodItemsAndActivities()

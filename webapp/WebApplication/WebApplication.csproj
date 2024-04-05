@@ -1729,6 +1729,7 @@
     <Content Include="Views\Ingredients\_IngredientApothecaryLabel.cshtml" />
     <Content Include="Views\Account\Impersonate.cshtml" />
     <Content Include="Views\Account\ImpersonateStop.cshtml" />
+    <Content Include="Views\Protocols\_DoshasSummary.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

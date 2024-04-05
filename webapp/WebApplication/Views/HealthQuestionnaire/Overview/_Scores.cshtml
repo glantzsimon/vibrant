@@ -10,28 +10,28 @@
 @model HealthQuestionnaire
 
 @{
-    var acetylationColor = Model.GetColorFromScore(Model.GetAcetulationScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var familyHistoryColor = Model.GetColorFromScore(Model.GetFamilyHistoryScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var cbsColor = Model.GetColorFromScore(Model.GetCbsScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var digestionColor = Model.GetColorFromScore(Model.GetDigestionIssuesScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var immunityColor = Model.GetColorFromScore(Model.GetImmunityIssuesScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var yinColor = Model.GetColorFromScore(Model.GetYinImbalanceScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var yangColor = Model.GetColorFromScore(Model.GetYangImbalanceScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var dentalIssuesColor = Model.GetColorFromScore(Model.GetDentalHealthScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var neurologicalColor = Model.GetColorFromScore(Model.GetNeurologicalScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var respiratoryColor = Model.GetColorFromScore(Model.GetRespiratoryHealthScore).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var cardiovascularColor = Model.GetColorFromScore(Model.GetCardiovascularScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var inflammationColor = Model.GetColorFromScore(Model.GetInflammationScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var acetylationColor = Model.Client.GetColorFromScore(Model.GetAcetulationScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var familyHistoryColor = Model.Client.GetColorFromScore(Model.GetFamilyHistoryScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var cbsColor = Model.Client.GetColorFromScore(Model.GetCbsScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var digestionColor = Model.Client.GetColorFromScore(Model.GetDigestionIssuesScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var immunityColor = Model.Client.GetColorFromScore(Model.GetImmunityIssuesScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var yinColor = Model.Client.GetColorFromScore(Model.GetYinImbalanceScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var yangColor = Model.Client.GetColorFromScore(Model.GetYangImbalanceScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var dentalIssuesColor = Model.Client.GetColorFromScore(Model.GetDentalHealthScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var neurologicalColor = Model.Client.GetColorFromScore(Model.GetNeurologicalScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var respiratoryColor = Model.Client.GetColorFromScore(Model.GetRespiratoryHealthScore).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var cardiovascularColor = Model.Client.GetColorFromScore(Model.GetCardiovascularScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var inflammationColor = Model.Client.GetColorFromScore(Model.GetInflammationScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 
-    var oxalateColor = Model.GetColorFromScore(Model.GetOxalateScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var histamineColor = Model.GetColorFromScore(Model.GetHistamineScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var phytateColor = Model.GetColorFromScore(Model.GetPhytateScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var lectinColor = Model.GetColorFromScore(Model.GetLectinsScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var mycotoxinColor = Model.GetColorFromScore(Model.GetMycotoxinScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var omega6Color = Model.GetColorFromScore(Model.GetOmega6Score()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var oxalateColor = Model.Client.GetColorFromScore(Model.GetOxalateScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var histamineColor = Model.Client.GetColorFromScore(Model.GetHistamineScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var phytateColor = Model.Client.GetColorFromScore(Model.GetPhytateScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var lectinColor = Model.Client.GetColorFromScore(Model.GetLectinsScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var mycotoxinColor = Model.Client.GetColorFromScore(Model.GetMycotoxinScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var omega6Color = Model.Client.GetColorFromScore(Model.GetOmega6Score()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 
-    var currentHealthColor = Model.GetColorFromScore(Model.GetCurrentHealthScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
-    var expertiseColor = Model.GetColorFromScore(Model.GetNutritionExpertiseScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var currentHealthColor = Model.Client.GetColorFromScore(Model.GetCurrentHealthScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var expertiseColor = Model.Client.GetColorFromScore(Model.GetNutritionExpertiseScore().InvertScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 
     var nineStarKiModel = Model.GetNineStarKiModel();
 

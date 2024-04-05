@@ -54,27 +54,6 @@ namespace K9.DataAccessLayer.Models
             return genoTypesStrengthTestResults.ToList();
         }
 
-        public EDisplayColor GetColorFromScore(int score)
-        {
-            double factor = 100f / 7f;
-            double index = 0;
-
-            if (score == 0)
-            {
-                index = 0;
-            }
-            else if (score == 100)
-            {
-                index = 6;
-            }
-            else
-            {
-                index = (int)Math.Floor(score / factor);
-            }
-
-            return (EDisplayColor)index;
-        }
-
         #region Blood Analysis
 
         [UIHint("BloodGroup")]

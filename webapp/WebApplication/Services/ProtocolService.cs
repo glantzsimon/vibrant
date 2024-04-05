@@ -195,6 +195,7 @@ namespace K9.WebApplication.Services
                 protocol.IsKeto = hq.IsKeto;
                 protocol.CurrentHealthLevel = hq.CurrentHealthLevel;
                 protocol.AutomaticallyFilterFoods = hq.AutomaticallyFilterFoods;
+                protocol.Vikruti = hq.GetVikrutiDoshas();
             }
 
             protocol.Activities = _protocolActivitiesRepository.Find(e => e.ProtocolId == protocol.Id).ToList();

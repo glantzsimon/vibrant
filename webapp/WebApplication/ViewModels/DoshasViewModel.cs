@@ -29,11 +29,11 @@ namespace K9.WebApplication.ViewModels
         
         public string DoshaName => _dosha.GetAttribute<EnumDescriptionAttribute>().Name;
 
-        public string VataColor => _healthQuestionnaire.GetColorFromScore(_invertColors ? _vataPercentage.InvertScore() : _vataPercentage).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+        public string VataColor => _healthQuestionnaire?.GetColorFromScore(_invertColors ? _vataPercentage.InvertScore() : _vataPercentage).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 
-        public string PittaColor => _healthQuestionnaire.GetColorFromScore(_invertColors ? _pittaPercentage.InvertScore() : _pittaPercentage).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+        public string PittaColor => _healthQuestionnaire?.GetColorFromScore(_invertColors ? _pittaPercentage.InvertScore() : _pittaPercentage).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 
-        public string KaphaColor => _healthQuestionnaire.GetColorFromScore(_invertColors ? _kaphaPercentage.InvertScore() : _kaphaPercentage).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+        public string KaphaColor => _healthQuestionnaire?.GetColorFromScore(_invertColors ? _kaphaPercentage.InvertScore() : _kaphaPercentage).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 
         public string ActivePaneClass => $"{Strings.CssClasses.ActivePanelClass} padding-top-20";
         public string InactivePaneClass => "padding-bottom-0";

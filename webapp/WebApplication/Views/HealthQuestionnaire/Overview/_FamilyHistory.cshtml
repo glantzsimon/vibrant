@@ -9,7 +9,7 @@
 @model HealthQuestionnaire
 
 @{
-    var familyHistoryColor = Model.GetColorFromScore(Model.GetFamilyHistoryScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
+    var familyHistoryColor = Model.Client.GetColorFromScore(Model.GetFamilyHistoryScore()).GetAttribute<GenoTypeEnumMetaDataAttribute>().Color;
 }
 
 <div class="well">
