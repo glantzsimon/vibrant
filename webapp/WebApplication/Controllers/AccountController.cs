@@ -259,7 +259,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult ImpersonateStop()
         {
             Current.StopImpersonating();
-            return RedirectToAction("ImpersonateStop");
+            return View();
         }
 
         [Authorize]
