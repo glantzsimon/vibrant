@@ -5,90 +5,82 @@
 @using K9.WebApplication.Options
 @model NineStarKiModel
 
-    <div class="well">
-        <div class="row">
-            <div class="col-xs-12">
-                <h1 class="section-title">@Dictionary.NineStarKi</h1>
-                <br />
-            </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="section-title">@Dictionary.NineStarKi</h1>
+            <br />
         </div>
-        <div class="row">
-            <div class="col-xs-4 col-sm-3 col-md-2">
-                @Html.BootstrapDisplayFor(e => Model.MainEnergy)
-            </div>
-            <div class="col-xs-4 col-sm-3 col-md-2">
-                @Html.BootstrapDisplayFor(e => Model.CharacterEnergy)
-            </div>
-            <div class="col-xs-4 col-sm-3 col-md-2">
-                @Html.BootstrapDisplayFor(e => Model.SurfaceEnergy)
-            </div>
-            <div class="col-xs-4 col-sm-3 col-md-2">
-                @Html.BootstrapDisplayFor(e => Model.YearlyCycleEnergy)
-            </div>
-            <div class="col-xs-4 col-sm-3 col-md-2">
-                @Html.BootstrapDisplayFor(e => Model.MonthlyCycleEnergy)
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => Model.MainEnergy)
         </div>
-
-        <hr />
-
-        <div class="row">
-            <div class="col-xs-12">
-                <h3 class="section-title">@Dictionary.NineStarKiHealthAdvice</h3>
-            </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => Model.CharacterEnergy)
         </div>
-        <div class="row">
-            <div class="col-xs-12">
-                @Html.BootstrapDisplayFor(e => Model.HealthAdvice, new EditorOptions
-                {
-                    Label = ""
-                })
-            </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => Model.SurfaceEnergy)
         </div>
+    </div>
 
-        <hr />
+    <hr />
 
-        <div class="row">
-            <div class="col-xs-12">
-                <h3 class="section-title">@Dictionary.StrongOrgans</h3>
-            </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.NineStarKiHealthAdvice</h3>
         </div>
-        <div class="row">
-            <div class="col-xs-12">
-                @Html.Raw(Dictionary.StrongOrgansDescription)
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.BootstrapDisplayFor(e => Model.HealthAdvice, new EditorOptions
+            {
+                Label = ""
+            })
         </div>
+    </div>
 
-        <br />
+    <hr />
 
-        <div class="row">
-            <div class="col-xs-4 col-sm-3 col-md-2">
-                @Html.BootstrapDisplayFor(e => Model.StrongYinOrgans)
-            </div>
-            <div class="col-xs-4 col-sm-3 col-md-2">
-                @Html.BootstrapDisplayFor(e => Model.StrongYangOrgans)
-            </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.StrongOrgans</h3>
         </div>
-
-        <div class="row">
-            <div class="col-xs-12">
-                <h3 class="section-title">@Dictionary.WeakOrgans</h3>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.Raw(Dictionary.StrongOrgansDescription)
         </div>
-        <div class="row">
-            <div class="col-xs-12">
-                @Html.Raw(Dictionary.WeakOrgansDescription)
-            </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => Model.StrongYinOrgans)
         </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => Model.StrongYangOrgans)
+        </div>
+    </div>
 
-        <br />
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="section-title">@Dictionary.WeakOrgans</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.Raw(Dictionary.WeakOrgansDescription)
+        </div>
+    </div>
 
-        <div class="row">
-            <div class="col-xs-4 col-sm-3 col-md-2">
-                @Html.BootstrapDisplayFor(e => Model.WeakYinOrgans)
-            </div>
-            <div class="col-xs-4 col-sm-3 col-md-2">
-                @Html.BootstrapDisplayFor(e => Model.WeakYangOrgans)
-            </div>
+    <br />
+
+    <div class="row">
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => Model.WeakYinOrgans)
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-2">
+            @Html.BootstrapDisplayFor(e => Model.WeakYangOrgans)
         </div>
     </div>
