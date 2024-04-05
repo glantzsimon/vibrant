@@ -32,7 +32,7 @@
         {
             <li class="@activeTabClass"><a data-toggle="tab" href="#orders">@Dictionary.YourOrders</a></li>
         }
-        
+
         <li class="@hqTabClass"><a data-toggle="tab" href="#health-questionnaire">@Dictionary.GeneticProfileTest</a></li>
 
         @if (Model.Protocols != null && Model.Protocols.Any())
@@ -61,13 +61,20 @@
             {
                 if (Model.HealthQuestionnaire.IsStarted())
                 {
-                    @Html.BootstrapActionLinkButton(Dictionary.AnswerHealthQuestionnaire, "GeneticProfileTest", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Primary)
+                    if (Model.HealthQuestionnaire.IsComplete())
+                    {
+                        @Html.BootstrapActionLinkButton(Dictionary.AnswerHealthQuestionnaire, "GeneticProfileTest", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Primary)
+                    }
+                    else
+                    {
+                        <p>@Dictionary.HqComplete</p>
+                    }
                 }
                 else
                 {
                     @Html.BootstrapActionLinkButton(Dictionary.TakeTheGeneticProfileTest, "GeneticProfileTest", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Primary)
                 }
-                
+
                 if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin() && Model.HealthQuestionnaire.IsComplete())
                 {
                     @Html.BootstrapActionLinkButton(Dictionary.ViewHealthQuestionnaireResults, "GeneticProfileTestOverview", "HealthQuestionnaire", new { externalId = Model.HealthQuestionnaire.ExternalId }, "fa fa-heartbeat", EButtonClass.Success)

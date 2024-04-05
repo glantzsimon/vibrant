@@ -5583,6 +5583,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your Genetic Profile Test was successfully completed. Please go to the Protocols tab for more information..
+        /// </summary>
+        public static string HqComplete {
+            get {
+                return ResourceManager.GetString("HqComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hunter.
         /// </summary>
         public static string Hunter {
