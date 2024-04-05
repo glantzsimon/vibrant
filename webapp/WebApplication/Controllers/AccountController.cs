@@ -259,7 +259,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult ImpersonateStop()
         {
             Current.StopImpersonating();
-            return View();
+            return RedirectToAction("ImpersonateStop");
         }
 
         [Authorize]
@@ -277,7 +277,7 @@ namespace K9.WebApplication.Controllers
             }
 
             Current.StartImpersonating(model.UserId, user.FullName);
-            return RedirectToAction("ImpersonateStop");
+            return View();
         }
 
         public ActionResult Register(string promoCode = null)
