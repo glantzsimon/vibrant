@@ -4,6 +4,7 @@
     {
         public static class Labels
         {
+            public const string User = "User";
             public const string File2Label = "File2Label";
             public const string File1Label = "File1Label";
             public const string ConcentrationLabel = "ConcentrationLabel";

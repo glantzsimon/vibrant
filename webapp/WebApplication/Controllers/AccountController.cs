@@ -268,7 +268,15 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Impersonate(ImpersonateViewModel model)
         {
-            Current.UserId = model.UserId;
+            var user = _userRepository.Find(model.UserId);
+
+            if (user == null)
+            {
+                ModelState.AddModelError("EmailAddress", Dictionary.UserNotFoundError);
+                return View(model);
+            }
+
+            Current.StartImpersonating(model.UserId, user.FullName);
             return View();
         }
 

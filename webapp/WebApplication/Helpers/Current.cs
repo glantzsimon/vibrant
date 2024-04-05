@@ -8,12 +8,24 @@ namespace K9.WebApplication.Helpers
         public static int UserId
         {
             get { return _userId ?? WebSecurity.CurrentUserId; }
-            set { _userId = value; }
+        }
+
+        private static string _userName;
+        public static string UserName
+        {
+            get { return _userName ?? WebSecurity.CurrentUserName; }
+        }
+
+        public static void StartImpersonating(int userId, string username)
+        {
+            _userId = userId;
+            _userName = username;
         }
 
         public static void StopImpersonating()
         {
             _userId = null;
+            _userName = "";
         }
 
         public static bool IsImpersonating()

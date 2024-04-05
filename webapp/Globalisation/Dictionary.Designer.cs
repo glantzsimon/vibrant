@@ -4014,17 +4014,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h2&gt;Type 4 - Explorer&lt;/h2&gt;
-        ///&lt;p&gt;
-        ///    Muscular, quirky and adventurous, the Explorer is a biological problem-solver with an impressive ability to adapt to environmental changes and a better-than-average capacity for gene repair.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    The Explorer’s vulnerability to hormonal imbalances and brain strain can be overcome with a balanced diet and lifestyle.
-        ///&lt;/p&gt;
+        ///&lt;h3&gt;
+        ///    Muscular, quirky and adventurous, the Explorer is a biological problem-solver with an impressive ability to adapt to environmental changes and a better-than-average capacity for gene repair. The Explorer’s vulnerability to hormonal imbalances and brain strain can be overcome with a balanced diet and lifestyle.
+        ///&lt;/h3&gt;
+        ///
         ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; I&apos;ll do it my way!&lt;/p&gt;
         ///
-        ///&lt;h4&gt;Strengths&lt;/h4&gt;
+        ///&lt;br /&gt;
+        ///
+        ///&lt;h4 class=&quot;section-title&quot;&gt;Strengths&lt;/h4&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;Lateral thinker conerned with changing concepts and  [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Lateral thinker conerned with ch [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ExplorerDetails {
             get {
@@ -4693,17 +4693,17 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h2&gt;Type 2 - Gatherer&lt;/h2&gt;
-        ///&lt;p&gt;
-        ///    Gatherers often have wonderful, warm, sensuous personalities. An affinity for home, hearth, people, and food makes them beloved friends and partners.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Intellectually adventurous and are often among the first to adapt to new ideas and methods. Although easygoing, they are highly principled and often tenacious defenders of justice.
-        ///&lt;/p&gt;
+        ///&lt;h3&gt;
+        ///    Gatherers often have wonderful, warm, sensuous personalities. An affinity for home, hearth, people, and food makes them beloved friends and partners. Intellectually adventurous and are often among the first to adapt to new ideas and methods. Although easygoing, they are highly principled and often tenacious defenders of justice.
+        ///&lt;/h3&gt;
+        ///
         ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; Whoever dies with the most wins&lt;/p&gt;
         ///
-        ///&lt;h4&gt;Strengths&lt;/h4&gt;
+        ///&lt;br /&gt;
+        ///
+        ///&lt;h4 class=&quot;section-title&quot;&gt;Strengths&lt;/h4&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;Phenomenal capacity  [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GathererDetails {
             get {
@@ -5602,19 +5602,19 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h2&gt;Type 1 - Hunter&lt;/h2&gt;
-        ///&lt;p&gt;
-        ///    Often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
-        ///&lt;/p&gt;
+        ///&lt;h3&gt;
+        ///    Often taller than average, slender and intense, with an overabundance of adrenaline and a fierce, nervous energy that calms down with age. Hunters are vulnerable to systemic burnout when overstressed and their modern challenge is to conserve energy for the long haul.
+        ///&lt;/h3&gt;
+        ///
         ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; shoot first, ask questins later!&lt;/p&gt;
         ///
-        ///&lt;h4&gt;Strengths&lt;/h4&gt;
+        ///&lt;br /&gt;
+        ///
+        ///&lt;h4 class=&quot;section-title&quot;&gt;Strengths&lt;/h4&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Logical&lt;/li&gt;
         ///    &lt;li&gt;Detail-oriented&lt;/li&gt;
-        ///    &lt;li&gt;Handles stress well when well-rested and wel [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Handles stre [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HunterDetails {
             get {
@@ -5736,6 +5736,15 @@ namespace K9.Globalisation {
         public static string ImpersonateUser {
             get {
                 return ResourceManager.GetString("ImpersonateUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Impersonating.
+        /// </summary>
+        public static string Impersonating {
+            get {
+                return ResourceManager.GetString("Impersonating", resourceCulture);
             }
         }
         
@@ -6905,10 +6914,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3 class=&quot;section-title&quot;&gt;Kapha Dosha&lt;/h3&gt;
-        ///
+        ///   Looks up a localized string similar to &lt;h1 class=&quot;section-title&quot;&gt;Kapha Dosha&lt;/h1&gt;
+        ///&lt;br /&gt;
         ///&lt;p&gt;
-        ///    kapha dosha is made up of the elements water and earth. It is a stabilising energy that keeps things together and provides support. Kapha dosha people experience life in a slow, intentional manner, rarely becoming upset and usually thinking before they act. Their demeanor is typically calm, caring and empathetic, patient, positive, and romantic. Physically, their stability is represented by a strong frame, healthy hair, and clear and smooth skin. Their  [rest of string was truncated]&quot;;.
+        ///    kapha dosha is made up of the elements water and earth. It is a stabilising energy that keeps things together and provides support. Kapha dosha people experience life in a slow, intentional manner, rarely becoming upset and usually thinking before they act. Their demeanor is typically calm, caring and empathetic, patient, positive, and romantic. Physically, their stability is represented by a strong frame, healthy hair, and clear and smooth skin.  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string KaphaDoshaDetails {
             get {
@@ -8337,18 +8346,18 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h2&gt;Type 6 - Nomad&lt;/h2&gt;
-        ///&lt;p&gt;
+        ///&lt;h3&gt;
         ///    Nomad - a genetic profile of extremes, with a great sensitivity to environmental conditions—especially changes in altitude and barometric pressure.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
         ///    The Nomad is vulnerable to neuromuscular and immune problems. Yet a well-conditioned Nomad has the enviable gift of controlling calorie intake and aging gracefully.
-        ///&lt;/p&gt;
+        ///&lt;/h3&gt;
+        ///
         ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; a new career in a new town&lt;/p&gt;
         ///
-        ///&lt;h4&gt;Strengths&lt;/h4&gt;
+        ///&lt;br /&gt;
+        ///
+        ///&lt;h4 class=&quot;section-title&quot;&gt;Strengths&lt;/h4&gt;
         ///&lt;ul&gt;
-        ///    &lt;li&gt;Phlegmatic, easy-going personality&lt;/li&gt;
-        ///    &lt; [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Phlegmatic, easy-goin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NomadDetails {
             get {
@@ -9384,15 +9393,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3 class=&quot;section-title&quot;&gt;Pitta Dosha&lt;/h3&gt;
-        ///
+        ///   Looks up a localized string similar to &lt;h1 class=&quot;section-title&quot;&gt;Pitta Dosha&lt;/h1&gt;
+        ///&lt;br /&gt;
         ///&lt;p&gt;
         ///    Pitta dosha is made up of fire and water and rules digestion and emotions. It is correlated with summer season, Pitta body types are usually medium build, athletic and muscular. THey often have oily and / or freckled skin and straight hair. Pitta people often have sharp intellects and are typically quite driven, making them confident and strong leaders.
         ///&lt;/p&gt;
         ///
+        ///&lt;br /&gt;
+        ///
         ///&lt;h4 class=&quot;bold&quot;&gt;Vulnerabilities&lt;/h4&gt;
         ///&lt;p&gt;
-        ///    When pitta is imbalanced, people often exper [rest of string was truncated]&quot;;.
+        ///    When pitta is imbalanced, pe [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PittaDoshaDetails {
             get {
@@ -12642,18 +12653,19 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h2&gt;Type 3 - Teacher&lt;/h2&gt;
-        ///&lt;p&gt;
+        ///&lt;h3&gt;
         ///    Teachers are typically sinewy and flexible, with an amazing adaptability, the Teacher is a balance between opposing and often contradictory forces.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
         ///    Blessed with a tolerant immune system, the Teacher can be burdened by excess altruism, leading to problems finding and dealing with the bad guys.
-        ///&lt;/p&gt;
+        ///&lt;/h3&gt;
+        ///
         ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; why can&apos;t we all just get along?&lt;/p&gt;
         ///
-        ///&lt;h4&gt;Strengths&lt;/h4&gt;
+        ///&lt;br /&gt;
+        ///
+        ///&lt;h4 class=&quot;section-title&quot;&gt;Strengths&lt;/h4&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Natural exuberance&lt;/li&gt;
-        ///    &lt;li&gt;Calm and steady nature&lt;/ [rest of string was truncated]&quot;;.
+        ///    &lt;li [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TeacherDetails {
             get {
@@ -13530,6 +13542,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User Consultations.
         /// </summary>
         public static string UserConsultations {
@@ -13647,10 +13668,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3 class=&quot;section-title&quot;&gt;Vata Dosha&lt;/h3&gt;
-        ///
+        ///   Looks up a localized string similar to &lt;h1 class=&quot;section-title&quot;&gt;Vata Dosha&lt;/h1&gt;
+        ///&lt;br /&gt;
         ///&lt;p&gt;
-        ///    Vata dosha is made up of air and space. It is responsible for all movement in the body, including that of the autonomous nervous system. Vata dosha people are typically flexibile and creative. Physically, vata body types are typically slim or even lanky and typically have dry skin and often have thin or frizzy hair. Vata types usually dislike cold and dry climates. When imbalanced, vata dosha can lead to scattered and racing thoughts. When in balance, ho [rest of string was truncated]&quot;;.
+        ///    Vata dosha is made up of air and space. It is responsible for all movement in the body, including that of the autonomous nervous system. Vata dosha people are typically flexibile and creative. Physically, vata body types are typically slim or even lanky and typically have dry skin and often have thin or frizzy hair. Vata types usually dislike cold and dry climates. When imbalanced, vata dosha can lead to scattered and racing thoughts. When in balan [rest of string was truncated]&quot;;.
         /// </summary>
         public static string VataDoshaDetails {
             get {
@@ -13962,20 +13983,20 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;h2&gt;Type 5 - Warrior&lt;/h2&gt;
-        ///&lt;p&gt;
+        ///&lt;h3&gt;
         ///    Warrior are long, lean, and healthy in youth, but typically subject to a bodily rebellion in midlife.
-        ///&lt;/p&gt;
-        ///&lt;p&gt;
         ///    With the optimal diet and lifestyle, the Warrior can overcome the quick-aging metabolic genes and experience a second &quot;silver age&quot; of health.
-        ///&lt;/p&gt;
+        ///&lt;/h3&gt;
+        ///
         ///&lt;p&gt;&lt;strong&gt;Slogan:&lt;/strong&gt; time flies when you&apos;re having fun&lt;/p&gt;
         ///
-        ///&lt;h4&gt;Strengths&lt;/h4&gt;
+        ///&lt;br /&gt;
+        ///
+        ///&lt;h4 class=&quot;section-title&quot;&gt;Strengths&lt;/h4&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;Charismatic&lt;/li&gt;
         ///    &lt;li&gt;Quick, nimble, computer-like mind&lt;/li&gt;
-        ///    &lt;li&gt;Great determination&lt;/li&gt;
-        ///    &lt;l [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;Great d [rest of string was truncated]&quot;;.
         /// </summary>
         public static string WarriorDetails {
             get {
