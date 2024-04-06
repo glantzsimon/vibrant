@@ -298,19 +298,22 @@ namespace K9.WebApplication.Services
             var newOrder = new Order
             {
                 RequestedOn = DateTime.Today,
+                CreatedOn = DateTime.Today,
                 DueBy = DateTime.Today.AddDays(11),
                 UserId = userId > 0 ? userId : 3,
                 Name = $"{order.Name} (Copy)",
+                FullName = $"{order.FullName} (Copy)",
                 ShortDescription = order.ShortDescription,
                 OrderType = order.OrderType,
-                StartedOn = order.StartedOn,
-                MadeOn = order.MadeOn,
-                CompletedOn = order.CompletedOn,
-                PaidOn = order.PaidOn,
                 ClientId = order.ClientId,
                 Discount = order.Discount,
+                ShippingCost = order.ShippingCost,
+                RepId = order.RepId,
+                ShopCommission = order.ShopCommission,
                 ExternalId = newOrderExternalId
             };
+
+            UpdateOrderNumberIfEmpty(newOrder);
 
             _ordersRepository.Create(newOrder);
 
@@ -323,7 +326,7 @@ namespace K9.WebApplication.Services
                 var newProduct = new OrderProduct
                 {
                     OrderId = newOrder.Id,
-                    ProductId = orderProduct.Id,
+                    ProductId = orderProduct.ProductId,
                     PriceTier = orderProduct.PriceTier,
                     Amount = orderProduct.Amount
                 };

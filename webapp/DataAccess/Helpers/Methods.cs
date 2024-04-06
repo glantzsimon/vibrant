@@ -23,7 +23,7 @@ namespace K9.DataAccessLayer.Helpers
         {
             if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName != Strings.LanguageCodes.Thai)
             {
-                return Math.Round(value * ConversionConstants.BahtToDollarsRate / 7, MidpointRounding.AwayFromZero) * 7;
+                return Math.Round(value * ConversionConstants.BahtToDollarsRate / 3, MidpointRounding.AwayFromZero) * 3;
             }
 
             return value;
@@ -33,7 +33,7 @@ namespace K9.DataAccessLayer.Helpers
         {
             if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName != Strings.LanguageCodes.Thai)
             {
-                return Math.Round(value * ConversionConstants.BahtToBritishPoundsRate / 7, MidpointRounding.AwayFromZero) * 7;
+                return Math.Round(value * ConversionConstants.BahtToBritishPoundsRate / 3, MidpointRounding.AwayFromZero) * 3;
             }
 
             return value;

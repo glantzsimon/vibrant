@@ -1,18 +1,26 @@
-﻿using K9.DataAccessLayer.Models;
+﻿using K9.DataAccessLayer.Enums;
+using K9.DataAccessLayer.Models;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using K9.DataAccessLayer.Enums;
 
 namespace K9.WebApplication.ViewModels
 {
+    public static partial class OrdersExtensions
+    {
+        public static List<Order> OrderedByDate(this IEnumerable<Order> items)
+        {
+            return items.OrderByDescending(e => e.CreatedOn).ToList();
+        }
+    }
+
     public class OrdersReviewViewModel
     {
         public readonly List<Order> AllOrders;
         public readonly List<Order> AllDirectOrders;
         public readonly List<Order> AllActiveOrders;
 
-        public OrdersReviewViewModel(List<Order> allOrders)
+        public OrdersReviewViewModel(IEnumerable<Order> allOrders)
         {
             AllOrders = allOrders.Where(e => e.OrderType != EOrderType.ShoppingCart).ToList();
             AllDirectOrders = allOrders.Where(e => e.OrderType != EOrderType.ShopProvision).ToList();
@@ -25,23 +33,23 @@ namespace K9.WebApplication.ViewModels
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.OrderLabel)]
         public int SelectedOrderId => SelectedOrder?.Id ?? 0;
 
-        public List<Order> GetShopProvisionOrders() => AllOrders.Where(e => !e.IsOnHold && e.OrderType == EOrderType.ShopProvision).ToList();
+        public List<Order> GetShopProvisionOrders() => AllOrders.Where(e => !e.IsOnHold && e.OrderType == EOrderType.ShopProvision).OrderedByDate();
         
-        public List<Order> GetRestockOrders() => AllOrders.Where(e => !e.IsOnHold && e.OrderType == EOrderType.Restock).ToList();
+        public List<Order> GetRestockOrders() => AllOrders.Where(e => !e.IsOnHold && e.OrderType == EOrderType.Restock).OrderedByDate();
 
-        public List<Order> GetRedeemableOrders() => AllOrders.Where(e => !e.IsOnHold && e.RepId.HasValue).ToList();
+        public List<Order> GetRedeemableOrders() => AllOrders.Where(e => !e.IsOnHold && e.RepId.HasValue).OrderedByDate();
 
-        public List<Order> GetOrdersOnHold() => AllDirectOrders.Where(e => e.IsOnHold).ToList();
+        public List<Order> GetOrdersOnHold() => AllDirectOrders.Where(e => e.IsOnHold).OrderedByDate();
 
-        public List<Order> GetIncompleteOrders() => AllActiveOrders.Where(e => !e.IsComplete).ToList();
+        public List<Order> GetIncompleteOrders() => AllActiveOrders.Where(e => !e.IsComplete).OrderedByDate();
 
-        public List<Order> GetPickslipOrders() => AllOrders.Where(e => !e.IsComplete && !e.IsOnHold && e.OrderType != EOrderType.Restock && !e.IsDelivered).ToList();
+        public List<Order> GetPickslipOrders() => AllOrders.Where(e => !e.IsComplete && !e.IsOnHold && e.OrderType != EOrderType.Restock && !e.IsDelivered).OrderedByDate();
         
-        public List<Order> GetCompleteOrders() => AllActiveOrders.Where(e => e.IsComplete).ToList();
+        public List<Order> GetCompleteOrders() => AllActiveOrders.Where(e => e.IsComplete).OrderedByDate();
         
-        public List<Order> GetOrdersToMake() => AllActiveOrders.Where(e => !e.IsMade).ToList();
+        public List<Order> GetOrdersToMake() => AllActiveOrders.Where(e => !e.IsMade).OrderedByDate();
 
-        public List<Order> GetOrdersToSend() => AllActiveOrders.Where(e => e.IsMade && !e.IsComplete && e.OrderType != EOrderType.Restock).ToList();
+        public List<Order> GetOrdersToSend() => AllActiveOrders.Where(e => e.IsMade && !e.IsComplete && e.OrderType != EOrderType.Restock).OrderedByDate();
 
         public List<OrderProduct> GetCombinedOrderProducts() => GetCombinedGroupedProducts();
 
