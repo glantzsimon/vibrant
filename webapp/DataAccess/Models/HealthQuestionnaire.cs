@@ -1412,12 +1412,7 @@ namespace K9.DataAccessLayer.Models
                                         ? double.Parse(value.ToString()) > 0
                                         : true)
                                     || e.QuestionCategoryAttribute.AllowNull;
-
-                           if (!isComplete)
-                           {
-                               var x = 3;
-                           }
-
+                           
                            return isComplete;
                        });
         }
