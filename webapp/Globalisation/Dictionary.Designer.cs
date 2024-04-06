@@ -11998,7 +11998,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stop Impersonating User.
+        ///   Looks up a localized string similar to Stop Impersonating.
         /// </summary>
         public static string StopImpersonatingUser {
             get {
