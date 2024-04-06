@@ -61,7 +61,10 @@
             </div>
         </div>
 
-        if (Model.ProtocolSections.Any() && Model.Type == EProtocolType.Default)
+        if (Model.ProtocolSections.Any() &&
+            (Model.Type == EProtocolType.Default ||
+             Model.Type == EProtocolType.ParasiteCleanse ||
+             Model.Type == EProtocolType.ParasiteCleanseMaintenance))
         {
             <hr />
             @Html.Partial("../Protocols/_Schedule")

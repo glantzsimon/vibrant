@@ -462,7 +462,10 @@ namespace K9.WebApplication.Controllers
                 Client = clientRecord,
                 Membership = _membershipService.GetActiveUserMembership(user?.Id),
                 Protocols = protocols,
-                Orders = _orderService.ListForClient(clientRecord.Id).Where(e => e.OrderType != EOrderType.ShoppingCart).ToList(),
+                Orders = _orderService.ListForClient(clientRecord.Id).Where(e => e.OrderType != EOrderType.ShoppingCart)
+                    .OrderBy(e => e.IsComplete)
+                    .ThenByDescending(e => e.RequestedOn)
+                    .ToList(),
                 HealthQuestionnaire = _healthQuestionnaireService.GetHealthQuestionnaireForUser(Current.UserId)
             };
 
