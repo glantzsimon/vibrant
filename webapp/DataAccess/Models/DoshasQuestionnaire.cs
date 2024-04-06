@@ -10,45 +10,157 @@ namespace K9.DataAccessLayer.Models
 {
     public partial class HealthQuestionnaire
     {
-        [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [UIHint("SkinType")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SkinTypeLabel)]
-        public ESkinType? SkinType { get; set; }
+        #region Skin
 
-        [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [UIHint("SleepQuality")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.SleepLabel)]
-        public ESleepQuality? SleepQuality { get; set; }
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Vata)]
+        [Score(VataDosha = true, IsYin = true, IsOxalateIntolerance = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.DrySkin)]
+        public bool DrySkin { get; set; }
 
-        [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [UIHint("WeightGain")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.WeightGainQuestionLabel)]
-        public EWeightGain? WeightGain { get; set; }
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Kapha)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.ThickSkin)]
+        public bool ThickSkin { get; set; }
 
-        [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [UIHint("BodyTemperature")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.BodyTemperatureQuestionLabel)]
-        public EBodyTemperature? BodyTemperature { get; set; }
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Pitta)]
+        [Score(PittaDosha = true, IsYang = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.OilySkin)]
+        public bool OilySkin { get; set; }
 
-        [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [UIHint("StressResponse")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.StressResponseQuestionLabel)]
-        public EStressResponse? StressResponse { get; set; }
+        #endregion
 
-        [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [UIHint("EyesType")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.EyesTypeQuestionLabel)]
-        public EEyesType? EyesType { get; set; }
+        #region Sleep
 
-        [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [UIHint("Disposition")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.DispositionQuestionLabel)]
-        public EDisposition? Disposition { get; set; }
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Vata)]
+        [Score(VataDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.LightSleep)]
+        public bool LightSleep { get; set; }
 
-        [QuestionCategory(Category = EQuestionCategory.Doshas)]
-        [UIHint("HairType")]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.HairTypeQuestionLabel)]
-        public EHairType? HairType { get; set; }
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Pitta)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.ModerateSleep)]
+        public bool ModerateSleep { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Kapha)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.DeepSleep)]
+        public bool DeepSleep { get; set; }
+
+        #endregion
+
+        #region Weight
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Vata)]
+        [Score(VataDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.WeightGainDifficult)]
+        public bool WeightGainDifficult { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Pitta)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.WeightGainModerate)]
+        public bool WeightGainModerate { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Kapha)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.WeightGainEasy)]
+        public bool WeightGainEasy { get; set; }
+
+        #endregion
+
+        #region Temperature
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Vata)]
+        [Score(VataDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.BodyColdLabel)]
+        public bool BodyCold { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Pitta)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.BodyHotLabel)]
+        public bool BodyHot { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Kapha)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.BodyColdMoistLabel)]
+        public bool BodyColdMoist { get; set; }
+
+        #endregion
+
+        #region Stress
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Vata)]
+        [Score(VataDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.StressAnxiousLabel)]
+        public bool StressAnxious { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Pitta)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.StressIrritableLabel)]
+        public bool StressIrritable { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Kapha)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.StressReclusiveLabel)]
+        public bool StressReclusive { get; set; }
+
+        #endregion
+
+        #region Eyes
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Vata)]
+        [Score(VataDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.SmallEyesLabel)]
+        public bool SmallEyes { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Pitta)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.PenetratingEyesLabel)]
+        public bool PenetratingEyes { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Kapha)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.LargeEyesLabel)]
+        public bool LargeEyes { get; set; }
+
+        #endregion
+
+        #region Disposition
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Vata)]
+        [Score(VataDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.LivelyDispositionLabel)]
+        public bool LivelyDisposition { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Pitta)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.DrivenDispositionLabel)]
+        public bool DrivenDisposition { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Kapha)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.EvenDispositionLabel)]
+        public bool EvenDisposition { get; set; }
+
+        #endregion
+
+        #region Hair
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Vata)]
+        [Score(VataDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.FrizzyHairTypeLabel)]
+        public bool FrizzyHairType { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Pitta)]
+        [Score(PittaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.FineHairTypeLabel)]
+        public bool FineHairType { get; set; }
+
+        [QuestionCategory(Category = EQuestionCategory.Doshas, Dosha = EDosha.Kapha)]
+        [Score(KaphaDosha = true)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Names.FullHairTypeLabel)]
+        public bool FullHairType { get; set; }
+
+        #endregion
 
         #region Signs Of Vata Dosha Imbalance
 
@@ -233,44 +345,43 @@ namespace K9.DataAccessLayer.Models
         {
             var results = new List<EDosha>
             {
-                SkinType.GetAttribute<DoshaEnumMetaDataAttribute>().Dosha,
-                SleepQuality.GetAttribute<DoshaEnumMetaDataAttribute>().Dosha,
-                WeightGain.GetAttribute<DoshaEnumMetaDataAttribute>().Dosha,
-                BodyTemperature.GetAttribute<DoshaEnumMetaDataAttribute>().Dosha,
-                EyesType.GetAttribute<DoshaEnumMetaDataAttribute>().Dosha,
-                Disposition.GetAttribute<DoshaEnumMetaDataAttribute>().Dosha,
-                HairType.GetAttribute<DoshaEnumMetaDataAttribute>().Dosha,
-                StressResponse.GetAttribute<DoshaEnumMetaDataAttribute>().Dosha,
+                GetType().GetProperty(nameof(DrySkin)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(OilySkin)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(ThickSkin)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+
+                GetType().GetProperty(nameof(LightSleep)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(ModerateSleep)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(DeepSleep)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+
+                GetType().GetProperty(nameof(WeightGainDifficult)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(WeightGainModerate)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(WeightGainEasy)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+
+                GetType().GetProperty(nameof(BodyCold)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(BodyHot)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(BodyColdMoist)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+
+                GetType().GetProperty(nameof(SmallEyes)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(PenetratingEyes)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(LargeEyes)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+
+                GetType().GetProperty(nameof(LivelyDisposition)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(DrivenDisposition)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(EvenDisposition)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+
+                GetType().GetProperty(nameof(FrizzyHairType)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(FineHairType)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(FullHairType)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+
+                GetType().GetProperty(nameof(StressAnxious)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(StressIrritable)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                GetType().GetProperty(nameof(StressReclusive)).GetAttribute<QuestionCategoryAttribute>().Dosha,
             };
 
             var totalDoshas = results.Count;
             var vataCount = results.Count(e => e == EDosha.Vata);
             var pittaCount = results.Count(e => e == EDosha.Pitta);
             var kaphaCount = results.Count(e => e == EDosha.Kapha);
-
-            var genotypeToDoshaCount = 0;
-            switch (CalculateGenotype().GenoType)
-            {
-                case EGenoType.Hunter:
-                case EGenoType.Explorer:
-                    genotypeToDoshaCount = pittaCount;
-                    pittaCount += genotypeToDoshaCount;
-                    break;
-
-                case EGenoType.Warrior:
-                case EGenoType.Gatherer:
-                    genotypeToDoshaCount = kaphaCount;
-                    kaphaCount += genotypeToDoshaCount;
-                    break;
-
-                case EGenoType.Nomad:
-                case EGenoType.Teacher:
-                    genotypeToDoshaCount = vataCount;
-                    vataCount += genotypeToDoshaCount;
-                    break;
-            }
-
-            totalDoshas += genotypeToDoshaCount;
 
             return new Doshas
             {

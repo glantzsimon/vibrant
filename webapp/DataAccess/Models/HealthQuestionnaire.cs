@@ -252,7 +252,7 @@ namespace K9.DataAccessLayer.Models
  
         public int GetMycotoxinScore()
         {
-            return GetScore(e => e.IsMycotoxinIntolerance, () => WeightGain == EWeightGain.Easily);
+            return GetScore(e => e.IsMycotoxinIntolerance, () => WeightGainEasy);
         }
 
         public int GetOmega6Score()

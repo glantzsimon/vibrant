@@ -24,12 +24,24 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            @Html.LabelFor(e => e.SkinType)
+            @Html.Label(Dictionary.SkinType)
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.SkinType, new EditorOptions
+        <div class="col-xs-12 col-sm-4">
+            @Html.BootstrapEditorFor(e => e.DrySkin, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            @Html.BootstrapEditorFor(e => e.OilySkin, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            @Html.BootstrapEditorFor(e => e.ThickSkin, new EditorOptions
             {
                 Label = ""
             })
@@ -42,8 +54,20 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.SleepQuality, new EditorOptions
+        <div class="col-xs-12 col-sm-4">
+            @Html.BootstrapEditorFor(e => e.LightSleep, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            @Html.BootstrapEditorFor(e => e.ModerateSleep, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            @Html.BootstrapEditorFor(e => e.DeepSleep, new EditorOptions
             {
                 Label = ""
             })
@@ -56,8 +80,20 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.WeightGain, new EditorOptions
+        <div class="col-xs-12 col-sm-4">
+            @Html.BootstrapEditorFor(e => e.WeightGainDifficult, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            @Html.BootstrapEditorFor(e => e.WeightGainModerate, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            @Html.BootstrapEditorFor(e => e.WeightGainEasy, new EditorOptions
             {
                 Label = ""
             })
@@ -71,7 +107,19 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.BodyTemperature, new EditorOptions
+            @Html.BootstrapEditorFor(e => e.BodyCold, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.BodyHot, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.BodyColdMoist, new EditorOptions
             {
                 Label = ""
             })
@@ -85,7 +133,19 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.StressResponse, new EditorOptions
+            @Html.BootstrapEditorFor(e => e.StressAnxious, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.StressIrritable, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.StressReclusive, new EditorOptions
             {
                 Label = ""
             })
@@ -99,7 +159,19 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.EyesType, new EditorOptions
+            @Html.BootstrapEditorFor(e => e.SmallEyes, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.PenetratingEyes, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.LargeEyes, new EditorOptions
             {
                 Label = ""
             })
@@ -113,7 +185,19 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.Disposition, new EditorOptions
+            @Html.BootstrapEditorFor(e => e.LivelyDisposition, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.DrivenDisposition, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.EvenDisposition, new EditorOptions
             {
                 Label = ""
             })
@@ -127,7 +211,19 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
-            @Html.BootstrapEditorFor(e => e.HairType, new EditorOptions
+            @Html.BootstrapEditorFor(e => e.FrizzyHairType, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.FineHairType, new EditorOptions
+            {
+                Label = ""
+            })
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            @Html.BootstrapEditorFor(e => e.FullHairType, new EditorOptions
             {
                 Label = ""
             })

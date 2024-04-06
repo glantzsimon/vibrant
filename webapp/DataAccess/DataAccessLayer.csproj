@@ -218,13 +218,6 @@
     <Compile Include="Enums\EQuestionCategory.cs" />
     <Compile Include="Enums\EDisplayColor.cs" />
     <Compile Include="Enums\EOrgan.cs" />
-    <Compile Include="Enums\EHairType.cs" />
-    <Compile Include="Enums\EDisposition.cs" />
-    <Compile Include="Enums\EEyesType.cs" />
-    <Compile Include="Enums\EStressResponse.cs" />
-    <Compile Include="Enums\EBodyTemperature.cs" />
-    <Compile Include="Enums\EWeightGain.cs" />
-    <Compile Include="Enums\ESleepQuality.cs" />
     <Compile Include="Enums\EDietaryPreference.cs" />
     <Compile Include="Enums\EHandedness.cs" />
     <Compile Include="Enums\EGenoTypeStrategy.cs" />
@@ -237,7 +230,6 @@
     <Compile Include="Enums\EStrength.cs" />
     <Compile Include="Enums\EPropTaste.cs" />
     <Compile Include="Enums\ESeverity.cs" />
-    <Compile Include="Enums\ESkinType.cs" />
     <Compile Include="Enums\EZodiacElement.cs" />
     <Compile Include="Enums\ENineStarKiElement.cs" />
     <Compile Include="Enums\EZodiac.cs" />
@@ -809,6 +801,14 @@
     <Compile Include="Migrations\202404061312588_AddCustomProtocolSectionToRightModel.Designer.cs">
       <DependentUpon>202404061312588_AddCustomProtocolSectionToRightModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404062023298_MulipleChoiceAyurveda.cs" />
+    <Compile Include="Migrations\202404062023298_MulipleChoiceAyurveda.Designer.cs">
+      <DependentUpon>202404062023298_MulipleChoiceAyurveda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404062138442_RemoveOldAyurvedicQuestions.cs" />
+    <Compile Include="Migrations\202404062138442_RemoveOldAyurvedicQuestions.Designer.cs">
+      <DependentUpon>202404062138442_RemoveOldAyurvedicQuestions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
@@ -1283,6 +1283,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404061312588_AddCustomProtocolSectionToRightModel.resx">
       <DependentUpon>202404061312588_AddCustomProtocolSectionToRightModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404062023298_MulipleChoiceAyurveda.resx">
+      <DependentUpon>202404062023298_MulipleChoiceAyurveda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404062138442_RemoveOldAyurvedicQuestions.resx">
+      <DependentUpon>202404062138442_RemoveOldAyurvedicQuestions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
