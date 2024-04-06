@@ -383,7 +383,7 @@ namespace K9.WebApplication.Services
                 productItem.ProductName = product.GetProductName();
                 productItem.ProductSubTitle = product.GetProductSubTitle();
                 productItem.CapsulesDosageLabelText = product.GetCapsulesDosageLabelText();
-                productItem.CapsulesDailyLabellext = product.GetCapsulesDailyLabellext();
+                productItem.CapsulesDailyLabellext = product.GetAmountToTakeDailyText();
                 productItem.FullDosageLabellext = product.GetFullDosageLabellext();
                 productItem.BenefitsLabelText = product.GetBenefitsLabelText();
                 productItem.IngredientsList = product.GetIngredientsList();

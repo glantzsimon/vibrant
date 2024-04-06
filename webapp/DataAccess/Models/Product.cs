@@ -405,11 +405,21 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.CapsulesDailyText)]
-        public string GetCapsulesDailyLabellext() => $"{GetCapsulesLabellext()} Daily";
+        public string GetAmountToTakeDailyText()
+        {
+            switch (ProductType)
+            {
+                case EProductType.Capsules:
+                    return $"{GetCapsulesLabellext()} {Globalisation.Dictionary.Daily}";
+
+                default:
+                    return $"{GetMeasuredInText().ToProperCase()} {Globalisation.Dictionary.Daily}";
+            }
+        }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.FullDosageText)]
-        public string GetFullDosageLabellext() => $"{GetCapsulesDosageLabelText()} {GetCapsulesDailyLabellext().ToLower()}";
+        public string GetFullDosageLabellext() => $"{GetCapsulesDosageLabelText()} {GetAmountToTakeDailyText().ToLower()}";
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.BenefitsLabel)]
         public string GetBenefitsLabelText() => Benefits.HtmlToText().SelectLines(ProductLabelBenefitsCount);
@@ -426,8 +436,9 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.RecommendationsLabel)]
-        public string GetRecommendationsText() =>
-            $"Take {GetFullDosageLabellext()} {Recommendations.GetAttribute<EnumDescriptionAttribute>()?.GetDescription().ToLower()}";
+        public string GetRecommendationsText() => ProductType == EProductType.Capsules ?
+            $"Take {GetFullDosageLabellext()} {Recommendations.GetAttribute<EnumDescriptionAttribute>()?.GetDescription().ToLower()}"
+        : Dosage;
 
         #endregion
 
