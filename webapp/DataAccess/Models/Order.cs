@@ -570,6 +570,16 @@ namespace K9.DataAccessLayer.Models
                 return EOrderStatus.OnHold;
             }
 
+            if (IsComplete)
+            {
+                return EOrderStatus.Complete;
+            }
+
+            if (IsDelivered && !IsPaid)
+            {
+                return EOrderStatus.AwaitingPayment;
+            }
+
             if (!StartedOn.HasValue)
             {
                 return EOrderStatus.InPreparation;
