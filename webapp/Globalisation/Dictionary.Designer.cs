@@ -2589,6 +2589,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Custom.
+        /// </summary>
+        public static string CustomLabel {
+            get {
+                return ResourceManager.GetString("CustomLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cystic Fibrosis.
         /// </summary>
         public static string CysticFibrosis {

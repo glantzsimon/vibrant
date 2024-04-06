@@ -31,5 +31,11 @@ namespace K9.DataAccessLayer.Models
         [Index("IX_ProtocolSection_DisplayOrder", IsUnique = true)]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DisplayOrderLabel)]
         public int DisplayOrder { get; set; }
+
+        /// <summary>
+        /// When true, the protocol display screen will not show the number of products to take, as it is a "custom" / flexible option
+        /// </summary>
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CustomLabel)]
+        public bool IsCustom { get; set; }
     }
 }

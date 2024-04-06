@@ -330,7 +330,7 @@ namespace K9.WebApplication.Services
                             {
                                 compatibilityLevel = ECompatibilityLevel.Unsuitable;
                             }
-                            
+
                             if (protocolFoodItem.FoodItem.IsBulletProof && protocol.IsBulletProof)
                             {
                                 if (compatibilityLevel == ECompatibilityLevel.Excellent || compatibilityLevel == ECompatibilityLevel.Optimal)
@@ -706,59 +706,62 @@ namespace K9.WebApplication.Services
         {
             foreach (var protocolProtocolSection in protocol.ProtocolSections)
             {
-                foreach (var protocolProduct in protocolProtocolSection.ProtocolSectionProducts)
+                if (protocolProtocolSection.ProtocolSectionProducts != null && protocolProtocolSection.ProtocolSectionProducts.Any())
                 {
-                    var items = _protocolProtocolSectionProductsRepository.Find(e =>
-                        e.ProtocolSectionId == protocolProtocolSection.Id && e.ProductId == protocolProduct.Product.Id);
-                    var item = items.FirstOrDefault();
-                    var product = _productsRepository.Find(protocolProduct.Product.Id);
-
-                    if (protocolProduct.Amount == 0 && !items.Any())
+                    foreach (var protocolProduct in protocolProtocolSection.ProtocolSectionProducts)
                     {
-                        continue;
-                    }
+                        var items = _protocolProtocolSectionProductsRepository.Find(e =>
+                            e.ProtocolSectionId == protocolProtocolSection.Id && e.ProductId == protocolProduct.Product.Id);
+                        var item = items.FirstOrDefault();
+                        var product = _productsRepository.Find(protocolProduct.Product.Id);
 
-                    if (protocolProduct.Amount > 0 && !items.Any())
-                    {
-                        // Create new
-                        var newItem = new ProtocolSectionProduct
+                        if (protocolProduct.Amount == 0 && !items.Any())
                         {
-                            ProtocolSectionId = protocolProtocolSection.Id,
-                            ProductId = protocolProduct.Product.Id,
-                            Amount = protocolProduct.Amount
-                        };
-
-                        var sectionMessage =
-                            $"ProductName: {product.Name}, {nameof(ProtocolSection.SectionName)}: {protocolProtocolSection.Section.Name}";
-                        var acceptableMessage = string.Format(Globalisation.Dictionary.AcceptableValuesMessage,
-                            product.MinDosage, product.MaxDosage);
-
-                        if (newItem.Amount > product.MaxDosage)
-                        {
-                            throw new ArgumentOutOfRangeException("Amount",
-                                $"{Globalisation.Dictionary.ValueTooHighException} {acceptableMessage} {sectionMessage}");
-                            ;
+                            continue;
                         }
 
-                        if (newItem.Amount < product.MinDosage)
+                        if (protocolProduct.Amount > 0 && !items.Any())
                         {
-                            throw new ArgumentOutOfRangeException("Amount",
-                                $"{Globalisation.Dictionary.ValueTooLowException} {acceptableMessage} {sectionMessage}");
-                            ;
-                        }
+                            // Create new
+                            var newItem = new ProtocolSectionProduct
+                            {
+                                ProtocolSectionId = protocolProtocolSection.Id,
+                                ProductId = protocolProduct.Product.Id,
+                                Amount = protocolProduct.Amount
+                            };
 
-                        _protocolProtocolSectionProductsRepository.Create(newItem);
-                    }
-                    else if (items.Any() && protocolProduct.Amount == 0)
-                    {
-                        // Remove item
-                        _protocolProtocolSectionProductsRepository.Delete(item.Id);
-                    }
-                    else if (items.Any() && item.Amount != protocolProduct.Amount)
-                    {
-                        // Change amount
-                        item.Amount = protocolProduct.Amount;
-                        _protocolProtocolSectionProductsRepository.Update(item);
+                            var sectionMessage =
+                                $"ProductName: {product.Name}, {nameof(ProtocolSection.SectionName)}: {protocolProtocolSection.Section.Name}";
+                            var acceptableMessage = string.Format(Globalisation.Dictionary.AcceptableValuesMessage,
+                                product.MinDosage, product.MaxDosage);
+
+                            if (newItem.Amount > product.MaxDosage)
+                            {
+                                throw new ArgumentOutOfRangeException("Amount",
+                                    $"{Globalisation.Dictionary.ValueTooHighException} {acceptableMessage} {sectionMessage}");
+                                ;
+                            }
+
+                            if (newItem.Amount < product.MinDosage)
+                            {
+                                throw new ArgumentOutOfRangeException("Amount",
+                                    $"{Globalisation.Dictionary.ValueTooLowException} {acceptableMessage} {sectionMessage}");
+                                ;
+                            }
+
+                            _protocolProtocolSectionProductsRepository.Create(newItem);
+                        }
+                        else if (items.Any() && protocolProduct.Amount == 0)
+                        {
+                            // Remove item
+                            _protocolProtocolSectionProductsRepository.Delete(item.Id);
+                        }
+                        else if (items.Any() && item.Amount != protocolProduct.Amount)
+                        {
+                            // Change amount
+                            item.Amount = protocolProduct.Amount;
+                            _protocolProtocolSectionProductsRepository.Update(item);
+                        }
                     }
                 }
             }

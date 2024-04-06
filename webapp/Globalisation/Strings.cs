@@ -91,6 +91,7 @@
             public const string AmountToDonateLabel = "AmountToDonateLabel";
             public const string AmountToPayLabel = "AmountToPayLabel";
             public const string CustomerLabel = "CustomerLabel";
+            public const string CustomLabel = "CustomLabel";
             public const string RepLabel = "RepLabel";
             public const string RequestedOnLabel = "RequestedOnLabel";
             public const string IsLocalDeliveryLabel = "IsLocalDeliveryLabel";

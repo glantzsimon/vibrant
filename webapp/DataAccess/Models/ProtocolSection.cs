@@ -30,7 +30,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ProtocolSectionLabel)]
         [LinkedColumn(LinkedTableName = "Section", LinkedColumnName = "Name")]
         public string SectionName { get; set; }
-
+        
         public virtual IEnumerable<ProtocolSectionProduct> ProtocolProtocolSectionProducts { get; set; }
 
         [NotMapped]

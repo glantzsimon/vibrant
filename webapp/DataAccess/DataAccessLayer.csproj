@@ -801,6 +801,14 @@
     <Compile Include="Migrations\202402070451161_NewHQFields.Designer.cs">
       <DependentUpon>202402070451161_NewHQFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404061307007_AddCustomProtocolSection.cs" />
+    <Compile Include="Migrations\202404061307007_AddCustomProtocolSection.Designer.cs">
+      <DependentUpon>202404061307007_AddCustomProtocolSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404061312588_AddCustomProtocolSectionToRightModel.cs" />
+    <Compile Include="Migrations\202404061312588_AddCustomProtocolSectionToRightModel.Designer.cs">
+      <DependentUpon>202404061312588_AddCustomProtocolSectionToRightModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
@@ -1269,6 +1277,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402070451161_NewHQFields.resx">
       <DependentUpon>202402070451161_NewHQFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404061307007_AddCustomProtocolSection.resx">
+      <DependentUpon>202404061307007_AddCustomProtocolSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404061312588_AddCustomProtocolSectionToRightModel.resx">
+      <DependentUpon>202404061312588_AddCustomProtocolSectionToRightModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
