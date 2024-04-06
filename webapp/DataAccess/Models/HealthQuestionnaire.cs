@@ -1262,7 +1262,7 @@ namespace K9.DataAccessLayer.Models
 
         [UIHint("YesNo")]
         [QuestionCategory(Category = EQuestionCategory.GeneralHealth)]
-        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DrinksAlcoholLabel)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmotionalTrauma)]
         public EYesNo? EmotionalTrauma { get; set; }
 
         #endregion
@@ -1412,6 +1412,11 @@ namespace K9.DataAccessLayer.Models
                                         ? double.Parse(value.ToString()) > 0
                                         : true)
                                     || e.QuestionCategoryAttribute.AllowNull;
+
+                           if (!isComplete)
+                           {
+                               var x = 3;
+                           }
 
                            return isComplete;
                        });

@@ -526,7 +526,7 @@
             public const string CoatedTongue = "CoatedTongue";
             public const string DrinksAlcohol = "DrinksAlcohol";
             public const string PhysicalTrauma = "PhysicalTrauma";
-            public const string EmotionalTrauma = "EmotionalTrauma";
+            public const string EmotionalTrauma = "EmotionalTraumaLabel";
             public const string AmalgamFillings = "AmalgamFillings";
             public const string AmalgamFillingsHistory = "AmalgamFillingsHistory";
             public const string ToothPain = "ToothPain";

@@ -343,40 +343,127 @@ namespace K9.DataAccessLayer.Models
 
         public Doshas GetPrakrutiDoshas(HealthQuestionnaire hq)
         {
-            var results = new List<EDosha>
+            var results = new List<EDosha>();
+
+            if (DrySkin)
             {
-                GetType().GetProperty(nameof(DrySkin)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(OilySkin)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(ThickSkin)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+                results.Add(GetType().GetProperty(nameof(DrySkin)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
 
-                GetType().GetProperty(nameof(LightSleep)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(ModerateSleep)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(DeepSleep)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+            if (OilySkin)
+            {
+                results.Add(GetType().GetProperty(nameof(OilySkin)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
 
-                GetType().GetProperty(nameof(WeightGainDifficult)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(WeightGainModerate)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(WeightGainEasy)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+            if (ThickSkin)
+            {
+                results.Add(GetType().GetProperty(nameof(ThickSkin)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
 
-                GetType().GetProperty(nameof(BodyCold)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(BodyHot)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(BodyColdMoist)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+            if (LightSleep)
+            {
+                results.Add(GetType().GetProperty(nameof(LightSleep)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
 
-                GetType().GetProperty(nameof(SmallEyes)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(PenetratingEyes)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(LargeEyes)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+            if (ModerateSleep)
+            {
+                results.Add(GetType().GetProperty(nameof(ModerateSleep)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
 
-                GetType().GetProperty(nameof(LivelyDisposition)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(DrivenDisposition)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(EvenDisposition)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+            if (DeepSleep)
+            {
+                results.Add(GetType().GetProperty(nameof(DeepSleep)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
 
-                GetType().GetProperty(nameof(FrizzyHairType)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(FineHairType)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(FullHairType)).GetAttribute<QuestionCategoryAttribute>().Dosha,
+            if (WeightGainDifficult)
+            {
+                results.Add(GetType().GetProperty(nameof(WeightGainDifficult)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
 
-                GetType().GetProperty(nameof(StressAnxious)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(StressIrritable)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-                GetType().GetProperty(nameof(StressReclusive)).GetAttribute<QuestionCategoryAttribute>().Dosha,
-            };
+            if (WeightGainModerate)
+            {
+                results.Add(GetType().GetProperty(nameof(WeightGainModerate)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (WeightGainEasy)
+            {
+                results.Add(GetType().GetProperty(nameof(WeightGainEasy)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (BodyCold)
+            {
+                results.Add(GetType().GetProperty(nameof(BodyCold)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (BodyHot)
+            {
+                results.Add(GetType().GetProperty(nameof(BodyHot)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (BodyColdMoist)
+            {
+                results.Add(GetType().GetProperty(nameof(BodyColdMoist)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (SmallEyes)
+            {
+                results.Add(GetType().GetProperty(nameof(SmallEyes)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (PenetratingEyes)
+            {
+                results.Add(GetType().GetProperty(nameof(PenetratingEyes)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (LargeEyes)
+            {
+                results.Add(GetType().GetProperty(nameof(LargeEyes)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (LivelyDisposition)
+            {
+                results.Add(GetType().GetProperty(nameof(LivelyDisposition)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (DrivenDisposition)
+            {
+                results.Add(GetType().GetProperty(nameof(DrivenDisposition)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (EvenDisposition)
+            {
+                results.Add(GetType().GetProperty(nameof(EvenDisposition)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (FrizzyHairType)
+            {
+                results.Add(GetType().GetProperty(nameof(FrizzyHairType)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (FineHairType)
+            {
+                results.Add(GetType().GetProperty(nameof(FineHairType)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (FullHairType)
+            {
+                results.Add(GetType().GetProperty(nameof(FullHairType)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (StressAnxious)
+            {
+                results.Add(GetType().GetProperty(nameof(StressAnxious)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (StressIrritable)
+            {
+                results.Add(GetType().GetProperty(nameof(StressIrritable)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
+
+            if (StressReclusive)
+            {
+                results.Add(GetType().GetProperty(nameof(StressReclusive)).GetAttribute<QuestionCategoryAttribute>().Dosha);
+            }
 
             var totalDoshas = results.Count;
             var vataCount = results.Count(e => e == EDosha.Vata);

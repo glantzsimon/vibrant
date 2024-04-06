@@ -61,7 +61,7 @@
             {
                 if (Model.HealthQuestionnaire.IsStarted())
                 {
-                    if (Model.HealthQuestionnaire.IsComplete())
+                    if (!Model.HealthQuestionnaire.IsComplete())
                     {
                         @Html.BootstrapActionLinkButton(Dictionary.AnswerHealthQuestionnaire, "GeneticProfileTest", "HealthQuestionnaire", new { clientId = Model.Client.Id }, "fa fa-heartbeat", EButtonClass.Primary)
                     }
