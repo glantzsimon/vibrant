@@ -3320,6 +3320,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download Products 100 Capsules As Csv.
+        /// </summary>
+        public static string DownloadProducts100CapsulesCsv {
+            get {
+                return ResourceManager.GetString("DownloadProducts100CapsulesCsv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download Products 200 Capsules As Csv.
+        /// </summary>
+        public static string DownloadProducts200CapsulesCsv {
+            get {
+                return ResourceManager.GetString("DownloadProducts200CapsulesCsv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download Products 400 Capsules As Csv.
+        /// </summary>
+        public static string DownloadProducts400CapsulesCsv {
+            get {
+                return ResourceManager.GetString("DownloadProducts400CapsulesCsv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Download Products as CSV.
         /// </summary>
         public static string DownloadProductsCsv {
@@ -3334,6 +3361,24 @@ namespace K9.Globalisation {
         public static string DownloadProductsJson {
             get {
                 return ResourceManager.GetString("DownloadProductsJson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download Products Liquids As Csv.
+        /// </summary>
+        public static string DownloadProductsLiquidsCsv {
+            get {
+                return ResourceManager.GetString("DownloadProductsLiquidsCsv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download Products Powders As Csv.
+        /// </summary>
+        public static string DownloadProductsPowdersCsv {
+            get {
+                return ResourceManager.GetString("DownloadProductsPowdersCsv", resourceCulture);
             }
         }
         

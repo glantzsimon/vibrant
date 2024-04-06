@@ -31,19 +31,19 @@ namespace K9.WebApplication.Services
         private readonly UrlHelper _urlHelper;
 
         public ProductService(
-            ILogger logger, 
-            IRepository<Product> productsRepository, 
-            IRepository<ProductIngredient> productIngredientsRepository, 
-            IRepository<Ingredient> ingredientsRepository, 
-            IRepository<ProductPackProduct> productPackProductRepository, 
-            IRepository<ProductPack> productPackRepository, 
-            IRepository<ProductIngredientSubstitute> productIngredientSubstituteRepository, 
-            IIngredientService ingredientService, 
-            IRepository<Protocol> protocolsRepository, 
-            IRepository<IngredientSubstitute> ingredientSubstitutesRepository, 
-            IRepository<Activity> activitiesRepository, 
-            IRepository<DietaryRecommendation> dietaryRecommendationsRepository, 
-            IRepository<FoodItem> foodItemsRepository, 
+            ILogger logger,
+            IRepository<Product> productsRepository,
+            IRepository<ProductIngredient> productIngredientsRepository,
+            IRepository<Ingredient> ingredientsRepository,
+            IRepository<ProductPackProduct> productPackProductRepository,
+            IRepository<ProductPack> productPackRepository,
+            IRepository<ProductIngredientSubstitute> productIngredientSubstituteRepository,
+            IIngredientService ingredientService,
+            IRepository<Protocol> protocolsRepository,
+            IRepository<IngredientSubstitute> ingredientSubstitutesRepository,
+            IRepository<Activity> activitiesRepository,
+            IRepository<DietaryRecommendation> dietaryRecommendationsRepository,
+            IRepository<FoodItem> foodItemsRepository,
             IRepository<ProductPackProduct> productPackProductsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstituteRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository, foodItemsRepository)
         {
             _logger = logger;
@@ -371,9 +371,38 @@ namespace K9.WebApplication.Services
             });
         }
 
-        public List<ProductItem> ListProductItems()
+        public List<ProductItem> ListProductItemsAll()
         {
-            var products = List(true);
+            return ListProductItems(List(true).ToList());
+        }
+
+        public List<ProductItem> ListProductItems100Capsules()
+        {
+            return ListProductItems(List(true).Where(e => e.ProductType == EProductType.Capsules && e.Amount == 100).ToList());
+        }
+
+        public List<ProductItem> ListProductItems200Capsules()
+        {
+            return ListProductItems(List(true).Where(e => e.ProductType == EProductType.Capsules && e.Amount == 200).ToList());
+        }
+
+        public List<ProductItem> ListProductItems400Capsules()
+        {
+            return ListProductItems(List(true).Where(e => e.ProductType == EProductType.Capsules && e.Amount == 400).ToList());
+        }
+
+        public List<ProductItem> ListProductItemsLiquids()
+        {
+            return ListProductItems(List(true).Where(e => e.ProductType == EProductType.Liquid).ToList());
+        }
+
+        public List<ProductItem> ListProductItemsPowders()
+        {
+            return ListProductItems(List(true).Where(e => e.ProductType == EProductType.Powder).ToList());
+        }
+
+        public List<ProductItem> ListProductItems(List<Product> products)
+        {
             var productItems = new List<ProductItem>();
 
             foreach (var product in products)

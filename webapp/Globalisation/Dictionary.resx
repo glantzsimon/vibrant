@@ -4788,6 +4788,21 @@ A sattvic diet shares the qualities of sattva, some of which include "pure, esse
   <data name="CustomLabel" xml:space="preserve">
     <value>Custom</value>
   </data>
+  <data name="DownloadProducts100CapsulesCsv" xml:space="preserve">
+    <value>Download Products 100 Capsules As Csv</value>
+  </data>
+  <data name="DownloadProducts200CapsulesCsv" xml:space="preserve">
+    <value>Download Products 200 Capsules As Csv</value>
+  </data>
+  <data name="DownloadProducts400CapsulesCsv" xml:space="preserve">
+    <value>Download Products 400 Capsules As Csv</value>
+  </data>
+  <data name="DownloadProductsLiquidsCsv" xml:space="preserve">
+    <value>Download Products Liquids As Csv</value>
+  </data>
+  <data name="DownloadProductsPowdersCsv" xml:space="preserve">
+    <value>Download Products Powders As Csv</value>
+  </data>
   <data name="HqComplete" xml:space="preserve">
     <value>Your Genetic Profile Test was successfully completed. Please go to the Protocols tab for more information.</value>
   </data>

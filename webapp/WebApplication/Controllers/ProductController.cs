@@ -37,7 +37,7 @@ namespace K9.WebApplication.Controllers
         [Route("products/export/json")]
         public ActionResult GetProductsJson()
         {
-            return Json(new { success = true, data = _productService.ListProductItems() }, JsonRequestBehavior.AllowGet);
+            return Json(new { success = true, data = _productService.ListProductItemsAll() }, JsonRequestBehavior.AllowGet);
         }
 
         [Route("product/{seoFriendlyId}")]

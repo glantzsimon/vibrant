@@ -21,7 +21,12 @@ namespace K9.WebApplication.Services
         void EditIngredientSubstitutes(Product product);
         void UpdateProductCategories();
         List<Product> List(bool retrieveFullProduct = false, bool includeCustomProducts = false);
-        List<ProductItem> ListProductItems();
+        List<ProductItem> ListProductItemsAll();
+        List<ProductItem> ListProductItems100Capsules();
+        List<ProductItem> ListProductItems200Capsules();
+        List<ProductItem> ListProductItems400Capsules();
+        List<ProductItem> ListProductItemsLiquids();
+        List<ProductItem> ListProductItemsPowders();
         List<ProductPack> ListProductPacks(bool retrieveFullProduct = false);
 
         ProductPack FindPack(Guid id);

@@ -10,6 +10,7 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Extensions;
 using K9.WebApplication.Helpers;
+using K9.WebApplication.Models;
 using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using ServiceStack.Text;
@@ -78,7 +79,7 @@ namespace K9.WebApplication.Controllers
             {
                 var original = products.FirstOrDefault(e => e.Id == selectedProduct.Id);
                 selectedProduct.DisplayAmount = original.DisplayAmount;
-                var productUrl = Url.AbsoluteAction("Details", "Product", new { seoFriendlyId = selectedProduct.SeoFriendlyId });  
+                var productUrl = Url.AbsoluteAction("Details", "Product", new { seoFriendlyId = selectedProduct.SeoFriendlyId });
                 selectedProduct.QrCodeUrl = string.Format(_config.QrCodeApiUrl, 111, productUrl);
             }
 
@@ -206,10 +207,52 @@ namespace K9.WebApplication.Controllers
             return RedirectToAction("Details", null, new { id = productId });
         }
 
-        [Route("products/export/csv")]
-        public ActionResult DownloadProductsCsv()
+        [Route("products/export/choose")]
+        public ActionResult DownloadProducts()
         {
-            var data = _productService.ListProductItems().ToCsv();
+            return View();
+        }
+
+        [Route("products/export/all")]
+        public ActionResult DownloadProductsAll()
+        {
+            return DownloadProductsCsv(_productService.ListProductItemsAll());
+        }
+
+        [Route("products/export/capsules100")]
+        public ActionResult DownloadProducts100Capsules()
+        {
+            return DownloadProductsCsv(_productService.ListProductItems100Capsules());
+        }
+
+        [Route("products/export/capsules200")]
+        public ActionResult DownloadProducts200Capsules()
+        {
+            return DownloadProductsCsv(_productService.ListProductItems200Capsules());
+        }
+
+        [Route("products/export/capsules400")]
+        public ActionResult DownloadProducts400Capsules()
+        {
+            return DownloadProductsCsv(_productService.ListProductItems400Capsules());
+        }
+
+        [Route("products/export/liquids")]
+        public ActionResult DownloadProductsLiquids()
+        {
+            return DownloadProductsCsv(_productService.ListProductItemsLiquids());
+        }
+
+        [Route("products/export/capsules100")]
+        public ActionResult DownloadProductsPowders()
+        {
+            return DownloadProductsCsv(_productService.ListProductItemsPowders());
+        }
+
+        [Route("products/export/csv")]
+        public ActionResult DownloadProductsCsv(List<ProductItem> items)
+        {
+            var data = items.ToCsv();
 
             Response.Clear();
             Response.ContentType = "application/CSV";

@@ -1733,6 +1733,7 @@
     <Content Include="Views\Protocols\_DietaryRecommendationsPrintable.cshtml" />
     <Content Include="Views\Protocols\_ActivityPrintable.cshtml" />
     <Content Include="Views\Protocols\_NineStarKiSummary.cshtml" />
+    <Content Include="Views\Products\DownloadProducts.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
