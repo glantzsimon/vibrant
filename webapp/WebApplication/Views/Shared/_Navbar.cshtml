@@ -176,13 +176,13 @@
             </ul>
         }
         <ul class="site-controls">
-            @if (WebSecurity.IsAuthenticated && K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
+            @if (WebSecurity.IsAuthenticated)
             {
                 if (Current.IsImpersonating())
                 {
                     <li class="@ViewContext.GetActiveClass("ImpersonateStop", "Account")"><a title="@Dictionary.StopImpersonatingUser" href="@Url.Action("ImpersonateStop", "Account")"><i class="fa fa-user-alt-slash"></i><span class="site-controls-text"> @Dictionary.StopImpersonatingUser @Current.UserName</span></a></li>
                 }
-                else
+                else if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
                 {
                     <li class="@ViewContext.GetActiveClass("Impersonate", "Account")"><a title="@Dictionary.ImpersonateUser" href="@Url.Action("Impersonate", "Account")"><i class="fa fa-user-alt"></i><span class="site-controls-text"> @Dictionary.ImpersonateUser</span></a></li>
                 }
