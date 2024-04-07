@@ -27,7 +27,10 @@
         <br />
         <br />
 
-        @Html.Partial("../Protocols/_SupplementsList")
+        if (Model.Type != EProtocolType.ParasiteCleanse && Model.Type != EProtocolType.ParasiteCleanseMaintenance)
+        {
+            @Html.Partial("../Protocols/_SupplementsList")
+        }
     }
 </div>
 
