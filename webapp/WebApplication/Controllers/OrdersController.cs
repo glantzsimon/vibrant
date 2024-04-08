@@ -32,6 +32,7 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<OrderProductPackProduct> _orderProductPackProductsRepository;
         private readonly IOrderService _orderService;
         private readonly IProductService _productService;
+        private readonly IPureControllerPackage _pureControllerPackage;
         private readonly DefaultValuesConfiguration _defaultValues;
 
         public OrdersController(IControllerPackage<Order> controllerPackage, IOptions<DefaultValuesConfiguration> defaultValues, IRepository<OrderProduct> orderProductsRepository, IRepository<OrderProductPack> orderProductPackRepository, IRepository<OrderProductPackProduct> orderProductPackProductsRepository, IOrderService orderService, IProductService productService, IPureControllerPackage pureControllerPackage) : base(controllerPackage, pureControllerPackage)
@@ -41,6 +42,7 @@ namespace K9.WebApplication.Controllers
             _orderProductPackProductsRepository = orderProductPackProductsRepository;
             _orderService = orderService;
             _productService = productService;
+            _pureControllerPackage = pureControllerPackage;
             _defaultValues = defaultValues.Value;
             RecordBeforeCreate += OrdersController_RecordBeforeCreate;
             RecordBeforeCreated += OrdersController_RecordBeforeCreated;
@@ -311,6 +313,12 @@ namespace K9.WebApplication.Controllers
             order.RequestedOn = DateTime.Today;
             order.DueBy = DateTime.Today.AddDays(11);
             order.UserId = Current.UserId;
+            
+            if (order.ShopCommission == 0 && order.ClientId.HasValue)
+            {
+                var client = _pureControllerPackage.ClientService.Find(order.ClientId.Value);
+                order.ShopCommission = client.ShopCommission;
+            }
 
             _orderService.UpdateOrderNumberIfEmpty(order);
         }

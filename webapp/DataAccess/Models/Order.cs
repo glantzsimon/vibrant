@@ -212,11 +212,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
         public double TotalProductsPrice { get; set; }
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
-        [DataType(DataType.Currency)]
-        public double TotalPaid { get; set; }
-
+        
         [NotMapped]
         [UIHint("InternationalCurrency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
@@ -345,12 +341,12 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopPayableAmountLabel)]
         [DataType(DataType.Currency)]
-        public double GetTotalShopPayableAmount() => (TotalPriceMinusShipping - (TotalPriceMinusShipping * (ShopCommission / 100 ?? 0))) - TotalPaid;
+        public double GetTotalShopPayableAmount() => (TotalPriceMinusShipping - (TotalPriceMinusShipping * (ShopCommission / 100 ?? 0)));
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.ShopPayableAmountLabel)]
         [DataType(DataType.Currency)]
-        public double GetShopPayableAmount() => (GetTotalCompletedProductsPrice() - (GetTotalCompletedProductsPrice() * (ShopCommission / 100 ?? 0))) - TotalPaid;
+        public double GetShopPayableAmount() => (GetTotalCompletedProductsPrice() - (GetTotalCompletedProductsPrice() * (ShopCommission / 100 ?? 0)));
         
         [UIHint("InternationalCurrency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]

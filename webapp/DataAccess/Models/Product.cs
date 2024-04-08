@@ -34,11 +34,6 @@ namespace K9.DataAccessLayer.Models
 
         public string GetCategoryText() => Category.GetAttribute<EnumDescriptionAttribute>().GetDescription();
 
-        [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountCompletedLabel)]
-        [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
-        public int AmountCompleted { get; set; }
-
         /// <summary>
         /// Used for labels in production
         /// </summary>

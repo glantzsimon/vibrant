@@ -79,6 +79,10 @@ namespace K9.DataAccessLayer.Models
         [StringLength(255)]
         public string CompanyName { get; set; }
 
+        [UIHint("Percentage")]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopCommissionLabel)]
+        public double? ShopCommission { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NotesLabel)]
         [StringLength(243)]
         [DataType(DataType.Html)]

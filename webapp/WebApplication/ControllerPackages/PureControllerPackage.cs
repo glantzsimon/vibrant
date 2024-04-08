@@ -13,5 +13,6 @@ namespace K9.WebApplication.Packages
         IRepository<Role> RolesRepository { get; set; }
         IRepository<UserRole> UserRolesRepository { get; set; }
         IRepository<Order> OrdersRepository { get; set; }
+        IClientService ClientService { get; set; }
     }
 }

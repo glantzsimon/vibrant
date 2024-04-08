@@ -7,7 +7,7 @@ namespace K9.WebApplication.Packages
 {
     public class PureControllerPackage : IPureControllerPackage
     {
-        public PureControllerPackage(IShoppingCartService shoppingCartService, IMembershipService membershipService, IRepository<User> usersRepository, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Order> ordersRepository)
+        public PureControllerPackage(IShoppingCartService shoppingCartService, IMembershipService membershipService, IRepository<User> usersRepository, IRepository<Role> rolesRepository, IRepository<UserRole> userRolesRepository, IRepository<Order> ordersRepository, IClientService clientService)
         {
             ShoppingCartService = shoppingCartService;
             MembershipService = membershipService;
@@ -15,6 +15,7 @@ namespace K9.WebApplication.Packages
             RolesRepository = rolesRepository;
             UserRolesRepository = userRolesRepository;
             OrdersRepository = ordersRepository;
+            ClientService = clientService;
         }
 
         public IShoppingCartService ShoppingCartService { get; set; }
@@ -23,5 +24,6 @@ namespace K9.WebApplication.Packages
         public IRepository<Role> RolesRepository { get; set; }
         public IRepository<UserRole> UserRolesRepository { get; set; }
         public IRepository<Order> OrdersRepository { get; set; }
+        public IClientService ClientService { get; set; }
     }
 }
