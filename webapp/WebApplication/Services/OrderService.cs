@@ -226,7 +226,15 @@ namespace K9.WebApplication.Services
                 // New order - update price tier
                 foreach (var product in order.Products.Where(e => e.Amount == 0))
                 {
-                    product.PriceTier = order.Client.PriceTier;
+                    if (order.OrderType == EOrderType.ShopProvision ||
+                        (order.OrderType == EOrderType.Invoice && order.ShopCommission > 0))
+                    {
+                        product.PriceTier = EPriceTier.ShopPrice;
+                    }
+                    else
+                    {
+                        product.PriceTier = order.Client.PriceTier;
+                    }
                 }
             }
 

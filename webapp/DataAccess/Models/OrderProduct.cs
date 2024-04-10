@@ -87,11 +87,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
         public double TotalPrice => Amount * GetPrice();
-
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopPriceLabel)]
-        [DataType(DataType.Currency)]
-        public double ShopPrice => GetShopPrice();
-
+        
         [UIHint("InternationalCurrency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]

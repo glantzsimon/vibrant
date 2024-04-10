@@ -307,6 +307,12 @@ namespace K9.WebApplication.Controllers
             var order = e.Item as Order;
             order.FullName = order.GetFullName();
             order.ExternalId = Guid.NewGuid();
+
+            if (order.ShopCommission == 0 && order.ClientId.HasValue)
+            {
+                var client = _pureControllerPackage.ClientService.Find(order.ClientId.Value);
+                order.ShopCommission = client.ShopCommission;
+            }
         }
 
         private void OrdersController_RecordBeforeCreate(object sender, CrudEventArgs e)
@@ -316,12 +322,6 @@ namespace K9.WebApplication.Controllers
             order.DueBy = DateTime.Today.AddDays(11);
             order.UserId = Current.UserId;
             
-            if (order.ShopCommission == 0 && order.ClientId.HasValue)
-            {
-                var client = _pureControllerPackage.ClientService.Find(order.ClientId.Value);
-                order.ShopCommission = client.ShopCommission;
-            }
-
             _orderService.UpdateOrderNumberIfEmpty(order);
         }
 
