@@ -43,7 +43,7 @@ namespace K9.WebApplication.ViewModels
 
         public List<Order> GetIncompleteOrders() => AllActiveOrders.Where(e => !e.IsComplete).OrderedByDate();
 
-        public List<Order> GetPickslipOrders() => AllOrders.Where(e => !e.IsComplete && !e.IsOnHold && e.OrderType != EOrderType.Restock && !e.IsDelivered).OrderedByDate();
+        public List<Order> GetPickslipOrders() => AllOrders.Where(e => !e.IsComplete && !e.IsOnHold && e.OrderType != EOrderType.Restock && e.OrderType != EOrderType.Invoice && !e.IsDelivered).OrderedByDate();
         
         public List<Order> GetCompleteOrders() => AllActiveOrders.Where(e => e.IsComplete).OrderedByDate();
         
