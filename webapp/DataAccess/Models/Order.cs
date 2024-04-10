@@ -442,16 +442,21 @@ namespace K9.DataAccessLayer.Models
         public string GetFormattedTotalDiscountInBritishPounds() => (GetDiscountAmount() + GetTotalTierDiscount()).ToBritishPounds().ToCurrency("£");
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
-        public string GetFormattedCustomDiscount() => CustomDiscount.ToCurrency("£");
+        public string GetFormattedCustomDiscount() => CustomDiscount.ToCurrency();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public string GetFormattedCustomDiscountInBritishPounds() => CustomDiscount.ToBritishPounds().ToCurrency("£");
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
-        public string GetFormattedGrandTotal() => GetGrandTotal().ToCurrency();
+        public double GetInvoiceGrandTotal() => OrderType == EOrderType.ShopProvision || 
+                                                (OrderType == EOrderType.Invoice && ShopCommission > 0)
+                                                    ? GetTotalShopPayableAmount()
+                                                    : GetGrandTotal();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
-        public string GetFormattedGrandTotalInBritishPounds() => GetGrandTotal().ToBritishPounds().ToCurrency("£");
+        public string GetFormattedGrandTotal() => GetInvoiceGrandTotal().ToCurrency();
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
+        public string GetFormattedGrandTotalInBritishPounds() => GetInvoiceGrandTotal().ToBritishPounds().ToCurrency("£");
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ClientLabel)]
         public string GetBulkDiscountText() =>
