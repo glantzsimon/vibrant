@@ -2562,6 +2562,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Custom Discount.
+        /// </summary>
+        public static string CustomDiscount {
+            get {
+                return ResourceManager.GetString("CustomDiscount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Custom Duration (Days).
         /// </summary>
         public static string CustomDurationLabel {

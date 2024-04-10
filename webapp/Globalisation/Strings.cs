@@ -77,6 +77,7 @@
             public const string ShippingLabel = "ShippingLabel";
             public const string DiscountLabel = "DiscountLabel";
             public const string ShopCommissionLabel = "ShopCommissionLabel";
+            public const string CustomDiscount= "CustomDiscount";
             public const string ShopCommissionAmount = "ShopCommissionAmount";
             public const string ShopPayableAmountLabel = "ShopPayableAmountLabel";
             public const string TotalShopPayableAmountLabel = "TotalShopPayableAmountLabel";

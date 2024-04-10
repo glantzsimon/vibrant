@@ -4785,6 +4785,9 @@ A sattvic diet shares the qualities of sattva, some of which include "pure, esse
   <data name="TightnessInChest" xml:space="preserve">
     <value>Tightness In Chest</value>
   </data>
+  <data name="CustomDiscount" xml:space="preserve">
+    <value>Custom Discount</value>
+  </data>
   <data name="CustomLabel" xml:space="preserve">
     <value>Custom</value>
   </data>

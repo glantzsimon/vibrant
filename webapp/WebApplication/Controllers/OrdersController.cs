@@ -265,6 +265,7 @@ namespace K9.WebApplication.Controllers
             if (isGbp)
             {
                 orderItem.FormattedDiscount = order.GetFormattedTotalDiscountInBritishPounds();
+                orderItem.FormattedCustomDiscount = order.GetFormattedCustomDiscountInBritishPounds();
                 orderItem.FormattedGrandTotal = order.GetFormattedGrandTotalInBritishPounds();
                 orderItem.FormattedSubTotal = order.GetFormattedSubTotalInBritishPounds();
                 orderItem.PricesList = order.GetPricesListInBritishPounds();
@@ -273,6 +274,7 @@ namespace K9.WebApplication.Controllers
             else
             {
                 orderItem.FormattedDiscount = order.GetFormattedTotalDiscount();
+                orderItem.FormattedCustomDiscount = order.GetFormattedCustomDiscount();
                 orderItem.FormattedGrandTotal = order.GetFormattedGrandTotal();
                 orderItem.FormattedSubTotal = order.GetFormattedSubTotal();
                 orderItem.PricesList = order.GetPricesList();

@@ -53,7 +53,7 @@ namespace K9.DataAccessLayer.Models
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.FullNameLabel)]
         public string NameAndStatus => GetFullName();
-        
+
         public string GetFullName() => $"{Name} - {RequestedOn.ToShortDateString()} - {OrderStatusText}";
 
         [UIHint("User")]
@@ -212,7 +212,7 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
         public double TotalProductsPrice { get; set; }
-        
+
         [NotMapped]
         [UIHint("InternationalCurrency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
@@ -221,7 +221,8 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
-        public double GetTotalProductsPrice() => OrderType == EOrderType.ShopProvision
+        public double GetTotalProductsPrice() =>
+            (OrderType == EOrderType.ShopProvision || (OrderType == EOrderType.Invoice && ShopCommission > 0))
             ? Products?.Sum(e => e.GetShopPrice()) ?? 0
             : Products?.Sum(e => e.TotalPrice) ?? 0;
 
@@ -242,7 +243,10 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalFullProductsPriceLabel)]
         [DataType(DataType.Currency)]
-        public double GetFullTotalProductsPrice() => Products?.Sum(e => e.FullTotalPrice) ?? 0;
+        public double GetFullTotalProductsPrice() => OrderType == EOrderType.ShopProvision
+                                                     || (OrderType == EOrderType.Invoice && ShopCommission > 0)
+                                                        ? Products?.Sum(e => e.GetShopPrice()) ?? 0
+                                                        : Products?.Sum(e => e.FullTotalPrice) ?? 0;
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary),
@@ -308,6 +312,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public double? Discount { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CustomDiscount)]
+        [DataType(DataType.Currency)]
+        public double CustomDiscount { get; set; }
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public string GetFormattedDiscountAsPercent() => (Discount / 100)?.ToString("P0", CultureInfo.InvariantCulture);
 
@@ -318,7 +326,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         [DataType(DataType.Currency)]
-        public double GetDiscountAmount() => ((TotalPriceMinusShipping * (Discount / 100 ?? 0)));
+        public double GetDiscountAmount() => ((TotalPriceMinusShipping * (Discount / 100 ?? 0)) - CustomDiscount);
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopCommissionAmount)]
@@ -347,7 +355,7 @@ namespace K9.DataAccessLayer.Models
             Name = Globalisation.Strings.Labels.ShopPayableAmountLabel)]
         [DataType(DataType.Currency)]
         public double GetShopPayableAmount() => (GetTotalCompletedProductsPrice() - (GetTotalCompletedProductsPrice() * (ShopCommission / 100 ?? 0)));
-        
+
         [UIHint("InternationalCurrency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         [DataType(DataType.Currency)]
@@ -433,6 +441,12 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         public string GetFormattedTotalDiscountInBritishPounds() => (GetDiscountAmount() + GetTotalTierDiscount()).ToBritishPounds().ToCurrency("£");
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
+        public string GetFormattedCustomDiscount() => CustomDiscount.ToCurrency("£");
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
+        public string GetFormattedCustomDiscountInBritishPounds() => CustomDiscount.ToBritishPounds().ToCurrency("£");
+
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         public string GetFormattedGrandTotal() => GetGrandTotal().ToCurrency();
 
@@ -471,7 +485,7 @@ namespace K9.DataAccessLayer.Models
                 };
                 items.Add(shippingItem);
             }
-            
+
             return items;
         }
 
@@ -520,7 +534,7 @@ namespace K9.DataAccessLayer.Models
                         var groupItem = new
                         {
                             Product = GetCombinedProducts().FirstOrDefault(e => e.Id == group.Key),
-                            
+
                             Count = groupOrderProducts.Sum(e => e.Amount) +
                                     groupOrderProductPacks.Sum(e => e.OrderProductPack.Amount * e.Products.Sum(p => p.Amount)),
 

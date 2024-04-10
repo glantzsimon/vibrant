@@ -813,6 +813,10 @@
     <Compile Include="Migrations\202404081037100_EditConsultantOrder.Designer.cs">
       <DependentUpon>202404081037100_EditConsultantOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404101421398_CustomDiscount.cs" />
+    <Compile Include="Migrations\202404101421398_CustomDiscount.Designer.cs">
+      <DependentUpon>202404101421398_CustomDiscount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OrderProductPackProduct.cs" />
     <Compile Include="Models\ClientForbiddenFood.cs" />
     <Compile Include="Models\ScorableBase.cs" />
@@ -1296,6 +1300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404081037100_EditConsultantOrder.resx">
       <DependentUpon>202404081037100_EditConsultantOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404101421398_CustomDiscount.resx">
+      <DependentUpon>202404101421398_CustomDiscount.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

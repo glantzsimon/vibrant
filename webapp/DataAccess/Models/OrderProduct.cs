@@ -88,6 +88,10 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double TotalPrice => Amount * GetPrice();
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopPriceLabel)]
+        [DataType(DataType.Currency)]
+        public double ShopPrice => GetShopPrice();
+
         [UIHint("InternationalCurrency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
@@ -97,7 +101,6 @@ namespace K9.DataAccessLayer.Models
         [DataType(DataType.Currency)]
         public double FullTotalPrice => Amount * Product?.Price ?? 0;
 
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
         [DataType(DataType.Currency)]
         public double GetShopPrice() => Amount * Product?.GetShopPrice() ?? 0;
 

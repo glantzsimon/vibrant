@@ -243,7 +243,7 @@ namespace K9.WebApplication.Controllers
             return DownloadProductsCsv(_productService.ListProductItemsLiquids());
         }
 
-        [Route("products/export/capsules100")]
+        [Route("products/export/powders")]
         public ActionResult DownloadProductsPowders()
         {
             return DownloadProductsCsv(_productService.ListProductItemsPowders());
