@@ -174,7 +174,7 @@ namespace K9.DataAccessLayer.Models
             double.Parse(ShippingCost.ToString()).ToString("C", CultureInfo.GetCultureInfo("th-TH"));
 
         [NotMapped]
-        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalPriceLabel)]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.TotalProductsPriceLabel)]
         [DataType(DataType.Currency)]
         public double TotalPrice { get; set; }
 
@@ -326,7 +326,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
         [DataType(DataType.Currency)]
-        public double GetDiscountAmount() => ((TotalPriceMinusShipping * (Discount / 100 ?? 0)) - CustomDiscount);
+        public double GetDiscountAmount() => ((TotalPriceMinusShipping * (Discount / 100 ?? 0)) + CustomDiscount);
 
         [NotMapped]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopCommissionAmount)]
@@ -349,12 +349,12 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ShopPayableAmountLabel)]
         [DataType(DataType.Currency)]
-        public double GetTotalShopPayableAmount() => (TotalPriceMinusShipping - (TotalPriceMinusShipping * (ShopCommission / 100 ?? 0)));
+        public double GetTotalShopPayableAmount() => (TotalPriceMinusShipping - (TotalPriceMinusShipping * (ShopCommission / 100 ?? 0)) - CustomDiscount);
 
         [Display(ResourceType = typeof(Globalisation.Dictionary),
             Name = Globalisation.Strings.Labels.ShopPayableAmountLabel)]
         [DataType(DataType.Currency)]
-        public double GetShopPayableAmount() => (GetTotalCompletedProductsPrice() - (GetTotalCompletedProductsPrice() * (ShopCommission / 100 ?? 0)));
+        public double GetShopPayableAmount() => (TotalPriceMinusShipping - (TotalPriceMinusShipping * (ShopCommission / 100 ?? 0)));
 
         [UIHint("InternationalCurrency")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DiscountLabel)]
@@ -389,7 +389,7 @@ namespace K9.DataAccessLayer.Models
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         [DataType(DataType.Currency)]
-        public double GetGrandTotal() => ShopCommission.HasValue && ShopCommission.Value > 0 ? TotalShopPayableAmount : GetTotalPrice() - GetDiscountAmount();
+        public double GetGrandTotal() => GetTotalPrice() - GetDiscountAmount();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.GrandTotalLabel)]
         [DataType(DataType.Currency)]

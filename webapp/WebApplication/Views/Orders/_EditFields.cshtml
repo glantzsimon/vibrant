@@ -50,6 +50,14 @@
 
 <div class="row">
     <div class="col-sm-6">
+        @Html.BootstrapEditorFor(model => model.ShippingCost)
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-6">
         @Html.BootstrapEditorFor(model => model.Discount)
     </div>
     <div class="col-sm-6">
@@ -60,14 +68,17 @@
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.DiscountAmount)
     </div>
-    <div class="col-sm-6">
-        @Html.BootstrapEditorFor(model => model.ShippingCost)
-    </div>
 </div>
+
+<hr />
+
 <div class="row">
     <div class="col-sm-6">
         @Html.HiddenFor(model => model.TotalPrice)
         @Html.BootstrapDisplayFor(model => model.TotalPrice)
+    </div>
+    <div class="col-sm-6">
+        @Html.BootstrapDisplayFor(model => model.GrandTotal)
     </div>
 </div>
 
@@ -87,11 +98,6 @@
     </div>
     <div class="col-sm-6">
         @Html.BootstrapDisplayFor(model => model.TotalShopPayableAmount)
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-6">
-        @Html.BootstrapDisplayFor(model => model.GrandTotal)
     </div>
 </div>
 
