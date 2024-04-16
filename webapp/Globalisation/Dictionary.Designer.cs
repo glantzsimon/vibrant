@@ -11468,6 +11468,15 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Shop Commission.
         /// </summary>
+        public static string ShopCommission {
+            get {
+                return ResourceManager.GetString("ShopCommission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shop Commission.
+        /// </summary>
         public static string ShopCommissionAmount {
             get {
                 return ResourceManager.GetString("ShopCommissionAmount", resourceCulture);

@@ -4818,6 +4818,9 @@ A sattvic diet shares the qualities of sattva, some of which include "pure, esse
   <data name="Invoice" xml:space="preserve">
     <value>Invoice</value>
   </data>
+  <data name="ShopCommission" xml:space="preserve">
+    <value>Shop Commission</value>
+  </data>
   <data name="StopImpersonatingUser" xml:space="preserve">
     <value>Stop Impersonating</value>
   </data>
