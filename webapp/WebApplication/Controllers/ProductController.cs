@@ -7,7 +7,9 @@ using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
+using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -35,9 +37,33 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("products/export/json")]
-        public ActionResult GetProductsJson()
+        private ActionResult GetProductsJson(List<ProductItem> items)
         {
-            return Json(new { success = true, data = _productService.ListProductItemsAll() }, JsonRequestBehavior.AllowGet);
+            return Json(new { success = true, data = items }, JsonRequestBehavior.AllowGet);
+        }
+
+        [Route("products/export/json/all")]
+        public ActionResult GetProductsJsonAll()
+        {
+            return GetProductsJson(_productService.ListProductItemsAll());
+        }
+
+        [Route("products/export/json/capsules100")]
+        public ActionResult GetProductsJson100Capsules()
+        {
+            return GetProductsJson(_productService.ListProductItems100Capsules());
+        }
+
+        [Route("products/export/json/capsules200")]
+        public ActionResult GetProductsJson200Capsules()
+        {
+            return GetProductsJson(_productService.ListProductItems200Capsules());
+        }
+
+        [Route("products/export/json/capsules400")]
+        public ActionResult GetProductsJson400Capsules()
+        {
+            return GetProductsJson(_productService.ListProductItems400Capsules());
         }
 
         [Route("product/{seoFriendlyId}")]
@@ -48,7 +74,7 @@ namespace K9.WebApplication.Controllers
             {
                 return HttpNotFound();
             }
-            
+
             LoadUploadedFiles(product);
             return View(product);
         }
@@ -56,7 +82,7 @@ namespace K9.WebApplication.Controllers
         [Authorize]
         public ActionResult Link(Guid id)
         {
-            if(!Roles.CurrentUserIsInRoles(Constants.Constants.UnicornUser) && !Roles.CurrentUserIsInRoles(RoleNames.Administrators))
+            if (!Roles.CurrentUserIsInRoles(Constants.Constants.UnicornUser) && !Roles.CurrentUserIsInRoles(RoleNames.Administrators))
             {
                 return HttpNotFound();
             }
@@ -68,7 +94,7 @@ namespace K9.WebApplication.Controllers
             }
             return View("Link", product);
         }
-        
+
         public override string GetObjectName()
         {
             return typeof(NewsItem).Name;
