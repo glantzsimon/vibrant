@@ -75,9 +75,11 @@ namespace K9.DataAccessLayer.Helpers
             return string.Empty;
         }
 
-        public static string SelectLines(this string value, int numberOfLines)
+        public static string SelectLines(this string value, int numberOfLines, bool isUnix = false)
         {
-            return string.Join(Environment.NewLine, Regex.Split(value, Environment.NewLine).Select(e => e.Trim()).Where(e => !string.IsNullOrEmpty(e) && !string.IsNullOrWhiteSpace(e)).Take(numberOfLines));
+            var output = string.Join(isUnix ? "\n" : Environment.NewLine, Regex.Split(value, Environment.NewLine).Select(e => e.Trim()).Where(e => !string.IsNullOrEmpty(e) && !string.IsNullOrWhiteSpace(e)).Take(numberOfLines));
+
+            return output;
         }
 
         public static string ToCurrency(this double value, string currencyFormat = "฿")
