@@ -55,9 +55,9 @@ namespace K9.DataAccessLayer.Helpers
             return htmlDoc.DocumentNode.InnerText;
         }
 
-        public static string ToDisplayList(this string[] items)
+        public static string ToDisplayList(this string[] items, bool useUnixNewLine = true)
         {
-            return items == null ? string.Empty : string.Join(Environment.NewLine, items);
+            return items == null ? string.Empty : string.Join(GetNewLineChars(useUnixNewLine), items);
         }
 
         public static string ToDisplayList(this IEnumerable<string> items)
@@ -65,11 +65,11 @@ namespace K9.DataAccessLayer.Helpers
             return items.ToArray().ToDisplayList();
         }
 
-        public static string RemoveEmptyLines(this string value)
+        public static string RemoveEmptyLines(this string value, bool useUnixNewLine = false)
         {
             if (!string.IsNullOrEmpty(value))
             {
-                return string.Join(Environment.NewLine, Regex.Split(value, Environment.NewLine).Select(e => e.Trim()).Where(e => !string.IsNullOrEmpty(e) && !string.IsNullOrWhiteSpace(e)));
+                return string.Join(GetNewLineChars(useUnixNewLine), Regex.Split(value, Environment.NewLine).Select(e => e.Trim()).Where(e => !string.IsNullOrEmpty(e) && !string.IsNullOrWhiteSpace(e)));
             }
 
             return string.Empty;
@@ -77,9 +77,14 @@ namespace K9.DataAccessLayer.Helpers
 
         public static string SelectLines(this string value, int numberOfLines, bool useUnixNewLine = true)
         {
-            var output = string.Join(useUnixNewLine ? "\n" : Environment.NewLine, Regex.Split(value, Environment.NewLine).Select(e => e.Trim()).Where(e => !string.IsNullOrEmpty(e) && !string.IsNullOrWhiteSpace(e)).Take(numberOfLines));
+            var output = string.Join(GetNewLineChars(useUnixNewLine), Regex.Split(value, Environment.NewLine).Select(e => e.Trim()).Where(e => !string.IsNullOrEmpty(e) && !string.IsNullOrWhiteSpace(e)).Take(numberOfLines));
 
             return output;
+        }
+
+        private static string GetNewLineChars(bool useUnixNewLine)
+        {
+            return useUnixNewLine ? "\n" : Environment.NewLine;
         }
 
         public static string ToCurrency(this double value, string currencyFormat = "฿")
