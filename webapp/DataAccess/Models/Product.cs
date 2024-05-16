@@ -392,7 +392,7 @@ namespace K9.DataAccessLayer.Models
         public int MinDosage { get; set; } = 1;
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CapsulesDosageLabel)]
-        public string GetCapsulesDosageLabelText() => MaxDosage > 1 ? $"{MinDosage} - {MaxDosage}" : MaxDosage.ToString();
+        public string GetCapsulesDosageLabelText() => MaxDosage > 1 && MaxDosage > MinDosage ? $"{MinDosage} - {MaxDosage}" : MaxDosage.ToString();
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CapsulesLabel)]
         public string GetCapsulesLabellext() =>
