@@ -11367,6 +11367,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sender.
+        /// </summary>
+        public static string Sender {
+            get {
+                return ResourceManager.GetString("Sender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sensitive to environmental chemicals, such as car fumes, solvents, perfumes, etc.?.
         /// </summary>
         public static string SensitiveToEnvironmentalChemicalsLabel {

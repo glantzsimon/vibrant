@@ -2,6 +2,10 @@
 @model Client
 
 <div class="address-label">
+    @if (Model.Id == 1)
+    {
+        <p class="text-uppercase"><strong>@Dictionary.Sender:</strong></p>
+    }
     <h4 class><strong>@Html.ValueFor(model => model.FullName)</strong></h4>
     <p>@Html.Raw(Model.GetAddressHtmlString())</p>
     <p class="text-uppercase"><strong>@Html.ValueFor(model => model.Country.Name)</strong></p>
