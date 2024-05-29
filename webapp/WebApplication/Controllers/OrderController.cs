@@ -1,14 +1,16 @@
 ﻿using K9.Base.DataAccessLayer.Models;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using K9.WebApplication.Helpers;
+using K9.WebApplication.Models;
+using K9.WebApplication.Packages;
 using K9.WebApplication.Services;
+using System;
 using System.Linq;
 using System.Web.Mvc;
-using K9.WebApplication.Packages;
-using WebMatrix.WebData;
-using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Controllers
 {
@@ -57,6 +59,53 @@ namespace K9.WebApplication.Controllers
             ViewBag.DeviceType = GetDeviceType();
 
             return View(order);
+        }
+
+        [Route("orders/pay-invoice/{id}")]
+        public ActionResult PayInvoiceStart(int id)
+        {
+            var order = _orderService.Find(id);
+            if (order.UserId != Current.UserId)
+            {
+                return HttpNotFound();
+            }
+
+            return View(order);
+        }
+
+        [Route("orders/pay-invoice/{id}")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult PayInvoice(int id)
+        {
+            var order = _orderService.Find(id);
+            if (order.UserId != Current.UserId)
+            {
+                return HttpNotFound();
+            }
+
+            return View(order);
+        }
+
+        [HttpPost]
+        public ActionResult ProcessInvoicePayment(PurchaseModel purchaseModel)
+        {
+            try
+            {
+                _orderService.ProcessInvoicePayment(purchaseModel);
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"OrderController => ProcessPurchase => Error: {ex.GetFullErrorMessage()}");
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
+
+        [Route("orders/pay-invoice/success")]
+        public ActionResult InvoicePaymentSuccess(int id)
+        {
+            return View();
         }
     }
 }

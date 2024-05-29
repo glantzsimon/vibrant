@@ -4830,6 +4830,24 @@ A sattvic diet shares the qualities of sattva, some of which include "pure, esse
   <data name="User" xml:space="preserve">
     <value>User</value>
   </data>
+  <data name="InvoicePaidEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\invoicepaidemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="InvoicePaidSuccessfully" xml:space="preserve">
+    <value>Thank you! Your payment has been received.</value>
+  </data>
+  <data name="InvoicePaidThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\invoicepaidthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="InvoicePayment" xml:space="preserve">
+    <value>Invoice Payment</value>
+  </data>
+  <data name="InvoicePaymentReceived" xml:space="preserve">
+    <value>Invoice Payment Received</value>
+  </data>
+  <data name="OrderPayment" xml:space="preserve">
+    <value>Order Payment</value>
+  </data>
   <data name="Sender" xml:space="preserve">
     <value>Sender</value>
   </data>

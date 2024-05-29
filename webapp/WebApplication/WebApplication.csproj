@@ -1734,6 +1734,9 @@
     <Content Include="Views\Protocols\_ActivityPrintable.cshtml" />
     <Content Include="Views\Protocols\_NineStarKiSummary.cshtml" />
     <Content Include="Views\Products\DownloadProducts.cshtml" />
+    <Content Include="Views\Order\PayInvoice.cshtml" />
+    <Content Include="Views\Order\InvoicePaymentSuccess.cshtml" />
+    <Content Include="Views\Order\PayInvoiceStart.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -133,6 +133,8 @@ namespace K9.DataAccessLayer.Models
             double factor = 100f / 7f;
             double index = 0;
 
+            //factor = (100f - factor) / 7f;
+
             if (score == 0)
             {
                 index = 0;
@@ -153,14 +155,16 @@ namespace K9.DataAccessLayer.Models
 
         public int GetScore(Func<ScoreAttribute, bool> condition, Func<bool> condition2 = null, int condition2ScoreFactor = 1)
         {
-            var answers = GetPropertiesWithScoreAttribute()
+            var scoreProperties = GetPropertiesWithScoreAttribute()
                 .Select(e => new
                 {
                     PropertyInfo = e,
                     ScoreAttributes = e.GetCustomAttributes<ScoreAttribute>().ToList()
                 })
                 .Where(e => e.ScoreAttributes.Any(s => condition(s)))
-                .ToList()
+                .ToList();
+
+            var answers = scoreProperties
                 .Select(e =>
                 {
                     var propertyValue = this.GetProperty(e.PropertyInfo);
@@ -1384,7 +1388,7 @@ namespace K9.DataAccessLayer.Models
 
         public static List<PropertyInfo> GetPropertiesWithScoreAttribute()
         {
-            return typeof(HealthQuestionnaire).GetProperties().Where(e => e.GetAttribute<ScoreAttribute>() != null && e.PropertyType == typeof(EYesNo?) || e.PropertyType == typeof(EYesNo)).ToList();
+            return typeof(HealthQuestionnaire).GetProperties().Where(e => e.GetAttribute<ScoreAttribute>() != null && e.PropertyType == typeof(EYesNo?) || e.PropertyType == typeof(EYesNo) || e.PropertyType == typeof(bool)).ToList();
         }
 
         public static List<PropertyInfo> GetPropertiesWithQuestionCategoryAttribute()

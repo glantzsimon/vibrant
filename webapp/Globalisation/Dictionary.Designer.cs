@@ -6176,6 +6176,86 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///
+        ///    html {
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
+        ///        margin: 0;
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
+        ///    &lt;br /&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;An invoice h [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string InvoicePaidEmail {
+            get {
+                return ResourceManager.GetString("InvoicePaidEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you! Your payment has been received..
+        /// </summary>
+        public static string InvoicePaidSuccessfully {
+            get {
+                return ResourceManager.GetString("InvoicePaidSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
+        ///    &lt;!--[if gte mso 15]&gt;
+        ///    &lt;xml&gt;
+        ///        &lt;o:OfficeDocumentSettings&gt;
+        ///        &lt;o:AllowPNG/&gt;
+        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        ///        &lt;/o:OfficeDocumentSettings&gt;
+        ///    &lt;/xml&gt;
+        ///    &lt;![endif]--&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;w [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string InvoicePaidThankYouEmail {
+            get {
+                return ResourceManager.GetString("InvoicePaidThankYouEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invoice Payment.
+        /// </summary>
+        public static string InvoicePayment {
+            get {
+                return ResourceManager.GetString("InvoicePayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invoice Payment Received.
+        /// </summary>
+        public static string InvoicePaymentReceived {
+            get {
+                return ResourceManager.GetString("InvoicePaymentReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is your digestion irregular and unpredictable?.
         /// </summary>
         public static string IrregularDigestionLabel {
@@ -8920,6 +9000,15 @@ namespace K9.Globalisation {
         public static string OrderNumberLabel {
             get {
                 return ResourceManager.GetString("OrderNumberLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Payment.
+        /// </summary>
+        public static string OrderPayment {
+            get {
+                return ResourceManager.GetString("OrderPayment", resourceCulture);
             }
         }
         

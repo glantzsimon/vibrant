@@ -1,0 +1,18 @@
+﻿@using K9.WebApplication.Options
+@model Order
+@{
+    ViewBag.Title = Dictionary.Orders;
+    ViewBag.SubTitle = Dictionary.OrderPayment;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+@Html.Partial("_PaymentsForm", new PaymentsOptions(
+    Model.Id,
+    1,
+    Model.InternationalGrandTotal,
+    Dictionary.PureAlchemyConsultation,
+    Dictionary.PureAlchemyOrder,
+    "ViewOrder", "Order",
+    Url.Action("InvoicePaymentSuccess"),
+    Url.Action("Index", "Error"),
+    Url.Action("ProcessInvoicePayment", "Order")
+    ))

@@ -21,4 +21,6 @@
     @Html.BootstrapActionLinkButton(Dictionary.DownloadAsCsv, "DownloadOrderCsv", "Orders", new { id = Model.Id }, "fa fa-download", EButtonClass.Success)
 
     @Html.BootstrapActionLinkButton(Dictionary.DownloadGbpAsCsv, "DownloadOrderCsvInGbp", "Orders", new { id = Model.Id }, "fa fa-download", EButtonClass.Success)
+
+    @Html.BootstrapActionLinkButton(Dictionary.InvoicePayment, "PayInvoiceStart", "Order", new { id = Model.Id }, "fa fa-download", EButtonClass.Success)
 }

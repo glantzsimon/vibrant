@@ -1,0 +1,18 @@
+﻿@using K9.WebApplication.Options
+@model Order
+@{
+    ViewBag.Title = Dictionary.Orders;
+    ViewBag.SubTitle = Dictionary.OrderReview;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm("PayInvoice", "Order", FormMethod.Post))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.Partial("_DisplayFields", Model)
+
+        <hr />
+        @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight, EButtonClass.Large)
+    }
+}

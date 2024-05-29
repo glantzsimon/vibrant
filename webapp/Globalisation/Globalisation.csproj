@@ -161,6 +161,8 @@
     <Content Include="General\en-gb\consultation-email.htm" />
     <Content Include="General\en-gb\cbsmutation.htm" />
     <Content Include="General\en-gb\welcome.htm" />
+    <Content Include="Templates\en-gb\InvoicePaidThankYouEmail.htm" />
+    <Content Include="Templates\en-gb\InvoicePaidEmail.htm" />
     <Content Include="Templates\en-gb\HealthQuestoinnaireComplete.htm" />
     <Content Include="Templates\en-gb\ConsultationBookedEmail.htm" />
     <Content Include="Templates\en-gb\ConsultationBookedThankYouEmail.htm" />

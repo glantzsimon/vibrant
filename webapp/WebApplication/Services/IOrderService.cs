@@ -1,4 +1,5 @@
 ﻿using K9.DataAccessLayer.Models;
+using K9.WebApplication.Models;
 using K9.WebApplication.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace K9.WebApplication.Services
         RepCommissionViewModel CalculateRepCommission(int repId);
         void DeleteChildRecords(int id);
         void UpdateOrderNumberIfEmpty(Order order);
+        void ProcessInvoicePayment(PurchaseModel purchaseModel);
 
         /// <summary>
         /// Update product pack amount and set to 1, if 0. This is the default behaviour when selecting product packs for the first time.

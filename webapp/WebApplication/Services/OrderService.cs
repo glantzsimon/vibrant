@@ -1,14 +1,19 @@
 ﻿using K9.Base.DataAccessLayer.Models;
 using K9.DataAccessLayer.Enums;
 using K9.DataAccessLayer.Models;
+using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
+using K9.WebApplication.Models;
 using K9.WebApplication.ViewModels;
 using Microsoft.Extensions.Caching.Memory;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Mvc;
+using K9.Base.WebApplication.Config;
+using K9.SharedLibrary.Helpers;
 
 namespace K9.WebApplication.Services
 {
@@ -19,6 +24,7 @@ namespace K9.WebApplication.Services
         private readonly IRepository<OrderProduct> _orderProductsRepository;
         private readonly IRepository<OrderProductPack> _orderProductPacksRepository;
         private readonly IRepository<OrderProductPackProduct> _orderProductPackProductsRepository;
+        private readonly IMailer _mailer;
         private readonly IRepository<Product> _productsRepository;
         private readonly IRepository<ProductPack> _productPackRepository;
         private readonly IRepository<Client> _clientsRepository;
@@ -26,7 +32,9 @@ namespace K9.WebApplication.Services
         private readonly IRepository<RepCommission> _repCommissionsRepository;
         private readonly IRepository<ProductPackProduct> _productPackProductsRepository;
         private readonly IRepository<Country> _countriesRepository;
+        private readonly UrlHelper _urlHelper;
         private readonly DefaultValuesConfiguration _defaultValues;
+        private readonly WebsiteConfiguration _config;
 
         public OrderService(
             ILogger logger,
@@ -49,13 +57,17 @@ namespace K9.WebApplication.Services
             IRepository<ProductPackProduct> productPackProductsRepository,
             IRepository<Country> countriesRepository,
             IRepository<FoodItem> foodItemsRepository,
-            IRepository<OrderProductPackProduct> orderProductPackProductsRepository) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository, foodItemsRepository)
+            IOptions<WebsiteConfiguration> config,
+            UrlHelper urlHelper,
+            IRepository<OrderProductPackProduct> orderProductPackProductsRepository,
+            IMailer mailer) : base(productsRepository, productPackRepository, ingredientsRepository, protocolsRepository, ingredientSubstitutesRepository, productIngredientsRepository, productIngredientSubstitutesRepository, activitiesRepository, dietaryRecommendationsRepository, productPackProductsRepository, foodItemsRepository)
         {
             _logger = logger;
             _ordersRepository = ordersRepository;
             _orderProductsRepository = orderProductsRepository;
             _orderProductPacksRepository = orderProductPacksRepository;
             _orderProductPackProductsRepository = orderProductPackProductsRepository;
+            _mailer = mailer;
             _productsRepository = productsRepository;
             _productPackRepository = productPackRepository;
             _clientsRepository = clientsRepository;
@@ -63,7 +75,9 @@ namespace K9.WebApplication.Services
             _repCommissionsRepository = repCommissionsRepository;
             _productPackProductsRepository = productPackProductsRepository;
             _countriesRepository = countriesRepository;
+            _urlHelper = urlHelper;
             _defaultValues = defaultValues.Value;
+            _config = config.Value;
         }
 
         public Order Find(int id)
@@ -399,6 +413,29 @@ namespace K9.WebApplication.Services
             };
         }
 
+        public void ProcessInvoicePayment(PurchaseModel purchaseModel)
+        {
+            try
+            {
+                var order = _ordersRepository.Find(purchaseModel.ItemId);
+                order.PaidOn = DateTime.Now;
+                _ordersRepository.Update(order);
+
+                order = Find(order.Id);
+                
+                var client = _clientsRepository.Find(purchaseModel.ClientId);
+
+                SendInvoicePaymentCompleteEmailToPureAlchemy(client, order);
+                SendInvoicePaymentCompleteToClient(order, client);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.GetFullErrorMessage()}");
+                SendEmailToAdminAboutFailure(purchaseModel, ex.GetFullErrorMessage());
+                throw ex;
+            }
+        }
+
         /// <summary>
         /// Update product pack amount and set to 1, if 0. This is the default behaviour when selecting product packs for the first time.
         /// </summary>
@@ -433,6 +470,55 @@ namespace K9.WebApplication.Services
 
                 order.OrderNumber = newOrderNumber;
             }
+        }
+
+        private void SendInvoicePaymentCompleteEmailToPureAlchemy(Client client, Order order)
+        {
+            var template = Globalisation.Dictionary.InvoicePaidSuccessfully;
+            var title = Globalisation.Dictionary.InvoicePaymentReceived;
+            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            {
+                Title = title,
+                ClientName = client.FullName,
+                ClientEmail = client.EmailAddress,
+                client.PhoneNumber,
+                order.OrderNumber,
+                Total = order.FormattedInternationalGrandTotal,
+                Company = _config.CompanyName,
+                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
+            }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
+        }
+
+        private void SendInvoicePaymentCompleteToClient(Order order, Client client)
+        {
+            var template = Globalisation.Dictionary.InvoicePaidThankYouEmail;
+            var title = Globalisation.Dictionary.InvoicePaymentReceived;
+            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            {
+                Title = title,
+                FirstName = client.GetFirstName(),
+                order.OrderNumber,
+                Total = order.FormattedInternationalGrandTotal,
+                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
+                PrivacyPolicyLink = _urlHelper.AbsoluteAction("PrivacyPolicy", "Home"),
+                UnsubscribeLink = _urlHelper.AbsoluteAction("Unsubscribe", "Account", new { code = client.Name }),
+                DateTime.Now.Year
+            }), client.EmailAddress, client.FullName, _config.SupportEmailAddress, _config.CompanyName);
+        }
+
+        private void SendEmailToAdminAboutFailure(PurchaseModel purchaseModel, string errorMessage)
+        {
+            var template = Globalisation.Dictionary.PaymentError;
+            var title = "A customer made a successful payment, but an error occurred.";
+            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
+            {
+                Title = title,
+                Customer = purchaseModel.CustomerName,
+                CustomerEmail = purchaseModel.CustomerEmailAddress,
+                ErrorMessage = errorMessage,
+                Company = _config.CompanyName,
+                ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
+            }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
         }
     }
 }
