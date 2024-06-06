@@ -1,0 +1,100 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.SharedLibrary.Authentication
+@using K9.WebApplication.Constants
+@model Order
+
+<div class="row">
+    <div class="col-sm-4">
+        @Html.LabelFor(e => Model.Products[0].ProductName)
+    </div>
+    <div class="col-sm-4">
+        @Html.LabelFor(e => Model.Products[0].Amount)
+    </div>
+    <div class="col-sm-4">
+        @Html.LabelFor(e => Model.Products[0].TotalInternationalPrice)
+    </div>
+</div>
+<hr />
+@for (int i = 0; i < Model.Products?.Count; i++)
+{
+    <div class="row">
+        <div class="col-sm-4">
+            @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
+            {
+                <a target="_blank" href="@Url.Action("Edit", "Products", new {id = Model.Products[i].ProductId})">
+                    @Html.DisplayFor(e => Model.Products[i].Product.Name)
+                </a>
+            }
+            else if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsUnicornUser())
+            {
+                <a target="_blank" href="@Url.Action("Link", "Product", new {id = Model.Products[i].Product.ExternalId})">
+                    @Html.DisplayFor(e => Model.Products[i].Product.Name)
+                </a>
+            }
+            else
+            {
+                @Html.DisplayFor(e => Model.Products[i].Product.Name)
+            }
+        </div>
+        <div class="col-sm-4">
+            @Html.DisplayFor(e => Model.Products[i].Amount)
+        </div>
+        <div class="col-sm-4">
+            @Html.DisplayFor(e => Model.Products[i].TotalInternationalPrice)
+        </div>
+    </div>
+
+    <hr />
+}
+
+<br />
+
+<div class="row">
+    <div class="col-sm-4">
+        <strong>@Dictionary.SubTotalLabel</strong>
+    </div>
+    <div class="col-sm-4">
+        <strong>@Model.GetTotalProducts()</strong>
+    </div>
+    <div class="col-sm-4">
+        <strong>@Html.DisplayFor(e => Model.TotalInternationalProductsPrice)</strong>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-4">
+        <strong>@Dictionary.DiscountLabel</strong>
+    </div>
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+        <strong>@Html.DisplayFor(e => Model.InternationalDiscountAmount)</strong>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-4">
+        <strong>@Dictionary.ShippingLabel</strong>
+    </div>
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+        <strong>@Html.DisplayFor(e => Model.InternationalShippingCost)</strong>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-8">
+        <h2>@Dictionary.TotalPayable</h2>
+    </div>
+    <div class="col-sm-4">
+        <strong><h2>@Html.DisplayFor(e => Model.InternationalGrandTotal)</h2></strong>
+    </div>
+</div>
+

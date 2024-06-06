@@ -13314,6 +13314,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total Payable.
+        /// </summary>
+        public static string TotalPayable {
+            get {
+                return ResourceManager.GetString("TotalPayable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Total Price.
         /// </summary>
         public static string TotalPriceLabel {

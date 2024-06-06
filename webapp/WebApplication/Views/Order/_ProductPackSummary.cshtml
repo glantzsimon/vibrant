@@ -1,0 +1,75 @@
+﻿@using K9.Base.WebApplication.Extensions
+@using K9.SharedLibrary.Authentication
+@using K9.WebApplication.Constants
+@using K9.WebApplication.Extensions
+@model Order
+
+<div class="row">
+    <div class="col-sm-4">
+        @Html.LabelFor(e => Model.ProductPacks[0].ProductPack.Name)
+    </div>
+    <div class="col-sm-4">
+        @Html.LabelFor(e => Model.ProductPacks[0].Amount)
+    </div>
+    <div class="col-sm-4">
+        @Html.LabelFor(e => Model.ProductPacks[0].TotalInternationalPrice)
+    </div>
+</div>
+<hr />
+@for (int i = 0; i < Model.ProductPacks?.Count; i++)
+{
+    <div class="row">
+        <div class="col-sm-4">
+            @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
+            {
+                <a target="_blank" href="@Url.Action("Edit", "ProductPacks", new {id = Model.ProductPacks[i].ProductPackId})">
+                    @Html.DisplayFor(e => Model.ProductPacks[i].ProductPack.Name)
+                </a>
+            }
+            else if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsUnicornUser())
+            {
+                <a target="_blank" href="@Url.Action("Link", "ProductPack", new {id = Model.ProductPacks[i].ProductPack.ExternalId})">
+                    @Html.DisplayFor(e => Model.ProductPacks[i].ProductPack.Name)
+                </a>
+            }
+            else
+            {
+                @Html.DisplayFor(e => Model.ProductPacks[i].ProductPack.Name)
+            }
+        </div>
+        <div class="col-sm-4">
+            @Html.DisplayFor(e => Model.ProductPacks[i].Amount)
+        </div>
+        <div class="col-sm-4">
+            @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
+            {
+                @Html.DisplayFor(e => Model.ProductPacks[i].TotalPrice)
+            }
+            else
+            {
+                @Html.DisplayFor(e => Model.ProductPacks[i].TotalInternationalPrice)
+            }
+        </div>
+    </div>
+
+    <hr />
+}
+<div class="row">
+    <div class="col-sm-4">
+        <strong>@Dictionary.TotalLabel</strong>
+    </div>
+    <div class="col-sm-4">
+        <strong>@Model.GetTotalProductPacks()</strong>
+    </div>
+    <div class="col-sm-4">
+        @if (K9.WebApplication.Helpers.SessionHelper.CurrentUserIsAdmin())
+        {
+            <strong>@Html.DisplayFor(e => Model.TotalProductPacksPrice)</strong>
+        }
+        else
+        {
+            <strong>@Html.DisplayFor(e => Model.TotalInternationalProductPacksPrice)</strong>
+        }
+
+    </div>
+</div>

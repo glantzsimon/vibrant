@@ -103,7 +103,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("orders/pay-invoice/success")]
-        public ActionResult InvoicePaymentSuccess(int id)
+        public ActionResult InvoicePaymentSuccess()
         {
             return View();
         }

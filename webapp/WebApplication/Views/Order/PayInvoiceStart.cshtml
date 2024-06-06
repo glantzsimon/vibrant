@@ -1,7 +1,7 @@
 ﻿@using K9.WebApplication.Options
 @model Order
 @{
-    ViewBag.Title = Dictionary.Orders;
+    ViewBag.Title = Dictionary.OrderPayment;
     ViewBag.SubTitle = Dictionary.OrderReview;
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
@@ -10,7 +10,7 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.Partial("_DisplayFields", Model)
+        @Html.Partial("_OrderReview", Model)
 
         <hr />
         @Html.BootstrapButton(K9.Base.Globalisation.Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight, EButtonClass.Large)
