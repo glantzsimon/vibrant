@@ -133,8 +133,6 @@ namespace K9.DataAccessLayer.Models
             double factor = 100f / 7f;
             double index = 0;
 
-            //factor = (100f - factor) / 7f;
-
             if (score == 0)
             {
                 index = 0;

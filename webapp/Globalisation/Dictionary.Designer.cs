@@ -1773,6 +1773,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Client Discount.
+        /// </summary>
+        public static string ClientDiscount {
+            get {
+                return ResourceManager.GetString("ClientDiscount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Client Forbidden Food.
         /// </summary>
         public static string ClientForbiddenFood {

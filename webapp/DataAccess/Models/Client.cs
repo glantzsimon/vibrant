@@ -20,6 +20,10 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.PriceTierLabel)]
         public EPriceTier PriceTier { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ClientDiscount)]
+        [DataType(DataType.Currency)]
+        public double ClientDiscount { get; set; }
+
         [UIHint("Client")]
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.ClientLabel)]
         public int ClientId => Id;

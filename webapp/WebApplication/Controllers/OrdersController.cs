@@ -308,10 +308,19 @@ namespace K9.WebApplication.Controllers
             order.FullName = order.GetFullName();
             order.ExternalId = Guid.NewGuid();
 
-            if (order.ShopCommission == 0 && order.ClientId.HasValue)
+            if (order.ClientId.HasValue)
             {
                 var client = _pureControllerPackage.ClientService.Find(order.ClientId.Value);
-                order.ShopCommission = client.ShopCommission;
+
+                if (client.ClientDiscount > 0)
+                {
+                    order.CustomDiscount = client.ClientDiscount;
+                }
+
+                if (order.ShopCommission == 0 && client.ShopCommission.HasValue)
+                {
+                    order.ShopCommission = client.ShopCommission;
+                }
             }
         }
 
