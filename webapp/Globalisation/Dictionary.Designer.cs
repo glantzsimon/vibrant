@@ -3437,7 +3437,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you have any dry, flaxy skin or weak, pealing or cracked nails?.
+        ///   Looks up a localized string similar to Do you have any dry, flaxy skin or weak, peeling or cracked nails?.
         /// </summary>
         public static string DryFlakySkinLabel {
             get {
@@ -9694,7 +9694,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you often feel possessive or overly attached to certain people, things or experiences and experiences?.
+        ///   Looks up a localized string similar to Do you often feel possessive or overly attached to certain people, things or experiences?.
         /// </summary>
         public static string PossessiveLabel {
             get {
