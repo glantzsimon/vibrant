@@ -670,7 +670,7 @@ namespace K9.WebApplication.Services
 
                     if (numberPerDuration > 0)
                     {
-                        protocolProduct.AmountRequired = protocolProduct.Product.Amount > 0 
+                        protocolProduct.AmountRequired = protocolProduct.Product.Amount > 0
                             ? (int)Math.Ceiling(numberPerDuration / (decimal)protocolProduct.Product.Amount)
                             : 0;
                         protocolProduct.Amount = protocolProduct.AmountRequired;
@@ -730,6 +730,8 @@ namespace K9.WebApplication.Services
                                 ProductId = protocolProduct.Product.Id,
                                 Amount = protocolProduct.Amount
                             };
+
+                            product = _productsRepository.Find(protocolProduct.Product.Id);
 
                             var sectionMessage =
                                 $"ProductName: {product.Name}, {nameof(ProtocolSection.SectionName)}: {protocolProtocolSection.Section.Name}";
