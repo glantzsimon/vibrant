@@ -29,6 +29,7 @@
     @Html.HiddenFor(e => Model.ProtocolSections[i].Id)
     @Html.HiddenFor(e => Model.ProtocolSections[i].SectionId)
     @Html.HiddenFor(e => Model.ProtocolSections[i].Section.Name)
+    @Html.HiddenFor(e => Model.ProtocolSections[i].Section.ShortDescription)
     var section = Model.ProtocolSections[i];
 
     <div class="row">

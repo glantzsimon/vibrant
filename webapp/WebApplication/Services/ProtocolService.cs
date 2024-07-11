@@ -477,7 +477,7 @@ namespace K9.WebApplication.Services
                         var protocolSectionProduct = new ProtocolSectionProduct
                         {
                             ProtocolSectionId = protocolProtocolSection.Id,
-                            ProductId = protocolProduct.ProductId,
+                            ProductId = protocolProduct.Product.Id,
                             Product = protocolProduct.Product,
                             IsVisible = protocolProduct.Product.CheckRecommendations(protocolProtocolSection.Section
                                 .Recommendations)
@@ -670,8 +670,9 @@ namespace K9.WebApplication.Services
 
                     if (numberPerDuration > 0)
                     {
-                        protocolProduct.AmountRequired =
-                            (int)Math.Ceiling(numberPerDuration / (decimal)protocolProduct.Product.Amount);
+                        protocolProduct.AmountRequired = protocolProduct.Product.Amount > 0 
+                            ? (int)Math.Ceiling(numberPerDuration / (decimal)protocolProduct.Product.Amount)
+                            : 0;
                         protocolProduct.Amount = protocolProduct.AmountRequired;
                     }
                 }
