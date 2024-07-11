@@ -6859,6 +6859,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Always Display Schedule.
+        /// </summary>
+        public static string IsScheduleDisplayedLabel {
+            get {
+                return ResourceManager.GetString("IsScheduleDisplayedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Selected.
         /// </summary>
         public static string IsSelectedLabel {

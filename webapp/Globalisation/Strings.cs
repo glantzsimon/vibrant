@@ -515,6 +515,7 @@
             public const string StretchMarks = "StretchMarks";
             public const string Strength = "Strength";
             public const string GenoType = "GenoType";
+            public const string IsScheduleDisplayedLabel = "IsScheduleDisplayedLabel";
             public const string FrequentNighttimeUrination = "FrequentNighttimeUrination";
             public const string Herpes = "Herpes";
             public const string Irritability = "Irritability";

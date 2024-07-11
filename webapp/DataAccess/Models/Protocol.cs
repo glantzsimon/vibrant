@@ -258,6 +258,9 @@ namespace K9.DataAccessLayer.Models
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SeoFriendlyIdLabel)]
         public string SeoFriendlyId { get; set; }
 
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IsScheduleDisplayedLabel)]
+        public bool IsScheduleDisplayed { get; set; }
+
         [StringLength(512)]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.VideoUrlLabel)]
         public string VideoUrl { get; set; }

@@ -4857,4 +4857,7 @@ A sattvic diet shares the qualities of sattva, some of which include "pure, esse
   <data name="TotalPayable" xml:space="preserve">
     <value>Total Payable</value>
   </data>
+  <data name="IsScheduleDisplayedLabel" xml:space="preserve">
+    <value>Always Display Schedule</value>
+  </data>
 </root>
