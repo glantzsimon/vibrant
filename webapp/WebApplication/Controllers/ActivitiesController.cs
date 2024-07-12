@@ -6,6 +6,7 @@ using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Packages;
 using System;
 using System.Web.Mvc;
+using K9.WebApplication.Services;
 
 namespace K9.WebApplication.Controllers
 {
@@ -13,10 +14,31 @@ namespace K9.WebApplication.Controllers
     [RequirePermissions(Role = RoleNames.Administrators)]
     public class ActivitiesController : HtmlControllerBase<Activity>
     {
-        public ActivitiesController(IControllerPackage<Activity> controllerPackage, IPureControllerPackage pureControllerPackage) : base(controllerPackage, pureControllerPackage)
+        private readonly IProtocolService _protocolService;
+
+        public ActivitiesController(IControllerPackage<Activity> controllerPackage, IPureControllerPackage pureControllerPackage, IProtocolService protocolService) : base(controllerPackage, pureControllerPackage)
         {
+            _protocolService = protocolService;
             RecordBeforeCreated += ActivitiesController_RecordBeforeCreated;
             RecordBeforeUpdated += ActivitiesController_RecordBeforeUpdated;
+            RecordCreated += ActivitiesController_RecordCreated;
+            RecordUpdated += ActivitiesController_RecordUpdated;
+            RecordDeleted += ActivitiesController_RecordDeleted;
+        }
+
+        private void ActivitiesController_RecordDeleted(object sender, CrudEventArgs e)
+        {
+            _protocolService.ClearCache();
+        }
+
+        private void ActivitiesController_RecordUpdated(object sender, CrudEventArgs e)
+        {
+            _protocolService.ClearCache();
+        }
+
+        private void ActivitiesController_RecordCreated(object sender, CrudEventArgs e)
+        {
+            _protocolService.ClearCache();
         }
 
         private void ActivitiesController_RecordBeforeUpdated(object sender, CrudEventArgs e)

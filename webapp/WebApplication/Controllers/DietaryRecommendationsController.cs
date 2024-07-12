@@ -6,6 +6,7 @@ using K9.SharedLibrary.Authentication;
 using K9.WebApplication.Packages;
 using System;
 using System.Web.Mvc;
+using K9.WebApplication.Services;
 
 namespace K9.WebApplication.Controllers
 {
@@ -13,10 +14,31 @@ namespace K9.WebApplication.Controllers
     [RequirePermissions(Role = RoleNames.Administrators)]
     public class DietaryRecommendationsController : HtmlControllerBase<DietaryRecommendation>
     {
-        public DietaryRecommendationsController(IControllerPackage<DietaryRecommendation> controllerPackage, IPureControllerPackage pureControllerPackage) : base(controllerPackage, pureControllerPackage)
+        private readonly IProtocolService _protocolService;
+
+        public DietaryRecommendationsController(IControllerPackage<DietaryRecommendation> controllerPackage, IPureControllerPackage pureControllerPackage, IProtocolService protocolService) : base(controllerPackage, pureControllerPackage)
         {
+            _protocolService = protocolService;
             RecordBeforeCreated += DietaryRecommendationsController_RecordBeforeCreated;
             RecordBeforeUpdated += DietaryRecommendationsController_RecordBeforeUpdated;
+            RecordCreated += DietaryRecommendationsController_RecordCreated;
+            RecordUpdated += DietaryRecommendationsController_RecordUpdated;
+            RecordDeleted += DietaryRecommendationsController_RecordDeleted;
+        }
+
+        private void DietaryRecommendationsController_RecordDeleted(object sender, CrudEventArgs e)
+        {
+            _protocolService.ClearCache();
+        }
+
+        private void DietaryRecommendationsController_RecordUpdated(object sender, CrudEventArgs e)
+        {
+            _protocolService.ClearCache();
+        }
+
+        private void DietaryRecommendationsController_RecordCreated(object sender, CrudEventArgs e)
+        {
+            _protocolService.ClearCache();
         }
 
         private void DietaryRecommendationsController_RecordBeforeUpdated(object sender, CrudEventArgs e)
