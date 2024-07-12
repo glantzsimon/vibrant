@@ -76,29 +76,33 @@
                                                          recommendedFood.IsBulletProof ||
                                                          recommendedFood.IsSattvic;
 
-                                        <span data-id="@recommendedFood.Id" class="summary-item recommended-food" style="background-color: @levelColor !important;">
+                                <span data-id="@recommendedFood.Id" class="summary-item recommended-food" style="background-color: @levelColor !important;">
 
-                                            @Html.Raw(recommendedFood.GetRelativeScoreHtml())
-                                            <span>@recommendedFood.Name</span>
+                                    @if (level != ECompatibilityLevel.Suboptimal && level != ECompatibilityLevel.Unsuitable)
+                                    {
+                                        @Html.Raw(recommendedFood.GetRelativeScoreHtml())
+                                    }
 
-                                            @if (Model.ClientId.HasValue)
-                                            {
-                                                if (level < ECompatibilityLevel.Suboptimal)
-                                                {
-                                                    <i data-food-id="@recommendedFood.Id" data-toggle="tooltip" class="fa fa-thumbs-down food-item-icon demote-food-item" title="@Dictionary.FoodIsUnsuitableTitle"></i>
-                                                }
+                                    <span>@recommendedFood.Name</span>
 
-                                                if (recommendedFood.IsDemoted)
-                                                {
-                                                    <i data-food-id="@recommendedFood.Id" data-toggle="tooltip" class="fa fa-thumbs-up food-item-icon promote-food-item" title="@Dictionary.FoodIsSuitableTitle"></i>
-                                                }
+                                    @if (Model.ClientId.HasValue)
+                                    {
+                                        if (level < ECompatibilityLevel.Suboptimal)
+                                        {
+                                            <i data-food-id="@recommendedFood.Id" data-toggle="tooltip" class="fa fa-thumbs-down food-item-icon demote-food-item" title="@Dictionary.FoodIsUnsuitableTitle"></i>
+                                        }
 
-                                                if (isShowInfo)
-                                                {
-                                                    <i data-food-id="@recommendedFood.Id" data-toggle="tooltip" class="fa fa-info-circle food-item-info" title="@recommendedFood.GetFoodAllergyInfo()"></i>
-                                                }
-                                            }
-                                        </span>
+                                        if (recommendedFood.IsDemoted)
+                                        {
+                                            <i data-food-id="@recommendedFood.Id" data-toggle="tooltip" class="fa fa-thumbs-up food-item-icon promote-food-item" title="@Dictionary.FoodIsSuitableTitle"></i>
+                                        }
+
+                                        if (isShowInfo)
+                                        {
+                                            <i data-food-id="@recommendedFood.Id" data-toggle="tooltip" class="fa fa-info-circle food-item-info" title="@recommendedFood.GetFoodAllergyInfo()"></i>
+                                        }
+                                    }
+                                </span>
                                     }
                                 }
                             </div>
