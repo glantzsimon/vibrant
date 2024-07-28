@@ -185,6 +185,7 @@ namespace K9.WebApplication.Controllers
         public ActionResult EditIngredientSubstitutes(Product model)
         {
             _productService.EditIngredientSubstitutes(model);
+            _productService.ClearCache();
             return RedirectToAction("Index");
         }
 
