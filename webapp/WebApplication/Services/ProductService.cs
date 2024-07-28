@@ -556,6 +556,11 @@ namespace K9.WebApplication.Services
                 .Where(i => !existingIngredients.Select(e => e.IngredientId).Contains(i.Id)).ToList();
             var itemsToDelete = existingIngredients.Where(i => !product.IngredientsSelectList.Where(e => e.IsSelected).Select(e => e.Id).Contains(i.IngredientId)).Select(e => e.Id).ToList();
 
+            var substitutesToDelete = _productIngredientSubstituteRepository
+                .Find(e => itemsToDelete.Contains(e.ProductIngredientId)).Select(e => e.Id).ToList();
+
+            _productIngredientSubstituteRepository.DeleteBatch(substitutesToDelete);
+
             _productIngredientsRepository.DeleteBatch(itemsToDelete);
 
             foreach (var item in newItems)
