@@ -83,16 +83,57 @@ namespace K9.WebApplication.Controllers
 
         public ActionResult PrintableSummary(Guid id)
         {
-            var protocol = _protocolService.Find(id);
-            protocol = _protocolService.GetProtocolWithProtocolSections(id);
+            var protocol = GetProtocol(id);
             return View("../Protocols/PrintableSummary", protocol);
         }
-        
+
+        public ActionResult PrintableSchedule(Guid id)
+        {
+            var protocol = GetProtocol(id);
+            return View("../Protocols/PrintableSchedule", protocol);
+        }
+
+        public ActionResult PrintableGenoTypeSummary(Guid id)
+        {
+            var protocol = GetProtocol(id);
+            return View("../Protocols/PrintableGenoTypeSummary", protocol);
+        }
+
+        public ActionResult PrintableDoshasSummary(Guid id)
+        {
+            var protocol = GetProtocol(id);
+            return View("../Protocols/PrintableDoshasSummary", protocol);
+        }
+
+        public ActionResult PrintableNineStarKiSummary(Guid id)
+        {
+            var protocol = GetProtocol(id);
+            return View("../Protocols/PrintableNineStarKiSummary", protocol);
+        }
+
         public ActionResult PrintableFoodList(Guid id)
+        {
+            var protocol = GetProtocol(id);
+            return View("../Protocols/PrintableFoodsList", protocol);
+        }
+
+        public ActionResult PrintableDietaryAdvice(Guid id)
+        {
+            var protocol = GetProtocol(id);
+            return View("../Protocols/PrintableDietaryAdvice", protocol);
+        }
+
+        public ActionResult PrintableHealingActivities(Guid id)
+        {
+            var protocol = GetProtocol(id);
+            return View("../Protocols/PrintableHealingActivities", protocol);
+        }
+
+        private Protocol GetProtocol(Guid id)
         {
             var protocol = _protocolService.Find(id);
             protocol = _protocolService.GetProtocolWithProtocolSections(id);
-            return View("../Protocols/PrintableFoodsList", protocol);
+            return protocol;
         }
     }
 }

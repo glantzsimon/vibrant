@@ -1739,6 +1739,12 @@
     <Content Include="Views\Order\PayInvoiceStart.cshtml" />
     <Content Include="Views\Order\_ProductsSummary.cshtml" />
     <Content Include="Views\Order\_ProductPackSummary.cshtml" />
+    <Content Include="Views\Protocols\PrintableSchedule.cshtml" />
+    <Content Include="Views\Protocols\PrintableGenoTypeSummary.cshtml" />
+    <Content Include="Views\Protocols\PrintableDoshasSummary.cshtml" />
+    <Content Include="Views\Protocols\PrintableNineStarKiSummary.cshtml" />
+    <Content Include="Views\Protocols\PrintableDietaryAdvice.cshtml" />
+    <Content Include="Views\Protocols\PrintableHealingActivities.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

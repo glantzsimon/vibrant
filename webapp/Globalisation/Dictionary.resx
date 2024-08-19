@@ -4860,4 +4860,52 @@ A sattvic diet shares the qualities of sattva, some of which include "pure, esse
   <data name="IsScheduleDisplayedLabel" xml:space="preserve">
     <value>Always Display Schedule</value>
   </data>
+  <data name="DoshasSummary" xml:space="preserve">
+    <value>Ayurvedic Doshas Summary</value>
+  </data>
+  <data name="GenoTypeSummary" xml:space="preserve">
+    <value>GenoType Summary</value>
+  </data>
+  <data name="NineStarKiSummary" xml:space="preserve">
+    <value>Nine Star Ki Summary</value>
+  </data>
+  <data name="PrintableDietaryAdvice" xml:space="preserve">
+    <value>Printable Dietary Advice</value>
+  </data>
+  <data name="PrintableDoshasSummary" xml:space="preserve">
+    <value>Printable Doshas Summary</value>
+  </data>
+  <data name="PrintableGenoTypeSummary" xml:space="preserve">
+    <value>Printable GenoType Summary</value>
+  </data>
+  <data name="PrintableHealingActivities" xml:space="preserve">
+    <value>Printable Healing Activities</value>
+  </data>
+  <data name="PrintableNineStarKiSummary" xml:space="preserve">
+    <value>Printable Nine Star Ki Summary</value>
+  </data>
+  <data name="PrintableSchedule" xml:space="preserve">
+    <value>Printable Schedule</value>
+  </data>
+  <data name="ViewPrintableDietaryAdvice" xml:space="preserve">
+    <value>View Printable Dietary Advice</value>
+  </data>
+  <data name="ViewPrintableDoshasSummary" xml:space="preserve">
+    <value>View Printable Doshas Summary</value>
+  </data>
+  <data name="ViewPrintableFoodsList" xml:space="preserve">
+    <value>View Printable Foods List</value>
+  </data>
+  <data name="ViewPrintableGenoTypeSummary" xml:space="preserve">
+    <value>View Printable GenoType Summary</value>
+  </data>
+  <data name="ViewPrintableHealingActivities" xml:space="preserve">
+    <value>View Printable Healing Activities</value>
+  </data>
+  <data name="ViewPrintableNineStarKiSummary" xml:space="preserve">
+    <value>View Printable Nine Star Ki Summary</value>
+  </data>
+  <data name="ViewPrintableSchedule" xml:space="preserve">
+    <value>View Printable Schedule</value>
+  </data>
 </root>
