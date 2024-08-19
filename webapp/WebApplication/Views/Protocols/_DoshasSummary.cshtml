@@ -25,10 +25,12 @@
         @if (prakruti == EDosha.Vata || prakruti == EDosha.KaphaVata || prakruti == EDosha.VataPitta || prakruti == EDosha.Tridoshic)
         {
             @Html.Raw(Dictionary.VataDoshaDetails)
+            <hr />
         }
         @if (prakruti == EDosha.Pitta || prakruti == EDosha.PittaKapha || prakruti == EDosha.VataPitta || prakruti == EDosha.Tridoshic)
         {
             @Html.Raw(Dictionary.PittaDoshaDetails)
+            <hr />
         }
         @if (prakruti == EDosha.Kapha || prakruti == EDosha.PittaKapha || prakruti == EDosha.KaphaVata || prakruti == EDosha.Tridoshic)
         {
