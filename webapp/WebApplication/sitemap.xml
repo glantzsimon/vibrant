@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://purealchemy.store/</loc>
+    <loc>https://purealchemy.school/</loc>
     <lastmod>2021-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1</priority>
   </url>
   <url>
-    <loc>https://purealchemy.store/about</loc>
+    <loc>https://purealchemy.school/about</loc>
     <lastmod>2021-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>    
   <url>
-    <loc>https://purealchemy.store/privacy-policy</loc>
+    <loc>https://purealchemy.school/privacy-policy</loc>
     <lastmod>2021-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://purealchemy.store/account/login</loc>
+    <loc>https://purealchemy.school/account/login</loc>
     <lastmod>2021-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://purealchemy.store/account/register</loc>
+    <loc>https://purealchemy.school/account/register</loc>
     <lastmod>2021-01-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
