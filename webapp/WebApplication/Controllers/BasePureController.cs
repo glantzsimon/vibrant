@@ -1,4 +1,4 @@
-﻿using K9.Base.WebApplication.Constants;
+﻿    using K9.Base.WebApplication.Constants;
 using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.Helpers;
 using K9.DataAccessLayer.Models;
@@ -67,16 +67,11 @@ namespace K9.WebApplication.Controllers
             return null;
         }
 
-        public override string GetObjectName()
-        {
-            return string.Empty;
-        }
-
         public EDeviceType GetDeviceType()
         {
             return new BrowserInfo(Request.Headers["User-Agent"]).DeviceType;
         }
-        
+
         public void SetSessionRoles(int userId)
         {
             Helpers.SessionHelper.SetCurrentUserRoles(_pureControllerPackage.RolesRepository, _pureControllerPackage.UserRolesRepository, userId);
@@ -85,6 +80,11 @@ namespace K9.WebApplication.Controllers
         public void LoadDatasets()
         {
             Helpers.DatasetHelper.LoadDatasets(_pureControllerPackage.OrdersRepository);
+        }
+
+        public override string GetObjectName()
+        {
+            return string.Empty;
         }
 
         private void SetCultureCode(string languageCode, string cultureCode)

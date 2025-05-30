@@ -7111,7 +7111,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3 class=&quot;section-title&quot;&gt;Kapha Dosha&lt;/h3&gt;
+        ///   Looks up a localized string similar to &lt;h1 class=&quot;section-title&quot;&gt;Kapha Dosha&lt;/h1&gt;
         ///&lt;br /&gt;
         ///&lt;p&gt;
         ///    kapha dosha is made up of the elements water and earth. It is a stabilising energy that keeps things together and provides support. Kapha dosha people experience life in a slow, intentional manner, rarely becoming upset and usually thinking before they act. Their demeanor is typically calm, caring and empathetic, patient, positive, and romantic. Physically, their stability is represented by a strong frame, healthy hair, and clear and smooth skin.  [rest of string was truncated]&quot;;.
@@ -9608,7 +9608,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3 class=&quot;section-title&quot;&gt;Pitta Dosha&lt;/h3&gt;
+        ///   Looks up a localized string similar to &lt;h1 class=&quot;section-title&quot;&gt;Pitta Dosha&lt;/h1&gt;
         ///&lt;br /&gt;
         ///&lt;p&gt;
         ///    Pitta dosha is made up of fire and water and rules digestion and emotions. It is correlated with summer season, Pitta body types are usually medium build, athletic and muscular. THey often have oily and / or freckled skin and straight hair. Pitta people often have sharp intellects and are typically quite driven, making them confident and strong leaders.
@@ -11981,7 +11981,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SmallIntestine.
+        ///   Looks up a localized string similar to Small Intestine.
         /// </summary>
         public static string SmallIntestine {
             get {
@@ -13973,7 +13973,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3 class=&quot;section-title&quot;&gt;Vata Dosha&lt;/h3&gt;
+        ///   Looks up a localized string similar to &lt;h1 class=&quot;section-title&quot;&gt;Vata Dosha&lt;/h1&gt;
         ///&lt;br /&gt;
         ///&lt;p&gt;
         ///    Vata dosha is made up of air and space. It is responsible for all movement in the body, including that of the autonomous nervous system. Vata dosha people are typically flexibile and creative. Physically, vata body types are typically slim or even lanky and typically have dry skin and often have thin or frizzy hair. Vata types usually dislike cold and dry climates. When imbalanced, vata dosha can lead to scattered and racing thoughts. When in balan [rest of string was truncated]&quot;;.

@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Services
 {
@@ -49,7 +50,7 @@ namespace K9.WebApplication.Services
 
         public MembershipViewModel GetMembershipViewModel(int? userId = null)
         {
-            userId = userId ?? _authentication.CurrentUserId;
+            userId = userId ?? Current.UserId;
             var membershipOptions = _membershipOptionRepository.List();
             var activeUserMembership = GetActiveUserMembership(userId);
 
@@ -60,7 +61,7 @@ namespace K9.WebApplication.Services
                     var isSubscribed = activeUserMembership != null && activeUserMembership.MembershipOptionId == membershipOption.Id;
                     var isUpgradable = activeUserMembership == null || activeUserMembership.MembershipOption.CanUpgradeTo(membershipOption);
 
-                    return new MembershipModel(_authentication.CurrentUserId, membershipOption, activeUserMembership)
+                    return new MembershipModel(Current.UserId, membershipOption, activeUserMembership)
                     {
                         IsSelectable = !isSubscribed && isUpgradable,
                         IsSubscribed = isSubscribed

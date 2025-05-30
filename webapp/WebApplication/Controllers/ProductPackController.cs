@@ -7,6 +7,7 @@ using K9.WebApplication.Services;
 using NLog;
 using System;
 using System.Web.Mvc;
+using K9.WebApplication.Helpers;
 using K9.WebApplication.Packages;
 
 namespace K9.WebApplication.Controllers
@@ -58,7 +59,7 @@ namespace K9.WebApplication.Controllers
         [Authorize]
         public ActionResult Link(Guid id)
         {
-            if (!Roles.CurrentUserIsInRoles(Constants.Constants.UnicornUser) && !Roles.CurrentUserIsInRoles(RoleNames.Administrators))
+            if (!SessionHelper.CurrentUserIsUnicornUser() && !SessionHelper.CurrentUserIsAdmin())
             {
                 return HttpNotFound();
             }

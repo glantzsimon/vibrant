@@ -8,6 +8,7 @@ using NLog;
 using System;
 using System.Web;
 using System.Web.Mvc;
+using K9.WebApplication.Helpers;
 
 namespace K9.WebApplication.Services
 {
@@ -42,7 +43,7 @@ namespace K9.WebApplication.Services
                 {
                     _userConsultationRepository.Create(new UserConsultation
                     {
-                        UserId = _authentication.CurrentUserId,
+                        UserId = Current.UserId,
                         ConsultationId = consultation.Id
                     });
                 }
