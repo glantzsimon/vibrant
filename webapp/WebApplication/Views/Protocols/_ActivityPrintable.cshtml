@@ -23,10 +23,10 @@
                 </div>
             </div>
 
-            <br />
-
             @if (!string.IsNullOrEmpty(activity.Recommendations))
             {
+                <br />
+
                 <div class="row">
                     <div class="col-xs-12">
                         <h4>@Dictionary.RecommendationsLabel</h4>
@@ -37,13 +37,6 @@
                         @Html.Raw(activity.Recommendations)
                     </div>
                 </div>
-
-                <br />
-            }
-            
-            @if (!isLast)
-            {
-                <hr />
             }
         </div>
     }
